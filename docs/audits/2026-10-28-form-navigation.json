@@ -6,8 +6,9 @@
   "addedCasesPerTarget": 11,
   "casesPerTarget": 69,
   "passed": {
-    "reference": 68,
-    "local": 68
+    "reference": 69,
+    "local": 69,
+    "published": 69
   },
   "beforePublishedNavigation": {
     "referencePassed": 2,
@@ -15,6 +16,21 @@
     "report": "published-before-results.json"
   },
   "tests": [
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / collection previews keep independent selections and page sizes",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / collection previews keep independent selections and page sizes",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / collection previews keep independent selections and page sizes",
+      "status": "passed"
+    },
     {
       "project": "reference",
       "title": "collection-csv-boundaries.spec.ts / desktop light / CSV handles BOM, CRLF, quoted commas, quotes and blank lines",
@@ -122,6 +138,61 @@
     },
     {
       "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / inline amount clamps negatives and status commits remove a filtered row",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV handles BOM, CRLF, quoted commas, quotes and blank lines",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV decodes Japanese SJIS",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV decodes Japanese UTF16LE",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV recovers from empty and oversized files and resets after Back",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV requires the name mapping and excludes already used source columns",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV corrections survive Back but are discarded on close and reopen",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / collection last-page boundaries, backward retracing and page-size reset",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / collection selections span pages; page select-all clears only its own rows",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / catalog preserves stock filter when switching grid/list and resets its page",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / inline text editing discards Escape, Cancel and outside-click drafts",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "collection-csv-boundaries.spec.ts / desktop light / inline amount clamps negatives and status commits remove a filtered row",
       "status": "passed"
     },
@@ -232,6 +303,61 @@
     },
     {
       "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / inline amount clamps negatives and status commits remove a filtered row",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV handles BOM, CRLF, quoted commas, quotes and blank lines",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV decodes Japanese SJIS",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV decodes Japanese UTF16LE",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV recovers from empty and oversized files and resets after Back",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV requires the name mapping and excludes already used source columns",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV corrections survive Back but are discarded on close and reopen",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / collection last-page boundaries, backward retracing and page-size reset",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / collection selections span pages; page select-all clears only its own rows",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / catalog preserves stock filter when switching grid/list and resets its page",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / inline text editing discards Escape, Cancel and outside-click drafts",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "collection-csv-boundaries.spec.ts / mobile dark / inline amount clamps negatives and status commits remove a filtered row",
       "status": "passed"
     },
@@ -242,6 +368,11 @@
     },
     {
       "project": "local",
+      "title": "expanded-interactions.spec.ts / document links persist, renamed references resolve, embeds insert and discard",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "expanded-interactions.spec.ts / document links persist, renamed references resolve, embeds insert and discard",
       "status": "passed"
     },
@@ -312,6 +443,41 @@
     },
     {
       "project": "local",
+      "title": "expanded-interactions.spec.ts / desktop light / sheet traps focus, fits the viewport and restores the trigger",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / desktop light / autocomplete commits a keyboard suggestion and preserves free text",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / desktop light / combobox keyboard selection, chip deletion and multi-select",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / desktop light / select supports keyboard selection, multi-toggle and Escape",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / desktop light / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / desktop light / date picker announces the field and action and keeps read-only values",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / desktop light / dialog traps focus, fits the viewport and restores the trigger",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "expanded-interactions.spec.ts / desktop light / sheet traps focus, fits the viewport and restores the trigger",
       "status": "passed"
     },
@@ -382,6 +548,41 @@
     },
     {
       "project": "local",
+      "title": "expanded-interactions.spec.ts / mobile dark / sheet traps focus, fits the viewport and restores the trigger",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / mobile dark / autocomplete commits a keyboard suggestion and preserves free text",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / mobile dark / combobox keyboard selection, chip deletion and multi-select",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / mobile dark / select supports keyboard selection, multi-toggle and Escape",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / mobile dark / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / mobile dark / date picker announces the field and action and keeps read-only values",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "expanded-interactions.spec.ts / mobile dark / dialog traps focus, fits the viewport and restores the trigger",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "expanded-interactions.spec.ts / mobile dark / sheet traps focus, fits the viewport and restores the trigger",
       "status": "passed"
     },
@@ -432,6 +633,31 @@
     },
     {
       "project": "local",
+      "title": "form-navigation-state.spec.ts / desktop light / small profile retains demo drafts across cancel and saves while access stays read-only",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "form-navigation-state.spec.ts / desktop light / fullscreen: section anchors keep the outer page still and highlight the section at the scroll offset",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "form-navigation-state.spec.ts / desktop light / catalogue: section anchors keep the outer page still and highlight the section at the scroll offset",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "form-navigation-state.spec.ts / desktop light / form rejects missing and malformed fields before serializing valid values",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "form-navigation-state.spec.ts / desktop light / wizard retains visited-step drafts before the reference demo submits on Review",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "form-navigation-state.spec.ts / desktop light / small profile retains demo drafts across cancel and saves while access stays read-only",
       "status": "passed"
     },
@@ -482,6 +708,31 @@
     },
     {
       "project": "local",
+      "title": "form-navigation-state.spec.ts / mobile dark / small profile retains demo drafts across cancel and saves while access stays read-only",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "form-navigation-state.spec.ts / mobile dark / fullscreen: section anchors keep the outer page still and highlight the section at the scroll offset",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "form-navigation-state.spec.ts / mobile dark / catalogue: section anchors keep the outer page still and highlight the section at the scroll offset",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "form-navigation-state.spec.ts / mobile dark / form rejects missing and malformed fields before serializing valid values",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "form-navigation-state.spec.ts / mobile dark / wizard retains visited-step drafts before the reference demo submits on Review",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "form-navigation-state.spec.ts / mobile dark / small profile retains demo drafts across cancel and saves while access stays read-only",
       "status": "passed"
     },
@@ -532,6 +783,31 @@
     },
     {
       "project": "local",
+      "title": "native-drag.spec.ts / timeline bars move to another lane and preserve the time range",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "native-drag.spec.ts / pipeline stages reorder in both directions and cancel without changes",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "native-drag.spec.ts / approval stages reorder and preserve stage settings",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "native-drag.spec.ts / form fields reorder while the generated schema preserves settings",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "native-drag.spec.ts / Kanban cards move between columns, reorder, and cancel",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "native-drag.spec.ts / timeline bars move to another lane and preserve the time range",
       "status": "passed"
     },
@@ -612,6 +888,46 @@
     },
     {
       "project": "local",
+      "title": "table-context-interactions.spec.ts / desktop light / inline checkbox identity survives renaming and subsequent keyboard edits",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / desktop light / components/data-table preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / desktop light / page/collection preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / desktop light / page/dashboard-with-charts preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / desktop light / page/detail-2col-action-panel preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / desktop light / patterns/datatable-inline-edit preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / desktop light / patterns/bulk-actions-bar preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / desktop light / bulk filtering clears hidden selections and rejecting preserves demo records",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "table-context-interactions.spec.ts / desktop light / inline checkbox identity survives renaming and subsequent keyboard edits",
       "status": "passed"
     },
@@ -692,6 +1008,46 @@
     },
     {
       "project": "local",
+      "title": "table-context-interactions.spec.ts / mobile dark / inline checkbox identity survives renaming and subsequent keyboard edits",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / mobile dark / components/data-table preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / mobile dark / page/collection preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / mobile dark / page/dashboard-with-charts preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / mobile dark / page/detail-2col-action-panel preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / mobile dark / patterns/datatable-inline-edit preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / mobile dark / patterns/bulk-actions-bar preserves browser context-menu events on headers and cells",
+      "status": "passed"
+    },
+    {
+      "project": "published",
+      "title": "table-context-interactions.spec.ts / mobile dark / bulk filtering clears hidden selections and rejecting preserves demo records",
+      "status": "passed"
+    },
+    {
+      "project": "published",
       "title": "table-context-interactions.spec.ts / mobile dark / inline checkbox identity survives renaming and subsequent keyboard edits",
       "status": "passed"
     }
@@ -749,8 +1105,28 @@
           "width": 718,
           "height": 248
         }
+      },
+      {
+        "target": "published",
+        "windowY": 0,
+        "owner": {
+          "x": 281,
+          "y": 25,
+          "width": 974,
+          "height": 718
+        },
+        "selected": [
+          "Timeline"
+        ],
+        "timeline": {
+          "x": 505,
+          "y": 121,
+          "width": 718,
+          "height": 248
+        }
       }
-    ]
+    ],
+    "referencePublishedDifferentPixels": 0
   },
   "referenceLimitations": [
     {
@@ -873,7 +1249,7 @@
       "failed": 0,
       "scope": "Original selected row survives Next, page select-all, deselect-all and Previous. Does not include Approve or Reject.",
       "report": "selection-load-local.json",
-      "conclusion": "Not reproduced in reused contexts; the subsequent fresh-context diagnostic and original trace establish target switching."
+      "conclusion": "Not reproduced in reused contexts; fresh-context reproduction and the original traces confirm test-target switching."
     },
     "resolution": {
       "status": "resolved-test-target-race",
@@ -884,7 +1260,107 @@
         "all-table-states.json",
         "cold-pagination-published.json"
       ],
-      "testFix": "Wait for all three Collection tables before using ordered locators; add controlled chunk-arrival regression."
+      "testFix": "Wait for all three Collection tables before using ordered locators; add controlled chunk-arrival regression.",
+      "finalSelectionFailureSnapshot": [
+        {
+          "index": 0,
+          "rowCount": 10,
+          "first": "PO-2026-1001Tailor Suppl",
+          "selected": [],
+          "pageSize": [
+            "10"
+          ],
+          "editButtons": 0
+        },
+        {
+          "index": 1,
+          "rowCount": 10,
+          "first": "PO-2026-1001Tailor Suppl",
+          "selected": [
+            "PO-2026-1001 — Select row"
+          ],
+          "pageSize": [
+            "10"
+          ],
+          "editButtons": 20
+        },
+        {
+          "index": 2,
+          "rowCount": 0,
+          "first": null,
+          "selected": [],
+          "pageSize": [
+            "12"
+          ],
+          "editButtons": 0
+        }
+      ],
+      "finalPaginationFailureSnapshot": [
+        {
+          "index": 0,
+          "rowCount": 10,
+          "first": "PO-2026-1001Tailor Suppl",
+          "selected": [],
+          "pageSize": [
+            "10"
+          ],
+          "editButtons": 0
+        },
+        {
+          "index": 1,
+          "rowCount": 25,
+          "first": "PO-2026-1001Tailor Suppl",
+          "selected": [],
+          "pageSize": [
+            "25"
+          ],
+          "editButtons": 50
+        },
+        {
+          "index": 2,
+          "rowCount": 0,
+          "first": null,
+          "selected": [],
+          "pageSize": [
+            "12"
+          ],
+          "editButtons": 0
+        }
+      ]
+    }
+  },
+  "publishedAttempts": [
+    {
+      "stage": "before test-target readiness fix",
+      "passed": 67,
+      "failed": 1,
+      "report": "published-first-run.json",
+      "classification": "test-target-race"
+    },
+    {
+      "stage": "after test-target readiness fix and added loading regression",
+      "passed": 69,
+      "failed": 0,
+      "report": "final-three-environment-results.json"
+    }
+  ],
+  "workflow": {
+    "headSha": "770da8efe39ff624579e851785b83c747e585da6",
+    "conclusion": "success",
+    "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40578592917",
+    "browserCasesPassed": 69,
+    "unitCasesPassed": 21
+  },
+  "uiChangeRevision": "dc5a723e22992f10203eb92b04630df0f2d77368",
+  "loadingRegression": {
+    "reference": "State independence with the single-bundle reference; no asset delay.",
+    "local": "Capsule sample JavaScript held until Inline edit and Catalog mount; retained selection and page size verified after release.",
+    "published": "Same controlled asset delay as local.",
+    "syntheticPointerEvents": false,
+    "newContextsBeforeFix": {
+      "attempts": 18,
+      "failed": 1,
+      "report": "cold-pagination-published.json"
     }
   }
 }
