@@ -525,7 +525,6 @@
 /* Reference catalogue palette. Kept in the package so applications importing
  * erpboost-ui/styles receive the same colors shown by the catalogue. */
 :root {
-  --background: #fff;
   --success-solid: #22c55e;
   --success-solid-hover: #22c55e;
   --success-contrast: #fff;
@@ -573,9 +572,9 @@
   --alert-neutral-foreground: var(--foreground);
 }
 .dark {
-  --background: #171717;
+  --background: #0a0a0a;
   --card: #171717;
-  --sidebar: #171717;
+  --sidebar: #0a0a0a;
   --destructive: #f87171;
   --danger-solid: #f87171;
   --alert-info-foreground: #93c5fd;

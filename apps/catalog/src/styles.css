@@ -19,6 +19,10 @@
 body {
   margin: 0;
 }
+body,
+[data-slot="sidebar-inset"] {
+  background-color: var(--card);
+}
 button,
 a,
 input,
@@ -449,14 +453,6 @@ textarea {
   ::file-selector-button {
     border-color: var(--border);
   }
-}
-:root {
-  --background: #fff;
-}
-.dark {
-  --background: #171717;
-  --card: #171717;
-  --sidebar: #171717;
 }
 .guidance:first-child > [data-slot="badge"] {
   background: #22c55e;

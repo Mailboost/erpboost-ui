@@ -86,6 +86,18 @@ const groups = [
     tokens: ["radius-sm", "radius-md", "radius-lg", "radius-xl"],
   },
 ];
+function formatTokenValue(value: string) {
+  const rgba = value.match(
+    /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/,
+  );
+  if (!rgba) return value === "#ffffff" ? "#fff" : value;
+  const channels = rgba.slice(1, 4).map(Number);
+  if (rgba[4] && Number(rgba[4]) < 1) {
+    channels.push(Math.round(Number(rgba[4]) * 255));
+  }
+  const hex = "#" + channels.map((v) => v.toString(16).padStart(2, "0")).join("");
+  return hex === "#ffffff" ? "#fff" : hex;
+}
 function Token({ label }: { label: string }) {
   const token = label.split(" / ")[0];
   const variable = token.startsWith("status-") ? "color-" + token : token;
@@ -100,18 +112,11 @@ function Token({ label }: { label: string }) {
             "radius-lg": ".625rem",
             "radius-xl": "calc(.625rem + 4px)",
           }[token] ?? "")
-        : token === "background" && resolvedTheme === "light"
-          ? "#fafafa"
-          : getComputedStyle(document.documentElement)
+        : formatTokenValue(
+            getComputedStyle(document.documentElement)
               .getPropertyValue("--" + variable)
-              .trim()
-              .replace("#ffffff", "#fff")
-              .replace("rgb(237, 237, 237)", "#ededed")
-              .replace("rgba(234, 88, 12, 1)", "#ea580c")
-              .replace("rgba(13, 148, 136, 1)", "#0d9488")
-              .replace("rgba(22, 78, 99, 1)", "#164e63")
-              .replace("rgba(251, 191, 36, 1)", "#fbbf24")
-              .replace("rgba(245, 158, 11, 1)", "#f59e0b"),
+              .trim(),
+          ),
     );
   }, [variable, resolvedTheme]);
   return (
