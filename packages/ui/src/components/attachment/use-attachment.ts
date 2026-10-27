@@ -78,7 +78,7 @@ function reducer(state: State, action: Action): State {
     case "UPLOAD":
       return {
         ...state,
-        items: [...action.newItems, ...state.items],
+        items: [...state.items, ...action.newItems],
         operations: [...state.operations, ...action.newOps],
       };
     case "DELETE": {
