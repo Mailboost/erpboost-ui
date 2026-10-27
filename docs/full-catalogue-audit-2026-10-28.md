@@ -53,7 +53,7 @@
 | CSV importer | モバイルの開閉。CSV実ファイルの内容一致は前回記録参照 |
 | Assistant / Chat / Email | 質問・出典・ツール・エラー、会話切替・入力・送信、メール選択・未読・スター・検索0件 |
 | Detail / Collection | タブ・検索・0件、一覧/グリッド、選択と解除 |
-| Document | 編集・タイトル/本文保存・新規文書 |
+| Document | 編集・タイトル/本文保存。New documentの作成成功は未確認で、現サンプルに作成ハンドラーはない |
 | Kanban | カード詳細、Table / Expandの選択状態を明示確認 |
 | Timeline | メニュー、分割、レーン追加・名称・色変更、Move down、リセット |
 | Conversation | 送信・返信、Markdownプレビュー、添付プレビュー、編集保存・Like |
@@ -87,10 +87,12 @@
 
 さらに[キーボード・フォーカス・文書編集の追加検証](expanded-interactions-audit-2026-10-28.md)で15シナリオを追加した。PCライト・モバイルダークの選択・日付・モーダル操作、文書のリンク・改名・埋め込み・破棄を確認し、DatePickerのダイアログ名の差分を修正した。既存ドラッグも含め参照・ローカルの40件が成功。全操作の網羅という意味ではない。
 
+[一覧・CSV・編集取消の追加検証](collection-csv-boundaries-audit-2026-10-28.md)で、11シナリオを2画面条件で確認する22ケースを追加した。文字コード・エラー復帰・列対応・訂正の保持／破棄、ページをまたぐ選択、最終ページ、絞り込み中のインライン更新を確認する。モバイルでルートのクリップにより右側のページ送り・編集ボタンをスクロールして操作できなかった差分と、Selectの小さい影の欠落を修正した。参照版にもある重複ヘッダー・0行・不正引用符の扱いも新たな制約として記録した。
+
 ## 検証コマンド
 
 - `npm test`（テストの型チェックと16ケース。実ブラウザのHTML5ドラッグを再現するテストではない）
-- `npm run test:e2e`（Chromiumでローカル20ケース。`E2E_TARGETS=reference,local,published`で3環境の計60ケース）
+- `npm run test:e2e`（Chromiumでローカル42ケース。`E2E_TARGETS=reference,local,published`で3環境の計126ケース）
 
 - `npm run typecheck`
 - `BASE_PATH=/erpboost-ui/ npm run build`

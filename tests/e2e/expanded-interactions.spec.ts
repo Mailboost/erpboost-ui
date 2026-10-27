@@ -88,6 +88,7 @@ for (const mode of [
     }) => {
       await open(page, "components/select");
       const triggers = page.locator('[data-slot="select-trigger"]');
+      await expect(triggers.first()).not.toHaveCSS("box-shadow", "none");
       await triggers.first().press("ArrowDown");
       await page
         .getByRole("option", { name: "In Review", exact: true })

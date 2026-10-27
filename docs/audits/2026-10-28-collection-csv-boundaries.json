@@ -1,0 +1,1782 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "testResults": {
+    "reference": {
+      "passed": 42,
+      "failed": 0
+    },
+    "local": {
+      "passed": 42,
+      "failed": 0
+    }
+  },
+  "tests": [
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV handles BOM, CRLF, quoted commas, quotes and blank lines",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV decodes Japanese SJIS",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV decodes Japanese UTF16LE",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV recovers from empty and oversized files and resets after Back",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV requires the name mapping and excludes already used source columns",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV corrections survive Back but are discarded on close and reopen",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / collection last-page boundaries, backward retracing and page-size reset",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / collection selections span pages; page select-all clears only its own rows",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / catalog preserves stock filter when switching grid/list and resets its page",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / inline text editing discards Escape, Cancel and outside-click drafts",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / inline amount clamps negatives and status commits remove a filtered row",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV handles BOM, CRLF, quoted commas, quotes and blank lines",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV decodes Japanese SJIS",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV decodes Japanese UTF16LE",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV recovers from empty and oversized files and resets after Back",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV requires the name mapping and excludes already used source columns",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / CSV corrections survive Back but are discarded on close and reopen",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / collection last-page boundaries, backward retracing and page-size reset",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / collection selections span pages; page select-all clears only its own rows",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / catalog preserves stock filter when switching grid/list and resets its page",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / inline text editing discards Escape, Cancel and outside-click drafts",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / desktop light / inline amount clamps negatives and status commits remove a filtered row",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV handles BOM, CRLF, quoted commas, quotes and blank lines",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV decodes Japanese SJIS",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV decodes Japanese UTF16LE",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV recovers from empty and oversized files and resets after Back",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV requires the name mapping and excludes already used source columns",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV corrections survive Back but are discarded on close and reopen",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / collection last-page boundaries, backward retracing and page-size reset",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / collection selections span pages; page select-all clears only its own rows",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / catalog preserves stock filter when switching grid/list and resets its page",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / inline text editing discards Escape, Cancel and outside-click drafts",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / inline amount clamps negatives and status commits remove a filtered row",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV handles BOM, CRLF, quoted commas, quotes and blank lines",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV decodes Japanese SJIS",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV decodes Japanese UTF16LE",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV recovers from empty and oversized files and resets after Back",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV requires the name mapping and excludes already used source columns",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / CSV corrections survive Back but are discarded on close and reopen",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / collection last-page boundaries, backward retracing and page-size reset",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / collection selections span pages; page select-all clears only its own rows",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / catalog preserves stock filter when switching grid/list and resets its page",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / inline text editing discards Escape, Cancel and outside-click drafts",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "collection-csv-boundaries.spec.ts / mobile dark / inline amount clamps negatives and status commits remove a filtered row",
+      "file": "collection-csv-boundaries.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / document links persist, renamed references resolve, embeds insert and discard",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / document links persist, renamed references resolve, embeds insert and discard",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / desktop light / autocomplete commits a keyboard suggestion and preserves free text",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / desktop light / combobox keyboard selection, chip deletion and multi-select",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / desktop light / select supports keyboard selection, multi-toggle and Escape",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / desktop light / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / desktop light / date picker announces the field and action and keeps read-only values",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / desktop light / dialog traps focus, fits the viewport and restores the trigger",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / desktop light / sheet traps focus, fits the viewport and restores the trigger",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / desktop light / autocomplete commits a keyboard suggestion and preserves free text",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / desktop light / combobox keyboard selection, chip deletion and multi-select",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / desktop light / select supports keyboard selection, multi-toggle and Escape",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / desktop light / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / desktop light / date picker announces the field and action and keeps read-only values",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / desktop light / dialog traps focus, fits the viewport and restores the trigger",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / desktop light / sheet traps focus, fits the viewport and restores the trigger",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / mobile dark / autocomplete commits a keyboard suggestion and preserves free text",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / mobile dark / combobox keyboard selection, chip deletion and multi-select",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / mobile dark / select supports keyboard selection, multi-toggle and Escape",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / mobile dark / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / mobile dark / date picker announces the field and action and keeps read-only values",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / mobile dark / dialog traps focus, fits the viewport and restores the trigger",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "expanded-interactions.spec.ts / mobile dark / sheet traps focus, fits the viewport and restores the trigger",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / mobile dark / autocomplete commits a keyboard suggestion and preserves free text",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / mobile dark / combobox keyboard selection, chip deletion and multi-select",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / mobile dark / select supports keyboard selection, multi-toggle and Escape",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / mobile dark / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / mobile dark / date picker announces the field and action and keeps read-only values",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / mobile dark / dialog traps focus, fits the viewport and restores the trigger",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "expanded-interactions.spec.ts / mobile dark / sheet traps focus, fits the viewport and restores the trigger",
+      "file": "expanded-interactions.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "native-drag.spec.ts / pipeline stages reorder in both directions and cancel without changes",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "native-drag.spec.ts / approval stages reorder and preserve stage settings",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "native-drag.spec.ts / form fields reorder while the generated schema preserves settings",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "native-drag.spec.ts / Kanban cards move between columns, reorder, and cancel",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "reference",
+      "title": "native-drag.spec.ts / timeline bars move to another lane and preserve the time range",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "native-drag.spec.ts / pipeline stages reorder in both directions and cancel without changes",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "native-drag.spec.ts / approval stages reorder and preserve stage settings",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "native-drag.spec.ts / form fields reorder while the generated schema preserves settings",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "native-drag.spec.ts / Kanban cards move between columns, reorder, and cancel",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    },
+    {
+      "project": "local",
+      "title": "native-drag.spec.ts / timeline bars move to another lane and preserve the time range",
+      "file": "native-drag.spec.ts",
+      "status": "passed"
+    }
+  ],
+  "csvEdgeCases": [
+    {
+      "label": "reference",
+      "name": "empty",
+      "text": "1\n2\n3\n4\nUpload CSV\n\nSelect a CSV file to import\n\nClose\n\nChoose file\n\nCSV (max 10MB)\n\nFailed to parse the CSV file\nDownload template",
+      "values": [],
+      "errors": []
+    },
+    {
+      "label": "reference",
+      "name": "header-only",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 0 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\nBack\nImport",
+      "values": [],
+      "errors": []
+    },
+    {
+      "label": "reference",
+      "name": "over-limit",
+      "text": "1\n2\n3\n4\nUpload CSV\n\nSelect a CSV file to import\n\nClose\n\nChoose file\n\nCSV (max 10MB)\n\nFile size exceeds the maximum allowed size\nDownload template",
+      "values": [],
+      "errors": []
+    },
+    {
+      "label": "reference",
+      "name": "utf16le",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nBack\nImport",
+      "values": [
+        "東京商事",
+        "鈴木",
+        "approved"
+      ],
+      "errors": []
+    },
+    {
+      "label": "reference",
+      "name": "sjis",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nBack\nImport",
+      "values": [
+        "東京商事",
+        "鈴木",
+        "approved"
+      ],
+      "errors": []
+    },
+    {
+      "label": "reference",
+      "name": "duplicates",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nBack\nImport",
+      "values": [
+        "Last",
+        "Suzuki",
+        "approved"
+      ],
+      "errors": []
+    },
+    {
+      "label": "reference",
+      "name": "short-row",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nErrors: 1\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nMust be one of: pending, approved, rejected\nBack\nImport",
+      "values": [
+        "Aoba",
+        "",
+        ""
+      ],
+      "errors": []
+    },
+    {
+      "label": "reference",
+      "name": "bad-quotes",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nErrors: 1\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nMust be one of: pending, approved, rejected\nBack\nImport",
+      "values": [
+        "Aoba,Suzuki,approved",
+        "",
+        ""
+      ],
+      "errors": []
+    },
+    {
+      "label": "reference",
+      "name": "tabs",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nBack\nImport",
+      "values": [
+        "Aoba",
+        "Suzuki",
+        "approved"
+      ],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "empty",
+      "text": "1\n2\n3\n4\nUpload CSV\n\nSelect a CSV file to import\n\nClose\n\nChoose file\n\nCSV (max 10MB)\n\nFailed to parse the CSV file\nDownload template",
+      "values": [],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "header-only",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 0 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\nBack\nImport",
+      "values": [],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "over-limit",
+      "text": "1\n2\n3\n4\nUpload CSV\n\nSelect a CSV file to import\n\nClose\n\nChoose file\n\nCSV (max 10MB)\n\nFile size exceeds the maximum allowed size\nDownload template",
+      "values": [],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "utf16le",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nBack\nImport",
+      "values": [
+        "東京商事",
+        "鈴木",
+        "approved"
+      ],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "sjis",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nBack\nImport",
+      "values": [
+        "東京商事",
+        "鈴木",
+        "approved"
+      ],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "duplicates",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nBack\nImport",
+      "values": [
+        "Last",
+        "Suzuki",
+        "approved"
+      ],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "short-row",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nErrors: 1\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nMust be one of: pending, approved, rejected\nBack\nImport",
+      "values": [
+        "Aoba",
+        "",
+        ""
+      ],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "bad-quotes",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nErrors: 1\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nMust be one of: pending, approved, rejected\nBack\nImport",
+      "values": [
+        "Aoba,Suzuki,approved",
+        "",
+        ""
+      ],
+      "errors": []
+    },
+    {
+      "label": "local",
+      "name": "tabs",
+      "text": "1\n2\n3\n4\nReview data\n\nReview and fix any issues before importing\n\nClose\nTotal: 1 rows\nNo errors\n#\tSupplier name\tOwner\tStatus\n1\t\n\t\n\t\nBack\nImport",
+      "values": [
+        "Aoba",
+        "Suzuki",
+        "approved"
+      ],
+      "errors": []
+    }
+  ],
+  "tableLayouts": {
+    "result": [
+      {
+        "mode": "desktop",
+        "label": "reference",
+        "route": "components/data-table",
+        "tables": [
+          {
+            "text": "Supplier Owner Status Tailor Supply Co. Tanaka Pending East Works Ltd. Sato Pending Northwind Materials Suzuki Approved Acme Components Yamada Rejected",
+            "width": 1216,
+            "height": 197,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          },
+          {
+            "text": "Supplier Owner Status Supplier 1 Tanaka Pending Supplier 2 Sato Approved Supplier 3 Suzuki Rejected Supplier 4 Yamada Pending Supplier 5 Tanaka Approved Supplier 6 Sato Rejected Supplier 7 Suzuki Pending Supplier 8 Yamada Approved Supplier 9 Tanaka Rejected Supplier 10 Sato Pending Supplier 11 Suzuki Approved Supplier 12 Yamada Rejected Supplier 13 Tanaka Pending Supplier 14 Sato Approved Supplier 15 Suzuki Rejected Supplier 16 Yamada Pending Supplier 17 Tanaka Approved Supplier 18 Sato Rejected Supplier 19 Suzuki Pending Supplier 20 Yamada Approved Supplier 21 Tanaka Rejected Supplier 22 Sato Pending Supplier 23 Suzuki Approved Supplier 24 Yamada Rejected",
+            "width": 1166,
+            "height": 208,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          },
+          {
+            "text": "Supplier Owner Status No data",
+            "width": 1166,
+            "height": 201,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "reference",
+        "route": "page/collection",
+        "tables": [
+          {
+            "text": "All Draft Submitted Ordered Closed Cancelled PO # Supplier RFQ # Status Order date Amount PO-2026-1001 Tailor Supply Co. RFQ-441 ORDERED 2026-01-01 ¥35,317 PO-2026-1002 East Works Ltd. RFQ-442 SUBMITTED 2026-02-02 ¥46,634 PO-2026-1003 Northwind Components RFQ-443 DRAFT 2026-03-03 ¥57,951 PO-2026-1004 Aoba Precision RFQ-444 CLOSED 2026-04-04 ¥69,268 PO-2026-1005 Harbor Logistics RFQ-445 CANCELLED 2026-05-05 ¥80,585 PO-2026-1006 Tailor Supply Co. RFQ-446 ORDERED 2026-06-06 ¥91,902 PO-2026-1007 East Works Ltd. RFQ-447 SUBMITTED 2026-07-07 ¥103,219 PO-2026-1008 Northwind Components RFQ-448 DRAFT 2026-08-08 ¥114,536 PO-2026-1009 Aoba Precision RFQ-449 CLOSED 2026-09-09 ¥125,853 PO-2026-1010 Harbor Logistics RFQ-450 CANCELLED 2026-01-10 ¥137,170 36 row(s) Rows per page 10 Page 1 / 4",
+            "width": 910,
+            "height": 539,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          },
+          {
+            "text": "All Draft Submitted Ordered Closed Cancelled PO # Supplier RFQ # Status Order date Amount PO-2026-1001 Tailor Supply Co. RFQ-441 ORDERED 2026-01-01 ¥35,317 PO-2026-1002 East Works Ltd. RFQ-442 SUBMITTED 2026-02-02 ¥46,634 PO-2026-1003 Northwind Components RFQ-443 DRAFT 2026-03-03 ¥57,951 PO-2026-1004 Aoba Precision RFQ-444 CLOSED 2026-04-04 ¥69,268 PO-2026-1005 Harbor Logistics RFQ-445 CANCELLED 2026-05-05 ¥80,585 PO-2026-1006 Tailor Supply Co. RFQ-446 ORDERED 2026-06-06 ¥91,902 PO-2026-1007 East Works Ltd. RFQ-447 SUBMITTED 2026-07-07 ¥103,219 PO-2026-1008 Northwind Components RFQ-448 DRAFT 2026-08-08 ¥114,536 PO-2026-1009 Aoba Precision RFQ-449 CLOSED 2026-09-09 ¥125,853 PO-2026-1010 Harbor Logistics RFQ-450 CANCELLED 2026-01-10 ¥137,170 36 row(s) Rows per page 10 Page 1 / 4",
+            "width": 910,
+            "height": 557,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          },
+          {
+            "text": "All In stock Low stock Out of stock Discontinued 🖊️ Ballpoint pens (black, 10-pack) In stock SKU-4201 · Stationery Tailor Supply Co. ¥8,257 📄 A4 copy paper, 5,000 sheets In stock SKU-4202 · Stationery East Works Ltd. ¥16,034 📎 Medium stapler In stock SKU-4203 · Stationery Northwind Components ¥23,811 🖥️ 27-inch 4K monitor Low stock SKU-4204 · Electronics Aoba Precision ¥31,588 ⌨️ Mechanical keyboard In stock SKU-4205 · Electronics Harbor Logistics ¥39,365 💻 14-inch laptop Out of stock SKU-4206 · Electronics Tailor Supply Co. ¥47,142 🔌 USB-C hub 7-in-1 In stock SKU-4207 · Electronics East Works Ltd. ¥54,919 ⛑️ Safety helmet (white) Discontinued SKU-4208 · Safety gear Northwind Components ¥62,696 🥽 Safety glasses In stock SKU-4209 · Safety gear Aoba Precision ¥70,473 🧤 Work gloves (L) In stock SKU-4210 · Safety gear Harbor Logistics ¥78,250 🪛 Cordless drill 18V In stock SKU-4211 · Tools Tailor Supply Co. ¥86,027 🔧 Wrench set (12-piece) Low stock SKU-4212 · Tools East Works Ltd. ¥1,804 32 row(s) Rows per page 12 Page 1 / 3",
+            "width": 910,
+            "height": 1005.25,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "reference",
+        "route": "page/dashboard-with-charts",
+        "tables": [
+          {
+            "text": "PO Supplier Amount Due Status PO-24089 Tailor Supply Co. ¥420K May 18 Open PO-24091 East Works Ltd. ¥1.2M May 4 Overdue PO-24102 Northwind Materials ¥310K May 22 In review PO-24105 Acme Components ¥89K Jun 2 Open",
+            "width": 908,
+            "height": 196,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "reference",
+        "route": "page/detail-2col-action-panel",
+        "tables": [
+          {
+            "text": "All Open Received Closed PO Amount Submitted Status PO-24118 ¥186K 2026-05-08 Open PO-24072 ¥54K 2026-04-21 Received PO-23941 ¥920K 2026-03-02 Closed PO-24102 ¥128K 2026-05-01 Open PO-23988 ¥312K 2026-04-08 Received",
+            "width": 612,
+            "height": 288.5,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "reference",
+        "route": "patterns/datatable-inline-edit",
+        "tables": [
+          {
+            "text": "SKU Label Qty Owner Status Confirmed SKU-1001 Aluminum bracket 120 Miller Active SKU-2044 Silicone gasket roll 40 Carter Draft SKU-0312 Power supply unit 8 Bennett Hold",
+            "width": 1232,
+            "height": 164,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "reference",
+        "route": "patterns/bulk-actions-bar",
+        "tables": [
+          {
+            "text": "Status Supplier Status Tailor Supply Co. Pending East Works Ltd. Approved Northwind Materials Pending Acme Components Rejected",
+            "width": 1232,
+            "height": 252,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "local",
+        "route": "components/data-table",
+        "tables": [
+          {
+            "text": "Supplier Owner Status Tailor Supply Co. Tanaka Pending East Works Ltd. Sato Pending Northwind Materials Suzuki Approved Acme Components Yamada Rejected",
+            "width": 1216,
+            "height": 197,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          },
+          {
+            "text": "Supplier Owner Status Supplier 1 Tanaka Pending Supplier 2 Sato Approved Supplier 3 Suzuki Rejected Supplier 4 Yamada Pending Supplier 5 Tanaka Approved Supplier 6 Sato Rejected Supplier 7 Suzuki Pending Supplier 8 Yamada Approved Supplier 9 Tanaka Rejected Supplier 10 Sato Pending Supplier 11 Suzuki Approved Supplier 12 Yamada Rejected Supplier 13 Tanaka Pending Supplier 14 Sato Approved Supplier 15 Suzuki Rejected Supplier 16 Yamada Pending Supplier 17 Tanaka Approved Supplier 18 Sato Rejected Supplier 19 Suzuki Pending Supplier 20 Yamada Approved Supplier 21 Tanaka Rejected Supplier 22 Sato Pending Supplier 23 Suzuki Approved Supplier 24 Yamada Rejected",
+            "width": 1166,
+            "height": 208,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          },
+          {
+            "text": "Supplier Owner Status No data",
+            "width": 1166,
+            "height": 201,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "local",
+        "route": "page/collection",
+        "tables": [
+          {
+            "text": "All Draft Submitted Ordered Closed Cancelled PO # Supplier RFQ # Status Order date Amount PO-2026-1001 Tailor Supply Co. RFQ-441 ORDERED 2026-01-01 ¥35,317 PO-2026-1002 East Works Ltd. RFQ-442 SUBMITTED 2026-02-02 ¥46,634 PO-2026-1003 Northwind Components RFQ-443 DRAFT 2026-03-03 ¥57,951 PO-2026-1004 Aoba Precision RFQ-444 CLOSED 2026-04-04 ¥69,268 PO-2026-1005 Harbor Logistics RFQ-445 CANCELLED 2026-05-05 ¥80,585 PO-2026-1006 Tailor Supply Co. RFQ-446 ORDERED 2026-06-06 ¥91,902 PO-2026-1007 East Works Ltd. RFQ-447 SUBMITTED 2026-07-07 ¥103,219 PO-2026-1008 Northwind Components RFQ-448 DRAFT 2026-08-08 ¥114,536 PO-2026-1009 Aoba Precision RFQ-449 CLOSED 2026-09-09 ¥125,853 PO-2026-1010 Harbor Logistics RFQ-450 CANCELLED 2026-01-10 ¥137,170 36 row(s) Rows per page 10 Page 1 / 4",
+            "width": 910,
+            "height": 539,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          },
+          {
+            "text": "All Draft Submitted Ordered Closed Cancelled PO # Supplier RFQ # Status Order date Amount PO-2026-1001 Tailor Supply Co. RFQ-441 ORDERED 2026-01-01 ¥35,317 PO-2026-1002 East Works Ltd. RFQ-442 SUBMITTED 2026-02-02 ¥46,634 PO-2026-1003 Northwind Components RFQ-443 DRAFT 2026-03-03 ¥57,951 PO-2026-1004 Aoba Precision RFQ-444 CLOSED 2026-04-04 ¥69,268 PO-2026-1005 Harbor Logistics RFQ-445 CANCELLED 2026-05-05 ¥80,585 PO-2026-1006 Tailor Supply Co. RFQ-446 ORDERED 2026-06-06 ¥91,902 PO-2026-1007 East Works Ltd. RFQ-447 SUBMITTED 2026-07-07 ¥103,219 PO-2026-1008 Northwind Components RFQ-448 DRAFT 2026-08-08 ¥114,536 PO-2026-1009 Aoba Precision RFQ-449 CLOSED 2026-09-09 ¥125,853 PO-2026-1010 Harbor Logistics RFQ-450 CANCELLED 2026-01-10 ¥137,170 36 row(s) Rows per page 10 Page 1 / 4",
+            "width": 910,
+            "height": 557,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          },
+          {
+            "text": "All In stock Low stock Out of stock Discontinued 🖊️ Ballpoint pens (black, 10-pack) In stock SKU-4201 · Stationery Tailor Supply Co. ¥8,257 📄 A4 copy paper, 5,000 sheets In stock SKU-4202 · Stationery East Works Ltd. ¥16,034 📎 Medium stapler In stock SKU-4203 · Stationery Northwind Components ¥23,811 🖥️ 27-inch 4K monitor Low stock SKU-4204 · Electronics Aoba Precision ¥31,588 ⌨️ Mechanical keyboard In stock SKU-4205 · Electronics Harbor Logistics ¥39,365 💻 14-inch laptop Out of stock SKU-4206 · Electronics Tailor Supply Co. ¥47,142 🔌 USB-C hub 7-in-1 In stock SKU-4207 · Electronics East Works Ltd. ¥54,919 ⛑️ Safety helmet (white) Discontinued SKU-4208 · Safety gear Northwind Components ¥62,696 🥽 Safety glasses In stock SKU-4209 · Safety gear Aoba Precision ¥70,473 🧤 Work gloves (L) In stock SKU-4210 · Safety gear Harbor Logistics ¥78,250 🪛 Cordless drill 18V In stock SKU-4211 · Tools Tailor Supply Co. ¥86,027 🔧 Wrench set (12-piece) Low stock SKU-4212 · Tools East Works Ltd. ¥1,804 32 row(s) Rows per page 12 Page 1 / 3",
+            "width": 910,
+            "height": 1005.25,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "local",
+        "route": "page/dashboard-with-charts",
+        "tables": [
+          {
+            "text": "PO Supplier Amount Due Status PO-24089 Tailor Supply Co. ¥420K May 18 Open PO-24091 East Works Ltd. ¥1.2M May 4 Overdue PO-24102 Northwind Materials ¥310K May 22 In review PO-24105 Acme Components ¥89K Jun 2 Open",
+            "width": 908,
+            "height": 196,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "local",
+        "route": "page/detail-2col-action-panel",
+        "tables": [
+          {
+            "text": "All Open Received Closed PO Amount Submitted Status PO-24118 ¥186K 2026-05-08 Open PO-24072 ¥54K 2026-04-21 Received PO-23941 ¥920K 2026-03-02 Closed PO-24102 ¥128K 2026-05-01 Open PO-23988 ¥312K 2026-04-08 Received",
+            "width": 612,
+            "height": 288.5,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "local",
+        "route": "patterns/datatable-inline-edit",
+        "tables": [
+          {
+            "text": "SKU Label Qty Owner Status Confirmed SKU-1001 Aluminum bracket 120 Miller Active SKU-2044 Silicone gasket roll 40 Carter Draft SKU-0312 Power supply unit 8 Bennett Hold",
+            "width": 1232,
+            "height": 164,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "desktop",
+        "label": "local",
+        "route": "patterns/bulk-actions-bar",
+        "tables": [
+          {
+            "text": "Status Supplier Status Tailor Supply Co. Pending East Works Ltd. Approved Northwind Materials Pending Acme Components Rejected",
+            "width": 1232,
+            "height": 252,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "reference",
+        "route": "components/data-table",
+        "tables": [
+          {
+            "text": "Supplier Owner Status Tailor Supply Co. Tanaka Pending East Works Ltd. Sato Pending Northwind Materials Suzuki Approved Acme Components Yamada Rejected",
+            "width": 311,
+            "height": 197,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          },
+          {
+            "text": "Supplier Owner Status Supplier 1 Tanaka Pending Supplier 2 Sato Approved Supplier 3 Suzuki Rejected Supplier 4 Yamada Pending Supplier 5 Tanaka Approved Supplier 6 Sato Rejected Supplier 7 Suzuki Pending Supplier 8 Yamada Approved Supplier 9 Tanaka Rejected Supplier 10 Sato Pending Supplier 11 Suzuki Approved Supplier 12 Yamada Rejected Supplier 13 Tanaka Pending Supplier 14 Sato Approved Supplier 15 Suzuki Rejected Supplier 16 Yamada Pending Supplier 17 Tanaka Approved Supplier 18 Sato Rejected Supplier 19 Suzuki Pending Supplier 20 Yamada Approved Supplier 21 Tanaka Rejected Supplier 22 Sato Pending Supplier 23 Suzuki Approved Supplier 24 Yamada Rejected",
+            "width": 261,
+            "height": 208,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          },
+          {
+            "text": "Supplier Owner Status No data",
+            "width": 261,
+            "height": 201,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "reference",
+        "route": "page/collection",
+        "tables": [
+          {
+            "text": "All Draft Submitted Ordered Closed Cancelled PO # Supplier RFQ # Status Order date Amount PO-2026-1001 Tailor Supply Co. RFQ-441 ORDERED 2026-01-01 ¥35,317 PO-2026-1002 East Works Ltd. RFQ-442 SUBMITTED 2026-02-02 ¥46,634 PO-2026-1003 Northwind Components RFQ-443 DRAFT 2026-03-03 ¥57,951 PO-2026-1004 Aoba Precision RFQ-444 CLOSED 2026-04-04 ¥69,268 PO-2026-1005 Harbor Logistics RFQ-445 CANCELLED 2026-05-05 ¥80,585 PO-2026-1006 Tailor Supply Co. RFQ-446 ORDERED 2026-06-06 ¥91,902 PO-2026-1007 East Works Ltd. RFQ-447 SUBMITTED 2026-07-07 ¥103,219 PO-2026-1008 Northwind Components RFQ-448 DRAFT 2026-08-08 ¥114,536 PO-2026-1009 Aoba Precision RFQ-449 CLOSED 2026-09-09 ¥125,853 PO-2026-1010 Harbor Logistics RFQ-450 CANCELLED 2026-01-10 ¥137,170 36 row(s) Rows per page 10 Page 1 / 4",
+            "width": 309,
+            "height": 591,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          },
+          {
+            "text": "All Draft Submitted Ordered Closed Cancelled PO # Supplier RFQ # Status Order date Amount PO-2026-1001 Tailor Supply Co. RFQ-441 ORDERED 2026-01-01 ¥35,317 PO-2026-1002 East Works Ltd. RFQ-442 SUBMITTED 2026-02-02 ¥46,634 PO-2026-1003 Northwind Components RFQ-443 DRAFT 2026-03-03 ¥57,951 PO-2026-1004 Aoba Precision RFQ-444 CLOSED 2026-04-04 ¥69,268 PO-2026-1005 Harbor Logistics RFQ-445 CANCELLED 2026-05-05 ¥80,585 PO-2026-1006 Tailor Supply Co. RFQ-446 ORDERED 2026-06-06 ¥91,902 PO-2026-1007 East Works Ltd. RFQ-447 SUBMITTED 2026-07-07 ¥103,219 PO-2026-1008 Northwind Components RFQ-448 DRAFT 2026-08-08 ¥114,536 PO-2026-1009 Aoba Precision RFQ-449 CLOSED 2026-09-09 ¥125,853 PO-2026-1010 Harbor Logistics RFQ-450 CANCELLED 2026-01-10 ¥137,170 36 row(s) Rows per page 10 Page 1 / 4",
+            "width": 309,
+            "height": 609,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          },
+          {
+            "text": "All In stock Low stock Out of stock Discontinued 🖊️ Ballpoint pens (black, 10-pack) In stock SKU-4201 · Stationery Tailor Supply Co. ¥8,257 📄 A4 copy paper, 5,000 sheets In stock SKU-4202 · Stationery East Works Ltd. ¥16,034 📎 Medium stapler In stock SKU-4203 · Stationery Northwind Components ¥23,811 🖥️ 27-inch 4K monitor Low stock SKU-4204 · Electronics Aoba Precision ¥31,588 ⌨️ Mechanical keyboard In stock SKU-4205 · Electronics Harbor Logistics ¥39,365 💻 14-inch laptop Out of stock SKU-4206 · Electronics Tailor Supply Co. ¥47,142 🔌 USB-C hub 7-in-1 In stock SKU-4207 · Electronics East Works Ltd. ¥54,919 ⛑️ Safety helmet (white) Discontinued SKU-4208 · Safety gear Northwind Components ¥62,696 🥽 Safety glasses In stock SKU-4209 · Safety gear Aoba Precision ¥70,473 🧤 Work gloves (L) In stock SKU-4210 · Safety gear Harbor Logistics ¥78,250 🪛 Cordless drill 18V In stock SKU-4211 · Tools Tailor Supply Co. ¥86,027 🔧 Wrench set (12-piece) Low stock SKU-4212 · Tools East Works Ltd. ¥1,804 32 row(s) Rows per page 12 Page 1 / 3",
+            "width": 309,
+            "height": 4153,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "reference",
+        "route": "page/dashboard-with-charts",
+        "tables": [
+          {
+            "text": "PO Supplier Amount Due Status PO-24089 Tailor Supply Co. ¥420K May 18 Open PO-24091 East Works Ltd. ¥1.2M May 4 Overdue PO-24102 Northwind Materials ¥310K May 22 In review PO-24105 Acme Components ¥89K Jun 2 Open",
+            "width": 307,
+            "height": 196,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "reference",
+        "route": "page/detail-2col-action-panel",
+        "tables": [
+          {
+            "text": "All Open Received Closed PO Amount Submitted Status PO-24118 ¥186K 2026-05-08 Open PO-24072 ¥54K 2026-04-21 Received PO-23941 ¥920K 2026-03-02 Closed PO-24102 ¥128K 2026-05-01 Open PO-23988 ¥312K 2026-04-08 Received",
+            "width": 307,
+            "height": 288.5,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "reference",
+        "route": "patterns/datatable-inline-edit",
+        "tables": [
+          {
+            "text": "SKU Label Qty Owner Status Confirmed SKU-1001 Aluminum bracket 120 Miller Active SKU-2044 Silicone gasket roll 40 Carter Draft SKU-0312 Power supply unit 8 Bennett Hold",
+            "width": 343,
+            "height": 164,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "reference",
+        "route": "patterns/bulk-actions-bar",
+        "tables": [
+          {
+            "text": "Status Supplier Status Tailor Supply Co. Pending East Works Ltd. Approved Northwind Materials Pending Acme Components Rejected",
+            "width": 343,
+            "height": 252,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "local",
+        "route": "components/data-table",
+        "tables": [
+          {
+            "text": "Supplier Owner Status Tailor Supply Co. Tanaka Pending East Works Ltd. Sato Pending Northwind Materials Suzuki Approved Acme Components Yamada Rejected",
+            "width": 311,
+            "height": 197,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          },
+          {
+            "text": "Supplier Owner Status Supplier 1 Tanaka Pending Supplier 2 Sato Approved Supplier 3 Suzuki Rejected Supplier 4 Yamada Pending Supplier 5 Tanaka Approved Supplier 6 Sato Rejected Supplier 7 Suzuki Pending Supplier 8 Yamada Approved Supplier 9 Tanaka Rejected Supplier 10 Sato Pending Supplier 11 Suzuki Approved Supplier 12 Yamada Rejected Supplier 13 Tanaka Pending Supplier 14 Sato Approved Supplier 15 Suzuki Rejected Supplier 16 Yamada Pending Supplier 17 Tanaka Approved Supplier 18 Sato Rejected Supplier 19 Suzuki Pending Supplier 20 Yamada Approved Supplier 21 Tanaka Rejected Supplier 22 Sato Pending Supplier 23 Suzuki Approved Supplier 24 Yamada Rejected",
+            "width": 261,
+            "height": 208,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          },
+          {
+            "text": "Supplier Owner Status No data",
+            "width": 261,
+            "height": 201,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "local",
+        "route": "page/collection",
+        "tables": [
+          {
+            "text": "All Draft Submitted Ordered Closed Cancelled PO # Supplier RFQ # Status Order date Amount PO-2026-1001 Tailor Supply Co. RFQ-441 ORDERED 2026-01-01 ¥35,317 PO-2026-1002 East Works Ltd. RFQ-442 SUBMITTED 2026-02-02 ¥46,634 PO-2026-1003 Northwind Components RFQ-443 DRAFT 2026-03-03 ¥57,951 PO-2026-1004 Aoba Precision RFQ-444 CLOSED 2026-04-04 ¥69,268 PO-2026-1005 Harbor Logistics RFQ-445 CANCELLED 2026-05-05 ¥80,585 PO-2026-1006 Tailor Supply Co. RFQ-446 ORDERED 2026-06-06 ¥91,902 PO-2026-1007 East Works Ltd. RFQ-447 SUBMITTED 2026-07-07 ¥103,219 PO-2026-1008 Northwind Components RFQ-448 DRAFT 2026-08-08 ¥114,536 PO-2026-1009 Aoba Precision RFQ-449 CLOSED 2026-09-09 ¥125,853 PO-2026-1010 Harbor Logistics RFQ-450 CANCELLED 2026-01-10 ¥137,170 36 row(s) Rows per page 10 Page 1 / 4",
+            "width": 309,
+            "height": 591,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          },
+          {
+            "text": "All Draft Submitted Ordered Closed Cancelled PO # Supplier RFQ # Status Order date Amount PO-2026-1001 Tailor Supply Co. RFQ-441 ORDERED 2026-01-01 ¥35,317 PO-2026-1002 East Works Ltd. RFQ-442 SUBMITTED 2026-02-02 ¥46,634 PO-2026-1003 Northwind Components RFQ-443 DRAFT 2026-03-03 ¥57,951 PO-2026-1004 Aoba Precision RFQ-444 CLOSED 2026-04-04 ¥69,268 PO-2026-1005 Harbor Logistics RFQ-445 CANCELLED 2026-05-05 ¥80,585 PO-2026-1006 Tailor Supply Co. RFQ-446 ORDERED 2026-06-06 ¥91,902 PO-2026-1007 East Works Ltd. RFQ-447 SUBMITTED 2026-07-07 ¥103,219 PO-2026-1008 Northwind Components RFQ-448 DRAFT 2026-08-08 ¥114,536 PO-2026-1009 Aoba Precision RFQ-449 CLOSED 2026-09-09 ¥125,853 PO-2026-1010 Harbor Logistics RFQ-450 CANCELLED 2026-01-10 ¥137,170 36 row(s) Rows per page 10 Page 1 / 4",
+            "width": 309,
+            "height": 609,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          },
+          {
+            "text": "All In stock Low stock Out of stock Discontinued 🖊️ Ballpoint pens (black, 10-pack) In stock SKU-4201 · Stationery Tailor Supply Co. ¥8,257 📄 A4 copy paper, 5,000 sheets In stock SKU-4202 · Stationery East Works Ltd. ¥16,034 📎 Medium stapler In stock SKU-4203 · Stationery Northwind Components ¥23,811 🖥️ 27-inch 4K monitor Low stock SKU-4204 · Electronics Aoba Precision ¥31,588 ⌨️ Mechanical keyboard In stock SKU-4205 · Electronics Harbor Logistics ¥39,365 💻 14-inch laptop Out of stock SKU-4206 · Electronics Tailor Supply Co. ¥47,142 🔌 USB-C hub 7-in-1 In stock SKU-4207 · Electronics East Works Ltd. ¥54,919 ⛑️ Safety helmet (white) Discontinued SKU-4208 · Safety gear Northwind Components ¥62,696 🥽 Safety glasses In stock SKU-4209 · Safety gear Aoba Precision ¥70,473 🧤 Work gloves (L) In stock SKU-4210 · Safety gear Harbor Logistics ¥78,250 🪛 Cordless drill 18V In stock SKU-4211 · Tools Tailor Supply Co. ¥86,027 🔧 Wrench set (12-piece) Low stock SKU-4212 · Tools East Works Ltd. ¥1,804 32 row(s) Rows per page 12 Page 1 / 3",
+            "width": 309,
+            "height": 4153,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 1
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "local",
+        "route": "page/dashboard-with-charts",
+        "tables": [
+          {
+            "text": "PO Supplier Amount Due Status PO-24089 Tailor Supply Co. ¥420K May 18 Open PO-24091 East Works Ltd. ¥1.2M May 4 Overdue PO-24102 Northwind Materials ¥310K May 22 In review PO-24105 Acme Components ¥89K Jun 2 Open",
+            "width": 307,
+            "height": 196,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "local",
+        "route": "page/detail-2col-action-panel",
+        "tables": [
+          {
+            "text": "All Open Received Closed PO Amount Submitted Status PO-24118 ¥186K 2026-05-08 Open PO-24072 ¥54K 2026-04-21 Received PO-23941 ¥920K 2026-03-02 Closed PO-24102 ¥128K 2026-05-01 Open PO-23988 ¥312K 2026-04-08 Received",
+            "width": 307,
+            "height": 288.5,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "local",
+        "route": "patterns/datatable-inline-edit",
+        "tables": [
+          {
+            "text": "SKU Label Qty Owner Status Confirmed SKU-1001 Aluminum bracket 120 Miller Active SKU-2044 Silicone gasket roll 40 Carter Draft SKU-0312 Power supply unit 8 Bennett Hold",
+            "width": 343,
+            "height": 164,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      },
+      {
+        "mode": "mobile",
+        "label": "local",
+        "route": "patterns/bulk-actions-bar",
+        "tables": [
+          {
+            "text": "Status Supplier Status Tailor Supply Co. Pending East Works Ltd. Approved Northwind Materials Pending Acme Components Rejected",
+            "width": 343,
+            "height": 252,
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "footerCount": 0
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "diffs": []
+  },
+  "scrollBefore": [
+    {
+      "label": "reference",
+      "button": {
+        "x": 319.921875,
+        "y": 681,
+        "width": 36,
+        "height": 36
+      },
+      "ancestors": [
+        {
+          "tag": "BUTTON",
+          "slot": "button",
+          "class": "astw:inline-flex astw:cursor-pointer astw:items-center astw:justify-center astw:gap-2 astw:whitespace-nowrap astw:rounded-md astw:text-sm astw:font-medium astw:transition-all astw:disabled:pointer-events-none astw:disabled:opacity-50 astw:[&_svg]:pointer-events-none astw:[&_svg:not([class*='size-'])]:size-4 astw:shrink-0 astw:[&_svg]:shrink-0 astw:outline-none astw:focus-visible:border-ring astw:focus-visible:ring-ring/50 astw:focus-visible:ring-[3px] astw:aria-invalid:ring-destructive/20 astw:dark:aria-invalid:ring-destructive/40 astw:aria-invalid:border-destructive astw:border astw:border-border astw:bg-background astw:shadow-xs astw:hover:bg-accent astw:hover:text-accent-foreground astw:dark:bg-input/30 astw:dark:border-input astw:dark:hover:bg-input/50 astw:size-9",
+          "x": 319.921875,
+          "width": 36,
+          "scrollWidth": 34,
+          "clientWidth": 34,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "astw:flex astw:items-center astw:justify-end astw:gap-2 astw:ml-auto",
+          "x": -36.09375,
+          "width": 392.015625,
+          "scrollWidth": 392,
+          "clientWidth": 392,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "astw:flex astw:w-full astw:items-center astw:justify-between astw:gap-2",
+          "x": -86,
+          "width": 275,
+          "scrollWidth": 442,
+          "clientWidth": 275,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": "data-table-footer",
+          "class": "astw:flex astw:shrink-0 astw:items-center astw:border-t astw:border-border astw:px-4 astw:py-2",
+          "x": -102,
+          "width": 307,
+          "scrollWidth": 458,
+          "clientWidth": 307,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": "data-table",
+          "class": "astw:flex astw:flex-col astw:min-h-0 astw:border astw:border-border astw:rounded-md astw:bg-card",
+          "x": -103,
+          "width": 309,
+          "scrollWidth": 460,
+          "clientWidth": 307,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "astw:min-w-0 astw:flex astw:flex-col astw:gap-4",
+          "x": -103,
+          "width": 309,
+          "scrollWidth": 461,
+          "clientWidth": 309,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "astw:grid astw:grid-cols-1 astw:w-full astw:pb-4 astw:gap-4 astw:[&>[data-layout-header]]:col-span-full",
+          "x": -103,
+          "width": 309,
+          "scrollWidth": 461,
+          "clientWidth": 309,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "",
+          "x": -103,
+          "width": 309,
+          "scrollWidth": 461,
+          "clientWidth": 309,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "flex min-h-0 flex-1 flex-col gap-4",
+          "x": -103,
+          "width": 309,
+          "scrollWidth": 461,
+          "clientWidth": 309,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "MAIN",
+          "slot": null,
+          "class": "flex min-w-0 flex-1 flex-col overflow-y-auto px-4 md:px-8 md:py-2 bg-card",
+          "x": 17,
+          "width": 341,
+          "scrollWidth": 477,
+          "clientWidth": 341,
+          "scrollLeft": 136,
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "flex h-[720px] w-full overflow-hidden rounded-xl border bg-card",
+          "x": 16,
+          "width": 343,
+          "scrollWidth": 341,
+          "clientWidth": 341,
+          "scrollLeft": 0,
+          "overflowX": "hidden",
+          "overflowY": "hidden",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "mx-auto w-full space-y-10",
+          "x": 16,
+          "width": 343,
+          "scrollWidth": 343,
+          "clientWidth": 343,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "min-h-dvh bg-card p-4 sm:p-6",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "MAIN",
+          "slot": null,
+          "class": "min-h-dvh bg-card",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "BODY",
+          "slot": null,
+          "class": "",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "HTML",
+          "slot": null,
+          "class": "dark",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "label": "local",
+      "button": {
+        "x": 455.921875,
+        "y": 681,
+        "width": 36,
+        "height": 36
+      },
+      "ancestors": [
+        {
+          "tag": "BUTTON",
+          "slot": "button",
+          "class": "astw:inline-flex astw:cursor-pointer astw:items-center astw:justify-center astw:gap-2 astw:whitespace-nowrap astw:rounded-md astw:text-label-md astw:transition-all astw:disabled:pointer-events-none astw:disabled:opacity-50 astw:[&_svg]:pointer-events-none astw:[&_svg:not([class*='size-'])]:size-4 astw:shrink-0 astw:[&_svg]:shrink-0 astw:outline-none astw:focus-visible:border-ring astw:focus-visible:ring-ring/50 astw:focus-visible:ring-[3px] astw:aria-invalid:ring-danger-solid/20 astw:dark:aria-invalid:ring-danger-solid/40 astw:aria-invalid:border-danger-solid astw:border astw:border-border astw:bg-background astw:shadow-xs astw:hover:bg-accent astw:hover:text-accent-foreground astw:dark:bg-input/30 astw:dark:border-input astw:dark:hover:bg-input/50 astw:size-9",
+          "x": 455.921875,
+          "width": 36,
+          "scrollWidth": 34,
+          "clientWidth": 34,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "astw:flex astw:items-center astw:justify-end astw:gap-2 astw:ml-auto",
+          "x": 99.90625,
+          "width": 392.015625,
+          "scrollWidth": 392,
+          "clientWidth": 392,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "astw:flex astw:items-center astw:justify-between astw:gap-2 astw:w-full",
+          "x": 50,
+          "width": 275,
+          "scrollWidth": 442,
+          "clientWidth": 275,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": "data-table-footer",
+          "class": "astw:flex astw:shrink-0 astw:items-center astw:border-t astw:border-border astw:px-4 astw:py-2",
+          "x": 34,
+          "width": 307,
+          "scrollWidth": 458,
+          "clientWidth": 307,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": "data-table",
+          "class": "astw:flex astw:flex-col astw:min-h-0 astw:overflow-clip astw:border astw:border-border astw:rounded-md astw:bg-card astw:[&>[data-slot=toolbar]]:rounded-b-none astw:[&>[data-slot=toolbar]]:border-x-0 astw:[&>[data-slot=toolbar]]:border-t-0",
+          "x": 33,
+          "width": 309,
+          "scrollWidth": 460,
+          "clientWidth": 307,
+          "scrollLeft": 0,
+          "overflowX": "clip",
+          "overflowY": "clip",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "astw:min-w-0 astw:flex astw:flex-col astw:gap-4",
+          "x": 33,
+          "width": 309,
+          "scrollWidth": 309,
+          "clientWidth": 309,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "astw:grid astw:grid-cols-1 astw:w-full astw:pb-4 astw:gap-4 astw:[&>[data-layout-header]]:col-span-full",
+          "x": 33,
+          "width": 309,
+          "scrollWidth": 309,
+          "clientWidth": 309,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "",
+          "x": 33,
+          "width": 309,
+          "scrollWidth": 309,
+          "clientWidth": 309,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "flex min-h-0 flex-1 flex-col gap-4",
+          "x": 33,
+          "width": 309,
+          "scrollWidth": 309,
+          "clientWidth": 309,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "flex"
+        },
+        {
+          "tag": "MAIN",
+          "slot": null,
+          "class": "flex min-w-0 flex-1 flex-col overflow-y-auto bg-card px-4 md:px-8 md:py-2",
+          "x": 17,
+          "width": 341,
+          "scrollWidth": 341,
+          "clientWidth": 341,
+          "scrollLeft": 0,
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "reference-screen flex h-[720px] w-full overflow-hidden rounded-xl border bg-card",
+          "x": 16,
+          "width": 343,
+          "scrollWidth": 341,
+          "clientWidth": 341,
+          "scrollLeft": 0,
+          "overflowX": "hidden",
+          "overflowY": "hidden",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "mx-auto w-full space-y-10",
+          "x": 16,
+          "width": 343,
+          "scrollWidth": 343,
+          "clientWidth": 343,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "min-h-dvh bg-card p-4 sm:p-6",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "MAIN",
+          "slot": null,
+          "class": "min-h-dvh bg-card",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "slot": null,
+          "class": "",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "BODY",
+          "slot": null,
+          "class": "",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "HTML",
+          "slot": null,
+          "class": "dark",
+          "x": 0,
+          "width": 375,
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "scrollLeft": 0,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "display": "block"
+        }
+      ]
+    }
+  ],
+  "wheelAfterFix": [
+    {
+      "label": "reference",
+      "lastButtonAfterWheel": {
+        "x": 319.921875,
+        "y": 681,
+        "width": 36,
+        "height": 36
+      },
+      "rows": [
+        "PO-2026-1031Tailor Supply Co.RFQ-471ORDERED2026-04-05¥374,827",
+        "PO-2026-1032East Works Ltd.RFQ-472SUBMITTED2026-05-06¥386,144",
+        "PO-2026-1033Northwind ComponentsRFQ-473DRAFT2026-06-07¥397,461",
+        "PO-2026-1034Aoba PrecisionRFQ-474CLOSED2026-07-08¥408,778",
+        "PO-2026-1035Harbor LogisticsRFQ-475CANCELLED2026-08-09¥420,095",
+        "PO-2026-1036Tailor Supply Co.RFQ-476ORDERED2026-09-10¥431,412"
+      ],
+      "overflow": "visible"
+    },
+    {
+      "label": "local",
+      "lastButtonAfterWheel": {
+        "x": 319.921875,
+        "y": 681,
+        "width": 36,
+        "height": 36
+      },
+      "rows": [
+        "PO-2026-1031Tailor Supply Co.RFQ-471ORDERED2026-04-05¥374,827",
+        "PO-2026-1032East Works Ltd.RFQ-472SUBMITTED2026-05-06¥386,144",
+        "PO-2026-1033Northwind ComponentsRFQ-473DRAFT2026-06-07¥397,461",
+        "PO-2026-1034Aoba PrecisionRFQ-474CLOSED2026-07-08¥408,778",
+        "PO-2026-1035Harbor LogisticsRFQ-475CANCELLED2026-08-09¥420,095",
+        "PO-2026-1036Tailor Supply Co.RFQ-476ORDERED2026-09-10¥431,412"
+      ],
+      "overflow": "visible"
+    }
+  ],
+  "finalPager": [
+    {
+      "label": "reference",
+      "last": {
+        "x": 319.921875,
+        "y": 524.5,
+        "width": 36,
+        "height": 36
+      },
+      "rows": [
+        "PO-2026-1031Tailor Supply Co.RFQ-471ORDERED2026-04-05¥374,827",
+        "PO-2026-1032East Works Ltd.RFQ-472SUBMITTED2026-05-06¥386,144",
+        "PO-2026-1033Northwind ComponentsRFQ-473DRAFT2026-06-07¥397,461",
+        "PO-2026-1034Aoba PrecisionRFQ-474CLOSED2026-07-08¥408,778",
+        "PO-2026-1035Harbor LogisticsRFQ-475CANCELLED2026-08-09¥420,095",
+        "PO-2026-1036Tailor Supply Co.RFQ-476ORDERED2026-09-10¥431,412"
+      ],
+      "select": {
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.35) 0px 1px 2px 0px",
+        "color": "rgb(250, 250, 250)",
+        "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0447059)",
+        "font": "14px / 20px \"Inter Variable\", Inter, ui-sans-serif, system-ui, sans-serif"
+      }
+    },
+    {
+      "label": "local",
+      "last": {
+        "x": 319.921875,
+        "y": 524.5,
+        "width": 36,
+        "height": 36
+      },
+      "rows": [
+        "PO-2026-1031Tailor Supply Co.RFQ-471ORDERED2026-04-05¥374,827",
+        "PO-2026-1032East Works Ltd.RFQ-472SUBMITTED2026-05-06¥386,144",
+        "PO-2026-1033Northwind ComponentsRFQ-473DRAFT2026-06-07¥397,461",
+        "PO-2026-1034Aoba PrecisionRFQ-474CLOSED2026-07-08¥408,778",
+        "PO-2026-1035Harbor LogisticsRFQ-475CANCELLED2026-08-09¥420,095",
+        "PO-2026-1036Tailor Supply Co.RFQ-476ORDERED2026-09-10¥431,412"
+      ],
+      "select": {
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.35) 0px 1px 2px 0px",
+        "color": "rgb(250, 250, 250)",
+        "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0447059)",
+        "font": "14px / 20px \"Inter Variable\", Inter, ui-sans-serif, system-ui, sans-serif"
+      }
+    }
+  ],
+  "visual": {
+    "csvErrorElementsCompared": 23,
+    "csvErrorElementDifferences": 0,
+    "csvScreenshotBytesEqual": true,
+    "mobilePagerPixelDifferencesBeforeShadowFix": 484,
+    "mobilePagerPixelDifferencesAfterShadowFix": 27,
+    "remainingPixelRegion": "rounded preview frame edges",
+    "completePixelParity": false
+  },
+  "validation": {
+    "unitTestsPassed": 16,
+    "typecheck": "passed",
+    "build": "passed",
+    "externalPackageConsumer": "passed",
+    "exportedRoutes": 71
+  }
+}
