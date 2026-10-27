@@ -94,16 +94,19 @@ export function useDndEvents() {
 
   const onDragEnd = useCallback(
     (activeId: string, overId?: string) => {
+      activeIdRef.current = "";
       triggerEvent("onDragEnd", activeId, overId);
     },
-    [triggerEvent],
+    [triggerEvent, activeIdRef],
   );
 
   const onDragCancel = useCallback(
     (activeId: string) => {
+      if (activeIdRef.current !== activeId) return;
+      activeIdRef.current = "";
       triggerEvent("onDragCancel", activeId);
     },
-    [triggerEvent],
+    [triggerEvent, activeIdRef],
   );
 
   return {
@@ -327,6 +330,19 @@ const DATA_TRANSFER_TYPES = {
   CARD: "kanban-board-card",
 };
 
+function readCardDrop(dataTransfer: DataTransfer) {
+  const data = dataTransfer.getData(DATA_TRANSFER_TYPES.CARD);
+  try {
+    const card: unknown = JSON.parse(data);
+    if (!card || typeof card !== "object" || !("id" in card) || typeof card.id !== "string" || !card.id) {
+      return null;
+    }
+    return { data, id: card.id };
+  } catch {
+    return null;
+  }
+}
+
 const KANBAN_BOARD_CIRCLE_COLORS_MAP = {
   primary: "bg-primary",
   gray: "bg-muted-foreground",
@@ -393,10 +409,12 @@ export function KanbanBoardColumn({
         }
       }}
       onDrop={(event) => {
-        const data = event.dataTransfer.getData(DATA_TRANSFER_TYPES.CARD);
-        onDropOverColumn?.(data);
-        onDragEnd(JSON.parse(data).id as string, columnId);
+        event.preventDefault();
         setIsDropTarget(false);
+        const card = readCardDrop(event.dataTransfer);
+        if (!card) return;
+        onDropOverColumn?.(card.data);
+        onDragEnd(card.id, columnId);
       }}
       ref={ref}
       {...props}
@@ -504,11 +522,13 @@ export function KanbanBoardColumnListItem({
         }
       }}
       onDrop={(event) => {
+        event.preventDefault();
         event.stopPropagation();
-        const data = event.dataTransfer.getData(DATA_TRANSFER_TYPES.CARD);
-        onDropOverListItem?.(data, dropDirection);
-        onDragEnd(JSON.parse(data).id as string, cardId);
         setDropDirection("none");
+        const card = readCardDrop(event.dataTransfer);
+        if (!card) return;
+        onDropOverListItem?.(card.data, dropDirection);
+        onDragEnd(card.id, cardId);
       }}
       ref={ref}
       {...props}
@@ -532,7 +552,7 @@ export function KanbanBoardCard({
   ...props
 }: ComponentProps<"button"> & KanbanBoardCardProps) {
   const [isDragging, setIsDragging] = useState(false);
-  const { draggableDescribedById, onDragStart } = useDndEvents();
+  const { draggableDescribedById, onDragStart, onDragCancel } = useDndEvents();
 
   return (
     <button
@@ -555,6 +575,7 @@ export function KanbanBoardCard({
       }}
       onDragEnd={() => {
         setIsDragging(false);
+        onDragCancel(data.id);
       }}
       ref={ref}
       {...props}

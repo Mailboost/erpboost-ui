@@ -81,7 +81,7 @@ function CatalogueApp() {
       modules={modules}
       commandPalette={{ routeOrder: "definition", showAppInfo: false }}
       favicon={`${base}/icon.svg`}
-      appInfo={{ metadata: [{ label: "Product", value: "ERPboost UI" }] }}
+      appInfo={{ enabled: false }}
     >
       {preview ? (
         <main className="min-h-dvh bg-card">

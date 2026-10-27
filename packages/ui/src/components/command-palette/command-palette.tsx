@@ -1,6 +1,7 @@
 import { useReducer, useEffect, useMemo, useCallback, useRef, Suspense } from "react";
 import { useNavigate, Await } from "react-router";
 import { useAppInfoPageRoute } from "@/components/internals/app-info";
+import { useAppShellConfig } from "@/contexts/appshell-context";
 import { SearchIcon } from "lucide-react";
 import { Dialog } from "@/components/dialog";
 import { Input } from "@/components/input";
@@ -794,11 +795,12 @@ export type CommandPaletteOptions = {
 export function BuiltInCommandPalette({ routeOrder, showAppInfo = true }: CommandPaletteOptions = {}) {
   const navItems = useNavItems();
   const appInfoRoute = useAppInfoPageRoute();
+  const { appInfo } = useAppShellConfig();
 
   return (
     <Suspense fallback={null}>
       <Await resolve={navItems}>
-        {(items) => <CommandPaletteContent navItems={items ?? []} extraRoutes={showAppInfo ? [appInfoRoute] : []} routeOrder={routeOrder} />}
+        {(items) => <CommandPaletteContent navItems={items ?? []} extraRoutes={showAppInfo && appInfo?.enabled !== false ? [appInfoRoute] : []} routeOrder={routeOrder} />}
       </Await>
     </Suspense>
   );

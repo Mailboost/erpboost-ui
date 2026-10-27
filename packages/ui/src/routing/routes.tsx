@@ -98,11 +98,13 @@ const routesFromModules = (modules: Modules) =>
 type CreateContentRoutesParams = {
   modules: Modules;
   settingsResources: Array<Resource>;
+  includeAppInfo?: boolean;
 };
 
 export const createContentRoutes = ({
   modules,
   settingsResources,
+  includeAppInfo = true,
 }: CreateContentRoutesParams): Array<RouteObject> => {
   // When a root module (path="") exists in modules, it flows through
   // routesFromModules like any other module — no EmptyOutlet needed.
@@ -151,10 +153,7 @@ export const createContentRoutes = ({
     {
       children: routesFromModules(modules),
     },
-    {
-      path: APP_INFO_SLUG,
-      Component: AppInfoPage,
-    },
+    ...(includeAppInfo ? [{ path: APP_INFO_SLUG, Component: AppInfoPage }] : []),
     ...settingsRoutes,
     {
       path: "*",

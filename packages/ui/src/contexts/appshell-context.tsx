@@ -79,6 +79,8 @@ export type AppInfoEntry = {
 };
 
 export type AppInfo = {
+  /** Disable the built-in information route and its command-palette entry. Defaults to true. */
+  enabled?: boolean;
   /** Additional app-defined rows shown on the built-in "/__appinfo" page. */
   metadata?: readonly AppInfoEntry[];
 };

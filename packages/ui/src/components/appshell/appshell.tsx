@@ -65,8 +65,9 @@ type SharedAppShellProps = React.PropsWithChildren<{
   /**
    * Additional application metadata shown on the built-in `/__appinfo` page.
    *
-   * AppShell always includes its own version there; use this prop to append
-   * app-defined rows such as environment, release, or commit.
+   * AppShell includes its own version there; use this prop to append
+   * app-defined rows such as environment, release, or commit. Set
+   * `enabled: false` to disable the route and its command-palette entry.
    */
   appInfo?: AppInfo;
 

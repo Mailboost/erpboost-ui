@@ -5,7 +5,6 @@ import { entries, sections } from "../apps/catalog/src/registry.ts";
 const output = resolve("apps/catalog/dist");
 const html = await readFile(resolve(output, "index.html"), "utf8");
 const routes = [
-  "__appinfo",
   ...sections.map((s) => s.category),
   ...entries.map((e) => `${e.category}/${e.slug}`),
 ];
@@ -16,4 +15,4 @@ for (const route of routes) {
 }
 await writeFile(resolve(output, "404.html"), html);
 await writeFile(resolve(output, ".nojekyll"), "");
-console.log(`Exported ${routes.length} catalogue routes.`);
+console.log(`Exported ${routes.length + 1} catalogue routes (including home).`);

@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-28",
+  "method": "Pointer drags in the live reference and published implementation; separate jsdom component-event tests. Native HTML5 drag integration is not confirmed.",
+  "timeline": {
+    "reference": [
+      {
+        "step": "grow-right",
+        "bars": [
+          {
+            "text": "Phase 1",
+            "w": 632.328125,
+            "x": 172,
+            "y": 144
+          },
+          {
+            "text": "Phase 2",
+            "w": 451.6640625,
+            "x": 804.328125,
+            "y": 188
+          }
+        ]
+      },
+      {
+        "step": "shrink-from-next-left",
+        "bars": [
+          {
+            "text": "Phase 1",
+            "w": 542,
+            "x": 172,
+            "y": 144
+          },
+          {
+            "text": "Phase 2",
+            "w": 542,
+            "x": 714,
+            "y": 188
+          }
+        ]
+      },
+      {
+        "step": "minimum-left-duration",
+        "bars": [
+          {
+            "text": "Phase 1",
+            "w": 90.328125,
+            "x": 172,
+            "y": 144
+          },
+          {
+            "text": "Phase 2",
+            "w": 993.6640625,
+            "x": 262.328125,
+            "y": 188
+          }
+        ]
+      },
+      {
+        "step": "minimum-right-duration",
+        "bars": [
+          {
+            "text": "Phase 1",
+            "w": 993.6640625,
+            "x": 172,
+            "y": 144
+          },
+          {
+            "text": "Phase 2",
+            "w": 90.328125,
+            "x": 1165.6640625,
+            "y": 188
+          }
+        ]
+      }
+    ],
+    "implementation": [
+      {
+        "step": "grow-right",
+        "bars": [
+          {
+            "text": "Phase 1",
+            "w": 632.328125,
+            "x": 172,
+            "y": 144
+          },
+          {
+            "text": "Phase 2",
+            "w": 451.6640625,
+            "x": 804.328125,
+            "y": 188
+          }
+        ]
+      },
+      {
+        "step": "shrink-from-next-left",
+        "bars": [
+          {
+            "text": "Phase 1",
+            "w": 542,
+            "x": 172,
+            "y": 144
+          },
+          {
+            "text": "Phase 2",
+            "w": 542,
+            "x": 714,
+            "y": 188
+          }
+        ]
+      },
+      {
+        "step": "minimum-left-duration",
+        "bars": [
+          {
+            "text": "Phase 1",
+            "w": 90.328125,
+            "x": 172,
+            "y": 144
+          },
+          {
+            "text": "Phase 2",
+            "w": 993.6640625,
+            "x": 262.328125,
+            "y": 188
+          }
+        ]
+      },
+      {
+        "step": "minimum-right-duration",
+        "bars": [
+          {
+            "text": "Phase 1",
+            "w": 993.6640625,
+            "x": 172,
+            "y": 144
+          },
+          {
+            "text": "Phase 2",
+            "w": 90.328125,
+            "x": 1165.6640625,
+            "y": 188
+          }
+        ]
+      }
+    ]
+  },
+  "gantt": {
+    "move": {
+      "reference": [
+        {
+          "id": "milestone-milestone-discovery-start",
+          "value": "2026-02-09"
+        },
+        {
+          "id": "milestone-milestone-discovery-end",
+          "value": "2026-03-06"
+        }
+      ],
+      "implementation": [
+        {
+          "id": "milestone-milestone-discovery-start",
+          "value": "2026-02-09"
+        },
+        {
+          "id": "milestone-milestone-discovery-end",
+          "value": "2026-03-06"
+        }
+      ]
+    },
+    "resize": {
+      "reference": [
+        {
+          "id": "milestone-milestone-discovery-start",
+          "value": "2026-02-09"
+        },
+        {
+          "id": "milestone-milestone-discovery-end",
+          "value": "2026-03-11"
+        }
+      ],
+      "implementation": [
+        {
+          "id": "milestone-milestone-discovery-start",
+          "value": "2026-02-09"
+        },
+        {
+          "id": "milestone-milestone-discovery-end",
+          "value": "2026-03-11"
+        }
+      ]
+    },
+    "invalidRange": {
+      "reference": true,
+      "implementation": true
+    }
+  },
+  "regressions": {
+    "foreignOrMalformedKanbanDrop": "A foreign payload and malformed kanban-board-card payload caused uncaught JSON errors before the fix.",
+    "cancelledKanbanDrag": "The screen-reader announcement remained Picked up draggable item a. after cancelling before the fix."
+  },
+  "nativeHtml5": "Reference and implementation reorder gestures remain unverified by this browser tool. User manual check requested."
+}

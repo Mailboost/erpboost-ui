@@ -79,14 +79,15 @@ export const routerFactories = {
 
 export const RouterContainer = (props: PropsWithChildren<RouterContainerProps>) => {
   const { children } = props;
-  const { configurations } = useAppShellConfig();
+  const { configurations, appInfo } = useAppShellConfig();
   const contentRoutes = useMemo(
     () =>
       createContentRoutes({
         modules: configurations.modules,
         settingsResources: configurations.settingsResources,
+        includeAppInfo: appInfo?.enabled !== false,
       }),
-    [configurations.modules, configurations.settingsResources],
+    [configurations.modules, configurations.settingsResources, appInfo?.enabled],
   );
   const routes = useMemo(
     () =>
