@@ -1,7 +1,7 @@
 // Documentation observed at https://ui.tailor.tech/page/document-page
 export default function DocumentNotes() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       <div className={"space-y-3"}>
         <h2 className={"text-lg font-semibold"}>
           {"Document URL composition"}

@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "@fontsource-variable/inter";
-import "@fontsource-variable/noto-sans-jp";
+import "../../../packages/ui/src/assets/fonts/inter.css";
 import "./styles.css";
 import "@mailboost/erpboost-ui/styles";
 import { App } from "./App";

@@ -286,7 +286,8 @@ function PreviewOptions({
       )}
       <Button
         variant="ghost"
-        size="icon"
+        size="xs"
+        className="shrink-0 text-muted-foreground"
         aria-label="Open preview in new tab"
         onClick={() => window.open(url, "_blank", "noopener,noreferrer")}
       >
@@ -294,7 +295,8 @@ function PreviewOptions({
       </Button>
       <Button
         variant="ghost"
-        size="icon"
+        size="xs"
+        className="shrink-0 text-muted-foreground"
         aria-label="Refresh preview"
         onClick={() => setRevision((r) => r + 1)}
       >
@@ -414,23 +416,25 @@ export function EntryPage({ entry }: { entry: Entry }) {
       className={`catalogue ${component ? "component-document" : "reference-page"}`}
     >
       <div className={component ? "component-heading" : "catalogue-heading"}>
-        <h1>{t(entry.title, entry.ja)}</h1>
-        {!component && (
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={async () => {
-              const unique = getMarkdownSources(entry);
-              await navigator.clipboard.writeText(
-                `# ${entry.title}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${entry.description}\n\n## Do\n\n${entry.guidance?.do[0]}\n\n## Don't\n\n${entry.guidance?.dont[0]}${entry.markdownNotes ? "\n\n" + entry.markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${unique.map((f) => `### ${f.filename}\n\n\`\`\`${sourceLanguage(f.filename)}\n${f.source}\n\`\`\``).join("\n\n")}`,
-              );
-              setCopied(true);
-              setTimeout(() => setCopied(false), 2000);
-            }}
-          >
-            {copied ? "Copied" : "Copy as Markdown"}
-          </Button>
-        )}
+        <div className={component ? "component-title" : "catalogue-title"}>
+          <h1>{t(entry.title, entry.ja)}</h1>
+          {!component && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={async () => {
+                const unique = getMarkdownSources(entry);
+                await navigator.clipboard.writeText(
+                  `# ${entry.title}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${entry.description}\n\n## Do\n\n${entry.guidance?.do[0]}\n\n## Don't\n\n${entry.guidance?.dont[0]}${entry.markdownNotes ? "\n\n" + entry.markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${unique.map((f) => `### ${f.filename}\n\n\`\`\`${sourceLanguage(f.filename)}\n${f.source}\n\`\`\``).join("\n\n")}`,
+                );
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+              }}
+            >
+              {copied ? "Copied" : "Copy as Markdown"}
+            </Button>
+          )}
+        </div>
         <p className="intro">
           {t(entry.description, entry.descriptionJa ?? entry.description)}
         </p>
@@ -470,7 +474,11 @@ export function EntryPage({ entry }: { entry: Entry }) {
       ) : (
         <div
           className={
-            entry.slug === "data-charts" ? "chart-examples" : undefined
+            entry.slug === "data-charts"
+              ? "chart-examples"
+              : shared
+                ? "shared-examples"
+                : undefined
           }
         >
           {demos.map((demo, i) => (
