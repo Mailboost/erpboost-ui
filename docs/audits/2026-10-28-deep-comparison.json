@@ -1,0 +1,1533 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "catalogue": "https://mailboost.github.io/erpboost-ui/",
+  "normalComparison": {
+    "viewport": "768x1024",
+    "locale": "ja",
+    "theme": "dark",
+    "routes": 71,
+    "framesPerSite": 129
+  },
+  "fullscreenComparison": {
+    "viewport": "768x1024",
+    "locale": "en",
+    "theme": "dark",
+    "routes": 67,
+    "measurementDiffs": 0,
+    "expectedReferenceError": ["/components/sidebar"],
+    "pages": [
+      {
+        "route": "/components/overview",
+        "referenceElements": 50,
+        "implementationElements": 50,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/action-panel",
+        "referenceElements": 8,
+        "implementationElements": 8,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/activity-card",
+        "referenceElements": 18,
+        "implementationElements": 18,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/alert",
+        "referenceElements": 12,
+        "implementationElements": 12,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/attachment",
+        "referenceElements": 6,
+        "implementationElements": 6,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/app-shell",
+        "referenceElements": 6,
+        "implementationElements": 6,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/auth-provider",
+        "referenceElements": 6,
+        "implementationElements": 6,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/autocomplete",
+        "referenceElements": 2,
+        "implementationElements": 2,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/avatar",
+        "referenceElements": 5,
+        "implementationElements": 5,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/badge",
+        "referenceElements": 26,
+        "implementationElements": 26,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/button",
+        "referenceElements": 13,
+        "implementationElements": 13,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/calendar",
+        "referenceElements": 92,
+        "implementationElements": 92,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/card",
+        "referenceElements": 6,
+        "implementationElements": 6,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/collection-control-provider",
+        "referenceElements": 6,
+        "implementationElements": 6,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/combobox",
+        "referenceElements": 4,
+        "implementationElements": 4,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/command-palette",
+        "referenceElements": 6,
+        "implementationElements": 6,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/csv-importer",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/data-table",
+        "referenceElements": 101,
+        "implementationElements": 101,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/date-field",
+        "referenceElements": 40,
+        "implementationElements": 40,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/date-picker",
+        "referenceElements": 33,
+        "implementationElements": 33,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/description-card",
+        "referenceElements": 11,
+        "implementationElements": 11,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/dialog",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/field",
+        "referenceElements": 4,
+        "implementationElements": 4,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/fieldset",
+        "referenceElements": 5,
+        "implementationElements": 5,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/form",
+        "referenceElements": 7,
+        "implementationElements": 7,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/input",
+        "referenceElements": 2,
+        "implementationElements": 2,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/layout",
+        "referenceElements": 29,
+        "implementationElements": 29,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/link",
+        "referenceElements": 4,
+        "implementationElements": 4,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/menu",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/metric-card",
+        "referenceElements": 7,
+        "implementationElements": 7,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/select",
+        "referenceElements": 4,
+        "implementationElements": 4,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/sheet",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/sidebar",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/table",
+        "referenceElements": 12,
+        "implementationElements": 12,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/tabs",
+        "referenceElements": 34,
+        "implementationElements": 34,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/tooltip",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/with-guard",
+        "referenceElements": 6,
+        "implementationElements": 6,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/components/foundation",
+        "referenceElements": 109,
+        "implementationElements": 109,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/collection",
+        "referenceElements": 239,
+        "implementationElements": 239,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/detail-2col-action-panel",
+        "referenceElements": 86,
+        "implementationElements": 86,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/form-as-page",
+        "referenceElements": 59,
+        "implementationElements": 59,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/pipeline-kanban",
+        "referenceElements": 42,
+        "implementationElements": 42,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/simple-master-crud",
+        "referenceElements": 42,
+        "implementationElements": 42,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "referenceElements": 53,
+        "implementationElements": 53,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/approval-flow",
+        "referenceElements": 20,
+        "implementationElements": 20,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/approval-route-builder",
+        "referenceElements": 19,
+        "implementationElements": 19,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/bulk-actions-bar",
+        "referenceElements": 11,
+        "implementationElements": 11,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/conversation-thread",
+        "referenceElements": 141,
+        "implementationElements": 141,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/data-charts",
+        "referenceElements": 88,
+        "implementationElements": 88,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/datatable-inline-edit",
+        "referenceElements": 22,
+        "implementationElements": 22,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/field-diff-table",
+        "referenceElements": 17,
+        "implementationElements": 17,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/assistant-panel",
+        "referenceElements": 16,
+        "implementationElements": 16,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/form-builder",
+        "referenceElements": 23,
+        "implementationElements": 23,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/grid-view",
+        "referenceElements": 24,
+        "implementationElements": 24,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/multi-step-form",
+        "referenceElements": 13,
+        "implementationElements": 13,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/notification-panel",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/pipeline-stage-manager",
+        "referenceElements": 17,
+        "implementationElements": 17,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/rich-text-editor",
+        "referenceElements": 26,
+        "implementationElements": 26,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/right-sheet-custom",
+        "referenceElements": 7,
+        "implementationElements": 7,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/supplier-cascader",
+        "referenceElements": 21,
+        "implementationElements": 21,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/thread-composer",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/timeline",
+        "referenceElements": 31,
+        "implementationElements": 31,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/patterns/user-profile-dialog",
+        "referenceElements": 3,
+        "implementationElements": 3,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/chat",
+        "referenceElements": 16,
+        "implementationElements": 16,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/dashboard-with-charts",
+        "referenceElements": 64,
+        "implementationElements": 64,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/document-page",
+        "referenceElements": 48,
+        "implementationElements": 48,
+        "measurementDiffs": 0
+      },
+      {
+        "route": "/page/email",
+        "referenceElements": 41,
+        "implementationElements": 41,
+        "measurementDiffs": 0
+      }
+    ]
+  },
+  "codeCopy": {
+    "variants": 57,
+    "fileOccurrencesPerSite": 128,
+    "copyAllCasesPerSite": 43,
+    "cases": [
+      {
+        "route": "/patterns/field-diff-table",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "FieldDiffTable.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/page/assistant-panel",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "AssistantPanelScreen.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "AssistantPanel.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "mockAssistant.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/chat",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ChatScreen.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/collection",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "PageCapsuleTabsPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "BulkActionsBar.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/collection",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "PageInlineEditTabsPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "BulkActionsBar.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/collection",
+        "variant": 2,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "PageGridListTabsPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "BulkActionsBar.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/dashboard-with-charts",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "SpendDashboardPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/detail-2col-action-panel",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "SupplierDetailPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/detail-2col-action-panel",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "DetailPageWithPageTabs.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/document-page",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "DocumentEditorPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "DocumentEditorSidebar.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "DocumentEditorBubbleToolbar.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "DocumentEditorInsertMenu.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "DocumentEditorLinkPopover.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "DocumentEditorPageEmbed.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "DocumentEditorPageEmbedPicker.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "DocumentPreviewHeadingAnchors.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "DocumentPageRegistryContext.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "documentPageRegistry.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "documentEditorLink.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "documentEditorHeading.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "documentEditorUrl.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "documentEditorBlocks.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "documentEditorSampleDocs.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "documentEditorStyles.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/email",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "EmailLayoutPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/form-as-page",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "CreateTaskPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/form-as-page",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "CreateTaskPageWithSectionNav.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/form-as-page",
+        "variant": 2,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "CreateTaskPageWizard.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/pipeline-kanban",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "PipelineKanbanPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "KanbanBoard.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "RightSheet.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/simple-master-crud",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "CategoriesMasterDialogPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/page/simple-master-crud",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "CategoriesMasterSheetPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "App.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "AssistantPanel.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "mockAssistant.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "AssistantPanelDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "MessageDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Message.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Response.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 2,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ReasoningDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Reasoning.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 3,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ChainOfThoughtDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "ChainOfThought.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 4,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ToolDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Tool.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 5,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "SourcesDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Sources.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 6,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "SuggestionDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Suggestion.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 7,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ActionsDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Actions.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 8,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "PromptInputDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "PromptInput.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Loader.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "variant": 9,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ChatHistoryDemo.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "ChatHistory.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/approval-flow",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ApprovalFlow.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/approval-route-builder",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ApprovalRouteBuilder.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/bulk-actions-bar",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "BulkActionsBar.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/conversation-thread",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ConversationThreadPanel.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "InquiryThreadPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/conversation-thread",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ConversationThreadPanel.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "InquiryThreadPage.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/conversation-thread",
+        "variant": 2,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ConversationThreadPanel.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "MarkdownThread.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/conversation-thread",
+        "variant": 3,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ConversationThreadPanel.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "AttachmentsThread.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "FilePreview.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/conversation-thread",
+        "variant": 4,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ConversationThreadPanel.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "ActionsThread.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/data-charts",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "LineChartCard.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "chartTokens.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/data-charts",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "VerticalBarChartCard.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "chartTokens.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/data-charts",
+        "variant": 2,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "HorizontalBarChartCard.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "chartTokens.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/data-charts",
+        "variant": 3,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "PieChartCard.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "chartTokens.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/data-charts",
+        "variant": 4,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "DonutChartCard.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "chartTokens.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/data-charts",
+        "variant": 5,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "StackedBarChartCard.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "chartTokens.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/data-charts",
+        "variant": 6,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "GanttChart.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "GanttChart.css",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/datatable-inline-edit",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "DatatableInlineEdit.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/form-builder",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "FormBuilder.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/grid-view",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "GridView.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/multi-step-form",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "MultiStepForm.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/notification-panel",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "NotificationPanelWithSidebar.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "NotificationPanel.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/pipeline-stage-manager",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "PipelineStageManager.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/rich-text-editor",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "RichTextEditor.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/right-sheet-custom",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "RightSheet.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/supplier-cascader",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "SupplierCascader.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "useSupplierCascader.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "CompanyNameSearch.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "mockData.ts",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/thread-composer",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "ThreadComposer.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/timeline",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "GanttEditor.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Timeline.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/timeline",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "DependencyTimeline.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "Timeline.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      },
+      {
+        "route": "/patterns/user-profile-dialog",
+        "variant": 0,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "UserProfileDialogSmall.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/user-profile-dialog",
+        "variant": 1,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "UserProfileDialog.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": null
+      },
+      {
+        "route": "/patterns/user-profile-dialog",
+        "variant": 2,
+        "bodyStyleMatches": true,
+        "files": [
+          {
+            "name": "UserMenuSidebarShowcase.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          },
+          {
+            "name": "UserProfileDialog.tsx",
+            "referenceCopyMatchesDisplayedSource": true,
+            "implementationCopyMatchesDisplayedSource": true
+          }
+        ],
+        "copyAllMatchesIndividualFiles": true
+      }
+    ]
+  },
+  "limits": [
+    "ERPboost branding and package imports intentionally differ",
+    "Drag reorder not verified: browser gestures did not change either sample; native app fallback was rejected by automatic approval review",
+    "Dynamic animations and loading timing do not guarantee pixel equality",
+    "Hidden /__appinfo route differs from reference"
+  ]
+}

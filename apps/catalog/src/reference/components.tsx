@@ -1032,8 +1032,8 @@ function ReferenceComponentBody({ slug }: { slug: string }) {
     case "link":
       return (
         <div className="flex flex-col gap-3">
-          <Link to="/components/button">Go to Button page</Link>
-          <Link to="/components/table">Go to Table page</Link>
+          <Link className="underline" to="/components/button">Go to Button page</Link>
+          <Link className="underline" to="/components/table">Go to Table page</Link>
         </div>
       );
     case "menu":

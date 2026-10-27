@@ -384,21 +384,6 @@ button:disabled {
 .source-toolbar > button {
   flex-shrink: 0;
 }
-.preview-document [data-slot="sidebar-wrapper"] {
-  min-height: 100vh;
-  background: var(--card);
-}
-.preview-document [data-slot="sidebar-inset"] {
-  margin: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-.preview-document [data-slot="sidebar-inset"] > header {
-  display: none !important;
-}
-.preview-document [data-slot="sidebar-inset"] > main {
-  padding: 0 !important;
-}
 .standalone-preview.block-preview-document {
   padding: 24px;
 }

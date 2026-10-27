@@ -22,6 +22,7 @@ import {
 } from "./registry";
 import { getDemos, getMarkdownSources, type Demo } from "./demos";
 import { useLocale } from "./locale";
+import { PageFrame } from "./reference/shared/page-frame";
 const DocumentNotes = lazy(() => import("./reference/DocumentNotes"));
 const HighlightedSource = lazy(() => import("./HighlightedSource"));
 const sourceLanguage = (filename: string) => filename.split(".").pop() ?? "tsx";
@@ -165,7 +166,11 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
     [copiedAll, setCopiedAll] = useState(false);
   const source = sources[index] ?? sources[0];
   return (
-    <div className="source-block" role="tabpanel" aria-label="Code">
+    <div
+      className="source-block"
+      role="tabpanel"
+      aria-label={demo.heading ? `${demo.name} code` : "Code"}
+    >
       <div className="source-toolbar">
         <div className="source-files">
           {sources.map((file, i) => (
@@ -200,7 +205,11 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
                 setTimeout(() => setCopiedAll(false), 2000);
               }}
             >
-              {copiedAll ? <Check className="size-3.5" /> : <Files className="size-3.5" />}
+              {copiedAll ? (
+                <Check className="size-3.5" />
+              ) : (
+                <Files className="size-3.5" />
+              )}
               {copiedAll ? "Copied all" : `Copy all (${sources.length})`}
             </Button>
           )}
@@ -214,7 +223,11 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
               setTimeout(() => setCopied(false), 2000);
             }}
           >
-            {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}{" "}
+            {copied ? (
+              <Check className="size-3.5" />
+            ) : (
+              <Copy className="size-3.5" />
+            )}{" "}
             {copied ? "Copied" : "Copy"}
           </Button>
         </div>
@@ -319,13 +332,11 @@ function PreviewOptions({
 function Preview({
   entry,
   demo,
-  index,
   settings: shared,
   hideOptions = false,
 }: {
   entry: Entry;
   demo: Demo;
-  index: number;
   settings?: PreviewSettings;
   hideOptions?: boolean;
 }) {
@@ -334,7 +345,7 @@ function Preview({
   const settings = shared ?? ownSettings;
   const { width, background, revision } = settings;
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-  const url = `${base}${routeOf(entry)}?preview=1&variant=${index}&background=${background}`;
+  const url = `${base}${routeOf(entry)}?preview=fullscreen`;
   const C = demo.Component;
   const StateProvider = demo.StateProvider ?? Fragment;
   const maxWidth =
@@ -407,6 +418,65 @@ export function EntryPage({ entry }: { entry: Entry }) {
   const [copied, setCopied] = useState(false);
   const settings = usePreviewSettings();
   const shared = entry.slug === "data-charts" || entry.slug === "timeline";
+  if (query.get("preview") === "fullscreen") {
+    const component = entry.category === "components";
+    const previews = demos.map((demo, i) => {
+      const C = demo.Component;
+      const StateProvider = demo.StateProvider ?? Fragment;
+      return (
+        <div
+          key={i}
+          className={
+            entry.category === "page" && demos.length === 1
+              ? "flex min-h-0 flex-1 flex-col"
+              : undefined
+          }
+        >
+          <StateProvider>
+            <Suspense fallback={null}>
+              <C />
+            </Suspense>
+          </StateProvider>
+        </div>
+      );
+    });
+    return (
+      <div
+        className={component ? "space-y-8 p-8" : "min-h-dvh bg-card p-4 sm:p-6"}
+      >
+        {component && (
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold">{t(entry.title, entry.ja)}</h1>
+            <p
+              className={
+                entry.slug === "foundation"
+                  ? "max-w-[650px] text-muted-foreground"
+                  : "text-muted-foreground"
+              }
+            >
+              {t(entry.description, entry.descriptionJa ?? entry.description)}
+            </p>
+          </div>
+        )}
+        <div className={component ? undefined : "mx-auto w-full space-y-10"}>
+          {entry.category === "page" ? (
+            <PageFrame
+              fullBleed={[
+                "assistant-panel",
+                "chat",
+                "document-page",
+                "email",
+              ].includes(entry.slug)}
+            >
+              {entry.slug === "document-page" ? () => previews : previews}
+            </PageFrame>
+          ) : (
+            previews
+          )}
+        </div>
+      </div>
+    );
+  }
   if (query.get("preview") === "1") {
     const C = demos[index]?.Component;
     const StateProvider = demos[index]?.StateProvider ?? Fragment;
@@ -472,7 +542,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
         <div className="shared-preview-options">
           <PreviewOptions
             settings={settings}
-            url={`${import.meta.env.BASE_URL.replace(/\/$/, "")}${routeOf(entry)}?preview=1`}
+            url={`${import.meta.env.BASE_URL.replace(/\/$/, "")}${routeOf(entry)}?preview=fullscreen`}
           />
         </div>
       )}
@@ -499,7 +569,6 @@ export function EntryPage({ entry }: { entry: Entry }) {
               settings={settings}
               hideOptions={shared}
               demo={demo}
-              index={i}
             />
           ))}
         </div>

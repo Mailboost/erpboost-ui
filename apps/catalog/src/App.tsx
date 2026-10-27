@@ -33,7 +33,8 @@ function CatalogueSearch() {
 
 function CatalogueApp() {
   const { language, setLanguage, t } = useLocale();
-  const preview = new URLSearchParams(location.search).get("preview") === "1";
+  const previewMode = new URLSearchParams(location.search).get("preview");
+  const preview = previewMode === "fullscreen" || previewMode === "1";
   const modules = useMemo(
     () => [
       defineModule({
@@ -71,7 +72,6 @@ function CatalogueApp() {
     [],
   );
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-  document.documentElement.classList.toggle("preview-document", preview);
   return (
     <AppShell
       title={t("UI Catalogue", "UI カタログ")}
@@ -83,11 +83,13 @@ function CatalogueApp() {
       favicon={`${base}/icon.svg`}
       appInfo={{ metadata: [{ label: "Product", value: "ERPboost UI" }] }}
     >
-      <SidebarLayout
-        sidebar={
-          preview ? (
-            <></>
-          ) : (
+      {preview ? (
+        <main className="min-h-dvh bg-card">
+          <SidebarLayout.Outlet />
+        </main>
+      ) : (
+        <SidebarLayout
+          sidebar={
             <DefaultSidebar
               hideSearch
               header={
@@ -144,10 +146,9 @@ function CatalogueApp() {
                 </SidebarGroup>
               ))}
             </DefaultSidebar>
-          )
-        }
-        header={preview ? <></> : undefined}
-      />
+          }
+        />
+      )}
     </AppShell>
   );
 }
