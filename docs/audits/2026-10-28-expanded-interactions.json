@@ -1,0 +1,256 @@
+{
+  "date": "2026-10-28",
+  "browser": "Playwright 1.64.1 bundled Chromium",
+  "testedBaseRevision": "59db02a56cf03bc0f2edef76449a59c60b6e8874 plus DatePicker label fix",
+  "scope": "15 new keyboard/focus/document scenarios and 5 existing native-drag scenarios per target",
+  "stats": {
+    "startTime": "2026-10-27T18:17:49.498Z",
+    "duration": 63439.659,
+    "expected": 40,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "scenario": "expanded-interactions.spec.ts / document links persist, renamed references resolve, embeds insert and discard",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 2158
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / document links persist, renamed references resolve, embeds insert and discard",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 2671
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / autocomplete commits a keyboard suggestion and preserves free text",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 943
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / combobox keyboard selection, chip deletion and multi-select",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 800
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / select supports keyboard selection, multi-toggle and Escape",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 1251
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 851
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / date picker announces the field and action and keeps read-only values",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 969
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / dialog traps focus, fits the viewport and restores the trigger",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 1445
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / sheet traps focus, fits the viewport and restores the trigger",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 2585
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / autocomplete commits a keyboard suggestion and preserves free text",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1485
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / combobox keyboard selection, chip deletion and multi-select",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1540
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / select supports keyboard selection, multi-toggle and Escape",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1842
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1479
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / date picker announces the field and action and keeps read-only values",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1726
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / dialog traps focus, fits the viewport and restores the trigger",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 2175
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / desktop light / sheet traps focus, fits the viewport and restores the trigger",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 3331
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / autocomplete commits a keyboard suggestion and preserves free text",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 657
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / combobox keyboard selection, chip deletion and multi-select",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 819
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / select supports keyboard selection, multi-toggle and Escape",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 1144
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 769
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / date picker announces the field and action and keeps read-only values",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 947
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / dialog traps focus, fits the viewport and restores the trigger",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 1403
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / sheet traps focus, fits the viewport and restores the trigger",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 2563
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / autocomplete commits a keyboard suggestion and preserves free text",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1440
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / combobox keyboard selection, chip deletion and multi-select",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1507
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / select supports keyboard selection, multi-toggle and Escape",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1876
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / calendar keyboard navigation traverses unavailable dates without selecting them",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1461
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / date picker announces the field and action and keeps read-only values",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1709
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / dialog traps focus, fits the viewport and restores the trigger",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 2143
+    },
+    {
+      "scenario": "expanded-interactions.spec.ts / mobile dark / sheet traps focus, fits the viewport and restores the trigger",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 3295
+    },
+    {
+      "scenario": "native-drag.spec.ts / pipeline stages reorder in both directions and cancel without changes",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 1007
+    },
+    {
+      "scenario": "native-drag.spec.ts / approval stages reorder and preserve stage settings",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 1025
+    },
+    {
+      "scenario": "native-drag.spec.ts / form fields reorder while the generated schema preserves settings",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 1023
+    },
+    {
+      "scenario": "native-drag.spec.ts / Kanban cards move between columns, reorder, and cancel",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 1028
+    },
+    {
+      "scenario": "native-drag.spec.ts / timeline bars move to another lane and preserve the time range",
+      "target": "reference",
+      "status": "passed",
+      "durationMs": 874
+    },
+    {
+      "scenario": "native-drag.spec.ts / pipeline stages reorder in both directions and cancel without changes",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1761
+    },
+    {
+      "scenario": "native-drag.spec.ts / approval stages reorder and preserve stage settings",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1850
+    },
+    {
+      "scenario": "native-drag.spec.ts / form fields reorder while the generated schema preserves settings",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1782
+    },
+    {
+      "scenario": "native-drag.spec.ts / Kanban cards move between columns, reorder, and cancel",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1777
+    },
+    {
+      "scenario": "native-drag.spec.ts / timeline bars move to another lane and preserve the time range",
+      "target": "local",
+      "status": "passed",
+      "durationMs": 1132
+    }
+  ]
+}

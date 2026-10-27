@@ -62,7 +62,7 @@
 
 この追加検証で新しいUI不具合は再現しなかった。以前の未確認記載を更新し、[ブラウザテスト](../tests/e2e/native-drag.spec.ts)とCIを追加した。既存13ケースのコンポーネントテスト、型チェックも成功した。
 
-結果とネイティブイベントの記録は[追加検証JSON](audits/2026-10-28-native-drag.json)に保存した。スクリーンショット付きのPlaywright結果は`test-results/native-drag.json`。CIは外部参照サイトに依存しないローカル5ケースを実行し、結果を`browser-test-results`として14日間保持する。
+結果とネイティブイベントの記録は[追加検証JSON](audits/2026-10-28-native-drag.json)に保存した。スクリーンショット付きのPlaywright結果は`test-results/native-drag.json`。CIは外部参照サイトに依存しないドラッグ5ケースと[追加の操作15ケース](expanded-interactions-audit-2026-10-28.md)の計20件を実行し、結果を`browser-test-results`として14日間保持する。
 
 ```sh
 npx playwright install chromium

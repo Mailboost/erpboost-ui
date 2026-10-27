@@ -85,10 +85,12 @@
 
 [追加検証と修正の記録](remaining-interactions-audit-2026-10-28.md)で、実ブラウザのポインター検証・コンポーネントのイベント検証・Chromiumで追加確認したHTML5実操作を区別する。カンバンの不正ドロップとキャンセル処理は、参照の挙動をそのまま再現するより不具合修正を優先した意図的な変更。
 
+さらに[キーボード・フォーカス・文書編集の追加検証](expanded-interactions-audit-2026-10-28.md)で15シナリオを追加した。PCライト・モバイルダークの選択・日付・モーダル操作、文書のリンク・改名・埋め込み・破棄を確認し、DatePickerのダイアログ名の差分を修正した。既存ドラッグも含め参照・ローカルの40件が成功。全操作の網羅という意味ではない。
+
 ## 検証コマンド
 
-- `npm test`（テストの型チェックと13ケース。実ブラウザのHTML5ドラッグを再現するテストではない）
-- `npm run test:e2e`（Chromiumでローカル5ケース。`E2E_TARGETS=reference,local,published`で3環境の計15ケース）
+- `npm test`（テストの型チェックと16ケース。実ブラウザのHTML5ドラッグを再現するテストではない）
+- `npm run test:e2e`（Chromiumでローカル20ケース。`E2E_TARGETS=reference,local,published`で3環境の計60ケース）
 
 - `npm run typecheck`
 - `BASE_PATH=/erpboost-ui/ npm run build`

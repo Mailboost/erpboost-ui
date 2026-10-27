@@ -354,8 +354,12 @@ const DatePicker = forwardRef(function DatePicker<T extends DateValue = DateValu
     [handleCompositeBlur],
   );
 
+  // An explicit field name also names the calendar action. A generated
+  // Field.Label ID must not mask that announcement; explicit labelledby wins.
+  const popoverLabelledBy =
+    ariaLabel && ariaLabelledby == null ? undefined : bindings.labelledBy;
   let popoverAriaLabel: string | undefined;
-  if (bindings.labelledBy == null) {
+  if (popoverLabelledBy == null) {
     popoverAriaLabel = ariaLabel ? t("chooseDateFor", { name: ariaLabel }) : t("chooseDate");
   }
 
@@ -379,7 +383,7 @@ const DatePicker = forwardRef(function DatePicker<T extends DateValue = DateValu
         open={open}
         onOpenChange={handleOpenChange}
         ariaLabel={popoverAriaLabel}
-        ariaLabelledby={bindings.labelledBy}
+        ariaLabelledby={popoverLabelledBy}
         popupRef={popupRef}
         onPopupBlur={handlePopupBlur}
         anchor={fieldRef}
