@@ -1,13 +1,15 @@
-import { Suspense, useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Button, Link } from "@mailboost/erpboost-ui";
 import {
   Check,
   Copy,
   ExternalLink,
   Monitor,
+  Maximize,
   RotateCcw,
   Smartphone,
   Tablet,
+  X,
 } from "lucide-react";
 import {
   entries,
@@ -18,6 +20,7 @@ import {
 } from "./registry";
 import { getDemos, type Demo } from "./demos";
 import { useLocale } from "./locale";
+const HighlightedSource = lazy(() => import("./HighlightedSource"));
 
 export function HomePage() {
   const { t } = useLocale();
@@ -65,12 +68,24 @@ export function CategoryPage({ category }: { category: Category }) {
     </main>
   );
 }
-function CodeBlock({ source }: { source: string }) {
+function CodeBlock({
+  source,
+  filename,
+  maxWidth,
+}: {
+  source: string;
+  filename?: string;
+  maxWidth?: number;
+}) {
   const [copied, setCopied] = useState(false);
   return (
-    <div className="source-block">
+    <div
+      className="source-block"
+      role={filename ? "tabpanel" : undefined}
+      aria-label={filename ? "Code" : undefined}
+    >
       <div className="source-toolbar">
-        <span>TypeScript / React</span>
+        <span>{filename ?? "TypeScript / React"}</span>
         <Button
           variant="ghost"
           size="sm"
@@ -81,12 +96,20 @@ function CodeBlock({ source }: { source: string }) {
           }}
         >
           {copied ? <Check size={14} /> : <Copy size={14} />}{" "}
-          {copied ? "Copied" : "Copy code"}
+          {copied ? "Copied" : filename ? "Copy" : "Copy code"}
         </Button>
       </div>
-      <pre>
-        <code>{source}</code>
-      </pre>
+      <div style={{ maxWidth, margin: "0 auto", width: "100%" }}>
+        <Suspense
+          fallback={
+            <pre>
+              <code>{source}</code>
+            </pre>
+          }
+        >
+          <HighlightedSource source={source} />
+        </Suspense>
+      </div>
     </div>
   );
 }
@@ -106,14 +129,18 @@ function Preview({
     [revision, setRevision] = useState(0);
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   const url = `${base}${routeOf(entry)}?preview=1&variant=${index}&background=${background}`;
+  const DemoComponent = demo.Component;
   return (
-    <section className="example-section">
-      <h2>{demo.name}</h2>
+    <section
+      className="example-section"
+      aria-label={entry.blockPreview ? "Block preview" : undefined}
+    >
+      {!entry.blockPreview && <h2>{demo.name}</h2>}
       <div className="preview-toolbar">
         <div
           className="preview-tabs"
           role="tablist"
-          aria-label={`${demo.name} view`}
+          aria-label={entry.blockPreview ? "View" : `${demo.name} view`}
         >
           <button
             role="tab"
@@ -132,7 +159,7 @@ function Preview({
             {t("Code", "コード")}
           </button>
         </div>
-        {tab === "preview" && (
+        {(tab === "preview" || entry.blockPreview) && (
           <div className="preview-options">
             <div
               className="preview-tabs"
@@ -160,31 +187,39 @@ function Preview({
                 );
               })}
             </div>
-            <span className="toolbar-divider" />
-            <div
-              className="preview-tabs"
-              role="tablist"
-              aria-label="Preview background"
-            >
-              {["background", "card"].map((value) => (
-                <button
-                  role="tab"
-                  aria-selected={background === value}
-                  key={value}
-                  className={background === value ? "active" : ""}
-                  onClick={() => setBackground(value)}
+            {tab === "preview" && (
+              <>
+                <span className="toolbar-divider" />
+                <div
+                  className="preview-tabs"
+                  role="tablist"
+                  aria-label="Preview background"
                 >
-                  {value === "card" ? "Card" : "Background"}
-                </button>
-              ))}
-            </div>
+                  {["background", "card"].map((value) => (
+                    <button
+                      role="tab"
+                      aria-selected={background === value}
+                      key={value}
+                      className={background === value ? "active" : ""}
+                      onClick={() => setBackground(value)}
+                    >
+                      {value === "card" ? "Card" : "Background"}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
             <Button
               variant="ghost"
               size="icon"
               aria-label="Open preview in new tab"
               onClick={() => window.open(url, "_blank", "noopener,noreferrer")}
             >
-              <ExternalLink size={15} />
+              {entry.blockPreview ? (
+                <Maximize size={15} />
+              ) : (
+                <ExternalLink size={15} />
+              )}
             </Button>
             <Button
               variant="ghost"
@@ -198,23 +233,54 @@ function Preview({
         )}
       </div>
       {tab === "code" ? (
-        <CodeBlock source={demo.source} />
+        <CodeBlock
+          source={demo.source}
+          filename={entry.blockPreview ? "FieldDiffTable.tsx" : undefined}
+          maxWidth={
+            entry.blockPreview
+              ? width === "mobile"
+                ? 390
+                : width === "tablet"
+                  ? 768
+                  : undefined
+              : undefined
+          }
+        />
       ) : (
         <div className={`preview-surface ${background}`}>
-          <iframe
-            key={revision}
-            title={`${entry.title} — ${demo.name} preview`}
-            src={url}
-            className={
-              entry.category === "components"
-                ? "component-preview"
-                : "page-preview"
-            }
-            style={{
-              width:
-                width === "mobile" ? 390 : width === "tablet" ? 768 : "100%",
-            }}
-          />
+          {entry.blockPreview ? (
+            <div
+              key={revision}
+              className="inline-preview-body"
+              role="tabpanel"
+              aria-label="Preview"
+              style={{
+                maxWidth:
+                  width === "mobile" ? 390 : width === "tablet" ? 768 : "none",
+              }}
+            >
+              <Suspense
+                fallback={<p className="muted small">Loading preview…</p>}
+              >
+                <DemoComponent />
+              </Suspense>
+            </div>
+          ) : (
+            <iframe
+              key={revision}
+              title={`${entry.title} — ${demo.name} preview`}
+              src={url}
+              className={
+                entry.category === "components"
+                  ? "component-preview"
+                  : "page-preview"
+              }
+              style={{
+                width:
+                  width === "mobile" ? 390 : width === "tablet" ? 768 : "100%",
+              }}
+            />
+          )}
         </div>
       )}
     </section>
@@ -234,7 +300,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
     const Demo = demos[index]?.Component;
     return (
       <div
-        className={`standalone-preview ${entry.category === "components" ? "primitive-preview" : "composite-preview"}`}
+        className={`standalone-preview ${entry.category === "components" ? "primitive-preview" : "composite-preview"} ${entry.blockPreview ? "block-preview-document" : ""}`}
       >
         <Suspense fallback={<p className="muted small">Loading preview…</p>}>
           {Demo ? <Demo /> : <p>No preview available.</p>}
@@ -244,7 +310,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
   }
   if (entry.slug === "overview") return <CategoryPage category="components" />;
   return (
-    <main className="catalogue">
+    <main className={`catalogue ${entry.blockPreview ? "reference-page" : ""}`}>
       <div className="catalogue-heading">
         <h1>{t(entry.title, entry.ja)}</h1>
         {entry.category !== "components" && (
@@ -259,7 +325,8 @@ export function EntryPage({ entry }: { entry: Entry }) {
               setTimeout(() => setCopied(false), 2000);
             }}
           >
-            {copied ? <Check size={14} /> : <Copy size={14} />}{" "}
+            {!entry.blockPreview &&
+              (copied ? <Check size={14} /> : <Copy size={14} />)}{" "}
             {copied ? "Copied" : "Copy as Markdown"}
           </Button>
         )}
@@ -268,20 +335,44 @@ export function EntryPage({ entry }: { entry: Entry }) {
       {entry.category !== "components" && (
         <div className="guidance-grid">
           <div className="guidance">
-            <span className="guidance-label do">✓ Do</span>
+            <span className="guidance-label do">
+              {entry.blockPreview ? (
+                <>
+                  <Check size={14} />
+                  Do
+                </>
+              ) : (
+                "✓ Do"
+              )}
+            </span>
             <p>
               {t(
-                "Use this composition when the task and its actions belong in one focused workspace. Adapt labels, data and permissions to your application.",
-                "関連する情報と操作を、ひとつの画面で扱う場合に使います。項目名・データ・権限はアプリケーションに合わせて設定してください。",
+                ...(entry.guidance?.do ??
+                  ([
+                    "Use this composition when the task and its actions belong in one focused workspace. Adapt labels, data and permissions to your application.",
+                    "関連する情報と操作を、ひとつの画面で扱う場合に使います。項目名・データ・権限はアプリケーションに合わせて設定してください。",
+                  ] as [string, string])),
               )}
             </p>
           </div>
           <div className="guidance">
-            <span className="guidance-label dont">× Don't</span>
+            <span className="guidance-label dont">
+              {entry.blockPreview ? (
+                <>
+                  <X size={14} />
+                  Don't
+                </>
+              ) : (
+                "× Don't"
+              )}
+            </span>
             <p>
               {t(
-                "Avoid adding unrelated tasks to the same view. Keep long tables scrollable and move complex edits to a detail panel or dedicated form.",
-                "関係のない操作を同じ画面に詰め込まないでください。長いテーブルは横スクロールにし、複雑な編集は詳細パネルや専用フォームに分けます。",
+                ...(entry.guidance?.dont ??
+                  ([
+                    "Avoid adding unrelated tasks to the same view. Keep long tables scrollable and move complex edits to a detail panel or dedicated form.",
+                    "関係のない操作を同じ画面に詰め込まないでください。長いテーブルは横スクロールにし、複雑な編集は詳細パネルや専用フォームに分けます。",
+                  ] as [string, string])),
               )}
             </p>
           </div>
@@ -295,19 +386,32 @@ export function EntryPage({ entry }: { entry: Entry }) {
           index={index}
         />
       ))}
-      <div className="source-location">
-        <span>Source</span>
-        <a
-          href={`https://github.com/Mailboost/erpboost-ui/tree/main/${entry.category === "components" ? "packages/ui/src/components" : "apps/catalog/src/demos"}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {entry.category === "components"
-            ? "packages/ui/src/components/"
-            : "apps/catalog/src/demos/"}
-          <ExternalLink size={13} />
-        </a>
-      </div>
+      {entry.primitives ? (
+        <section className="primitives-used">
+          <h2>Primitives used</h2>
+          <ul>
+            {entry.primitives.map((name) => (
+              <li key={name}>
+                <Link to={`/components/${name.toLowerCase()}`}>{name}</Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : (
+        <div className="source-location">
+          <span>Source</span>
+          <a
+            href={`https://github.com/Mailboost/erpboost-ui/tree/main/${entry.category === "components" ? "packages/ui/src/components" : "apps/catalog/src/demos"}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {entry.category === "components"
+              ? "packages/ui/src/components/"
+              : "apps/catalog/src/demos/"}
+            <ExternalLink size={13} />
+          </a>
+        </div>
+      )}
     </main>
   );
 }

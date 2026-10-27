@@ -5,6 +5,9 @@ export interface Entry {
   ja: string;
   description: string;
   category: Category;
+  blockPreview?: boolean;
+  guidance?: { do: [string, string]; dont: [string, string] };
+  primitives?: string[];
 }
 const groups: Record<Category, Array<[string, string, string, string]>> = {
   components: [
@@ -321,7 +324,7 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
       "field-diff-table",
       "Field diff table",
       "項目の変更比較",
-      "Review previous and proposed values before accepting a change.",
+      "A table that places proposed changes next to current values so reviewers can decide whether to approve them. Use in approval queues and audit views.",
     ],
     [
       "form-builder",
@@ -399,6 +402,22 @@ export const entries: Entry[] = Object.entries(groups).flatMap(
       title,
       ja,
       description,
+      ...(slug === "field-diff-table"
+        ? {
+            blockPreview: true,
+            guidance: {
+              do: [
+                "Use in approval workflows where a reviewer needs to compare proposed changes against current values to decide whether to approve.",
+                "承認フローで、現在の値と変更案を比較して承認を判断する場合に使います。",
+              ] as [string, string],
+              dont: [
+                "Not a fit for free-form text diffs longer than a few words. Use a dedicated diff viewer instead.",
+                "長い自由記述の差分比較には適していません。専用の差分ビューアーを使ってください。",
+              ] as [string, string],
+            },
+            primitives: ["Table", "Tabs"],
+          }
+        : {}),
     })),
 );
 export const sections: Array<{

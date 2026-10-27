@@ -388,49 +388,6 @@ export function Notifications() {
     </div>
   );
 }
-export function FieldDiff() {
-  const [accepted, setAccepted] = useState(false);
-  return (
-    <div className="demo-card">
-      <div className="demo-heading">
-        <h3>Proposed changes</h3>
-        <Status value={accepted ? "Approved" : "Pending"} />
-      </div>
-      <table className="demo-table">
-        <thead>
-          <tr>
-            <th>Field</th>
-            <th>Previous value</th>
-            <th>Proposed value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {[
-            ["Delivery date", "2026-10-30", "2026-11-02"],
-            ["Quantity", "100", "120"],
-            ["Shipping method", "Standard", "Express"],
-          ].map(([name, before, after]) => (
-            <tr key={name}>
-              <td>{name}</td>
-              <td className={accepted ? "" : "diff-before"}>
-                {accepted ? after : before}
-              </td>
-              <td className="diff-after">{after}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="row justify-end">
-        <Button variant="outline" onClick={() => setAccepted(false)}>
-          Reset
-        </Button>
-        <Button disabled={accepted} onClick={() => setAccepted(true)}>
-          Accept changes
-        </Button>
-      </div>
-    </div>
-  );
-}
 export function Kanban({ manager = false }: { manager?: boolean }) {
   const [stages, setStages] = useState([
       "Draft",

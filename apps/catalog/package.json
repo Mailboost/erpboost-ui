@@ -16,6 +16,7 @@
     "@tiptap/react": "^3.32.0",
     "@tiptap/starter-kit": "^3.32.0",
     "lucide-react": "1.8.0",
+    "prism-react-renderer": "^2.4.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "sonner": "^2.0.8"

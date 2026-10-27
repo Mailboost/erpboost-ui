@@ -115,6 +115,14 @@ a {
   width: 28px;
   height: 28px;
 }
+.catalogue-search {
+  height: 32px;
+  gap: 8px;
+  padding: 0 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
 .locale-picker {
   display: flex;
   align-items: center;
@@ -266,6 +274,153 @@ a {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+html:not(.dark):has(.reference-page) {
+  --background: #fff;
+}
+.reference-page {
+  padding-top: 16px;
+}
+.reference-page,
+.block-preview-document {
+  --status-completed: #22c55e;
+  --status-danger: #ef4444;
+}
+.reference-page h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  line-height: 32px;
+  margin: 0;
+}
+.reference-page .catalogue-heading {
+  align-items: center;
+  margin-bottom: 16px;
+}
+.reference-page .catalogue-heading > button {
+  font-size: 14px;
+  color: var(--muted-foreground);
+}
+.reference-page .intro {
+  max-width: 650px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+.reference-page .guidance-grid {
+  margin-bottom: 24px;
+}
+.reference-page .guidance {
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  line-height: 20px;
+}
+.reference-page .guidance p {
+  margin: 0;
+  line-height: 20px;
+}
+.reference-page .guidance-label {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 2px 8px;
+  font-weight: 500;
+  gap: 4px;
+}
+.reference-page .guidance-label.do {
+  background: var(--status-completed);
+}
+.reference-page .guidance-label.dont {
+  background: var(--status-danger);
+}
+.reference-page .example-section {
+  margin: 24px 0;
+}
+.reference-page .preview-toolbar {
+  min-height: 36px;
+}
+.reference-page .preview-tabs {
+  height: 36px;
+  gap: 4px;
+}
+.reference-page .preview-tabs button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+.reference-page .preview-options .preview-tabs button {
+  padding: 4px 12px;
+}
+.reference-page .preview-surface {
+  border-radius: 14px;
+  padding: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+.reference-page .source-block {
+  background: var(--card);
+  border-radius: 14px;
+}
+.reference-page .source-toolbar {
+  padding: 8px 12px;
+}
+.reference-page .source-toolbar > span {
+  background: var(--muted);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--foreground);
+}
+.reference-page .source-toolbar button {
+  font-size: 14px;
+  line-height: 20px;
+}
+.reference-page .source-block pre {
+  padding: 12px 16px;
+  max-height: 640px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.inline-preview-body {
+  width: 100%;
+  padding: 24px;
+  margin: 0 auto;
+}
+.preview-surface.card > .inline-preview-body {
+  background: var(--card);
+}
+.preview-surface.background > .inline-preview-body {
+  background: var(--background);
+}
+.preview-document .block-preview-document {
+  padding: 24px;
+}
+.primitives-used h2 {
+  font-size: 18px;
+  line-height: 28px;
+}
+.primitives-used ul {
+  padding-left: 24px;
+  list-style-type: disc;
+  font-size: 14px;
+  line-height: 24px;
+}
+.primitives-used a {
+  color: var(--muted-foreground);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 639px) {
+  .inline-preview-body,
+  .preview-document .block-preview-document {
+    padding: 16px;
+  }
 }
 .preview-document [data-slot="sidebar-wrapper"] {
   min-height: 100vh;
@@ -934,15 +1089,6 @@ textarea {
   height: 7px;
   border-radius: 50%;
   background: #716cce;
-}
-.diff-before {
-  background: #fff0f0;
-  color: #b34444;
-  text-decoration: line-through;
-}
-.diff-after {
-  background: #eaf7ee;
-  color: #247244;
 }
 .kanban-board {
   display: flex;

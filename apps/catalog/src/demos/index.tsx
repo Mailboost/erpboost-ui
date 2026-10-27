@@ -5,6 +5,7 @@ const ownModules = {
   workspace: () => import("./workspace"),
   patterns: () => import("./patterns"),
   forms: () => import("./forms"),
+  fieldDiff: () => import("./field-diff-table"),
   wizard: () => import("../examples/patterns/form-wizard"),
 };
 function load(
@@ -83,7 +84,7 @@ const patterns: Record<string, ComponentType> = {
   "conversation-thread": load("patterns", "Conversation"),
   "data-charts": load("workspace", "Charts"),
   "datatable-inline-edit": load("workspace", "Collection", { inline: true }),
-  "field-diff-table": load("patterns", "FieldDiff"),
+  "field-diff-table": load("fieldDiff", "FieldDiffExample"),
   "form-builder": load("forms", "FormBuilder"),
   "grid-view": load("workspace", "Collection", { grid: true }),
   "multi-step-form": load("wizard", "FormWizard"),
@@ -147,26 +148,28 @@ export function getDemos(entry: Entry): Demo[] {
   const Component =
     entry.category === "page" ? pages[entry.slug] : patterns[entry.slug];
   const file =
-    entry.slug === "multi-step-form"
-      ? null
-      : [
-            "document-page",
-            "form-as-page",
-            "form-builder",
-            "rich-text-editor",
-          ].includes(entry.slug)
-        ? "forms"
+    entry.slug === "field-diff-table"
+      ? "field-diff-table"
+      : entry.slug === "multi-step-form"
+        ? null
         : [
-              "collection",
-              "dashboard-with-charts",
-              "detail-2col-action-panel",
-              "simple-master-crud",
-              "data-charts",
-              "grid-view",
-              "datatable-inline-edit",
+              "document-page",
+              "form-as-page",
+              "form-builder",
+              "rich-text-editor",
             ].includes(entry.slug)
-          ? "workspace"
-          : "patterns";
+          ? "forms"
+          : [
+                "collection",
+                "dashboard-with-charts",
+                "detail-2col-action-panel",
+                "simple-master-crud",
+                "data-charts",
+                "grid-view",
+                "datatable-inline-edit",
+              ].includes(entry.slug)
+            ? "workspace"
+            : "patterns";
   if (Component)
     return [
       {

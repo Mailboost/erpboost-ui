@@ -6,12 +6,29 @@ import {
   SidebarGroup,
   SidebarItem,
   SidebarLayout,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  useOpenCommandPalette,
   defineModule,
   defineResource,
 } from "@mailboost/erpboost-ui";
+import { Search } from "lucide-react";
 import { entries, sections, routeOf } from "./registry";
 import { CategoryPage, EntryPage, HomePage } from "./Catalogue";
 import { LocaleProvider, useLocale } from "./locale";
+
+function CatalogueSearch() {
+  const open = useOpenCommandPalette();
+  const { t } = useLocale();
+  return (
+    <SidebarMenuItem>
+      <SidebarMenuButton className="catalogue-search" onClick={() => open()}>
+        <Search size={16} />
+        <span>{t("Search", "検索")}</span>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
+  );
+}
 
 function CatalogueApp() {
   const { language, setLanguage, t } = useLocale();
@@ -55,6 +72,7 @@ function CatalogueApp() {
             <></>
           ) : (
             <DefaultSidebar
+              hideSearch
               header={
                 <Link className="catalogue-brand" to="/">
                   <img src={`${base}/icon.svg`} alt="" />
@@ -80,7 +98,11 @@ function CatalogueApp() {
                 </footer>
               }
             >
-              <SidebarItem to="/" />
+              <CatalogueSearch />
+              <SidebarItem
+                to="/"
+                render={({ title }) => <span>{title}</span>}
+              />
               {sections.map((section) => (
                 <SidebarGroup
                   key={section.category}
