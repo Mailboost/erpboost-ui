@@ -38,6 +38,7 @@ const paletteItemHighlight = (active: boolean) =>
 
 export type UseCommandPaletteOptions = {
   routes: Array<NavigatableRoute>;
+  routeOrder?: "path" | "definition";
   contextualActions?: Array<CommandPaletteAction>;
   searchSources?: readonly SearchSource[];
   open: boolean;
@@ -278,6 +279,7 @@ export function parseSearchMode(
 
 export function useCommandPalette({
   routes,
+  routeOrder = "path",
   contextualActions = [],
   searchSources = [],
   open,
@@ -300,17 +302,17 @@ export function useCommandPalette({
     () => (activeSource ? [] : filterActions(contextualActions, search)),
     [contextualActions, search, activeSource],
   );
-  const filteredRoutes = useMemo(
-    () =>
-      activeSource
-        ? []
-        : filterRoutes(routes, search).toSorted((a, b) => {
-            const aIsSpecial = isSpecialPath(a.path);
-            const bIsSpecial = isSpecialPath(b.path);
-            return Number(aIsSpecial) - Number(bIsSpecial) || a.path.localeCompare(b.path);
-          }),
-    [routes, search, activeSource],
-  );
+  const filteredRoutes = useMemo(() => {
+    if (activeSource) return [];
+    const filtered = filterRoutes(routes, search);
+    return routeOrder === "definition"
+      ? filtered
+      : filtered.toSorted((a, b) => {
+          const aIsSpecial = isSpecialPath(a.path);
+          const bIsSpecial = isSpecialPath(b.path);
+          return Number(aIsSpecial) - Number(bIsSpecial) || a.path.localeCompare(b.path);
+        });
+  }, [routes, search, activeSource, routeOrder]);
 
   // Debounced async search when in search mode
   useEffect(() => {
@@ -516,9 +518,10 @@ export function useCommandPalette({
 type CommandPaletteContentProps = {
   navItems: Array<NavItem>;
   extraRoutes?: Array<NavigatableRoute>;
+  routeOrder?: "path" | "definition";
 };
 
-export function CommandPaletteContent({ navItems, extraRoutes = [] }: CommandPaletteContentProps) {
+export function CommandPaletteContent({ navItems, extraRoutes = [], routeOrder }: CommandPaletteContentProps) {
   const t = useT();
   const contextualActions = useCommandPaletteActions();
   const {
@@ -552,6 +555,7 @@ export function CommandPaletteContent({ navItems, extraRoutes = [] }: CommandPal
     listRef,
   } = useCommandPalette({
     routes,
+    routeOrder,
     contextualActions,
     searchSources,
     open,
@@ -775,19 +779,26 @@ export function CommandPalette(): React.ReactNode {
   return null;
 }
 
+export type CommandPaletteOptions = {
+  /** Sort by URL, or retain module/resource definition order. */
+  routeOrder?: "path" | "definition";
+  /** Include the built-in application information page. Defaults to true. */
+  showAppInfo?: boolean;
+};
+
 /**
  * Built-in CommandPalette rendered internally by AppShell.
  *
  * @internal — not intended for direct use.
  */
-export function BuiltInCommandPalette() {
+export function BuiltInCommandPalette({ routeOrder, showAppInfo = true }: CommandPaletteOptions = {}) {
   const navItems = useNavItems();
   const appInfoRoute = useAppInfoPageRoute();
 
   return (
     <Suspense fallback={null}>
       <Await resolve={navItems}>
-        {(items) => <CommandPaletteContent navItems={items ?? []} extraRoutes={[appInfoRoute]} />}
+        {(items) => <CommandPaletteContent navItems={items ?? []} extraRoutes={showAppInfo ? [appInfoRoute] : []} routeOrder={routeOrder} />}
       </Await>
     </Suspense>
   );

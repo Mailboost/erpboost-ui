@@ -1,6 +1,6 @@
 import primitiveLinks from "./reference/primitive-links.json";
 import referenceContent from "./reference/metadata.json";
-import { lazy, Suspense, useState } from "react";
+import { Fragment, lazy, Suspense, useState } from "react";
 import { Badge, Button, Link, Tabs } from "@mailboost/erpboost-ui";
 import {
   Check,
@@ -324,61 +324,64 @@ function Preview({
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   const url = `${base}${routeOf(entry)}?preview=1&variant=${index}&background=${background}`;
   const C = demo.Component;
+  const StateProvider = demo.StateProvider ?? Fragment;
   const maxWidth =
     width === "mobile" ? 384 : width === "tablet" ? 768 : undefined;
   const named = !!demo.heading;
   return (
-    <section
-      className="example-section"
-      aria-label={named ? demo.name : "Block preview"}
-    >
-      {named && (
-        <div className="example-heading">
-          <h2>{demo.heading}</h2>
-          {demo.description && <p>{demo.description}</p>}
-        </div>
-      )}
-      <div className="preview-toolbar">
-        <Tabs.Root
-          value={tab}
-          onValueChange={(v) => setTab(String(v))}
-          className="w-fit gap-0"
-        >
-          <Tabs.List aria-label={named ? `${demo.name} view` : "View"}>
-            <Tabs.Tab value="preview">Preview</Tabs.Tab>
-            <Tabs.Tab value="code">Code</Tabs.Tab>
-          </Tabs.List>
-        </Tabs.Root>
-        {!hideOptions && (
-          <PreviewOptions settings={settings} tab={tab} url={url} />
-        )}
-      </div>
-      {tab === "code" ? (
-        <CodeBlock demo={demo} maxWidth={maxWidth} />
-      ) : (
-        <div
-          className={`preview-surface ${background}`}
-          role="tabpanel"
-          aria-label={named ? `${demo.name} preview` : "Preview"}
-        >
-          <div
-            key={revision}
-            className={`inline-preview-body ${demo.screen ? "screen-preview-body" : ""}`}
-            style={{ maxWidth }}
-          >
-            <Suspense
-              fallback={
-                <p className="text-sm text-muted-foreground">
-                  Loading preview…
-                </p>
-              }
-            >
-              <C />
-            </Suspense>
+    <StateProvider>
+      <section
+        className="example-section"
+        aria-label={named ? demo.name : "Block preview"}
+      >
+        {named && (
+          <div className="example-heading">
+            <h2>{demo.heading}</h2>
+            {demo.description && <p>{demo.description}</p>}
           </div>
+        )}
+        <div className="preview-toolbar">
+          <Tabs.Root
+            value={tab}
+            onValueChange={(v) => setTab(String(v))}
+            className="w-fit gap-0"
+          >
+            <Tabs.List aria-label={named ? `${demo.name} view` : "View"}>
+              <Tabs.Tab value="preview">Preview</Tabs.Tab>
+              <Tabs.Tab value="code">Code</Tabs.Tab>
+            </Tabs.List>
+          </Tabs.Root>
+          {!hideOptions && (
+            <PreviewOptions settings={settings} tab={tab} url={url} />
+          )}
         </div>
-      )}
-    </section>
+        {tab === "code" ? (
+          <CodeBlock demo={demo} maxWidth={maxWidth} />
+        ) : (
+          <div
+            className={`preview-surface ${background}`}
+            role="tabpanel"
+            aria-label={named ? `${demo.name} preview` : "Preview"}
+          >
+            <div
+              key={revision}
+              className={`inline-preview-body ${demo.screen ? "screen-preview-body" : ""}`}
+              style={{ maxWidth }}
+            >
+              <Suspense
+                fallback={
+                  <p className="text-sm text-muted-foreground">
+                    Loading preview…
+                  </p>
+                }
+              >
+                <C />
+              </Suspense>
+            </div>
+          </div>
+        )}
+      </section>
+    </StateProvider>
   );
 }
 export function EntryPage({ entry }: { entry: Entry }) {
@@ -394,11 +397,14 @@ export function EntryPage({ entry }: { entry: Entry }) {
   const shared = entry.slug === "data-charts" || entry.slug === "timeline";
   if (query.get("preview") === "1") {
     const C = demos[index]?.Component;
+    const StateProvider = demos[index]?.StateProvider ?? Fragment;
     return (
       <div
         className={`standalone-preview ${entry.category === "components" ? "primitive-preview" : demos[index]?.screen ? "screen-preview" : "block-preview-document"} ${query.get("background") === "background" ? "bg-background" : "bg-card"}`}
       >
-        <Suspense fallback={null}>{C && <C />}</Suspense>
+        <StateProvider>
+          <Suspense fallback={null}>{C && <C />}</Suspense>
+        </StateProvider>
       </div>
     );
   }

@@ -232,7 +232,7 @@ export function SidebarDocs() {
             description="SidebarGroup wraps a titled section; SidebarItem is a single link; SidebarSeparator divides sections."
           >
             <div className="max-w-sm rounded-xl border p-3">
-              <SidebarGroup title="Components" defaultOpen={false}>
+              <SidebarGroup title={() => "Components"} defaultOpen={false}>
                 <SidebarItem to="/components/button" />
                 <SidebarItem to="/components/table" />
               </SidebarGroup>

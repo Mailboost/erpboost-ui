@@ -1,5 +1,6 @@
 import { createElement, lazy, type ComponentType } from "react";
 import type { Entry } from "../registry";
+import { SupplierPreviewStateProvider } from "./shared/supplier-preview-state";
 import type { Demo } from "../demos";
 import { PageFrame } from "./shared/page-frame";
 const files = import.meta.glob(
@@ -1409,6 +1410,7 @@ const resources: Record<string, Demo[]> = {
   "patterns/supplier-cascader": [
     {
       name: "Block preview",
+      StateProvider: SupplierPreviewStateProvider,
       description: "",
       heading: "",
       screen: false,

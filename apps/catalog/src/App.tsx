@@ -34,8 +34,17 @@ function CatalogueApp() {
   const { language, setLanguage, t } = useLocale();
   const preview = new URLSearchParams(location.search).get("preview") === "1";
   const modules = useMemo(
-    () =>
-      sections.map((section) =>
+    () => [
+      defineModule({
+        path: "",
+        meta: {
+          title: (locale) =>
+            locale.startsWith("ja") ? "UI カタログ" : "UI Catalogue",
+        },
+        component: HomePage,
+        resources: [],
+      }),
+      ...sections.map((section) =>
         defineModule({
           path: section.category,
           meta: {
@@ -57,6 +66,7 @@ function CatalogueApp() {
             ),
         }),
       ),
+    ],
     [],
   );
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -68,7 +78,7 @@ function CatalogueApp() {
       timeZone="Asia/Tokyo"
       basePath={base.replace(/^\//, "")}
       modules={modules}
-      rootComponent={HomePage}
+      commandPalette={{ routeOrder: "definition", showAppInfo: false }}
       favicon={`${base}/icon.svg`}
       appInfo={{ metadata: [{ label: "Product", value: "ERPboost UI" }] }}
     >
@@ -107,7 +117,7 @@ function CatalogueApp() {
               <CatalogueSearch />
               <SidebarItem
                 to="/"
-                render={({ title }) => <span>{title}</span>}
+                render={() => <span>{t("Home", "ホーム")}</span>}
               />
               {sections.map((section) => (
                 <SidebarGroup

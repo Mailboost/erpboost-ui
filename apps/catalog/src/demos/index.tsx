@@ -1,4 +1,4 @@
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 import type { Entry } from "../registry";
 import { getReferenceDemos } from "../reference/demos";
 import metadata from "../reference/metadata.json";
@@ -8,6 +8,7 @@ export interface Demo {
   heading?: string;
   screen?: boolean;
   Component: ComponentType;
+  StateProvider?: ComponentType<{ children: ReactNode }>;
   source: string;
   sources?: { filename: string; markdownFilename?: string; source: string }[];
 }

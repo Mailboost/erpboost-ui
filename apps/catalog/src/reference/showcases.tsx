@@ -14,7 +14,7 @@ import { DatatableInlineEdit } from "./patterns__datatable-inline-edit/Datatable
 import { FieldDiffTable } from "./patterns__field-diff-table/FieldDiffTable";
 import { RightSheet } from "./patterns__right-sheet-custom/RightSheet";
 import { SupplierCascader } from "./patterns__supplier-cascader/SupplierCascader";
-import { useSupplierCascader } from "./patterns__supplier-cascader/useSupplierCascader";
+import { useSupplierPreviewState } from "./shared/supplier-preview-state";
 import { ThreadComposer } from "./patterns__thread-composer/ThreadComposer";
 import { UserProfileDialogSmall } from "./patterns__user-profile-dialog/UserProfileDialogSmall";
 import { UserProfileDialog } from "./patterns__user-profile-dialog/UserProfileDialog";
@@ -84,7 +84,7 @@ export function FieldDiffExample() {
   );
 }
 export function SupplierExample() {
-  const cascader = useSupplierCascader();
+  const cascader = useSupplierPreviewState();
   return <SupplierCascader cascader={cascader} />;
 }
 export function ComposerExample() {

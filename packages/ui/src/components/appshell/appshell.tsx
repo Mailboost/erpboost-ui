@@ -21,7 +21,7 @@ import { RouterContainer, type RouterContainerProps } from "@/routing/router";
 import { ThemeProvider, type ColorTheme } from "@/contexts/theme-context";
 import { BreadcrumbOverrideProvider } from "@/contexts/breadcrumb-context";
 import { CommandPaletteProvider, type SearchSource } from "@/contexts/command-palette-context";
-import { BuiltInCommandPalette } from "@/components/command-palette";
+import { BuiltInCommandPalette, type CommandPaletteOptions } from "@/components/command-palette";
 import { useIsClient } from "@/hooks/use-is-client";
 import { convertPagesToModules } from "@/fs-routes/converter";
 import type { PageEntry } from "@/fs-routes/types";
@@ -179,6 +179,9 @@ type SharedAppShellProps = React.PropsWithChildren<{
    * ```
    */
   contextData?: ContextData;
+
+  /** Configure the built-in page search ordering and application info entry. */
+  commandPalette?: CommandPaletteOptions;
 
   /**
    * Async search sources for the built-in CommandPalette.
@@ -406,7 +409,7 @@ export const AppShellInternal = (props: AppShellInternalProps) => {
             <RouterContainer {...routingMode}>
               <CommandPaletteProvider searchSources={props.searchSources}>
                 {props.children}
-                <BuiltInCommandPalette />
+                <BuiltInCommandPalette {...props.commandPalette} />
               </CommandPaletteProvider>
             </RouterContainer>
           </ThemeProvider>

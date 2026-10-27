@@ -292,7 +292,7 @@ function AvatarDemo() {
   );
 }
 function ActivityDemo() {
-  const now = Date.now() - 300000;
+  const now = Date.now();
   return (
     <ActivityCard
       title="Recent updates"

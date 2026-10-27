@@ -81,7 +81,7 @@ try {
     import {AppShell,SidebarLayout,Button,Input,Sheet} from "@mailboost/erpboost-ui";
     import "@mailboost/erpboost-ui/styles";
     function Sample(){return <><h1>External package</h1><Button>Package button</Button><Input aria-label="Name"/><Sheet.Root><Sheet.Trigger>Open details</Sheet.Trigger><Sheet.Content><Sheet.Header><Sheet.Title>Package sheet</Sheet.Title></Sheet.Header><p>External consumer works.</p></Sheet.Content></Sheet.Root></>}
-    createRoot(document.getElementById("root")!).render(<AppShell title="Package check" modules={[]} rootComponent={Sample}><SidebarLayout/></AppShell>);
+    createRoot(document.getElementById("root")!).render(<AppShell title="Package check" modules={[]} rootComponent={Sample} commandPalette={{routeOrder:"definition",showAppInfo:false}}><SidebarLayout/></AppShell>);
   `,
   );
   writeFileSync(
