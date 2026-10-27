@@ -560,11 +560,13 @@ function MenuDemo() {
         Open menu
       </Menu.Trigger>
       <Menu.Content>
-        <Menu.GroupLabel>Actions</Menu.GroupLabel>
-        <Menu.Item>Approve</Menu.Item>
-        <Menu.Item>Reject</Menu.Item>
+        <Menu.Group>
+          <Menu.GroupLabel>Actions</Menu.GroupLabel>
+          <Menu.Item>Approve</Menu.Item>
+          <Menu.Item>Reject</Menu.Item>
+        </Menu.Group>
         <Menu.Separator />
-        <Menu.CheckboxItem>Notify requester</Menu.CheckboxItem>
+        <Menu.CheckboxItem defaultChecked>Notify requester</Menu.CheckboxItem>
         <Menu.CheckboxItem>Auto approve next time</Menu.CheckboxItem>
       </Menu.Content>
     </Menu.Root>
