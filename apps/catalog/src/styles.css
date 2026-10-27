@@ -324,31 +324,26 @@ textarea {
 }
 .source-toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   padding: 8px 12px;
   border-bottom: 1px solid var(--border);
   color: var(--muted-foreground);
 }
 .source-files {
   display: flex;
+  flex: 1 1 240px;
   gap: 4px;
   flex-wrap: wrap;
   min-width: 0;
 }
 .source-files button {
-  flex-shrink: 0;
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 20px;
-  white-space: nowrap;
-}
-.source-files button[aria-pressed="true"] {
-  background: var(--muted);
   color: var(--foreground);
-  box-shadow: var(--semantic-shadow-xs);
+}
+.source-actions {
+  margin-left: auto;
 }
 .source-block pre {
   overflow: auto;

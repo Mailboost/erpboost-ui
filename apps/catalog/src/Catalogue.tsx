@@ -167,16 +167,38 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
       <div className="source-toolbar">
         <div className="source-files">
           {sources.map((file, i) => (
-            <button
+            <Button
               key={file.filename}
+              variant={i === index ? "secondary" : "ghost"}
+              size="sm"
               onClick={() => setIndex(i)}
               aria-pressed={i === index}
             >
               {file.filename}
-            </button>
+            </Button>
           ))}
         </div>
-        <div className="flex shrink-0 items-center gap-1">
+        <div className="source-actions flex shrink-0 items-center gap-1">
+          {sources.length > 1 && (
+            <Button
+              variant="outline"
+              size="sm"
+              title="Copy all files as Markdown (good for pasting to an AI agent)"
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  sources
+                    .map(
+                      (file) =>
+                        `### ${file.filename}\n\n\`\`\`${sourceLanguage(file.filename)}\n${file.source}\n\`\`\``,
+                    )
+                    .join("\n\n"),
+                )
+              }
+            >
+              <Copy size={14} />
+              Copy all ({sources.length})
+            </Button>
+          )}
           <Button
             variant="outline"
             size="sm"
@@ -189,24 +211,6 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
             {copied ? <Check size={14} /> : <Copy size={14} />}{" "}
             {copied ? "Copied" : "Copy"}
           </Button>
-          {sources.length > 1 && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() =>
-                navigator.clipboard.writeText(
-                  sources
-                    .map(
-                      (file) =>
-                        `### ${file.filename}\n\n\`\`\`${sourceLanguage(file.filename)}\n${file.source}\n\`\`\``,
-                    )
-                    .join("\n\n"),
-                )
-              }
-            >
-              Copy all ({sources.length})
-            </Button>
-          )}
         </div>
       </div>
       <div style={{ maxWidth, margin: "0 auto", width: "100%" }}>
