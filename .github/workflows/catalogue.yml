@@ -27,6 +27,7 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /erpboost-ui/
+      - run: npm run check:package
       - run: node scripts/export-pages.mjs
       - uses: actions/upload-pages-artifact@v3
         with:

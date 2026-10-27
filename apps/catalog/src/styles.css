@@ -1059,6 +1059,19 @@ textarea {
 .rich-editor .tiptap h2 {
   font-size: 22px;
 }
+.rich-editor .tiptap table,
+.document-paper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.rich-editor .tiptap th,
+.rich-editor .tiptap td,
+.document-paper th,
+.document-paper td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 8px;
+  text-align: left;
+}
 .editor-toolbar {
   display: flex;
   gap: 5px;

@@ -13,7 +13,12 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    dts({ tsconfigPath: "./tsconfig.json", exclude: ["**/*.test.*"] }),
+    dts({
+      tsconfigPath: "./tsconfig.json",
+      entryRoot: "src",
+      include: ["src/**/*"],
+      exclude: ["**/*.test.*"],
+    }),
   ],
   resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } },
   publicDir: false,

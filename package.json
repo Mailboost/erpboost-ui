@@ -14,6 +14,7 @@
     "dev": "npm run dev -w @mailboost/erpboost-ui-catalog",
     "build": "npm run build -w @mailboost/erpboost-ui && npm run build -w @mailboost/erpboost-ui-catalog",
     "typecheck": "npm run typecheck --workspaces --if-present",
+    "check:package": "node scripts/check-package.mjs",
     "preview": "npm run preview -w @mailboost/erpboost-ui-catalog"
   },
   "devDependencies": {

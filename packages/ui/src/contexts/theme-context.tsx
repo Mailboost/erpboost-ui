@@ -1,4 +1,11 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 /**
  * Color theme — the end-user accessibility preference. `system` follows the OS
@@ -9,7 +16,11 @@ export type ColorTheme = "light" | "dark" | "system";
 /** Color theme after resolving `system` to a concrete value. */
 export type ResolvedColorTheme = "light" | "dark";
 
-const ALL_COLOR_THEMES: readonly ColorTheme[] = ["light", "dark", "system"] as const;
+const ALL_COLOR_THEMES: readonly ColorTheme[] = [
+  "light",
+  "dark",
+  "system",
+] as const;
 
 /** Switcher entries for the appearance (color theme) control. */
 export type ColorThemeOption = {
@@ -27,11 +38,17 @@ export const COLOR_THEME_OPTIONS: readonly ColorThemeOption[] = [
 // Changing it would silently discard every existing user's preference — do not rename.
 const COLOR_THEME_STORAGE_KEY = "appshell-ui-theme";
 
-function readStored<T extends string>(key: string, allowList: readonly T[], fallback: T): T {
+function readStored<T extends string>(
+  key: string,
+  allowList: readonly T[],
+  fallback: T,
+): T {
   if (typeof window === "undefined") return fallback;
   try {
     const v = localStorage.getItem(key);
-    return v && (allowList as readonly string[]).includes(v) ? (v as T) : fallback;
+    return v && (allowList as readonly string[]).includes(v)
+      ? (v as T)
+      : fallback;
   } catch {
     return fallback;
   }
@@ -55,22 +72,35 @@ function resolveColorTheme(m: ColorTheme, dark: boolean): ResolvedColorTheme {
 }
 
 function getSystemDark(): boolean {
-  return typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 }
 
-const ThemeProviderContext = createContext<ThemeProviderState | undefined>(undefined);
+const ThemeProviderContext = createContext<ThemeProviderState | undefined>(
+  undefined,
+);
 
-export function ThemeProvider({ children, defaultColorTheme = "system" }: ThemeProviderProps) {
+export function ThemeProvider({
+  children,
+  defaultColorTheme = "system",
+}: ThemeProviderProps) {
   const [colorTheme, setColorThemeState] = useState<ColorTheme>(() =>
     readStored(COLOR_THEME_STORAGE_KEY, ALL_COLOR_THEMES, defaultColorTheme),
   );
 
-  const [resolvedColorTheme, setResolvedColorTheme] = useState<ResolvedColorTheme>(() =>
-    resolveColorTheme(
-      readStored(COLOR_THEME_STORAGE_KEY, ALL_COLOR_THEMES, defaultColorTheme),
-      getSystemDark(),
-    ),
-  );
+  const [resolvedColorTheme, setResolvedColorTheme] =
+    useState<ResolvedColorTheme>(() =>
+      resolveColorTheme(
+        readStored(
+          COLOR_THEME_STORAGE_KEY,
+          ALL_COLOR_THEMES,
+          defaultColorTheme,
+        ),
+        getSystemDark(),
+      ),
+    );
 
   const applyColorTheme = useCallback((resolved: ResolvedColorTheme) => {
     const root = window.document.documentElement;
@@ -107,6 +137,22 @@ export function ThemeProvider({ children, defaultColorTheme = "system" }: ThemeP
     [applyColorTheme],
   );
 
+  // Keep other tabs and embedded previews in sync without writing the value back.
+  useEffect(() => {
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key !== COLOR_THEME_STORAGE_KEY && event.key !== null) return;
+      const next = readStored(
+        COLOR_THEME_STORAGE_KEY,
+        ALL_COLOR_THEMES,
+        defaultColorTheme,
+      );
+      setColorThemeState(next);
+      setResolvedColorTheme(resolveColorTheme(next, getSystemDark()));
+    };
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
+  }, [defaultColorTheme]);
+
   const value = useMemo<ThemeProviderState>(
     () => ({
       colorTheme,
@@ -116,7 +162,11 @@ export function ThemeProvider({ children, defaultColorTheme = "system" }: ThemeP
     [colorTheme, resolvedColorTheme, setColorTheme],
   );
 
-  return <ThemeProviderContext.Provider value={value}>{children}</ThemeProviderContext.Provider>;
+  return (
+    <ThemeProviderContext.Provider value={value}>
+      {children}
+    </ThemeProviderContext.Provider>
+  );
 }
 
 /** Color theme hook — returns the current color theme and a setter. */

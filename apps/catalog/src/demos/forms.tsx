@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Input, Badge } from "@mailboost/erpboost-ui";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import { TableKit } from "@tiptap/extension-table";
 import { Bold, Italic, List, Plus, Trash2, Undo } from "lucide-react";
 
 export function FullPageForm() {
@@ -194,14 +195,25 @@ export function FormBuilder() {
     </div>
   );
 }
-export function RichTextEditor() {
+const initialNotes =
+  "<h2>Order notes</h2><p>Thank you for your purchase. Please <strong>confirm the delivery date</strong> before submitting this order.</p><ul><li>Check quantities and unit prices</li><li>Attach the supplier quotation</li></ul>";
+export function RichTextEditor({
+  initialContent = initialNotes,
+  onContentChange,
+}: {
+  initialContent?: string;
+  onContentChange?: (html: string) => void;
+}) {
+  const [saved, setSaved] = useState(false);
   const editor = useEditor({
-    extensions: [StarterKit],
-    content:
-      "<h2>Order notes</h2><p>Thank you for your purchase. Please <strong>confirm the delivery date</strong> before submitting this order.</p><ul><li>Check quantities and unit prices</li><li>Attach the supplier quotation</li></ul>",
+    extensions: [StarterKit, TableKit],
+    content: initialContent,
+    onUpdate: ({ editor }) => {
+      setSaved(false);
+      onContentChange?.(editor.getHTML());
+    },
     immediatelyRender: false,
   });
-  const [saved, setSaved] = useState(false);
   return (
     <div className="demo-card rich-editor">
       <div className="editor-toolbar">
@@ -252,6 +264,13 @@ export function RichTextEditor() {
 }
 export function DocumentPage() {
   const [editing, setEditing] = useState(false);
+  const [content, setContent] = useState(`<p>ERPBOOST SUPPLY CO.</p>
+    <h1>Purchase order</h1><p>PO-2026-1001 · October 27, 2026</p><hr>
+    <h3>Supplier</h3><p>Aoba Precision<br>Tokyo, Japan</p>
+    <table><thead><tr><th>Description</th><th>Qty</th><th>Amount</th></tr></thead>
+    <tbody><tr><td>Precision bearing</td><td>100</td><td>¥120,000</td></tr>
+    <tr><td>Steel bracket</td><td>50</td><td>¥36,000</td></tr></tbody></table>
+    <p><strong>Total: ¥156,000</strong></p><p>Please confirm the delivery date before dispatch.</p>`);
   return (
     <div className="stack">
       <div className="demo-heading">
@@ -264,47 +283,12 @@ export function DocumentPage() {
         </Button>
       </div>
       {editing ? (
-        <RichTextEditor />
+        <RichTextEditor initialContent={content} onContentChange={setContent} />
       ) : (
-        <article className="document-paper">
-          <p className="small muted">ERPBOOST SUPPLY CO.</p>
-          <h1>Purchase order</h1>
-          <p>PO-2026-1001 · October 27, 2026</p>
-          <hr />
-          <h3>Supplier</h3>
-          <p>
-            Aoba Precision
-            <br />
-            Tokyo, Japan
-          </p>
-          <table className="demo-table">
-            <thead>
-              <tr>
-                <th>Description</th>
-                <th>Qty</th>
-                <th>Amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Precision bearing</td>
-                <td>100</td>
-                <td>¥120,000</td>
-              </tr>
-              <tr>
-                <td>Steel bracket</td>
-                <td>50</td>
-                <td>¥36,000</td>
-              </tr>
-            </tbody>
-          </table>
-          <p className="number">
-            <strong>Total: ¥156,000</strong>
-          </p>
-          <p className="small muted">
-            Please confirm the delivery date before dispatch.
-          </p>
-        </article>
+        <article
+          className="document-paper"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       )}
     </div>
   );

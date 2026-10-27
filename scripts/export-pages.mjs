@@ -5,6 +5,7 @@ import { entries, sections } from "../apps/catalog/src/registry.ts";
 const output = resolve("apps/catalog/dist");
 const html = await readFile(resolve(output, "index.html"), "utf8");
 const routes = [
+  "__appinfo",
   ...sections.map((s) => s.category),
   ...entries.map((e) => `${e.category}/${e.slug}`),
 ];

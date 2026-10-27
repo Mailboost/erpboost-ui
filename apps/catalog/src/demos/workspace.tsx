@@ -25,6 +25,7 @@ export interface Order {
   status: string;
   date: string;
   amount: number;
+  note?: string;
 }
 export const initialOrders: Order[] = Array.from({ length: 36 }, (_, i) => ({
   id: `PO-2026-${1001 + i}`,
@@ -95,10 +96,22 @@ export function MiniSidebar({ active = "Orders" }: { active?: string }) {
     </aside>
   );
 }
-export function RecordDetails({ order = initialOrders[0] }: { order?: Order }) {
+export function RecordDetails({
+  order = initialOrders[0],
+  onUpdate,
+}: {
+  order?: Order;
+  onUpdate?: (order: Order) => void;
+}) {
   const [status, setStatus] = useState(order.status);
-  const [note, setNote] = useState("Please deliver during business hours.");
+  const [note, setNote] = useState(
+    order.note ?? "Please deliver during business hours.",
+  );
   const [saved, setSaved] = useState(false);
+  function updateStatus(next: string) {
+    setStatus(next);
+    onUpdate?.({ ...order, status: next });
+  }
   return (
     <div className="detail-layout">
       <div className="stack">
@@ -166,7 +179,13 @@ export function RecordDetails({ order = initialOrders[0] }: { order?: Order }) {
             <span role="status" className="small muted">
               {saved ? "Saved in this preview" : ""}
             </span>
-            <Button variant="outline" onClick={() => setSaved(true)}>
+            <Button
+              variant="outline"
+              onClick={() => {
+                onUpdate?.({ ...order, status, note });
+                setSaved(true);
+              }}
+            >
               Save notes
             </Button>
           </div>
@@ -186,17 +205,20 @@ export function RecordDetails({ order = initialOrders[0] }: { order?: Order }) {
         <h3>Actions</h3>
         <Button
           onClick={() =>
-            setStatus(status === "Approved" ? "Draft" : "Approved")
+            updateStatus(status === "Ordered" ? "Draft" : "Ordered")
           }
         >
           <Check size={15} />
-          {status === "Approved" ? "Reopen draft" : "Approve order"}
+          {status === "Ordered" ? "Reopen draft" : "Approve order"}
         </Button>
-        <Button variant="outline" onClick={() => downloadCsv([order])}>
+        <Button
+          variant="outline"
+          onClick={() => downloadCsv([{ ...order, status, note }])}
+        >
           <Download size={15} />
           Export order
         </Button>
-        <Button variant="ghost" onClick={() => setStatus("Cancelled")}>
+        <Button variant="ghost" onClick={() => updateStatus("Cancelled")}>
           <X size={15} />
           Cancel order
         </Button>
@@ -345,7 +367,7 @@ export function Collection({
               onClick={() => {
                 setRows((r) =>
                   r.map((o) =>
-                    selected.includes(o.id) ? { ...o, status: "Approved" } : o,
+                    selected.includes(o.id) ? { ...o, status: "Ordered" } : o,
                   ),
                 );
                 setSelected([]);
@@ -567,7 +589,20 @@ export function Collection({
             </Sheet.Description>
           </Sheet.Header>
           <div className="sheet-scroll">
-            {current && <RecordDetails key={current.id} order={current} />}
+            {current && (
+              <RecordDetails
+                key={current.id}
+                order={current}
+                onUpdate={(updated) => {
+                  setRows((items) =>
+                    items.map((item) =>
+                      item.id === updated.id ? updated : item,
+                    ),
+                  );
+                  setCurrent(updated);
+                }}
+              />
+            )}
           </div>
         </Sheet.Content>
       </Sheet.Root>
