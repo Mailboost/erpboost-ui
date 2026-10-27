@@ -51,6 +51,8 @@ import "@mailboost/erpboost-ui/styles";
 
 `npm run build -w @mailboost/erpboost-ui` で ESM・型定義・CSS が `packages/ui/dist/` に出力されます。`npm pack -w @mailboost/erpboost-ui` で、他プロジェクトに導入するためのパッケージを作れます。npm レジストリへの公開はまだ行っていません。React 19 を使用します。
 
+DataTableは既定でブラウザの右クリック操作を妨げません。組み込みのコピー・列固定メニューを使う場合は、`<DataTable.Root value={table} contextMenu>`で明示的に有効にします。列のsort / filter設定がある場合は、そのメニューも利用できます。
+
 ## カタログの更新
 
 1. `packages/ui/src/components/` の実装を変更します。

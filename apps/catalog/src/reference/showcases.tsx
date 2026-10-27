@@ -242,7 +242,10 @@ export function BulkExample() {
               <Select
                 items={["Pending", "Approved", "Rejected"]}
                 value={status}
-                onValueChange={setStatus}
+                onValueChange={(next) => {
+                  setStatus(next);
+                  setSelected({});
+                }}
                 placeholder="Status"
               />
             </div>

@@ -15,6 +15,8 @@ import type { PageInfo, SortState } from "@/types/collection";
  * explicit decision about whether they should appear in the context.
  */
 export interface DataTableContextValue<TRow extends Record<string, unknown>> {
+  /** Enable built-in header/cell context menus only when explicitly requested. */
+  contextMenu?: boolean;
   // Data
   rows: TRow[];
   loading: boolean;

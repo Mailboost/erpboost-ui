@@ -8,11 +8,13 @@ import {
   useMemo,
   useRef,
   useState,
+  type ComponentProps,
   type CSSProperties,
   type ReactNode,
 } from "react";
 import { ContextMenu } from "@base-ui/react/context-menu";
-import { ChevronRight, Ellipsis } from "lucide-react";
+import { Checkbox as BaseCheckbox } from "@base-ui/react/checkbox";
+import { Check, ChevronRight, Ellipsis, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTimeZone } from "@/contexts/appshell-context";
 import {
@@ -21,7 +23,6 @@ import {
 } from "@/contexts/collection-control-context";
 import { Table } from "@/components/table";
 import { Button } from "@/components/button";
-import { Checkbox } from "@/components/checkbox";
 import { Menu } from "@/components/menu";
 import { Tooltip } from "@/components/tooltip";
 import type {
@@ -32,7 +33,11 @@ import type {
   RowExpansionOptions,
   UseDataTableReturn,
 } from "./types";
-import { DataTableContext, type DataTableContextValue } from "./data-table-context";
+import {
+  DataTableContext,
+  useDataTableContext,
+  type DataTableContextValue,
+} from "./data-table-context";
 import { useDataTableT } from "./i18n";
 import { getCellValue, createTypedCellRenderer } from "./cell-renderers";
 import { isDecimalFilterValueValid } from "./filter-value-utils";
@@ -70,6 +75,25 @@ const DEFAULT_ROWS = 5;
 // area, and tiny page sizes don't collapse to a thin strip).
 const STATUS_ROWS = 3;
 const ROW_HEIGHT_PX = 53;
+
+// Table selection uses the compact control and native focus outline, rather
+// than the shadow and field-validation styling of the standalone Checkbox.
+function DataTableCheckbox(props: Pick<
+  ComponentProps<typeof BaseCheckbox.Root>,
+  "checked" | "indeterminate" | "onCheckedChange" | "aria-label"
+>) {
+  return (
+    <BaseCheckbox.Root
+      {...props}
+      data-slot="checkbox"
+      className="astw:flex astw:size-4 astw:items-center astw:justify-center astw:rounded-xs astw:border astw:border-input astw:data-checked:bg-primary astw:data-checked:border-primary astw:data-checked:text-primary-foreground astw:data-indeterminate:bg-primary astw:data-indeterminate:border-primary astw:data-indeterminate:text-primary-foreground"
+    >
+      <BaseCheckbox.Indicator className="astw:flex astw:data-unchecked:hidden">
+        {props.indeterminate ? <Minus className="astw:size-3" /> : <Check className="astw:size-3" />}
+      </BaseCheckbox.Indicator>
+    </BaseCheckbox.Root>
+  );
+}
 
 // Resolve the effective horizontal alignment for a column. Numeric `type`
 // values default to `"right"` so digits line up along their decimal place;
@@ -321,9 +345,9 @@ function buildColumnKeys<TRow extends Record<string, unknown>>(
 
 /**
  * Group the visible columns by pin side and compute cumulative sticky offsets.
- * The selection and expand columns (when present) auto-pin to the left edge and
- * row-actions (if present) auto-pins to the right edge, with user-pinned columns
- * stacking outward from them.
+ * Selection pins alongside other pinned columns; otherwise it scrolls normally.
+ * The expand column auto-pins left and row-actions auto-pins right, with
+ * user-pinned columns stacking outward from them.
  *
  * `columnKeys` is the definition-order key map (see {@link buildColumnKeys});
  * `columns` here is the visible/reordered subset, so keys are resolved by
@@ -367,7 +391,8 @@ function computePinLayout<TRow extends Record<string, unknown>>(
   let leftOffset = 0;
   let selection: PinPlacement | undefined;
   let expand: PinPlacement | undefined;
-  if (hasSelection) {
+  const hasPinnedColumns = left.length > 0 || right.length > 0 || hasExpand || hasRowActions;
+  if (hasSelection && hasPinnedColumns) {
     selection = { side: "left", offset: 0, isBoundary: !hasExpand && left.length === 0 };
     leftOffset = resolveWidth(SELECTION_KEY, SELECTION_WIDTH, widths);
   }
@@ -590,6 +615,8 @@ export interface DataTableRootProps<TRow extends Record<string, unknown>> {
   value: UseDataTableReturn<TRow>;
   children: ReactNode;
   className?: string;
+  /** Opt into built-in copy, pin and configured sort/filter context menus. */
+  contextMenu?: boolean;
 }
 
 /** Use `DataTable.Root` instead of calling this directly. */
@@ -597,8 +624,10 @@ function DataTableRoot<TRow extends Record<string, unknown>>({
   value,
   children,
   className,
+  contextMenu = false,
 }: DataTableRootProps<TRow>) {
   const dataTableValue: DataTableContextValue<TRow> = {
+    contextMenu,
     columns: value.columns,
     rows: value.rows,
     loading: value.loading,
@@ -979,7 +1008,7 @@ function DataTableHeaders({ className: headerClassName }: { className?: string }
             );
             return (
               <Table.Head data-col-key={SELECTION_KEY} style={style} className={className}>
-                <Checkbox
+                <DataTableCheckbox
                   checked={isAllSelected}
                   indeterminate={isIndeterminate}
                   onCheckedChange={(checked) => {
@@ -1050,19 +1079,23 @@ function DataTableHeaders({ className: headerClassName }: { className?: string }
           );
           return (
             <Table.Head key={key} data-col-key={key} style={style} className={className}>
-              <DataTableHeaderContextMenu
-                align={align}
-                column={col}
-                columnKey={key}
-                pinnedColumns={pinnedColumns}
-                setPin={setPin}
-                sortDirection={currentSort?.direction}
-                onSortDirectionChange={
-                  isSortable ? (direction) => onSort(sortField, direction) : undefined
-                }
-              >
-                {content}
-              </DataTableHeaderContextMenu>
+              {ctx.contextMenu ? (
+                <DataTableHeaderContextMenu
+                  align={align}
+                  column={col}
+                  columnKey={key}
+                  pinnedColumns={pinnedColumns}
+                  setPin={setPin}
+                  sortDirection={currentSort?.direction}
+                  onSortDirectionChange={
+                    isSortable ? (direction) => onSort(sortField, direction) : undefined
+                  }
+                >
+                  {content}
+                </DataTableHeaderContextMenu>
+              ) : (
+                content
+              )}
             </Table.Head>
           );
         })}
@@ -1358,6 +1391,7 @@ function DataTableRows<TRow extends Record<string, unknown>>({
   toggleRowExpansion,
 }: DataTableRowsProps<TRow>) {
   const t = useDataTableT();
+  const { contextMenu: contextMenuEnabled = false } = useDataTableContext<TRow>();
   const baseId = useId();
   const { value: timeZone } = useTimeZone();
   const hasExpand = !!rowExpansion;
@@ -1378,7 +1412,7 @@ function DataTableRows<TRow extends Record<string, unknown>>({
     handleContextMenuOpenChange: handleCellContextMenuOpenChange,
     handleContextMenuCloseComplete: handleCellContextMenuCloseComplete,
     getCellContextMenuHandlers,
-  } = useCellContextMenu();
+  } = useCellContextMenu(contextMenuEnabled);
   const navigation = useCellEditNavigation();
   // Namespaced so an id-less row's index fallback can't collide with a real
   // id of the same digits — React reconciles duplicate keys by position,
@@ -1439,7 +1473,7 @@ function DataTableRows<TRow extends Record<string, unknown>>({
                     className={className}
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <Checkbox
+                    <DataTableCheckbox
                       checked={selected}
                       onCheckedChange={() => toggleRowSelection(row)}
                       aria-label={t("selectRow")}
@@ -1528,7 +1562,9 @@ function DataTableRows<TRow extends Record<string, unknown>>({
                 ) : (
                   content
                 );
-              const menuValue = getCellContextValue(row, col, content);
+              const menuValue = contextMenuEnabled
+                ? getCellContextValue(row, col, content)
+                : undefined;
               const headerLabel = col.label ?? key;
 
               // Surface the full value on hover when the cell is truncated
@@ -1546,14 +1582,19 @@ function DataTableRows<TRow extends Record<string, unknown>>({
                 }
               }
 
-              const cellContextMenuHandlers = getCellContextMenuHandlers({
-                headerLabel,
-                value: menuValue,
-                filterConfig: col.filter,
-              });
+              const cellContextMenuHandlers = contextMenuEnabled
+                ? getCellContextMenuHandlers({
+                    headerLabel,
+                    value: menuValue,
+                    filterConfig: col.filter,
+                  })
+                : {};
               const cellProps = {
                 "data-slot": "data-table-cell" as const,
-                style: { ...cellStyle, WebkitTouchCallout: "none" } satisfies CSSProperties,
+                style: {
+                  ...cellStyle,
+                  ...(contextMenuEnabled && { WebkitTouchCallout: "none" }),
+                } satisfies CSSProperties,
                 className: cn(
                   cellClassName,
                   blockReadOnlyCells && !editable && "astw:cursor-not-allowed",
@@ -1637,12 +1678,14 @@ function DataTableRows<TRow extends Record<string, unknown>>({
           </Fragment>
         );
       })}
-      <DataTableCellContextMenu
-        context={cellContextMenu}
-        open={cellContextMenuOpen}
-        onOpenChange={handleCellContextMenuOpenChange}
-        onCloseComplete={handleCellContextMenuCloseComplete}
-      />
+      {contextMenuEnabled && (
+        <DataTableCellContextMenu
+          context={cellContextMenu}
+          open={cellContextMenuOpen}
+          onOpenChange={handleCellContextMenuOpenChange}
+          onCloseComplete={handleCellContextMenuCloseComplete}
+        />
+      )}
     </>
   );
 }

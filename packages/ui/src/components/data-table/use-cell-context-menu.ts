@@ -38,7 +38,7 @@ function createContextMenuAnchor(x: number, y: number, size = 0) {
  * - Close animation needs the last anchor point to stay alive until the popup has
  *   fully exited; we therefore track `open` separately from the stored context.
  */
-export function useCellContextMenu() {
+export function useCellContextMenu(enabled = true) {
   const [contextMenu, setContextMenu] = useState<CellContextMenuState | null>(null);
   const [contextMenuOpen, setContextMenuOpen] = useState(false);
   const touchPositionRef = useRef<{ x: number; y: number } | null>(null);
@@ -53,6 +53,14 @@ export function useCellContextMenu() {
   }, []);
 
   useEffect(() => () => clearLongPress(), [clearLongPress]);
+
+  useEffect(() => {
+    if (!enabled) {
+      clearLongPress();
+      setContextMenuOpen(false);
+      setContextMenu(null);
+    }
+  }, [enabled, clearLongPress]);
 
   const openContextMenu = useCallback(
     (x: number, y: number, payload: CellContextMenuPayload, touchTargetSize = 0) => {
