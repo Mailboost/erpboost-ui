@@ -1,0 +1,501 @@
+import { ReactNode } from "react";
+import { capitalCase } from "change-case";
+import { DefaultErrorBoundary } from "./components/internals/default-error-boundary";
+import { useAppShellConfig, type ContextData } from "./contexts/appshell-context";
+import { buildLocaleResolver, type LocalizedString } from "./lib/i18n";
+import { labels } from "./i18n-labels";
+import { redirect, type LoaderFunctionArgs } from "react-router";
+
+// ============================================
+// Context Data (module scope)
+// ============================================
+
+let contextDataStore: ContextData = {} as ContextData;
+
+/**
+ * Set the context data. Called internally by AppShell on mount.
+ * @internal
+ */
+export const setContextData = (data: ContextData) => {
+  contextDataStore = data;
+};
+
+// ============================================
+// Guard Types and Helpers
+// ============================================
+
+/**
+ * Context provided to guard functions
+ */
+export type GuardContext = {
+  context: ContextData;
+};
+
+/**
+ * Result of guard evaluation.
+ * Guards can only return one of these constrained result types.
+ */
+export type GuardResult =
+  /** Allow access and render the component */
+  | { type: "pass" }
+  /** Deny access and show 404 */
+  | { type: "hidden" }
+  /** Redirect to another path */
+  | { type: "redirect"; to: string };
+
+/**
+ * Guard function type.
+ * Guards are executed in order and stop on the first non-pass result.
+ */
+export type Guard = (ctx: GuardContext) => Promise<GuardResult> | GuardResult;
+
+/**
+ * Allow access to the route. Continue to next guard or render component.
+ *
+ * @example
+ * ```tsx
+ * const myGuard: Guard = ({ context }) => {
+ *   if (context.currentUser) {
+ *     return pass();
+ *   }
+ *   return hidden();
+ * };
+ * ```
+ */
+export const pass = (): GuardResult => ({ type: "pass" });
+
+/**
+ * Deny access and show 404 Not Found.
+ *
+ * @example
+ * ```tsx
+ * const adminOnly: Guard = ({ context }) => {
+ *   if (context.currentUser.role !== "admin") {
+ *     return hidden();
+ *   }
+ *   return pass();
+ * };
+ * ```
+ */
+export const hidden = (): GuardResult => ({ type: "hidden" });
+
+/**
+ * Redirect to another path.
+ *
+ * @param to - Path to redirect to
+ *
+ * @example
+ * ```tsx
+ * const requireAuth: Guard = ({ context }) => {
+ *   if (!context.currentUser) {
+ *     return redirectTo("/login");
+ *   }
+ *   return pass();
+ * };
+ * ```
+ */
+export const redirectTo = (to: string): GuardResult => ({
+  type: "redirect",
+  to,
+});
+
+/**
+ * Error boundary element type for route error handling.
+ *
+ * Pass a JSX element that will render when an error occurs.
+ * Use the `useRouteError` hook from react-router to access the error.
+ *
+ * @example
+ * ```tsx
+ * import { useRouteError } from "@mailboost/erpboost-ui";
+ *
+ * const MyErrorBoundary = () => {
+ *   const error = useRouteError() as Error;
+ *   return <div>Error: {error.message}</div>;
+ * };
+ *
+ * // In config:
+ * errorBoundary: <MyErrorBoundary />
+ * // Or with props:
+ * errorBoundary: <MyErrorBoundary theme="dark" onReport={handleReport} />
+ * ```
+ */
+export type ErrorBoundaryComponent = ReactNode;
+
+/**
+ * Creates a Not Found error response
+ *
+ * Used to indicate a 404 Not Found error in access control or loaders.
+ * Returns a new Response instance each time to avoid "body stream already read" errors.
+ */
+export const createNotFoundError = () => new Response("Not Found", { status: 404 });
+
+/**
+ * Run guards for a resource with given loader args.
+ *
+ * Guards are executed in order. If any guard returns non-pass result,
+ * execution stops and that result is returned.
+ */
+export const runGuards = async (guards: Guard[] | undefined): Promise<GuardResult> => {
+  if (!guards || guards.length === 0) return { type: "pass" };
+
+  const ctx: GuardContext = {
+    context: contextDataStore,
+  };
+
+  for (const guard of guards) {
+    const result = await guard(ctx);
+    if (result.type !== "pass") {
+      return result;
+    }
+  }
+
+  return { type: "pass" };
+};
+
+/**
+ * Wrap a loader with guards check.
+ *
+ * If guards deny access, throws createNotFoundError or redirects.
+ * Otherwise, runs the base loader if provided.
+ */
+export const withGuardsLoader = (guards: Guard[] | undefined, baseLoader?: LoaderHandler) => {
+  return async (args: LoaderFunctionArgs) => {
+    const result = await runGuards(guards);
+    switch (result.type) {
+      case "hidden":
+        throw createNotFoundError();
+      case "redirect":
+        return redirect(result.to);
+      case "pass":
+        return baseLoader ? baseLoader(args) : null;
+    }
+  };
+};
+
+/**
+ * Generate a human-readable title from a route path.
+ * Root paths ("" or "/") produce a localized "Home" / "ホーム" title.
+ * Other paths use capitalCase (e.g. "order-items" → "Order Items").
+ */
+export const titleFromPath = (path: string): LocalizedString =>
+  path === "" || path === "/" ? labels.t("home") : capitalCase(path);
+
+type CommonPageResource = {
+  path: string;
+  type: "component";
+  meta: {
+    title: LocalizedString;
+    icon?: ReactNode;
+    breadcrumbTitle?: string | ((segment: string) => LocalizedString);
+  };
+};
+
+export type LoaderHandler = (args: LoaderFunctionArgs) => Promise<unknown> | unknown;
+
+/**
+ * A resource that can be included in the root-level content in the navigation.
+ */
+export type Module = Omit<CommonPageResource, "meta"> & {
+  // Keep `_type` for backward compatibility with existing consumers
+  // oxlint-disable-next-line no-underscore-dangle
+  _type: "module";
+  component?: () => ReactNode;
+  meta: CommonPageResource["meta"] & {
+    icon?: ReactNode;
+    menuItemClickable: boolean;
+  };
+  resources: Array<Resource>;
+  errorBoundary: ErrorBoundaryComponent;
+  guards?: Guard[];
+  loader?: LoaderHandler;
+};
+
+/**
+ * A resource that can be included in the sub-content in the root resource.
+ *
+ * This resource does not have `category` metadata.
+ */
+export type Resource = CommonPageResource & {
+  // Keep `_type` for backward compatibility with existing consumers
+  // oxlint-disable-next-line no-underscore-dangle
+  _type: "resource";
+  component?: () => ReactNode;
+  subResources?: Array<Resource>;
+  errorBoundary: ErrorBoundaryComponent;
+  guards?: Guard[];
+  loader?: LoaderHandler;
+};
+
+export type Modules = Array<Module>;
+
+type ResourceMeta = {
+  /**
+   * Title of the page used in navigation.
+   *
+   * If not provided, the title will be generated from the path.
+   */
+  title?: LocalizedString;
+
+  icon?: ReactNode;
+
+  /**
+   * Custom breadcrumb segment title. Pass `labels.t("key")` directly for localization.
+   * Other callbacks receive the URL segment and may return a LocalizedString
+   * (e.g. `(segment) => labels.t("order", { id: segment })`), resolved using the current locale.
+   */
+  breadcrumbTitle?: string | ((segment: string) => LocalizedString);
+};
+
+type CommonProps = {
+  /**
+   * Path of the resource.
+   *
+   * The path will be used to generate the URL for the resource.
+   * This also supports dynamic parameters using the syntax `:paramName`.
+   */
+  path: string;
+
+  /**
+   * Metadata for the page.
+   */
+  meta?: ResourceMeta;
+
+  /**
+   * Guards to control access to this module/resource.
+   * Guards are executed in order. If any guard returns non-pass result,
+   * access is denied.
+   *
+   * @example
+   * ```tsx
+   * guards: [
+   *   ({ context }) => context.currentUser ? pass() : redirectTo("/login"),
+   *   ({ context }) => context.currentUser.role === "admin" ? pass() : hidden(),
+   * ]
+   * ```
+   */
+  guards?: Guard[];
+};
+
+export type ResourceComponentProps = {
+  title: string;
+  icon?: ReactNode;
+  resources?: Array<Resource>;
+};
+
+/**
+ * Create a component that has resolved props by AppShell configurations.
+ */
+const makeComponent = (
+  props: {
+    metaTitle: LocalizedString;
+    fallbackTitle: LocalizedString;
+  },
+  render: (title: string) => ReactNode,
+) => {
+  return () => {
+    const { configurations } = useAppShellConfig();
+    const { metaTitle, fallbackTitle } = props;
+    const resolve = buildLocaleResolver(configurations.locale);
+    const resolvedFallback =
+      typeof fallbackTitle === "function" ? fallbackTitle(configurations.locale) : fallbackTitle;
+    const title = resolve(metaTitle, resolvedFallback);
+    return render(title);
+  };
+};
+
+type CommonModuleProps = {
+  /**
+   * Resource associated to the module.
+   */
+  resources: Array<Resource>;
+  meta: CommonProps["meta"] & {
+    icon?: ReactNode;
+  };
+};
+
+type ErrorBoundaryProps = {
+  /**
+   * Error boundary component for this module/resource and its children.
+   * When an error occurs, this component will render.
+   * Overrides any parent-level (module or global) error boundary.
+   * Use the `useRouteError` hook to access error details within the component.
+   */
+  errorBoundary?: ErrorBoundaryComponent;
+};
+
+type DefineModuleProps = CommonProps &
+  CommonModuleProps &
+  ErrorBoundaryProps & {
+    /**
+     * React component to render.
+     *
+     * If not provided and no guards are given, the module path will return a 404
+     * response while child resources remain accessible.
+     *
+     * If `resources` is non-empty and guards are provided, guards take precedence
+     * over the default 404: for example, `redirectTo()` will redirect instead of
+     * returning 404. If all guards return `pass()`, the module path still returns
+     * a 404 since there is no component to render.
+     *
+     * Guard-only modules (no component, no resources) are also supported — for
+     * example, to maintain legacy URL paths that redirect elsewhere. In this case,
+     * at least one guard must be provided.
+     *
+     * @example
+     * ```tsx
+     * component: (props) => <div>{props.title}</div>
+     * ```
+     */
+    component?: (props: ResourceComponentProps) => ReactNode;
+  };
+
+/**
+ * Define a module that appears as a top-level item in the sidebar navigation.
+ *
+ * A module can be configured in several ways:
+ * - **With component**: renders the component at the module path.
+ * - **Without component, with resources**: child resources are accessible, but
+ *   navigating to the module path itself returns a 404.
+ * - **With guards only**: useful for redirect-only paths (e.g. legacy URL migration).
+ *   The guard loader runs and can redirect; if all guards pass, the path returns 404.
+ * - **Path only (no component, no resources, no guards)**: the module path falls
+ *   through to the catch-all 404 route.
+ *
+ * @example
+ * ```
+ * defineModule({
+ *   path: "dashboard",
+ *   component: (props) => <div>{props.title}</div>,
+ *   resources: [defineResource({ ... })],
+ * });
+ * ```
+ */
+export function defineModule(props: DefineModuleProps): Module {
+  const { path, meta, component, resources, errorBoundary, guards } = props;
+  const metaTitle: LocalizedString = meta?.title ?? titleFromPath(path);
+  const fallbackTitle = titleFromPath(path);
+  const loader = guards && guards.length > 0 ? withGuardsLoader(guards) : undefined;
+  const wrappedComponent = component
+    ? makeComponent({ metaTitle, fallbackTitle }, (title) => component({ title, resources }))
+    : undefined;
+
+  return {
+    path,
+    type: "component" as const,
+    // oxlint-disable-next-line no-underscore-dangle
+    _type: "module" as const,
+    component: wrappedComponent,
+    loader,
+    meta: {
+      title: metaTitle,
+      ...(meta?.breadcrumbTitle !== undefined ? { breadcrumbTitle: meta.breadcrumbTitle } : {}),
+      ...meta,
+      menuItemClickable: component !== undefined,
+      icon: props.meta?.icon,
+    },
+    resources,
+    errorBoundary: errorBoundary || <DefaultErrorBoundary />,
+    guards,
+  };
+}
+
+type DefineResourceProps = CommonProps &
+  ErrorBoundaryProps & {
+    /**
+     * React component to render.
+     *
+     * If not provided and no guards are given, the resource path will return a 404
+     * response while sub-resources remain accessible.
+     *
+     * If `subResources` is non-empty and guards are provided, guards take precedence
+     * over the default 404: for example, `redirectTo()` will redirect instead of
+     * returning 404. If all guards return `pass()`, the resource path still returns
+     * a 404 since there is no component to render.
+     */
+    component?: (props: ResourceComponentProps) => ReactNode;
+    /**
+     * Sub-resources of the resource.
+     */
+    subResources?: Array<Resource>;
+  };
+
+/**
+ * Define a resource that renders a React component.
+ *
+ * A resource can be configured in several ways:
+ * - **With component**: renders the component at the resource path.
+ * - **Without component, with subResources**: sub-resources are accessible,
+ *   but navigating to the resource path itself returns a 404.
+ * - **With guards only**: useful for redirect-only paths.
+ *   The guard loader runs and can redirect; if all guards pass, the path returns 404.
+ *
+ * This resource can be used as a sub-resource of a module or as a root-level resource.
+ *
+ * @example
+ * ```
+ * // Resource with component and sub-resources
+ * defineResource({
+ *   path: "custom-page",
+ *   component: () => {
+ *     return (
+ *       <div>
+ *         <p>This is a custom page.</p>
+ *       </div>
+ *     );
+ *   },
+ *   subResources: [
+ *     defineResource({
+ *       path: "sub-page",
+ *       component: () => {
+ *         return (
+ *           <div>
+ *             <p>This is a sub page.</p>
+ *           </div>
+ *         );
+ *       },
+ *     }),
+ *   ]
+ * });
+ *
+ * // Resource without component (sub-resources only, path returns 404)
+ * defineResource({
+ *   path: "namespace",
+ *   subResources: [
+ *     defineResource({
+ *       path: "page-a",
+ *       component: () => <div>Page A</div>,
+ *     }),
+ *   ]
+ * });
+ * ```
+ *
+ */
+export function defineResource(props: DefineResourceProps): Resource {
+  const { path, component, subResources, meta, errorBoundary, guards } = props;
+  const metaTitle: LocalizedString = meta?.title ?? capitalCase(path);
+  const fallbackTitle = capitalCase(path);
+  const loader = guards && guards.length > 0 ? withGuardsLoader(guards) : undefined;
+  const wrappedComponent = component
+    ? makeComponent({ metaTitle, fallbackTitle }, (title) =>
+        component({ title, resources: subResources }),
+      )
+    : undefined;
+
+  return {
+    // oxlint-disable-next-line no-underscore-dangle
+    _type: "resource" as const,
+    type: "component" as const,
+    path,
+    meta: {
+      title: metaTitle,
+      icon: meta?.icon,
+      ...(meta?.breadcrumbTitle !== undefined ? { breadcrumbTitle: meta.breadcrumbTitle } : {}),
+    },
+    component: wrappedComponent,
+    subResources,
+    errorBoundary: errorBoundary ?? <DefaultErrorBoundary />,
+    guards,
+    loader,
+  };
+}

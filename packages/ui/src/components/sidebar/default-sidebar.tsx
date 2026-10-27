@@ -1,0 +1,363 @@
+import { Suspense } from "react";
+import { Await, useLocation } from "react-router";
+import { ChevronRight, SearchIcon } from "lucide-react";
+import { Collapsible } from "@base-ui/react/collapsible";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarMenuAction,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarHeader,
+  SidebarTrigger,
+  useSidebar,
+} from "./primitives";
+import { useAppShellConfig } from "@/contexts/appshell-context";
+import { useCommandPaletteState } from "@/contexts/command-palette-context";
+import { Link } from "react-router";
+import { useT } from "@/i18n-labels";
+import { useNavItems, type NavItem } from "@/routing/navigation";
+import { cn } from "@/lib/utils";
+import { Text } from "../text";
+
+function resolveCollapsibleMode(
+  collapsible: boolean | undefined,
+  isIconMode: boolean,
+  iconRail: boolean | undefined,
+): "none" | "icon" | "offcanvas" {
+  if (!collapsible) return "none";
+  // Tablet always uses the icon rail (there is no room to slide fully away).
+  // On desktop the icon rail is opt-in via `iconRail`; otherwise the sidebar
+  // collapses off-canvas as before.
+  if (isIconMode || iconRail) return "icon";
+  return "offcanvas";
+}
+
+function resolveCommandPaletteShortcutLabel() {
+  if (typeof navigator === "undefined") return "Ctrl+K";
+
+  const platform =
+    (navigator as Navigator & { userAgentData?: { platform?: string } }).userAgentData?.platform ??
+    navigator.platform ??
+    "";
+
+  return /mac|iphone|ipad|ipod/i.test(platform) ? "⌘K" : "Ctrl+K";
+}
+
+// Always rendered regardless of searchSources — the palette searches routes
+// and contextual actions too, so there is always something to search.
+const SearchEntry = () => {
+  const { openCommandPalette } = useCommandPaletteState();
+  const t = useT();
+  const shortcutLabel = resolveCommandPaletteShortcutLabel();
+  const tooltipLabel = `${t("search")} (${shortcutLabel})`;
+
+  return (
+    <SidebarMenuItem className="astw:mt-1 astw:pb-2">
+      <SidebarMenuButton
+        render={<button type="button" />}
+        tooltip={tooltipLabel}
+        aria-label={tooltipLabel}
+        onClick={() => openCommandPalette()}
+        className={cn(
+          "astw:h-8 astw:justify-start astw:gap-2.5 astw:border astw:border-border/80 astw:bg-background/70 astw:px-2.5 astw:py-1.5 astw:text-body-sm astw:text-muted-foreground astw:shadow-none",
+          "astw:hover:bg-muted/30 astw:hover:text-muted-foreground",
+          "astw:focus-visible:border-ring astw:focus-visible:ring-ring/40 astw:focus-visible:ring-2",
+        )}
+      >
+        <SearchIcon className="astw:size-3.5 astw:text-muted-foreground astw:opacity-70" />
+        <span className="astw:flex-1 astw:truncate astw:text-body-sm astw:text-muted-foreground astw:group-data-[collapsible=icon]:hidden">
+          {t("commandPaletteSearch")}
+        </span>
+        <kbd
+          aria-hidden="true"
+          className="astw:pointer-events-none astw:shrink-0 astw:text-body-sm astw:text-muted-foreground astw:opacity-70 astw:group-data-[collapsible=icon]:hidden"
+        >
+          {shortcutLabel}
+        </kbd>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
+  );
+};
+
+export type DefaultSidebarProps = {
+  /**
+   * Header content.
+   */
+  header?: React.ReactNode;
+
+  /**
+   * Footer content.
+   */
+  footer?: React.ReactNode;
+
+  /**
+   * When provided, enables explicit sidebar composition using React components.
+   * Auto-generation is completely disabled when children is specified.
+   */
+  children?: React.ReactNode;
+
+  /**
+   * Hide the sidebar's own header row (org title + collapse toggle). Use when a
+   * global top bar already owns those — e.g. `SidebarLayout topBar`.
+   *
+   * @default false
+   */
+  hideHeader?: boolean;
+
+  /**
+   * Hide the built-in Search entry. Use when the command palette is already
+   * reachable elsewhere — e.g. a global search box in `SidebarLayout topBar`.
+   *
+   * @default false
+   */
+  hideSearch?: boolean;
+
+  /**
+   * Collapse to a narrow icon rail (icons stay visible) instead of sliding
+   * fully off-canvas. The rail then stays visible at every width — including
+   * mobile, where it replaces the off-canvas drawer with the icon-width rail.
+   *
+   * @default false
+   */
+  iconRail?: boolean;
+};
+
+/**
+ * Default sidebar component with auto-generated navigation items.
+ *
+ * Must be rendered inside `AppShell` (or a `CommandPaletteProvider`) — the
+ * built-in Search button requires the palette context.
+ *
+ * It works in both auto-generation mode and composition mode.
+ * - Auto-generation mode: when no children are provided, it automatically generates sidebar items based on the application's resource definitions.
+ * - Composition mode: when children are provided, it allows developers to manually define the sidebar structure using SidebarItem, SidebarGroup, and other components.
+ *
+ * @example
+ * ```tsx
+ * // Auto-generation mode
+ * <DefaultSidebar />
+ *
+ * // Composition mode
+ * <DefaultSidebar>
+ *   <SidebarItem to="/dashboard" />
+ *   <SidebarGroup title="products">
+ *     <SidebarItem to="/products/all" />
+ *   </SidebarGroup>
+ *   <SidebarSeparator />
+ * </DefaultSidebar>
+ * ```
+ */
+export const DefaultSidebar = (props: DefaultSidebarProps) => {
+  const { title, icon } = useAppShellConfig();
+  const { pathname: currentPath } = useLocation();
+  const { isIconMode, collapsible } = useSidebar();
+
+  const DefaultHeader = (
+    <SidebarHeader>
+      {icon}
+      <Text
+        variant="heading-sm"
+        className={cn("astw:mb-2 astw:mt-2 astw:px-2", isIconMode && "astw:hidden")}
+        // eslint-disable-next-line jsx-a11y/heading-has-content
+        render={<h1 />}
+      >
+        {title}
+      </Text>
+    </SidebarHeader>
+  );
+  const DefaultFooter = null;
+
+  const collapsibleMode = resolveCollapsibleMode(collapsible, isIconMode, props.iconRail);
+
+  return (
+    <Sidebar variant="inset" collapsible={collapsibleMode}>
+      {!props.hideHeader && !isIconMode && (
+        <div className="astw:flex astw:justify-between astw:items-center">
+          {props.header ?? DefaultHeader}
+          {collapsible && (
+            <div className="astw:hidden astw:md:block">
+              <SidebarTrigger className="astw:-ml-1" />
+            </div>
+          )}
+        </div>
+      )}
+      <SidebarContent>
+        {props.children ? (
+          // New API: children-based explicit definition
+          <SidebarGroup>
+            <SidebarMenu>
+              {!props.hideSearch && <SearchEntry />}
+              {props.children}
+            </SidebarMenu>
+          </SidebarGroup>
+        ) : (
+          // Existing behavior: auto-generation from resources
+          <Suspense fallback={<SidebarSkeleton />}>
+            <AutoSidebar currentPath={currentPath} hideSearch={props.hideSearch} />
+          </Suspense>
+        )}
+      </SidebarContent>
+      {props.footer ?? DefaultFooter}
+    </Sidebar>
+  );
+};
+
+/**
+ * Component boundary to resolve and render automatic sidebar items.
+ */
+const AutoSidebar = ({
+  currentPath,
+  hideSearch,
+}: {
+  currentPath: string;
+  hideSearch?: boolean;
+}) => {
+  const navItems = useNavItems();
+
+  return (
+    <Await resolve={navItems}>
+      {(items) => (
+        <AutoSidebarItems items={items ?? []} currentPath={currentPath} hideSearch={hideSearch} />
+      )}
+    </Await>
+  );
+};
+
+/**
+ * Compare a nav-item URL (which may lack a leading slash) against the
+ * current pathname (which always starts with "/").
+ */
+const isActivePath = (url: string | undefined, currentPath: string) => {
+  if (!url) return false;
+  const normalizedUrl = url.startsWith("/") ? url : `/${url}`;
+  return normalizedUrl === currentPath;
+};
+
+/**
+ * Automatically generates sidebar items from navigation data.
+ */
+const AutoSidebarItems = (props: {
+  items: Array<NavItem>;
+  currentPath: string;
+  hideSearch?: boolean;
+}) => {
+  const t = useT();
+
+  return (
+    <SidebarGroup>
+      <SidebarMenu>
+        {!props.hideSearch && <SearchEntry />}
+        {props.items.map((item) => {
+          return (
+            <Collapsible.Root key={item.title} render={<SidebarMenuItem />} defaultOpen={true}>
+              {item.url ? (
+                <>
+                  <SidebarMenuButton
+                    render={
+                      <Link
+                        to={item.url as string}
+                        aria-current={
+                          isActivePath(item.url, props.currentPath) ? "page" : undefined
+                        }
+                      />
+                    }
+                    isActive={isActivePath(item.url, props.currentPath)}
+                    tooltip={item.title}
+                  >
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                  {!!item.items?.length && (
+                    <Collapsible.Trigger
+                      render={<SidebarMenuAction className="astw:data-panel-open:rotate-90" />}
+                    >
+                      <ChevronRight />
+                      <span className="astw:sr-only">{t("toggle")}</span>
+                    </Collapsible.Trigger>
+                  )}
+                </>
+              ) : (
+                <>
+                  <Collapsible.Trigger className="astw:flex astw:w-full astw:[&[data-panel-open]_.astw-rotate-target]:rotate-90">
+                    <SidebarMenuButton
+                      render={<span className="astw:flex astw:w-full" />}
+                      tooltip={item.title}
+                      onClick={(e) =>
+                        // Prevent SidebarMenuButton's auto-close behavior so the mobile sidebar
+                        // stays open when toggling a collapsible group.
+                        e.preventDefault()
+                      }
+                    >
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </SidebarMenuButton>
+                    {!!item.items?.length && (
+                      <SidebarMenuAction className="astw-rotate-target" render={<span />}>
+                        <ChevronRight />
+                        <span className="astw:sr-only">{t("toggle")}</span>
+                      </SidebarMenuAction>
+                    )}
+                  </Collapsible.Trigger>
+                </>
+              )}
+              {!!item.items?.length && (
+                <Collapsible.Panel>
+                  <SidebarMenuSub>
+                    {item.items
+                      ?.filter((subItem) => subItem.url)
+                      .map((subItem) => (
+                        <SidebarMenuSubItem key={subItem.title}>
+                          <SidebarMenuSubButton
+                            render={
+                              <Link
+                                to={subItem.url!}
+                                aria-current={
+                                  isActivePath(subItem.url, props.currentPath) ? "page" : undefined
+                                }
+                              />
+                            }
+                            isActive={isActivePath(subItem.url, props.currentPath)}
+                          >
+                            <span>{subItem.title}</span>
+                          </SidebarMenuSubButton>
+                        </SidebarMenuSubItem>
+                      ))}
+                  </SidebarMenuSub>
+                </Collapsible.Panel>
+              )}
+            </Collapsible.Root>
+          );
+        })}
+      </SidebarMenu>
+    </SidebarGroup>
+  );
+};
+
+// Pre-shuffled widths for skeleton items (computed once at module load)
+const skeletonWidths = [104, 80, 112, 88, 96, 100, 84, 92];
+
+const SidebarSkeleton = () => {
+  return (
+    <SidebarGroup>
+      <SidebarMenu className="astw:px-2">
+        {skeletonWidths.map((width, idx) => (
+          <SidebarMenuItem key={idx}>
+            <div className="astw:flex astw:items-center astw:gap-2 astw:py-1.5">
+              <div className="astw:h-4 astw:w-4 astw:rounded-md astw:bg-muted" />
+              <div
+                className="astw:h-4 astw:rounded astw:bg-muted"
+                style={{ width: `${width}px` }}
+              />
+            </div>
+          </SidebarMenuItem>
+        ))}
+      </SidebarMenu>
+    </SidebarGroup>
+  );
+};

@@ -1,0 +1,111 @@
+import { useMemo } from "react";
+import {
+  AppShell,
+  DefaultSidebar,
+  Link,
+  SidebarGroup,
+  SidebarItem,
+  SidebarLayout,
+  defineModule,
+  defineResource,
+} from "@mailboost/erpboost-ui";
+import { entries, sections, routeOf } from "./registry";
+import { CategoryPage, EntryPage, HomePage } from "./Catalogue";
+import { LocaleProvider, useLocale } from "./locale";
+
+function CatalogueApp() {
+  const { language, setLanguage, t } = useLocale();
+  const preview = new URLSearchParams(location.search).get("preview") === "1";
+  const modules = useMemo(
+    () =>
+      sections.map((section) =>
+        defineModule({
+          path: section.category,
+          meta: { title: section.title },
+          component: () => <CategoryPage category={section.category} />,
+          resources: entries
+            .filter((entry) => entry.category === section.category)
+            .map((entry) =>
+              defineResource({
+                path: entry.slug,
+                meta: { title: entry.title },
+                component: () => <EntryPage entry={entry} />,
+              }),
+            ),
+        }),
+      ),
+    [],
+  );
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  document.documentElement.classList.toggle("preview-document", preview);
+  return (
+    <AppShell
+      title="UI Catalogue"
+      locale={language}
+      timeZone="Asia/Tokyo"
+      basePath={base.replace(/^\//, "")}
+      modules={modules}
+      rootComponent={HomePage}
+      favicon={`${base}/icon.svg`}
+      appInfo={{ metadata: [{ label: "Product", value: "ERPboost UI" }] }}
+    >
+      <SidebarLayout
+        sidebar={
+          preview ? (
+            <></>
+          ) : (
+            <DefaultSidebar
+              header={
+                <Link className="catalogue-brand" to="/">
+                  <img src={`${base}/icon.svg`} alt="" />
+                  <strong>UI Catalogue</strong>
+                </Link>
+              }
+              footer={
+                <footer className="locale-picker">
+                  <span>LANGUAGE</span>
+                  <button
+                    aria-pressed={language === "en"}
+                    onClick={() => setLanguage("en")}
+                  >
+                    EN
+                  </button>
+                  <span>/</span>
+                  <button
+                    aria-pressed={language === "ja"}
+                    onClick={() => setLanguage("ja")}
+                  >
+                    JA
+                  </button>
+                </footer>
+              }
+            >
+              <SidebarItem to="/" />
+              {sections.map((section) => (
+                <SidebarGroup
+                  key={section.category}
+                  title={t(section.title, section.ja)}
+                  defaultOpen={section.category !== "components"}
+                >
+                  {entries
+                    .filter((entry) => entry.category === section.category)
+                    .map((entry) => (
+                      <SidebarItem key={entry.slug} to={routeOf(entry)} />
+                    ))}
+                </SidebarGroup>
+              ))}
+            </DefaultSidebar>
+          )
+        }
+        header={preview ? <></> : undefined}
+      />
+    </AppShell>
+  );
+}
+export function App() {
+  return (
+    <LocaleProvider>
+      <CatalogueApp />
+    </LocaleProvider>
+  );
+}

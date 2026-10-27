@@ -1,0 +1,37 @@
+{
+  "name": "erpboost-ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @mailboost/erpboost-ui-catalog",
+    "build": "npm run build -w @mailboost/erpboost-ui && npm run build -w @mailboost/erpboost-ui-catalog",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "preview": "npm run preview -w @mailboost/erpboost-ui-catalog"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/encoding-japanese": "2.2.1",
+    "@types/node": "^25.9.8",
+    "@types/papaparse": "5.5.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.0",
+    "prettier": "^3.9.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-hook-form": "^7.71.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.2",
+    "vite-plugin-dts": "^5.1.2",
+    "zod": "^4.6.6"
+  }
+}

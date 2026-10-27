@@ -1,0 +1,7 @@
+/*
+ * Deprecated compatibility shim.
+ *
+ * `@mailboost/erpboost-ui/styles` now includes the default theme tokens,
+ * so this file intentionally does nothing. Keep exporting it so older apps
+ * that still import `@mailboost/erpboost-ui/theme.css` keep building.
+ */

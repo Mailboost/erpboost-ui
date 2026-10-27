@@ -1,0 +1,22 @@
+{
+  "name": "@mailboost/erpboost-ui-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5178",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 127.0.0.1 --port 5178"
+  },
+  "dependencies": {
+    "@internationalized/date": "3.12.4",
+    "@mailboost/erpboost-ui": "*",
+    "@tiptap/react": "^3.32.0",
+    "@tiptap/starter-kit": "^3.32.0",
+    "lucide-react": "1.8.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "sonner": "^2.0.8"
+  }
+}

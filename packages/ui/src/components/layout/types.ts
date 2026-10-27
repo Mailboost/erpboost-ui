@@ -1,0 +1,104 @@
+import type { CSSProperties, ReactNode } from "react";
+
+// ============================================================================
+// LAYOUT TYPES
+// ============================================================================
+
+/**
+ * Supported column count options
+ */
+export type ColumnCount = 1 | 2 | 3;
+
+/**
+ * Supported area values for Layout.Column
+ */
+export type ColumnArea = "left" | "main" | "right";
+
+/**
+ * Props for the Layout component
+ */
+export interface LayoutProps {
+  /**
+   * Number of columns (1, 2, or 3).
+   *
+   * @deprecated Auto-detected from Layout.Column children count when omitted.
+   */
+  columns?: ColumnCount;
+  /** Additional CSS classes */
+  className?: string;
+  /** Inline styles */
+  style?: CSSProperties;
+  /** Gap between columns (default: 4 = 16px; supported steps: 4, 6, and 8). */
+  gap?: number;
+  /** Header title - displayed at the top of the layout
+   *
+   * @deprecated Use `<Layout.Header title="...">` instead.
+   */
+  title?: string;
+  /** Header actions displayed on the right side of the header.
+   * Layout and spacing are handled automatically.
+   *
+   * @deprecated Use `<Layout.Header actions={...}>` instead.
+   */
+  actions?: ReactNode[];
+  /**
+   * Fill the available height instead of growing with content.
+   *
+   * When set, the layout stretches to the height of its container
+   * (`flex-1 min-h-0`) and bounds its column row (`minmax(0, 1fr)`), so
+   * children such as `DataTable` can scroll internally while the
+   * `Layout.Header` stays pinned. Without it, the layout grows naturally
+   * and the surrounding content area scrolls.
+   *
+   * Intended for single-row (one `Layout.Column` per breakpoint row) pages;
+   * on stacked mobile layouts with multiple columns the content area
+   * scrolls as usual.
+   *
+   * A `fill` layout also renders a `data-layout-fill` attribute on its root,
+   * which the AppShell content area targets via `:has([data-layout-fill])` to
+   * disable its own scrolling (the fill layout bounds everything internally).
+   */
+  fill?: boolean;
+  /** Child elements - Layout.Header and/or Layout.Column components */
+  children: ReactNode;
+}
+
+/**
+ * Props for individual Layout.Column component
+ */
+export interface ColumnProps {
+  /** Additional CSS classes */
+  className?: string;
+  /** Inline styles */
+  style?: CSSProperties;
+  /**
+   * Column area role. When specified on all columns, determines width template
+   * based on role rather than position.
+   * - "left": fixed 320px
+   * - "main": flex-1
+   * - "right": fixed 280px
+   */
+  area?: ColumnArea;
+  /** Child content */
+  children?: ReactNode;
+}
+
+/**
+ * Props for Layout.Header component
+ */
+export interface LayoutHeaderProps {
+  /** Page title (left side) */
+  title?: string;
+  /** Action buttons or nodes (right side) */
+  actions?: ReactNode[];
+  /** Renders full-width below the title/actions row (e.g. tabs) */
+  children?: ReactNode;
+}
+
+/**
+ * Resource-level layout configuration (metadata only)
+ */
+export interface ResourceLayoutConfig {
+  /** Number of columns for documentation purposes */
+  columns: ColumnCount;
+}

@@ -1,0 +1,247 @@
+import type { ReactNode } from "react";
+import { parseDate } from "@internationalized/date";
+import { Link } from "react-router";
+import { BadgeList, toValueArray } from "@/components/badge-list";
+import type { SelectOption } from "@/types/collection";
+import { optionLabel, resolveBadgeOptions } from "./cell-edit";
+import { normalizeTemporalFilterValue } from "@/lib/temporal-filter-values";
+import type {
+  BadgeCellOptions,
+  Column,
+  DateCellOptions,
+  LinkCellOptions,
+  MoneyCellOptions,
+  NumberCellOptions,
+} from "./types";
+
+function resolveDateFormatOptions(format: string): Intl.DateTimeFormatOptions {
+  if (format === "long") return { month: "long", day: "numeric", year: "numeric" };
+  if (format === "datetime") {
+    return {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+    };
+  }
+  return { month: "short", day: "numeric", year: "numeric" };
+}
+
+const PLACEHOLDER = (
+  <span className="astw:text-muted-foreground" aria-hidden="true">
+    —
+  </span>
+);
+
+/**
+ * Read the raw cell value for a column. Used by the built-in `type`
+ * renderers and by `truncate`'s tooltip so they share one precedence
+ * rule: explicit `accessor` wins, otherwise fall back to `row[col.id]`
+ * when `id` is set.
+ *
+ * @internal
+ */
+export function getCellValue<TRow extends Record<string, unknown>>(
+  row: TRow,
+  col: Column<TRow>,
+): unknown {
+  if (col.accessor) return col.accessor(row);
+  if (col.id) return row[col.id];
+  return undefined;
+}
+
+function isEmpty(value: unknown): boolean {
+  return value == null || value === "";
+}
+
+function renderText(value: unknown): ReactNode {
+  switch (true) {
+    case isEmpty(value):
+      return PLACEHOLDER;
+    case typeof value === "boolean":
+      return value ? "✓" : "✗";
+    case value instanceof Date:
+      return value.toLocaleDateString();
+    case typeof value === "object":
+      return JSON.stringify(value);
+    default:
+      return String(value);
+  }
+}
+
+function renderNumber(value: unknown, options: NumberCellOptions | undefined): ReactNode {
+  if (isEmpty(value)) return PLACEHOLDER;
+  const num = Number(value);
+  if (Number.isNaN(num)) return PLACEHOLDER;
+  const min = options?.minDecimals ?? 0;
+  const formatted = new Intl.NumberFormat(options?.locale, {
+    minimumFractionDigits: min,
+    maximumFractionDigits: options?.maxDecimals ?? min,
+  }).format(num);
+  return <span className="astw:tabular-nums">{formatted}</span>;
+}
+
+function renderMoney<TRow extends Record<string, unknown>>(
+  value: unknown,
+  row: TRow,
+  options: MoneyCellOptions<TRow> | undefined,
+): ReactNode {
+  if (isEmpty(value)) return PLACEHOLDER;
+  const num = Number(value);
+  if (Number.isNaN(num)) return PLACEHOLDER;
+  const currency =
+    (typeof options?.currency === "function" ? options.currency(row) : options?.currency) || "USD";
+
+  // `maxDecimals` raises the cap above the currency default while keeping the
+  // minimum at the currency default (e.g. 2 for USD). Lets a JPY column stay
+  // at 0 decimals while a USD price-detail column shows up to 4.
+  const formatOptions: Intl.NumberFormatOptions = {
+    style: "currency",
+    currency,
+  };
+  if (options?.maxDecimals != null) {
+    formatOptions.maximumFractionDigits = options.maxDecimals;
+  }
+  let formatted: string;
+  try {
+    formatted = new Intl.NumberFormat(options?.locale, formatOptions).format(num);
+  } catch {
+    // Fall back to USD if the currency code is invalid — Intl throws on bad ISO codes.
+    formatted = new Intl.NumberFormat(options?.locale, {
+      style: "currency",
+      currency: "USD",
+    }).format(num);
+  }
+  return <span className="astw:tabular-nums">{formatted}</span>;
+}
+
+function createDateRenderer(
+  options: DateCellOptions | undefined,
+  timeZone: string,
+): (value: unknown) => ReactNode {
+  const formatOptions = resolveDateFormatOptions(options?.dateFormat ?? "short");
+  let dateOnlyFormatter: Intl.DateTimeFormat | undefined;
+  let datetimeFormatter: Intl.DateTimeFormat | undefined;
+
+  return (value) => {
+    if (isEmpty(value)) return PLACEHOLDER;
+    const dateOnly = typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value.trim());
+    let date: Date;
+    if (dateOnly) {
+      // Calendar dates have no instant, even when a timezone skips an entire day.
+      try {
+        date = parseDate(value.trim()).toDate("UTC");
+      } catch {
+        return PLACEHOLDER;
+      }
+    } else {
+      const normalized = normalizeTemporalFilterValue("datetime", value, timeZone);
+      if (!normalized) return PLACEHOLDER;
+      date = new Date(normalized);
+    }
+    const formatter = dateOnly
+      ? (dateOnlyFormatter ??= new Intl.DateTimeFormat(options?.locale, {
+          ...formatOptions,
+          timeZone: "UTC",
+        }))
+      : (datetimeFormatter ??= new Intl.DateTimeFormat(options?.locale, {
+          ...formatOptions,
+          timeZone,
+        }));
+    return formatter.format(date);
+  };
+}
+
+function renderBadge(
+  value: unknown,
+  options: BadgeCellOptions | undefined,
+  choices: readonly SelectOption[] | undefined,
+): ReactNode {
+  const items = toValueArray(value);
+  const nonEmpty = items.filter((v) => v != null && v !== "");
+  if (nonEmpty.length === 0) return PLACEHOLDER;
+  return (
+    <BadgeList
+      value={value}
+      options={options}
+      maxVisible={options?.maxVisible}
+      // An editable column's choices label its badges, like its dropdown does.
+      resolveLabel={choices ? (v) => String(optionLabel(choices, v)) : undefined}
+    />
+  );
+}
+
+function renderLink<TRow extends Record<string, unknown>>(
+  value: unknown,
+  row: TRow,
+  options: LinkCellOptions<TRow>,
+): ReactNode {
+  if (isEmpty(value)) return PLACEHOLDER;
+  const label = String(value);
+  const href = options.href(row);
+  if (!href) return label;
+  return (
+    <Link to={href} className="astw:text-primary astw:underline-offset-4 astw:hover:underline">
+      {label}
+    </Link>
+  );
+}
+
+/**
+ * Create a column renderer that reuses date formatters across rows.
+ * Callers should prefer `col.render` when it is defined.
+ *
+ * @internal
+ */
+export function createTypedCellRenderer<TRow extends Record<string, unknown>>(
+  col: Column<TRow>,
+  timeZone: string,
+): (row: TRow) => ReactNode {
+  if (col.type === "date") {
+    const renderDate = createDateRenderer(col.typeOptions, timeZone);
+    return (row) => renderDate(getCellValue(row, col));
+  }
+  return (row) => renderTypedValue(row, col, getCellValue(row, col));
+}
+
+/**
+ * Render the consumer's current value with the column's built-in renderer.
+ * Editable cells pass `linkAsText` because an editable link is an input,
+ * not a navigation target.
+ *
+ * @internal
+ */
+export function renderTypedValue<TRow extends Record<string, unknown>>(
+  row: TRow,
+  col: Column<TRow>,
+  value: unknown,
+  options?: { linkAsText?: boolean; timeZone?: string },
+): ReactNode {
+  switch (col.type) {
+    case "number":
+      return renderNumber(value, col.typeOptions);
+    case "money":
+      return renderMoney(value, row, col.typeOptions);
+    case "date":
+      return createDateRenderer(
+        col.typeOptions,
+        options?.timeZone ?? Intl.DateTimeFormat().resolvedOptions().timeZone,
+      )(value);
+    case "badge":
+      return renderBadge(
+        value,
+        col.typeOptions,
+        col.edit ? resolveBadgeOptions(col.edit.options, col.typeOptions, col.filter) : undefined,
+      );
+    case "link": {
+      // A column with dropdown choices stores an option's value and shows its label.
+      const label = optionLabel(col.edit?.options, value);
+      return options?.linkAsText ? renderText(label) : renderLink(label, row, col.typeOptions);
+    }
+    case "text":
+      return renderText(optionLabel(col.edit?.options, value));
+    default:
+      return renderText(value);
+  }
+}

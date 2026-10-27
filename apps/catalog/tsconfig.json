@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": ["vite/client"],
+    "paths": {
+      "@mailboost/erpboost-ui": ["../../packages/ui/src/index.ts"],
+      "@/*": ["../../packages/ui/src/*"]
+    }
+  },
+  "include": ["src"]
+}
