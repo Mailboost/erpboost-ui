@@ -51,9 +51,12 @@
   --chart-4: rgba(251, 191, 36, 1);
   --chart-5: rgba(245, 158, 11, 1);
   --semantic-shadow-xs: 0 1px 2px 0 rgb(15 23 42 / 0.06);
-  --semantic-shadow-sm: 0 1px 3px 0 rgb(15 23 42 / 0.08), 0 1px 2px -1px rgb(15 23 42 / 0.08);
-  --semantic-shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.09), 0 2px 4px -2px rgb(15 23 42 / 0.06);
-  --semantic-shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.12), 0 4px 6px -4px rgb(15 23 42 / 0.09);
+  --semantic-shadow-sm:
+    0 1px 3px 0 rgb(15 23 42 / 0.08), 0 1px 2px -1px rgb(15 23 42 / 0.08);
+  --semantic-shadow-md:
+    0 4px 6px -1px rgb(15 23 42 / 0.09), 0 2px 4px -2px rgb(15 23 42 / 0.06);
+  --semantic-shadow-lg:
+    0 10px 15px -3px rgb(15 23 42 / 0.12), 0 4px 6px -4px rgb(15 23 42 / 0.09);
 }
 
 /*
@@ -97,9 +100,12 @@
   --chart-4: rgba(168, 85, 247, 1);
   --chart-5: rgba(244, 63, 94, 1);
   --semantic-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.35);
-  --semantic-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.38), 0 1px 2px -1px rgb(0 0 0 / 0.32);
-  --semantic-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.35), 0 2px 4px -2px rgb(0 0 0 / 0.28);
-  --semantic-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.42), 0 4px 6px -4px rgb(0 0 0 / 0.35);
+  --semantic-shadow-sm:
+    0 1px 3px 0 rgb(0 0 0 / 0.38), 0 1px 2px -1px rgb(0 0 0 / 0.32);
+  --semantic-shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.35), 0 2px 4px -2px rgb(0 0 0 / 0.28);
+  --semantic-shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.42), 0 4px 6px -4px rgb(0 0 0 / 0.35);
 }
 
 /*
@@ -514,4 +520,72 @@
   --type-body-sm-relaxed-line-height: calc(20 / 12);
   --type-body-sm-relaxed-weight: 400;
   --type-body-sm-relaxed-letter-spacing: 0em;
+}
+
+/* Reference catalogue palette. Kept in the package so applications importing
+ * erpboost-ui/styles receive the same colors shown by the catalogue. */
+:root {
+  --background: #fff;
+  --success-solid: #22c55e;
+  --success-solid-hover: #22c55e;
+  --success-contrast: #fff;
+  --success-indicator: #22c55e;
+  --success-text: #22c55e;
+  --success-surface: color-mix(in oklab, #22c55e 10%, transparent);
+  --success-surface-hover: color-mix(in oklab, #22c55e 20%, transparent);
+  --warning-contrast: #fff;
+  --warning-text: #f59e0b;
+  --warning-surface: color-mix(in oklab, #f59e0b 10%, transparent);
+  --warning-surface-hover: color-mix(in oklab, #f59e0b 20%, transparent);
+  --info-solid: #0ea5e9;
+  --info-solid-hover: #0ea5e9;
+  --info-indicator: #0ea5e9;
+  --info-text: #0ea5e9;
+  --info-surface: color-mix(in oklab, #0ea5e9 10%, transparent);
+  --info-surface-hover: color-mix(in oklab, #0ea5e9 20%, transparent);
+  --danger-contrast: #fef2f2;
+  --danger-text: var(--destructive);
+  --danger-surface: color-mix(in oklab, var(--destructive) 10%, transparent);
+  --danger-surface-hover: color-mix(
+    in oklab,
+    var(--destructive) 20%,
+    transparent
+  );
+  --destructive: #dc2626;
+  --alert-info-background: rgb(59 130 246 / 0.1);
+  --alert-info-border: rgb(59 130 246 / 0.2);
+  --alert-info-foreground: #1d4ed8;
+  --alert-success-background: rgb(34 197 94 / 0.1);
+  --alert-success-border: rgb(34 197 94 / 0.2);
+  --alert-success-foreground: #15803d;
+  --alert-warning-background: rgb(234 179 8 / 0.1);
+  --alert-warning-border: rgb(234 179 8 / 0.2);
+  --alert-warning-foreground: #a16207;
+  --alert-error-background: color-mix(
+    in srgb,
+    var(--destructive) 10%,
+    transparent
+  );
+  --alert-error-border: color-mix(in srgb, var(--destructive) 20%, transparent);
+  --alert-error-foreground: var(--destructive);
+  --alert-neutral-background: var(--muted);
+  --alert-neutral-border: var(--border);
+  --alert-neutral-foreground: var(--foreground);
+}
+.dark {
+  --background: #171717;
+  --card: #171717;
+  --sidebar: #171717;
+  --destructive: #f87171;
+  --danger-solid: #f87171;
+  --alert-info-foreground: #93c5fd;
+  --alert-success-foreground: #86efac;
+  --alert-warning-foreground: #fde047;
+  --alert-error-foreground: #fca5a5;
+}
+:root {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }

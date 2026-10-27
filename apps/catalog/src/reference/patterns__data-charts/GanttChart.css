@@ -1,0 +1,38 @@
+/* Reference example: https://ui.tailor.tech/patterns/data-charts */
+/*
+ * gantt-task-react 0.3.9 をテーマに馴染ませる薄い上書き。
+ * 依存ライブラリの dist css に付与されるハッシュクラス（_2eZzQ など）が
+ * バージョンで変わるので、上げる時はライブラリの dist/index.css を見て差し替える。
+ *
+ * すべて `.tailor-gantt-chart` 配下にスコープし、他のガントには影響しない。
+ */
+
+/*
+ * 二重縦線の防止:
+ *   左マイルストーン列の右端（._2eZzQ border-right）と
+ *   チャート表の左端（._3ZbQT border-left）が隣接して 2 重に見える。
+ *   列ラッパー側の border-right だけ残し、テーマの --border に寄せる。
+ */
+.tailor-gantt-chart ._3ZbQT {
+  border-left-width: 0 !important;
+}
+
+.tailor-gantt-chart ._2eZzQ {
+  border-right-color: var(--border);
+}
+
+/*
+ * バー内ラベル（._3zRJQ）はライブラリ既定が font-weight: lighter で
+ * 13px の Inter だと細く潰れて見える。視認性のため 600 に上げ、
+ * 親要素の currentColor が混ざる環境向けに fill を明示。
+ */
+.tailor-gantt-chart svg text._3zRJQ {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  fill: #fff !important;
+}
+
+/* バー外側ラベル（._3KcaM）も同じく細さの補正のみ。 */
+.tailor-gantt-chart svg text._3KcaM {
+  font-weight: 600;
+}

@@ -38,14 +38,20 @@ function CatalogueApp() {
       sections.map((section) =>
         defineModule({
           path: section.category,
-          meta: { title: section.title },
+          meta: {
+            title: (locale) =>
+              locale.startsWith("ja") ? section.ja : section.title,
+          },
           component: () => <CategoryPage category={section.category} />,
           resources: entries
             .filter((entry) => entry.category === section.category)
             .map((entry) =>
               defineResource({
                 path: entry.slug,
-                meta: { title: entry.title },
+                meta: {
+                  title: (locale) =>
+                    locale.startsWith("ja") ? entry.ja : entry.title,
+                },
                 component: () => <EntryPage entry={entry} />,
               }),
             ),
@@ -57,7 +63,7 @@ function CatalogueApp() {
   document.documentElement.classList.toggle("preview-document", preview);
   return (
     <AppShell
-      title="UI Catalogue"
+      title={t("UI Catalogue", "UI カタログ")}
       locale={language}
       timeZone="Asia/Tokyo"
       basePath={base.replace(/^\//, "")}
@@ -76,12 +82,12 @@ function CatalogueApp() {
               header={
                 <Link className="catalogue-brand" to="/">
                   <img src={`${base}/icon.svg`} alt="" />
-                  <strong>UI Catalogue</strong>
+                  <strong>{t("UI Catalogue", "UI カタログ")}</strong>
                 </Link>
               }
               footer={
                 <footer className="locale-picker">
-                  <span>LANGUAGE</span>
+                  <span>{t("Language", "言語")}</span>
                   <button
                     aria-pressed={language === "en"}
                     onClick={() => setLanguage("en")}

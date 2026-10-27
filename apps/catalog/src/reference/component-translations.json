@@ -1,0 +1,230 @@
+{
+  "alert": {
+    "Components": "コンポーネント",
+    "A callout for surfacing inline status messages.": "インラインでステータスメッセージを伝える callout です。"
+  },
+  "card": {
+    "Components": "コンポーネント",
+    "A basic card with header and content regions.": "Header と Content を持つ基本カードです。"
+  },
+  "menu": {
+    "Components": "コンポーネント",
+    "Primitives for building contextual action menus.": "contextual action menu を構成する primitive です。"
+  },
+  "input": {
+    "Components": "コンポーネント",
+    "A simple text input field.": "シンプルな入力フィールドです。"
+  },
+  "tabs": {
+    "Components": "コンポーネント",
+    "Switches between sections or filters. Offers default, line, and capsule variants.": "セクションやフィルタを切り替えます。default / line / capsule の variant があります。",
+    "Icon-only": "アイコンのみ",
+    "A capsule tab whose only child is an icon renders square instead of wider-than-tall.": "子要素がアイコンのみの capsule tab は、横長ではなく正方形になります。",
+    "Sizes": "サイズ",
+    "xs / sm / default / lg set a minimum height on the capsule variant to align with Button. An icon-only tab renders square.": "xs / sm / default / lg は capsule variant に Button と揃う最小高さを設定します。アイコンのみの tab は正方形になります。"
+  },
+  "overview": {
+    "Components": "コンポーネント",
+    "Overview": "概要",
+    "Browse app-shell components individually from the sidebar.": "サイドバーから app-shell コンポーネントを個別に確認できます。",
+    "Sidebar Resources": "サイドバー項目",
+    "UI components are exposed as individual resources.": "UI コンポーネントは個別 resource として公開されています。",
+    "App-Level Components": "アプリレベルのコンポーネント",
+    "These are composed at the application root.": "これらはアプリケーションのルートで構成されます。"
+  },
+  "metric-card": {
+    "Components": "コンポーネント",
+    "A compact card for dashboard KPI displays.": "ダッシュボード KPI 表示向けの compact card です。"
+  },
+  "attachment": {
+    "Components": "コンポーネント",
+    "File upload primitive: drag-and-drop tile plus a list of uploaded items with delete and download actions.": "ファイルアップロード用 primitive。ドラッグ&ドロップタイルと、アップロード済みアイテムの一覧（削除・ダウンロード）を提供します。"
+  },
+  "field": {
+    "Components": "コンポーネント",
+    "A field wrapper with label, control, description, and error slots.": "Label、Control、Description、Error を持つ field wrapper です。"
+  },
+  "action-panel": {
+    "Components": "コンポーネント",
+    "A component for listing actions inside a card.": "カード内に操作一覧を並べるコンポーネントです。"
+  },
+  "link": {
+    "Components": "コンポーネント",
+    "A link component integrated with the router.": "router と統合された link component です。"
+  },
+  "form": {
+    "Components": "コンポーネント",
+    "A submit example built with Form and Field.": "Form と Field を組み合わせた submit サンプルです。"
+  },
+  "calendar": {
+    "Components": "コンポーネント",
+    "A standalone inline calendar grid — no popover, suitable for reporting filters or date selection within a larger layout.": "ポップオーバーなしのスタンドアロンなカレンダーグリッドです。レポートのフィルタや、より大きなレイアウト内での日付選択に適しています。",
+    "Basic": "基本",
+    "Uncontrolled month grid with a selected value.": "選択済みの値を持つ非制御の月グリッドです。",
+    "July 2026": "2026年7月",
+    "Sun": "日",
+    "Mon": "月",
+    "Tue": "火",
+    "Wed": "水",
+    "Thu": "木",
+    "Fri": "金",
+    "Sat": "土",
+    "Constraints": "制約",
+    "minValue / maxValue bound the range, isDateUnavailable disables weekends, and firstDayOfWeek starts the week on Monday.": "minValue / maxValue で範囲を制限し、isDateUnavailable で週末を無効化、firstDayOfWeek で週の開始を月曜にしています。"
+  },
+  "sheet": {
+    "Components": "コンポーネント",
+    "An overlay component typically used as a side panel.": "side panel として使う overlay component です。"
+  },
+  "combobox": {
+    "Components": "コンポーネント",
+    "A searchable selection component.": "検索可能な選択コンポーネントです。"
+  },
+  "command-palette": {
+    "Components": "コンポーネント",
+    "Global command launcher that integrates with the registered routes.": "登録済みルートと統合されたグローバルコマンドランチャーです。",
+    "Composition Level Component": "アプリレベルのコンポーネント",
+    "This export is used at the application shell level rather than as a leaf widget.": "この export は leaf widget ではなく application shell レベルで使われます。",
+    "This catalogue also uses it at the application root.": "このカタログ自身でも application root で利用されています。"
+  },
+  "data-table": {
+    "Components": "コンポーネント",
+    "Compound table with column visibility, sorting, filtering, and pagination. The simplest form takes columns + data via useDataTable.": "列表示切替・ソート・フィルタ・ページネーションを備えた compound table。最小構成は useDataTable に columns と data を渡すだけ。",
+    "Fill layout": "Fill レイアウト",
+    "Inside a Layout fill, DataTable scrolls internally so the page title and toolbar stay pinned above the rows.": "Layout fill の中では DataTable が内部でスクロールするため、ページタイトルとツールバーは行の上に固定されたままになります。",
+    "Empty state": "空状態",
+    "The empty/error state height is now capped at 5 rows instead of reserving pageSize-worth of height, so large page sizes no longer leave a huge blank region.": "空/エラー状態の高さが pageSize 分を予約する代わりに、最大5行分に制限されるようになりました。ページサイズが大きくても大きな空白ができません。",
+    "No data": "データがありません"
+  },
+  "badge": {
+    "Components": "コンポーネント",
+    "A label component commonly used for statuses.": "ステータス表現によく使うラベルコンポーネントです。"
+  },
+  "collection-control-provider": {
+    "Components": "コンポーネント",
+    "Wires filter / sort / pagination state into DataTable. Pair with useCollectionVariables() to drive a server-side data source.": "DataTable にフィルタ・ソート・ページネーション状態を流し込む provider。useCollectionVariables() と組み合わせてサーバー側 collection を駆動します。",
+    "How it composes": "組み合わせ方",
+    "Wrap DataTable.Root with this provider when you need DataTable.Filters or DataTable.Pagination.": "DataTable.Filters / DataTable.Pagination を使う場合は DataTable.Root をこの provider で包みます。",
+    "control is obtained from useCollectionVariables() and passed to both this provider and useDataTable.": "control は useCollectionVariables() から取得し、provider と useDataTable の双方に渡します。"
+  },
+  "date-field": {
+    "Components": "コンポーネント",
+    "A segmented date/time input field with no popover. Set granularity to control day, hour, minute, or second precision.": "ポップオーバーを持たないセグメント型の日付・時刻入力フィールドです。granularity で日・時・分・秒の精度を制御できます。",
+    "07": "2026",
+    "10": "07",
+    "2026": "01",
+    "mm": "yyyy",
+    "dd": "mm",
+    "yyyy": "dd",
+    ", ": " ",
+    "01": "2026"
+  },
+  "sidebar": {
+    "Components": "コンポーネント",
+    "How SidebarLayout, DefaultSidebar, and the SidebarGroup / SidebarItem / SidebarSeparator primitives compose into the app navigation shell.": "SidebarLayout・DefaultSidebar、そして SidebarGroup / SidebarItem / SidebarSeparator の各 primitive が、どのようにアプリのナビゲーションシェルを構成するかをまとめています。",
+    "Main application layout that positions sidebar and content.": "sidebar と content を配置するメインレイアウトです。",
+    "Composition Level Component": "アプリレベルのコンポーネント",
+    "This export is used at the application shell level rather than as a leaf widget.": "この export は leaf widget ではなく application shell レベルで使われます。",
+    "This catalogue also uses it at the application root.": "このカタログ自身でも application root で利用されています。",
+    "Header slot": "Header スロット",
+    "Extend or replace the built-in top bar via the header prop and SidebarLayout.DefaultHeader.": "header prop と SidebarLayout.DefaultHeader で、標準のトップバーを拡張・置き換えできます。",
+    "actions defaults to [<AppearanceSwitcher />]; passing actions replaces the whole cluster, so include AppearanceSwitcher explicitly to keep it.": "actions はデフォルトで [<AppearanceSwitcher />] です。actions を渡すとクラスタ全体が置き換わるため、維持したい場合は AppearanceSwitcher を明示的に含めてください。",
+    "Returns a ref to the element that actually scrolls now that the shell is viewport-bounded. Use it instead of window/document scroll.": "shell がビューポートに収まるようになったことで、実際にスクロールする要素への ref を返します。window/document のスクロールの代わりに使用します。",
+    "Default navigation UI rendered inside SidebarLayout.": "SidebarLayout 内に描画される標準ナビゲーション UI です。",
+    "The building blocks rendered inside a sidebar: groups of items, individual navigable items, and dividers between them.": "サイドバー内部を構成する部品です。項目のグループ、単一のナビゲーション項目、それらを区切る区切り線からなります。",
+    "Preview": "プレビュー",
+    "SidebarGroup wraps a titled section; SidebarItem is a single link; SidebarSeparator divides sections.": "SidebarGroup はタイトル付きセクションを、SidebarItem は単一のリンクを、SidebarSeparator はセクション間の区切りを表します。",
+    "Toggle": "切り替え",
+    "Sidebar navigation group wrapper.": "サイドバーナビゲーションのグループ wrapper です。",
+    "See the preview above for this primitive in context.": "この primitive が実際に使われている様子は、上のプレビューを参照してください。",
+    "Single navigable item inside the sidebar.": "サイドバー内の単一ナビゲーション項目です。",
+    "Visual separator between sidebar items.": "サイドバー項目間の区切り線です。"
+  },
+  "auth-provider": {
+    "Components": "コンポーネント",
+    "Provides authentication context to the application tree.": "アプリケーションツリーに認証コンテキストを提供します。",
+    "Composition Level Component": "アプリレベルのコンポーネント",
+    "This export is used at the application shell level rather than as a leaf widget.": "この export は leaf widget ではなく application shell レベルで使われます。",
+    "This catalogue also uses it at the application root.": "このカタログ自身でも application root で利用されています。"
+  },
+  "select": {
+    "Components": "コンポーネント",
+    "Preview both single and multiple selection modes.": "single と multiple の両方を確認できます。"
+  },
+  "autocomplete": {
+    "Components": "コンポーネント",
+    "Combines free text input with suggestion results.": "自由入力と候補表示を組み合わせるコンポーネントです。"
+  },
+  "date-picker": {
+    "Components": "コンポーネント",
+    "A date/time input with a popover calendar. Value type follows granularity: CalendarDate for day precision, CalendarDateTime or ZonedDateTime otherwise.": "ポップオーバーカレンダー付きの日付・時刻入力です。値の型は granularity に従い、日精度なら CalendarDate、それ以外は CalendarDateTime または ZonedDateTime になります。",
+    "07": "2026",
+    "10": "07",
+    "2026": "10",
+    "mm": "yyyy",
+    "dd": "mm",
+    "yyyy": "dd",
+    ", ": " "
+  },
+  "table": {
+    "Components": "コンポーネント",
+    "An example composed from the table primitives.": "table primitive の組み合わせ例です。"
+  },
+  "button": {
+    "Components": "コンポーネント",
+    "Preview the main button variants and sizes.": "主要な button variant と size を確認できます。"
+  },
+  "app-shell": {
+    "Components": "コンポーネント",
+    "Top-level router, layout, and application composition component.": "最上位の router、layout、application composition コンポーネントです。",
+    "Composition Level Component": "アプリレベルのコンポーネント",
+    "This export is used at the application shell level rather than as a leaf widget.": "この export は leaf widget ではなく application shell レベルで使われます。",
+    "This catalogue also uses it at the application root.": "このカタログ自身でも application root で利用されています。"
+  },
+  "dialog": {
+    "Components": "コンポーネント",
+    "A modal dialog surface.": "modal dialog surface です。"
+  },
+  "foundation": {
+    "Components": "コンポーネント",
+    "Design tokens from app-shell. Local components must reference these tokens (via Tailwind utilities like bg-primary or via var(--primary)) rather than palette colors.": "app-shell が提供する design token の一覧です。app-shell 以外のコンポーネントも、palette 色ではなくこれらのトークン(bg-primary などの Tailwind utility や var(--primary)) を参照してください。",
+    "How to use": "使い方",
+    "Refer to tokens through Tailwind utilities; never reach for raw palette colors.": "raw palette ではなく、必ず token 経由で参照します。"
+  },
+  "with-guard": {
+    "Components": "コンポーネント",
+    "Route guard wrapper for protected or conditional pages.": "保護ページや条件付きページのための route guard wrapper です。",
+    "Composition Level Component": "アプリレベルのコンポーネント",
+    "This export is used at the application shell level rather than as a leaf widget.": "この export は leaf widget ではなく application shell レベルで使われます。",
+    "This catalogue also uses it at the application root.": "このカタログ自身でも application root で利用されています。"
+  },
+  "activity-card": {
+    "Components": "コンポーネント",
+    "A card component for rendering activity timelines.": "アクティビティタイムライン表示向けのカードです。"
+  },
+  "fieldset": {
+    "Components": "コンポーネント",
+    "Groups related fields into a single section.": "関連する field をグルーピングします。"
+  },
+  "avatar": {
+    "Components": "コンポーネント",
+    "An avatar primitive for identity and profile display.": "ユーザーや組織の識別表示に使う avatar primitive です。"
+  },
+  "csv-importer": {
+    "Components": "コンポーネント",
+    "Dialog-driven CSV import flow: file upload, column mapping, validation, and review steps. Wire up with useCsvImporter and a schema.": "CSV インポート用のダイアログフロー。ファイル選択 → 列マッピング → バリデーション → レビュー の4ステップを内包。useCsvImporter と schema で繋ぎ込みます。"
+  },
+  "description-card": {
+    "Components": "コンポーネント",
+    "A card for structured key-value record details.": "レコード詳細の key-value 表示に使うカードです。"
+  },
+  "layout": {
+    "Components": "コンポーネント",
+    "A component for composing multi-column page layouts.": "複数カラムのページレイアウトを作るためのコンポーネントです。",
+    "With fill, Layout.Header stays pinned and only the column body scrolls — instead of the whole page growing and scrolling.": "fill を指定すると、ページ全体が伸びてスクロールする代わりに Layout.Header が固定され、column の本体だけがスクロールします。"
+  },
+  "tooltip": {
+    "Components": "コンポーネント",
+    "Displays supporting information on hover.": "hover 時に補足情報を表示します。"
+  }
+}

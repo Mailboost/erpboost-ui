@@ -1,11 +1,15 @@
+import referenceMetadata from "./reference/metadata.json" with { type: "json" };
 export type Category = "components" | "page" | "patterns";
 export interface Entry {
   slug: string;
   title: string;
   ja: string;
   description: string;
+  descriptionJa?: string;
   category: Category;
   blockPreview?: boolean;
+  tags?: string[];
+  size?: string;
   guidance?: { do: [string, string]; dont: [string, string] };
   primitives?: string[];
 }
@@ -402,22 +406,44 @@ export const entries: Entry[] = Object.entries(groups).flatMap(
       title,
       ja,
       description,
-      ...(slug === "field-diff-table"
-        ? {
-            blockPreview: true,
-            guidance: {
-              do: [
-                "Use in approval workflows where a reviewer needs to compare proposed changes against current values to decide whether to approve.",
-                "承認フローで、現在の値と変更案を比較して承認を判断する場合に使います。",
-              ] as [string, string],
-              dont: [
-                "Not a fit for free-form text diffs longer than a few words. Use a dedicated diff viewer instead.",
-                "長い自由記述の差分比較には適していません。専用の差分ビューアーを使ってください。",
-              ] as [string, string],
-            },
-            primitives: ["Table", "Tabs"],
-          }
-        : {}),
+      ...(() => {
+        const data = (
+          referenceMetadata as Record<
+            string,
+            {
+              description: string;
+              do: string;
+              dont: string;
+              primitives: string[];
+              ja?: { title?: string; paragraphs: string[] };
+            }
+          >
+        )[`/${category}/${slug}`];
+        return data
+          ? {
+              ...data,
+              ja: data.ja?.title ?? ja,
+              descriptionJa: data.ja?.paragraphs[0],
+              description: data.description,
+              blockPreview: category !== "components",
+              ...(category !== "components"
+                ? {
+                    guidance: {
+                      do: [data.do, data.ja?.paragraphs[1] ?? data.do] as [
+                        string,
+                        string,
+                      ],
+                      dont: [
+                        data.dont,
+                        data.ja?.paragraphs[2] ?? data.dont,
+                      ] as [string, string],
+                    },
+                    primitives: data.primitives,
+                  }
+                : {}),
+            }
+          : {};
+      })(),
     })),
 );
 export const sections: Array<{
@@ -425,12 +451,15 @@ export const sections: Array<{
   title: string;
   ja: string;
   description: string;
+  descriptionJa: string;
 }> = [
   {
     category: "components",
     title: "Components",
     ja: "コンポーネント",
-    description: "Interactive previews of each UI primitive.",
+    description: "Interactive previews of each app-shell primitive.",
+    descriptionJa:
+      "app-shell が export する各 primitive を対話的に確認できます。",
   },
   {
     category: "page",
@@ -438,6 +467,7 @@ export const sections: Array<{
     ja: "ページ",
     description:
       "Production-like screens with sidebar chrome and routed page bodies.",
+    descriptionJa: "サイドバーやパンくずを含む、実運用に近い画面サンプルです。",
   },
   {
     category: "patterns",
@@ -445,6 +475,8 @@ export const sections: Array<{
     ja: "パターン",
     description:
       "Reusable UI slices — panels, editors, mail layouts — composed from primitives.",
+    descriptionJa:
+      "パネル・エディタ・メールレイアウトなど、primitive を組み立てた再利用単位の UI です。",
   },
 ];
 export const routeOf = (entry: Entry) => `/${entry.category}/${entry.slug}`;

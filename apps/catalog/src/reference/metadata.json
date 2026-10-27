@@ -1,0 +1,1630 @@
+{
+  "/components/overview": {
+    "description": "Browse app-shell components individually from the sidebar.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "サイドバーから app-shell コンポーネントを個別に確認できます。"
+      ],
+      "sections": [],
+      "title": "概要"
+    }
+  },
+  "/components/foundation": {
+    "description": "Design tokens from app-shell. Local components must reference these tokens (via Tailwind utilities like bg-primary or via var(--primary)) rather than palette colors.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "app-shell が提供する design token の一覧です。app-shell 以外のコンポーネントも、palette 色ではなくこれらのトークン(bg-primary などの Tailwind utility や var(--primary)) を参照してください。"
+      ],
+      "sections": [],
+      "title": "Foundation"
+    }
+  },
+  "/components/action-panel": {
+    "description": "A component for listing actions inside a card.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "カード内に操作一覧を並べるコンポーネントです。"
+      ],
+      "sections": [],
+      "title": "ActionPanel"
+    }
+  },
+  "/components/activity-card": {
+    "description": "A card component for rendering activity timelines.",
+    "do": "TODAY",
+    "dont": "Aiko Sato approved the supplier profile update",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "アクティビティタイムライン表示向けのカードです。",
+        "TODAY",
+        "Aiko Sato approved the supplier profile update"
+      ],
+      "sections": [],
+      "title": "ActivityCard"
+    }
+  },
+  "/components/alert": {
+    "description": "A callout for surfacing inline status messages.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "インラインでステータスメッセージを伝える callout です。"
+      ],
+      "sections": [],
+      "title": "Alert"
+    }
+  },
+  "/components/attachment": {
+    "description": "File upload primitive: drag-and-drop tile plus a list of uploaded items with delete and download actions.",
+    "do": "supplier-tax-cert.pdf",
+    "dont": "Drop files or click to upload",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "ファイルアップロード用 primitive。ドラッグ&ドロップタイルと、アップロード済みアイテムの一覧（削除・ダウンロード）を提供します。",
+        "supplier-tax-cert.pdf",
+        "Drop files or click to upload"
+      ],
+      "sections": [],
+      "title": "Attachment"
+    }
+  },
+  "/components/app-shell": {
+    "description": "Top-level router, layout, and application composition component.",
+    "do": "Top-level router, layout, and application composition component.",
+    "dont": "This catalogue also uses it at the application root.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "最上位の router、layout、application composition コンポーネントです。",
+        "最上位の router、layout、application composition コンポーネントです。",
+        "このカタログ自身でも application root で利用されています。"
+      ],
+      "sections": [],
+      "title": "AppShell"
+    }
+  },
+  "/components/auth-provider": {
+    "description": "Provides authentication context to the application tree.",
+    "do": "Provides authentication context to the application tree.",
+    "dont": "This catalogue also uses it at the application root.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "アプリケーションツリーに認証コンテキストを提供します。",
+        "アプリケーションツリーに認証コンテキストを提供します。",
+        "このカタログ自身でも application root で利用されています。"
+      ],
+      "sections": [],
+      "title": "AuthProvider"
+    }
+  },
+  "/components/autocomplete": {
+    "description": "Combines free text input with suggestion results.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "自由入力と候補表示を組み合わせるコンポーネントです。"
+      ],
+      "sections": [],
+      "title": "Autocomplete"
+    }
+  },
+  "/components/avatar": {
+    "description": "An avatar primitive for identity and profile display.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "ユーザーや組織の識別表示に使う avatar primitive です。"
+      ],
+      "sections": [],
+      "title": "Avatar"
+    }
+  },
+  "/components/badge": {
+    "description": "A label component commonly used for statuses.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "ステータス表現によく使うラベルコンポーネントです。"
+      ],
+      "sections": [],
+      "title": "Badge"
+    }
+  },
+  "/components/button": {
+    "description": "Preview the main button variants and sizes.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "主要な button variant と size を確認できます。"
+      ],
+      "sections": [],
+      "title": "Button"
+    }
+  },
+  "/components/calendar": {
+    "description": "A standalone inline calendar grid — no popover, suitable for reporting filters or date selection within a larger layout.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "ポップオーバーなしのスタンドアロンなカレンダーグリッドです。レポートのフィルタや、より大きなレイアウト内での日付選択に適しています。"
+      ],
+      "sections": [],
+      "title": "Calendar"
+    }
+  },
+  "/components/card": {
+    "description": "A basic card with header and content regions.",
+    "do": "Tailor Supply Co.",
+    "dont": "Last updated: 2026-04-01",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "Header と Content を持つ基本カードです。",
+        "Tailor Supply Co.",
+        "Last updated: 2026-04-01"
+      ],
+      "sections": [],
+      "title": "Card"
+    }
+  },
+  "/components/collection-control-provider": {
+    "description": "Wires filter / sort / pagination state into DataTable. Pair with useCollectionVariables() to drive a server-side data source.",
+    "do": "control is obtained from useCollectionVariables() and passed to both this provider and useDataTable.",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "DataTable にフィルタ・ソート・ページネーション状態を流し込む provider。useCollectionVariables() と組み合わせてサーバー側 collection を駆動します。",
+        "control は useCollectionVariables() から取得し、provider と useDataTable の双方に渡します。"
+      ],
+      "sections": [],
+      "title": "CollectionControlProvider"
+    }
+  },
+  "/components/combobox": {
+    "description": "A searchable selection component.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "検索可能な選択コンポーネントです。"
+      ],
+      "sections": [],
+      "title": "Combobox"
+    }
+  },
+  "/components/command-palette": {
+    "description": "Global command launcher that integrates with the registered routes.",
+    "do": "Global command launcher that integrates with the registered routes.",
+    "dont": "This catalogue also uses it at the application root.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "登録済みルートと統合されたグローバルコマンドランチャーです。",
+        "登録済みルートと統合されたグローバルコマンドランチャーです。",
+        "このカタログ自身でも application root で利用されています。"
+      ],
+      "sections": [],
+      "title": "CommandPalette"
+    }
+  },
+  "/components/csv-importer": {
+    "description": "Dialog-driven CSV import flow: file upload, column mapping, validation, and review steps. Wire up with useCsvImporter and a schema.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "CSV インポート用のダイアログフロー。ファイル選択 → 列マッピング → バリデーション → レビュー の4ステップを内包。useCsvImporter と schema で繋ぎ込みます。"
+      ],
+      "sections": [],
+      "title": "CsvImporter"
+    }
+  },
+  "/components/data-table": {
+    "description": "Compound table with column visibility, sorting, filtering, and pagination. The simplest form takes columns + data via useDataTable.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "列表示切替・ソート・フィルタ・ページネーションを備えた compound table。最小構成は useDataTable に columns と data を渡すだけ。"
+      ],
+      "sections": [],
+      "title": "DataTable"
+    }
+  },
+  "/components/date-field": {
+    "description": "A segmented date/time input field with no popover. Set granularity to control day, hour, minute, or second precision.",
+    "do": "Optional, defaults to net-30.",
+    "dont": "Minute granularity shows an hour/minute segment too.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "ポップオーバーを持たないセグメント型の日付・時刻入力フィールドです。granularity で日・時・分・秒の精度を制御できます。",
+        "Optional, defaults to net-30.",
+        "Minute granularity shows an hour/minute segment too."
+      ],
+      "sections": [],
+      "title": "DateField"
+    }
+  },
+  "/components/date-picker": {
+    "description": "A date/time input with a popover calendar. Value type follows granularity: CalendarDate for day precision, CalendarDateTime or ZonedDateTime otherwise.",
+    "do": "Constrained to the next 30 days.",
+    "dont": "Minute granularity opens a time-capable calendar.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "ポップオーバーカレンダー付きの日付・時刻入力です。値の型は granularity に従い、日精度なら CalendarDate、それ以外は CalendarDateTime または ZonedDateTime になります。",
+        "Constrained to the next 30 days.",
+        "Minute granularity opens a time-capable calendar."
+      ],
+      "sections": [],
+      "title": "DatePicker"
+    }
+  },
+  "/components/description-card": {
+    "description": "A card for structured key-value record details.",
+    "do": "Company Name",
+    "dont": "Tailor Supply Co.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "レコード詳細の key-value 表示に使うカードです。",
+        "Company Name",
+        "Tailor Supply Co."
+      ],
+      "sections": [],
+      "title": "DescriptionCard"
+    }
+  },
+  "/components/dialog": {
+    "description": "A modal dialog surface.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "modal dialog surface です。"
+      ],
+      "sections": [],
+      "title": "Dialog"
+    }
+  },
+  "/components/field": {
+    "description": "A field wrapper with label, control, description, and error slots.",
+    "do": "We will use this for approval notifications.",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "Label、Control、Description、Error を持つ field wrapper です。",
+        "We will use this for approval notifications."
+      ],
+      "sections": [],
+      "title": "Field"
+    }
+  },
+  "/components/fieldset": {
+    "description": "Groups related fields into a single section.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "関連する field をグルーピングします。"
+      ],
+      "sections": [],
+      "title": "Fieldset"
+    }
+  },
+  "/components/form": {
+    "description": "A submit example built with Form and Field.",
+    "do": "Displayed on the supplier portal.",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "Form と Field を組み合わせた submit サンプルです。",
+        "Displayed on the supplier portal."
+      ],
+      "sections": [],
+      "title": "Form"
+    }
+  },
+  "/components/input": {
+    "description": "A simple text input field.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "シンプルな入力フィールドです。"
+      ],
+      "sections": [],
+      "title": "Input"
+    }
+  },
+  "/components/layout": {
+    "description": "A component for composing multi-column page layouts.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "複数カラムのページレイアウトを作るためのコンポーネントです。"
+      ],
+      "sections": [],
+      "title": "Layout"
+    }
+  },
+  "/components/link": {
+    "description": "A link component integrated with the router.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "router と統合された link component です。"
+      ],
+      "sections": [],
+      "title": "Link"
+    }
+  },
+  "/components/menu": {
+    "description": "Primitives for building contextual action menus.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "contextual action menu を構成する primitive です。"
+      ],
+      "sections": [],
+      "title": "Menu"
+    }
+  },
+  "/components/metric-card": {
+    "description": "A compact card for dashboard KPI displays.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "ダッシュボード KPI 表示向けの compact card です。"
+      ],
+      "sections": [],
+      "title": "MetricCard"
+    }
+  },
+  "/components/select": {
+    "description": "Preview both single and multiple selection modes.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "single と multiple の両方を確認できます。"
+      ],
+      "sections": [],
+      "title": "Select"
+    }
+  },
+  "/components/sheet": {
+    "description": "An overlay component typically used as a side panel.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "side panel として使う overlay component です。"
+      ],
+      "sections": [],
+      "title": "Sheet"
+    }
+  },
+  "/components/sidebar": {
+    "description": "How SidebarLayout, DefaultSidebar, and the SidebarGroup / SidebarItem / SidebarSeparator primitives compose into the app navigation shell.",
+    "do": "Main application layout that positions sidebar and content.",
+    "dont": "This catalogue also uses it at the application root.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "SidebarLayout・DefaultSidebar、そして SidebarGroup / SidebarItem / SidebarSeparator の各 primitive が、どのようにアプリのナビゲーションシェルを構成するかをまとめています。",
+        "sidebar と content を配置するメインレイアウトです。",
+        "このカタログ自身でも application root で利用されています。"
+      ],
+      "sections": [],
+      "title": "Sidebar"
+    }
+  },
+  "/components/table": {
+    "description": "An example composed from the table primitives.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "table primitive の組み合わせ例です。"
+      ],
+      "sections": [],
+      "title": "Table"
+    }
+  },
+  "/components/tabs": {
+    "description": "Switches between sections or filters. Offers default, line, and capsule variants.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "セクションやフィルタを切り替えます。default / line / capsule の variant があります。"
+      ],
+      "sections": [],
+      "title": "Tabs"
+    }
+  },
+  "/components/tooltip": {
+    "description": "Displays supporting information on hover.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "hover 時に補足情報を表示します。"
+      ],
+      "sections": [],
+      "title": "Tooltip"
+    }
+  },
+  "/components/with-guard": {
+    "description": "Route guard wrapper for protected or conditional pages.",
+    "do": "Route guard wrapper for protected or conditional pages.",
+    "dont": "This catalogue also uses it at the application root.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "保護ページや条件付きページのための route guard wrapper です。",
+        "保護ページや条件付きページのための route guard wrapper です。",
+        "このカタログ自身でも application root で利用されています。"
+      ],
+      "sections": [],
+      "title": "WithGuard"
+    }
+  },
+  "/page/assistant-panel": {
+    "description": "A work page with an AI assistant chat opened as an embedded right panel. The page keeps its own layout and scrolling; the assistant augments it side by side instead of owning the screen or blocking it with a modal. The chat UI comes from the AI chat pattern.",
+    "do": "Use when the assistant supports work happening on the page — Q&A over the content being viewed, drafting help, quick lookups — and users need the page and the chat visible at the same time. This is the default way to add chat to an existing app.",
+    "dont": "If the conversation itself is the product (a dedicated chat app with conversation switching), use the Chat page instead. For human-to-human threads, use the Conversation thread pattern.",
+    "primitives": [
+      "Button",
+      "Badge"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "chat",
+      "ai",
+      "assistant",
+      "panel",
+      "embedded",
+      "copilot"
+    ],
+    "ja": {
+      "paragraphs": [
+        "AI アシスタントのチャットを右パネル（埋め込み）で開く作業ページ。ページ自体のレイアウトとスクロールはそのままに、アシスタントが横に並んで補助します。画面を占有したりモーダルで塞いだりしません。チャット UI は AI chat パターンの部品で構成しています。",
+        "ページ上の作業をアシスタントが補助する場面 — 表示中コンテンツへの Q&A、下書き支援、クイック検索 — で、ページとチャットを同時に見せたいときに使います。既存アプリにチャットを足すときの基本形です。",
+        "会話そのものが主役の場合（会話切替を備えた専用チャットアプリ）は Chat ページを使ってください。人間同士のスレッドには Conversation thread パターンを使います。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "アシスタントパネル"
+    }
+  },
+  "/page/chat": {
+    "description": "A 1-on-1 chat screen for an AI assistant or bot. Use it when you want a conversational experience with conversation-history switching and a new-conversation entry point.",
+    "do": "Use this when building 1-on-1 conversational UI (AI assistant, Q&A bot, internal help desk) that needs a screen layout with conversation switching and a way to start a new conversation.",
+    "dont": "For business threads where multiple people post chronologically (incident response, support tickets, etc.), use Conversation thread instead. If the assistant should sit next to a work page rather than own the whole screen, use Assistant panel.",
+    "primitives": [
+      "Avatar",
+      "Button"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "chat",
+      "ai",
+      "assistant",
+      "messaging",
+      "conversation"
+    ],
+    "ja": {
+      "paragraphs": [
+        "AI アシスタントや bot との 1 対 1 のチャット画面。会話履歴の切替と新規会話開始を備えた、対話形式の体験を作るときに使います。",
+        "1 対 1 の会話形式 UI（AI アシスタント、Q&A bot、社内ヘルプデスク）を作る場面で、会話履歴の切替と新規会話開始を備えた画面構成が必要なときに使います。",
+        "複数人が時系列で書き込む業務スレッド（インシデント対応、サポートチケットなど）の表示には Conversation thread を使ってください。アシスタントが画面を占有せず作業ページの横に付く形なら Assistant panel を使います。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "チャット"
+    }
+  },
+  "/page/collection": {
+    "description": "A list screen where tabs switch the row set along a discrete axis such as status. Compare three variants: read-centric, inline edit on the list, and grid / list view toggle.",
+    "do": "Use on list screens where you want to switch the row set along a discrete axis like status. Prefer inline edit when users update a few fields without leaving the list; prefer the grid / list view toggle for catalog-style screens where thumbnails or color cues help scanning.",
+    "dont": "If filtering needs multi-level or composite conditions that tabs can't express, consider an advanced filter UI or a query builder. Split into separate pages or routes when sections have very different table definitions. For cross-field validation or multi-field consistency checks, move to a Sheet or dedicated form. For text-heavy lists without visual cues, a grid view adds no information — stick with list view.",
+    "primitives": [
+      "Layout",
+      "Layout.Header",
+      "Layout.Column",
+      "DataTable",
+      "DataTable.Footer",
+      "DataTable.Pagination",
+      "useCollectionVariables",
+      "Tabs",
+      "Badge",
+      "Input",
+      "Checkbox",
+      "Button",
+      "Menu",
+      "Popover",
+      "useToast"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "tabs",
+      "list",
+      "data-table",
+      "filter",
+      "navigation",
+      "inline-edit",
+      "popover",
+      "menu",
+      "badge",
+      "toast",
+      "grid",
+      "view-switch",
+      "thumbnail"
+    ],
+    "ja": {
+      "paragraphs": [
+        "リスト画面で、ステータスなどの離散軸でタブにより行集合を切り替えるコレクション。参照中心 / 一覧上での inline edit / グリッド・リスト ビュー切替の 3 バリエーションを比較できます。",
+        "リスト画面で、ステータスなどの離散軸に沿って行集合を切り替えたいとき。一覧から離脱せずに少量フィールドを更新したい運用なら inline edit、サムネイル・色味など視覚情報がスキャンに効くカタログ系は grid / list 切替バリエーションを採用します。",
+        "フィルタ軸が多段・複合条件が主でタブでは表しきれない場合は、高度なフィルタ UI やクエリビルダを検討。セクションごとにテーブル定義が大きく異なるならページ分割や別 route を。横断バリデーションや複数フィールドの整合性チェックが要るなら Sheet / 専用フォームへ。視覚要素を持たないテキスト中心のリストは grid view に切り替えても情報量が増えないので、list view 固定で十分です。"
+      ],
+      "sections": [
+        {
+          "description": "セルは参照前提。編集は詳細画面に遷移する、オーソドックスな一覧画面。",
+          "heading": "Read-only（参照中心のコレクション）"
+        },
+        {
+          "description": "セル単位の少量編集を一覧から離脱せずに済ませたいときに。詳細画面を開かずに値を直せます。",
+          "heading": "Inline edit（一覧上で値を直接編集）"
+        },
+        {
+          "description": "サムネイルや色味で識別する商材を扱うときに。ステータスタブで在庫ステータスを絞ったまま、ツールバー右の icon-only Tabs.Tab でグリッド表示と密度の高いリスト表示を切り替えます。リストは checkbox 右に 32×32 のサムネ列を、グリッドはカード上部のサムネにチェックボックスをオーバーレイ。",
+          "heading": "Grid / List 切替（サムネイルが効くカタログ向け）"
+        }
+      ],
+      "title": "コレクション"
+    }
+  },
+  "/page/dashboard-with-charts": {
+    "description": "A read-oriented dashboard screen with KPIs and charts laid out side by side. Use it for analytical views consulted as part of day-to-day operations.",
+    "do": "Suited to read-oriented analytical views composed of four KPIs and two charts. Combine with a date-range filter (out of scope for this sample).",
+    "dont": "For interactive BI use cases requiring drilldown, brushing, or cross-filtering, reach for a dedicated BI tool instead.",
+    "primitives": [
+      "Layout",
+      "Card",
+      "MetricCard",
+      "Recharts"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "dashboard",
+      "charts",
+      "analytics"
+    ],
+    "ja": {
+      "paragraphs": [
+        "KPI とチャートを並べた読み取り中心のダッシュボード画面。日次運用で見る分析ビューを作りたいときに使います。",
+        "4 つの KPI と 2 つのチャートで構成される、読み取り中心の分析ビューに向きます。日付範囲フィルタ（本サンプル外）と組み合わせて使ってください。",
+        "ドリルダウンやブラッシング、クロスフィルタが必要なインタラクティブな BI 用途では、BI ツールを使ってください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "ダッシュボード"
+    }
+  },
+  "/page/detail-2col-action-panel": {
+    "description": "Two go-to layouts for a record detail screen. Compare the two-column layout (with ActionPanel on the right) for keeping actions persistently visible, against page tabs (single column) for pages with many sections.",
+    "do": "Use the two-column variant on detail pages when review-style actions should stay visible at all times. Use page tabs when there are many sections and you don't want to multiply URLs.",
+    "dont": "If the page is read-only and a right column adds nothing, the two-column layout is overkill. When the number of tabs grows too large, consider a separate route or a drawer instead.",
+    "primitives": [
+      "Layout",
+      "Layout.Header",
+      "Layout.Column",
+      "Button",
+      "Card",
+      "DescriptionCard",
+      "DataTable",
+      "Badge",
+      "Input",
+      "ActivityCard",
+      "ThreadComposer",
+      "ActionPanel",
+      "Tabs"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "detail",
+      "action-panel",
+      "two-column",
+      "tabs",
+      "page-tabs"
+    ],
+    "ja": {
+      "paragraphs": [
+        "レコード詳細画面の 2 つの定番。常時アクションを見せたいときの 2 カラム（右に ActionPanel）と、セクションが多いときのページタブ（1 カラム）を比較できます。",
+        "詳細画面で、レビュー系アクションを常時見せたい場合は 2 カラム。セクションが多く URL を増やしたくない場合はページタブ。",
+        "読み取り専用で右カラムが不要なら 2 カラムは冗長。タブが多すぎる場合は別ルートや drawer の検討。"
+      ],
+      "sections": [
+        {
+          "description": "メインを読みつつ、レビュー・承認・タスク登録などの操作を常時見せたいとき。",
+          "heading": "2 カラム · ActionPanel"
+        },
+        {
+          "description": "プロフィール・関連オブジェクト・会話など、複数のセクションを別 URL を切らずに切り替えたいとき。",
+          "heading": "ページタブ"
+        }
+      ],
+      "title": "詳細ページ"
+    }
+  },
+  "/page/document-page": {
+    "description": "A Confluence / Notion–style document editing screen. The page owns its own document-tree sidebar (with multi-level folders); the selected article is read and edited in the right column. The article title sits in a heading row below the top bar and is edited together with the body in edit mode. Edit / Save share the same slot at the top bar's right edge. The app-shell sidebar carries the high-level app sections, while the in-page sidebar carries the document tree for that app.",
+    "do": "Use this for screens where one page = one document (wiki, playbook, release notes, meeting notes). Optimised for read-first surfaces where editing happens only when needed.",
+    "dont": "Not for body input as a single field of a form (e.g. an article summary). When the body is part of a form rather than the whole page, use the framed editor in `Patterns / Rich text editor` inside a Field.",
+    "primitives": [
+      "Avatar",
+      "Badge",
+      "Button",
+      "Tabs",
+      "Tooltip"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "editor",
+      "tiptap",
+      "wysiwyg",
+      "document",
+      "preview-edit"
+    ],
+    "ja": {
+      "paragraphs": [
+        "Confluence / Notion 系のドキュメント編集画面。ページ内に自前のドキュメントツリー sidebar を持ち（複数階層フォルダ対応）、選択した記事を右カラムで読み書きする。記事タイトルはトップバー下の見出し行に表示し、編集モードでは本文と同時に編集できる。「編集」「保存」はトップバー右端の同じ位置に置く。app-shell 側の sidebar はアプリの大分類、ページ内 sidebar は当該アプリ内の記事ツリーという役割分担。",
+        "1 ページ = 1 ドキュメント として読み書きする画面（Wiki / プレイブック / リリースノート / 議事録など）に使います。読むことが主体で、必要なときだけ編集に入りたい場面に最適です。",
+        "フォームの一フィールドとしての本文入力（記事のサマリ等）には不要です。ページ全体ではなくフォームの一部として扱うなら、`Patterns / Rich text editor` の枠付きエディタを Field 内で使ってください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "ドキュメントページ（プレビュー / 編集）"
+    }
+  },
+  "/page/email": {
+    "description": "A two-column screen for inboxes, support tickets, and notification logs — pick a row, read the body, and act on it in place. Best when the flow bounces frequently between list and detail.",
+    "do": "Use it for screens like inboxes, support tickets, or notification logs where users pick a row, read its detail, and immediately act on it (reply, archive, etc.). Good fit for flows that bounce between list and detail.",
+    "dont": "Pick a different layout when you want a long vertically-scrolling list, or when a screen needs to focus on editing a single record (forms). On mobile-first experiences, a drilldown layout is usually a better fit.",
+    "primitives": [
+      "Avatar",
+      "Badge",
+      "Button"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "email",
+      "inbox",
+      "split-view",
+      "toolbar"
+    ],
+    "ja": {
+      "paragraphs": [
+        "受信トレイ・サポートチケット・通知ログのような、リストから 1 件を選んで本文を読み、その場でアクションする 2 カラム画面。リスト⇄詳細の往復が多い導線に向きます。",
+        "受信トレイ、サポートチケット、通知ログのように、リストから 1 件を選んで詳細を読み、その場でアクション（返信・アーカイブなど）を実行する画面で使います。リスト⇄詳細の往復が多い導線に向いています。",
+        "一覧を縦に長く読みたい場合や、1 件の編集に集中させたい画面（フォーム）では別レイアウトを選びます。モバイル中心の体験ではドリルダウン式の方がよいことが多いです。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "メール"
+    }
+  },
+  "/page/form-as-page": {
+    "description": "The canonical create / edit form that fits a single page. Compare three variants — single column, section navigation, and wizard — depending on field count and how sequential the steps are.",
+    "do": "Use for mid-sized create / edit flows of roughly 5–15 fields. Section cards keep the page legible. Switch to the wizard variant when the steps must be completed in order.",
+    "dont": "Overkill for a few-field form — use a Dialog or inline edit instead. Conversely, when fields depend heavily on each other and the user needs to jump around freely, pick the section-navigation variant rather than the wizard.",
+    "primitives": [
+      "Layout",
+      "Card",
+      "Form",
+      "Field",
+      "Fieldset",
+      "Select",
+      "Input",
+      "Button"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "form",
+      "create",
+      "section-cards",
+      "wizard",
+      "stepper"
+    ],
+    "ja": {
+      "paragraphs": [
+        "1 ページで入力を完結させる新規作成・編集フォームの典型。項目数や手順性に応じて、単一カラム・セクションナビ付き・ウィザードの 3 種を比較できます。",
+        "5〜15 項目程度の中規模な新規作成・編集フローで使います。セクションカードによりページが見通しやすくなります。手順を順番にこなしたい場合はウィザード版を選びます。",
+        "数項目しかないシンプルなフォームには冗長です。Dialog や行内編集で済ませてください。逆に項目同士の依存が強く自由に行き来して埋めたいケースでは、ウィザードではなくセクションナビ付きを使ってください。"
+      ],
+      "sections": [
+        {
+          "description": "項目を上から順に埋めていく素直なレイアウト。標準的な新規作成・編集に。",
+          "heading": "単一カラム"
+        },
+        {
+          "description": "項目グループが多く、自由に行き来して埋めたいときに。左ナビからセクション間をジャンプできます。",
+          "heading": "セクションナビ（アンカー）"
+        },
+        {
+          "description": "ステップを区切って 1 つずつ集中して入力させたいオンボーディングや申請フロー向け。",
+          "heading": "ウィザード（複数ステップ）"
+        }
+      ],
+      "title": "ページ単体フォーム"
+    }
+  },
+  "/page/pipeline-kanban": {
+    "description": "A CRM-style deals screen with pipeline tabs and a table / kanban view toggle. Kanban columns support drag-and-drop moves and in-column reordering.",
+    "do": "Use for pipeline-driven work (deals, tickets, intake queues) where users switch between dense table scanning and stage-based kanban execution. Pair with separate pipeline definitions when acquisition and expansion funnels differ.",
+    "dont": "Skip kanban when records have no meaningful stage axis or when drag-and-drop would not map to a backend move command. For asset-shape previews (forms, templates), prefer grid / list toggle instead.",
+    "primitives": [
+      "Layout",
+      "Layout.Column",
+      "DataTable",
+      "Badge",
+      "Button",
+      "DescriptionCard",
+      "Card",
+      "Tabs",
+      "createColumnHelper",
+      "useDataTable"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "kanban",
+      "pipeline",
+      "crm",
+      "deals",
+      "data-table",
+      "view-switch",
+      "drag-and-drop"
+    ],
+    "ja": {
+      "paragraphs": [
+        "パイプラインタブとテーブル / Kanban ビュー切替を備えた CRM 風の案件一覧画面。Kanban 列では DnD によるステージ移動と列内並び替えができます。",
+        "案件・チケット・受付キューなど、ステージで進むワークをテーブル（一覧スキャン）と Kanban（実行）で切り替えたいときに。獲得と拡大でファネルが異なる場合はパイプライン定義を分けます。",
+        "ステージ軸が意味を持たないレコード、または DnD がバックエンドの move コマンドに結びつかない場合は Kanban を避けます。フォーム定義など「形」のプレビューには grid / list 切替を使ってください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "パイプライン Kanban"
+    }
+  },
+  "/page/simple-master-crud": {
+    "description": "A pattern for adding and editing reference-data masters from a list — Dialog or Sheet depending on field count. Use the same master to compare which UI fits.",
+    "do": "Use when reference-data records can be handled inside an overlay. Good for framing a team agreement: Dialog when fields are few, Sheet once scrolling or sections become necessary.",
+    "dont": "Not a fit when editing belongs on a drilldown detail page, nor for complex flows that need a wizard or draft-saving.",
+    "primitives": [
+      "Layout",
+      "Table",
+      "Sheet",
+      "Dialog",
+      "Form",
+      "Field",
+      "Input",
+      "Select",
+      "Badge",
+      "Button"
+    ],
+    "tier": "screen",
+    "size": "page",
+    "tags": [
+      "master",
+      "edit",
+      "sheet",
+      "dialog",
+      "form"
+    ],
+    "ja": {
+      "paragraphs": [
+        "リファレンス系マスタの一覧からの新規・編集を、項目数に応じて Dialog か Sheet に振り分けるパターン。同じマスタで UI の選び方を比較できます。",
+        "リファレンス系レコードをオーバーレイで済ませたいとき。項目が少なければ Dialog、スクロールやセクションが必要なら Sheet に寄せる前提でチーム合意を取る説明に向きます。",
+        "ドリルダウン詳細ページで編集したい場合や、ウィザードやドラフト保存が必要な複雑フローには不向きです。"
+      ],
+      "sections": [
+        {
+          "description": "コード・名称など 4 項目前後までで収まる、軽量なマスタの新規・編集に。",
+          "heading": "Dialog（項目が少ないとき）"
+        },
+        {
+          "description": "親カテゴリ・税プロファイル・並び順など、項目が増えてスクロールが要るマスタの新規・編集に。",
+          "heading": "Sheet（項目が多いとき）"
+        }
+      ],
+      "title": "マスタ一覧"
+    }
+  },
+  "/patterns/ai-chat": {
+    "description": "Building blocks for an LLM assistant UI — streaming conversation view, reasoning (thinking) and chain-of-thought, tool calls, citations, message actions, prompt composer, and conversation history — plus an assembled panel. Every demo runs on a scripted mock, so each behavior can be verified without calling a model.",
+    "do": "Use when embedding an AI assistant in a business app — as a docked right panel next to a work page or as a full chat screen — and you need streaming answers with visible reasoning, tool-call transparency, and citations. Start from AssistantPanel and swap mockAssistant.ts for your streaming backend.",
+    "dont": "Not for human-to-human threads (support tickets, incident response) — use Conversation thread. For the page-level layouts that host this UI, see Chat and Assistant panel under Pages.",
+    "primitives": [
+      "Button",
+      "Badge",
+      "Menu"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "ai",
+      "chat",
+      "assistant",
+      "llm",
+      "streaming",
+      "copilot",
+      "tool-call"
+    ],
+    "ja": {
+      "paragraphs": [
+        "LLM アシスタント UI の構成部品 — ストリーミング会話ビュー、思考中表示（Reasoning）と思考ステップ（Chain of thought）、ツール呼び出し、出典、メッセージ操作、入力コンポーザー、会話履歴 — と、それらを組み立てたパネル。全デモはスクリプト化したモックで動くため、モデルを呼ばずに各挙動を確認できます。",
+        "業務アプリに AI アシスタントを組み込むとき — 作業ページ横のドッキング右パネルでも、フル画面チャットでも — ストリーミング回答、思考の可視化、ツール呼び出しの透明性、出典表示が必要な場面で使います。AssistantPanel から始めて、mockAssistant.ts を実際のストリーミングバックエンドに差し替えてください。",
+        "人間同士の業務スレッド（サポート、インシデント対応）には使わず、Conversation thread を使ってください。この UI を載せるページレイアウトは Pages の Chat / Assistant panel を参照してください。"
+      ],
+      "sections": [
+        {
+          "description": "全部品をスクリプト化したモックに接続した完成形。スターターサジェスチョンがそれぞれ 1 つの挙動（出典付きツール呼び出し、思考のストリーミング、データ回答、エラー）をデモし、履歴ボタンで過去の会話に切り替えられます。mockAssistant.ts を実際のストリーミングバックエンドに差し替えれば本番接続できます。",
+          "heading": "Assistant panel (assembled)"
+        },
+        {
+          "description": "ユーザー発言は右寄せのプライマリバブル、アシスタント発言は全幅で、思考・ツール呼び出し・出典を同じ列に積めます。Response はアシスタントが実際に出す Markdown サブセット（太字・コード・リンク・リスト）を依存ライブラリなしで描画します。",
+          "heading": "Message & response"
+        },
+        {
+          "description": "推論モデル向けの折りたたみ式思考ブロック。トークンのストリーミング中は自動で開き、完了すると自動で閉じて「Thought for Ns」を表示します（手動で開閉した場合は自動動作を停止）。Replay で一連の動きを確認できます。",
+          "heading": "Reasoning (thinking)"
+        },
+        {
+          "description": "エージェント的なターン向けの構造化ステップタイムライン。実行中の計画をステップ単位で表示し、各ステップに complete / active / pending の状態と結果チップを付けられます。自由記述の思考には Reasoning、複数ステップのツール実行計画にはこちらを使います。",
+          "heading": "Chain of thought"
+        },
+        {
+          "description": "ツール呼び出しごとの折りたたみカード。ライフサイクル 4 状態（準備中 → 実行中 → 完了 / エラー）を表示し、展開すると入力パラメータと JSON 結果を確認できます。実際のストリーミングでは 1 枚のカードをその場で更新していきます。",
+          "heading": "Tool calls"
+        },
+        {
+          "description": "根拠付き回答の下に置くコンパクトな「Used N sources」トリガー。展開するとモデルが実際に参照した文書を一覧できます。各 Source の onClick に、引用文書をチャット横で開く処理を割り当ててください。",
+          "heading": "Sources (citations)"
+        },
+        {
+          "description": "空状態に表示するスタータープロンプトのチップ。クリックするとその文言がそのまま送信されます。アシスタントの得意分野を伝える最短の手段で、（完成形パネルのように）デモシナリオの入口としても使えます。",
+          "heading": "Suggestions"
+        },
+        {
+          "description": "完了したアシスタント発言の下に置くアイコンボタン列 — コピー、リトライ、フィードバック。ストリーミング中は出さず、ターン完了後にのみ表示します。",
+          "heading": "Message actions"
+        },
+        {
+          "description": "自動で高さが伸びる textarea、添付ファイルフロー、ストリーミング中は停止ボタンに変わる状態対応の送信ボタンを備えたコンポーザー。Enter 送信は IME セーフで、かな漢字変換中の Enter は送信されず変換確定になります。",
+          "heading": "Prompt input"
+        },
+        {
+          "description": "過去の会話を再開するためのグループ化リスト。レイアウト非依存で、パネル内（完成形デモの履歴ビュー）、ポップオーバー、フルチャット画面のサイドバーのいずれにも置けます。",
+          "heading": "Conversation history"
+        }
+      ],
+      "title": "AI チャット"
+    }
+  },
+  "/patterns/approval-flow": {
+    "description": "A sequential multi-stage approval chain rendered as a titled card. Each department approves in a fixed order; exactly one stage is pending at a time.",
+    "do": "Use when a record must clear a fixed sequence of approvers (procurement → engineering → QA → …) and you want to show progress, decisions, and the currently pending step in one place.",
+    "dont": "Don't use for a single approve/reject decision — a plain action button is enough. For parallel or conditional routing, use a dedicated workflow visualization instead.",
+    "primitives": [
+      "Badge",
+      "Button",
+      "Card"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "approval",
+      "workflow",
+      "card"
+    ],
+    "ja": {
+      "paragraphs": [
+        "複数部門の承認を順番に処理する承認フローをカードで表示します。各ステップは固定順で承認され、保留中のステップは常に1つだけです。",
+        "レコードが固定の承認順（購買→技術→品質保証→…）を通過する必要があり、進捗・判断・現在の保留ステップを1か所で見せたいときに使います。",
+        "単一の承認/却下だけならアクションボタンで十分なため使いません。並列や条件分岐のあるルーティングには専用のワークフロー表示を検討してください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "承認フロー"
+    }
+  },
+  "/patterns/approval-route-builder": {
+    "description": "A no-code builder for defining a multi-stage approval route: add stages, order them, set an approval rule per stage (all / any / quorum), and attach approvers by user, role, or dynamic reference.",
+    "do": "Use on an admin screen where business users define who approves what, in what order — expense routes, purchase-order approvals, document sign-off chains. Pair it with the approval-flow pattern, which renders the route this builder produces.",
+    "dont": "Not for a fixed, hard-coded approval chain that never changes — just render it with approval-flow. Overkill when there is only a single approver, where a plain assignee field is enough.",
+    "primitives": [
+      "Card",
+      "Combobox",
+      "Select",
+      "Button"
+    ],
+    "tier": "pattern",
+    "size": "page",
+    "tags": [
+      "approval",
+      "workflow",
+      "builder",
+      "no-code",
+      "admin",
+      "route"
+    ],
+    "ja": {
+      "paragraphs": [
+        "多段の承認ルートをノーコードで設計するビルダー。ステップの追加・並び替え、ステップごとの承認ルール（全員 / いずれか / 定足数）の設定、ユーザー・ロール・動的参照による承認者の割り当てができます。",
+        "業務担当者が「誰が・どの順で承認するか」を定義する管理画面で使います（経費の承認ルート、発注承認、文書の承認フローなど）。このビルダーが出力するルートを表示する approval-flow パターンと組み合わせて使うのが基本です。",
+        "変更されない固定の承認フローには使わず、approval-flow でそのまま表示してください。承認者が1人だけの場合は担当者フィールドで十分で、過剰です。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "承認ルートビルダー"
+    }
+  },
+  "/patterns/bulk-actions-bar": {
+    "description": "A bulk-action bar that appears when multiple list rows are selected. Use it on lists where the same operation — approve, archive, assign — is applied to many rows at once.",
+    "do": "Use on list pages where the same operation (approve, archive, assign, etc.) is regularly applied to many rows at once.",
+    "dont": "Skip it when operations only ever happen one row at a time — put a per-row menu in the table instead.",
+    "primitives": [
+      "Button",
+      "DataTable",
+      "Select"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "list",
+      "actions",
+      "selection"
+    ],
+    "ja": {
+      "paragraphs": [
+        "リストで複数行を選んだときに現れる一括操作バー。承認・アーカイブ・担当割り当てなど、同じ操作をまとめてかけたいリストで使います。",
+        "複数行をまとめて同じ操作（承認・アーカイブ・担当割り当てなど）にかけることが多いリストページで使います。",
+        "操作が行単位でしか発生しないケースでは使わず、行ごとのメニューをテーブル側に置いてください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "一括アクション"
+    }
+  },
+  "/patterns/conversation-thread": {
+    "description": "A business-thread view where multiple participants post to a single record over time. Use it when, as in support or incident response, you want to switch between flat display and nested replies.",
+    "do": "Use for workflows where multiple participants post to a single record over time — support, incident response — and the structure must keep internal notes from leaking to the customer.",
+    "dont": "Skip for single-roundtrip Q&A or plain comment sections — a flat comment list is enough.",
+    "primitives": [
+      "Avatar",
+      "Badge",
+      "Button",
+      "ThreadComposer",
+      "Attachment"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "thread",
+      "support",
+      "messaging",
+      "markdown",
+      "attachments"
+    ],
+    "ja": {
+      "paragraphs": [
+        "1 つのレコードに複数の関係者が時系列で書き込む業務スレッド表示。サポートやインシデント対応のように、フラット表示と入れ子返信を使い分けたい場面で使います。",
+        "サポートやインシデント対応のように、1 つのレコードに複数の関係者が時系列で書き込むワークフローで使います。社内向けの記述を顧客に漏らさない構造になっています。",
+        "1 往復の Q&A や単純なコメント欄であれば、フラットなコメントリストで十分です。"
+      ],
+      "sections": [
+        {
+          "description": "時系列に並ぶフラット表示。シンプルな問い合わせや報告のやり取りに。",
+          "heading": "Flat thread"
+        },
+        {
+          "description": "親スレッドへの返信を入れ子で集約したいとき。詳細ページの会話タブ向け。",
+          "heading": "Threaded replies"
+        },
+        {
+          "description": "本文を Markdown で書かせ、書式を効かせたいとき。",
+          "heading": "Markdown"
+        },
+        {
+          "description": "メッセージにファイル添付やプレビューが入る運用のとき。",
+          "heading": "With file attachments"
+        },
+        {
+          "description": "各コメントに Reply / Like / Edit などの操作を出したいとき。",
+          "heading": "Actions on each comment"
+        }
+      ],
+      "title": "会話スレッド"
+    }
+  },
+  "/patterns/data-charts": {
+    "description": "A catalog that puts common dashboard chart types — line, vertical / horizontal bar, pie / donut, stacked, Gantt — side by side on a single screen so you can pick which visualization to use.",
+    "do": "Use to support dashboard KPIs, compare shares or trends at a glance, or seed a new screen with charts.",
+    "dont": "Look for a dedicated library when you need canvas performance or specialized visualizations — millions of real-time data points, map overlays, and so on.",
+    "primitives": [
+      "Card",
+      "Tabs"
+    ],
+    "tier": "pattern",
+    "size": "page",
+    "tags": [
+      "chart",
+      "recharts",
+      "line",
+      "bar",
+      "pie",
+      "gantt",
+      "analytics"
+    ],
+    "ja": {
+      "paragraphs": [
+        "ダッシュボードでよく使うチャート種別（ライン・縦横バー・円／ドーナツ・積み上げ・ガント）を一画面で見比べるためのカタログ。どの可視化を選ぶかを決めたいときに使います。",
+        "ダッシュボードの KPI 補助や、構成比・推移のひと目比較、新しい画面の叩き台にチャートを置きたいとき。",
+        "数百万点のリアルタイム系列や地図重畳など、キャンバス性能・専用可視化が必要なときは別途ライブラリを検討してください。"
+      ],
+      "sections": [
+        {
+          "description": "数値の連続的な推移を見せたいとき。",
+          "heading": "Line chart"
+        },
+        {
+          "description": "離散カテゴリ間の量を比較するとき。",
+          "heading": "Vertical bar"
+        },
+        {
+          "description": "ラベルが長く、項目数が多い比較に。",
+          "heading": "Horizontal bar"
+        },
+        {
+          "description": "全体に対する構成比を見せたいとき（少数カテゴリ）。",
+          "heading": "Pie chart"
+        },
+        {
+          "description": "構成比に加えて中央に合計などのラベルを置きたいとき。",
+          "heading": "Donut chart"
+        },
+        {
+          "description": "期間ごとの内訳を積み上げて推移を見るとき。",
+          "heading": "Stacked vertical bar"
+        },
+        {
+          "description": "順序のあるマイルストーンを時間軸に並べたいとき。",
+          "heading": "Gantt chart"
+        }
+      ],
+      "title": "チャート"
+    }
+  },
+  "/patterns/datatable-inline-edit": {
+    "description": "A pattern that edits DataTable cells directly in the list, without opening a Sheet or a dedicated form. Pick a commit style per cell type — text, number, enum, flag — based on what's being edited.",
+    "do": "Use for cell-level edits on master or transactional records where the volume is low and opening a Sheet or dedicated form would be overkill — good for tweaking a few fields without leaving the list.",
+    "dont": "Move to a Sheet or dedicated form when you need cross-field validation, multi-field consistency checks, a rich editor, or large row counts with virtualization.",
+    "primitives": [
+      "DataTable",
+      "Input",
+      "Button",
+      "Menu",
+      "Popover",
+      "Checkbox",
+      "Badge",
+      "useToast",
+      "createColumnHelper",
+      "useDataTable"
+    ],
+    "tier": "pattern",
+    "size": "page",
+    "tags": [
+      "table",
+      "data-table",
+      "inline-edit",
+      "popover",
+      "menu",
+      "checkbox",
+      "badge",
+      "toast"
+    ],
+    "ja": {
+      "paragraphs": [
+        "Sheet や専用フォームを開かずに、DataTable のセルを一覧上で直接編集させるパターン。テキスト・数値・列挙値・フラグなど、編集対象に応じて確定方法を使い分けます。",
+        "件数が少なく、Sheet や専用フォームを開くほどではないマスタ／トランザクションのセル単位編集に。一覧から離脱せずに少量フィールドを直したい運用に向きます。",
+        "横断バリデーション、複数フィールドの整合性チェック、リッチエディタ、あるいは大量行・仮想スクロールが必要な場合は Sheet や専用フォームに分離してください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "DataTable セル内編集"
+    }
+  },
+  "/patterns/field-diff-table": {
+    "description": "A table that places proposed changes next to current values so reviewers can decide whether to approve them. Use in approval queues and audit views.",
+    "do": "Use in approval workflows where a reviewer needs to compare proposed changes against current values to decide whether to approve.",
+    "dont": "Not a fit for free-form text diffs longer than a few words. Use a dedicated diff viewer instead.",
+    "primitives": [
+      "Table",
+      "Tabs"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "audit",
+      "diff",
+      "review"
+    ],
+    "ja": {
+      "paragraphs": [
+        "申請された変更を現在値と並べて比較し、レビュアーが承認可否を判断する承認キューや監査ビューで使うテーブル。",
+        "申請された変更内容を現在値と並べて比較し、レビュアーが承認可否を判断する承認ワークフローで使います。",
+        "数語を超える自由記述テキストの差分には不向きです。専用の diff ビューアを使ってください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "フィールド差分テーブル"
+    }
+  },
+  "/patterns/form-builder": {
+    "description": "A no-code builder that lets business users add, reorder, and edit form fields themselves. Use it on definition screens — task templates, intake forms, supplier surveys, and so on.",
+    "do": "Use when building an admin screen where business users themselves assemble forms (task templates, intake-form definitions, supplier surveys, etc.) and need flexibility over field types and ordering.",
+    "dont": "Not for input forms with a fixed spec — use a simple Form + Field composition (e.g. form-as-page) instead. Overkill when end users don't need to edit the fields themselves.",
+    "primitives": [
+      "Form",
+      "Button",
+      "Badge"
+    ],
+    "tier": "pattern",
+    "size": "page",
+    "tags": [
+      "form",
+      "builder",
+      "no-code",
+      "schema",
+      "drag-and-drop",
+      "admin"
+    ],
+    "ja": {
+      "paragraphs": [
+        "業務担当者がフォームのフィールドを自分で追加・並び替え・編集できるノーコード型ビルダー。タスクテンプレや申請フォーム、サプライヤー向けアンケートなどの定義画面で使います。",
+        "業務担当者が自分でフォームを組み立てる管理画面（タスクテンプレ、申請フォームの定義、サプライヤー向けアンケートなど）を作るときに使います。フィールド種別と並び順を柔軟に変えたいケース向けです。",
+        "あらかじめ仕様が固まっている入力フォームには使わず、単純な Form + Field の組み合わせ（form-as-page など）を使ってください。エンドユーザーがフィールドを編集する必要が無い場面では過剰です。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "フォームビルダー"
+    }
+  },
+  "/patterns/grid-view": {
+    "description": "A gallery-style list that tiles cards for resources where visual cues — cover image, status — matter.",
+    "do": "Use to list resources where visual differences (color, thumbnail, status) matter, or as a dashboard-style entry point.",
+    "dont": "Don't use for lists where users compare numbers or attributes, or for dense displays with many items — use Table instead.",
+    "primitives": [
+      "Badge"
+    ],
+    "tier": "pattern",
+    "size": "page",
+    "tags": [
+      "grid",
+      "card",
+      "gallery",
+      "list"
+    ],
+    "ja": {
+      "paragraphs": [
+        "カバー画像やステータスなど視覚情報が大事なリソースを、カードで敷き詰めるギャラリー型のリスト。",
+        "視覚的な差異（カラー、サムネイル、ステータス）が重要なリソースの一覧表示や、ダッシュボード的なエントリポイントとして使います。",
+        "数値や属性を比較したいリスト、項目数が多くて密に表示したいデータには使わず、Table を使ってください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "グリッドビュー"
+    }
+  },
+  "/patterns/multi-step-form": {
+    "description": "A wizard-style form that splits input into steps so users can focus on one at a time.",
+    "do": "Use for onboarding or intake flows with many fields that split logically into stages, especially when you want users to focus on one step at a time.",
+    "dont": "Skip for short forms with only a few fields, or when fields aren't independent and users need to jump around to fill them in — use a standard form layout instead.",
+    "primitives": [
+      "Card",
+      "Form",
+      "Field",
+      "Fieldset",
+      "Input",
+      "Button"
+    ],
+    "tier": "pattern",
+    "size": "page",
+    "tags": [
+      "form",
+      "wizard",
+      "stepper",
+      "onboarding"
+    ],
+    "ja": {
+      "paragraphs": [
+        "入力をステップに区切って 1 つずつ集中して埋めさせるウィザード型フォーム。",
+        "オンボーディングや申請フローなど、入力項目が多く論理的に区切れる場面で使います。1 ステップずつ集中させたいときに有効です。",
+        "数項目しかないシンプルなフォームや、項目が独立しておらず行き来して埋めたいケースには使わず、通常のフォームレイアウトを使ってください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "複数ステップフォーム"
+    }
+  },
+  "/patterns/notification-panel": {
+    "description": "A notification center opened from a bell icon in the header or sidebar. Use it to aggregate new activity in one place.",
+    "do": "Use for a notification center opened from a persistent bell icon in the header, or anywhere you want to aggregate new activity.",
+    "dont": "Don't use for full-screen critical alerts or system errors that need immediate acknowledgement — consider a dialog or toast instead.",
+    "primitives": [
+      "Badge",
+      "Button",
+      "SidebarGroup",
+      "Tabs"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "notification",
+      "popover",
+      "inbox"
+    ],
+    "ja": {
+      "paragraphs": [
+        "ヘッダーやサイドバーのベルアイコンから開く通知センター。新着情報を集約して見せたいときに使います。",
+        "ヘッダーに常駐するベルアイコンから開く通知センターや、新着情報を集約して見せたいときに使います。",
+        "全画面を専有する重要なアラートや、即時の確認が必要なシステムエラーには使わず、ダイアログやトーストを検討してください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "通知パネル"
+    }
+  },
+  "/patterns/pipeline-stage-manager": {
+    "description": "An admin screen that lets users add, reorder, rename, and delete a set of stages (e.g. Lead → Qualified → Won). Use it to edit the stage definitions that drive Kanban boards and win-rate forecasts.",
+    "do": "Use on admin screens that let users edit the stage set itself — sales pipelines, intake statuses, deal flows. A good fit when stage definitions match Kanban columns so edits show up on the board immediately.",
+    "dont": "Don't use when stages are fixed in code or config. If list-style editing alone is enough, simpler list UIs like bulk-actions-bar or grid-view will do.",
+    "primitives": [
+      "Card",
+      "Button",
+      "Badge",
+      "Input"
+    ],
+    "tier": "pattern",
+    "size": "page",
+    "tags": [
+      "crm",
+      "pipeline",
+      "stages",
+      "drag-and-drop",
+      "settings"
+    ],
+    "ja": {
+      "paragraphs": [
+        "ステージ集合（Lead → Qualified → Won のような段階）をユーザーに追加・並び替え・改名・削除させる管理画面。Kanban や勝率予測のもとになるステージ定義を編集する用途に。",
+        "セールス・パイプラインや申請ステータス、案件フローなど、ステージ集合自体をユーザーに編集させる管理画面で使います。Kanban ボードのカラム定義と一致するため、ステージ変更が即時にボードへ反映されるユースケースに向いています。",
+        "ステージがコードや設定ファイルで固定されているシステムには使いません。リスト編集だけで十分なら、bulk-actions-bar や grid-view などのシンプルなリスト UI で代替できます。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "パイプラインステージ管理"
+    }
+  },
+  "/patterns/rich-text-editor": {
+    "description": "A rich-text editor for free-form text with formatting — headings, bold/italic/underline, lists, links, tables. Stores Tiptap JSON and supports read-only mode and async value sync.",
+    "do": "Use when free-form text with rich formatting is required — article bodies, comments, internal documents, ticket descriptions. Especially when storing structured data (JSON) rather than HTML or Markdown.",
+    "dont": "Skip for single-line label inputs or cases where raw Markdown storage is required — use a textarea or a Markdown editor instead.",
+    "primitives": [
+      "Button"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "editor",
+      "tiptap",
+      "wysiwyg",
+      "rich-text",
+      "table",
+      "link"
+    ],
+    "ja": {
+      "paragraphs": [
+        "見出し・太字/斜体/下線・リスト・リンク・テーブルを備えたリッチテキストエディタ。Tiptap JSON で保存し、readOnly モードと非同期の value 同期もサポート。",
+        "本文・コメント・社内ドキュメント・チケット説明など、書式を伴うフリーテキスト入力が必要な場面で使います。HTML や Markdown ではなく構造化データ（JSON）として保存したい場合に有効です。",
+        "単行のラベル入力や Markdown をそのまま保存したいケースには使わず、textarea や Markdown エディタを選んでください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "リッチテキストエディタ（TipTap）"
+    }
+  },
+  "/patterns/right-sheet-custom": {
+    "description": "A wide right-side overlay for peeking at details without leaving the list row. Good for flows that bounce quickly between list and drilldown.",
+    "do": "Suited to flows that rapidly cycle list → detail → back. Pair with URL search-params to keep the open state across reloads.",
+    "dont": "Skip when details are dense enough to need a dedicated page or breadcrumb navigation — cut a standalone route instead.",
+    "primitives": [
+      "Button"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "sheet",
+      "drilldown",
+      "overlay"
+    ],
+    "ja": {
+      "paragraphs": [
+        "リスト行から離脱せずに詳細を覗くための、横幅広めの右寄せオーバーレイ。ドリルダウンを高速に往復したい場面に向きます。",
+        "リスト → 詳細表示 → 戻る、を素早く繰り返すフローに向きます。URL search-param と組み合わせれば、リロード後も開いた状態を維持できます。",
+        "詳細の情報量が多く、専用ページやパンくずナビが必要な場合は使わず、独立したルートを切ってください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "右シート（ドリルダウン・ワイド）"
+    }
+  },
+  "/patterns/supplier-cascader": {
+    "description": "A two-column cascader for assigning tasks to suppliers: browse by group on the left, pick individual companies on the right, with search and bulk group selection.",
+    "do": "Use when assigning a task or resource to many suppliers and users need to pick from hundreds of companies grouped by organization.",
+    "dont": "Skip for simple single-select cases — use a combobox or searchable select instead.",
+    "primitives": [
+      "Button",
+      "Input",
+      "Checkbox"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "form",
+      "selection",
+      "supplier",
+      "cascader"
+    ],
+    "ja": {
+      "paragraphs": [
+        "タスク割り当て先サプライヤーを選ぶ 2 列 cascader。左でグループを選び、右で個別会社を選択。検索とグループ一括選択にも対応。",
+        "タスクやリソースを多数のサプライヤーに割り当てるとき。組織グループ単位で数百社から選ばせたいケース向け。",
+        "単一選択で済む場合は使わず、combobox や検索付き Select を使ってください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "サプライヤー cascader"
+    }
+  },
+  "/patterns/thread-composer": {
+    "description": "A reply-input card for support / incident threads. Use when users should be able to switch between a customer-facing reply and an internal note in the same composer.",
+    "do": "Use at the end of a support or incident thread when users need to switch between a customer-facing reply and an internal note in the same composer.",
+    "dont": "For a 1-on-1 chat input or a UI that opens a Reply per comment, pick only the slots you need or choose a different layout.",
+    "primitives": [
+      "Button"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "thread",
+      "messaging",
+      "form",
+      "composer"
+    ],
+    "ja": {
+      "paragraphs": [
+        "サポート／インシデントスレッドの返信入力カード。顧客向け返信と社内メモを同じ枠から切り替えて投稿させたいときに使います。",
+        "サポートやインシデントのスレッド末尾で、顧客向け返信と社内メモを同じ入力枠から切り替えたいときに使います。",
+        "チャットの 1 対 1 入力や、コメントごとに Reply を開く UI では、必要なスロットだけを使うか別レイアウトにしてください。"
+      ],
+      "sections": [
+        {}
+      ],
+      "title": "スレッド入力"
+    }
+  },
+  "/patterns/timeline": {
+    "description": "An editable staircase timeline built on the app-shell Timeline primitive. It starts as one full-width bar; splitting steps the track down onto new lanes, clicking a bar opens a menu to recolor it, and dragging a bar's right edge grows it while the next bar keeps its right edge and narrows. A second read-only view shows dependency links between bars.",
+    "do": "Use when you need a schedule / planning surface with editable bars — task planning, resource allocation, or execution traces — and want to own the interaction model instead of adopting a finished Gantt library.",
+    "dont": "Reach for a dedicated library when you need heavy Gantt features out of the box (baselines, critical path, thousands of rows with virtualization) rather than a composable primitive.",
+    "primitives": [
+      "Timeline",
+      "Popover"
+    ],
+    "tier": "pattern",
+    "size": "page",
+    "tags": [
+      "timeline",
+      "gantt",
+      "schedule",
+      "dependencies",
+      "drag",
+      "editable"
+    ],
+    "ja": {
+      "paragraphs": [
+        "app-shell の Timeline プリミティブの上に作った編集可能な階段状タイムライン。最初は全幅1本のバーで、分割すると1段下のレーンへ段下がりし、バーをクリックするとメニューで色を変えられ、右端をドラッグで広げると次のバーは右端を固定したまま幅が狭くなります。もう一つの読み取り専用ビューでは、バー間の依存リンクを示します。",
+        "編集可能なバーを持つスケジュール／計画画面（タスク計画・リソース割当・実行トレースなど）が必要で、完成品のガントライブラリではなく操作モデルを自前で持ちたいとき。",
+        "ベースライン・クリティカルパス・数千行の仮想化など、重厚なガント機能をそのまま使いたい場合は、合成可能なプリミティブより専用ライブラリを検討してください。"
+      ],
+      "sections": [
+        {
+          "description": "最初は全幅1本のバー。バーをクリックして色変更・分割（分割すると1段下のレーンへ段下がり）。右端をドラッグで広げると、次のバーは右端を固定したまま左端が右に寄って幅が狭くなります。",
+          "heading": "Editable staircase"
+        },
+        {
+          "description": "読み取り専用ビュー：バー間の直交する依存リンクと、1つのレーンを共有する複数バー。",
+          "heading": "Dependencies & lanes"
+        }
+      ],
+      "title": "タイムライン / ガント"
+    }
+  },
+  "/patterns/user-profile-dialog": {
+    "description": "A two-pane profile dialog opened from the sidebar user menu. The left rail shows the avatar (clickable to change) and tab navigation; the right pane mixes editable inputs/selects with read-only organization fields so users can see at a glance which values they own.",
+    "do": "Use when account-level edits need to be reachable from anywhere in the app without leaving the current page — typical for SaaS shells where the user menu lives in the sidebar.",
+    "dont": "Skip for full account management with many sections (security, billing, integrations) — those deserve a dedicated /settings page so deep links and breadcrumbs work.",
+    "primitives": [
+      "Avatar",
+      "Badge",
+      "Button",
+      "Dialog",
+      "Field",
+      "Input",
+      "Select",
+      "SidebarGroup"
+    ],
+    "tier": "pattern",
+    "size": "small",
+    "tags": [
+      "dialog",
+      "profile",
+      "settings",
+      "avatar",
+      "sidebar",
+      "user-menu"
+    ],
+    "ja": {
+      "paragraphs": [
+        "サイドバー下部のユーザーメニューから開く 2 ペイン構成のプロフィールダイアログ。左レールにアバター（クリックで差し替え）とタブナビゲーション、右ペインに編集可能な入力欄／セレクトと管理者が設定する読み取り専用フィールドを並べ、どこを自分で変えられるかが一目で分かるようにします。",
+        "アプリのどの画面からでも現在のページを離れずに個人設定へ到達したいとき。サイドバーにユーザーメニューを置く SaaS シェルでよく使います。",
+        "セキュリティ・課金・連携など項目数が多い完全な設定画面には不向き。専用の /settings ページにしてディープリンクとパンくずを成立させた方が良いです。"
+      ],
+      "sections": [
+        {
+          "description": "素早いプロフィール編集向けのコンパクトな単一ペインダイアログ。名前・メール・言語設定・読み取り専用ステータスを表示し、タブ不要なシンプル構成です。",
+          "heading": "Small dialog"
+        },
+        {
+          "description": "2 ペイン構成のフルプロフィールダイアログ。左レールにタブナビゲーション、右ペインに編集可能な入力欄と読み取り専用の組織情報フィールドを並べます。",
+          "heading": "Two-column dialog"
+        },
+        {
+          "description": "サイドバー下部のユーザーメニューをクリックすると、プロフィールダイアログが開きます。",
+          "heading": "Sidebar user menu → dialog"
+        }
+      ],
+      "title": "ユーザープロフィールダイアログ"
+    }
+  },
+  "/components": {
+    "description": "A catalogue of UI components provided by app-shell. Select a component from the sidebar to preview it.",
+    "do": "",
+    "dont": "",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "app-shell が提供する UI コンポーネントのカタログです。サイドバーから各コンポーネントを選択して確認できます。"
+      ],
+      "sections": [],
+      "title": "コンポーネント"
+    }
+  },
+  "/page": {
+    "description": "Full-page layouts inside the app shell — with the sidebar and breadcrumbs that wrap routed content.",
+    "do": "A work page with an AI assistant chat opened as an embedded right panel. The page keeps its own layout and scrolling; the assistant augments it side by side instead of owning the screen or blocking it with a modal. The chat UI comes from the AI chat pattern.",
+    "dont": "A 1-on-1 chat screen for an AI assistant or bot. Use it when you want a conversational experience with conversation-history switching and a new-conversation entry point.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "app-shell のサイドバーとパンくずで包まれる、ルーティング先のページ全体レイアウトです。",
+        "AI アシスタントのチャットを右パネル（埋め込み）で開く作業ページ。ページ自体のレイアウトとスクロールはそのままに、アシスタントが横に並んで補助します。画面を占有したりモーダルで塞いだりしません。チャット UI は AI chat パターンの部品で構成しています。",
+        "AI アシスタントや bot との 1 対 1 のチャット画面。会話履歴の切替と新規会話開始を備えた、対話形式の体験を作るときに使います。"
+      ],
+      "sections": [],
+      "title": "ページ"
+    }
+  },
+  "/patterns": {
+    "description": "Composite UI built from app-shell primitives — toolbars, panels, editors, and other flows you embed inside pages.",
+    "do": "Building blocks for an LLM assistant UI — streaming conversation view, reasoning (thinking) and chain-of-thought, tool calls, citations, message actions, prompt composer, and conversation history — plus an assembled panel. Every demo runs on a scripted mock, so each behavior can be verified without calling a model.",
+    "dont": "A sequential multi-stage approval chain rendered as a titled card. Each department approves in a fixed order; exactly one stage is pending at a time.",
+    "primitives": [],
+    "ja": {
+      "paragraphs": [
+        "app-shell の primitive を組み立てた合成 UI（ツールバー・パネル・エディタなど）のサンプルです。",
+        "LLM アシスタント UI の構成部品 — ストリーミング会話ビュー、思考中表示（Reasoning）と思考ステップ（Chain of thought）、ツール呼び出し、出典、メッセージ操作、入力コンポーザー、会話履歴 — と、それらを組み立てたパネル。全デモはスクリプト化したモックで動くため、モデルを呼ばずに各挙動を確認できます。",
+        "複数部門の承認を順番に処理する承認フローをカードで表示します。各ステップは固定順で承認され、保留中のステップは常に1つだけです。"
+      ],
+      "sections": [],
+      "title": "パターン"
+    }
+  }
+}
