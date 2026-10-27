@@ -54,9 +54,100 @@ async function review(page: Page, contents: string | Buffer) {
   return dialog;
 }
 
-const collection = (page: Page, index: number) =>
-  page.locator('[data-slot="data-table"]').nth(index);
+async function collection(page: Page, index: number) {
+  const tables = page.locator('[data-slot="data-table"]');
+  // The three lazy samples can arrive out of order. Before all are mounted,
+  // nth(0) can refer to Inline edit or Catalog and later switch to Orders.
+  await expect(tables).toHaveCount(3);
+  return tables.nth(index);
+}
 const rows = (panel: Locator) => panel.locator("tbody tr");
+
+test("collection previews keep independent selections and page sizes", async ({
+  page,
+}, info) => {
+  let release!: () => void;
+  let held = false;
+  const gate = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  const delayFirst = info.project.name !== "reference";
+  info.annotations.push({
+    type: "preview-loading",
+    description: delayFirst
+      ? "Orders chunk held until the other previews load"
+      : "Reference uses one bundle; check state independence without chunk delay",
+  });
+  if (delayFirst)
+    await page.route("**/PageCapsuleTabsPage*", async (route) => {
+      // Vite requests the displayed source separately in development. Only hold
+      // the executable sample, otherwise the whole catalogue would be blocked.
+      if (new URL(route.request().url()).searchParams.has("raw")) {
+        await route.continue();
+        return;
+      }
+      held = true;
+      await gate;
+      await route.continue();
+    });
+  try {
+    await open(page, "page/collection");
+    if (delayFirst) await expect.poll(() => held).toBe(true);
+    const tables = page.locator('[data-slot="data-table"]');
+    await expect(tables).toHaveCount(delayFirst ? 2 : 3);
+    // Inline edit arrived before the earlier Orders preview. Configure it
+    // while it is the first table, then let the earlier preview mount.
+    const early = tables.nth(delayFirst ? 0 : 1);
+    await early
+      .getByRole("checkbox", { name: "PO-2026-1001 — Select row", exact: true })
+      .check();
+    await early.getByRole("combobox").click();
+    await page.getByRole("option", { name: "25", exact: true }).click();
+    await expect(rows(early)).toHaveCount(25);
+    release();
+    const orders = await collection(page, 0);
+    const inline = tables.nth(1);
+    await expect(rows(orders)).toHaveCount(10);
+    await expect(
+      orders.getByRole("checkbox", {
+        name: "PO-2026-1001 — Select row",
+        exact: true,
+      }),
+    ).not.toBeChecked();
+    await expect(rows(inline)).toHaveCount(25);
+    await expect(
+      inline.getByRole("checkbox", {
+        name: "PO-2026-1001 — Select row",
+        exact: true,
+      }),
+    ).toBeChecked();
+    await orders
+      .getByRole("checkbox", { name: "PO-2026-1001 — Select row", exact: true })
+      .check();
+    await orders
+      .getByRole("button", { name: "Next page", exact: true })
+      .click();
+    await expect(rows(orders).first()).toContainText("PO-2026-1011");
+    await orders
+      .getByRole("button", { name: "Previous page", exact: true })
+      .click();
+    await expect(
+      orders.getByRole("checkbox", {
+        name: "PO-2026-1001 — Select row",
+        exact: true,
+      }),
+    ).toBeChecked();
+    await expect(rows(inline)).toHaveCount(25);
+    await expect(
+      inline.getByRole("checkbox", {
+        name: "PO-2026-1001 — Select row",
+        exact: true,
+      }),
+    ).toBeChecked();
+  } finally {
+    release();
+  }
+});
 
 for (const mode of [
   {
@@ -247,7 +338,7 @@ for (const mode of [
       page,
     }) => {
       await open(page, "page/collection");
-      const panel = collection(page, 0);
+      const panel = await collection(page, 0);
       await panel
         .getByRole("button", { name: "Last page", exact: true })
         .click();
@@ -278,7 +369,7 @@ for (const mode of [
       page,
     }) => {
       await open(page, "page/collection");
-      const panel = collection(page, 0);
+      const panel = await collection(page, 0);
       await panel
         .getByRole("checkbox", {
           name: "PO-2026-1001 — Select row",
@@ -331,7 +422,7 @@ for (const mode of [
       page,
     }) => {
       await open(page, "page/collection");
-      const panel = collection(page, 2);
+      const panel = await collection(page, 2);
       await panel
         .getByRole("button", { name: "Last page", exact: true })
         .click();
@@ -368,7 +459,7 @@ for (const mode of [
       page,
     }) => {
       await open(page, "page/collection");
-      const panel = collection(page, 1);
+      const panel = await collection(page, 1);
       const trigger = panel.getByRole("button", {
         name: "RFQ-441",
         exact: true,
@@ -411,7 +502,7 @@ for (const mode of [
       page,
     }) => {
       await open(page, "page/collection");
-      const panel = collection(page, 1);
+      const panel = await collection(page, 1);
       await rows(panel)
         .first()
         .getByRole("button", { name: "¥35,317", exact: true })

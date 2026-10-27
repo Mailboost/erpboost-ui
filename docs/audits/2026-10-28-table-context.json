@@ -1199,11 +1199,11 @@
       "report": "published-final-results.json"
     }
   ],
-  "unresolvedIssues": [
+  "resolvedIssues": [
     {
       "test": "collection-csv-boundaries.spec.ts / mobile dark / collection selections span pages; page select-all clears only its own rows",
       "observed": "After returning to page 1, PO-2026-1001 briefly remained selected, then became unchecked without another recorded Playwright action. The first public full run failed.",
-      "cause": "Undetermined. Not classified as a test synchronization defect or a confirmed product fix.",
+      "cause": "Lazy preview arrival changed which sample .first() referred to. Original Inline edit selection remains checked in the final trace snapshot.",
       "reproductionChecks": [
         {
           "environments": [
@@ -1225,7 +1225,9 @@
       ],
       "originalFailureTrace": "published-selection-failure.zip",
       "decodedFailureStates": "failure-snapshot-states.json",
-      "status": "unresolved-not-reproduced"
+      "status": "resolved-test-target-race",
+      "resolutionRecord": "form-navigation-audit-2026-10-28.md"
     }
-  ]
+  ],
+  "unresolvedIssues": []
 }

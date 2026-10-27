@@ -3,8 +3,8 @@
   "baselineRevision": "e1a579c665128c77820690acaa0231aa6a5542f5",
   "reference": "https://ui.tailor.tech/",
   "published": "https://mailboost.github.io/erpboost-ui/",
-  "addedCasesPerTarget": 10,
-  "casesPerTarget": 68,
+  "addedCasesPerTarget": 11,
+  "casesPerTarget": 69,
   "passed": {
     "reference": 68,
     "local": 68
@@ -858,13 +858,33 @@
       "snapshot": "- main:\n  - alert \"default-error-boundary\":\n    - heading \"Something went wrong\" [level=1]\n    - paragraph: useSidebar must be used within a SidebarProvider.\n    - button \"Try Again\"\n  - region \"Notifications alt+T\""
     }
   ],
-  "ongoingUnresolvedIssue": {
-    "description": "A single public mobile cross-page selection reset from the previous audit remains unexplained. No recurrence in this reference/local full run. This scroll-spy change does not claim to fix it.",
-    "record": "table-context-audit-2026-10-28.md"
-  },
   "limits": [
     "Wizard checks confirm native GET reset at Review, not successful Review or persistence.",
     "Profile is tested in the normal catalogue. Its fullscreen error is not counted as a functioning profile.",
     "Physical devices, other browser engines, active IME composition and backend persistence were not tested."
-  ]
+  ],
+  "resolvedHistoricalIssue": {
+    "description": "Previously unresolved selection reset reclassified as test target switching after lazy preview arrival. Original selection was retained.",
+    "record": "table-context-audit-2026-10-28.md",
+    "additionalLoadProbe": {
+      "target": "local",
+      "chromiumCPUThrottlingRate": 6,
+      "passed": 20,
+      "failed": 0,
+      "scope": "Original selected row survives Next, page select-all, deselect-all and Previous. Does not include Approve or Reject.",
+      "report": "selection-load-local.json",
+      "conclusion": "Not reproduced in reused contexts; the subsequent fresh-context diagnostic and original trace establish target switching."
+    },
+    "resolution": {
+      "status": "resolved-test-target-race",
+      "originalSelectionRetainedInInlinePreview": true,
+      "pagination25RetainedInInlinePreview": true,
+      "evidence": [
+        "original-selection-all-table-states.json",
+        "all-table-states.json",
+        "cold-pagination-published.json"
+      ],
+      "testFix": "Wait for all three Collection tables before using ordered locators; add controlled chunk-arrival regression."
+    }
+  }
 }

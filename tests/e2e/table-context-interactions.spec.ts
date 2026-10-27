@@ -49,6 +49,9 @@ for (const mode of [
         page,
       }) => {
         await open(page, route);
+        if (route === "page/collection") {
+          await expect(page.locator('[data-slot="data-table"]')).toHaveCount(3);
+        }
         await page.evaluate(() => {
           const state = window as Window & {
             tableContextEvents?: ContextEvent[];
