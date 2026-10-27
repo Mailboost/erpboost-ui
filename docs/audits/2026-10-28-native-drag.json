@@ -1,0 +1,587 @@
+{
+  "date": "2026-10-28",
+  "playwright": "1.64.1",
+  "browser": "bundled Chromium",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "locale": "en-US",
+  "theme": "light",
+  "testedUiRevision": "32c20e7d899ed9d8eca4e9e1732ab00be23e9078",
+  "method": "Native dragTo/mouse and Escape; no synthetic DragEvent dispatch. Observe trusted dragstart/drop/dragend and assert DOM/schema results.",
+  "stats": {
+    "startTime": "2026-10-27T17:51:32.318Z",
+    "duration": 23787.552,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "target": "reference",
+      "test": "pipeline stages reorder in both directions and cancel without changes",
+      "status": "passed",
+      "durationMs": 1495,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "reference",
+      "test": "approval stages reorder and preserve stage settings",
+      "status": "passed",
+      "durationMs": 1722,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "reference",
+      "test": "form fields reorder while the generated schema preserves settings",
+      "status": "passed",
+      "durationMs": 1175,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "reference",
+      "test": "Kanban cards move between columns, reorder, and cancel",
+      "status": "passed",
+      "durationMs": 1146,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "reference",
+      "test": "timeline bars move to another lane and preserve the time range",
+      "status": "passed",
+      "durationMs": 928,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "test": "pipeline stages reorder in both directions and cancel without changes",
+      "status": "passed",
+      "durationMs": 1365,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "test": "approval stages reorder and preserve stage settings",
+      "status": "passed",
+      "durationMs": 2169,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "test": "form fields reorder while the generated schema preserves settings",
+      "status": "passed",
+      "durationMs": 1567,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "test": "Kanban cards move between columns, reorder, and cancel",
+      "status": "passed",
+      "durationMs": 1398,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "test": "timeline bars move to another lane and preserve the time range",
+      "status": "passed",
+      "durationMs": 1138,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "test": "pipeline stages reorder in both directions and cancel without changes",
+      "status": "passed",
+      "durationMs": 1648,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "test": "approval stages reorder and preserve stage settings",
+      "status": "passed",
+      "durationMs": 1635,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "test": "form fields reorder while the generated schema preserves settings",
+      "status": "passed",
+      "durationMs": 1486,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "test": "Kanban cards move between columns, reorder, and cancel",
+      "status": "passed",
+      "durationMs": 1375,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "test": "timeline bars move to another lane and preserve the time range",
+      "status": "passed",
+      "durationMs": 2122,
+      "events": [
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "drop",
+          "trusted": true
+        },
+        {
+          "type": "dragstart",
+          "trusted": true
+        },
+        {
+          "type": "dragend",
+          "trusted": true
+        }
+      ]
+    }
+  ]
+}

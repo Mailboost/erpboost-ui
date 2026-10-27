@@ -16,9 +16,11 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "check:package": "node scripts/check-package.mjs",
     "preview": "npm run preview -w @mailboost/erpboost-ui-catalog",
-    "test": "tsc --noEmit -p tests/tsconfig.json && vitest run"
+    "test": "tsc --noEmit -p tests/tsconfig.json && vitest run",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
     "@tailwindcss/vite": "^4.3.3",
     "@testing-library/react": "16.3.3",
     "@types/encoding-japanese": "2.2.1",

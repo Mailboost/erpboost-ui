@@ -197,5 +197,5 @@
     "foreignOrMalformedKanbanDrop": "A foreign payload and malformed kanban-board-card payload caused uncaught JSON errors before the fix.",
     "cancelledKanbanDrag": "The screen-reader announcement remained Picked up draggable item a. after cancelling before the fix."
   },
-  "nativeHtml5": "Reference and implementation reorder gestures remain unverified by this browser tool. User manual check requested."
+  "nativeHtml5": "Resolved for PipelineStageManager, ApprovalRouteBuilder, FormBuilder, Kanban and Timeline by authorized Playwright Chromium native operations: 15/15 reference/local/published tests. See 2026-10-28-native-drag.json."
 }
