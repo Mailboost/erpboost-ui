@@ -57,7 +57,7 @@ function ComboboxInput({
       ref={mergeRefs(ref, forwardedRef)}
       data-slot="combobox-input"
       className={cn(
-        "astw:border-input astw:bg-transparent astw:dark:bg-input/30 astw:text-foreground astw:placeholder:text-muted-foreground astw:flex astw:h-9 astw:w-full astw:rounded-md astw:border astw:px-3 astw:py-1 astw:text-body-md astw:outline-none astw:transition-colors",
+        "astw:border-input astw:bg-transparent astw:dark:bg-input/30 astw:text-foreground astw:placeholder:text-muted-foreground astw:flex astw:h-9 astw:w-full astw:rounded-md astw:border astw:px-3 astw:py-1 astw:text-body-md astw:shadow-xs astw:outline-none astw:transition-colors",
         "astw:focus-visible:border-ring astw:focus-visible:ring-ring/50 astw:focus-visible:ring-[3px]",
         "astw:disabled:cursor-not-allowed astw:disabled:opacity-50",
         className,

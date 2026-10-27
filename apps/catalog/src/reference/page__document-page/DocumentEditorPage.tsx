@@ -97,7 +97,7 @@ export const DocumentEditorPage = ({
   sidebarLeftAccessory,
 }: {
   sidebarLeftAccessory?: React.ReactNode;
-} = {}) => {
+}) => {
   const [mode, setMode] = useState<Mode>("preview");
   const [docs, setDocs] = useState<Record<string, DocBody>>(buildInitialDocs);
   const [selectedDocId, setSelectedDocId] = useState(initialSelectedDocId);

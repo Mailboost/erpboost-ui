@@ -240,7 +240,7 @@ export const MarkdownThread = () => {
                   variant={preview ? "ghost" : "secondary"}
                   size="sm"
                   onClick={() => setPreview(false)}
-                  className="h-7 px-2 py-0.5 text-xs font-normal"
+                  className="h-7 px-2 py-0.5 text-xs font-medium"
                 >
                   Write
                 </Button>
@@ -249,7 +249,7 @@ export const MarkdownThread = () => {
                   variant={preview ? "secondary" : "ghost"}
                   size="sm"
                   onClick={() => setPreview(true)}
-                  className="h-7 px-2 py-0.5 text-xs font-normal"
+                  className="h-7 px-2 py-0.5 text-xs font-medium"
                 >
                   Preview
                 </Button>

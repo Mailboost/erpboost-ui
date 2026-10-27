@@ -187,5 +187,5 @@ export const ChainOfThoughtSearchResult = ({
   variant = "outline-neutral",
   ...props
 }: ChainOfThoughtSearchResultProps) => (
-  <Badge variant={variant} className={cn("text-[10px] font-normal", className)} {...props} />
+  <Badge variant={variant} className={cn("text-[10px] font-medium", className)} {...props} />
 );

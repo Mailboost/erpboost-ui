@@ -570,16 +570,13 @@ interface DataTableStatusRowProps {
 function DataTableStatusRow({ totalColSpan, state, children }: DataTableStatusRowProps) {
   return (
     <Table.Row data-datatable-state={state} className="astw:border-0 astw:hover:bg-transparent">
-      {/* Reserve a fixed 3-row height (acts as a minimum — the cell grows if a
-          bounded container makes the row taller), independent of pageSize so
-          large page sizes don't create a huge blank/scrollable region.
-          `align-middle` centres the message vertically within that height. */}
+      {/* Keep the status visible as a bounded table scrolls through its reserved rows. */}
       <Table.Cell
         colSpan={totalColSpan}
         style={{ height: `${STATUS_ROWS * ROW_HEIGHT_PX}px` }}
-        className="astw:text-center astw:align-middle"
+        className="astw:text-center astw:align-top"
       >
-        {children}
+        <div className="astw:sticky astw:top-[45%]">{children}</div>
       </Table.Cell>
     </Table.Row>
   );

@@ -25,6 +25,7 @@ const resources: Record<string, Demo[]> = {
         return {
           default: () =>
             createElement(PageFrame, {
+              fullBleed: true,
               children: createElement(module.AssistantPanelScreen),
             }),
         };
@@ -67,6 +68,7 @@ const resources: Record<string, Demo[]> = {
         return {
           default: () =>
             createElement(PageFrame, {
+              fullBleed: true,
               children: createElement(module.ChatScreen),
             }),
         };
@@ -318,7 +320,11 @@ const resources: Record<string, Demo[]> = {
         return {
           default: () =>
             createElement(PageFrame, {
-              children: createElement(module.DocumentEditorPage),
+              fullBleed: true,
+              children: (sidebarTrigger) =>
+                createElement(module.DocumentEditorPage, {
+                  sidebarLeftAccessory: sidebarTrigger,
+                }),
             }),
         };
       }),
@@ -443,6 +449,7 @@ const resources: Record<string, Demo[]> = {
         return {
           default: () =>
             createElement(PageFrame, {
+              fullBleed: true,
               children: createElement(module.EmailLayoutPage),
             }),
         };

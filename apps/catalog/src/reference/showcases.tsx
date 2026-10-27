@@ -85,21 +85,27 @@ export function FieldDiffExample() {
 }
 export function SupplierExample() {
   const cascader = useSupplierPreviewState();
-  return <SupplierCascader cascader={cascader} />;
+  return (
+    <div className="mx-auto w-full max-w-3xl">
+      <SupplierCascader cascader={cascader} />
+    </div>
+  );
 }
 export function ComposerExample() {
   const [value, setValue] = useState("");
   const [internal, setInternal] = useState(false);
   return (
-    <ThreadComposer
-      value={value}
-      onChange={setValue}
-      internal={internal}
-      onInternalChange={setInternal}
-      onDiscard={() => setValue("")}
-      onSubmit={() => setValue("")}
-      submitDisabled={!value.trim()}
-    />
+    <div className="mx-auto w-full max-w-3xl">
+      <ThreadComposer
+        value={value}
+        onChange={setValue}
+        internal={internal}
+        onInternalChange={setInternal}
+        onDiscard={() => setValue("")}
+        onSubmit={() => setValue("")}
+        submitDisabled={!value.trim()}
+      />
+    </div>
   );
 }
 export function ProfileExample({ small = false }: { small?: boolean }) {
@@ -143,36 +149,40 @@ export function RightSheetExample() {
             Open · no backdrop
           </Button>
         </section>
+        <RightSheet
+          open={mode !== null}
+          onOpenChange={(v) => !v && setMode(null)}
+          title="Supplier · Tailor Supply Co."
+          description={
+            mode === "plain"
+              ? "Transparent scrim · outside tap still closes"
+              : "Drilldown panel with quick review"
+          }
+          expandHref="#"
+          backdrop={mode === "backdrop"}
+        >
+          <DescriptionCard
+            title="Supplier summary"
+            data={{
+              name: "Tailor Supply Co.",
+              status: "Pending",
+              requestedAt: "2026-04-01",
+              website: "https://tailor.tech",
+            }}
+            fields={[
+              { key: "name", label: "Company name" },
+              {
+                key: "status",
+                label: "Status",
+                type: "badge",
+                meta: { badgeVariantMap: { Pending: "warning" } },
+              },
+              { key: "requestedAt", label: "Requested at", type: "date" },
+              { key: "website", label: "Website" },
+            ]}
+          />
+        </RightSheet>
       </div>
-      <RightSheet
-        open={mode !== null}
-        onOpenChange={(v) => !v && setMode(null)}
-        title="Supplier · Tailor Supply Co."
-        description="Drilldown panel with quick review"
-        expandHref="#"
-        backdrop={mode === "backdrop"}
-      >
-        <DescriptionCard
-          title="Supplier summary"
-          data={{
-            name: "Tailor Supply Co.",
-            status: "Pending",
-            requestedAt: "2026-04-01",
-            website: "https://tailor.tech",
-          }}
-          fields={[
-            { key: "name", label: "Company name" },
-            {
-              key: "status",
-              label: "Status",
-              type: "badge",
-              meta: { badgeVariantMap: { Pending: "warning" } },
-            },
-            { key: "requestedAt", label: "Requested at", type: "date" },
-            { key: "website", label: "Website" },
-          ]}
-        />
-      </RightSheet>
     </div>
   );
 }
@@ -184,8 +194,8 @@ const initialSuppliers: Supplier[] = [
   { id: "4", supplier: "Acme Components", status: "Rejected" },
 ];
 export function BulkExample() {
-  const [rows, setRows] = useState(initialSuppliers),
-    [selected, setSelected] = useState<Record<string, boolean>>({}),
+  const rows = initialSuppliers;
+  const [selected, setSelected] = useState<Record<string, boolean>>({}),
     [status, setStatus] = useState<string | null>(null);
   const { column } = createColumnHelper<Supplier>();
   const table = useDataTable({
@@ -223,10 +233,6 @@ export function BulkExample() {
     },
   });
   const count = Object.values(selected).filter(Boolean).length;
-  const update = (status: string) => {
-    setRows((prev) => prev.map((r) => (selected[r.id] ? { ...r, status } : r)));
-    setSelected({});
-  };
   return (
     <div className="space-y-3">
       <DataTable.Root value={table}>
@@ -240,16 +246,17 @@ export function BulkExample() {
                 placeholder="Status"
               />
             </div>
+            <BulkActionsBar
+              variant="toolbar"
+              selectedCount={count}
+              onClear={() => setSelected({})}
+              onApprove={() => setSelected({})}
+              onReject={() => setSelected({})}
+            />
           </div>
         </DataTable.Toolbar>
         <DataTable.Table />
       </DataTable.Root>
-      <BulkActionsBar
-        selectedCount={count}
-        onClear={() => setSelected({})}
-        onApprove={() => update("Approved")}
-        onReject={() => update("Rejected")}
-      />
     </div>
   );
 }

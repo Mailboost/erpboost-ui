@@ -11,3 +11,9 @@ integration are adapted to ERPboost UI. These are public example excerpts, not
 access to Tailor's private catalogue application repository. The upstream MIT
 license noted above applies to the AppShell implementation and its public
 repository examples; the hosted catalogue examples are separately attributed.
+
+The catalogue bundles the Latin Inter and JetBrains Mono fonts served by the
+reference examples. Inter is licensed under the SIL Open Font License in
+`packages/ui/src/assets/fonts/INTER-LICENSE.txt`; JetBrains Mono is licensed
+under the SIL Open Font License in
+`apps/catalog/src/reference/shared/JETBRAINS-MONO-OFL.txt`.

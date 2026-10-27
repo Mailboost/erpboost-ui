@@ -45,7 +45,7 @@ function ActivityCardStandalone({
                 ) : undefined
               }
             >
-              <Text variant="label-md" className="astw:text-foreground" render={<p />}>
+              <Text variant="label-md" className="astw:leading-[21px] astw:text-foreground" render={<p />}>
                 {actorName ? <span>{actorName}</span> : null}
                 {actorName ? " " : null}
                 <span className="astw:text-muted-foreground">{item.description}</span>

@@ -9,7 +9,7 @@ type TabsSize = "xs" | "sm" | "default" | "lg";
 
 const LIST_VARIANT_CLASSES: Record<TabsVariant, string> = {
   line: "astw:h-9 astw:gap-2",
-  capsule: "astw:gap-0.5 astw:rounded-md astw:bg-black/5 astw:dark:bg-input/30 astw:p-1",
+  capsule: "astw:gap-0.5 astw:rounded-md astw:bg-background astw:dark:bg-input/30 astw:p-1",
   default: "astw:text-muted-foreground astw:h-9 astw:gap-1",
 };
 

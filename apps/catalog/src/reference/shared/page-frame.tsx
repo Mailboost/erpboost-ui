@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "@mailboost/erpboost-ui";
 import { PanelLeft } from "lucide-react";
-export function PageFrame({ children }: { children: ReactNode }) {
+export function PageFrame({
+  children,
+  fullBleed = false,
+}: {
+  children: ReactNode | ((sidebarTrigger: ReactNode) => ReactNode);
+  fullBleed?: boolean;
+}) {
   const [open, setOpen] = useState(true);
   const frame = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -11,6 +17,18 @@ export function PageFrame({ children }: { children: ReactNode }) {
     if (frame.current) observer.observe(frame.current);
     return () => observer.disconnect();
   }, []);
+  const inlineToggle = typeof children === "function";
+  const expandTrigger = !open ? (
+    <Button
+      variant="ghost"
+      size="icon"
+      className="text-muted-foreground"
+      aria-label="Expand preview sidebar"
+      onClick={() => setOpen(true)}
+    >
+      <PanelLeft className="size-4.5" />
+    </Button>
+  ) : null;
   return (
     <div
       ref={frame}
@@ -25,6 +43,7 @@ export function PageFrame({ children }: { children: ReactNode }) {
           <Button
             variant="ghost"
             size="icon"
+            className="text-muted-foreground"
             aria-label="Collapse preview sidebar"
             onClick={() => setOpen(false)}
           >
@@ -32,23 +51,22 @@ export function PageFrame({ children }: { children: ReactNode }) {
           </Button>
         </div>
       </aside>
-      <main className="flex min-w-0 flex-1 flex-col overflow-y-auto bg-card px-4 md:px-8 md:py-2">
-        <header
-          aria-hidden={open}
-          className="flex h-14 shrink-0 items-center gap-2"
+      <main
+        className={`flex min-w-0 flex-1 flex-col overflow-y-auto bg-card ${fullBleed ? "" : "px-4 md:px-8 md:py-2"}`}
+      >
+        {!inlineToggle && (!fullBleed || !open) && (
+          <header
+            aria-hidden={open}
+            className="flex h-14 shrink-0 items-center gap-2"
+          >
+            {expandTrigger}
+          </header>
+        )}
+        <div
+          className={`flex min-h-0 flex-1 flex-col ${fullBleed ? "gap-0" : "gap-4"}`}
         >
-          {!open && (
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Expand preview sidebar"
-              onClick={() => setOpen(true)}
-            >
-              <PanelLeft className="size-4.5" />
-            </Button>
-          )}
-        </header>
-        <div className="flex min-h-0 flex-1 flex-col gap-4">{children}</div>
+          {inlineToggle ? children(expandTrigger) : children}
+        </div>
       </main>
     </div>
   );

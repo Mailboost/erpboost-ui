@@ -2,7 +2,8 @@
 @import "../../../packages/ui/src/assets/theme.css";
 @source "./";
 :root {
-  --app-shell-font-sans: "Inter Variable", Inter, ui-sans-serif, system-ui, sans-serif;
+  --app-shell-font-sans:
+    "Inter Variable", Inter, ui-sans-serif, system-ui, sans-serif;
   font-family: var(--app-shell-font-sans);
   font-synthesis: none;
   --color-status-default: #737373;
@@ -36,23 +37,33 @@ button {
 button:disabled {
   cursor: default;
 }
-button,
-select,
-input,
-textarea {
-  font-family: inherit;
+@layer base {
+  button,
+  select,
+  input,
+  textarea {
+    font-family: inherit;
+  }
 }
 .catalogue {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 16px 0 32px;
+  padding: 16px 0;
 }
 .component-document {
   padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+.component-document > button {
+  align-self: flex-start;
+}
+[data-appshell-scroll-container]:has(
+  > .component-document[data-component="data-table"]
+) {
+  overflow-y: auto;
 }
 .component-heading {
   display: flex;
@@ -69,6 +80,20 @@ textarea {
 .component-heading > .intro {
   margin: 0;
   max-width: none;
+}
+.component-document[data-component="foundation"] .intro {
+  max-width: 650px;
+}
+.category-page.component-document {
+  gap: 16px;
+}
+.category-page.component-document > h1 {
+  font-size: 24px;
+  line-height: 32px;
+}
+.category-page.component-document > .intro {
+  max-width: none;
+  margin: 0;
 }
 .catalogue-heading {
   display: flex;
@@ -127,25 +152,6 @@ textarea {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-}
-.locale-picker {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px 20px;
-  font-size: 12px;
-}
-.locale-picker > span:first-child {
-  font-size: 11px;
-  color: var(--muted-foreground);
-}
-.locale-picker button {
-  background: none;
-  border: 0;
-  padding: 3px;
-}
-.locale-picker button[aria-pressed="true"] {
-  font-weight: 600;
 }
 .section-grid {
   display: grid;
@@ -310,15 +316,30 @@ textarea {
   margin: 0 0 12px;
 }
 .primitives-used ul {
-  padding-left: 24px;
+  padding-left: 20px;
   list-style: disc;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 20px;
+}
+.primitives-used li:not(:last-child) {
+  margin-bottom: 4px;
 }
 .primitives-used a {
-  color: var(--muted-foreground);
-  text-decoration: underline;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  color: var(--foreground);
+  text-decoration: none;
   text-underline-offset: 4px;
+}
+.primitives-used a:hover {
+  text-decoration: underline;
+}
+.primitives-used li > span {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  color: var(--muted-foreground);
 }
 .source-block {
   border: 1px solid var(--border);
@@ -328,7 +349,6 @@ textarea {
 }
 .source-toolbar {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
@@ -341,13 +361,16 @@ textarea {
   flex: 1 1 auto;
   gap: 4px;
   flex-wrap: wrap;
-  min-width: 0;
 }
 .source-files button {
   color: var(--foreground);
 }
+.source-files button[aria-pressed="true"] {
+  color: var(--secondary-foreground);
+}
 .source-actions {
   margin-left: auto;
+  color: var(--foreground);
 }
 .source-block pre {
   overflow: auto;
@@ -391,6 +414,11 @@ textarea {
 }
 .reference-screen [data-layout-column] {
   min-width: 0;
+}
+@media (min-width: 1024px) {
+  .catalogue-section-nav-layout-cols {
+    grid-template-columns: 176px minmax(0, 1fr);
+  }
 }
 @media (max-width: 639px) {
   .inline-preview-body,
@@ -481,13 +509,6 @@ textarea {
 .guidance-label.dont {
   background: #ef4444;
 }
-.locale-picker button[aria-pressed="true"] {
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-.locale-picker > span:first-child {
-  text-transform: uppercase;
-}
 
 .shared-preview-options {
   display: flex;
@@ -524,6 +545,7 @@ textarea {
 .filter-row > span {
   min-width: 0;
   font-size: 12px;
+  line-height: 16px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -577,4 +599,19 @@ textarea {
   .chart-examples .example-section:last-child {
     grid-column: 1 / -1;
   }
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./reference/shared/inter-google-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("./reference/shared/jetbrains-mono-latin.woff2") format("woff2");
 }

@@ -5,6 +5,7 @@ import { Badge, Button, Link, Tabs } from "@mailboost/erpboost-ui";
 import {
   Check,
   Copy,
+  Files,
   Monitor,
   Expand,
   RotateCcw,
@@ -75,7 +76,7 @@ export function CategoryPage({ category }: { category: Category }) {
           categoryDescriptions[category],
           {
             components:
-              "app-shell が提供する UI コンポーネントのカタログです。サイドバーからコンポーネントを選択してプレビューしてください。",
+              "app-shell が提供する UI コンポーネントのカタログです。サイドバーから各コンポーネントを選択して確認できます。",
             page: "app-shell のサイドバーとパンくずで包まれる、ルーティング先のページ全体レイアウトです。",
             patterns:
               "app-shell の primitive を組み立てた合成 UI（ツールバー・パネル・エディタなど）のサンプルです。",
@@ -160,7 +161,8 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
     ? demo.sources
     : [{ filename: demo.name + ".tsx", source: demo.source }];
   const [index, setIndex] = useState(0),
-    [copied, setCopied] = useState(false);
+    [copied, setCopied] = useState(false),
+    [copiedAll, setCopiedAll] = useState(false);
   const source = sources[index] ?? sources[0];
   return (
     <div className="source-block" role="tabpanel" aria-label="Code">
@@ -183,32 +185,36 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
             <Button
               variant="outline"
               size="sm"
+              aria-live="polite"
               title="Copy all files as Markdown (good for pasting to an AI agent)"
-              onClick={() =>
-                navigator.clipboard.writeText(
+              onClick={async () => {
+                await navigator.clipboard.writeText(
                   sources
                     .map(
                       (file) =>
                         `### ${file.filename}\n\n\`\`\`${sourceLanguage(file.filename)}\n${file.source}\n\`\`\``,
                     )
                     .join("\n\n"),
-                )
-              }
+                );
+                setCopiedAll(true);
+                setTimeout(() => setCopiedAll(false), 2000);
+              }}
             >
-              <Copy size={14} />
-              Copy all ({sources.length})
+              {copiedAll ? <Check className="size-3.5" /> : <Files className="size-3.5" />}
+              {copiedAll ? "Copied all" : `Copy all (${sources.length})`}
             </Button>
           )}
           <Button
             variant="outline"
             size="sm"
+            aria-live="polite"
             onClick={async () => {
               await navigator.clipboard.writeText(source.source);
               setCopied(true);
               setTimeout(() => setCopied(false), 2000);
             }}
           >
-            {copied ? <Check size={14} /> : <Copy size={14} />}{" "}
+            {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}{" "}
             {copied ? "Copied" : "Copy"}
           </Button>
         </div>
@@ -417,6 +423,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
   const component = entry.category === "components";
   return (
     <main
+      data-component={component ? entry.slug : undefined}
       className={`catalogue ${component ? "component-document" : "reference-page"}`}
     >
       <div className={component ? "component-heading" : "catalogue-heading"}>

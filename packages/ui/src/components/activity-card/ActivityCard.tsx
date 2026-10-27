@@ -134,7 +134,7 @@ function renderSection<T extends ActivityCardBaseItem>(
       {dayLabel != null && (
         <Text
           variant="label-sm"
-          className="astw:leading-none astw:opacity-60 astw:text-foreground"
+          className="astw:leading-none astw:font-semibold astw:opacity-60 astw:text-foreground"
           render={<p />}
         >
           {dayLabel}

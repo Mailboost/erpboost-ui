@@ -609,7 +609,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 const sidebarMenuButtonVariants = cva(
-  "astw:peer/menu-button astw:text-sidebar-foreground astw:ring-sidebar-ring astw:hover:bg-sidebar-accent astw:hover:text-sidebar-accent-foreground astw:active:bg-sidebar-accent astw:active:text-sidebar-accent-foreground astw:group-has-data-[sidebar=menu-action]/menu-item:pr-8 astw:data-[active=true]:bg-sidebar-accent astw:data-[active=true]:font-semibold astw:data-[active=true]:text-sidebar-accent-foreground astw:data-[state=open]:hover:bg-sidebar-accent astw:data-[state=open]:hover:text-sidebar-accent-foreground astw:group-data-[collapsible=icon]:size-8! astw:group-data-[collapsible=icon]:p-2! astw:[&>span:last-child]:truncate astw:group-data-[collapsible=icon]:[&>span:last-child]:hidden",
+  "astw:peer/menu-button astw:text-sidebar-foreground astw:ring-sidebar-ring astw:hover:bg-sidebar-accent astw:hover:text-sidebar-accent-foreground astw:active:bg-sidebar-accent astw:active:text-sidebar-accent-foreground astw:group-has-data-[sidebar=menu-action]/menu-item:pr-8 astw:data-[active=true]:bg-sidebar-accent astw:data-[active=true]:font-medium astw:data-[active=true]:text-sidebar-accent-foreground astw:data-[state=open]:hover:bg-sidebar-accent astw:data-[state=open]:hover:text-sidebar-accent-foreground astw:group-data-[collapsible=icon]:size-8! astw:group-data-[collapsible=icon]:p-2! astw:[&>span:last-child]:truncate astw:group-data-[collapsible=icon]:[&>span:last-child]:hidden",
   {
     variants: {
       variant: {
@@ -820,7 +820,7 @@ function SidebarMenuSubButton({
       className: cn(
         listButtonVariants(),
         "astw:h-7 astw:py-0 astw:text-sidebar-foreground astw:ring-sidebar-ring astw:hover:bg-sidebar-accent astw:hover:text-sidebar-accent-foreground astw:active:bg-sidebar-accent astw:active:text-sidebar-accent-foreground astw:[&>svg]:text-sidebar-accent-foreground astw:-translate-x-px astw:[&>span:last-child]:truncate astw:group-data-[collapsible=icon]:[&>span:last-child]:hidden",
-        "astw:data-[active=true]:bg-sidebar-accent astw:data-[active=true]:font-semibold astw:data-[active=true]:text-sidebar-accent-foreground",
+        "astw:data-[active=true]:bg-sidebar-accent astw:data-[active=true]:font-medium astw:data-[active=true]:text-sidebar-accent-foreground",
         size === "sm" && "astw:text-body-sm",
         size === "md" && "astw:text-body-md",
         "astw:group-data-[collapsible=icon]:hidden",

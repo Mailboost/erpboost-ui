@@ -526,6 +526,7 @@
  * erpboost-ui/styles receive the same colors shown by the catalogue. */
 :root {
   --success-solid: #22c55e;
+  --neutral-indicator: #737373;
   --success-solid-hover: #22c55e;
   --success-contrast: #fff;
   --success-indicator: #22c55e;

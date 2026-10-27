@@ -11,8 +11,8 @@ const iconSlotClasses =
   "astw:flex astw:size-4 astw:items-center astw:justify-center astw:shrink-0 astw:text-muted-foreground";
 
 const trendDirectionClasses: Record<MetricCardTrendDirection, string> = {
-  up: "astw:text-success-text",
-  down: "astw:text-danger-text",
+  up: "astw:text-green-600",
+  down: "astw:text-red-600",
   neutral: "astw:text-muted-foreground",
 };
 

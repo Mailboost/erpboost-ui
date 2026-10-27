@@ -12,15 +12,15 @@ import { cn } from "../../lib/utils";
 import { Text } from "../text";
 
 const alertVariants = cva(
-  "astw:relative astw:w-full astw:rounded-lg astw:border astw:px-4 astw:py-3 astw:text-body-md astw:grid astw:grid-cols-[calc(var(--spacing)*4.5)_1fr_auto] astw:gap-x-3 astw:gap-y-0.5 astw:items-center astw:[&>svg]:size-[17.5px] astw:[&>svg]:self-center astw:[&>svg]:shrink-0 astw:[&>svg]:text-current",
+  "astw:relative astw:w-full astw:rounded-lg astw:border astw:px-4 astw:py-3 astw:text-body-md astw:grid astw:grid-cols-[calc(var(--spacing)*4.5)_1fr_auto] astw:gap-x-3 astw:gap-y-0.5 astw:items-start astw:[&>svg]:size-[17.5px] astw:[&>svg]:self-center astw:[&>svg]:shrink-0 astw:[&>svg]:text-current",
   {
     variants: {
       /** Visual style and automatic icon */
       variant: {
         // Alert-specific roles keep the surface, border, and text coordinated
-        // in both color modes. Only neutral mutes the description.
+        // in both color modes.
         neutral:
-          "astw:bg-alert-neutral-background astw:text-alert-neutral-foreground astw:border-alert-neutral-border astw:*:data-[slot=alert-description]:text-muted-foreground",
+          "astw:bg-alert-neutral-background astw:text-alert-neutral-foreground astw:border-alert-neutral-border",
         success: "astw:bg-alert-success-background astw:text-alert-success-foreground astw:border-alert-success-border",
         warning: "astw:bg-alert-warning-background astw:text-alert-warning-foreground astw:border-alert-warning-border",
         error: "astw:bg-alert-error-background astw:text-alert-error-foreground astw:border-alert-error-border",
@@ -110,7 +110,7 @@ function Title({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <Text
       variant="label-md"
-      className={cn("astw:col-start-2 astw:line-clamp-1 astw:min-h-4", className)}
+      className={cn("astw:col-start-2 astw:line-clamp-1 astw:min-h-4 astw:tracking-tight", className)}
       render={<div data-slot="alert-title" {...props} />}
     />
   );

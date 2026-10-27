@@ -128,9 +128,7 @@ const SupplierOrdersPanel = () => {
             Received: "success",
             Closed: "outline-neutral",
           } as const;
-          return (
-            <Badge variant={variantMap[row.status]}>{row.status}</Badge>
-          );
+          return <Badge variant={variantMap[row.status]}>{row.status}</Badge>;
         },
       },
     ],
@@ -203,7 +201,7 @@ const PageTabs = ({
           className={
             active
               ? "relative flex h-auto items-center gap-2 px-3 py-2 text-sm font-medium text-foreground after:absolute after:inset-x-2 after:-bottom-px after:h-0.5 after:bg-primary"
-              : "flex h-auto items-center gap-2 px-3 py-2 text-sm font-normal text-muted-foreground hover:text-foreground"
+              : "flex h-auto items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
           }
         >
           <span>{item.label}</span>

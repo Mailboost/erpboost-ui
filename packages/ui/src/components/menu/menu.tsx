@@ -201,7 +201,7 @@ function GroupLabel({ className, ...props }: React.ComponentProps<typeof BaseMen
     <BaseMenu.GroupLabel
       data-slot="menu-group-label"
       className={cn(
-        "astw:px-2 astw:py-1.5 astw:text-label-sm astw:text-muted-foreground",
+        "astw:px-2 astw:py-1.5 astw:text-label-sm astw:font-semibold astw:text-muted-foreground",
         className,
       )}
       {...props}

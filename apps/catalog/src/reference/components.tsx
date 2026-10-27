@@ -45,11 +45,11 @@ import {
 import {
   Check,
   ChevronDown,
-  Grid2X2,
+  LayoutGrid,
   List,
   Star,
   Sparkles,
-  Zap,
+  Rocket,
 } from "lucide-react";
 import { getDayOfWeek } from "@internationalized/date";
 import { entries } from "../registry";
@@ -124,7 +124,7 @@ export function Overview() {
             "AuthProvider",
             "WithGuard",
           ].map((s) => (
-            <Badge variant="outline-neutral" key={s}>
+            <Badge variant="outline-info" key={s}>
               {s}
             </Badge>
           ))}
@@ -136,7 +136,7 @@ export function Overview() {
 function ButtonDemo() {
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-3">
         {(
           [
             "default",
@@ -161,7 +161,7 @@ function ButtonDemo() {
           </Button>
         ))}
       </div>
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-3">
         {(["xs", "sm", "default", "lg"] as const).map((size, i) => (
           <Button size={size} key={size}>
             {["XS", "SM", "Default", "LG"][i]}
@@ -205,13 +205,13 @@ function BadgeDemo() {
         title="With icon"
         description="Badge only renders children, so any icon can be placed freely inside it."
       >
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           <Badge variant="success" className="gap-1">
             <Sparkles className="size-3" />
             New
           </Badge>
           <Badge variant="info" className="gap-1">
-            <Zap className="size-3" />
+            <Rocket className="size-3" />
             Beta
           </Badge>
           <Badge variant="outline-warning">
@@ -224,7 +224,7 @@ function BadgeDemo() {
         title="With trailing chevron"
         description="Not a distinct variant — pair a Badge with a chevron icon (e.g. as a Menu trigger) to signal it opens a menu."
       >
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <Badge variant="neutral" className="gap-1">
             In Review
             <ChevronDown className="size-3" />
@@ -443,6 +443,7 @@ function Dates({ picker = false }: { picker?: boolean }) {
         >
           <Field.Label>{f.label}</Field.Label>
           <Control
+            className="w-full"
             aria-label={f.label}
             minValue={"constrained" in f ? parseDate("2026-07-10") : undefined}
             maxValue={
@@ -455,10 +456,15 @@ function Dates({ picker = false }: { picker?: boolean }) {
             isReadOnly={"readOnly" in f && f.readOnly}
           />
           {f.description && (
-            <Field.Description>{f.description}</Field.Description>
+            <Field.Description className="self-stretch">
+              {f.description}
+            </Field.Description>
           )}
           {"invalid" in f && f.invalid && (
-            <p role="alert" className="text-sm text-destructive">
+            <p
+              role="alert"
+              className="self-stretch text-sm font-medium text-destructive"
+            >
               This field is required.
             </p>
           )}
@@ -476,6 +482,7 @@ function SelectDemo({ combo = false }: { combo?: boolean }) {
             items={members}
             defaultValue="Tanaka"
             aria-label="Assign owner"
+            placeholder="Assign owner"
           />
           <Combobox
             multiple
@@ -508,21 +515,27 @@ function FormDemo() {
       className="space-y-6 md:max-w-2xl"
       onFormSubmit={(values) => setSubmitted(values)}
     >
-      <Fieldset.Root>
+      <Fieldset.Root className="space-y-4">
         <Fieldset.Legend>Supplier Profile</Fieldset.Legend>
-        <Field.Root name="companyName">
-          <Field.Label>Company Name</Field.Label>
-          <Field.Control placeholder="Tailor Supply Co." required />
-          <Field.Description>
-            Displayed on the supplier portal.
-          </Field.Description>
-        </Field.Root>
-        <Field.Root name="contactEmail">
-          <Field.Label>Contact Email</Field.Label>
-          <Field.Control type="email" placeholder="ops@example.com" required />
-        </Field.Root>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field.Root name="companyName">
+            <Field.Label>Company Name</Field.Label>
+            <Field.Control placeholder="Tailor Supply Co." required />
+            <Field.Description>
+              Displayed on the supplier portal.
+            </Field.Description>
+          </Field.Root>
+          <Field.Root name="contactEmail">
+            <Field.Label>Contact Email</Field.Label>
+            <Field.Control
+              type="email"
+              placeholder="ops@example.com"
+              required
+            />
+          </Field.Root>
+        </div>
+        <Button type="submit">Submit form</Button>
       </Fieldset.Root>
-      <Button type="submit">Submit form</Button>
       {submitted && (
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
           {JSON.stringify(submitted, null, 2)}
@@ -545,9 +558,7 @@ function DialogDemo() {
           </Dialog.Description>
         </Dialog.Header>
         <Dialog.Footer>
-          <Dialog.Close render={<Button variant="outline" />}>
-            Close
-          </Dialog.Close>
+          <Dialog.Close render={<Button />}>Close</Dialog.Close>
         </Dialog.Footer>
       </Dialog.Content>
     </Dialog.Root>
@@ -604,10 +615,10 @@ const supplierColumns = [
       <Badge
         variant={
           row.status === "Approved"
-            ? "subtle-success"
+            ? "success"
             : row.status === "Rejected"
-              ? "subtle-error"
-              : "subtle-warning"
+              ? "error"
+              : "warning"
         }
       >
         {row.status}
@@ -754,7 +765,7 @@ function TabsDemo() {
         <Tabs.Root variant="capsule" defaultValue="grid">
           <Tabs.List aria-label="View mode">
             {[
-              ["grid", Grid2X2],
+              ["grid", LayoutGrid],
               ["list", List],
               ["favorites", Star],
             ].map(([s, Icon]) => {
@@ -786,8 +797,8 @@ function TabsDemo() {
                 <Tabs.List aria-label={`Order status (${size})`}>
                   <Tabs.Tab value="all">All</Tabs.Tab>
                   <Tabs.Tab value="pending">Pending</Tabs.Tab>
-                  <Tabs.Tab value="grid">
-                    <Grid2X2 className="size-4" />
+                  <Tabs.Tab value="favorites" aria-label="Favorites">
+                    <Star className="size-4" />
                   </Tabs.Tab>
                 </Tabs.List>
               </Tabs.Root>
@@ -817,15 +828,19 @@ function LayoutDemo() {
         description="With fill, Layout.Header stays pinned and only the column body scrolls — instead of the whole page growing and scrolling."
       >
         <div className="h-80 overflow-hidden rounded-xl border">
-          <Layout fill>
+          <Layout fill className="h-full">
             <Layout.Header
               title="Products"
-              actions={[<Button key="create">Create</Button>]}
+              actions={[
+                <Button key="create" size="sm">
+                  Create
+                </Button>,
+              ]}
             />
             <Layout.Column className="overflow-y-auto">
               <div className="space-y-2 p-4">
                 {Array.from({ length: 20 }, (_, i) => (
-                  <div className="rounded-md border p-3 text-sm" key={i}>
+                  <div className="rounded-md bg-muted p-3 text-sm" key={i}>
                     Row {i + 1}
                   </div>
                 ))}
@@ -916,6 +931,7 @@ function ReferenceComponentBody({ slug }: { slug: string }) {
             items={members}
             defaultValue="Ta"
             aria-label="Type a member name"
+            placeholder="Type a member name"
           />
         </div>
       );
@@ -962,7 +978,12 @@ function ReferenceComponentBody({ slug }: { slug: string }) {
           }}
           fields={[
             { key: "name", label: "Company Name" },
-            { key: "status", label: "Status", type: "badge" },
+            {
+              key: "status",
+              label: "Status",
+              type: "badge",
+              meta: { badgeVariantMap: { Approved: "success" } },
+            },
             { type: "divider" },
             { key: "requestedAt", label: "Requested At", type: "date" },
             { key: "website", label: "Website", type: "link" },
@@ -983,16 +1004,18 @@ function ReferenceComponentBody({ slug }: { slug: string }) {
       );
     case "fieldset":
       return (
-        <Fieldset.Root className="md:max-w-xl">
+        <Fieldset.Root className="space-y-4 md:max-w-2xl">
           <Fieldset.Legend>Billing details</Fieldset.Legend>
-          <Field.Root>
-            <Field.Label>Company</Field.Label>
-            <Field.Control placeholder="Tailor Supply Co." />
-          </Field.Root>
-          <Field.Root>
-            <Field.Label>Tax ID</Field.Label>
-            <Field.Control placeholder="JP-123456" />
-          </Field.Root>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Field.Root>
+              <Field.Label>Company</Field.Label>
+              <Field.Control placeholder="Tailor Supply Co." />
+            </Field.Root>
+            <Field.Root>
+              <Field.Label>Tax ID</Field.Label>
+              <Field.Control placeholder="JP-123456" />
+            </Field.Root>
+          </div>
         </Fieldset.Root>
       );
     case "form":
@@ -1001,7 +1024,7 @@ function ReferenceComponentBody({ slug }: { slug: string }) {
       return (
         <div className="grid gap-4 md:max-w-xl">
           <Input placeholder="Search suppliers" />
-          <Input type="email" />
+          <Input type="email" defaultValue="buyer@tailor.tech" />
         </div>
       );
     case "layout":

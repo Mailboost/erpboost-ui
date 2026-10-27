@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import {
   AppShell,
+  Button,
   DefaultSidebar,
   Link,
   SidebarGroup,
@@ -96,21 +97,31 @@ function CatalogueApp() {
                 </Link>
               }
               footer={
-                <footer className="locale-picker">
-                  <span>{t("Language", "言語")}</span>
-                  <button
-                    aria-pressed={language === "en"}
-                    onClick={() => setLanguage("en")}
-                  >
-                    EN
-                  </button>
-                  <span>/</span>
-                  <button
-                    aria-pressed={language === "ja"}
-                    onClick={() => setLanguage("ja")}
-                  >
-                    JA
-                  </button>
+                <footer className="px-4 py-3 group-data-[collapsible=icon]:px-2 group-data-[collapsible=icon]:py-2">
+                  <div className="flex items-center justify-between gap-2 text-xs group-data-[collapsible=icon]:hidden">
+                    <span className="shrink-0 font-medium uppercase tracking-wide text-muted-foreground">
+                      {t("Language", "言語")}
+                    </span>
+                    <div className="flex min-w-0 items-center gap-2">
+                      <Button
+                        variant="link"
+                        className={`h-auto p-0 ${language === "en" ? "font-medium text-foreground underline underline-offset-4" : "text-muted-foreground hover:text-foreground"}`}
+                        aria-pressed={language === "en"}
+                        onClick={() => setLanguage("en")}
+                      >
+                        EN
+                      </Button>
+                      <span className="shrink-0 text-muted-foreground">/</span>
+                      <Button
+                        variant="link"
+                        className={`h-auto p-0 ${language === "ja" ? "font-medium text-foreground underline underline-offset-4" : "text-muted-foreground hover:text-foreground"}`}
+                        aria-pressed={language === "ja"}
+                        onClick={() => setLanguage("ja")}
+                      >
+                        JA
+                      </Button>
+                    </div>
+                  </div>
                 </footer>
               }
             >
