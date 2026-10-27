@@ -1,0 +1,740 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "implementationCommit": "5eebbd0e64d45c02186dbd724d19065a7557dc2a",
+  "fixedDifference": "New uploads now append after existing attachments, retaining both existing order and selection order.",
+  "scope": [
+    "page/email",
+    "page/chat",
+    "components/attachment",
+    "patterns/conversation-thread"
+  ],
+  "newCasesPerEnvironment": 14,
+  "browserChecks": {
+    "passed": 249,
+    "failed": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "environments": {
+      "reference": 83,
+      "local": 83,
+      "published": 83
+    },
+    "runs": [
+      {
+        "startTime": "2026-10-27T20:47:43.982Z",
+        "duration": 307764.336,
+        "expected": 166,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      {
+        "startTime": "2026-10-27T20:53:26.383Z",
+        "duration": 149764.161,
+        "expected": 83,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    ]
+  },
+  "orderRegressionBeforeFix": {
+    "startTime": "2026-10-27T20:46:01.512Z",
+    "duration": 31467.293,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  },
+  "newCaseResults": [
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "mail keyboard selection, filtered unread counts and per-message stars survive search",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "chat preserves a shared draft on conversation changes and only clears it on demo submit",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "attachment chooser handles multiple files, broken previews, menu cancellation and reselecting a deleted file",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread image preview downloads the actual image and closes without losing its attachment",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread pending files remain after discard and demo flush while text and internal state behave independently",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread edits cancel or save independently and quoted replies and reactions can be cleared",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "markdown preview keeps the draft and internal flag, while demo Send has no submission handler",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "mail keyboard selection, filtered unread counts and per-message stars survive search",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "chat preserves a shared draft on conversation changes and only clears it on demo submit",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "attachment chooser handles multiple files, broken previews, menu cancellation and reselecting a deleted file",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread image preview downloads the actual image and closes without losing its attachment",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread pending files remain after discard and demo flush while text and internal state behave independently",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread edits cancel or save independently and quoted replies and reactions can be cleared",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "markdown preview keeps the draft and internal flag, while demo Send has no submission handler",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "narrow mail supports search and keyboard selection but clips message actions like the reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 320px inbox clips the message toolbar on a 375px viewport; toolbar actions are not counted as mobile successes."
+        }
+      ]
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "narrow chat switches conversations but has a zero-width composer input like the reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 256px chat sidebar leaves the textarea at zero width on a 375px viewport; mobile draft entry is not counted as successful."
+        }
+      ]
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "attachment chooser handles multiple files, broken previews, menu cancellation and reselecting a deleted file",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread image preview downloads the actual image and closes without losing its attachment",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread pending files remain after discard and demo flush while text and internal state behave independently",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread edits cancel or save independently and quoted replies and reactions can be cleared",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "reference",
+      "file": "message-attachment-state.spec.ts",
+      "title": "markdown preview keeps the draft and internal flag, while demo Send has no submission handler",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "narrow mail supports search and keyboard selection but clips message actions like the reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 320px inbox clips the message toolbar on a 375px viewport; toolbar actions are not counted as mobile successes."
+        }
+      ]
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "narrow chat switches conversations but has a zero-width composer input like the reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 256px chat sidebar leaves the textarea at zero width on a 375px viewport; mobile draft entry is not counted as successful."
+        }
+      ]
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "attachment chooser handles multiple files, broken previews, menu cancellation and reselecting a deleted file",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread image preview downloads the actual image and closes without losing its attachment",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread pending files remain after discard and demo flush while text and internal state behave independently",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread edits cancel or save independently and quoted replies and reactions can be cleared",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "local",
+      "file": "message-attachment-state.spec.ts",
+      "title": "markdown preview keeps the draft and internal flag, while demo Send has no submission handler",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "mail keyboard selection, filtered unread counts and per-message stars survive search",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "chat preserves a shared draft on conversation changes and only clears it on demo submit",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "attachment chooser handles multiple files, broken previews, menu cancellation and reselecting a deleted file",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread image preview downloads the actual image and closes without losing its attachment",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread pending files remain after discard and demo flush while text and internal state behave independently",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread edits cancel or save independently and quoted replies and reactions can be cleared",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "markdown preview keeps the draft and internal flag, while demo Send has no submission handler",
+      "conditions": [
+        "desktop light"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "narrow mail supports search and keyboard selection but clips message actions like the reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 320px inbox clips the message toolbar on a 375px viewport; toolbar actions are not counted as mobile successes."
+        }
+      ]
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "narrow chat switches conversations but has a zero-width composer input like the reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 256px chat sidebar leaves the textarea at zero width on a 375px viewport; mobile draft entry is not counted as successful."
+        }
+      ]
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "attachment chooser handles multiple files, broken previews, menu cancellation and reselecting a deleted file",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread image preview downloads the actual image and closes without losing its attachment",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread pending files remain after discard and demo flush while text and internal state behave independently",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "thread edits cancel or save independently and quoted replies and reactions can be cleared",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "project": "published",
+      "file": "message-attachment-state.spec.ts",
+      "title": "markdown preview keeps the draft and internal flag, while demo Send has no submission handler",
+      "conditions": [
+        "mobile dark"
+      ],
+      "status": "passed",
+      "annotations": []
+    }
+  ],
+  "visualComparisonBefore": [
+    {
+      "mode": "desktop",
+      "state": "attachment-menu",
+      "target": "local",
+      "size": [
+        1280,
+        900
+      ],
+      "differingPixels": 34976,
+      "totalPixels": 1152000,
+      "bbox": [
+        70,
+        157,
+        545,
+        277
+      ]
+    },
+    {
+      "mode": "desktop",
+      "state": "attachment-menu",
+      "target": "published",
+      "size": [
+        1280,
+        900
+      ],
+      "differingPixels": 34976,
+      "totalPixels": 1152000,
+      "bbox": [
+        70,
+        157,
+        545,
+        277
+      ]
+    },
+    {
+      "mode": "desktop",
+      "state": "image-preview",
+      "target": "local",
+      "size": [
+        1280,
+        900
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1152000,
+      "bbox": null
+    },
+    {
+      "mode": "desktop",
+      "state": "image-preview",
+      "target": "published",
+      "size": [
+        1280,
+        900
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1152000,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "attachment-menu",
+      "target": "local",
+      "size": [
+        375,
+        812
+      ],
+      "differingPixels": 37914,
+      "totalPixels": 304500,
+      "bbox": [
+        57,
+        205,
+        313,
+        461
+      ]
+    },
+    {
+      "mode": "mobile",
+      "state": "attachment-menu",
+      "target": "published",
+      "size": [
+        375,
+        812
+      ],
+      "differingPixels": 37914,
+      "totalPixels": 304500,
+      "bbox": [
+        57,
+        205,
+        313,
+        461
+      ]
+    },
+    {
+      "mode": "mobile",
+      "state": "image-preview",
+      "target": "local",
+      "size": [
+        375,
+        812
+      ],
+      "differingPixels": 0,
+      "totalPixels": 304500,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "image-preview",
+      "target": "published",
+      "size": [
+        375,
+        812
+      ],
+      "differingPixels": 0,
+      "totalPixels": 304500,
+      "bbox": null
+    }
+  ],
+  "visualComparisonFinal": [
+    {
+      "mode": "desktop",
+      "state": "attachment-menu",
+      "target": "local",
+      "width": 1280,
+      "height": 900,
+      "differingPixels": 3,
+      "bbox": [
+        439,
+        158,
+        442,
+        159
+      ]
+    },
+    {
+      "mode": "desktop",
+      "state": "attachment-menu",
+      "target": "published",
+      "width": 1280,
+      "height": 900,
+      "differingPixels": 3,
+      "bbox": [
+        439,
+        158,
+        442,
+        159
+      ]
+    },
+    {
+      "mode": "desktop",
+      "state": "image-preview",
+      "target": "local",
+      "width": 1280,
+      "height": 900,
+      "differingPixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "desktop",
+      "state": "image-preview",
+      "target": "published",
+      "width": 1280,
+      "height": 900,
+      "differingPixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "attachment-menu",
+      "target": "local",
+      "width": 375,
+      "height": 812,
+      "differingPixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "attachment-menu",
+      "target": "published",
+      "width": 375,
+      "height": 812,
+      "differingPixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "image-preview",
+      "target": "local",
+      "width": 375,
+      "height": 812,
+      "differingPixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "image-preview",
+      "target": "published",
+      "width": 375,
+      "height": 812,
+      "differingPixels": 0,
+      "bbox": null
+    }
+  ],
+  "referenceRepeatComparison": {
+    "state": "desktop attachment menu",
+    "comparison": "reference repeat against earlier reference capture",
+    "differingPixels": 3,
+    "bbox": [
+      439,
+      158,
+      442,
+      159
+    ],
+    "maximumChannelDifference": 1
+  },
+  "validation": {
+    "componentTests": 21,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "packedExternalReactConsumer": "passed",
+    "staticRoutes": 71,
+    "workflow": {
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40581208259"
+    }
+  },
+  "limitations": [
+    "Six browser checks (two per environment) explicitly verify matching narrow-viewport limitations, not complete mobile functionality.",
+    "At 375px, mail message actions are clipped outside the viewport and the chat textarea has zero width in both reference and implementation.",
+    "Mail toolbar operations, chat submission and thread submission are demo behavior, not provider sends, AI calls or backend persistence.",
+    "Real file download was verified only from the image preview link; existing thread file-row Download buttons only log to console.",
+    "Uploaded attachment discard/flush preserves visible files like the reference; no backend upload was verified.",
+    "PDF viewing, OS file-drop interaction and the 20MB limit remain unverified.",
+    "Final desktop attachment menu comparisons show three pixels with a one-step RGB difference; identical differences occur between repeated reference captures.",
+    "The four captured visual states and automated checks do not establish all-state or all-pixel catalogue identity."
+  ],
+  "artifacts": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-message-audit"
+}
