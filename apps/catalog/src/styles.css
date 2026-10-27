@@ -278,6 +278,10 @@ a {
 html:not(.dark):has(.reference-page) {
   --background: #fff;
 }
+html.dark:has(.reference-page) {
+  --background: #171717;
+  --sidebar: #171717;
+}
 .reference-page {
   padding-top: 16px;
 }
