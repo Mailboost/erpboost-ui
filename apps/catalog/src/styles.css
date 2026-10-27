@@ -334,7 +334,7 @@ textarea {
 }
 .source-files {
   display: flex;
-  flex: 1 1 240px;
+  flex: 1 1 auto;
   gap: 4px;
   flex-wrap: wrap;
   min-width: 0;
