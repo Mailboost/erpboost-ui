@@ -6,7 +6,6 @@ import {
   Dialog,
   Field,
   Form,
-  Input,
   Layout,
   Table,
 } from "@mailboost/erpboost-ui";
@@ -90,7 +89,9 @@ export const CategoriesMasterDialogPage = () => {
           <Table.Body>
             {rows.map((row) => (
               <Table.Row key={row.id} className="group">
-                <Table.Cell className="font-mono text-xs">{row.code}</Table.Cell>
+                <Table.Cell className="font-mono text-xs">
+                  {row.code}
+                </Table.Cell>
                 <Table.Cell className="font-medium">{row.name}</Table.Cell>
                 <Table.Cell>
                   {row.active ? (
@@ -127,15 +128,18 @@ export const CategoriesMasterDialogPage = () => {
                 : "New category"}
             </Dialog.Title>
             <Dialog.Description>
-              When there are only a few fields, a modal is enough. Code, name,
-              a short description, and the active flag can be reviewed and
-              saved at a glance.
+              When there are only a few fields, a modal is enough. Code, name, a
+              short description, and the active flag can be reviewed and saved
+              at a glance.
             </Dialog.Description>
           </Dialog.Header>
           {editing ? (
             <Form
               className="space-y-4"
-              onFormSubmit={(values) => {
+              onFormSubmit={(_, details) => {
+                const values = Object.fromEntries(
+                  new FormData(details.event.target as HTMLFormElement),
+                );
                 const updated: Category = {
                   id: editing.id,
                   code: String(values.code ?? editing.code),
@@ -143,7 +147,7 @@ export const CategoriesMasterDialogPage = () => {
                   description: String(
                     values.description ?? editing.description,
                   ),
-                  active: Boolean(values.active ?? editing.active),
+                  active: values.active !== undefined,
                 };
                 setRows((prev) => {
                   const exists = prev.some((r) => r.id === updated.id);
@@ -160,7 +164,7 @@ export const CategoriesMasterDialogPage = () => {
               </Field.Root>
               <Field.Root name="name">
                 <Field.Label>Name</Field.Label>
-                <Input name="name" defaultValue={editing.name} required />
+                <Field.Control defaultValue={editing.name} required />
               </Field.Root>
               <Field.Root name="description">
                 <Field.Label>Description</Field.Label>

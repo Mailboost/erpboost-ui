@@ -1761,3 +1761,24 @@ export function getReferenceDemos(entry: Entry): Demo[] {
     ];
   return resources[`${entry.category}/${entry.slug}`] ?? [];
 }
+
+export function getReferenceMarkdownSources(entry: Entry) {
+  const demos = getReferenceDemos(entry);
+  const available = new Map(
+    demos
+      .flatMap(
+        (d) => d.sources ?? [{ filename: `${d.name}.tsx`, source: d.source }],
+      )
+      .filter((f) => !f.filename.endsWith("Demo.tsx"))
+      .map((f) => [
+        f.markdownFilename ?? f.filename,
+        { filename: f.markdownFilename ?? f.filename, source: f.source },
+      ]),
+  );
+  return (entry.markdownFiles ?? [...available.keys()]).flatMap((filename) => {
+    const source = available.get(filename);
+    if (source) return [source];
+    const raw = files[`./${entry.category}__${entry.slug}/${filename}`];
+    return raw ? [{ filename, source: clean(raw) }] : [];
+  });
+}

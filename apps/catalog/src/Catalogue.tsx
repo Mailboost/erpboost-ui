@@ -19,10 +19,12 @@ import {
   type Entry,
   type Category,
 } from "./registry";
-import { getDemos, type Demo } from "./demos";
+import { getDemos, getMarkdownSources, type Demo } from "./demos";
 import { useLocale } from "./locale";
 const DocumentNotes = lazy(() => import("./reference/DocumentNotes"));
 const HighlightedSource = lazy(() => import("./HighlightedSource"));
+const sourceLanguage = (filename: string) => filename.split(".").pop() ?? "tsx";
+
 const categoryDescriptions = Object.fromEntries(
   ["components", "page", "patterns"].map((category) => [
     category,
@@ -196,7 +198,7 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
                   sources
                     .map(
                       (file) =>
-                        `### ${file.filename}\n\n\`\`\`tsx\n${file.source}\n\`\`\``,
+                        `### ${file.filename}\n\n\`\`\`${sourceLanguage(file.filename)}\n${file.source}\n\`\`\``,
                     )
                     .join("\n\n"),
                 )
@@ -215,7 +217,10 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
             </pre>
           }
         >
-          <HighlightedSource source={source.source} />
+          <HighlightedSource
+            source={source.source}
+            language={sourceLanguage(source.filename)}
+          />
         </Suspense>
       </div>
     </div>
@@ -409,24 +414,9 @@ export function EntryPage({ entry }: { entry: Entry }) {
             variant="outline"
             size="sm"
             onClick={async () => {
-              const files = demos.flatMap(
-                (d) =>
-                  d.sources ?? [
-                    { filename: d.name + ".tsx", source: d.source },
-                  ],
-              );
-              const unique = [
-                ...new Map(
-                  files
-                    .filter((f) => !f.filename.endsWith("Demo.tsx"))
-                    .map((f) => [
-                      f.markdownFilename ?? f.filename,
-                      { ...f, filename: f.markdownFilename ?? f.filename },
-                    ]),
-                ).values(),
-              ];
+              const unique = getMarkdownSources(entry);
               await navigator.clipboard.writeText(
-                `# ${entry.title}\n\n${entry.description}\n\n## Do\n\n${entry.guidance?.do[0]}\n\n## Don't\n\n${entry.guidance?.dont[0]}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${unique.map((f) => `### ${f.filename}\n\n\`\`\`tsx\n${f.source}\n\`\`\``).join("\n\n")}`,
+                `# ${entry.title}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${entry.description}\n\n## Do\n\n${entry.guidance?.do[0]}\n\n## Don't\n\n${entry.guidance?.dont[0]}${entry.markdownNotes ? "\n\n" + entry.markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${unique.map((f) => `### ${f.filename}\n\n\`\`\`${sourceLanguage(f.filename)}\n${f.source}\n\`\`\``).join("\n\n")}`,
               );
               setCopied(true);
               setTimeout(() => setCopied(false), 2000);

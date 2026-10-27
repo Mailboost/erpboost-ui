@@ -10,6 +10,9 @@ export interface Entry {
   blockPreview?: boolean;
   tags?: string[];
   size?: string;
+  tier?: string;
+  markdownFiles?: string[];
+  markdownNotes?: string;
   guidance?: { do: [string, string]; dont: [string, string] };
   primitives?: string[];
 }

@@ -412,6 +412,7 @@ function Dates({ picker = false }: { picker?: boolean }) {
         { label: "Ship date", value: "2026-07-10" },
         {
           label: "Delivery window",
+          constrained: true,
           description: "Constrained to the next 30 days.",
         },
         {
@@ -442,6 +443,13 @@ function Dates({ picker = false }: { picker?: boolean }) {
         >
           <Field.Label>{f.label}</Field.Label>
           <Control
+            aria-label={f.label}
+            minValue={"constrained" in f ? parseDate("2026-07-10") : undefined}
+            maxValue={
+              "constrained" in f
+                ? parseDate("2026-07-10").add({ days: 30 })
+                : undefined
+            }
             defaultValue={f.value ? parseDate(f.value) : undefined}
             granularity={f.minute ? "minute" : "day"}
             isReadOnly={"readOnly" in f && f.readOnly}
@@ -478,12 +486,12 @@ function SelectDemo({ combo = false }: { combo?: boolean }) {
       ) : (
         <>
           <Select
-            items={["Draft", "Pending", "Approved", "Rejected"]}
+            items={["Draft", "In Review", "Approved"]}
             defaultValue="Draft"
           />
           <Select
             multiple
-            items={["Draft", "Pending", "Approved", "Rejected"]}
+            items={["Draft", "In Review", "Approved"]}
             defaultValue={["Draft", "Approved"]}
           />
         </>
@@ -492,31 +500,34 @@ function SelectDemo({ combo = false }: { combo?: boolean }) {
   );
 }
 function FormDemo() {
-  const [sent, setSent] = useState(false);
+  const [submitted, setSubmitted] = useState<Record<string, unknown> | null>(
+    null,
+  );
   return (
     <Form
       className="space-y-6 md:max-w-2xl"
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSent(true);
-      }}
+      onFormSubmit={(values) => setSubmitted(values)}
     >
       <Fieldset.Root>
         <Fieldset.Legend>Supplier Profile</Fieldset.Legend>
-        <Field.Root name="company">
+        <Field.Root name="companyName">
           <Field.Label>Company Name</Field.Label>
           <Field.Control placeholder="Tailor Supply Co." required />
           <Field.Description>
             Displayed on the supplier portal.
           </Field.Description>
         </Field.Root>
-        <Field.Root name="email">
+        <Field.Root name="contactEmail">
           <Field.Label>Contact Email</Field.Label>
           <Field.Control type="email" placeholder="ops@example.com" required />
         </Field.Root>
       </Fieldset.Root>
       <Button type="submit">Submit form</Button>
-      {sent && <p className="text-sm text-muted-foreground">Submitted</p>}
+      {submitted && (
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          {JSON.stringify(submitted, null, 2)}
+        </pre>
+      )}
     </Form>
   );
 }
@@ -832,9 +843,14 @@ function CsvDemo() {
           key: "name",
           label: "Supplier name",
           required: true,
-          schema: csv.string(),
+          schema: csv.string({ min: 1 }),
         },
-        { key: "email", label: "Email", schema: csv.string() },
+        { key: "owner", label: "Owner", schema: csv.string() },
+        {
+          key: "status",
+          label: "Status",
+          schema: csv.enum(["pending", "approved", "rejected"]),
+        },
       ],
     },
     onImport: async () => {},
@@ -983,7 +999,7 @@ function ReferenceComponentBody({ slug }: { slug: string }) {
       return (
         <div className="grid gap-4 md:max-w-xl">
           <Input placeholder="Search suppliers" />
-          <Input type="password" defaultValue="secret" />
+          <Input type="email" />
         </div>
       );
     case "layout":

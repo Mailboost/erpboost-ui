@@ -17,6 +17,7 @@ export function PageFrame({ children }: { children: ReactNode }) {
       className="reference-screen flex h-[720px] w-full overflow-hidden rounded-xl border bg-card"
     >
       <aside
+        inert={!open}
         aria-hidden={!open}
         className={`flex shrink-0 flex-col overflow-hidden bg-sidebar transition-[width] duration-200 ease-linear ${open ? "w-64 border-r border-sidebar-border" : "w-0"}`}
       >

@@ -546,7 +546,13 @@
         {}
       ],
       "title": "アシスタントパネル"
-    }
+    },
+    "markdownFiles": [
+      "AssistantPanelScreen.tsx",
+      "AssistantPanel.tsx",
+      "mockAssistant.ts",
+      "App.tsx"
+    ]
   },
   "/page/chat": {
     "description": "A 1-on-1 chat screen for an AI assistant or bot. Use it when you want a conversational experience with conversation-history switching and a new-conversation entry point.",
@@ -575,7 +581,11 @@
         {}
       ],
       "title": "チャット"
-    }
+    },
+    "markdownFiles": [
+      "ChatScreen.tsx",
+      "App.tsx"
+    ]
   },
   "/page/collection": {
     "description": "A list screen where tabs switch the row set along a discrete axis such as status. Compare three variants: read-centric, inline edit on the list, and grid / list view toggle.",
@@ -636,7 +646,16 @@
         }
       ],
       "title": "コレクション"
-    }
+    },
+    "markdownFiles": [
+      "PageCapsuleTabsPage.tsx",
+      "PageInlineEditTabsPage.tsx",
+      "PageGridListTabsPage.tsx",
+      "BulkActionsBar.tsx",
+      "App.PageCapsuleTabsPage.tsx",
+      "App.PageInlineEditTabsPage.tsx",
+      "App.PageGridListTabsPage.tsx"
+    ]
   },
   "/page/dashboard-with-charts": {
     "description": "A read-oriented dashboard screen with KPIs and charts laid out side by side. Use it for analytical views consulted as part of day-to-day operations.",
@@ -665,7 +684,11 @@
         {}
       ],
       "title": "ダッシュボード"
-    }
+    },
+    "markdownFiles": [
+      "SpendDashboardPage.tsx",
+      "App.tsx"
+    ]
   },
   "/page/detail-2col-action-panel": {
     "description": "Two go-to layouts for a record detail screen. Compare the two-column layout (with ActionPanel on the right) for keeping actions persistently visible, against page tabs (single column) for pages with many sections.",
@@ -712,7 +735,13 @@
         }
       ],
       "title": "詳細ページ"
-    }
+    },
+    "markdownFiles": [
+      "SupplierDetailPage.tsx",
+      "DetailPageWithPageTabs.tsx",
+      "App.SupplierDetailPage.tsx",
+      "App.DetailPageWithPageTabs.tsx"
+    ]
   },
   "/page/document-page": {
     "description": "A Confluence / Notion–style document editing screen. The page owns its own document-tree sidebar (with multi-level folders); the selected article is read and edited in the right column. The article title sits in a heading row below the top bar and is edited together with the body in edit mode. Edit / Save share the same slot at the top bar's right edge. The app-shell sidebar carries the high-level app sections, while the in-page sidebar carries the document tree for that app.",
@@ -744,7 +773,27 @@
         {}
       ],
       "title": "ドキュメントページ（プレビュー / 編集）"
-    }
+    },
+    "markdownFiles": [
+      "DocumentEditorPage.tsx",
+      "DocumentEditorSidebar.tsx",
+      "DocumentEditorBubbleToolbar.tsx",
+      "DocumentEditorInsertMenu.tsx",
+      "DocumentEditorLinkPopover.tsx",
+      "DocumentEditorPageEmbed.tsx",
+      "DocumentEditorPageEmbedPicker.tsx",
+      "DocumentPreviewHeadingAnchors.tsx",
+      "DocumentPageRegistryContext.tsx",
+      "documentPageRegistry.ts",
+      "documentEditorLink.ts",
+      "documentEditorHeading.ts",
+      "documentEditorUrl.ts",
+      "documentEditorBlocks.ts",
+      "documentEditorSampleDocs.ts",
+      "documentEditorStyles.ts",
+      "App.tsx"
+    ],
+    "markdownNotes": "## Document URL composition\n\nNotes on how a document URL is put together. URL routing is not wired in this demo.\n\n```\n/docs/<pageId>[/<slug>][#<headingId>]\n```\n\n| Segment | Description |\n| --- | --- |\n| `pageId` | The article's permanent id. Stays the same even when the title or slug changes. |\n| `slug` | Readable label derived from the title. Optional, just for humans. |\n| `#headingId` | Anchor within the same article, generated from the heading text. |\n\n### In this demo\n\n- Hover a heading in preview to copy a link straight to it.\n- Page embed, page mention, and internal links store `data-page-id` only (external links store `data-href`). Title and URL are resolved at render time via `documentPageRegistry.ts`.\n- All internal links (embed, mention, `<a data-page-id>`) point at sidebar wiki articles only. In preview, clicking them switches the sidebar selection — never the UI catalogue routes.\n- Internal pickers list sidebar articles only. Legacy `cat:<slug>` and `/page/<slug>` attrs are migrated to wiki ids on load.\n- Same-article heading links still use `#headingId` fragments only.\n\n### When implementing\n\n- Persist page id in saved HTML — never slug, title, or resolved URL. Those belong in the resolver only.\n- Resolve on every render (editor + preview). Stale titles in attrs become wrong after rename.\n- Keep external links separate (`data-href`). Do not mix page id and full URL on the same node.\n- Parse legacy `data-slug` attrs when loading old content; migrate on next save.\n- Show a broken state when the id no longer exists — do not silently drop the reference.\n\n### In production\n\n- Back page ids with a real page registry (API / DB), not hard-coded demo maps.\n- Redirect old URLs to new ones when a slug changes on rename.\n- Public share URLs can use a different scheme if needed.\n\nResolver: `documentPageRegistry.ts`, `DocumentPageRegistryContext.tsx`. Permalinks: `buildDocumentUrl` in `documentEditorUrl.ts`.\n\n## Embeddable in TipTap\n\nBlocks and marks the body can hold. Each is a TipTap extension and survives in the saved HTML.\n\n### In this demo _(implemented)_\n\n| Extension | Description |\n| --- | --- |\n| Text marks | Bold, italic, strikethrough, inline code. Applied from the selection bubble. |\n| Headings (H2 / H3) | Heading text auto-gets a stable id, used by anchor links and the copy-link control. |\n| Heading link (same article) | `#headingId` link in body — clicking jumps to that heading. Copy from the heading hover control. |\n| Lists, quote, divider | Bulleted / numbered list, blockquote, `<hr>` — inserted from the + menu. |\n| Code block | Fenced block with syntax highlighting via lowlight. |\n| External link | `<a href=\"…\">` for external URLs. Internal picks store `data-page-id` on the mark. |\n| Page embed | Block card — saved as `data-page-id` only; title and summary resolved at render. |\n| Page mention | Inline reference — same `data-page-id` persistence as embed; wiki clicks navigate in-demo. |\n\n### Likely needed, not yet built _(not implemented)_\n\n| Extension | Description |\n| --- | --- |\n| Image / file | Upload or URL, with caption and resize handles. |\n| Table | Editable grid (@tiptap/extension-table). |\n| Callout | Info / tip / warning box — icon plus tinted background. |\n| Task list | Checkbox items, optionally with assignee or due date. |\n| @ mention | Inline chip for a user, date, or business entity. |\n| External embed | iframe card for YouTube, Figma, dashboards, etc. |"
   },
   "/page/email": {
     "description": "A two-column screen for inboxes, support tickets, and notification logs — pick a row, read the body, and act on it in place. Best when the flow bounces frequently between list and detail.",
@@ -773,7 +822,11 @@
         {}
       ],
       "title": "メール"
-    }
+    },
+    "markdownFiles": [
+      "EmailLayoutPage.tsx",
+      "App.tsx"
+    ]
   },
   "/page/form-as-page": {
     "description": "The canonical create / edit form that fits a single page. Compare three variants — single column, section navigation, and wizard — depending on field count and how sequential the steps are.",
@@ -819,7 +872,15 @@
         }
       ],
       "title": "ページ単体フォーム"
-    }
+    },
+    "markdownFiles": [
+      "CreateTaskPage.tsx",
+      "CreateTaskPageWithSectionNav.tsx",
+      "CreateTaskPageWizard.tsx",
+      "App.CreateTaskPage.tsx",
+      "App.CreateTaskPageWithSectionNav.tsx",
+      "App.CreateTaskPageWizard.tsx"
+    ]
   },
   "/page/pipeline-kanban": {
     "description": "A CRM-style deals screen with pipeline tabs and a table / kanban view toggle. Kanban columns support drag-and-drop moves and in-column reordering.",
@@ -858,7 +919,13 @@
         {}
       ],
       "title": "パイプライン Kanban"
-    }
+    },
+    "markdownFiles": [
+      "PipelineKanbanPage.tsx",
+      "KanbanBoard.tsx",
+      "RightSheet.tsx",
+      "App.tsx"
+    ]
   },
   "/page/simple-master-crud": {
     "description": "A pattern for adding and editing reference-data masters from a list — Dialog or Sheet depending on field count. Use the same master to compare which UI fits.",
@@ -902,7 +969,13 @@
         }
       ],
       "title": "マスタ一覧"
-    }
+    },
+    "markdownFiles": [
+      "CategoriesMasterDialogPage.tsx",
+      "CategoriesMasterSheetPage.tsx",
+      "App.CategoriesMasterDialogPage.tsx",
+      "App.CategoriesMasterSheetPage.tsx"
+    ]
   },
   "/patterns/ai-chat": {
     "description": "Building blocks for an LLM assistant UI — streaming conversation view, reasoning (thinking) and chain-of-thought, tool calls, citations, message actions, prompt composer, and conversation history — plus an assembled panel. Every demo runs on a scripted mock, so each behavior can be verified without calling a model.",
@@ -973,7 +1046,23 @@
         }
       ],
       "title": "AI チャット"
-    }
+    },
+    "markdownFiles": [
+      "AssistantPanel.tsx",
+      "mockAssistant.ts",
+      "Conversation.tsx",
+      "Message.tsx",
+      "Response.tsx",
+      "Reasoning.tsx",
+      "ChainOfThought.tsx",
+      "Tool.tsx",
+      "Sources.tsx",
+      "Suggestion.tsx",
+      "Actions.tsx",
+      "PromptInput.tsx",
+      "ChatHistory.tsx",
+      "Loader.tsx"
+    ]
   },
   "/patterns/approval-flow": {
     "description": "A sequential multi-stage approval chain rendered as a titled card. Each department approves in a fixed order; exactly one stage is pending at a time.",
@@ -1001,7 +1090,10 @@
         {}
       ],
       "title": "承認フロー"
-    }
+    },
+    "markdownFiles": [
+      "ApprovalFlow.tsx"
+    ]
   },
   "/patterns/approval-route-builder": {
     "description": "A no-code builder for defining a multi-stage approval route: add stages, order them, set an approval rule per stage (all / any / quorum), and attach approvers by user, role, or dynamic reference.",
@@ -1033,7 +1125,10 @@
         {}
       ],
       "title": "承認ルートビルダー"
-    }
+    },
+    "markdownFiles": [
+      "ApprovalRouteBuilder.tsx"
+    ]
   },
   "/patterns/bulk-actions-bar": {
     "description": "A bulk-action bar that appears when multiple list rows are selected. Use it on lists where the same operation — approve, archive, assign — is applied to many rows at once.",
@@ -1061,7 +1156,10 @@
         {}
       ],
       "title": "一括アクション"
-    }
+    },
+    "markdownFiles": [
+      "BulkActionsBar.tsx"
+    ]
   },
   "/patterns/conversation-thread": {
     "description": "A business-thread view where multiple participants post to a single record over time. Use it when, as in support or incident response, you want to switch between flat display and nested replies.",
@@ -1112,7 +1210,15 @@
         }
       ],
       "title": "会話スレッド"
-    }
+    },
+    "markdownFiles": [
+      "ConversationThreadPanel.tsx",
+      "InquiryThreadPage.tsx",
+      "MarkdownThread.tsx",
+      "AttachmentsThread.tsx",
+      "ActionsThread.tsx",
+      "FilePreview.tsx"
+    ]
   },
   "/patterns/data-charts": {
     "description": "A catalog that puts common dashboard chart types — line, vertical / horizontal bar, pie / donut, stacked, Gantt — side by side on a single screen so you can pick which visualization to use.",
@@ -1170,7 +1276,18 @@
         }
       ],
       "title": "チャート"
-    }
+    },
+    "markdownFiles": [
+      "LineChartCard.tsx",
+      "VerticalBarChartCard.tsx",
+      "HorizontalBarChartCard.tsx",
+      "PieChartCard.tsx",
+      "DonutChartCard.tsx",
+      "StackedBarChartCard.tsx",
+      "chartTokens.ts",
+      "GanttChart.tsx",
+      "GanttChart.css"
+    ]
   },
   "/patterns/datatable-inline-edit": {
     "description": "A pattern that edits DataTable cells directly in the list, without opening a Sheet or a dedicated form. Pick a commit style per cell type — text, number, enum, flag — based on what's being edited.",
@@ -1210,7 +1327,10 @@
         {}
       ],
       "title": "DataTable セル内編集"
-    }
+    },
+    "markdownFiles": [
+      "DatatableInlineEdit.tsx"
+    ]
   },
   "/patterns/field-diff-table": {
     "description": "A table that places proposed changes next to current values so reviewers can decide whether to approve them. Use in approval queues and audit views.",
@@ -1237,7 +1357,10 @@
         {}
       ],
       "title": "フィールド差分テーブル"
-    }
+    },
+    "markdownFiles": [
+      "FieldDiffTable.tsx"
+    ]
   },
   "/patterns/form-builder": {
     "description": "A no-code builder that lets business users add, reorder, and edit form fields themselves. Use it on definition screens — task templates, intake forms, supplier surveys, and so on.",
@@ -1268,7 +1391,10 @@
         {}
       ],
       "title": "フォームビルダー"
-    }
+    },
+    "markdownFiles": [
+      "FormBuilder.tsx"
+    ]
   },
   "/patterns/grid-view": {
     "description": "A gallery-style list that tiles cards for resources where visual cues — cover image, status — matter.",
@@ -1295,7 +1421,10 @@
         {}
       ],
       "title": "グリッドビュー"
-    }
+    },
+    "markdownFiles": [
+      "GridView.tsx"
+    ]
   },
   "/patterns/multi-step-form": {
     "description": "A wizard-style form that splits input into steps so users can focus on one at a time.",
@@ -1327,7 +1456,10 @@
         {}
       ],
       "title": "複数ステップフォーム"
-    }
+    },
+    "markdownFiles": [
+      "MultiStepForm.tsx"
+    ]
   },
   "/patterns/notification-panel": {
     "description": "A notification center opened from a bell icon in the header or sidebar. Use it to aggregate new activity in one place.",
@@ -1356,7 +1488,11 @@
         {}
       ],
       "title": "通知パネル"
-    }
+    },
+    "markdownFiles": [
+      "NotificationPanelWithSidebar.tsx",
+      "NotificationPanel.tsx"
+    ]
   },
   "/patterns/pipeline-stage-manager": {
     "description": "An admin screen that lets users add, reorder, rename, and delete a set of stages (e.g. Lead → Qualified → Won). Use it to edit the stage definitions that drive Kanban boards and win-rate forecasts.",
@@ -1387,7 +1523,10 @@
         {}
       ],
       "title": "パイプラインステージ管理"
-    }
+    },
+    "markdownFiles": [
+      "PipelineStageManager.tsx"
+    ]
   },
   "/patterns/rich-text-editor": {
     "description": "A rich-text editor for free-form text with formatting — headings, bold/italic/underline, lists, links, tables. Stores Tiptap JSON and supports read-only mode and async value sync.",
@@ -1416,7 +1555,10 @@
         {}
       ],
       "title": "リッチテキストエディタ（TipTap）"
-    }
+    },
+    "markdownFiles": [
+      "RichTextEditor.tsx"
+    ]
   },
   "/patterns/right-sheet-custom": {
     "description": "A wide right-side overlay for peeking at details without leaving the list row. Good for flows that bounce quickly between list and drilldown.",
@@ -1442,7 +1584,10 @@
         {}
       ],
       "title": "右シート（ドリルダウン・ワイド）"
-    }
+    },
+    "markdownFiles": [
+      "RightSheet.tsx"
+    ]
   },
   "/patterns/supplier-cascader": {
     "description": "A two-column cascader for assigning tasks to suppliers: browse by group on the left, pick individual companies on the right, with search and bulk group selection.",
@@ -1471,7 +1616,13 @@
         {}
       ],
       "title": "サプライヤー cascader"
-    }
+    },
+    "markdownFiles": [
+      "SupplierCascader.tsx",
+      "useSupplierCascader.ts",
+      "CompanyNameSearch.tsx",
+      "mockData.ts"
+    ]
   },
   "/patterns/thread-composer": {
     "description": "A reply-input card for support / incident threads. Use when users should be able to switch between a customer-facing reply and an internal note in the same composer.",
@@ -1498,7 +1649,10 @@
         {}
       ],
       "title": "スレッド入力"
-    }
+    },
+    "markdownFiles": [
+      "ThreadComposer.tsx"
+    ]
   },
   "/patterns/timeline": {
     "description": "An editable staircase timeline built on the app-shell Timeline primitive. It starts as one full-width bar; splitting steps the track down onto new lanes, clicking a bar opens a menu to recolor it, and dragging a bar's right edge grows it while the next bar keeps its right edge and narrows. A second read-only view shows dependency links between bars.",
@@ -1535,7 +1689,12 @@
         }
       ],
       "title": "タイムライン / ガント"
-    }
+    },
+    "markdownFiles": [
+      "Timeline.tsx",
+      "GanttEditor.tsx",
+      "DependencyTimeline.tsx"
+    ]
   },
   "/patterns/user-profile-dialog": {
     "description": "A two-pane profile dialog opened from the sidebar user menu. The left rail shows the avatar (clickable to change) and tab navigation; the right pane mixes editable inputs/selects with read-only organization fields so users can see at a glance which values they own.",
@@ -1582,7 +1741,12 @@
         }
       ],
       "title": "ユーザープロフィールダイアログ"
-    }
+    },
+    "markdownFiles": [
+      "UserProfileDialogSmall.tsx",
+      "UserProfileDialog.tsx",
+      "UserMenuSidebarShowcase.tsx"
+    ]
   },
   "/components": {
     "description": "A catalogue of UI components provided by app-shell. Select a component from the sidebar to preview it.",

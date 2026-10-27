@@ -1,12 +1,18 @@
 import { Highlight, themes } from "prism-react-renderer";
 import { useTheme } from "@mailboost/erpboost-ui";
 
-export default function HighlightedSource({ source }: { source: string }) {
+export default function HighlightedSource({
+  source,
+  language = "tsx",
+}: {
+  source: string;
+  language?: string;
+}) {
   const { resolvedTheme } = useTheme();
   return (
     <Highlight
       code={source}
-      language="tsx"
+      language={language}
       theme={resolvedTheme === "dark" ? themes.oneDark : themes.oneLight}
     >
       {({ style, tokens, getLineProps, getTokenProps }) => (

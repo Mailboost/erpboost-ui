@@ -26,3 +26,5 @@ export function getDemos(entry: Entry, language: string = "en"): Demo[] {
     description: data?.ja?.sections[index]?.description ?? demo.description,
   }));
 }
+
+export { getReferenceMarkdownSources as getMarkdownSources } from "../reference/demos";

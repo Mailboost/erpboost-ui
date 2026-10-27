@@ -5,7 +5,6 @@ import {
   Button,
   Field,
   Form,
-  Input,
   Layout,
   Select,
   Sheet,
@@ -26,7 +25,12 @@ type Category = {
   notes: string;
 };
 
-const parentOptions = ["— None —", "Electronics", "Office supplies", "Raw materials"];
+const parentOptions = [
+  "— None —",
+  "Electronics",
+  "Office supplies",
+  "Raw materials",
+];
 const taxProfiles = ["Standard 10%", "Reduced 8%", "Exempt", "Reverse charge"];
 
 const initial: Category[] = [
@@ -128,7 +132,9 @@ export const CategoriesMasterSheetPage = () => {
           <Table.Body>
             {rows.map((row) => (
               <Table.Row key={row.id} className="group">
-                <Table.Cell className="font-mono text-xs">{row.code}</Table.Cell>
+                <Table.Cell className="font-mono text-xs">
+                  {row.code}
+                </Table.Cell>
                 <Table.Cell className="font-medium">{row.name}</Table.Cell>
                 <Table.Cell>
                   {row.active ? (
@@ -175,11 +181,12 @@ export const CategoriesMasterSheetPage = () => {
           {editing ? (
             <Form
               className="space-y-4 px-6 pb-4"
-              onFormSubmit={(values) => {
+              onFormSubmit={(_, details) => {
+                const values = Object.fromEntries(
+                  new FormData(details.event.target as HTMLFormElement),
+                );
                 const parentLabel =
-                  parent === parentOptions[0] || parent == null
-                    ? null
-                    : parent;
+                  parent === parentOptions[0] || parent == null ? null : parent;
                 const updated: Category = {
                   id: editing.id,
                   code: String(values.code ?? editing.code),
@@ -187,7 +194,7 @@ export const CategoriesMasterSheetPage = () => {
                   description: String(
                     values.description ?? editing.description,
                   ),
-                  active: Boolean(values.active ?? editing.active),
+                  active: values.active !== undefined,
                   sortOrder: Number(values.sortOrder ?? editing.sortOrder),
                   parentLabel,
                   taxProfile: taxProfile ?? editing.taxProfile,
@@ -208,7 +215,7 @@ export const CategoriesMasterSheetPage = () => {
               </Field.Root>
               <Field.Root name="name">
                 <Field.Label>Name</Field.Label>
-                <Input name="name" defaultValue={editing.name} required />
+                <Field.Control defaultValue={editing.name} required />
               </Field.Root>
               <Field.Root name="description">
                 <Field.Label>Description</Field.Label>
@@ -229,8 +236,7 @@ export const CategoriesMasterSheetPage = () => {
               </Field.Root>
               <Field.Root name="sortOrder">
                 <Field.Label>Sort order</Field.Label>
-                <Input
-                  name="sortOrder"
+                <Field.Control
                   type="number"
                   defaultValue={editing.sortOrder}
                   min={0}
