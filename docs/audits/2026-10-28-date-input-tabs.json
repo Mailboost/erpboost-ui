@@ -1,0 +1,1507 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "applicationCommit": "bd4380d5d9557c981ab8c60d923da53ef31ff684",
+  "applicationChanges": [
+    "Catalogue DatePicker retains the viewed month and focuses its first day when the typed date is outside it; optional preserveCalendarView leaves the normal component default unchanged",
+    "Constrained DatePicker demo validates on change and renders an alert connected through aria-describedby",
+    "Orders and Activity tab panels match the reference text after activation",
+    "Sizes icon-only tab matches the reference lack of accessible name in the catalogue; this is defect parity, not an accessibility improvement",
+    "Tooltip demo text and shared tooltip line-height match the reference"
+  ],
+  "intentionalDifference": {
+    "area": "DatePicker time display after calendar selection",
+    "reference": "23 AM",
+    "erpboost": "11 PM",
+    "reason": "Retain correct 12-hour display instead of reproducing the reference defect",
+    "casesPerEnvironment": 2
+  },
+  "newCasesPerEnvironment": 16,
+  "unannotatedCasesPerEnvironment": 6,
+  "referenceLimitationCasesPerEnvironment": 8,
+  "knownDifferenceCasesPerEnvironment": 2,
+  "catalogueBrowserCasesPerEnvironment": 162,
+  "unitCases": 23,
+  "executedNewBrowserCases": 48,
+  "executions": [
+    {
+      "name": "reference-local",
+      "report": "verified-reference-local.json",
+      "stats": {
+        "startTime": "2026-10-28T07:43:59.400Z",
+        "duration": 46424.452,
+        "expected": 32,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "published",
+      "report": "verified-published.json",
+      "stats": {
+        "startTime": "2026-10-28T07:54:15.843Z",
+        "duration": 22370.402,
+        "expected": 16,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "caseResults": [
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date segments clamp leap-year month ends and distinguish segment wrapping from whole-date shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date entry advances on slash, expands a short year when leaving its segment and does not refill a cleared day",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker preserves the viewed month on reopen even after its typed year changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference keeps the last viewed month even after typing another year. Retained navigation is verified, but the popup need not show the typed date."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker explains out-of-range input, clears its error on correction and bounds calendar navigation",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "calendar date changes retain time but expose the reference hour-display defect before segment cycling",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After a calendar selection, the reference displays 23 AM for an 11 PM value. ERPboost retains the correct 11 PM display. This test records that difference rather than claiming identical hour formatting."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tab arrows move focus, Enter and Space activate panels, and variant and size selections stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The last icon-only tab in each Sizes example has no accessible name in the reference. Keyboard activation is verified, but readable naming is not a passing accessibility outcome."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tooltip opens by keyboard focus and hover, closes on Escape or pointer exit and stays within the viewport",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference popup has no tooltip role. Visible focus/hover/dismissal behavior is tested through its popup slot, not counted as complete accessible tooltip semantics."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "disabled date field retains the reference defect where a real pointer click permits keyboard mutation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Despite aria-disabled and tabindex=-1, a native pointer click focuses a date segment and ArrowUp changes it in the reference. This is defect parity, not successful disabled-state enforcement."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date segments clamp leap-year month ends and distinguish segment wrapping from whole-date shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date entry advances on slash, expands a short year when leaving its segment and does not refill a cleared day",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker preserves the viewed month on reopen even after its typed year changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference keeps the last viewed month even after typing another year. Retained navigation is verified, but the popup need not show the typed date."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker explains out-of-range input, clears its error on correction and bounds calendar navigation",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "calendar date changes retain time but expose the reference hour-display defect before segment cycling",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After a calendar selection, the reference displays 23 AM for an 11 PM value. ERPboost retains the correct 11 PM display. This test records that difference rather than claiming identical hour formatting."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tab arrows move focus, Enter and Space activate panels, and variant and size selections stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The last icon-only tab in each Sizes example has no accessible name in the reference. Keyboard activation is verified, but readable naming is not a passing accessibility outcome."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tooltip opens by keyboard focus and hover, closes on Escape or pointer exit and stays within the viewport",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference popup has no tooltip role. Visible focus/hover/dismissal behavior is tested through its popup slot, not counted as complete accessible tooltip semantics."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "disabled date field retains the reference defect where a real pointer click permits keyboard mutation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Despite aria-disabled and tabindex=-1, a native pointer click focuses a date segment and ArrowUp changes it in the reference. This is defect parity, not successful disabled-state enforcement."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date segments clamp leap-year month ends and distinguish segment wrapping from whole-date shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date entry advances on slash, expands a short year when leaving its segment and does not refill a cleared day",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker preserves the viewed month on reopen even after its typed year changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference keeps the last viewed month even after typing another year. Retained navigation is verified, but the popup need not show the typed date."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker explains out-of-range input, clears its error on correction and bounds calendar navigation",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "calendar date changes retain time but expose the reference hour-display defect before segment cycling",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After a calendar selection, the reference displays 23 AM for an 11 PM value. ERPboost retains the correct 11 PM display. This test records that difference rather than claiming identical hour formatting."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tab arrows move focus, Enter and Space activate panels, and variant and size selections stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The last icon-only tab in each Sizes example has no accessible name in the reference. Keyboard activation is verified, but readable naming is not a passing accessibility outcome."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tooltip opens by keyboard focus and hover, closes on Escape or pointer exit and stays within the viewport",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference popup has no tooltip role. Visible focus/hover/dismissal behavior is tested through its popup slot, not counted as complete accessible tooltip semantics."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "disabled date field retains the reference defect where a real pointer click permits keyboard mutation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Despite aria-disabled and tabindex=-1, a native pointer click focuses a date segment and ArrowUp changes it in the reference. This is defect parity, not successful disabled-state enforcement."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date segments clamp leap-year month ends and distinguish segment wrapping from whole-date shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date entry advances on slash, expands a short year when leaving its segment and does not refill a cleared day",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker preserves the viewed month on reopen even after its typed year changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference keeps the last viewed month even after typing another year. Retained navigation is verified, but the popup need not show the typed date."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker explains out-of-range input, clears its error on correction and bounds calendar navigation",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "calendar date changes retain time but expose the reference hour-display defect before segment cycling",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After a calendar selection, the reference displays 23 AM for an 11 PM value. ERPboost retains the correct 11 PM display. This test records that difference rather than claiming identical hour formatting."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tab arrows move focus, Enter and Space activate panels, and variant and size selections stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The last icon-only tab in each Sizes example has no accessible name in the reference. Keyboard activation is verified, but readable naming is not a passing accessibility outcome."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tooltip opens by keyboard focus and hover, closes on Escape or pointer exit and stays within the viewport",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference popup has no tooltip role. Visible focus/hover/dismissal behavior is tested through its popup slot, not counted as complete accessible tooltip semantics."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "disabled date field retains the reference defect where a real pointer click permits keyboard mutation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Despite aria-disabled and tabindex=-1, a native pointer click focuses a date segment and ArrowUp changes it in the reference. This is defect parity, not successful disabled-state enforcement."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date segments clamp leap-year month ends and distinguish segment wrapping from whole-date shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date entry advances on slash, expands a short year when leaving its segment and does not refill a cleared day",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker preserves the viewed month on reopen even after its typed year changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference keeps the last viewed month even after typing another year. Retained navigation is verified, but the popup need not show the typed date."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker explains out-of-range input, clears its error on correction and bounds calendar navigation",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "calendar date changes retain time but expose the reference hour-display defect before segment cycling",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After a calendar selection, the reference displays 23 AM for an 11 PM value. ERPboost retains the correct 11 PM display. This test records that difference rather than claiming identical hour formatting."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tab arrows move focus, Enter and Space activate panels, and variant and size selections stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The last icon-only tab in each Sizes example has no accessible name in the reference. Keyboard activation is verified, but readable naming is not a passing accessibility outcome."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tooltip opens by keyboard focus and hover, closes on Escape or pointer exit and stays within the viewport",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference popup has no tooltip role. Visible focus/hover/dismissal behavior is tested through its popup slot, not counted as complete accessible tooltip semantics."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "disabled date field retains the reference defect where a real pointer click permits keyboard mutation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Despite aria-disabled and tabindex=-1, a native pointer click focuses a date segment and ArrowUp changes it in the reference. This is defect parity, not successful disabled-state enforcement."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date segments clamp leap-year month ends and distinguish segment wrapping from whole-date shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date entry advances on slash, expands a short year when leaving its segment and does not refill a cleared day",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker preserves the viewed month on reopen even after its typed year changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference keeps the last viewed month even after typing another year. Retained navigation is verified, but the popup need not show the typed date."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker explains out-of-range input, clears its error on correction and bounds calendar navigation",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "calendar date changes retain time but expose the reference hour-display defect before segment cycling",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After a calendar selection, the reference displays 23 AM for an 11 PM value. ERPboost retains the correct 11 PM display. This test records that difference rather than claiming identical hour formatting."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tab arrows move focus, Enter and Space activate panels, and variant and size selections stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The last icon-only tab in each Sizes example has no accessible name in the reference. Keyboard activation is verified, but readable naming is not a passing accessibility outcome."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tooltip opens by keyboard focus and hover, closes on Escape or pointer exit and stays within the viewport",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The reference popup has no tooltip role. Visible focus/hover/dismissal behavior is tested through its popup slot, not counted as complete accessible tooltip semantics."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "date-input-tabs-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "disabled date field retains the reference defect where a real pointer click permits keyboard mutation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Despite aria-disabled and tabindex=-1, a native pointer click focuses a date segment and ArrowUp changes it in the reference. This is defect parity, not successful disabled-state enforcement."
+        }
+      ],
+      "attempts": 1
+    }
+  ],
+  "executedExistingCalendarRegressionCases": 12,
+  "regressionExecutions": [
+    {
+      "name": "reference-local",
+      "report": "verified-calendar-regression.json",
+      "stats": {
+        "startTime": "2026-10-28T07:44:48.416Z",
+        "duration": 12246.475,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "published",
+      "report": "verified-published-calendar-regression.json",
+      "stats": {
+        "startTime": "2026-10-28T07:55:00.155Z",
+        "duration": 5870.428999999999,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "regressionCaseResults": [
+    {
+      "target": "reference",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "desktop light"
+      ],
+      "title": "calendar keyboard navigation traverses unavailable dates without selecting them",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker announces the field and action and keeps read-only values",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "desktop light"
+      ],
+      "title": "calendar keyboard navigation traverses unavailable dates without selecting them",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker announces the field and action and keeps read-only values",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "mobile dark"
+      ],
+      "title": "calendar keyboard navigation traverses unavailable dates without selecting them",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker announces the field and action and keeps read-only values",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "mobile dark"
+      ],
+      "title": "calendar keyboard navigation traverses unavailable dates without selecting them",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker announces the field and action and keeps read-only values",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "desktop light"
+      ],
+      "title": "calendar keyboard navigation traverses unavailable dates without selecting them",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "desktop light"
+      ],
+      "title": "date picker announces the field and action and keeps read-only values",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "mobile dark"
+      ],
+      "title": "calendar keyboard navigation traverses unavailable dates without selecting them",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "expanded-interactions.spec.ts",
+        "mobile dark"
+      ],
+      "title": "date picker announces the field and action and keeps read-only values",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    }
+  ],
+  "ci": {
+    "run": "https://github.com/Mailboost/erpboost-ui/actions/runs/40652107839",
+    "applicationCommit": "bd4380d5d9557c981ab8c60d923da53ef31ff684",
+    "conclusion": "success",
+    "browserCases": 162,
+    "unitCases": 23,
+    "checks": [
+      "typecheck",
+      "unit tests",
+      "Chromium browser tests",
+      "production build",
+      "packed package in external React app",
+      "71 exported routes",
+      "GitHub Pages deployment"
+    ]
+  },
+  "visualSummary": {
+    "totalComparisons": 24,
+    "knownTimeDifferenceComparisons": 4,
+    "otherComparisons": 20,
+    "zeroPixelDifferenceComparisons": 13,
+    "smallResiduals": [
+      {
+        "target": "local",
+        "mode": "desktop",
+        "state": "retained-calendar",
+        "differentPixels": 1,
+        "maxChannelDelta": 1,
+        "bounds": [
+          32,
+          505,
+          33,
+          506
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "desktop",
+        "state": "activity-panel",
+        "differentPixels": 4,
+        "maxChannelDelta": 4,
+        "bounds": [
+          165,
+          10,
+          166,
+          26
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "mobile",
+        "state": "retained-calendar",
+        "differentPixels": 4,
+        "maxChannelDelta": 6,
+        "bounds": [
+          32,
+          600,
+          34,
+          602
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "mobile",
+        "state": "activity-panel",
+        "differentPixels": 4,
+        "maxChannelDelta": 3,
+        "bounds": [
+          165,
+          10,
+          166,
+          26
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "retained-calendar",
+        "differentPixels": 1,
+        "maxChannelDelta": 1,
+        "bounds": [
+          32,
+          505,
+          33,
+          506
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "activity-panel",
+        "differentPixels": 4,
+        "maxChannelDelta": 4,
+        "bounds": [
+          165,
+          10,
+          166,
+          26
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "retained-calendar",
+        "differentPixels": 4,
+        "maxChannelDelta": 6,
+        "bounds": [
+          32,
+          600,
+          34,
+          602
+        ]
+      }
+    ]
+  },
+  "visualComparisons": [
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "leap-day",
+      "knownDifference": false,
+      "referenceSize": [
+        320,
+        60
+      ],
+      "targetSize": [
+        320,
+        60
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "range-error",
+      "knownDifference": false,
+      "referenceSize": [
+        320,
+        108
+      ],
+      "targetSize": [
+        320,
+        108
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "retained-calendar",
+      "knownDifference": false,
+      "referenceSize": [
+        1280,
+        900
+      ],
+      "targetSize": [
+        1280,
+        900
+      ],
+      "differentPixels": 1,
+      "maxChannelDelta": 1,
+      "bounds": [
+        32,
+        505,
+        33,
+        506
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "activity-panel",
+      "knownDifference": false,
+      "referenceSize": [
+        622,
+        76
+      ],
+      "targetSize": [
+        622,
+        76
+      ],
+      "differentPixels": 4,
+      "maxChannelDelta": 4,
+      "bounds": [
+        165,
+        10,
+        166,
+        26
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "known-hour-difference",
+      "knownDifference": true,
+      "referenceSize": [
+        320,
+        104
+      ],
+      "targetSize": [
+        320,
+        104
+      ],
+      "differentPixels": 302,
+      "maxChannelDelta": 245,
+      "bounds": [
+        126,
+        36,
+        203,
+        48
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "tooltip-open",
+      "knownDifference": false,
+      "referenceSize": [
+        1280,
+        900
+      ],
+      "targetSize": [
+        1280,
+        900
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "leap-day",
+      "knownDifference": false,
+      "referenceSize": [
+        311,
+        60
+      ],
+      "targetSize": [
+        311,
+        60
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "range-error",
+      "knownDifference": false,
+      "referenceSize": [
+        311,
+        108
+      ],
+      "targetSize": [
+        311,
+        108
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "retained-calendar",
+      "knownDifference": false,
+      "referenceSize": [
+        375,
+        812
+      ],
+      "targetSize": [
+        375,
+        812
+      ],
+      "differentPixels": 4,
+      "maxChannelDelta": 6,
+      "bounds": [
+        32,
+        600,
+        34,
+        602
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "activity-panel",
+      "knownDifference": false,
+      "referenceSize": [
+        261,
+        76
+      ],
+      "targetSize": [
+        261,
+        76
+      ],
+      "differentPixels": 4,
+      "maxChannelDelta": 3,
+      "bounds": [
+        165,
+        10,
+        166,
+        26
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "known-hour-difference",
+      "knownDifference": true,
+      "referenceSize": [
+        311,
+        104
+      ],
+      "targetSize": [
+        311,
+        104
+      ],
+      "differentPixels": 348,
+      "maxChannelDelta": 217,
+      "bounds": [
+        139,
+        36,
+        224,
+        49
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "tooltip-open",
+      "knownDifference": false,
+      "referenceSize": [
+        375,
+        812
+      ],
+      "targetSize": [
+        375,
+        812
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "leap-day",
+      "knownDifference": false,
+      "referenceSize": [
+        320,
+        60
+      ],
+      "targetSize": [
+        320,
+        60
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "range-error",
+      "knownDifference": false,
+      "referenceSize": [
+        320,
+        108
+      ],
+      "targetSize": [
+        320,
+        108
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "retained-calendar",
+      "knownDifference": false,
+      "referenceSize": [
+        1280,
+        900
+      ],
+      "targetSize": [
+        1280,
+        900
+      ],
+      "differentPixels": 1,
+      "maxChannelDelta": 1,
+      "bounds": [
+        32,
+        505,
+        33,
+        506
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "activity-panel",
+      "knownDifference": false,
+      "referenceSize": [
+        622,
+        76
+      ],
+      "targetSize": [
+        622,
+        76
+      ],
+      "differentPixels": 4,
+      "maxChannelDelta": 4,
+      "bounds": [
+        165,
+        10,
+        166,
+        26
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "known-hour-difference",
+      "knownDifference": true,
+      "referenceSize": [
+        320,
+        104
+      ],
+      "targetSize": [
+        320,
+        104
+      ],
+      "differentPixels": 302,
+      "maxChannelDelta": 245,
+      "bounds": [
+        126,
+        36,
+        203,
+        48
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "tooltip-open",
+      "knownDifference": false,
+      "referenceSize": [
+        1280,
+        900
+      ],
+      "targetSize": [
+        1280,
+        900
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "leap-day",
+      "knownDifference": false,
+      "referenceSize": [
+        311,
+        60
+      ],
+      "targetSize": [
+        311,
+        60
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "range-error",
+      "knownDifference": false,
+      "referenceSize": [
+        311,
+        108
+      ],
+      "targetSize": [
+        311,
+        108
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "retained-calendar",
+      "knownDifference": false,
+      "referenceSize": [
+        375,
+        812
+      ],
+      "targetSize": [
+        375,
+        812
+      ],
+      "differentPixels": 4,
+      "maxChannelDelta": 6,
+      "bounds": [
+        32,
+        600,
+        34,
+        602
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "activity-panel",
+      "knownDifference": false,
+      "referenceSize": [
+        261,
+        76
+      ],
+      "targetSize": [
+        261,
+        76
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "known-hour-difference",
+      "knownDifference": true,
+      "referenceSize": [
+        311,
+        104
+      ],
+      "targetSize": [
+        311,
+        104
+      ],
+      "differentPixels": 348,
+      "maxChannelDelta": 217,
+      "bounds": [
+        139,
+        36,
+        224,
+        49
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "tooltip-open",
+      "knownDifference": false,
+      "referenceSize": [
+        375,
+        812
+      ],
+      "targetSize": [
+        375,
+        812
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    }
+  ],
+  "referenceLimitations": [
+    "A real pointer click on an aria-disabled date segment permits subsequent keyboard mutation; not successful disabled-state enforcement",
+    "Sizes icon-only tabs lack accessible names; not successful accessible naming",
+    "The visible tooltip popup lacks role=tooltip; focus/hover/dismissal checks are not proof of complete tooltip semantics",
+    "Retained month navigation can show a month outside the typed date after changing the year"
+  ],
+  "scope": {
+    "browser": "Playwright Chromium",
+    "locale": "en-US",
+    "conditions": [
+      "1280x900 light",
+      "375x812 dark"
+    ],
+    "fixedDate": "Date routes only: 2026-07-10T12:00:00Z; timers and animation continue normally",
+    "screenshotStates": [
+      "leap-day",
+      "range-error",
+      "retained-calendar",
+      "activity-panel",
+      "known-hour-difference",
+      "tooltip-open"
+    ],
+    "notClaimed": [
+      "all possible input combinations",
+      "all browsers and animation frames",
+      "all 486 configurable browser cases run on three targets in this turn",
+      "external sends or database persistence",
+      "full accessibility correctness",
+      "pixel-perfect parity in known or residual differences"
+    ]
+  },
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-date-input-audit",
+  "investigationDirectory": "/tmp/erpboost-ui-date-input-audit-20261028/"
+}
