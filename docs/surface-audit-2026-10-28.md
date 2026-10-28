@@ -49,3 +49,7 @@ Playwright Chromium、英語、PCライト1280×900・モバイルダーク375×
 - 現在の構成は222ケース／環境、3環境で666ケースを設定できる。この回で666件すべてや全71 URLを再確認したという意味ではない。
 
 集計と残る微小差は[検証結果JSON](audits/2026-10-28-surface.json)、証跡は`/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-surface-audit/`、調査ログは`/tmp/erpboost-ui-surface-audit-20261028/`に保存する。対象はカタログのUIで、実際のERP・AI・アップロード・業務保存の成功確認ではない。
+
+## 幅を狭めた表示の後続確認
+
+[カタログ操作・コード表示・狭いプレビューの追加比較](preview-controls-audit-2026-10-28.md)で、Tablet／Mobileプリセット時に外側へ表示されるドット背景の欠落を追加修正した。この回の10種類のPages撮影は実際の画面幅をPC／モバイルに変えたもので、全プレビューの幅プリセットを切り替えた比較ではなかった。後続ではプリセット切替とCode表示の幅・Refreshも確認している。
