@@ -40,6 +40,7 @@ import { memo, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { ErdSchema } from "./layout";
 import { useErdDiagramT } from "./i18n";
 import { cn } from "../../lib/utils";
+import { useAppShellConfig } from "../../contexts/appshell-config-context";
 import { buildErdGraph, type ErdTable } from "./layout";
 
 export interface ErdDiagramProps {
@@ -191,6 +192,7 @@ function Diagram({
   className,
 }: ErdDiagramProps) {
   const t = useErdDiagramT();
+  const locale = useAppShellConfig().configurations.locale;
   const [keysOnly, setKeysOnly] = useState(false);
   const graph = useMemo(
     () => buildErdGraph(catalog, keysOnly),
@@ -315,6 +317,7 @@ function Diagram({
     () =>
       nodes.map((node) => ({
         ...node,
+        ariaLabel: t("moveTable", { name: node.id }),
         selected: node.id === selected,
         data: { ...node.data, onOpen: onOpenTable, portalContainer },
         className:
@@ -322,7 +325,7 @@ function Diagram({
             ? "erpui-erd-table-related"
             : "",
       })),
-    [nodes, selected, related, onOpenTable, portalContainer],
+    [nodes, selected, related, onOpenTable, portalContainer, locale],
   );
   const edges: RelationEdge[] = useMemo(
     () =>
@@ -347,7 +350,7 @@ function Diagram({
           },
         };
       }),
-    [graph, selected],
+    [graph, selected, locale],
   );
   const relationCount = graph.relations.filter(
     (relation) =>
