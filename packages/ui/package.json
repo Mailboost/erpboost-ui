@@ -87,6 +87,10 @@
       "types": "./dist/components/locale-provider/index.d.ts",
       "import": "./dist/locale-provider.js"
     },
+    "./erd-diagram": {
+      "types": "./dist/components/erd-diagram/index.d.ts",
+      "import": "./dist/erd-diagram.js"
+    },
     "./database-workspace": {
       "types": "./dist/components/database-workspace/index.d.ts",
       "import": "./dist/database-workspace.js"
@@ -98,11 +102,13 @@
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
+    "@dagrejs/dagre": "^3.1.1",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/noto-sans-jp": "5.3.0",
     "@internationalized/date": "3.12.4",
     "@standard-schema/spec": "^1.1.0",
     "@tailor-platform/auth-public-client": "^0.7.0",
+    "@xyflow/react": "^12.12.0",
     "change-case": "^5.4.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

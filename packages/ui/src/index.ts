@@ -360,3 +360,5 @@ export {
 export { DatabaseWorkspace, type DatabaseWorkspaceProps } from "./components/database-workspace";
 
 export { LocaleProvider } from "./components/locale-provider";
+
+export { ErdDiagram, type ErdDiagramProps, buildErdGraph, type ErdSchema, type ErdColumnDefinition, type ErdTableDefinition, type ErdRelationDefinition } from "./components/erd-diagram";

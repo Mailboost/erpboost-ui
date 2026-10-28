@@ -44,6 +44,7 @@ export default defineConfig({
         "tooltip": "src/components/tooltip/index.ts",
         "field": "src/components/field/index.ts",
         "locale-provider": "src/components/locale-provider/index.tsx",
+        "erd-diagram": "src/components/erd-diagram/index.ts",
         "database-workspace": "src/components/database-workspace/index.ts",
 
       },
