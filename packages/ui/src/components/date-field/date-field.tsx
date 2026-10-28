@@ -76,6 +76,8 @@ export type DateFieldProps<T extends DateValue = DateValue> = DateControlProps<T
 export type DatePickerProps<T extends DateValue = DateValue> = DateControlProps<T> & {
   /** IANA timezone; defaults to the AppShell `timeZone`. */
   timeZone?: string;
+  /** Keep the last viewed calendar month on reopen instead of following the input value. */
+  preserveCalendarView?: boolean;
 };
 
 /**
@@ -218,6 +220,7 @@ const DatePicker = forwardRef(function DatePicker<T extends DateValue = DateValu
     className,
     locale: localeProp,
     timeZone: timeZoneProp,
+    preserveCalendarView = false,
     value,
     defaultValue,
     onChange,
@@ -297,10 +300,18 @@ const DatePicker = forwardRef(function DatePicker<T extends DateValue = DateValu
 
   const handleOpenChange = (nextOpen: boolean) => {
     setOpen(nextOpen);
-    // The calendar's focus outlives the popover, so re-land it on the current
-    // (possibly typed) value each time it opens — today when empty (APG).
     if (nextOpen) {
-      calState.setFocusedDate(val != null ? toCalendarDate(val as never) : today(resolvedTz));
+      const preferredDate = val != null ? toCalendarDate(val as never) : today(resolvedTz);
+      const viewedDate = calState.focusedDate;
+      // Normally follow the input (today when empty). A retained view instead
+      // focuses its first day when the preferred date is in another month.
+      const preferredDateIsVisible =
+        preferredDate.year === viewedDate.year && preferredDate.month === viewedDate.month;
+      calState.setFocusedDate(
+        !preserveCalendarView || preferredDateIsVisible
+          ? preferredDate
+          : viewedDate.set({ day: 1 }),
+      );
     }
   };
 

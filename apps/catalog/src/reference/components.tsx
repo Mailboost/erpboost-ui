@@ -441,11 +441,13 @@ function Dates({ picker = false }: { picker?: boolean }) {
           key={f.label}
           invalid={"invalid" in f && f.invalid}
           disabled={"disabled" in f && f.disabled}
+          validationMode={"constrained" in f ? "onChange" : undefined}
         >
           <Field.Label>{f.label}</Field.Label>
           <Control
             className="w-full"
             aria-label={f.label}
+            {...(picker ? { preserveCalendarView: true } : {})}
             minValue={"constrained" in f ? parseDate("2026-07-10") : undefined}
             maxValue={
               "constrained" in f
@@ -460,6 +462,9 @@ function Dates({ picker = false }: { picker?: boolean }) {
             <Field.Description className="self-stretch">
               {f.description}
             </Field.Description>
+          )}
+          {"constrained" in f && (
+            <Field.Error role="alert" className="self-stretch text-sm font-medium text-destructive" />
           )}
           {"invalid" in f && f.invalid && (
             <p
@@ -786,8 +791,8 @@ function TabsDemo() {
             {i === 0 &&
               [
                 "Company profile and key metrics.",
-                "Purchase orders and recent activity.",
-                "Latest supplier updates.",
+                "Purchase orders placed with this supplier.",
+                "Recent updates and comments.",
               ].map((s, j) => (
                 <Tabs.Panel value={String(j)} key={s} className="pt-3 text-sm">
                   {s}
@@ -835,7 +840,7 @@ function TabsDemo() {
                 <Tabs.List aria-label={`Order status (${size})`}>
                   <Tabs.Tab value="all">All</Tabs.Tab>
                   <Tabs.Tab value="pending">Pending</Tabs.Tab>
-                  <Tabs.Tab value="favorites" aria-label="Favorites">
+                  <Tabs.Tab value="favorites">
                     <Star className="size-4" />
                   </Tabs.Tab>
                 </Tabs.List>
@@ -1102,7 +1107,7 @@ function ReferenceComponentBody({ slug }: { slug: string }) {
               Hover tooltip
             </Tooltip.Trigger>
             <Tooltip.Content>
-              Supplier data is synced every night.
+              Inline guidance for dense enterprise UI.
             </Tooltip.Content>
           </Tooltip.Root>
         </Tooltip.Provider>

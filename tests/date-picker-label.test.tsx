@@ -1,5 +1,13 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from "@testing-library/react";
 import { expect, it } from "vitest";
+import { parseDate } from "@internationalized/date";
+import { useState } from "react";
 import { DatePicker, Field } from "@mailboost/erpboost-ui";
 import { AppShellInternal } from "../packages/ui/src/components/appshell/appshell";
 
@@ -56,3 +64,63 @@ it("preserves an explicit aria-labelledby over aria-label", async () => {
     await screen.findByRole("dialog", { name: "Dispatch date" }),
   ).toBeTruthy();
 });
+
+it.each([
+  {
+    preserveCalendarView: undefined,
+    expectedMonth: "July 2028",
+    focusedDay: "Monday, July 10, 2028",
+  },
+  {
+    preserveCalendarView: true,
+    expectedMonth: "July 2026",
+    focusedDay: "Wednesday, July 1, 2026",
+  },
+])(
+  "opens on $expectedMonth after a controlled date changes",
+  async ({ preserveCalendarView, expectedMonth, focusedDay }) => {
+    function ControlledPicker() {
+      const [value, setValue] = useState(parseDate("2026-07-10"));
+      return (
+        <>
+          <button onClick={() => setValue(parseDate("2028-07-10"))}>
+            Load another date
+          </button>
+          <DatePicker
+            aria-label="Ship date"
+            value={value}
+            preserveCalendarView={preserveCalendarView}
+          />
+        </>
+      );
+    }
+    render(
+      <AppShellInternal
+        title="Test"
+        modules={[]}
+        locale="en"
+        memory
+        initialEntries={["/"]}
+      >
+        <ControlledPicker />
+      </AppShellInternal>,
+    );
+    fireEvent.click(
+      await screen.findByRole("button", { name: "Load another date" }),
+    );
+    fireEvent.click(
+      await screen.findByRole("button", { name: "Open calendar" }),
+    );
+    const dialog = await screen.findByRole("dialog", {
+      name: "Ship date, choose date",
+    });
+    expect(
+      await within(dialog).findByText(expectedMonth, { exact: true }),
+    ).toBeTruthy();
+    await waitFor(() =>
+      expect(document.activeElement).toBe(
+        within(dialog).getByRole("button", { name: focusedDay }),
+      ),
+    );
+  },
+);
