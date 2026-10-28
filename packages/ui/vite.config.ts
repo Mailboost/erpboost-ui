@@ -24,7 +24,15 @@ export default defineConfig({
   publicDir: false,
   build: {
     lib: {
-      entry: { index: "src/index.ts", style: "src/style-entry.ts" },
+      entry: {
+        index: "src/index.ts",
+        style: "src/style-entry.ts",
+        button: "src/components/button/index.ts",
+        input: "src/components/input/index.ts",
+        textarea: "src/components/textarea/index.ts",
+        table: "src/components/table/index.ts",
+        spinner: "src/components/spinner/index.ts",
+      },
       formats: ["es"],
       cssFileName: "erpboost-ui",
     },

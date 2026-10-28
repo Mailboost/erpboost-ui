@@ -28,11 +28,9 @@ try {
   const library = JSON.parse(
     readFileSync(join(root, "packages/ui/package.json"), "utf8"),
   );
-  for (const path of [
-    library.exports["."].types,
-    library.exports["."].import,
-    library.exports["./styles"],
-  ]) {
+  for (const path of Object.values(library.exports).flatMap((entry) =>
+    typeof entry === "string" ? [entry] : [entry.types, entry.import],
+  )) {
     assert(
       archive.files.some((file) => file.path === path.replace(/^\.\//, "")),
       `Package export missing from archive: ${path}`,
@@ -102,9 +100,31 @@ try {
       stdio: "inherit",
     });
   }
-  console.log(
-    "Packed library: exports, external TypeScript consumer and production build passed.",
-  );
+  // An existing app can use controls without pulling in AppShell integrations.
+  writeFileSync(join(directory, "src.tsx"), `
+    import {createRoot} from "react-dom/client";
+    import {Button} from "@mailboost/erpboost-ui/button";
+    import {Input} from "@mailboost/erpboost-ui/input";
+    import {Textarea} from "@mailboost/erpboost-ui/textarea";
+    import {Table} from "@mailboost/erpboost-ui/table";
+    import {Spinner} from "@mailboost/erpboost-ui/spinner";
+    import "@mailboost/erpboost-ui/styles";
+    createRoot(document.getElementById("root")!).render(<form><Input aria-label="Name"/><Textarea aria-label="Note"/><Button type="button">Save</Button><Spinner/><Table.Root><Table.Body><Table.Row><Table.Cell>Standalone</Table.Cell></Table.Row></Table.Body></Table.Root></form>);
+  `);
+  writeFileSync(join(directory, "vite.config.mjs"), `export default {
+    plugins: [{name:"consumer-module-audit", generateBundle(){
+      this.emitFile({type:"asset",fileName:"consumer-modules.json",source:JSON.stringify([...this.getModuleIds()])});
+    }}],
+    build:{rolldownOptions:{checks:{moduleLevelDirective:false}}}
+  };`);
+  for (const [binary, args] of [["tsc", ["--noEmit"]], ["vite", ["build"]]]) {
+    execFileSync(join(directory, "node_modules/.bin", binary), args, {cwd: directory, stdio: "inherit"});
+  }
+  const moduleIds = JSON.parse(readFileSync(join(directory, "dist/consumer-modules.json"), "utf8"));
+  for (const dependency of ["openai", "@tailor-platform/auth-public-client", "react-router"]) {
+    assert(!moduleIds.some((id) => id.replaceAll("\\", "/").includes(`/node_modules/${dependency}/`)), `Standalone controls imported ${dependency}`);
+  }
+  console.log("Packed library: root API and standalone consumers passed; controls exclude auth, AI and router modules.");
 } finally {
   if (process.env.KEEP_PACKAGE_CHECK === "1")
     console.log(`Consumer fixture retained: ${directory}`);
