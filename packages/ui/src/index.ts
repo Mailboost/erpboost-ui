@@ -364,3 +364,6 @@ export { LocaleProvider } from "./components/locale-provider";
 export { ErdDiagram, type ErdDiagramProps, buildErdGraph, type ErdSchema, type ErdColumnDefinition, type ErdTableDefinition, type ErdRelationDefinition } from "./components/erd-diagram";
 
 export { Pagination, type PaginationProps } from "./components/pagination";
+
+export { Skeleton } from "./components/skeleton";
+export { HeaderBar, SidebarPanel } from "./components/shell-parts";

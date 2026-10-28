@@ -1,5 +1,6 @@
 @import "@xyflow/react/dist/style.css";
 @import "./components/erd-diagram/erd-diagram.css";
+@import "./components/skeleton/skeleton.css";
 @import "tailwindcss" prefix(astw);
 @source "./";
 @import "tw-animate-css";

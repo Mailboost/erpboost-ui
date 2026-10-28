@@ -20,7 +20,7 @@ export interface PaginationProps {
   onFirstPage: () => void;
   onPreviousPage: () => void;
   onNextPage: () => void;
-  onLastPage: () => void;
+  onLastPage?: () => void;
   /** Enables direct page entry for offset-based collections. */
   onPageChange?: (page: number) => void;
   pageSize?: number;
@@ -85,10 +85,10 @@ export function Pagination({
           </Select.Parts.Root>
         </div>
       )}
-      {totalPages !== null && (
+      {(totalPages !== null || currentPage > 0) && (
         <span className="astw:flex astw:items-center astw:gap-1 astw:text-body-md astw:text-muted-foreground astw:tabular-nums astw:whitespace-nowrap">
           {t("paginationPage")}{" "}
-          {onPageChange ? (
+          {onPageChange && totalPages !== null ? (
             <Input
               aria-label={t("paginationPage")}
               className="astw:w-14"
@@ -109,7 +109,7 @@ export function Pagination({
           ) : (
             currentPage
           )}{" "}
-          / {totalPages}
+          {totalPages !== null && <>/ {totalPages}</>}
         </span>
       )}
       <Button
@@ -146,7 +146,7 @@ export function Pagination({
       >
         <ChevronRight className="astw:size-4" />
       </Button>
-      {totalPages !== null && (
+      {totalPages !== null && onLastPage && (
         <Button
           type="button"
           variant="outline"

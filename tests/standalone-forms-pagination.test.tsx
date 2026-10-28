@@ -51,3 +51,12 @@ it("clamps direct page entry and disables navigation at collection boundaries", 
   fireEvent.click(screen.getByRole("button", { name: "次のページ" }));
   expect(next).toHaveBeenCalledOnce();
 });
+
+it("shows the current page without a total and does not offer an unknown last page", () => {
+  const next = vi.fn();
+  render(<LocaleProvider locale="ja-JP"><Pagination currentPage={3} totalPages={null} hasPrevPage hasNextPage onFirstPage={() => {}} onPreviousPage={() => {}} onNextPage={next}/></LocaleProvider>);
+  expect(screen.getByText(/ページ\s+3/)).toBeTruthy();
+  expect(screen.queryByRole("button", { name: "最後のページ" })).toBeNull();
+  fireEvent.click(screen.getByRole("button", { name: "次のページ" }));
+  expect(next).toHaveBeenCalledOnce();
+});

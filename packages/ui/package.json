@@ -106,6 +106,22 @@
     "./pagination": {
       "types": "./dist/components/pagination/index.d.ts",
       "import": "./dist/pagination.js"
+    },
+    "./avatar": {
+      "types": "./dist/components/avatar/index.d.ts",
+      "import": "./dist/avatar.js"
+    },
+    "./card": {
+      "types": "./dist/components/card/index.d.ts",
+      "import": "./dist/card.js"
+    },
+    "./skeleton": {
+      "types": "./dist/components/skeleton/index.d.ts",
+      "import": "./dist/skeleton.js"
+    },
+    "./shell-parts": {
+      "types": "./dist/components/shell-parts/index.d.ts",
+      "import": "./dist/shell-parts.js"
     }
   },
   "scripts": {
