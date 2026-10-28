@@ -57,3 +57,7 @@ Playwright Chromium、英語、PCライト1280×900とモバイルダーク375×
 既知の時刻表示・外観のフォーカス復帰・添付メニューの開閉属性・カンバンの取消の相違も維持する。全ブラウザ、タッチ実機、IMEやERP・AI・業務保存は今回の対象ではない。
 
 集計は[検証結果JSON](audits/2026-10-28-preview-controls.json)、証跡は`/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-preview-controls-audit/`、調査ログは`/tmp/erpboost-ui-preview-controls-audit-20261028/`へ保存する。
+
+## 後から統合された独自カタログとの区別
+
+この監査の実測値は`64ce1d8`時点の共通29ルート・57例を対象とする。公開確認後、別PR #1の`b0eba31`がmainへ統合され、ERPboost独自のDatabaseWorkspaceが追加された。現在はERPboost72 URL、参照版71 URLで、この追加ページを一致判定へ含めない。統合後、参照10＋検索2、ローカル10＋検索2の24ケース、35コンポーネントケース、型チェックが通過した。検索テストも参照71件・ERPboost72件をそれぞれ確認するよう修正し、既知の独自追加と不具合を区別する。

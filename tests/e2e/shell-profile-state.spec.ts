@@ -97,8 +97,13 @@ for (const mode of [
       let dialog = await openSearch(page, mode.mobile);
       const input = dialog.getByRole("textbox");
       const routes = dialog.locator("button[data-index]");
-      await expect(routes).toHaveCount(72);
-      await expect(routes.filter({hasText:"/patterns/database-workspace"})).toHaveCount(1);
+      const includesDatabaseWorkspace =
+        test.info().project.name !== "reference";
+      const routeCount = includesDatabaseWorkspace ? 72 : 71;
+      await expect(routes).toHaveCount(routeCount);
+      await expect(
+        routes.filter({ hasText: "/patterns/database-workspace" }),
+      ).toHaveCount(includesDatabaseWorkspace ? 1 : 0);
       await expect(routes.nth(0)).toHaveText("UI Catalogue/");
       await expect(routes.nth(1)).toHaveText("Components/components");
       await expect(routes.nth(2)).toHaveText(
@@ -145,7 +150,9 @@ for (const mode of [
       await expect(dialog).not.toBeVisible();
       dialog = await openSearch(page, mode.mobile);
       await expect(dialog.getByRole("textbox")).toHaveValue("");
-      await expect(dialog.locator("button[data-index]")).toHaveCount(72);
+      await expect(dialog.locator("button[data-index]")).toHaveCount(
+        routeCount,
+      );
       await page.keyboard.press("Escape");
       await expect(dialog).not.toBeVisible();
       await expect(
