@@ -1,0 +1,1333 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "applicationCommit": "855e37dd43eb4ed5c4cea8012996bb255726988f",
+  "applicationChanges": [
+    "CommandPalette desktop maximum width changes from 896px to the reference 672px; the 375px mobile viewport remains 343px wide",
+    "CommandPalette route paths change from 12px/16px to 11px with inherited text-sm line-height, matching the reference without changing the 14px route title",
+    "Appearance radio labels change from 16px to 15px line-height, reducing the popup height from 128px to 127px"
+  ],
+  "prePublicationVisuals": [
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "palette",
+      "referenceSize": [
+        672,
+        295
+      ],
+      "targetSize": [
+        896,
+        296
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "appearance",
+      "referenceSize": [
+        264,
+        127
+      ],
+      "targetSize": [
+        264,
+        128
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "profile",
+      "referenceSize": [
+        860,
+        840
+      ],
+      "targetSize": [
+        860,
+        840
+      ],
+      "differentPixels": 25,
+      "maxChannelDelta": 11,
+      "bounds": [
+        852,
+        832,
+        860,
+        840
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "palette",
+      "referenceSize": [
+        343,
+        295
+      ],
+      "targetSize": [
+        343,
+        296
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "appearance",
+      "referenceSize": [
+        264,
+        127
+      ],
+      "targetSize": [
+        264,
+        128
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "profile",
+      "referenceSize": [
+        375,
+        780
+      ],
+      "targetSize": [
+        375,
+        780
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "palette",
+      "referenceSize": [
+        672,
+        295
+      ],
+      "targetSize": [
+        896,
+        296
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "appearance",
+      "referenceSize": [
+        264,
+        127
+      ],
+      "targetSize": [
+        264,
+        128
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "profile",
+      "referenceSize": [
+        860,
+        840
+      ],
+      "targetSize": [
+        860,
+        840
+      ],
+      "differentPixels": 25,
+      "maxChannelDelta": 11,
+      "bounds": [
+        852,
+        832,
+        860,
+        840
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "palette",
+      "referenceSize": [
+        343,
+        295
+      ],
+      "targetSize": [
+        343,
+        296
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "appearance",
+      "referenceSize": [
+        264,
+        127
+      ],
+      "targetSize": [
+        264,
+        128
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "profile",
+      "referenceSize": [
+        375,
+        780
+      ],
+      "targetSize": [
+        375,
+        780
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    }
+  ],
+  "knownDifference": {
+    "area": "Focus after changing appearance and closing with Escape",
+    "reference": "body",
+    "erpboost": "Appearance menu trigger",
+    "reason": "Keep working trigger focus return instead of reproducing the reference loss of focus",
+    "casesPerEnvironment": 2
+  },
+  "newCasesPerEnvironment": 16,
+  "unannotatedCasesPerEnvironment": 6,
+  "referenceLimitationCasesPerEnvironment": 8,
+  "knownDifferenceCasesPerEnvironment": 2,
+  "catalogueBrowserCasesPerEnvironment": 178,
+  "unitCases": 23,
+  "executedNewBrowserCases": 48,
+  "categories": {
+    "reference-limitation": 24,
+    "normal": 18,
+    "known-difference": 6
+  },
+  "executions": [
+    {
+      "name": "reference-local",
+      "report": "verified-reference-local.json",
+      "stats": {
+        "startTime": "2026-10-28T08:26:03.232Z",
+        "duration": 105863.53,
+        "expected": 32,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "published",
+      "report": "verified-published.json",
+      "stats": {
+        "startTime": "2026-10-28T08:44:11.655Z",
+        "duration": 47233.814,
+        "expected": 16,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "caseResults": [
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts"
+      ],
+      "title": "mobile two-column profile retains the reference clipped fields and offscreen Save limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 220px navigation rail clips the right pane at 375px; Save lies beyond the viewport. Geometry and screenshot document the defect, not a usable mobile editor."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts"
+      ],
+      "title": "sidebar footer profile preserves its own draft and focus but does not update the mock identity or page",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The mock sidebar buttons only change selection styling; the page remains Orders. Saved profile edits do not update the static footer identity."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts"
+      ],
+      "title": "mobile two-column profile retains the reference clipped fields and offscreen Save limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 220px navigation rail clips the right pane at 375px; Save lies beyond the viewport. Geometry and screenshot document the defect, not a usable mobile editor."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts"
+      ],
+      "title": "sidebar footer profile preserves its own draft and focus but does not update the mock identity or page",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The mock sidebar buttons only change selection styling; the page remains Orders. Saved profile edits do not update the static footer identity."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "global search keyboard navigation follows the highlighted route, resets after filtering and supports browser Back",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "appearance persists explicit modes across reload and System follows live color-scheme changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After changing appearance, Escape leaves focus on the body in the reference, while ERPboost restores the menu trigger. Keep the working focus return instead of reproducing the defect."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "sidebar routes dismiss the mobile drawer, retain desktop groups, reset mobile groups and support shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "catalogue language translates search and appearance and persists across route changes and reload",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "global search keyboard navigation follows the highlighted route, resets after filtering and supports browser Back",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "appearance persists explicit modes across reload and System follows live color-scheme changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After changing appearance, Escape leaves focus on the body in the reference, while ERPboost restores the menu trigger. Keep the working focus return instead of reproducing the defect."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "sidebar routes dismiss the mobile drawer, retain desktop groups, reset mobile groups and support shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "catalogue language translates search and appearance and persists across route changes and reload",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "global search keyboard navigation follows the highlighted route, resets after filtering and supports browser Back",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "appearance persists explicit modes across reload and System follows live color-scheme changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After changing appearance, Escape leaves focus on the body in the reference, while ERPboost restores the menu trigger. Keep the working focus return instead of reproducing the defect."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "sidebar routes dismiss the mobile drawer, retain desktop groups, reset mobile groups and support shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "catalogue language translates search and appearance and persists across route changes and reload",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "global search keyboard navigation follows the highlighted route, resets after filtering and supports browser Back",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "appearance persists explicit modes across reload and System follows live color-scheme changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After changing appearance, Escape leaves focus on the body in the reference, while ERPboost restores the menu trigger. Keep the working focus return instead of reproducing the defect."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "sidebar routes dismiss the mobile drawer, retain desktop groups, reset mobile groups and support shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "catalogue language translates search and appearance and persists across route changes and reload",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile light"
+      ],
+      "title": "two-column profile distinguishes close and Escape drafts, Cancel resets, and Save stays in memory only",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Account/Preferences/Sessions are placeholders; Save is in-memory only and Cancel resets to the original fixture even after saving."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile light"
+      ],
+      "title": "two-column profile saves select values and bounds Bio while the photo chooser has no upload handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Email has no accessible name, photo selection does not update the avatar or dirty state, and Remove leaves the selected file in the native input. This does not prove a working upload or removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile light"
+      ],
+      "title": "two-column profile distinguishes close and Escape drafts, Cancel resets, and Save stays in memory only",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Account/Preferences/Sessions are placeholders; Save is in-memory only and Cancel resets to the original fixture even after saving."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile light"
+      ],
+      "title": "two-column profile saves select values and bounds Bio while the photo chooser has no upload handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Email has no accessible name, photo selection does not update the avatar or dirty state, and Remove leaves the selected file in the native input. This does not prove a working upload or removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile dark"
+      ],
+      "title": "two-column profile distinguishes close and Escape drafts, Cancel resets, and Save stays in memory only",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Account/Preferences/Sessions are placeholders; Save is in-memory only and Cancel resets to the original fixture even after saving."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile dark"
+      ],
+      "title": "two-column profile saves select values and bounds Bio while the photo chooser has no upload handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Email has no accessible name, photo selection does not update the avatar or dirty state, and Remove leaves the selected file in the native input. This does not prove a working upload or removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile dark"
+      ],
+      "title": "two-column profile distinguishes close and Escape drafts, Cancel resets, and Save stays in memory only",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Account/Preferences/Sessions are placeholders; Save is in-memory only and Cancel resets to the original fixture even after saving."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile dark"
+      ],
+      "title": "two-column profile saves select values and bounds Bio while the photo chooser has no upload handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Email has no accessible name, photo selection does not update the avatar or dirty state, and Remove leaves the selected file in the native input. This does not prove a working upload or removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts"
+      ],
+      "title": "mobile two-column profile retains the reference clipped fields and offscreen Save limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The fixed 220px navigation rail clips the right pane at 375px; Save lies beyond the viewport. Geometry and screenshot document the defect, not a usable mobile editor."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts"
+      ],
+      "title": "sidebar footer profile preserves its own draft and focus but does not update the mock identity or page",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The mock sidebar buttons only change selection styling; the page remains Orders. Saved profile edits do not update the static footer identity."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "global search keyboard navigation follows the highlighted route, resets after filtering and supports browser Back",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "appearance persists explicit modes across reload and System follows live color-scheme changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After changing appearance, Escape leaves focus on the body in the reference, while ERPboost restores the menu trigger. Keep the working focus return instead of reproducing the defect."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "sidebar routes dismiss the mobile drawer, retain desktop groups, reset mobile groups and support shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "catalogue language translates search and appearance and persists across route changes and reload",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "global search keyboard navigation follows the highlighted route, resets after filtering and supports browser Back",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "appearance persists explicit modes across reload and System follows live color-scheme changes",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "known-difference",
+          "description": "After changing appearance, Escape leaves focus on the body in the reference, while ERPboost restores the menu trigger. Keep the working focus return instead of reproducing the defect."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "sidebar routes dismiss the mobile drawer, retain desktop groups, reset mobile groups and support shortcuts",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "catalogue language translates search and appearance and persists across route changes and reload",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile light"
+      ],
+      "title": "two-column profile distinguishes close and Escape drafts, Cancel resets, and Save stays in memory only",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Account/Preferences/Sessions are placeholders; Save is in-memory only and Cancel resets to the original fixture even after saving."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile light"
+      ],
+      "title": "two-column profile saves select values and bounds Bio while the photo chooser has no upload handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Email has no accessible name, photo selection does not update the avatar or dirty state, and Remove leaves the selected file in the native input. This does not prove a working upload or removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile dark"
+      ],
+      "title": "two-column profile distinguishes close and Escape drafts, Cancel resets, and Save stays in memory only",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Account/Preferences/Sessions are placeholders; Save is in-memory only and Cancel resets to the original fixture even after saving."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "shell-profile-state.spec.ts",
+        "desktop profile dark"
+      ],
+      "title": "two-column profile saves select values and bounds Bio while the photo chooser has no upload handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Email has no accessible name, photo selection does not update the avatar or dirty state, and Remove leaves the selected file in the native input. This does not prove a working upload or removal."
+        }
+      ],
+      "attempts": 1
+    }
+  ],
+  "ci": {
+    "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40657247586",
+    "applicationCommit": "855e37dd43eb4ed5c4cea8012996bb255726988f",
+    "conclusion": "success",
+    "browserCases": 178,
+    "unitCases": 23,
+    "checks": [
+      "typecheck",
+      "unit tests",
+      "Chromium browser tests",
+      "production build",
+      "packed package in external React app",
+      "71 exported routes",
+      "GitHub Pages deployment"
+    ]
+  },
+  "visualSummary": {
+    "comparisons": 12,
+    "zeroPixelDifferences": 10,
+    "residuals": [
+      {
+        "target": "local",
+        "mode": "desktop",
+        "state": "profile",
+        "differentPixels": 25,
+        "maxChannelDelta": 11,
+        "bounds": [
+          852,
+          832,
+          860,
+          840
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "profile",
+        "differentPixels": 25,
+        "maxChannelDelta": 11,
+        "bounds": [
+          852,
+          832,
+          860,
+          840
+        ]
+      }
+    ]
+  },
+  "visualComparisons": [
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "palette",
+      "referenceSize": [
+        672,
+        295
+      ],
+      "targetSize": [
+        672,
+        295
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "appearance",
+      "referenceSize": [
+        264,
+        127
+      ],
+      "targetSize": [
+        264,
+        127
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "profile",
+      "referenceSize": [
+        860,
+        840
+      ],
+      "targetSize": [
+        860,
+        840
+      ],
+      "differentPixels": 25,
+      "maxChannelDelta": 11,
+      "bounds": [
+        852,
+        832,
+        860,
+        840
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "palette",
+      "referenceSize": [
+        343,
+        295
+      ],
+      "targetSize": [
+        343,
+        295
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "appearance",
+      "referenceSize": [
+        264,
+        127
+      ],
+      "targetSize": [
+        264,
+        127
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "profile",
+      "referenceSize": [
+        375,
+        780
+      ],
+      "targetSize": [
+        375,
+        780
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "palette",
+      "referenceSize": [
+        672,
+        295
+      ],
+      "targetSize": [
+        672,
+        295
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "appearance",
+      "referenceSize": [
+        264,
+        127
+      ],
+      "targetSize": [
+        264,
+        127
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "profile",
+      "referenceSize": [
+        860,
+        840
+      ],
+      "targetSize": [
+        860,
+        840
+      ],
+      "differentPixels": 25,
+      "maxChannelDelta": 11,
+      "bounds": [
+        852,
+        832,
+        860,
+        840
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "palette",
+      "referenceSize": [
+        343,
+        295
+      ],
+      "targetSize": [
+        343,
+        295
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "appearance",
+      "referenceSize": [
+        264,
+        127
+      ],
+      "targetSize": [
+        264,
+        127
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "profile",
+      "referenceSize": [
+        375,
+        780
+      ],
+      "targetSize": [
+        375,
+        780
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    }
+  ],
+  "focusSamples": [
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "appearanceFocus": {
+        "tag": "BODY",
+        "slot": null,
+        "name": null,
+        "text": "\n    UI CatalogueToggle SidebarSearchHomeComponentsTogglePagesToggleAssistant pa"
+      },
+      "searchFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      },
+      "shortcutFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      }
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "appearanceFocus": {
+        "tag": "BODY",
+        "slot": null,
+        "name": null,
+        "text": "\n    Toggle SidebarComponentsButtonButtonPreview the main button variants and si"
+      },
+      "searchFocus": {
+        "tag": "BUTTON",
+        "slot": "sidebar-trigger",
+        "name": null,
+        "text": "Toggle Sidebar"
+      },
+      "shortcutFocus": {
+        "tag": "BUTTON",
+        "slot": "sidebar-trigger",
+        "name": null,
+        "text": "Toggle Sidebar"
+      }
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "appearanceFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      },
+      "searchFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      },
+      "shortcutFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      }
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "appearanceFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      },
+      "searchFocus": {
+        "tag": "BUTTON",
+        "slot": "sidebar-trigger",
+        "name": null,
+        "text": "Toggle Sidebar"
+      },
+      "shortcutFocus": {
+        "tag": "BUTTON",
+        "slot": "sidebar-trigger",
+        "name": null,
+        "text": "Toggle Sidebar"
+      }
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "appearanceFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      },
+      "searchFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      },
+      "shortcutFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      }
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "appearanceFocus": {
+        "tag": "BUTTON",
+        "slot": "menu-trigger",
+        "name": "Appearance",
+        "text": ""
+      },
+      "searchFocus": {
+        "tag": "BUTTON",
+        "slot": "sidebar-trigger",
+        "name": null,
+        "text": "Toggle Sidebar"
+      },
+      "shortcutFocus": {
+        "tag": "BUTTON",
+        "slot": "sidebar-trigger",
+        "name": null,
+        "text": "Toggle Sidebar"
+      }
+    }
+  ],
+  "referenceLimitations": [
+    "Padded or repeated-space text is not normalized by global search",
+    "Reopened search can return focus to an earlier element rather than the current opener; input autofocus and Tab containment are separate checks",
+    "Profile Save is in-memory only, Cancel restores the original fixture rather than the last saved values, and non-Profile tabs are placeholders",
+    "Photo selection does not change avatar or dirty state; Remove leaves the file in the native input; selecting a 1x1 PNG is not proof of upload or removal",
+    "The large profile email input has no accessible name",
+    "At 375px the 220px profile rail clips right-side fields and puts Save offscreen; geometry parity is not a usable mobile editor",
+    "Mock sidebar navigation changes highlighting while the content stays Orders; saved profile names do not update the fixed footer identity"
+  ],
+  "scope": {
+    "browser": "Playwright Chromium",
+    "locale": "en-US with explicit JA/EN switching",
+    "conditions": [
+      "1280x900 light shell",
+      "375x812 dark shell",
+      "1280x900 light and dark large profile",
+      "375x812 dark clipped profile",
+      "1280x900 light footer sample"
+    ],
+    "screenshotStates": [
+      "4-result search",
+      "appearance popup",
+      "edited desktop profile",
+      "clipped initial mobile profile"
+    ],
+    "notClaimed": [
+      "all 71 pages revisited in this turn",
+      "all 534 configurable browser cases executed across three targets in this turn",
+      "all browser and input combinations",
+      "complete accessible naming or focus correctness",
+      "server persistence or external account changes",
+      "real photo upload or removal",
+      "zero pixel difference where residuals remain"
+    ]
+  },
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-shell-profile-audit/",
+  "investigationDirectory": "/tmp/erpboost-ui-shell-profile-audit-20261028/"
+}
