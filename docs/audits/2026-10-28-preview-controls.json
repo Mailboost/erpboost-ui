@@ -7826,5 +7826,1161 @@
     ]
   },
   "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-preview-controls-audit/",
-  "investigationDirectory": "/tmp/erpboost-ui-preview-controls-audit-20261028/"
+  "investigationDirectory": "/tmp/erpboost-ui-preview-controls-audit-20261028/",
+  "integrationValidation": {
+    "completedDate": "2026-10-29",
+    "mergedMainCommit": "b0eba31c1c0978420f5e432f6c5b68c149876dc9",
+    "testedCommit": "f4eb86040cdab9c5b4652e5b3e95767dd177473d",
+    "applicationCatalogueAndStylesUnchangedFromBaseAudit": true,
+    "testFixes": [
+      "Global search expects 71 routes on the reference and 72 including ERPboost-only DatabaseWorkspace on ERPboost",
+      "Document editing waits for title autofocus to finish before selecting body text; the failed CI trace showed the title selected instead of the body"
+    ],
+    "catalogueInventory": {
+      "referenceUrls": 71,
+      "erpboostUrls": 72,
+      "commonPagesPatternsRoutes": 29,
+      "commonSourceViewerExamples": 57,
+      "erpboostOnlyRoute": "/patterns/database-workspace",
+      "erpboostOnlyExampleIncludedInBaseParityCounts": false
+    },
+    "unitCases": 35,
+    "unitStats": {
+      "total": 35,
+      "passed": 35,
+      "failed": 0,
+      "pending": 0
+    },
+    "uniqueTargetedCasesPerEnvironment": 13,
+    "uniqueTargetedCases": 39,
+    "executedPhysicalCases": 47,
+    "documentStressExecutions": 10,
+    "newScenariosPerEnvironment": 10,
+    "existingGlobalSearchCasesPerEnvironment": 2,
+    "existingDocumentScenarioPerEnvironment": 1,
+    "caseResults": [
+      {
+        "target": "reference",
+        "title": "refresh in Code returns every open source viewer to its first file and clears its copied indicator",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "viewport presets leave Code full width while still constraining the Preview",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "preview refresh clears all three drafts, Code only clears its own draft, and viewport and background settings survive refresh",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Refresh discards drafts across every preview on the page without warning. Switching a single preview to Code discards that preview's draft. No backend save is performed."
+          }
+        ],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "open preview creates a fullscreen tab with all form variants and independent draft state",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "Copy as Markdown writes guidance and complete source files, then resets its completion label",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "refresh in Code returns every open source viewer to its first file and clears its copied indicator",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "viewport presets leave Code full width while still constraining the Preview",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "preview refresh clears all three drafts, Code only clears its own draft, and viewport and background settings survive refresh",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Refresh discards drafts across every preview on the page without warning. Switching a single preview to Code discards that preview's draft. No backend save is performed."
+          }
+        ],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "open preview creates a fullscreen tab with all form variants and independent draft state",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "Copy as Markdown writes guidance and complete source files, then resets its completion label",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "refresh in Code returns every open source viewer to its first file and clears its copied indicator",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "viewport presets leave Code full width while still constraining the Preview",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "preview refresh clears all three drafts, Code only clears its own draft, and viewport and background settings survive refresh",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Refresh discards drafts across every preview on the page without warning. Switching a single preview to Code discards that preview's draft. No backend save is performed."
+          }
+        ],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "open preview creates a fullscreen tab with all form variants and independent draft state",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "Copy as Markdown writes guidance and complete source files, then resets its completion label",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "refresh in Code returns every open source viewer to its first file and clears its copied indicator",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "viewport presets leave Code full width while still constraining the Preview",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "preview refresh clears all three drafts, Code only clears its own draft, and viewport and background settings survive refresh",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Refresh discards drafts across every preview on the page without warning. Switching a single preview to Code discards that preview's draft. No backend save is performed."
+          }
+        ],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "open preview creates a fullscreen tab with all form variants and independent draft state",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "Copy as Markdown writes guidance and complete source files, then resets its completion label",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+        "conditions": [
+          "shell-profile-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+          }
+        ],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+        "conditions": [
+          "shell-profile-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+          }
+        ],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+        "conditions": [
+          "shell-profile-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+          }
+        ],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+        "conditions": [
+          "shell-profile-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+          }
+        ],
+        "execution": "reference-local",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "reference",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "local",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "document-focus-stress",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "document links persist, renamed references resolve, embeds insert and discard",
+        "conditions": [
+          "expanded-interactions.spec.ts"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "refresh in Code returns every open source viewer to its first file and clears its copied indicator",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "viewport presets leave Code full width while still constraining the Preview",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "preview refresh clears all three drafts, Code only clears its own draft, and viewport and background settings survive refresh",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Refresh discards drafts across every preview on the page without warning. Switching a single preview to Code discards that preview's draft. No backend save is performed."
+          }
+        ],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "open preview creates a fullscreen tab with all form variants and independent draft state",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "Copy as Markdown writes guidance and complete source files, then resets its completion label",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "refresh in Code returns every open source viewer to its first file and clears its copied indicator",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "viewport presets leave Code full width while still constraining the Preview",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "preview refresh clears all three drafts, Code only clears its own draft, and viewport and background settings survive refresh",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Refresh discards drafts across every preview on the page without warning. Switching a single preview to Code discards that preview's draft. No backend save is performed."
+          }
+        ],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "open preview creates a fullscreen tab with all form variants and independent draft state",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "Copy as Markdown writes guidance and complete source files, then resets its completion label",
+        "conditions": [
+          "preview-controls-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+        "conditions": [
+          "shell-profile-state.spec.ts",
+          "desktop light"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+          }
+        ],
+        "execution": "published",
+        "repeatEachIndex": null
+      },
+      {
+        "target": "published",
+        "title": "global search preserves route order, handles no matches, resets on close and records its focus-return limitation",
+        "conditions": [
+          "shell-profile-state.spec.ts",
+          "mobile dark"
+        ],
+        "status": "passed",
+        "attempts": 1,
+        "annotations": [
+          {
+            "type": "reference-limitation",
+            "description": "Padded or repeated-space text is not normalized, and reopening can restore an older element instead of the current opener. These are reference limitations, not successful forgiving search or focus return."
+          }
+        ],
+        "execution": "published",
+        "repeatEachIndex": null
+      }
+    ],
+    "executions": [
+      {
+        "name": "reference-local",
+        "stats": {
+          "startTime": "2026-10-28T15:14:32.485Z",
+          "duration": 58865.179,
+          "expected": 24,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      },
+      {
+        "name": "document-focus-stress",
+        "stats": {
+          "startTime": "2026-10-28T15:40:18.988Z",
+          "duration": 31872.642,
+          "expected": 10,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      },
+      {
+        "name": "published",
+        "stats": {
+          "startTime": "2026-10-28T15:56:19.888Z",
+          "duration": 28282.18,
+          "expected": 13,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      }
+    ],
+    "ci": {
+      "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40718828689",
+      "headSha": "f4eb86040cdab9c5b4652e5b3e95767dd177473d",
+      "conclusion": "success",
+      "browserStats": {
+        "startTime": "2026-10-28T15:44:18.674Z",
+        "duration": 644936.04,
+        "expected": 232,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "unitCases": 35,
+      "exportedRoutes": 72
+    },
+    "deployedAssets": {
+      "checkedAt": "2026-10-28T15:56:59.430Z",
+      "route": "https://mailboost.github.io/erpboost-ui/patterns/right-sheet-custom/",
+      "assets": [
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/index-jthWEAm9.js",
+          "publicSha256": "e943c19041dcd9fa0528eb9092490479350fbdf5980101b06dbc2e2e5438a3fd",
+          "artifactSha256": "e943c19041dcd9fa0528eb9092490479350fbdf5980101b06dbc2e2e5438a3fd",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/jsx-runtime-C40oxPSl.js",
+          "publicSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+          "artifactSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/react-Cdxb2Qku.js",
+          "publicSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+          "artifactSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/react-dom-Bs_xv98U.js",
+          "publicSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+          "artifactSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/clsx-DB0hHKMi.js",
+          "publicSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+          "artifactSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/createLucideIcon-Dy7UvDMc.js",
+          "publicSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+          "artifactSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/index-DuuMfvJc.css",
+          "publicSha256": "0f599b3e45588bc115a7ab9f297afb29f6f5db7d22eb69f0c3812444069fa753",
+          "artifactSha256": "0f599b3e45588bc115a7ab9f297afb29f6f5db7d22eb69f0c3812444069fa753",
+          "equal": true
+        }
+      ],
+      "matchesDeployedArtifact": true
+    },
+    "publicVisualSummary": {
+      "comparisons": 14,
+      "pixelExact": 9,
+      "maxDifferentPixels": 80,
+      "maxChannelDelta": 5,
+      "rawAriaEqual": 4,
+      "ariaEqualExceptKnownPressed": 14
+    },
+    "publicVisualComparisons": [
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "code-tablet",
+        "referenceSize": [
+          49,
+          950,
+          3
+        ],
+        "targetSize": [
+          49,
+          950,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": true,
+        "geometryEqual": true,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "code-mobile",
+        "referenceSize": [
+          49,
+          950,
+          3
+        ],
+        "targetSize": [
+          49,
+          950,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": true,
+        "geometryEqual": true,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "code-desktop",
+        "referenceSize": [
+          49,
+          950,
+          3
+        ],
+        "targetSize": [
+          49,
+          950,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": true,
+        "geometryEqual": true,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "copied-all",
+        "referenceSize": [
+          49,
+          950,
+          3
+        ],
+        "targetSize": [
+          49,
+          950,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": false,
+        "geometryEqual": null,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "refreshed-code",
+        "referenceSize": [
+          49,
+          950,
+          3
+        ],
+        "targetSize": [
+          49,
+          950,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": false,
+        "geometryEqual": null,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "preview-mobile-background",
+        "referenceSize": [
+          722,
+          952,
+          3
+        ],
+        "targetSize": [
+          722,
+          952,
+          3
+        ],
+        "rawAriaEqual": true,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": false,
+        "geometryEqual": null,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "markdown-copied",
+        "referenceSize": [
+          32,
+          74,
+          3
+        ],
+        "targetSize": [
+          32,
+          74,
+          3
+        ],
+        "rawAriaEqual": true,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": false,
+        "geometryEqual": null,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "code-tablet",
+        "referenceSize": [
+          85,
+          333,
+          3
+        ],
+        "targetSize": [
+          85,
+          333,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": true,
+        "geometryEqual": true,
+        "pixels": 80,
+        "maxChannel": 5,
+        "bounds": [
+          0,
+          3,
+          332,
+          48
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "code-mobile",
+        "referenceSize": [
+          85,
+          333,
+          3
+        ],
+        "targetSize": [
+          85,
+          333,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": true,
+        "geometryEqual": true,
+        "pixels": 80,
+        "maxChannel": 5,
+        "bounds": [
+          0,
+          3,
+          332,
+          48
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "code-desktop",
+        "referenceSize": [
+          85,
+          333,
+          3
+        ],
+        "targetSize": [
+          85,
+          333,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": true,
+        "geometryEqual": true,
+        "pixels": 80,
+        "maxChannel": 5,
+        "bounds": [
+          0,
+          3,
+          332,
+          48
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "copied-all",
+        "referenceSize": [
+          85,
+          333,
+          3
+        ],
+        "targetSize": [
+          85,
+          333,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": false,
+        "geometryEqual": null,
+        "pixels": 64,
+        "maxChannel": 5,
+        "bounds": [
+          0,
+          3,
+          332,
+          48
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "refreshed-code",
+        "referenceSize": [
+          85,
+          333,
+          3
+        ],
+        "targetSize": [
+          85,
+          333,
+          3
+        ],
+        "rawAriaEqual": false,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": false,
+        "geometryEqual": null,
+        "pixels": 77,
+        "maxChannel": 5,
+        "bounds": [
+          0,
+          3,
+          332,
+          48
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "preview-mobile-background",
+        "referenceSize": [
+          722,
+          335,
+          3
+        ],
+        "targetSize": [
+          722,
+          335,
+          3
+        ],
+        "rawAriaEqual": true,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": false,
+        "geometryEqual": null,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "markdown-copied",
+        "referenceSize": [
+          32,
+          74,
+          3
+        ],
+        "targetSize": [
+          32,
+          74,
+          3
+        ],
+        "rawAriaEqual": true,
+        "ariaEqualExceptKnownPressed": true,
+        "geometryMeasured": false,
+        "geometryEqual": null,
+        "pixels": 0,
+        "maxChannel": 0,
+        "bounds": null
+      }
+    ],
+    "baseAuditCountsRemainHistorical": true,
+    "baseAuditCommit": "64ce1d877fb248366db264755abffaa73cbd1b5f",
+    "failedCi": {
+      "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40714761258",
+      "commit": "67029564ca3fd13f8c20983bbe51fae3057101df",
+      "browserStats": {
+        "startTime": "2026-10-28T15:20:51.833Z",
+        "duration": 851264.8640000001,
+        "expected": 231,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "failure": "Document editing raced requestAnimationFrame title autofocus; the test was corrected before the final clean run"
+    },
+    "notClaimed": "Do not add base and integration cases or images as unique scenarios; base full-inventory checks were performed before the independent workspace merge. The integrated public check covers the targeted controls, search and captured states."
+  },
+  "latestValidatedCommit": "f4eb86040cdab9c5b4652e5b3e95767dd177473d",
+  "latestUnitCases": 35,
+  "latestCI": "https://github.com/Mailboost/erpboost-ui/actions/runs/40718828689",
+  "latestPublicAssetsCheckedAt": "2026-10-28T15:56:59.430Z"
 }
