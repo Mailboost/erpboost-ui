@@ -1,0 +1,5027 @@
+{
+  "date": "2026-10-29",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "latestValidatedCommit": "b814b323773beff576abb7c0283e971aba76a55e",
+  "fixes": [
+    "Localize page Markdown titles, descriptions and Do/Don't guidance",
+    "Include Japanese document notes in Japanese Markdown exports"
+  ],
+  "scope": {
+    "commonRoutes": 29,
+    "languages": ["en", "ja"],
+    "pageCopiesPerTarget": 58,
+    "excludedIndependentRoute": "/patterns/database-workspace"
+  },
+  "beforeHeadersMatchingReference": {
+    "en": 29,
+    "ja": 0
+  },
+  "afterCopyComparisons": [
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/assistant-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "8fbd6e30134562da2368c19d2d883cfa5130eddb28f70c1aada1c72c43cb8320",
+      "headerSha256": "6936899af0160922193ae5d37067c104ea3464b5415eba5963d3349638b335e4",
+      "referenceHeaderSha256": "6936899af0160922193ae5d37067c104ea3464b5415eba5963d3349638b335e4",
+      "sourceFiles": [
+        {
+          "filename": "AssistantPanelScreen.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "AssistantPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockAssistant.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/chat",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d033a97beb1254c30ea344affbbadeb7730fccdb117dd89d379941041d3296e1",
+      "headerSha256": "9d9a3ae94ffb93bd41bdabd99cb098a2ed74f345c1866a9d45d3f9222a7dd3d3",
+      "referenceHeaderSha256": "9d9a3ae94ffb93bd41bdabd99cb098a2ed74f345c1866a9d45d3f9222a7dd3d3",
+      "sourceFiles": [
+        {
+          "filename": "ChatScreen.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/collection",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "8a18f44a94d223d8f7f0a50fe49983ef0a1dfd4c9fe64f04aceded59a0826f2f",
+      "headerSha256": "ba0b442eda7000a2540ab7bc6a6179b5a155f40214d51a5c20e632a6d631c84d",
+      "referenceHeaderSha256": "ba0b442eda7000a2540ab7bc6a6179b5a155f40214d51a5c20e632a6d631c84d",
+      "sourceFiles": [
+        {
+          "filename": "PageCapsuleTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PageInlineEditTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PageGridListTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "BulkActionsBar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageCapsuleTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageInlineEditTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageGridListTabsPage.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/dashboard-with-charts",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "93fa34ad31c8abffd56b560e57c7d5310322fbe909e1d1810619288368a5d790",
+      "headerSha256": "609058098fd8576daa913806ef7b011444d2137716e170cc188b5646ecb7f028",
+      "referenceHeaderSha256": "609058098fd8576daa913806ef7b011444d2137716e170cc188b5646ecb7f028",
+      "sourceFiles": [
+        {
+          "filename": "SpendDashboardPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/detail-2col-action-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9fb69baeaf9a748c261cad2b316fb2ec63056b57388619edb0438f30f1a2e7e8",
+      "headerSha256": "23bbb87f1d82e3cd7daac82e8447cbe1f997aa82848a8a4dabd8660322088b97",
+      "referenceHeaderSha256": "23bbb87f1d82e3cd7daac82e8447cbe1f997aa82848a8a4dabd8660322088b97",
+      "sourceFiles": [
+        {
+          "filename": "SupplierDetailPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DetailPageWithPageTabs.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.SupplierDetailPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.DetailPageWithPageTabs.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/document-page",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "5613b1228cc965344bc7f711d91ef65eb5e94d00a09593bc167fa64e4a9bc3cb",
+      "headerSha256": "17296ca99b58d26a56fd4c63f5d76623ab560bd91445273ba421ee8c46d5f0b4",
+      "referenceHeaderSha256": "17296ca99b58d26a56fd4c63f5d76623ab560bd91445273ba421ee8c46d5f0b4",
+      "sourceFiles": [
+        {
+          "filename": "DocumentEditorPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorBubbleToolbar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorInsertMenu.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorLinkPopover.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbed.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbedPicker.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPreviewHeadingAnchors.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPageRegistryContext.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "documentPageRegistry.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorLink.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorHeading.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorUrl.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorBlocks.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorSampleDocs.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorStyles.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/email",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "de0c6420122632aa26929d442959c6d96622d7cade3eb95334ec3da20493aed4",
+      "headerSha256": "83fc96f43cded3426b13afc2fc829671a8cd64972b2f00b7f3bbbd8b3bcc57e9",
+      "referenceHeaderSha256": "83fc96f43cded3426b13afc2fc829671a8cd64972b2f00b7f3bbbd8b3bcc57e9",
+      "sourceFiles": [
+        {
+          "filename": "EmailLayoutPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/form-as-page",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "3eb71e6675517a78113ea43b5132d46135e0c0ee340db059c3a00b48d21f6e0c",
+      "headerSha256": "669500439a75661ac7a3889d053457a84dab3f9cd563fd623ffe16ff9ca2d4a5",
+      "referenceHeaderSha256": "669500439a75661ac7a3889d053457a84dab3f9cd563fd623ffe16ff9ca2d4a5",
+      "sourceFiles": [
+        {
+          "filename": "CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/pipeline-kanban",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "6989f55f1f7ba3802b58cd213888f883639415b67140f706caa07489ed115992",
+      "headerSha256": "7ba5426559f1c7548a62a528c00543721b0428369d56f028ed9accec4bfbcc25",
+      "referenceHeaderSha256": "7ba5426559f1c7548a62a528c00543721b0428369d56f028ed9accec4bfbcc25",
+      "sourceFiles": [
+        {
+          "filename": "PipelineKanbanPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "KanbanBoard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "RightSheet.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/page/simple-master-crud",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7dcc8c10b5b2c6eddc194ac776ecc796f5558154cc6c253dedc554452c60efdf",
+      "headerSha256": "0691a4c7cd9f57ae139631059c92c5bdda61e73246f9dc302453b41ed5b6dcce",
+      "referenceHeaderSha256": "0691a4c7cd9f57ae139631059c92c5bdda61e73246f9dc302453b41ed5b6dcce",
+      "sourceFiles": [
+        {
+          "filename": "CategoriesMasterDialogPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CategoriesMasterSheetPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CategoriesMasterDialogPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CategoriesMasterSheetPage.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/ai-chat",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9ddc1dc13c4fd521fbaea90fe1d5518be59bb2fa93670bd0aba15f0974cad65b",
+      "headerSha256": "937b269950b1d5726ba7ff0c042a584515bbf8bef1bcfc8d73c5aa83623e83a7",
+      "referenceHeaderSha256": "937b269950b1d5726ba7ff0c042a584515bbf8bef1bcfc8d73c5aa83623e83a7",
+      "sourceFiles": [
+        {
+          "filename": "AssistantPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockAssistant.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "Conversation.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Message.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Response.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Reasoning.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ChainOfThought.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Tool.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Sources.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Suggestion.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Actions.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PromptInput.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ChatHistory.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Loader.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/approval-flow",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7ed9026df72dbca6af98b0280f013d19526dbbb7b045c0b04043f931dc5afdc5",
+      "headerSha256": "aaedf2b0d0935681fa3c111d2d93f706175145f8e8106db8968c753f9a2f9da4",
+      "referenceHeaderSha256": "aaedf2b0d0935681fa3c111d2d93f706175145f8e8106db8968c753f9a2f9da4",
+      "sourceFiles": [
+        {
+          "filename": "ApprovalFlow.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/approval-route-builder",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "b496ef0dcacf4328ddf6c3887e0b0415fc580ba7b9e9071bd0316bf5bd1d0151",
+      "headerSha256": "528f0664d74d4b91eb5fac8e50897368c430948d3f689ac2a262367c8e7ad932",
+      "referenceHeaderSha256": "528f0664d74d4b91eb5fac8e50897368c430948d3f689ac2a262367c8e7ad932",
+      "sourceFiles": [
+        {
+          "filename": "ApprovalRouteBuilder.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/bulk-actions-bar",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7c9b78be97353674b7bb94b305d6f1871d52c3c04eb556d74fc0db5e046667ff",
+      "headerSha256": "073374429e36fc136595080cfa6f36ba6f200b5419241ef6f962cef1e589985c",
+      "referenceHeaderSha256": "073374429e36fc136595080cfa6f36ba6f200b5419241ef6f962cef1e589985c",
+      "sourceFiles": [
+        {
+          "filename": "BulkActionsBar.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/conversation-thread",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "27df3d1abdb1ba840e8e086241687be191a9b0d0c4d3020f7a0926c8bbb7e456",
+      "headerSha256": "21cdeafe8689823fb9979558ff037801ae9faf51dcdefcee8484bc8b2c13d4f5",
+      "referenceHeaderSha256": "21cdeafe8689823fb9979558ff037801ae9faf51dcdefcee8484bc8b2c13d4f5",
+      "sourceFiles": [
+        {
+          "filename": "ConversationThreadPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "InquiryThreadPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "MarkdownThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "AttachmentsThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ActionsThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "FilePreview.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/data-charts",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d057b80c144229e7d06a91d079fa411ee66079fdbd741e71eaafac4c7ae75a83",
+      "headerSha256": "9511702b0cb380c55eeafa13cecd36ed9833ac6c9e2ea99c51e0057a272a95bb",
+      "referenceHeaderSha256": "9511702b0cb380c55eeafa13cecd36ed9833ac6c9e2ea99c51e0057a272a95bb",
+      "sourceFiles": [
+        {
+          "filename": "LineChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "VerticalBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "HorizontalBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PieChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DonutChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "StackedBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "chartTokens.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "GanttChart.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "GanttChart.css",
+          "language": "css"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/datatable-inline-edit",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d2f875df396934d065ed0e5522f928c2e5dd4e7f7033493120f437a8df7cf67e",
+      "headerSha256": "276773a5020ffc088f2da70297c08b7c76da86a39a8fbb9f55122e4b339576b6",
+      "referenceHeaderSha256": "276773a5020ffc088f2da70297c08b7c76da86a39a8fbb9f55122e4b339576b6",
+      "sourceFiles": [
+        {
+          "filename": "DatatableInlineEdit.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/field-diff-table",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "25018d1f28c69e856867f2c3b10f4215cad78af2c92ba631cf7e066abe8ccd70",
+      "headerSha256": "76a63e49754d6fbbe7cf4d0a76d3eae964e05126260f73d824b77f1ed691780b",
+      "referenceHeaderSha256": "76a63e49754d6fbbe7cf4d0a76d3eae964e05126260f73d824b77f1ed691780b",
+      "sourceFiles": [
+        {
+          "filename": "FieldDiffTable.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/form-builder",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "ad9427c33307426c52e252f83d988858fac5418b8bf8dba95dfc840be0b1aa78",
+      "headerSha256": "546d770e8da9e23f339e618d76227470be611f691896bde0999f42b6934b1e41",
+      "referenceHeaderSha256": "546d770e8da9e23f339e618d76227470be611f691896bde0999f42b6934b1e41",
+      "sourceFiles": [
+        {
+          "filename": "FormBuilder.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/grid-view",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7e27d0ec97944dbbaf1fb96cb679bdd12b1798bfd473aa32c9d84fbff01cbac1",
+      "headerSha256": "bfc4c509f4a631e5f1dcc6b47f9aa6ca5087be5c01cdacde633f22598ea0fd3c",
+      "referenceHeaderSha256": "bfc4c509f4a631e5f1dcc6b47f9aa6ca5087be5c01cdacde633f22598ea0fd3c",
+      "sourceFiles": [
+        {
+          "filename": "GridView.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/multi-step-form",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "204c0b54c67c0595dce7025270ad470fde6dd4bd3a1b702301de0c67b7a7d5e9",
+      "headerSha256": "4bbdf0180d1484735739011f579564a0ea267cee828fce144df024b19215cc1d",
+      "referenceHeaderSha256": "4bbdf0180d1484735739011f579564a0ea267cee828fce144df024b19215cc1d",
+      "sourceFiles": [
+        {
+          "filename": "MultiStepForm.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/notification-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "10dee1bd4e114439cbecb27b2fcc5ed1a969823a9b16bc5445a078db40a8bdbf",
+      "headerSha256": "b5b571b9decc5949488e387053d3460541a099f393da9b0cf8b1d4c733049ba8",
+      "referenceHeaderSha256": "b5b571b9decc5949488e387053d3460541a099f393da9b0cf8b1d4c733049ba8",
+      "sourceFiles": [
+        {
+          "filename": "NotificationPanelWithSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "NotificationPanel.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/pipeline-stage-manager",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "e979268fefeee85c61440ab459dfc7d806b100e032ed0cfe071777d2cdc07424",
+      "headerSha256": "8379eda4372a62245312e4d2dcc6a8983530b8ea369b911d8438855992d2ed60",
+      "referenceHeaderSha256": "8379eda4372a62245312e4d2dcc6a8983530b8ea369b911d8438855992d2ed60",
+      "sourceFiles": [
+        {
+          "filename": "PipelineStageManager.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/rich-text-editor",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9d83859d95f92b1f5ea8b3ed0c833b798f61ebb97179d34167ccb124fcec4caa",
+      "headerSha256": "b51f4478e2d505dc17d52a75975814d63c25825f9a56f3ebb01b84f115e0d8f2",
+      "referenceHeaderSha256": "b51f4478e2d505dc17d52a75975814d63c25825f9a56f3ebb01b84f115e0d8f2",
+      "sourceFiles": [
+        {
+          "filename": "RichTextEditor.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/right-sheet-custom",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "b9e6d333ab6c7337df0a8cefe922b0d1d7095d963e12519da3e53573eec20c81",
+      "headerSha256": "327bb874f40664005c44c71b0164ad6b216da8fd309a72135c126b648fc0a77e",
+      "referenceHeaderSha256": "327bb874f40664005c44c71b0164ad6b216da8fd309a72135c126b648fc0a77e",
+      "sourceFiles": [
+        {
+          "filename": "RightSheet.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/supplier-cascader",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "c98c79369a4710144127dda5e43de39b52e9a34b2760362acc9f915bcec519b3",
+      "headerSha256": "f4ea6f7572fa6e394dbbc6a06f1e98ca09514d5edd6aae86108814f828d7cd4e",
+      "referenceHeaderSha256": "f4ea6f7572fa6e394dbbc6a06f1e98ca09514d5edd6aae86108814f828d7cd4e",
+      "sourceFiles": [
+        {
+          "filename": "SupplierCascader.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "useSupplierCascader.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "CompanyNameSearch.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockData.ts",
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/thread-composer",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "11c996a42e6bd5a5808f485c80d0f822a50267bb884e44f8bc3344b8fac2e97c",
+      "headerSha256": "c9326546b5cb5cba220f23b96d3ee598f8eceb266eed7b74d24503124606d753",
+      "referenceHeaderSha256": "c9326546b5cb5cba220f23b96d3ee598f8eceb266eed7b74d24503124606d753",
+      "sourceFiles": [
+        {
+          "filename": "ThreadComposer.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/timeline",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7195398e71d8fd37ad87b180a6012447c941a8ad06f2d7faa69301df4ea7024f",
+      "headerSha256": "7a285bd0c72f65a32c76083984fb9ef12404b7ce8209a7a5e14262cd721b67f0",
+      "referenceHeaderSha256": "7a285bd0c72f65a32c76083984fb9ef12404b7ce8209a7a5e14262cd721b67f0",
+      "sourceFiles": [
+        {
+          "filename": "Timeline.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "GanttEditor.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DependencyTimeline.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "en",
+      "route": "/patterns/user-profile-dialog",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "79d55d8c3531cb7f745d58f68cd66ac5f71ffef1243dfa7c26951fbe6eb9897c",
+      "headerSha256": "3f084e69cf358b3a6da41c5ef6b5f01892aa5fe6512b8b40e281db0cb44cd341",
+      "referenceHeaderSha256": "3f084e69cf358b3a6da41c5ef6b5f01892aa5fe6512b8b40e281db0cb44cd341",
+      "sourceFiles": [
+        {
+          "filename": "UserProfileDialogSmall.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "UserProfileDialog.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "UserMenuSidebarShowcase.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/assistant-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "8fbd6e30134562da2368c19d2d883cfa5130eddb28f70c1aada1c72c43cb8320",
+      "headerSha256": "9d11a05c69592808465afb68e4f5446956a32e68d8f7b2a7a6a9c3c54ead3434",
+      "referenceHeaderSha256": "9d11a05c69592808465afb68e4f5446956a32e68d8f7b2a7a6a9c3c54ead3434",
+      "sourceFiles": [
+        {
+          "filename": "AssistantPanelScreen.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "AssistantPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockAssistant.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/chat",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d033a97beb1254c30ea344affbbadeb7730fccdb117dd89d379941041d3296e1",
+      "headerSha256": "96083fb5057c6df9d2090666a6cd212a9d516ef393b59b5b83325f3f41a00165",
+      "referenceHeaderSha256": "96083fb5057c6df9d2090666a6cd212a9d516ef393b59b5b83325f3f41a00165",
+      "sourceFiles": [
+        {
+          "filename": "ChatScreen.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/collection",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "8a18f44a94d223d8f7f0a50fe49983ef0a1dfd4c9fe64f04aceded59a0826f2f",
+      "headerSha256": "c85b507da54b011d1bbc80de263eca1ddd99caf36c7eded05d92ce171c2348ca",
+      "referenceHeaderSha256": "c85b507da54b011d1bbc80de263eca1ddd99caf36c7eded05d92ce171c2348ca",
+      "sourceFiles": [
+        {
+          "filename": "PageCapsuleTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PageInlineEditTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PageGridListTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "BulkActionsBar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageCapsuleTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageInlineEditTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageGridListTabsPage.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/dashboard-with-charts",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "93fa34ad31c8abffd56b560e57c7d5310322fbe909e1d1810619288368a5d790",
+      "headerSha256": "d45773acb6e7dfb857f86695ce2e2753faf3f981669615c4dcfc61def0440d49",
+      "referenceHeaderSha256": "d45773acb6e7dfb857f86695ce2e2753faf3f981669615c4dcfc61def0440d49",
+      "sourceFiles": [
+        {
+          "filename": "SpendDashboardPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/detail-2col-action-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9fb69baeaf9a748c261cad2b316fb2ec63056b57388619edb0438f30f1a2e7e8",
+      "headerSha256": "37d9d0e177c793b2ae1629a54ebf8826c575170c812375be4bb55631ff85f587",
+      "referenceHeaderSha256": "37d9d0e177c793b2ae1629a54ebf8826c575170c812375be4bb55631ff85f587",
+      "sourceFiles": [
+        {
+          "filename": "SupplierDetailPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DetailPageWithPageTabs.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.SupplierDetailPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.DetailPageWithPageTabs.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/document-page",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "5613b1228cc965344bc7f711d91ef65eb5e94d00a09593bc167fa64e4a9bc3cb",
+      "headerSha256": "452e0fe006bd3dab22976a9a615eb61770f81463f97bb90d1f8cc10011fe9e42",
+      "referenceHeaderSha256": "452e0fe006bd3dab22976a9a615eb61770f81463f97bb90d1f8cc10011fe9e42",
+      "sourceFiles": [
+        {
+          "filename": "DocumentEditorPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorBubbleToolbar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorInsertMenu.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorLinkPopover.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbed.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbedPicker.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPreviewHeadingAnchors.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPageRegistryContext.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "documentPageRegistry.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorLink.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorHeading.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorUrl.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorBlocks.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorSampleDocs.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorStyles.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/email",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "de0c6420122632aa26929d442959c6d96622d7cade3eb95334ec3da20493aed4",
+      "headerSha256": "02268f7122424f1d1715cb5eba222a29bb72e0f47e839127f556d14a0eae91d6",
+      "referenceHeaderSha256": "02268f7122424f1d1715cb5eba222a29bb72e0f47e839127f556d14a0eae91d6",
+      "sourceFiles": [
+        {
+          "filename": "EmailLayoutPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/form-as-page",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "3eb71e6675517a78113ea43b5132d46135e0c0ee340db059c3a00b48d21f6e0c",
+      "headerSha256": "d97412e6c8ff8e7d4e8ca1c9880e0b2c6584665a8285abc39e01669e7b6eaf92",
+      "referenceHeaderSha256": "d97412e6c8ff8e7d4e8ca1c9880e0b2c6584665a8285abc39e01669e7b6eaf92",
+      "sourceFiles": [
+        {
+          "filename": "CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/pipeline-kanban",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "6989f55f1f7ba3802b58cd213888f883639415b67140f706caa07489ed115992",
+      "headerSha256": "46dd9ec7bf2bf5862429d49ea23fe174b51d0b7f2e71bb21ce60033a302a5d39",
+      "referenceHeaderSha256": "46dd9ec7bf2bf5862429d49ea23fe174b51d0b7f2e71bb21ce60033a302a5d39",
+      "sourceFiles": [
+        {
+          "filename": "PipelineKanbanPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "KanbanBoard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "RightSheet.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/page/simple-master-crud",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7dcc8c10b5b2c6eddc194ac776ecc796f5558154cc6c253dedc554452c60efdf",
+      "headerSha256": "d2c9440931bb3a76b3f06af8941a1ce34ea0d4206bd54862e5bf5864cca8fa6b",
+      "referenceHeaderSha256": "d2c9440931bb3a76b3f06af8941a1ce34ea0d4206bd54862e5bf5864cca8fa6b",
+      "sourceFiles": [
+        {
+          "filename": "CategoriesMasterDialogPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CategoriesMasterSheetPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CategoriesMasterDialogPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CategoriesMasterSheetPage.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/ai-chat",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9ddc1dc13c4fd521fbaea90fe1d5518be59bb2fa93670bd0aba15f0974cad65b",
+      "headerSha256": "756c3972bddbcc0a127b6ae5a9c55fa77fd5f3e42771eb52cd480069ad6a5eaa",
+      "referenceHeaderSha256": "756c3972bddbcc0a127b6ae5a9c55fa77fd5f3e42771eb52cd480069ad6a5eaa",
+      "sourceFiles": [
+        {
+          "filename": "AssistantPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockAssistant.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "Conversation.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Message.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Response.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Reasoning.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ChainOfThought.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Tool.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Sources.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Suggestion.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Actions.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PromptInput.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ChatHistory.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Loader.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/approval-flow",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7ed9026df72dbca6af98b0280f013d19526dbbb7b045c0b04043f931dc5afdc5",
+      "headerSha256": "2840c9e12c2d97fc920d1c5c63cab3fa3e860a34b05a6df00da061cd9c406bfc",
+      "referenceHeaderSha256": "2840c9e12c2d97fc920d1c5c63cab3fa3e860a34b05a6df00da061cd9c406bfc",
+      "sourceFiles": [
+        {
+          "filename": "ApprovalFlow.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/approval-route-builder",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "b496ef0dcacf4328ddf6c3887e0b0415fc580ba7b9e9071bd0316bf5bd1d0151",
+      "headerSha256": "cdcf23290ca29ded6696c2e98bcbd5a9049e7c4f4d816bdc88bd04cb5fd27553",
+      "referenceHeaderSha256": "cdcf23290ca29ded6696c2e98bcbd5a9049e7c4f4d816bdc88bd04cb5fd27553",
+      "sourceFiles": [
+        {
+          "filename": "ApprovalRouteBuilder.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/bulk-actions-bar",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7c9b78be97353674b7bb94b305d6f1871d52c3c04eb556d74fc0db5e046667ff",
+      "headerSha256": "260254b2f04d8cc1536ee2bb2365e9a5e665ddda1c8399f6cdb5693e4c92afe0",
+      "referenceHeaderSha256": "260254b2f04d8cc1536ee2bb2365e9a5e665ddda1c8399f6cdb5693e4c92afe0",
+      "sourceFiles": [
+        {
+          "filename": "BulkActionsBar.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/conversation-thread",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "27df3d1abdb1ba840e8e086241687be191a9b0d0c4d3020f7a0926c8bbb7e456",
+      "headerSha256": "0ff5486beec97b709feb81c93de4e8d05a3cf8be1008e7c68ed493124a4042c7",
+      "referenceHeaderSha256": "0ff5486beec97b709feb81c93de4e8d05a3cf8be1008e7c68ed493124a4042c7",
+      "sourceFiles": [
+        {
+          "filename": "ConversationThreadPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "InquiryThreadPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "MarkdownThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "AttachmentsThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ActionsThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "FilePreview.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/data-charts",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d057b80c144229e7d06a91d079fa411ee66079fdbd741e71eaafac4c7ae75a83",
+      "headerSha256": "3fc2aa15206de6f7b1a2a8a842eb78c449fdc965bc2aeeb9553c80c8fe32d342",
+      "referenceHeaderSha256": "3fc2aa15206de6f7b1a2a8a842eb78c449fdc965bc2aeeb9553c80c8fe32d342",
+      "sourceFiles": [
+        {
+          "filename": "LineChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "VerticalBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "HorizontalBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PieChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DonutChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "StackedBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "chartTokens.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "GanttChart.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "GanttChart.css",
+          "language": "css"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/datatable-inline-edit",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d2f875df396934d065ed0e5522f928c2e5dd4e7f7033493120f437a8df7cf67e",
+      "headerSha256": "780daafc828d3af7c4b34b4c29d332173e2b18aae6a0a3ff06cdfe2526749adf",
+      "referenceHeaderSha256": "780daafc828d3af7c4b34b4c29d332173e2b18aae6a0a3ff06cdfe2526749adf",
+      "sourceFiles": [
+        {
+          "filename": "DatatableInlineEdit.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/field-diff-table",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "25018d1f28c69e856867f2c3b10f4215cad78af2c92ba631cf7e066abe8ccd70",
+      "headerSha256": "059487e1dc8517012957d2c92b4f39569fe892c042cf657d1f4ad83c5fd8f5a9",
+      "referenceHeaderSha256": "059487e1dc8517012957d2c92b4f39569fe892c042cf657d1f4ad83c5fd8f5a9",
+      "sourceFiles": [
+        {
+          "filename": "FieldDiffTable.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/form-builder",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "ad9427c33307426c52e252f83d988858fac5418b8bf8dba95dfc840be0b1aa78",
+      "headerSha256": "95a2f0397d44c08d24031d3abbfe52938d66e2b69fe490dc4f9cc7d6599bf03a",
+      "referenceHeaderSha256": "95a2f0397d44c08d24031d3abbfe52938d66e2b69fe490dc4f9cc7d6599bf03a",
+      "sourceFiles": [
+        {
+          "filename": "FormBuilder.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/grid-view",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7e27d0ec97944dbbaf1fb96cb679bdd12b1798bfd473aa32c9d84fbff01cbac1",
+      "headerSha256": "cf9ee3b988d9893b329d7523800e0eda3f02181129ee10db71d74ab044f7c701",
+      "referenceHeaderSha256": "cf9ee3b988d9893b329d7523800e0eda3f02181129ee10db71d74ab044f7c701",
+      "sourceFiles": [
+        {
+          "filename": "GridView.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/multi-step-form",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "204c0b54c67c0595dce7025270ad470fde6dd4bd3a1b702301de0c67b7a7d5e9",
+      "headerSha256": "535eca45d51e32e3d604ceb91abc6f7a76249138f4e56adbae059e9b97aab4d4",
+      "referenceHeaderSha256": "535eca45d51e32e3d604ceb91abc6f7a76249138f4e56adbae059e9b97aab4d4",
+      "sourceFiles": [
+        {
+          "filename": "MultiStepForm.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/notification-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "10dee1bd4e114439cbecb27b2fcc5ed1a969823a9b16bc5445a078db40a8bdbf",
+      "headerSha256": "b4860c89443646a0f4b7fb4ab06046e205e920c1c9d96ddc09cdaf96a8eb8d81",
+      "referenceHeaderSha256": "b4860c89443646a0f4b7fb4ab06046e205e920c1c9d96ddc09cdaf96a8eb8d81",
+      "sourceFiles": [
+        {
+          "filename": "NotificationPanelWithSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "NotificationPanel.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/pipeline-stage-manager",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "e979268fefeee85c61440ab459dfc7d806b100e032ed0cfe071777d2cdc07424",
+      "headerSha256": "74740c86847f643a0f89b12d947b65b41e4e76ec84443d5fc037bf24c3a35a73",
+      "referenceHeaderSha256": "74740c86847f643a0f89b12d947b65b41e4e76ec84443d5fc037bf24c3a35a73",
+      "sourceFiles": [
+        {
+          "filename": "PipelineStageManager.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/rich-text-editor",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9d83859d95f92b1f5ea8b3ed0c833b798f61ebb97179d34167ccb124fcec4caa",
+      "headerSha256": "e0ae50ccb0d46cd0596a25d6a5aad5c42250725958373bace8d1666ecb388084",
+      "referenceHeaderSha256": "e0ae50ccb0d46cd0596a25d6a5aad5c42250725958373bace8d1666ecb388084",
+      "sourceFiles": [
+        {
+          "filename": "RichTextEditor.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/right-sheet-custom",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "b9e6d333ab6c7337df0a8cefe922b0d1d7095d963e12519da3e53573eec20c81",
+      "headerSha256": "b162dcd8488fba362cd19aa80cf84de3060c0d5043d2762ab281d04da8bad554",
+      "referenceHeaderSha256": "b162dcd8488fba362cd19aa80cf84de3060c0d5043d2762ab281d04da8bad554",
+      "sourceFiles": [
+        {
+          "filename": "RightSheet.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/supplier-cascader",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "c98c79369a4710144127dda5e43de39b52e9a34b2760362acc9f915bcec519b3",
+      "headerSha256": "b20aad52400543e920ff1eca626a94c37b20db85a4746831b65c27797d7615b9",
+      "referenceHeaderSha256": "b20aad52400543e920ff1eca626a94c37b20db85a4746831b65c27797d7615b9",
+      "sourceFiles": [
+        {
+          "filename": "SupplierCascader.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "useSupplierCascader.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "CompanyNameSearch.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockData.ts",
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/thread-composer",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "11c996a42e6bd5a5808f485c80d0f822a50267bb884e44f8bc3344b8fac2e97c",
+      "headerSha256": "a341b78a59e375412dfadf9a5450a8ea497b679791658ffa89a3859cc099e66f",
+      "referenceHeaderSha256": "a341b78a59e375412dfadf9a5450a8ea497b679791658ffa89a3859cc099e66f",
+      "sourceFiles": [
+        {
+          "filename": "ThreadComposer.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/timeline",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7195398e71d8fd37ad87b180a6012447c941a8ad06f2d7faa69301df4ea7024f",
+      "headerSha256": "12b5b97a3d321f55d5957ede474e676826078fcc497692c13aa5de5166163a69",
+      "referenceHeaderSha256": "12b5b97a3d321f55d5957ede474e676826078fcc497692c13aa5de5166163a69",
+      "sourceFiles": [
+        {
+          "filename": "Timeline.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "GanttEditor.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DependencyTimeline.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "language": "ja",
+      "route": "/patterns/user-profile-dialog",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "79d55d8c3531cb7f745d58f68cd66ac5f71ffef1243dfa7c26951fbe6eb9897c",
+      "headerSha256": "2a7ca3c3ebe76de9c5adf00123eae1ccfd44bc4a4c277dc512f7654e7722e116",
+      "referenceHeaderSha256": "2a7ca3c3ebe76de9c5adf00123eae1ccfd44bc4a4c277dc512f7654e7722e116",
+      "sourceFiles": [
+        {
+          "filename": "UserProfileDialogSmall.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "UserProfileDialog.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "UserMenuSidebarShowcase.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/assistant-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "8fbd6e30134562da2368c19d2d883cfa5130eddb28f70c1aada1c72c43cb8320",
+      "headerSha256": "6936899af0160922193ae5d37067c104ea3464b5415eba5963d3349638b335e4",
+      "referenceHeaderSha256": "6936899af0160922193ae5d37067c104ea3464b5415eba5963d3349638b335e4",
+      "sourceFiles": [
+        {
+          "filename": "AssistantPanelScreen.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "AssistantPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockAssistant.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/chat",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d033a97beb1254c30ea344affbbadeb7730fccdb117dd89d379941041d3296e1",
+      "headerSha256": "9d9a3ae94ffb93bd41bdabd99cb098a2ed74f345c1866a9d45d3f9222a7dd3d3",
+      "referenceHeaderSha256": "9d9a3ae94ffb93bd41bdabd99cb098a2ed74f345c1866a9d45d3f9222a7dd3d3",
+      "sourceFiles": [
+        {
+          "filename": "ChatScreen.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/collection",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "8a18f44a94d223d8f7f0a50fe49983ef0a1dfd4c9fe64f04aceded59a0826f2f",
+      "headerSha256": "ba0b442eda7000a2540ab7bc6a6179b5a155f40214d51a5c20e632a6d631c84d",
+      "referenceHeaderSha256": "ba0b442eda7000a2540ab7bc6a6179b5a155f40214d51a5c20e632a6d631c84d",
+      "sourceFiles": [
+        {
+          "filename": "PageCapsuleTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PageInlineEditTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PageGridListTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "BulkActionsBar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageCapsuleTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageInlineEditTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageGridListTabsPage.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/dashboard-with-charts",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "93fa34ad31c8abffd56b560e57c7d5310322fbe909e1d1810619288368a5d790",
+      "headerSha256": "609058098fd8576daa913806ef7b011444d2137716e170cc188b5646ecb7f028",
+      "referenceHeaderSha256": "609058098fd8576daa913806ef7b011444d2137716e170cc188b5646ecb7f028",
+      "sourceFiles": [
+        {
+          "filename": "SpendDashboardPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/detail-2col-action-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9fb69baeaf9a748c261cad2b316fb2ec63056b57388619edb0438f30f1a2e7e8",
+      "headerSha256": "23bbb87f1d82e3cd7daac82e8447cbe1f997aa82848a8a4dabd8660322088b97",
+      "referenceHeaderSha256": "23bbb87f1d82e3cd7daac82e8447cbe1f997aa82848a8a4dabd8660322088b97",
+      "sourceFiles": [
+        {
+          "filename": "SupplierDetailPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DetailPageWithPageTabs.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.SupplierDetailPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.DetailPageWithPageTabs.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/document-page",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "5613b1228cc965344bc7f711d91ef65eb5e94d00a09593bc167fa64e4a9bc3cb",
+      "headerSha256": "17296ca99b58d26a56fd4c63f5d76623ab560bd91445273ba421ee8c46d5f0b4",
+      "referenceHeaderSha256": "17296ca99b58d26a56fd4c63f5d76623ab560bd91445273ba421ee8c46d5f0b4",
+      "sourceFiles": [
+        {
+          "filename": "DocumentEditorPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorBubbleToolbar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorInsertMenu.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorLinkPopover.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbed.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbedPicker.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPreviewHeadingAnchors.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPageRegistryContext.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "documentPageRegistry.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorLink.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorHeading.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorUrl.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorBlocks.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorSampleDocs.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorStyles.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/email",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "de0c6420122632aa26929d442959c6d96622d7cade3eb95334ec3da20493aed4",
+      "headerSha256": "83fc96f43cded3426b13afc2fc829671a8cd64972b2f00b7f3bbbd8b3bcc57e9",
+      "referenceHeaderSha256": "83fc96f43cded3426b13afc2fc829671a8cd64972b2f00b7f3bbbd8b3bcc57e9",
+      "sourceFiles": [
+        {
+          "filename": "EmailLayoutPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/form-as-page",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "3eb71e6675517a78113ea43b5132d46135e0c0ee340db059c3a00b48d21f6e0c",
+      "headerSha256": "669500439a75661ac7a3889d053457a84dab3f9cd563fd623ffe16ff9ca2d4a5",
+      "referenceHeaderSha256": "669500439a75661ac7a3889d053457a84dab3f9cd563fd623ffe16ff9ca2d4a5",
+      "sourceFiles": [
+        {
+          "filename": "CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/pipeline-kanban",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "6989f55f1f7ba3802b58cd213888f883639415b67140f706caa07489ed115992",
+      "headerSha256": "7ba5426559f1c7548a62a528c00543721b0428369d56f028ed9accec4bfbcc25",
+      "referenceHeaderSha256": "7ba5426559f1c7548a62a528c00543721b0428369d56f028ed9accec4bfbcc25",
+      "sourceFiles": [
+        {
+          "filename": "PipelineKanbanPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "KanbanBoard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "RightSheet.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/page/simple-master-crud",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7dcc8c10b5b2c6eddc194ac776ecc796f5558154cc6c253dedc554452c60efdf",
+      "headerSha256": "0691a4c7cd9f57ae139631059c92c5bdda61e73246f9dc302453b41ed5b6dcce",
+      "referenceHeaderSha256": "0691a4c7cd9f57ae139631059c92c5bdda61e73246f9dc302453b41ed5b6dcce",
+      "sourceFiles": [
+        {
+          "filename": "CategoriesMasterDialogPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CategoriesMasterSheetPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CategoriesMasterDialogPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CategoriesMasterSheetPage.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/ai-chat",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9ddc1dc13c4fd521fbaea90fe1d5518be59bb2fa93670bd0aba15f0974cad65b",
+      "headerSha256": "937b269950b1d5726ba7ff0c042a584515bbf8bef1bcfc8d73c5aa83623e83a7",
+      "referenceHeaderSha256": "937b269950b1d5726ba7ff0c042a584515bbf8bef1bcfc8d73c5aa83623e83a7",
+      "sourceFiles": [
+        {
+          "filename": "AssistantPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockAssistant.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "Conversation.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Message.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Response.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Reasoning.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ChainOfThought.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Tool.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Sources.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Suggestion.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Actions.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PromptInput.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ChatHistory.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Loader.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/approval-flow",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7ed9026df72dbca6af98b0280f013d19526dbbb7b045c0b04043f931dc5afdc5",
+      "headerSha256": "aaedf2b0d0935681fa3c111d2d93f706175145f8e8106db8968c753f9a2f9da4",
+      "referenceHeaderSha256": "aaedf2b0d0935681fa3c111d2d93f706175145f8e8106db8968c753f9a2f9da4",
+      "sourceFiles": [
+        {
+          "filename": "ApprovalFlow.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/approval-route-builder",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "b496ef0dcacf4328ddf6c3887e0b0415fc580ba7b9e9071bd0316bf5bd1d0151",
+      "headerSha256": "528f0664d74d4b91eb5fac8e50897368c430948d3f689ac2a262367c8e7ad932",
+      "referenceHeaderSha256": "528f0664d74d4b91eb5fac8e50897368c430948d3f689ac2a262367c8e7ad932",
+      "sourceFiles": [
+        {
+          "filename": "ApprovalRouteBuilder.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/bulk-actions-bar",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7c9b78be97353674b7bb94b305d6f1871d52c3c04eb556d74fc0db5e046667ff",
+      "headerSha256": "073374429e36fc136595080cfa6f36ba6f200b5419241ef6f962cef1e589985c",
+      "referenceHeaderSha256": "073374429e36fc136595080cfa6f36ba6f200b5419241ef6f962cef1e589985c",
+      "sourceFiles": [
+        {
+          "filename": "BulkActionsBar.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/conversation-thread",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "27df3d1abdb1ba840e8e086241687be191a9b0d0c4d3020f7a0926c8bbb7e456",
+      "headerSha256": "21cdeafe8689823fb9979558ff037801ae9faf51dcdefcee8484bc8b2c13d4f5",
+      "referenceHeaderSha256": "21cdeafe8689823fb9979558ff037801ae9faf51dcdefcee8484bc8b2c13d4f5",
+      "sourceFiles": [
+        {
+          "filename": "ConversationThreadPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "InquiryThreadPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "MarkdownThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "AttachmentsThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ActionsThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "FilePreview.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/data-charts",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d057b80c144229e7d06a91d079fa411ee66079fdbd741e71eaafac4c7ae75a83",
+      "headerSha256": "9511702b0cb380c55eeafa13cecd36ed9833ac6c9e2ea99c51e0057a272a95bb",
+      "referenceHeaderSha256": "9511702b0cb380c55eeafa13cecd36ed9833ac6c9e2ea99c51e0057a272a95bb",
+      "sourceFiles": [
+        {
+          "filename": "LineChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "VerticalBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "HorizontalBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PieChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DonutChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "StackedBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "chartTokens.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "GanttChart.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "GanttChart.css",
+          "language": "css"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/datatable-inline-edit",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d2f875df396934d065ed0e5522f928c2e5dd4e7f7033493120f437a8df7cf67e",
+      "headerSha256": "276773a5020ffc088f2da70297c08b7c76da86a39a8fbb9f55122e4b339576b6",
+      "referenceHeaderSha256": "276773a5020ffc088f2da70297c08b7c76da86a39a8fbb9f55122e4b339576b6",
+      "sourceFiles": [
+        {
+          "filename": "DatatableInlineEdit.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/field-diff-table",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "25018d1f28c69e856867f2c3b10f4215cad78af2c92ba631cf7e066abe8ccd70",
+      "headerSha256": "76a63e49754d6fbbe7cf4d0a76d3eae964e05126260f73d824b77f1ed691780b",
+      "referenceHeaderSha256": "76a63e49754d6fbbe7cf4d0a76d3eae964e05126260f73d824b77f1ed691780b",
+      "sourceFiles": [
+        {
+          "filename": "FieldDiffTable.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/form-builder",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "ad9427c33307426c52e252f83d988858fac5418b8bf8dba95dfc840be0b1aa78",
+      "headerSha256": "546d770e8da9e23f339e618d76227470be611f691896bde0999f42b6934b1e41",
+      "referenceHeaderSha256": "546d770e8da9e23f339e618d76227470be611f691896bde0999f42b6934b1e41",
+      "sourceFiles": [
+        {
+          "filename": "FormBuilder.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/grid-view",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7e27d0ec97944dbbaf1fb96cb679bdd12b1798bfd473aa32c9d84fbff01cbac1",
+      "headerSha256": "bfc4c509f4a631e5f1dcc6b47f9aa6ca5087be5c01cdacde633f22598ea0fd3c",
+      "referenceHeaderSha256": "bfc4c509f4a631e5f1dcc6b47f9aa6ca5087be5c01cdacde633f22598ea0fd3c",
+      "sourceFiles": [
+        {
+          "filename": "GridView.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/multi-step-form",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "204c0b54c67c0595dce7025270ad470fde6dd4bd3a1b702301de0c67b7a7d5e9",
+      "headerSha256": "4bbdf0180d1484735739011f579564a0ea267cee828fce144df024b19215cc1d",
+      "referenceHeaderSha256": "4bbdf0180d1484735739011f579564a0ea267cee828fce144df024b19215cc1d",
+      "sourceFiles": [
+        {
+          "filename": "MultiStepForm.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/notification-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "10dee1bd4e114439cbecb27b2fcc5ed1a969823a9b16bc5445a078db40a8bdbf",
+      "headerSha256": "b5b571b9decc5949488e387053d3460541a099f393da9b0cf8b1d4c733049ba8",
+      "referenceHeaderSha256": "b5b571b9decc5949488e387053d3460541a099f393da9b0cf8b1d4c733049ba8",
+      "sourceFiles": [
+        {
+          "filename": "NotificationPanelWithSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "NotificationPanel.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/pipeline-stage-manager",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "e979268fefeee85c61440ab459dfc7d806b100e032ed0cfe071777d2cdc07424",
+      "headerSha256": "8379eda4372a62245312e4d2dcc6a8983530b8ea369b911d8438855992d2ed60",
+      "referenceHeaderSha256": "8379eda4372a62245312e4d2dcc6a8983530b8ea369b911d8438855992d2ed60",
+      "sourceFiles": [
+        {
+          "filename": "PipelineStageManager.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/rich-text-editor",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9d83859d95f92b1f5ea8b3ed0c833b798f61ebb97179d34167ccb124fcec4caa",
+      "headerSha256": "b51f4478e2d505dc17d52a75975814d63c25825f9a56f3ebb01b84f115e0d8f2",
+      "referenceHeaderSha256": "b51f4478e2d505dc17d52a75975814d63c25825f9a56f3ebb01b84f115e0d8f2",
+      "sourceFiles": [
+        {
+          "filename": "RichTextEditor.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/right-sheet-custom",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "b9e6d333ab6c7337df0a8cefe922b0d1d7095d963e12519da3e53573eec20c81",
+      "headerSha256": "327bb874f40664005c44c71b0164ad6b216da8fd309a72135c126b648fc0a77e",
+      "referenceHeaderSha256": "327bb874f40664005c44c71b0164ad6b216da8fd309a72135c126b648fc0a77e",
+      "sourceFiles": [
+        {
+          "filename": "RightSheet.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/supplier-cascader",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "c98c79369a4710144127dda5e43de39b52e9a34b2760362acc9f915bcec519b3",
+      "headerSha256": "f4ea6f7572fa6e394dbbc6a06f1e98ca09514d5edd6aae86108814f828d7cd4e",
+      "referenceHeaderSha256": "f4ea6f7572fa6e394dbbc6a06f1e98ca09514d5edd6aae86108814f828d7cd4e",
+      "sourceFiles": [
+        {
+          "filename": "SupplierCascader.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "useSupplierCascader.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "CompanyNameSearch.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockData.ts",
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/thread-composer",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "11c996a42e6bd5a5808f485c80d0f822a50267bb884e44f8bc3344b8fac2e97c",
+      "headerSha256": "c9326546b5cb5cba220f23b96d3ee598f8eceb266eed7b74d24503124606d753",
+      "referenceHeaderSha256": "c9326546b5cb5cba220f23b96d3ee598f8eceb266eed7b74d24503124606d753",
+      "sourceFiles": [
+        {
+          "filename": "ThreadComposer.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/timeline",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7195398e71d8fd37ad87b180a6012447c941a8ad06f2d7faa69301df4ea7024f",
+      "headerSha256": "7a285bd0c72f65a32c76083984fb9ef12404b7ce8209a7a5e14262cd721b67f0",
+      "referenceHeaderSha256": "7a285bd0c72f65a32c76083984fb9ef12404b7ce8209a7a5e14262cd721b67f0",
+      "sourceFiles": [
+        {
+          "filename": "Timeline.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "GanttEditor.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DependencyTimeline.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "en",
+      "route": "/patterns/user-profile-dialog",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "79d55d8c3531cb7f745d58f68cd66ac5f71ffef1243dfa7c26951fbe6eb9897c",
+      "headerSha256": "3f084e69cf358b3a6da41c5ef6b5f01892aa5fe6512b8b40e281db0cb44cd341",
+      "referenceHeaderSha256": "3f084e69cf358b3a6da41c5ef6b5f01892aa5fe6512b8b40e281db0cb44cd341",
+      "sourceFiles": [
+        {
+          "filename": "UserProfileDialogSmall.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "UserProfileDialog.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "UserMenuSidebarShowcase.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/assistant-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "8fbd6e30134562da2368c19d2d883cfa5130eddb28f70c1aada1c72c43cb8320",
+      "headerSha256": "9d11a05c69592808465afb68e4f5446956a32e68d8f7b2a7a6a9c3c54ead3434",
+      "referenceHeaderSha256": "9d11a05c69592808465afb68e4f5446956a32e68d8f7b2a7a6a9c3c54ead3434",
+      "sourceFiles": [
+        {
+          "filename": "AssistantPanelScreen.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "AssistantPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockAssistant.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/chat",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d033a97beb1254c30ea344affbbadeb7730fccdb117dd89d379941041d3296e1",
+      "headerSha256": "96083fb5057c6df9d2090666a6cd212a9d516ef393b59b5b83325f3f41a00165",
+      "referenceHeaderSha256": "96083fb5057c6df9d2090666a6cd212a9d516ef393b59b5b83325f3f41a00165",
+      "sourceFiles": [
+        {
+          "filename": "ChatScreen.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/collection",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "8a18f44a94d223d8f7f0a50fe49983ef0a1dfd4c9fe64f04aceded59a0826f2f",
+      "headerSha256": "c85b507da54b011d1bbc80de263eca1ddd99caf36c7eded05d92ce171c2348ca",
+      "referenceHeaderSha256": "c85b507da54b011d1bbc80de263eca1ddd99caf36c7eded05d92ce171c2348ca",
+      "sourceFiles": [
+        {
+          "filename": "PageCapsuleTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PageInlineEditTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PageGridListTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "BulkActionsBar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageCapsuleTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageInlineEditTabsPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.PageGridListTabsPage.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/dashboard-with-charts",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "93fa34ad31c8abffd56b560e57c7d5310322fbe909e1d1810619288368a5d790",
+      "headerSha256": "d45773acb6e7dfb857f86695ce2e2753faf3f981669615c4dcfc61def0440d49",
+      "referenceHeaderSha256": "d45773acb6e7dfb857f86695ce2e2753faf3f981669615c4dcfc61def0440d49",
+      "sourceFiles": [
+        {
+          "filename": "SpendDashboardPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/detail-2col-action-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9fb69baeaf9a748c261cad2b316fb2ec63056b57388619edb0438f30f1a2e7e8",
+      "headerSha256": "37d9d0e177c793b2ae1629a54ebf8826c575170c812375be4bb55631ff85f587",
+      "referenceHeaderSha256": "37d9d0e177c793b2ae1629a54ebf8826c575170c812375be4bb55631ff85f587",
+      "sourceFiles": [
+        {
+          "filename": "SupplierDetailPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DetailPageWithPageTabs.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.SupplierDetailPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.DetailPageWithPageTabs.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/document-page",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "5613b1228cc965344bc7f711d91ef65eb5e94d00a09593bc167fa64e4a9bc3cb",
+      "headerSha256": "452e0fe006bd3dab22976a9a615eb61770f81463f97bb90d1f8cc10011fe9e42",
+      "referenceHeaderSha256": "452e0fe006bd3dab22976a9a615eb61770f81463f97bb90d1f8cc10011fe9e42",
+      "sourceFiles": [
+        {
+          "filename": "DocumentEditorPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorBubbleToolbar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorInsertMenu.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorLinkPopover.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbed.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbedPicker.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPreviewHeadingAnchors.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPageRegistryContext.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "documentPageRegistry.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorLink.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorHeading.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorUrl.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorBlocks.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorSampleDocs.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorStyles.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/email",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "de0c6420122632aa26929d442959c6d96622d7cade3eb95334ec3da20493aed4",
+      "headerSha256": "02268f7122424f1d1715cb5eba222a29bb72e0f47e839127f556d14a0eae91d6",
+      "referenceHeaderSha256": "02268f7122424f1d1715cb5eba222a29bb72e0f47e839127f556d14a0eae91d6",
+      "sourceFiles": [
+        {
+          "filename": "EmailLayoutPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/form-as-page",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "3eb71e6675517a78113ea43b5132d46135e0c0ee340db059c3a00b48d21f6e0c",
+      "headerSha256": "d97412e6c8ff8e7d4e8ca1c9880e0b2c6584665a8285abc39e01669e7b6eaf92",
+      "referenceHeaderSha256": "d97412e6c8ff8e7d4e8ca1c9880e0b2c6584665a8285abc39e01669e7b6eaf92",
+      "sourceFiles": [
+        {
+          "filename": "CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/pipeline-kanban",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "6989f55f1f7ba3802b58cd213888f883639415b67140f706caa07489ed115992",
+      "headerSha256": "46dd9ec7bf2bf5862429d49ea23fe174b51d0b7f2e71bb21ce60033a302a5d39",
+      "referenceHeaderSha256": "46dd9ec7bf2bf5862429d49ea23fe174b51d0b7f2e71bb21ce60033a302a5d39",
+      "sourceFiles": [
+        {
+          "filename": "PipelineKanbanPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "KanbanBoard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "RightSheet.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/page/simple-master-crud",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7dcc8c10b5b2c6eddc194ac776ecc796f5558154cc6c253dedc554452c60efdf",
+      "headerSha256": "d2c9440931bb3a76b3f06af8941a1ce34ea0d4206bd54862e5bf5864cca8fa6b",
+      "referenceHeaderSha256": "d2c9440931bb3a76b3f06af8941a1ce34ea0d4206bd54862e5bf5864cca8fa6b",
+      "sourceFiles": [
+        {
+          "filename": "CategoriesMasterDialogPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CategoriesMasterSheetPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CategoriesMasterDialogPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CategoriesMasterSheetPage.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/ai-chat",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9ddc1dc13c4fd521fbaea90fe1d5518be59bb2fa93670bd0aba15f0974cad65b",
+      "headerSha256": "756c3972bddbcc0a127b6ae5a9c55fa77fd5f3e42771eb52cd480069ad6a5eaa",
+      "referenceHeaderSha256": "756c3972bddbcc0a127b6ae5a9c55fa77fd5f3e42771eb52cd480069ad6a5eaa",
+      "sourceFiles": [
+        {
+          "filename": "AssistantPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockAssistant.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "Conversation.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Message.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Response.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Reasoning.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ChainOfThought.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Tool.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Sources.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Suggestion.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Actions.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PromptInput.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ChatHistory.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "Loader.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/approval-flow",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7ed9026df72dbca6af98b0280f013d19526dbbb7b045c0b04043f931dc5afdc5",
+      "headerSha256": "2840c9e12c2d97fc920d1c5c63cab3fa3e860a34b05a6df00da061cd9c406bfc",
+      "referenceHeaderSha256": "2840c9e12c2d97fc920d1c5c63cab3fa3e860a34b05a6df00da061cd9c406bfc",
+      "sourceFiles": [
+        {
+          "filename": "ApprovalFlow.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/approval-route-builder",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "b496ef0dcacf4328ddf6c3887e0b0415fc580ba7b9e9071bd0316bf5bd1d0151",
+      "headerSha256": "cdcf23290ca29ded6696c2e98bcbd5a9049e7c4f4d816bdc88bd04cb5fd27553",
+      "referenceHeaderSha256": "cdcf23290ca29ded6696c2e98bcbd5a9049e7c4f4d816bdc88bd04cb5fd27553",
+      "sourceFiles": [
+        {
+          "filename": "ApprovalRouteBuilder.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/bulk-actions-bar",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7c9b78be97353674b7bb94b305d6f1871d52c3c04eb556d74fc0db5e046667ff",
+      "headerSha256": "260254b2f04d8cc1536ee2bb2365e9a5e665ddda1c8399f6cdb5693e4c92afe0",
+      "referenceHeaderSha256": "260254b2f04d8cc1536ee2bb2365e9a5e665ddda1c8399f6cdb5693e4c92afe0",
+      "sourceFiles": [
+        {
+          "filename": "BulkActionsBar.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/conversation-thread",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "27df3d1abdb1ba840e8e086241687be191a9b0d0c4d3020f7a0926c8bbb7e456",
+      "headerSha256": "0ff5486beec97b709feb81c93de4e8d05a3cf8be1008e7c68ed493124a4042c7",
+      "referenceHeaderSha256": "0ff5486beec97b709feb81c93de4e8d05a3cf8be1008e7c68ed493124a4042c7",
+      "sourceFiles": [
+        {
+          "filename": "ConversationThreadPanel.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "InquiryThreadPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "MarkdownThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "AttachmentsThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "ActionsThread.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "FilePreview.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/data-charts",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d057b80c144229e7d06a91d079fa411ee66079fdbd741e71eaafac4c7ae75a83",
+      "headerSha256": "3fc2aa15206de6f7b1a2a8a842eb78c449fdc965bc2aeeb9553c80c8fe32d342",
+      "referenceHeaderSha256": "3fc2aa15206de6f7b1a2a8a842eb78c449fdc965bc2aeeb9553c80c8fe32d342",
+      "sourceFiles": [
+        {
+          "filename": "LineChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "VerticalBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "HorizontalBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "PieChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DonutChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "StackedBarChartCard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "chartTokens.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "GanttChart.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "GanttChart.css",
+          "language": "css"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/datatable-inline-edit",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "d2f875df396934d065ed0e5522f928c2e5dd4e7f7033493120f437a8df7cf67e",
+      "headerSha256": "780daafc828d3af7c4b34b4c29d332173e2b18aae6a0a3ff06cdfe2526749adf",
+      "referenceHeaderSha256": "780daafc828d3af7c4b34b4c29d332173e2b18aae6a0a3ff06cdfe2526749adf",
+      "sourceFiles": [
+        {
+          "filename": "DatatableInlineEdit.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/field-diff-table",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "25018d1f28c69e856867f2c3b10f4215cad78af2c92ba631cf7e066abe8ccd70",
+      "headerSha256": "059487e1dc8517012957d2c92b4f39569fe892c042cf657d1f4ad83c5fd8f5a9",
+      "referenceHeaderSha256": "059487e1dc8517012957d2c92b4f39569fe892c042cf657d1f4ad83c5fd8f5a9",
+      "sourceFiles": [
+        {
+          "filename": "FieldDiffTable.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/form-builder",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "ad9427c33307426c52e252f83d988858fac5418b8bf8dba95dfc840be0b1aa78",
+      "headerSha256": "95a2f0397d44c08d24031d3abbfe52938d66e2b69fe490dc4f9cc7d6599bf03a",
+      "referenceHeaderSha256": "95a2f0397d44c08d24031d3abbfe52938d66e2b69fe490dc4f9cc7d6599bf03a",
+      "sourceFiles": [
+        {
+          "filename": "FormBuilder.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/grid-view",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7e27d0ec97944dbbaf1fb96cb679bdd12b1798bfd473aa32c9d84fbff01cbac1",
+      "headerSha256": "cf9ee3b988d9893b329d7523800e0eda3f02181129ee10db71d74ab044f7c701",
+      "referenceHeaderSha256": "cf9ee3b988d9893b329d7523800e0eda3f02181129ee10db71d74ab044f7c701",
+      "sourceFiles": [
+        {
+          "filename": "GridView.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/multi-step-form",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "204c0b54c67c0595dce7025270ad470fde6dd4bd3a1b702301de0c67b7a7d5e9",
+      "headerSha256": "535eca45d51e32e3d604ceb91abc6f7a76249138f4e56adbae059e9b97aab4d4",
+      "referenceHeaderSha256": "535eca45d51e32e3d604ceb91abc6f7a76249138f4e56adbae059e9b97aab4d4",
+      "sourceFiles": [
+        {
+          "filename": "MultiStepForm.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/notification-panel",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "10dee1bd4e114439cbecb27b2fcc5ed1a969823a9b16bc5445a078db40a8bdbf",
+      "headerSha256": "b4860c89443646a0f4b7fb4ab06046e205e920c1c9d96ddc09cdaf96a8eb8d81",
+      "referenceHeaderSha256": "b4860c89443646a0f4b7fb4ab06046e205e920c1c9d96ddc09cdaf96a8eb8d81",
+      "sourceFiles": [
+        {
+          "filename": "NotificationPanelWithSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "NotificationPanel.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/pipeline-stage-manager",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "e979268fefeee85c61440ab459dfc7d806b100e032ed0cfe071777d2cdc07424",
+      "headerSha256": "74740c86847f643a0f89b12d947b65b41e4e76ec84443d5fc037bf24c3a35a73",
+      "referenceHeaderSha256": "74740c86847f643a0f89b12d947b65b41e4e76ec84443d5fc037bf24c3a35a73",
+      "sourceFiles": [
+        {
+          "filename": "PipelineStageManager.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/rich-text-editor",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "9d83859d95f92b1f5ea8b3ed0c833b798f61ebb97179d34167ccb124fcec4caa",
+      "headerSha256": "e0ae50ccb0d46cd0596a25d6a5aad5c42250725958373bace8d1666ecb388084",
+      "referenceHeaderSha256": "e0ae50ccb0d46cd0596a25d6a5aad5c42250725958373bace8d1666ecb388084",
+      "sourceFiles": [
+        {
+          "filename": "RichTextEditor.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/right-sheet-custom",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "b9e6d333ab6c7337df0a8cefe922b0d1d7095d963e12519da3e53573eec20c81",
+      "headerSha256": "b162dcd8488fba362cd19aa80cf84de3060c0d5043d2762ab281d04da8bad554",
+      "referenceHeaderSha256": "b162dcd8488fba362cd19aa80cf84de3060c0d5043d2762ab281d04da8bad554",
+      "sourceFiles": [
+        {
+          "filename": "RightSheet.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/supplier-cascader",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "c98c79369a4710144127dda5e43de39b52e9a34b2760362acc9f915bcec519b3",
+      "headerSha256": "b20aad52400543e920ff1eca626a94c37b20db85a4746831b65c27797d7615b9",
+      "referenceHeaderSha256": "b20aad52400543e920ff1eca626a94c37b20db85a4746831b65c27797d7615b9",
+      "sourceFiles": [
+        {
+          "filename": "SupplierCascader.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "useSupplierCascader.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "CompanyNameSearch.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "mockData.ts",
+          "language": "ts"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/thread-composer",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "11c996a42e6bd5a5808f485c80d0f822a50267bb884e44f8bc3344b8fac2e97c",
+      "headerSha256": "a341b78a59e375412dfadf9a5450a8ea497b679791658ffa89a3859cc099e66f",
+      "referenceHeaderSha256": "a341b78a59e375412dfadf9a5450a8ea497b679791658ffa89a3859cc099e66f",
+      "sourceFiles": [
+        {
+          "filename": "ThreadComposer.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/timeline",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "7195398e71d8fd37ad87b180a6012447c941a8ad06f2d7faa69301df4ea7024f",
+      "headerSha256": "12b5b97a3d321f55d5957ede474e676826078fcc497692c13aa5de5166163a69",
+      "referenceHeaderSha256": "12b5b97a3d321f55d5957ede474e676826078fcc497692c13aa5de5166163a69",
+      "sourceFiles": [
+        {
+          "filename": "Timeline.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "GanttEditor.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DependencyTimeline.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "language": "ja",
+      "route": "/patterns/user-profile-dialog",
+      "headerEqual": true,
+      "filesEqual": true,
+      "finalNewlineEqual": true,
+      "sourceBytesUnchangedFromLocalBefore": true,
+      "sourceSha256": "79d55d8c3531cb7f745d58f68cd66ac5f71ffef1243dfa7c26951fbe6eb9897c",
+      "headerSha256": "2a7ca3c3ebe76de9c5adf00123eae1ccfd44bc4a4c277dc512f7654e7722e116",
+      "referenceHeaderSha256": "2a7ca3c3ebe76de9c5adf00123eae1ccfd44bc4a4c277dc512f7654e7722e116",
+      "sourceFiles": [
+        {
+          "filename": "UserProfileDialogSmall.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "UserProfileDialog.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "UserMenuSidebarShowcase.tsx",
+          "language": "tsx"
+        }
+      ]
+    }
+  ],
+  "englishFullExportsUnchangedFromBefore": 29,
+  "browserTests": {
+    "before": {
+      "startTime": "2026-10-28T18:47:41.307Z",
+      "duration": 20222.178,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 9,
+      "flaky": 0
+    },
+    "referenceFinal": {
+      "startTime": "2026-10-28T18:51:46.791Z",
+      "duration": 19732.999,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "localFinal": {
+      "startTime": "2026-10-28T18:49:40.007Z",
+      "duration": 20747.025,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "publishedFinal": {
+      "startTime": "2026-10-28T19:17:14.338Z",
+      "duration": 18889.609,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "fullCI": {
+      "startTime": "2026-10-28T18:58:26.766Z",
+      "duration": 935331.645,
+      "expected": 257,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "newCasesPerTarget": 6,
+    "uniqueSelectedAcrossThreeTargets": 18,
+    "totalConfiguredCasesPerTarget": 257,
+    "allThreeTargetsFullSuiteExecuted": false,
+    "beforeClassification": {
+      "localProductMismatches": 4,
+      "localSourceCopyPassed": 2,
+      "referenceNetworkFailures": 5,
+      "referencePassed": 1
+    }
+  },
+  "supplementalTouchSections": [
+    {
+      "target": "reference",
+      "presentation": "catalogue",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "hasTouch": true,
+      "sections": [
+        {
+          "id": "followUp",
+          "offset": 266,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "assignment",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "timeline",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "basic",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        }
+      ],
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "errors": []
+    },
+    {
+      "target": "reference",
+      "presentation": "fullscreen",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "hasTouch": true,
+      "sections": [
+        {
+          "id": "followUp",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "assignment",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "timeline",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "basic",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        }
+      ],
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "errors": []
+    },
+    {
+      "target": "local",
+      "presentation": "catalogue",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "hasTouch": true,
+      "sections": [
+        {
+          "id": "followUp",
+          "offset": 266,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "assignment",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "timeline",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "basic",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        }
+      ],
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "errors": []
+    },
+    {
+      "target": "local",
+      "presentation": "fullscreen",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "hasTouch": true,
+      "sections": [
+        {
+          "id": "followUp",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "assignment",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "timeline",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "basic",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        }
+      ],
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "errors": []
+    },
+    {
+      "target": "published",
+      "presentation": "catalogue",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "hasTouch": true,
+      "sections": [
+        {
+          "id": "followUp",
+          "offset": 266,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "assignment",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "timeline",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "basic",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        }
+      ],
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "errors": []
+    },
+    {
+      "target": "published",
+      "presentation": "fullscreen",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "hasTouch": true,
+      "sections": [
+        {
+          "id": "followUp",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "assignment",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "timeline",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        },
+        {
+          "id": "basic",
+          "offset": 96,
+          "active": true,
+          "outerScrollsUnchanged": true
+        }
+      ],
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "errors": []
+    }
+  ],
+  "initialLanguageChecks": [
+    {
+      "target": "reference",
+      "locale": "en-US",
+      "state": "initial",
+      "lang": "en",
+      "title": "Form-as-page",
+      "storage": {
+        "ui-catalogue-locale": "en"
+      }
+    },
+    {
+      "target": "reference",
+      "locale": "en-US",
+      "state": "ja",
+      "lang": "ja",
+      "title": "ページ単体フォーム",
+      "storage": {
+        "ui-catalogue-locale": "ja"
+      }
+    },
+    {
+      "target": "reference",
+      "locale": "en-US",
+      "state": "reloaded",
+      "lang": "ja",
+      "title": "ページ単体フォーム",
+      "storage": {
+        "ui-catalogue-locale": "ja"
+      }
+    },
+    {
+      "target": "reference",
+      "locale": "ja-JP",
+      "state": "initial",
+      "lang": "en",
+      "title": "Form-as-page",
+      "storage": {
+        "ui-catalogue-locale": "en"
+      }
+    },
+    {
+      "target": "reference",
+      "locale": "ja-JP",
+      "state": "ja",
+      "lang": "ja",
+      "title": "ページ単体フォーム",
+      "storage": {
+        "ui-catalogue-locale": "ja"
+      }
+    },
+    {
+      "target": "reference",
+      "locale": "ja-JP",
+      "state": "reloaded",
+      "lang": "ja",
+      "title": "ページ単体フォーム",
+      "storage": {
+        "ui-catalogue-locale": "ja"
+      }
+    },
+    {
+      "target": "local",
+      "locale": "en-US",
+      "state": "initial",
+      "lang": "en",
+      "title": "Form-as-page",
+      "storage": {}
+    },
+    {
+      "target": "local",
+      "locale": "en-US",
+      "state": "ja",
+      "lang": "ja",
+      "title": "ページ単体フォーム",
+      "storage": {
+        "erpboost-ui-language": "ja"
+      }
+    },
+    {
+      "target": "local",
+      "locale": "en-US",
+      "state": "reloaded",
+      "lang": "ja",
+      "title": "ページ単体フォーム",
+      "storage": {
+        "erpboost-ui-language": "ja"
+      }
+    },
+    {
+      "target": "local",
+      "locale": "ja-JP",
+      "state": "initial",
+      "lang": "en",
+      "title": "Form-as-page",
+      "storage": {}
+    },
+    {
+      "target": "local",
+      "locale": "ja-JP",
+      "state": "ja",
+      "lang": "ja",
+      "title": "ページ単体フォーム",
+      "storage": {
+        "erpboost-ui-language": "ja"
+      }
+    },
+    {
+      "target": "local",
+      "locale": "ja-JP",
+      "state": "reloaded",
+      "lang": "ja",
+      "title": "ページ単体フォーム",
+      "storage": {
+        "erpboost-ui-language": "ja"
+      }
+    }
+  ],
+  "knownBorderDifference": {
+    "differentPixels": 80,
+    "maximumChannelDifference": 5,
+    "bounds": [0, 3, 332, 48]
+  },
+  "ci": {
+    "runId": 40749848779,
+    "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40749848779",
+    "headSha": "b814b323773beff576abb7c0283e971aba76a55e",
+    "conclusion": "success",
+    "browserCases": 257,
+    "componentCases": 39,
+    "routes": 72
+  },
+  "deployment": {
+    "html": {
+      "checkedAt": "2026-10-28T19:17:36.040Z",
+      "count": 72,
+      "allEqual": true,
+      "records": [
+        {
+          "route": "/",
+          "url": "https://mailboost.github.io/erpboost-ui/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/action-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/action-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/activity-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/activity-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/alert/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/alert/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/app-shell/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/app-shell/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/attachment/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/attachment/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/auth-provider/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/auth-provider/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/autocomplete/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/autocomplete/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/avatar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/avatar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/badge/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/badge/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/button/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/button/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/calendar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/calendar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/collection-control-provider/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/collection-control-provider/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/combobox/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/combobox/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/command-palette/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/command-palette/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/csv-importer/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/csv-importer/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/data-table/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/data-table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/date-field/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/date-field/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/date-picker/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/date-picker/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/description-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/description-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/dialog/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/dialog/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/field/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/field/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/fieldset/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/fieldset/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/form/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/form/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/foundation/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/foundation/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/input/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/input/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/layout/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/layout/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/link/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/link/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/menu/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/menu/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/metric-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/metric-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/overview/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/overview/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/select/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/select/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/sheet/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/sheet/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/sidebar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/sidebar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/table/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/tabs/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/tabs/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/tooltip/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/tooltip/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/components/with-guard/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/with-guard/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/assistant-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/assistant-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/chat/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/chat/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/collection/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/collection/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/dashboard-with-charts/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/dashboard-with-charts/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/detail-2col-action-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/detail-2col-action-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/document-page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/document-page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/email/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/email/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/form-as-page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/form-as-page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/pipeline-kanban/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/pipeline-kanban/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/page/simple-master-crud/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/simple-master-crud/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/ai-chat/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/ai-chat/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/approval-flow/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/approval-flow/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/approval-route-builder/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/approval-route-builder/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/bulk-actions-bar/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/bulk-actions-bar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/conversation-thread/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/conversation-thread/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/data-charts/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/data-charts/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/database-workspace/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/database-workspace/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/datatable-inline-edit/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/datatable-inline-edit/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/field-diff-table/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/field-diff-table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/form-builder/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/form-builder/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/grid-view/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/grid-view/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/multi-step-form/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/multi-step-form/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/notification-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/notification-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/pipeline-stage-manager/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/pipeline-stage-manager/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/rich-text-editor/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/rich-text-editor/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/right-sheet-custom/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/right-sheet-custom/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/supplier-cascader/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/supplier-cascader/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/thread-composer/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/thread-composer/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/timeline/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/timeline/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        },
+        {
+          "route": "/patterns/user-profile-dialog/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/user-profile-dialog/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "artifactSha256": "df737b29484bab843d2e0914617420c0741eb32b147cf108758fa625daaf069a",
+          "equal": true
+        }
+      ]
+    },
+    "assets": {
+      "checkedAt": "2026-10-28T19:17:32.309Z",
+      "assets": [
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Actions-l3I8qKKo.js",
+          "publicSha256": "a2a31665d729894aaa5ae2b055b7be05998ed3ee0ef0dc27d877b214049a8033",
+          "artifactSha256": "a2a31665d729894aaa5ae2b055b7be05998ed3ee0ef0dc27d877b214049a8033",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ActionsDemo-vn1XjtKu.js",
+          "publicSha256": "a42cb8bcb9e50099151936fe07fc84baa5dd3628319548cccb9fc336bd006947",
+          "artifactSha256": "a42cb8bcb9e50099151936fe07fc84baa5dd3628319548cccb9fc336bd006947",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ActionsThread-u8KXSbAY.js",
+          "publicSha256": "78efc38e891bed220f76e52e7127125693ffa5b291c42d51d6018af6fbf4d6fd",
+          "artifactSha256": "78efc38e891bed220f76e52e7127125693ffa5b291c42d51d6018af6fbf4d6fd",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ApprovalFlow-rQXrlRNY.js",
+          "publicSha256": "846785885ddc0dc0413460232c5a1870dfbbe9f96d2c05ba78e900c5f522f0c3",
+          "artifactSha256": "846785885ddc0dc0413460232c5a1870dfbbe9f96d2c05ba78e900c5f522f0c3",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ApprovalRouteBuilder-1upiAl5m.js",
+          "publicSha256": "268b337cb7491b4b4beb332ac20ebd857c2e18fe0dc18e9ffa2819394c8ea3d5",
+          "artifactSha256": "268b337cb7491b4b4beb332ac20ebd857c2e18fe0dc18e9ffa2819394c8ea3d5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanel-D5h1R5ts.js",
+          "publicSha256": "7490ef6dd2dbc1116e7d5a591050ec6373b5e698502fe7194cb40b96b6f56d34",
+          "artifactSha256": "7490ef6dd2dbc1116e7d5a591050ec6373b5e698502fe7194cb40b96b6f56d34",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanelDemo-BRgtggiB.js",
+          "publicSha256": "6213d2e7d98a9c25d62974b340b0a236a614cda760e2c32a048dcc1cda8b1580",
+          "artifactSha256": "6213d2e7d98a9c25d62974b340b0a236a614cda760e2c32a048dcc1cda8b1580",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanelScreen-BUp8HAhN.js",
+          "publicSha256": "50c029f4b4465b0730ec3582383f2bfe79658bd903a0620f5e90a71b19d5adab",
+          "artifactSha256": "50c029f4b4465b0730ec3582383f2bfe79658bd903a0620f5e90a71b19d5adab",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AttachmentsThread-DH8NcqxZ.js",
+          "publicSha256": "f8fde640d613705ded2db2f6e9ba931c299578b9bbe12f04e7758e49f58a209e",
+          "artifactSha256": "f8fde640d613705ded2db2f6e9ba931c299578b9bbe12f04e7758e49f58a209e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/BarChart-KZGM5fUE.js",
+          "publicSha256": "691d8c0f5d648aaa2c43e81a5ec29cf0d54fbfd42c77d793e5c5eef33c69cbeb",
+          "artifactSha256": "691d8c0f5d648aaa2c43e81a5ec29cf0d54fbfd42c77d793e5c5eef33c69cbeb",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/BulkActionsBar-BoUpFsiK.js",
+          "publicSha256": "cb15cd84ae72966d31a7c3e7650f75c9067313f13b999ca0e2f4b4196203a986",
+          "artifactSha256": "cb15cd84ae72966d31a7c3e7650f75c9067313f13b999ca0e2f4b4196203a986",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CategoriesMasterDialogPage-D5hp-PU6.js",
+          "publicSha256": "dd2fa00c4487ed430735cc3e7c906cb8b76656f39ea15d88515e3e1c1d3d8462",
+          "artifactSha256": "dd2fa00c4487ed430735cc3e7c906cb8b76656f39ea15d88515e3e1c1d3d8462",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CategoriesMasterSheetPage-Bv8ktmgu.js",
+          "publicSha256": "d980a9b0729fa70761c5fe8a96aa0330a1795b70a233bd21a746dad4e5b81664",
+          "artifactSha256": "d980a9b0729fa70761c5fe8a96aa0330a1795b70a233bd21a746dad4e5b81664",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChainOfThoughtDemo-CQZPxy2b.js",
+          "publicSha256": "4bea8c933b3088b45dae64e3f86e85423a311b316b6521347258b3dea3c61488",
+          "artifactSha256": "4bea8c933b3088b45dae64e3f86e85423a311b316b6521347258b3dea3c61488",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChatHistoryDemo-b961oEzI.js",
+          "publicSha256": "78707c9826ca63d1e7aab60ffa937504979108f29b02f8e572bb5125e39d6aea",
+          "artifactSha256": "78707c9826ca63d1e7aab60ffa937504979108f29b02f8e572bb5125e39d6aea",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChatScreen-_JYcqUlW.js",
+          "publicSha256": "0899e7bc39092ccfef8f21c03ff496a6ecfdd7a97cd213b83b2de150310a2fdd",
+          "artifactSha256": "0899e7bc39092ccfef8f21c03ff496a6ecfdd7a97cd213b83b2de150310a2fdd",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ConversationThreadPanel-D2sorVdN.js",
+          "publicSha256": "c5598c39f807a685e9afa8b0e52b71fd971b6cf719964e439224c26c4d194713",
+          "artifactSha256": "c5598c39f807a685e9afa8b0e52b71fd971b6cf719964e439224c26c4d194713",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPage-C8qPoTYP.js",
+          "publicSha256": "579ced12fb010f106c6387772ce8e2d6fb3b95a84ae032a5e886e876571f5797",
+          "artifactSha256": "579ced12fb010f106c6387772ce8e2d6fb3b95a84ae032a5e886e876571f5797",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPageWithSectionNav-D4TVovUJ.js",
+          "publicSha256": "58f713c64970db73d6b509795733c240b8a2f4dd952025a4b9cbf929cc5fac32",
+          "artifactSha256": "58f713c64970db73d6b509795733c240b8a2f4dd952025a4b9cbf929cc5fac32",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPageWizard-D2RNv0hf.js",
+          "publicSha256": "96bad7ae114ed76bab3d46f1b39d430d84a04c68eb8e75bd3f4750083f9606e4",
+          "artifactSha256": "96bad7ae114ed76bab3d46f1b39d430d84a04c68eb8e75bd3f4750083f9606e4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DatabaseWorkspaceDemo-CH1OpPwR.js",
+          "publicSha256": "905a5c2a85f527504cf875e98028e81b1d7182339d55b47338a3c71fe008a3e5",
+          "artifactSha256": "905a5c2a85f527504cf875e98028e81b1d7182339d55b47338a3c71fe008a3e5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DependencyTimeline-Dctbb9zI.js",
+          "publicSha256": "d5bea6ee74654a9812e6bc38d98e3b60ec60a1e21a536d5d56f2e27bb58716b8",
+          "artifactSha256": "d5bea6ee74654a9812e6bc38d98e3b60ec60a1e21a536d5d56f2e27bb58716b8",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DetailPageWithPageTabs-lOny35PD.js",
+          "publicSha256": "4bc935d170fb618d46a022615b5d184b00528bcf3b61349b2a8acf6764aa59f8",
+          "artifactSha256": "4bc935d170fb618d46a022615b5d184b00528bcf3b61349b2a8acf6764aa59f8",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentEditorPage-C8LL_u4z.css",
+          "publicSha256": "cf8f05a4ce22400fc202a56ef4007741bb0422d3b7a62746576cdcef16c64149",
+          "artifactSha256": "cf8f05a4ce22400fc202a56ef4007741bb0422d3b7a62746576cdcef16c64149",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentEditorPage-CZy5-mj3.js",
+          "publicSha256": "0f05a3c2189124e9665a3408d1c19cd070f34834ee674c8f9a52bd847a2afad0",
+          "artifactSha256": "0f05a3c2189124e9665a3408d1c19cd070f34834ee674c8f9a52bd847a2afad0",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentNotes-CT02GgV0.js",
+          "publicSha256": "1ce6fadf3b7eda9e92530d5fbf60dd6ac358a67f24ce8af5e322244ac3f1193b",
+          "artifactSha256": "1ce6fadf3b7eda9e92530d5fbf60dd6ac358a67f24ce8af5e322244ac3f1193b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DonutChartCard-BacH5-8T.js",
+          "publicSha256": "02c0bf869da6be84db4d6f29bd865e156ecc78039c0c0235bcda8778de41f513",
+          "artifactSha256": "02c0bf869da6be84db4d6f29bd865e156ecc78039c0c0235bcda8778de41f513",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/EmailLayoutPage-Dz8JNeWa.js",
+          "publicSha256": "c5550c4cdb48f5965dd892eef901e1cca48c31c79664b0b03a3bb8804e417e13",
+          "artifactSha256": "c5550c4cdb48f5965dd892eef901e1cca48c31c79664b0b03a3bb8804e417e13",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/FormBuilder-cTdNq4Aq.js",
+          "publicSha256": "3261f14ac93583d93db5b96dceddc39c0699c981aef0f4b493752a42fd54a518",
+          "artifactSha256": "3261f14ac93583d93db5b96dceddc39c0699c981aef0f4b493752a42fd54a518",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttChart-BO9D8p2J.js",
+          "publicSha256": "b3e51259c85e3a1bc5d4c85adc46d1e1bd9cf387daa7880105381546169f3271",
+          "artifactSha256": "b3e51259c85e3a1bc5d4c85adc46d1e1bd9cf387daa7880105381546169f3271",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttChart-CnyT3z89.css",
+          "publicSha256": "a048a57a71a057264297184af7fc84f01263d12ea8b2cca3f47c3bd158630ef5",
+          "artifactSha256": "a048a57a71a057264297184af7fc84f01263d12ea8b2cca3f47c3bd158630ef5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttEditor-D2VLLKQR.js",
+          "publicSha256": "8075dfd8af9e549b8f6902e4a3faec38c65182d6a69f78e42ca469c2e0a7d69d",
+          "artifactSha256": "8075dfd8af9e549b8f6902e4a3faec38c65182d6a69f78e42ca469c2e0a7d69d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/HighlightedSource-3hLdptl0.js",
+          "publicSha256": "2a7e9d45f9795017ff5c8b2566fb00013d46f246b0d3db34bb4ce4f5743f8cd5",
+          "artifactSha256": "2a7e9d45f9795017ff5c8b2566fb00013d46f246b0d3db34bb4ce4f5743f8cd5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/HorizontalBarChartCard-CFQ2LsYa.js",
+          "publicSha256": "b763b8f9111fff778437eed827ea5536e1e1ec901fe93313543b1b901505fba4",
+          "artifactSha256": "b763b8f9111fff778437eed827ea5536e1e1ec901fe93313543b1b901505fba4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/InquiryThreadPage-BAy_XWqv.js",
+          "publicSha256": "376776814c04a8510a058c1eb2d9964593d5ffe2b3d53d5421972333d41dcd96",
+          "artifactSha256": "376776814c04a8510a058c1eb2d9964593d5ffe2b3d53d5421972333d41dcd96",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/LineChartCard-Cum8oNtb.js",
+          "publicSha256": "dde325cb83d60b23accd7b5f927e14fb096b705931fb5e4a1758eb9fdeb4cf5e",
+          "artifactSha256": "dde325cb83d60b23accd7b5f927e14fb096b705931fb5e4a1758eb9fdeb4cf5e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MarkdownThread-IU3TrVUk.js",
+          "publicSha256": "0406c89bd193d17c6146e0a2da11372cb152ffd133892bc24bfabe4c8e345271",
+          "artifactSha256": "0406c89bd193d17c6146e0a2da11372cb152ffd133892bc24bfabe4c8e345271",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Message-ChC3BS6B.js",
+          "publicSha256": "39d7781fe8ab0db721d08c9db936bcbcbe33baa0bf248e8a599d04377010a26c",
+          "artifactSha256": "39d7781fe8ab0db721d08c9db936bcbcbe33baa0bf248e8a599d04377010a26c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MessageDemo-BwQWfA8Y.js",
+          "publicSha256": "976df2572f25e35d591d3386a08ea9b4e26cae3f930b7d74b05dac3d14f66ddf",
+          "artifactSha256": "976df2572f25e35d591d3386a08ea9b4e26cae3f930b7d74b05dac3d14f66ddf",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MultiStepForm-Cfy-oPT9.js",
+          "publicSha256": "aac24a740a7ad3c52e5c8fb723005544bb579fc8fc7242d352f4c889517ddd7b",
+          "artifactSha256": "aac24a740a7ad3c52e5c8fb723005544bb579fc8fc7242d352f4c889517ddd7b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/NotificationPanelWithSidebar-BsIU3xk9.js",
+          "publicSha256": "4ea2383109ecbe22dbadc8974cf87c2a81559c2fd3c64cfb6014767288e37452",
+          "artifactSha256": "4ea2383109ecbe22dbadc8974cf87c2a81559c2fd3c64cfb6014767288e37452",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageCapsuleTabsPage-mO9wwetP.js",
+          "publicSha256": "9993e7d3ef5eda1778397a8cb4703d75f2c163f3d100ef5db38a91e59951c820",
+          "artifactSha256": "9993e7d3ef5eda1778397a8cb4703d75f2c163f3d100ef5db38a91e59951c820",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageGridListTabsPage-BWC3ca4K.js",
+          "publicSha256": "9b5bc59c1ec7ac826c03f7420043dba6ac6ad87963e4d369dab5c5a661f1ac46",
+          "artifactSha256": "9b5bc59c1ec7ac826c03f7420043dba6ac6ad87963e4d369dab5c5a661f1ac46",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageInlineEditTabsPage-m911GAXm.js",
+          "publicSha256": "58312ff7f0d3e2696f0b89522ec3346f044ede3dd872e692eea58bbbbf246efc",
+          "artifactSha256": "58312ff7f0d3e2696f0b89522ec3346f044ede3dd872e692eea58bbbbf246efc",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PieChart-BX1j6GRN.js",
+          "publicSha256": "2bf8c646c7d6d5deace9e5667357e4356e227cd3ab82e5051c088f9658e4e992",
+          "artifactSha256": "2bf8c646c7d6d5deace9e5667357e4356e227cd3ab82e5051c088f9658e4e992",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PieChartCard-B7oTI_yX.js",
+          "publicSha256": "6f65f0299b4dded99b6e0654757822f5f340152f3b6300596ef335e9b9e88926",
+          "artifactSha256": "6f65f0299b4dded99b6e0654757822f5f340152f3b6300596ef335e9b9e88926",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PipelineKanbanPage-l3UqouqJ.js",
+          "publicSha256": "28cea9741b28175a6ff78b910d86b60442b62c4b68e6da57eae08a2e6a732298",
+          "artifactSha256": "28cea9741b28175a6ff78b910d86b60442b62c4b68e6da57eae08a2e6a732298",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PipelineStageManager-PsN_OaWj.js",
+          "publicSha256": "1984e3daa7a55556a71e25754a2949abb25dec0633d57dcffb1cca6f58fa0d4a",
+          "artifactSha256": "1984e3daa7a55556a71e25754a2949abb25dec0633d57dcffb1cca6f58fa0d4a",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PromptInput-i1hpsG_G.js",
+          "publicSha256": "de18bb265c6f626aeec73c956602579693ee77e9e786757d244411b4061709c1",
+          "artifactSha256": "de18bb265c6f626aeec73c956602579693ee77e9e786757d244411b4061709c1",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PromptInputDemo-DVOfhlEm.js",
+          "publicSha256": "008e48e5e4662f921846ab7aaadd1f742e5138c38ea0db7ae80d08c95a9cb6b9",
+          "artifactSha256": "008e48e5e4662f921846ab7aaadd1f742e5138c38ea0db7ae80d08c95a9cb6b9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Reasoning-CIAM_7ep.js",
+          "publicSha256": "f85cd3b6b27101c59bda7d97b066a4f8242da8fe3e5a1d3c233e57b1fb9510a2",
+          "artifactSha256": "f85cd3b6b27101c59bda7d97b066a4f8242da8fe3e5a1d3c233e57b1fb9510a2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ReasoningDemo-CKsoZffv.js",
+          "publicSha256": "2109497078b5f2b255a4cca71e47cfa3b9b48f0da50ebaf4fc8312da8590b402",
+          "artifactSha256": "2109497078b5f2b255a4cca71e47cfa3b9b48f0da50ebaf4fc8312da8590b402",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Response-DbPPJ3kr.js",
+          "publicSha256": "6ef6ac84753654e236b433a6cc67769efe009dd9798d74a92790a206543db877",
+          "artifactSha256": "6ef6ac84753654e236b433a6cc67769efe009dd9798d74a92790a206543db877",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/RichTextEditor-C9aVR-EQ.js",
+          "publicSha256": "e3b3d5275ce8d7757906269be375c73c959d6e811662f778c974ef50c4355847",
+          "artifactSha256": "e3b3d5275ce8d7757906269be375c73c959d6e811662f778c974ef50c4355847",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/RightSheet-Bmpf1Py9.js",
+          "publicSha256": "2301380c0473aabfb8ef02f54edba224b355b08509122b08bf2252bfcd29d517",
+          "artifactSha256": "2301380c0473aabfb8ef02f54edba224b355b08509122b08bf2252bfcd29d517",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Sources-UG5QgjZ4.js",
+          "publicSha256": "9c67cfdfb262515efdda02c7ffc3eb72480d3bffc633520b6d181d2c007db8b5",
+          "artifactSha256": "9c67cfdfb262515efdda02c7ffc3eb72480d3bffc633520b6d181d2c007db8b5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SourcesDemo-wK3xYBdj.js",
+          "publicSha256": "643b3688f222e84b02c63d7f8031108a4eafdf8f6d93fa99486f2b42aabc6319",
+          "artifactSha256": "643b3688f222e84b02c63d7f8031108a4eafdf8f6d93fa99486f2b42aabc6319",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SpendDashboardPage-DPNAhY4g.js",
+          "publicSha256": "611766311b8ed49fbebf95d236f9f51bded412761b4b713b858ccdd36c4e7e02",
+          "artifactSha256": "611766311b8ed49fbebf95d236f9f51bded412761b4b713b858ccdd36c4e7e02",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/StackedBarChartCard-Br2nvfyb.js",
+          "publicSha256": "6f600af136ccb248aa4301b78d89e2b7631fee1cc9f168ed6541e4d5b6fe51fd",
+          "artifactSha256": "6f600af136ccb248aa4301b78d89e2b7631fee1cc9f168ed6541e4d5b6fe51fd",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Suggestion-DLFN1X7V.js",
+          "publicSha256": "09295a44f624f4ceaf0d855273d781de2aecf0d44e0a2cc4dca2f8d4a9f66e70",
+          "artifactSha256": "09295a44f624f4ceaf0d855273d781de2aecf0d44e0a2cc4dca2f8d4a9f66e70",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SuggestionDemo-CTSGS-4p.js",
+          "publicSha256": "442952c1286738ca721aec080232fac3c17d7f83cb9dd5e1000b3c050b8ec26b",
+          "artifactSha256": "442952c1286738ca721aec080232fac3c17d7f83cb9dd5e1000b3c050b8ec26b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SupplierDetailPage-wlyBzDJt.js",
+          "publicSha256": "68ab622998ac54d8557c891e155047661796bececbb0f554d979d91d771df3fe",
+          "artifactSha256": "68ab622998ac54d8557c891e155047661796bececbb0f554d979d91d771df3fe",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ThreadComposer-C2TFnB9A.js",
+          "publicSha256": "87e588842a0f6c0791e07f4963eec545f2cdc58afea0c61d5ff6324d411b24bf",
+          "artifactSha256": "87e588842a0f6c0791e07f4963eec545f2cdc58afea0c61d5ff6324d411b24bf",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Timeline-BRRGq7wQ.js",
+          "publicSha256": "63c8b82e9e9fb0e9027d1839b76874409373d671408a0dfa25cbfdc484d3efad",
+          "artifactSha256": "63c8b82e9e9fb0e9027d1839b76874409373d671408a0dfa25cbfdc484d3efad",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Tool-BvRlFefq.js",
+          "publicSha256": "25b0e7acb1317a42605d98771c0c5ef120cd6f54f18a87945642f97594b9ced4",
+          "artifactSha256": "25b0e7acb1317a42605d98771c0c5ef120cd6f54f18a87945642f97594b9ced4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ToolDemo-Ci87tZmV.js",
+          "publicSha256": "d2388c9c79b7e28ec5e6b692184824344fc22faa078288055d163baaf1e7dad6",
+          "artifactSha256": "d2388c9c79b7e28ec5e6b692184824344fc22faa078288055d163baaf1e7dad6",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/UserMenuSidebarShowcase-iqbcTNhA.js",
+          "publicSha256": "3c1bd265114f964180ed7ac878b1237dc3de5ad7722c96c7df49f050470f7d49",
+          "artifactSha256": "3c1bd265114f964180ed7ac878b1237dc3de5ad7722c96c7df49f050470f7d49",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/UserProfileDialog-BJHHsRvn.js",
+          "publicSha256": "3014859b622bde6a361540bec3269500cc91fe92a0a3054af64e0157408e5fb1",
+          "artifactSha256": "3014859b622bde6a361540bec3269500cc91fe92a0a3054af64e0157408e5fb1",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/VerticalBarChartCard-CfRkVxid.js",
+          "publicSha256": "6a7a8d23d6807290159d28a588af83e03214eb4f4d9fbbef7ed6a8e3b03f2a03",
+          "artifactSha256": "6a7a8d23d6807290159d28a588af83e03214eb4f4d9fbbef7ed6a8e3b03f2a03",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/YAxis-D4w0aDcG.js",
+          "publicSha256": "2c79a152f5fa9341fc2a9858e1f399bd02c885cf283d6489d98393f28e2a15fb",
+          "artifactSha256": "2c79a152f5fa9341fc2a9858e1f399bd02c885cf283d6489d98393f28e2a15fb",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/bell-CDJWU4Tj.js",
+          "publicSha256": "08627bea96e72da2672917440ff7c5a6f98335293b8fa27d0a8ec8e8349c060b",
+          "artifactSha256": "08627bea96e72da2672917440ff7c5a6f98335293b8fa27d0a8ec8e8349c060b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/braces-2QKtEoU3.js",
+          "publicSha256": "25e31c504327febff453d8162969025f131fa1faeaa05a265b5ec4d3a9d00d49",
+          "artifactSha256": "25e31c504327febff453d8162969025f131fa1faeaa05a265b5ec4d3a9d00d49",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/chartTokens-BXt-yQ5v.js",
+          "publicSha256": "26e90fc015b81ae6b6ee45e547690b66b0a17441d7309628d0ce258b1dbbdb58",
+          "artifactSha256": "26e90fc015b81ae6b6ee45e547690b66b0a17441d7309628d0ce258b1dbbdb58",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/checkbox-D6dDD5tu.js",
+          "publicSha256": "9be43da70f0fe0414e469e53ee4ffbd310b3b9e5c6fc17648072e76928444359",
+          "artifactSha256": "9be43da70f0fe0414e469e53ee4ffbd310b3b9e5c6fc17648072e76928444359",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/clsx-DB0hHKMi.js",
+          "publicSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+          "artifactSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/components-Cf0HcR5G.js",
+          "publicSha256": "b184402db95e4f61df115f90891d7b932e53064be0e0a170fc72371bcf2f0404",
+          "artifactSha256": "b184402db95e4f61df115f90891d7b932e53064be0e0a170fc72371bcf2f0404",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/corner-up-left-CMHrdsMa.js",
+          "publicSha256": "e33ba12c5f1db61520733107c9a9ea50e597a9d2db2f7032eda83206fb28e319",
+          "artifactSha256": "e33ba12c5f1db61520733107c9a9ea50e597a9d2db2f7032eda83206fb28e319",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/createLucideIcon-Dy7UvDMc.js",
+          "publicSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+          "artifactSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/dist-BsbFkpqP.js",
+          "publicSha256": "1195ba7b8df4d3744ac24649f9645d3c115310cf873ccedbca36f191edb10ec5",
+          "artifactSha256": "1195ba7b8df4d3744ac24649f9645d3c115310cf873ccedbca36f191edb10ec5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/dist-CK3U7fz7.js",
+          "publicSha256": "a4ea6119f122036ade2acf89b258f992014d81611b145cc1037a0d169adb3cb8",
+          "artifactSha256": "a4ea6119f122036ade2acf89b258f992014d81611b145cc1037a0d169adb3cb8",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/es-0QgzWRT4.js",
+          "publicSha256": "5dad3dfb628830dda0dc26cbb26ee5fcdd1bb28c2109ad2caa04182ddc21a7e4",
+          "artifactSha256": "5dad3dfb628830dda0dc26cbb26ee5fcdd1bb28c2109ad2caa04182ddc21a7e4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/field-helpers-FLctzaQu.js",
+          "publicSha256": "a574974d7e32a7d7710d223d74b20ebb2ea8a0e351d72ad4f3e7413e45b0dab2",
+          "artifactSha256": "a574974d7e32a7d7710d223d74b20ebb2ea8a0e351d72ad4f3e7413e45b0dab2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/file-text-BO6O5Vlr.js",
+          "publicSha256": "3df9098f2c2008681d3b83e39f8ff19993baff52e550e9bb6f4e815913855135",
+          "artifactSha256": "3df9098f2c2008681d3b83e39f8ff19993baff52e550e9bb6f4e815913855135",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/generateCategoricalChart-DFAuMckT.js",
+          "publicSha256": "c1a15c972db4863a186bcd9f3138c8a6732535d7f860f908c04f6b69bed94c69",
+          "artifactSha256": "c1a15c972db4863a186bcd9f3138c8a6732535d7f860f908c04f6b69bed94c69",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/index-B3eqiRrQ.css",
+          "publicSha256": "1ad8943952b54c5746ef58cf8bcf9b513223faf889c78e7b270bc003ba2eae50",
+          "artifactSha256": "1ad8943952b54c5746ef58cf8bcf9b513223faf889c78e7b270bc003ba2eae50",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/index-De8zQYnM.js",
+          "publicSha256": "a31f260a5bd20e26fe4113ad7358e96b1ba3c33458bf4bd2655a07a634190410",
+          "artifactSha256": "a31f260a5bd20e26fe4113ad7358e96b1ba3c33458bf4bd2655a07a634190410",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/jsx-runtime-C40oxPSl.js",
+          "publicSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+          "artifactSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/list-D7WlU-X_.js",
+          "publicSha256": "ee49b372159feabf75c2221cdf62db917233166ffd05f1027ac789a7b2dd207c",
+          "artifactSha256": "ee49b372159feabf75c2221cdf62db917233166ffd05f1027ac789a7b2dd207c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/mail-DnSptTQr.js",
+          "publicSha256": "338f68fcf7e6ec04387cac9b259b2f70cc5663051a39f8056b0553a828c20d7d",
+          "artifactSha256": "338f68fcf7e6ec04387cac9b259b2f70cc5663051a39f8056b0553a828c20d7d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/mockAssistant-DwzjPolw.js",
+          "publicSha256": "aa070b70e9db5222f4701dc46e3bf42779a7c72b480b036d9ca47db12fd7d3f7",
+          "artifactSha256": "aa070b70e9db5222f4701dc46e3bf42779a7c72b480b036d9ca47db12fd7d3f7",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/paperclip-D-SKIVEJ.js",
+          "publicSha256": "6aab11f9d454985e56233802fe3e31f80649c2b294303e270d416b34c83fcf9b",
+          "artifactSha256": "6aab11f9d454985e56233802fe3e31f80649c2b294303e270d416b34c83fcf9b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/pencil-C6uR0LLx.js",
+          "publicSha256": "179557724a3bf69798fe9276829d897507ca2417cac0b403cf5708e0439021c5",
+          "artifactSha256": "179557724a3bf69798fe9276829d897507ca2417cac0b403cf5708e0439021c5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/popover-GTJwV4Ts.js",
+          "publicSha256": "1e60563dd2c90a84a25f244f7b1e300c490c9fa285b3c20df81c7a12a110ef2e",
+          "artifactSha256": "1e60563dd2c90a84a25f244f7b1e300c490c9fa285b3c20df81c7a12a110ef2e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/react-Cdxb2Qku.js",
+          "publicSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+          "artifactSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/react-dom-Bs_xv98U.js",
+          "publicSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+          "artifactSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/refresh-cw-DfMDiqzq.js",
+          "publicSha256": "dd08741d867b9d6118b45cb37fb749a7379f96934a6d8dbb594e019169278274",
+          "artifactSha256": "dd08741d867b9d6118b45cb37fb749a7379f96934a6d8dbb594e019169278274",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/save-BHGcgiqm.js",
+          "publicSha256": "457ee93d300c8ad5ab01ff6f113d372ef18f7921c70408b4032a126de2f2de18",
+          "artifactSha256": "457ee93d300c8ad5ab01ff6f113d372ef18f7921c70408b4032a126de2f2de18",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/showcases-D7VVvifa.js",
+          "publicSha256": "1ebd2021122d6a700d9f56c877288daa6b4c132b78517a04702aef8fcf758b3d",
+          "artifactSha256": "1ebd2021122d6a700d9f56c877288daa6b4c132b78517a04702aef8fcf758b3d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/star-DIXlQf7u.js",
+          "publicSha256": "2d66147a66757d17d7c56e356316183069bbfab9055161723a7bbbfca7251bad",
+          "artifactSha256": "2d66147a66757d17d7c56e356316183069bbfab9055161723a7bbbfca7251bad",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/tables-BOl2u5z1.js",
+          "publicSha256": "cbb2b78766f5dc8549b87b2557233808aa4d5f22f1985827f69f75bdb28a578b",
+          "artifactSha256": "cbb2b78766f5dc8549b87b2557233808aa4d5f22f1985827f69f75bdb28a578b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/textarea-DgI0R8-s.js",
+          "publicSha256": "21003858aaf796be859abbeed45bc7e37153d5b486535119a72bbf89d1326248",
+          "artifactSha256": "21003858aaf796be859abbeed45bc7e37153d5b486535119a72bbf89d1326248",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/thumbs-down-CLF9OesG.js",
+          "publicSha256": "682ff4ef598ffc5d5837f635e07532f0179d06c52ad6a3383835d95a8166d227",
+          "artifactSha256": "682ff4ef598ffc5d5837f635e07532f0179d06c52ad6a3383835d95a8166d227",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/thumbs-up-DC3LiMwF.js",
+          "publicSha256": "922c65670791a8374e4f932045ee02f51e8e638792bb96b1743754cb6255ff78",
+          "artifactSha256": "922c65670791a8374e4f932045ee02f51e8e638792bb96b1743754cb6255ff78",
+          "equal": true
+        }
+      ],
+      "matchesDeployedArtifact": true,
+      "includesRequestedLazyAssets": true,
+      "allGeneratedJsCssAssets": 103
+    },
+    "tlsCertificateVerification": true
+  },
+  "limitations": [
+    "No byte equality claim between reference and ERPboost source bodies with product imports and implementation differences",
+    "Source body bytes are compared within ERPboost before/after and from the same change on the published site",
+    "The known mobile source toolbar border and prior deliberate accessibility differences remain",
+    "Touch checks cover tapping anchors and automatic scrolling, not finger swipes or physical Safari devices",
+    "Only this additional scope was rechecked; not every operation on all 71 shared URLs"
+  ],
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/29/erpboost-ui-localized-markdown-audit/"
+}
