@@ -15,7 +15,11 @@
     "theme": "dark",
     "routes": 67,
     "measurementDiffs": 0,
-    "expectedReferenceError": ["/components/sidebar"],
+    "expectedReferenceError": [
+      "/components/sidebar",
+      "/patterns/notification-panel",
+      "/patterns/user-profile-dialog"
+    ],
     "pages": [
       {
         "route": "/components/overview",
@@ -213,7 +217,10 @@
         "route": "/components/sidebar",
         "referenceElements": 3,
         "implementationElements": 3,
-        "measurementDiffs": 0
+        "measurementDiffs": 0,
+        "renderStatus": "matching-reference-error",
+        "normalPreviewSuccess": false,
+        "error": "useSidebar must be used within a SidebarProvider."
       },
       {
         "route": "/components/table",
@@ -351,7 +358,10 @@
         "route": "/patterns/notification-panel",
         "referenceElements": 3,
         "implementationElements": 3,
-        "measurementDiffs": 0
+        "measurementDiffs": 0,
+        "renderStatus": "matching-reference-error",
+        "normalPreviewSuccess": false,
+        "error": "useSidebar must be used within a SidebarProvider."
       },
       {
         "route": "/patterns/pipeline-stage-manager",
@@ -393,7 +403,10 @@
         "route": "/patterns/user-profile-dialog",
         "referenceElements": 3,
         "implementationElements": 3,
-        "measurementDiffs": 0
+        "measurementDiffs": 0,
+        "renderStatus": "matching-reference-error",
+        "normalPreviewSuccess": false,
+        "error": "useSidebar must be used within a SidebarProvider."
       },
       {
         "route": "/page/chat",
@@ -419,7 +432,12 @@
         "implementationElements": 41,
         "measurementDiffs": 0
       }
-    ]
+    ],
+    "renderClassificationCorrection": {
+      "date": "2026-10-28",
+      "note": "Zero measurement differences included matching error screens. The reference/published 67-route rescan found main content on 64 routes and an error boundary on 3 routes each.",
+      "evidence": "2026-10-28-workflow-editor.json"
+    }
   },
   "codeCopy": {
     "variants": 57,

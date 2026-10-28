@@ -1,0 +1,1774 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "runtimeSourceCommit": "6ab9108f87f3e9b947d328b54815dc2ef8c1cc80",
+  "applicationChanges": [],
+  "auditCorrection": "Notification fullscreen error was omitted. Matching error-screen measurements are not proof of functioning previews.",
+  "newBrowserCasesPerEnvironment": 15,
+  "newBrowserResults": {
+    "startTime": "2026-10-28T04:14:23.426Z",
+    "duration": 79388.671,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "caseResults": [
+    {
+      "target": "reference",
+      "conditions": [],
+      "title": "fullscreen provider-dependent samples render the same known error instead of a functioning preview",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Error-screen parity is not successful UI rendering. Normal catalogue notification interaction is tested separately."
+        }
+      ]
+    },
+    {
+      "target": "local",
+      "conditions": [],
+      "title": "fullscreen provider-dependent samples render the same known error instead of a functioning preview",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Error-screen parity is not successful UI rendering. Normal catalogue notification interaction is tested separately."
+        }
+      ]
+    },
+    {
+      "target": "published",
+      "conditions": [],
+      "title": "fullscreen provider-dependent samples render the same known error instead of a functioning preview",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Error-screen parity is not successful UI rendering. Normal catalogue notification interaction is tested separately."
+        }
+      ]
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "approval advances only the next stage, clears its comment and completes the chain",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "returning a later approval preserves the earlier decision and reset removes the revision state",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "approval editor clamps quorum, retains configured quorum when approvers return, and rebuilds an empty route",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "Escape closes an open approver picker but clears the selection when the picker is already closed",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "form editor updates existing field metadata and reindexes editable options without changing field identity",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "form palette serializes every type, removes the active field and rebuilds an empty canvas while Save and Discard remain demo controls",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "notification keyboard read state resets on reopen and its sidebar badge remains the sample count",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "approval advances only the next stage, clears its comment and completes the chain",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "returning a later approval preserves the earlier decision and reset removes the revision state",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "approval editor clamps quorum, retains configured quorum when approvers return, and rebuilds an empty route",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "Escape closes an open approver picker but clears the selection when the picker is already closed",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "form editor updates existing field metadata and reindexes editable options without changing field identity",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "form palette serializes every type, removes the active field and rebuilds an empty canvas while Save and Discard remain demo controls",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "notification keyboard read state resets on reopen and its sidebar badge remains the sample count",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "approval advances only the next stage, clears its comment and completes the chain",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "returning a later approval preserves the earlier decision and reset removes the revision state",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "approval editor clamps quorum, retains configured quorum when approvers return, and rebuilds an empty route",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "Escape closes an open approver picker but clears the selection when the picker is already closed",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "form editor updates existing field metadata and reindexes editable options without changing field identity",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "form palette serializes every type, removes the active field and rebuilds an empty canvas while Save and Discard remain demo controls",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "desktop light"
+      ],
+      "title": "notification keyboard read state resets on reopen and its sidebar badge remains the sample count",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "approval advances only the next stage, clears its comment and completes the chain",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "returning a later approval preserves the earlier decision and reset removes the revision state",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "approval editor clamps quorum, retains configured quorum when approvers return, and rebuilds an empty route",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "Escape closes an open approver picker but clears the selection when the picker is already closed",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "form editor updates existing field metadata and reindexes editable options without changing field identity",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "form palette serializes every type, removes the active field and rebuilds an empty canvas while Save and Discard remain demo controls",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "notification keyboard read state resets on reopen and its sidebar badge remains the sample count",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "approval advances only the next stage, clears its comment and completes the chain",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "returning a later approval preserves the earlier decision and reset removes the revision state",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "approval editor clamps quorum, retains configured quorum when approvers return, and rebuilds an empty route",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "Escape closes an open approver picker but clears the selection when the picker is already closed",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "form editor updates existing field metadata and reindexes editable options without changing field identity",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "form palette serializes every type, removes the active field and rebuilds an empty canvas while Save and Discard remain demo controls",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "notification keyboard read state resets on reopen and its sidebar badge remains the sample count",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "approval advances only the next stage, clears its comment and completes the chain",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "returning a later approval preserves the earlier decision and reset removes the revision state",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "approval editor clamps quorum, retains configured quorum when approvers return, and rebuilds an empty route",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "Escape closes an open approver picker but clears the selection when the picker is already closed",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "form editor updates existing field metadata and reindexes editable options without changing field identity",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "form palette serializes every type, removes the active field and rebuilds an empty canvas while Save and Discard remain demo controls",
+      "status": "passed",
+      "annotations": []
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "mobile dark"
+      ],
+      "title": "notification keyboard read state resets on reopen and its sidebar badge remains the sample count",
+      "status": "passed",
+      "annotations": []
+    }
+  ],
+  "totalConfiguredCasesPerEnvironment": 98,
+  "configuredThreeEnvironmentCount": 294,
+  "countingNote": "This audit ran 45 new cases. The previous 249-case run was separate; no claim of a single fresh 294-case execution is made.",
+  "fullscreenErrorScan": {
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "colorScheme": "dark",
+    "targets": [
+      "reference",
+      "published"
+    ],
+    "routesPerTarget": 67,
+    "http200PerTarget": 67,
+    "contentPresentPerTarget": 64,
+    "errorBoundariesPerTarget": 3,
+    "knownErrorRoutes": [
+      "/components/sidebar",
+      "/patterns/notification-panel",
+      "/patterns/user-profile-dialog"
+    ],
+    "results": [
+      {
+        "target": "reference",
+        "route": "/components/overview",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 630
+      },
+      {
+        "target": "reference",
+        "route": "/components/action-panel",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 123
+      },
+      {
+        "target": "reference",
+        "route": "/components/activity-card",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 305
+      },
+      {
+        "target": "reference",
+        "route": "/components/alert",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 352
+      },
+      {
+        "target": "reference",
+        "route": "/components/attachment",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 200
+      },
+      {
+        "target": "reference",
+        "route": "/components/app-shell",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 304
+      },
+      {
+        "target": "reference",
+        "route": "/components/auth-provider",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 292
+      },
+      {
+        "target": "reference",
+        "route": "/components/autocomplete",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 63
+      },
+      {
+        "target": "reference",
+        "route": "/components/avatar",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 71
+      },
+      {
+        "target": "reference",
+        "route": "/components/badge",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 478
+      },
+      {
+        "target": "reference",
+        "route": "/components/button",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 120
+      },
+      {
+        "target": "reference",
+        "route": "/components/calendar",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 719
+      },
+      {
+        "target": "reference",
+        "route": "/components/card",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 137
+      },
+      {
+        "target": "reference",
+        "route": "/components/collection-control-provider",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 622
+      },
+      {
+        "target": "reference",
+        "route": "/components/combobox",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 56
+      },
+      {
+        "target": "reference",
+        "route": "/components/command-palette",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 316
+      },
+      {
+        "target": "reference",
+        "route": "/components/csv-importer",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 171
+      },
+      {
+        "target": "reference",
+        "route": "/components/data-table",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1291
+      },
+      {
+        "target": "reference",
+        "route": "/components/date-field",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 395
+      },
+      {
+        "target": "reference",
+        "route": "/components/date-picker",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 380
+      },
+      {
+        "target": "reference",
+        "route": "/components/description-card",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 190
+      },
+      {
+        "target": "reference",
+        "route": "/components/dialog",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 44
+      },
+      {
+        "target": "reference",
+        "route": "/components/field",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 126
+      },
+      {
+        "target": "reference",
+        "route": "/components/fieldset",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 86
+      },
+      {
+        "target": "reference",
+        "route": "/components/form",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 142
+      },
+      {
+        "target": "reference",
+        "route": "/components/input",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 33
+      },
+      {
+        "target": "reference",
+        "route": "/components/layout",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 369
+      },
+      {
+        "target": "reference",
+        "route": "/components/link",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 86
+      },
+      {
+        "target": "reference",
+        "route": "/components/menu",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 65
+      },
+      {
+        "target": "reference",
+        "route": "/components/metric-card",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 112
+      },
+      {
+        "target": "reference",
+        "route": "/components/select",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 80
+      },
+      {
+        "target": "reference",
+        "route": "/components/sheet",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 71
+      },
+      {
+        "target": "reference",
+        "route": "/components/sidebar",
+        "httpStatus": 200,
+        "renderStatus": "error-boundary",
+        "errorText": "Something went wrong\n\nuseSidebar must be used within a SidebarProvider.\n\nTry Again",
+        "pageErrors": [],
+        "mainTextLength": 82
+      },
+      {
+        "target": "reference",
+        "route": "/components/table",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 162
+      },
+      {
+        "target": "reference",
+        "route": "/components/tabs",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 601
+      },
+      {
+        "target": "reference",
+        "route": "/components/tooltip",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 65
+      },
+      {
+        "target": "reference",
+        "route": "/components/with-guard",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 287
+      },
+      {
+        "target": "reference",
+        "route": "/components/foundation",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 2578
+      },
+      {
+        "target": "reference",
+        "route": "/page/collection",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 2769
+      },
+      {
+        "target": "reference",
+        "route": "/page/detail-2col-action-panel",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 901
+      },
+      {
+        "target": "reference",
+        "route": "/page/form-as-page",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 614
+      },
+      {
+        "target": "reference",
+        "route": "/page/pipeline-kanban",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 444
+      },
+      {
+        "target": "reference",
+        "route": "/page/simple-master-crud",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 329
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/ai-chat",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1479
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/approval-flow",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 269
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/approval-route-builder",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 332
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/bulk-actions-bar",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 139
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/conversation-thread",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 2844
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/data-charts",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 715
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/datatable-inline-edit",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 441
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/field-diff-table",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 246
+      },
+      {
+        "target": "reference",
+        "route": "/page/assistant-panel",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1131
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/form-builder",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 188
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/grid-view",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 852
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/multi-step-form",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 85
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/notification-panel",
+        "httpStatus": 200,
+        "renderStatus": "error-boundary",
+        "errorText": "Something went wrong\n\nuseSidebar must be used within a SidebarProvider.\n\nTry Again",
+        "pageErrors": [],
+        "mainTextLength": 82
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/pipeline-stage-manager",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 224
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/rich-text-editor",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 336
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/right-sheet-custom",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 256
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/supplier-cascader",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 303
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/thread-composer",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 49
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/timeline",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 400
+      },
+      {
+        "target": "reference",
+        "route": "/patterns/user-profile-dialog",
+        "httpStatus": 200,
+        "renderStatus": "error-boundary",
+        "errorText": "Something went wrong\n\nuseSidebar must be used within a SidebarProvider.\n\nTry Again",
+        "pageErrors": [],
+        "mainTextLength": 82
+      },
+      {
+        "target": "reference",
+        "route": "/page/chat",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 717
+      },
+      {
+        "target": "reference",
+        "route": "/page/dashboard-with-charts",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 559
+      },
+      {
+        "target": "reference",
+        "route": "/page/document-page",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1725
+      },
+      {
+        "target": "reference",
+        "route": "/page/email",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1257
+      },
+      {
+        "target": "published",
+        "route": "/components/overview",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 630
+      },
+      {
+        "target": "published",
+        "route": "/components/action-panel",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 123
+      },
+      {
+        "target": "published",
+        "route": "/components/activity-card",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 305
+      },
+      {
+        "target": "published",
+        "route": "/components/alert",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 352
+      },
+      {
+        "target": "published",
+        "route": "/components/attachment",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 200
+      },
+      {
+        "target": "published",
+        "route": "/components/app-shell",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 304
+      },
+      {
+        "target": "published",
+        "route": "/components/auth-provider",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 292
+      },
+      {
+        "target": "published",
+        "route": "/components/autocomplete",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 63
+      },
+      {
+        "target": "published",
+        "route": "/components/avatar",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 71
+      },
+      {
+        "target": "published",
+        "route": "/components/badge",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 478
+      },
+      {
+        "target": "published",
+        "route": "/components/button",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 120
+      },
+      {
+        "target": "published",
+        "route": "/components/calendar",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 719
+      },
+      {
+        "target": "published",
+        "route": "/components/card",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 137
+      },
+      {
+        "target": "published",
+        "route": "/components/collection-control-provider",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 622
+      },
+      {
+        "target": "published",
+        "route": "/components/combobox",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 56
+      },
+      {
+        "target": "published",
+        "route": "/components/command-palette",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 316
+      },
+      {
+        "target": "published",
+        "route": "/components/csv-importer",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 171
+      },
+      {
+        "target": "published",
+        "route": "/components/data-table",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1291
+      },
+      {
+        "target": "published",
+        "route": "/components/date-field",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 395
+      },
+      {
+        "target": "published",
+        "route": "/components/date-picker",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 380
+      },
+      {
+        "target": "published",
+        "route": "/components/description-card",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 190
+      },
+      {
+        "target": "published",
+        "route": "/components/dialog",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 44
+      },
+      {
+        "target": "published",
+        "route": "/components/field",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 126
+      },
+      {
+        "target": "published",
+        "route": "/components/fieldset",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 86
+      },
+      {
+        "target": "published",
+        "route": "/components/form",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 142
+      },
+      {
+        "target": "published",
+        "route": "/components/input",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 33
+      },
+      {
+        "target": "published",
+        "route": "/components/layout",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 369
+      },
+      {
+        "target": "published",
+        "route": "/components/link",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 86
+      },
+      {
+        "target": "published",
+        "route": "/components/menu",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 65
+      },
+      {
+        "target": "published",
+        "route": "/components/metric-card",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 112
+      },
+      {
+        "target": "published",
+        "route": "/components/select",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 80
+      },
+      {
+        "target": "published",
+        "route": "/components/sheet",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 71
+      },
+      {
+        "target": "published",
+        "route": "/components/sidebar",
+        "httpStatus": 200,
+        "renderStatus": "error-boundary",
+        "errorText": "Something went wrong\n\nuseSidebar must be used within a SidebarProvider.\n\nTry Again",
+        "pageErrors": [],
+        "mainTextLength": 82
+      },
+      {
+        "target": "published",
+        "route": "/components/table",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 162
+      },
+      {
+        "target": "published",
+        "route": "/components/tabs",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 601
+      },
+      {
+        "target": "published",
+        "route": "/components/tooltip",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 65
+      },
+      {
+        "target": "published",
+        "route": "/components/with-guard",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 287
+      },
+      {
+        "target": "published",
+        "route": "/components/foundation",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 2578
+      },
+      {
+        "target": "published",
+        "route": "/page/collection",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 2769
+      },
+      {
+        "target": "published",
+        "route": "/page/detail-2col-action-panel",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 901
+      },
+      {
+        "target": "published",
+        "route": "/page/form-as-page",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 614
+      },
+      {
+        "target": "published",
+        "route": "/page/pipeline-kanban",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 444
+      },
+      {
+        "target": "published",
+        "route": "/page/simple-master-crud",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 329
+      },
+      {
+        "target": "published",
+        "route": "/patterns/ai-chat",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1479
+      },
+      {
+        "target": "published",
+        "route": "/patterns/approval-flow",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 269
+      },
+      {
+        "target": "published",
+        "route": "/patterns/approval-route-builder",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 332
+      },
+      {
+        "target": "published",
+        "route": "/patterns/bulk-actions-bar",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 139
+      },
+      {
+        "target": "published",
+        "route": "/patterns/conversation-thread",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 2844
+      },
+      {
+        "target": "published",
+        "route": "/patterns/data-charts",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 715
+      },
+      {
+        "target": "published",
+        "route": "/patterns/datatable-inline-edit",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 441
+      },
+      {
+        "target": "published",
+        "route": "/patterns/field-diff-table",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 246
+      },
+      {
+        "target": "published",
+        "route": "/page/assistant-panel",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1131
+      },
+      {
+        "target": "published",
+        "route": "/patterns/form-builder",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 188
+      },
+      {
+        "target": "published",
+        "route": "/patterns/grid-view",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 852
+      },
+      {
+        "target": "published",
+        "route": "/patterns/multi-step-form",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 85
+      },
+      {
+        "target": "published",
+        "route": "/patterns/notification-panel",
+        "httpStatus": 200,
+        "renderStatus": "error-boundary",
+        "errorText": "Something went wrong\n\nuseSidebar must be used within a SidebarProvider.\n\nTry Again",
+        "pageErrors": [],
+        "mainTextLength": 82
+      },
+      {
+        "target": "published",
+        "route": "/patterns/pipeline-stage-manager",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 224
+      },
+      {
+        "target": "published",
+        "route": "/patterns/rich-text-editor",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 336
+      },
+      {
+        "target": "published",
+        "route": "/patterns/right-sheet-custom",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 256
+      },
+      {
+        "target": "published",
+        "route": "/patterns/supplier-cascader",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 303
+      },
+      {
+        "target": "published",
+        "route": "/patterns/thread-composer",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 49
+      },
+      {
+        "target": "published",
+        "route": "/patterns/timeline",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 400
+      },
+      {
+        "target": "published",
+        "route": "/patterns/user-profile-dialog",
+        "httpStatus": 200,
+        "renderStatus": "error-boundary",
+        "errorText": "Something went wrong\n\nuseSidebar must be used within a SidebarProvider.\n\nTry Again",
+        "pageErrors": [],
+        "mainTextLength": 82
+      },
+      {
+        "target": "published",
+        "route": "/page/chat",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 717
+      },
+      {
+        "target": "published",
+        "route": "/page/dashboard-with-charts",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 559
+      },
+      {
+        "target": "published",
+        "route": "/page/document-page",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1725
+      },
+      {
+        "target": "published",
+        "route": "/page/email",
+        "httpStatus": 200,
+        "renderStatus": "content-present",
+        "errorText": null,
+        "pageErrors": [],
+        "mainTextLength": 1257
+      }
+    ]
+  },
+  "visualComparison": [
+    {
+      "mode": "desktop",
+      "state": "approved",
+      "target": "local",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "desktop",
+      "state": "approved",
+      "target": "published",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "desktop",
+      "state": "returned",
+      "target": "local",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "desktop",
+      "state": "returned",
+      "target": "published",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "desktop",
+      "state": "selected-email",
+      "target": "local",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "desktop",
+      "state": "selected-email",
+      "target": "published",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "approved",
+      "target": "local",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "approved",
+      "target": "published",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "returned",
+      "target": "local",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "returned",
+      "target": "published",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "selected-email",
+      "target": "local",
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "mode": "mobile",
+      "state": "selected-email",
+      "target": "published",
+      "pixels": 0,
+      "bbox": null
+    }
+  ],
+  "validation": {
+    "testTypecheck": "passed",
+    "componentTests": 21,
+    "typecheck": "passed",
+    "newBrowserChecks": 45,
+    "failed": 0,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "referenceBehavior": [
+    "Notification sidebar count stays at sample value 3; read state resets on reopen.",
+    "Arrow keys move tab focus; Enter activates the notification filter.",
+    "Escape closes an open approver list without clearing selection; Escape when closed clears that stage.",
+    "Quorum clamps with approver count and restores the configured value if approvers return. Empty stages serialize min 1 alongside a skip warning.",
+    "Form and approval editor Save/Discard buttons have no save/reset handlers. Backend persistence and workflow execution were not verified.",
+    "Disabled form-builder preview controls are design examples, not a submitted business form."
+  ],
+  "limitations": [
+    "Three of 45 checks assert known error-screen parity, not successful preview rendering.",
+    "Six captured states do not establish all-state or all-pixel catalogue identity.",
+    "The 134 route scan checks HTTP status, error boundary and main text, not every control.",
+    "Popup DOM was allowed to close before searching again. Incorrect initial keyboard assumptions were corrected in the test setup."
+  ],
+  "artifacts": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-workflow-audit"
+}
