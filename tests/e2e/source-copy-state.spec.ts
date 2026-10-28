@@ -65,6 +65,44 @@ for (const mode of [
       expect(errors).toEqual([]);
     });
 
+    test("CSS source keeps numeric values and custom properties in the reference base color", async ({
+      page,
+    }) => {
+      await page.goto("patterns/data-charts");
+      const sample = page
+        .getByRole("tab", { name: "Code", exact: true })
+        .nth(6)
+        .locator("xpath=ancestor::section[@aria-label][1]");
+      await sample.getByRole("tab", { name: "Code", exact: true }).click();
+      await button(sample, "GanttChart.css").click();
+      const code = sample.locator("code");
+      await expect(code.locator("span").first()).toBeVisible();
+      const colors = await code.evaluate((element) => {
+        const text = element.textContent!;
+        const offsets = [
+          text.indexOf(": 0") + 2,
+          text.indexOf("var(--border)") + 4,
+        ];
+        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+        const colors: string[] = [];
+        let offset = 0;
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          for (const index of offsets) {
+            if (index >= offset && index < offset + node.textContent!.length)
+              colors.push(getComputedStyle(node.parentElement!).color);
+          }
+          offset += node.textContent!.length;
+        }
+        return colors;
+      });
+      const foreground =
+        mode.colorScheme === "dark" ? "rgb(171, 178, 191)" : "rgb(56, 58, 66)";
+      expect(colors).toEqual([foreground, foreground]);
+      await sample.getByRole("button", { name: /^(Copy|Copied)$/ }).click();
+      await expect.poll(() => clipboard(page)).toBe(await code.textContent());
+    });
+
     test("single-file and all-file copy feedback each lasts 1500ms", async ({
       page,
     }) => {
