@@ -3,10 +3,15 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Text } from "../text";
 
-function Root({ className, ...props }: React.ComponentProps<"div">) {
+function Root({
+  className,
+  density = "default",
+  ...props
+}: React.ComponentProps<"div"> & { density?: "default" | "compact" }) {
   return (
     <div
       data-slot="card"
+      data-density={density}
       className={cn(
         "astw:bg-card astw:text-card-foreground astw:flex astw:flex-col astw:rounded-xl astw:border astw:border-border astw:shadow-xs",
         className,
@@ -20,9 +25,17 @@ Root.displayName = "Card.Root";
 type HeaderProps = Omit<React.ComponentProps<"div">, "title"> & {
   title?: React.ReactNode;
   description?: React.ReactNode;
+  actions?: React.ReactNode;
 };
 
-function Header({ className, title, description, children, ...props }: HeaderProps) {
+function Header({
+  className,
+  title,
+  description,
+  actions,
+  children,
+  ...props
+}: HeaderProps) {
   return (
     <div
       data-slot="card-header"
@@ -52,6 +65,7 @@ function Header({ className, title, description, children, ...props }: HeaderPro
         </Text>
       )}
       {children}
+      {actions && <div data-slot="card-actions">{actions}</div>}
     </div>
   );
 }
@@ -82,7 +96,9 @@ function Content({ className, padding = "default", ...props }: ContentProps) {
       data-slot="card-content"
       data-padding={padding}
       className={cn(
-        padding === "none" ? flushClassName : "astw:px-6 astw:pb-6 astw:first:pt-6",
+        padding === "none"
+          ? flushClassName
+          : "astw:px-6 astw:pb-6 astw:first:pt-6",
         className,
       )}
       {...props}

@@ -1834,5 +1834,26 @@
       "sections": [],
       "title": "パターン"
     }
+  },
+  "/patterns/context-details": {
+    "description": "Controlled context header, compact cards, option buttons and database grid decoration.",
+    "do": "Compose explicit JSX and keep selection, authentication and persistence in the consuming app.",
+    "dont": "Generate forms from schema or move business operations into presentation components.",
+    "primitives": [
+      "HeaderBar",
+      "Card",
+      "OptionCard",
+      "Table",
+      "Field",
+      "Combobox"
+    ],
+    "ja": {
+      "title": "コンテキストと詳細表示",
+      "paragraphs": [
+        "組織・接続のヘッダー、詳細セクション、選択カード、DBの列表示をJSXで組み立てます。",
+        "選択状態・認証・保存処理はアプリ側で制御します。"
+      ],
+      "sections": []
+    }
   }
 }

@@ -380,5 +380,6 @@ export { CodeEditor } from "./components/code-editor";
 
 export { DescriptionList } from "./components/description-list";
 
+export {OptionCard} from "./components/option-card";
 export {CodeWorkspace} from "./components/code-workspace";
 export {GraphControls, type GraphControlsProps} from "./components/graph-controls";

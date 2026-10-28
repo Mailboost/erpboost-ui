@@ -285,6 +285,7 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["context-details", "Context and details", "コンテキストと詳細表示", "Compose a context header, compact sections, template options and a database grid."],
     ["code-workspace", "CodeWorkspace", "コードと実行結果の作業画面", "Compose files, code, results and a graph panel in JSX."],
     ["database-workspace", "DatabaseWorkspace", "データベース作業画面", "Browse tables and keep database work in closable tabs."],
     [

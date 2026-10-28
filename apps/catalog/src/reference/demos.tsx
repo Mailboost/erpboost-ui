@@ -13,6 +13,9 @@ const clean = (source: string) =>
     ? source.slice(source.indexOf(String.fromCharCode(10)) + 1)
     : source;
 const resources: Record<string, Demo[]> = {
+  "patterns/context-details": [{name:"Context and details",description:"Shared context header, compact cards, options and grid decoration.",heading:"",screen:false,
+    Component:lazy(async()=>{const module=await import("./patterns__context-details/ContextDetailsDemo");return {default:module.ContextDetailsDemo};}),
+    source:files["./patterns__context-details/ContextDetailsDemo.tsx"],sources:[{filename:"ContextDetailsDemo.tsx",markdownFilename:"ContextDetailsDemo.tsx",source:files["./patterns__context-details/ContextDetailsDemo.tsx"]}]}],
   "patterns/code-workspace": [{name:"Code workspace",description:"Controlled code/results layout, graph controls and sectioned dialogs.",heading:"",screen:false,
     Component:lazy(async()=>{const module=await import("./patterns__code-workspace/CodeWorkspaceDemo");return {default:module.CodeWorkspaceDemo};}),
     source:files["./patterns__code-workspace/CodeWorkspaceDemo.tsx"],sources:[{filename:"CodeWorkspaceDemo.tsx",markdownFilename:"CodeWorkspaceDemo.tsx",source:files["./patterns__code-workspace/CodeWorkspaceDemo.tsx"]}]}],

@@ -159,3 +159,11 @@ Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `typ
 `GraphControls` from `/graph-controls` is the same toolbar used by ErdDiagram. Callers supply zoom bounds, labels, handlers and an optional overlay container. Extra controls (such as graph direction) and a reset-zoom button fit in JSX slots. Disabled zoom actions are skipped by the existing Toolbar keyboard behavior.
 
 Dialog.Content and Sheet.Content accept `layout="sectioned"` to share Header / Body / Footer spacing and independent body scrolling. Their existing default layouts are unchanged. Dialog.Header accepts an action; Sheet.Header can disable its built-in close button when the application supplies a guarded close action. Footer accepts `align="between"` for status and actions. The catalogue's `/patterns/code-workspace` example demonstrates these parts together.
+
+### Context and detail surfaces
+
+`HeaderBar layout="context"` provides `Brand`, `Separator`, `ContextItem`, `ContextTrigger` and `ContextLoading`. Wrap an existing controlled Combobox trigger with `ContextTrigger`; auth, filtering and selection remain in the consumer.
+
+Use `Card.Root density="compact"` with `Card.Header actions={...}` for compact detail sections. `OptionCard` is a native button with a title, description and optional icon.
+
+`Table.Root variant="grid"`, `Table.ColumnHeading`, `Table.ColumnLabel` and `frozenEdge` provide spreadsheet presentation. Row/cell `aria-selected` drives selection decoration. Set frozen offsets and row controls (`data-row-control`) in JSX; keyboard navigation, precision-safe values, schema and mutations remain app code. All variants are opt-in. See `/patterns/context-details`.
