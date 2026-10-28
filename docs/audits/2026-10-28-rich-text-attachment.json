@@ -1,0 +1,997 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "applicationCommit": "697ddd97e5b2fa12e1f841f2cbebe714ff49d5f3",
+  "prePublication": {
+    "target": "published-before-deploy",
+    "capturedAt": "2026-10-28T06:46:16.255Z",
+    "accept": null,
+    "barePathLink": "example.com/path",
+    "wholeListAfterToggle": "<p>First</p><p>Second</p>"
+  },
+  "applicationChanges": [
+    "Attachment catalogue demo passes image/*,application/pdf as its chooser accept attribute; reusable defaults are unchanged",
+    "Rich text demo matches the older URI matcher while retaining current default protocol validation",
+    "Rich text toolbar preserves the reference limitation for removing a sole list from a whole-document selection; caret removal and list-type changes still work"
+  ],
+  "newCasesPerEnvironment": 14,
+  "referenceLimitationCasesPerEnvironment": 6,
+  "catalogueBrowserCasesPerEnvironment": 146,
+  "executedBrowserCases": 42,
+  "executions": [
+    {
+      "name": "reference-local",
+      "report": "verified-reference-local.json",
+      "stats": {
+        "startTime": "2026-10-28T06:42:54.505Z",
+        "duration": 79976.89199999999,
+        "expected": 28,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "published",
+      "report": "verified-published.json",
+      "stats": {
+        "startTime": "2026-10-28T07:01:59.821Z",
+        "duration": 28411.349,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "caseResults": [
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text headings, combined marks, undo and redo preserve the selected text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text lists nest, outdent and change type, while whole-document removal retains the reference limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "A sole list selected with Ctrl/Cmd+A does not toggle off in the reference. Changing list type and lifting individual items still work; this is not successful whole-document list removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text link prompts preserve accepted schemes and relative paths, reject a bare host path and unsafe schemes, and cancel without changes",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text typing automatically links completed URLs without changing their visible text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text inserted tables navigate cells in both directions and Tab at the end adds a row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text Clear is undoable and redoable, while the demo Save does not persist on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Save is a demo button without a handler, and the character count is a dash. This verifies in-memory editing and reload reset, not backend persistence."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "attachment chooser exposes image/PDF types but the demo still accepts oversized and alternate-type files",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The accept attribute filters native chooser suggestions, but selecting files programmatically bypasses that filter. The reference accepts 20,000,000-byte and 20MiB+1-byte PDFs and a text file; its 20MB hint is not enforced."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text headings, combined marks, undo and redo preserve the selected text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text lists nest, outdent and change type, while whole-document removal retains the reference limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "A sole list selected with Ctrl/Cmd+A does not toggle off in the reference. Changing list type and lifting individual items still work; this is not successful whole-document list removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text link prompts preserve accepted schemes and relative paths, reject a bare host path and unsafe schemes, and cancel without changes",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text typing automatically links completed URLs without changing their visible text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text inserted tables navigate cells in both directions and Tab at the end adds a row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text Clear is undoable and redoable, while the demo Save does not persist on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Save is a demo button without a handler, and the character count is a dash. This verifies in-memory editing and reload reset, not backend persistence."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "attachment chooser exposes image/PDF types but the demo still accepts oversized and alternate-type files",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The accept attribute filters native chooser suggestions, but selecting files programmatically bypasses that filter. The reference accepts 20,000,000-byte and 20MiB+1-byte PDFs and a text file; its 20MB hint is not enforced."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text headings, combined marks, undo and redo preserve the selected text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text lists nest, outdent and change type, while whole-document removal retains the reference limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "A sole list selected with Ctrl/Cmd+A does not toggle off in the reference. Changing list type and lifting individual items still work; this is not successful whole-document list removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text link prompts preserve accepted schemes and relative paths, reject a bare host path and unsafe schemes, and cancel without changes",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text typing automatically links completed URLs without changing their visible text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text inserted tables navigate cells in both directions and Tab at the end adds a row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text Clear is undoable and redoable, while the demo Save does not persist on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Save is a demo button without a handler, and the character count is a dash. This verifies in-memory editing and reload reset, not backend persistence."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "attachment chooser exposes image/PDF types but the demo still accepts oversized and alternate-type files",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The accept attribute filters native chooser suggestions, but selecting files programmatically bypasses that filter. The reference accepts 20,000,000-byte and 20MiB+1-byte PDFs and a text file; its 20MB hint is not enforced."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text headings, combined marks, undo and redo preserve the selected text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text lists nest, outdent and change type, while whole-document removal retains the reference limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "A sole list selected with Ctrl/Cmd+A does not toggle off in the reference. Changing list type and lifting individual items still work; this is not successful whole-document list removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text link prompts preserve accepted schemes and relative paths, reject a bare host path and unsafe schemes, and cancel without changes",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text typing automatically links completed URLs without changing their visible text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text inserted tables navigate cells in both directions and Tab at the end adds a row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text Clear is undoable and redoable, while the demo Save does not persist on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Save is a demo button without a handler, and the character count is a dash. This verifies in-memory editing and reload reset, not backend persistence."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "attachment chooser exposes image/PDF types but the demo still accepts oversized and alternate-type files",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The accept attribute filters native chooser suggestions, but selecting files programmatically bypasses that filter. The reference accepts 20,000,000-byte and 20MiB+1-byte PDFs and a text file; its 20MB hint is not enforced."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text headings, combined marks, undo and redo preserve the selected text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text lists nest, outdent and change type, while whole-document removal retains the reference limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "A sole list selected with Ctrl/Cmd+A does not toggle off in the reference. Changing list type and lifting individual items still work; this is not successful whole-document list removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text link prompts preserve accepted schemes and relative paths, reject a bare host path and unsafe schemes, and cancel without changes",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text typing automatically links completed URLs without changing their visible text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text inserted tables navigate cells in both directions and Tab at the end adds a row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "rich text Clear is undoable and redoable, while the demo Save does not persist on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Save is a demo button without a handler, and the character count is a dash. This verifies in-memory editing and reload reset, not backend persistence."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "desktop light"
+      ],
+      "title": "attachment chooser exposes image/PDF types but the demo still accepts oversized and alternate-type files",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The accept attribute filters native chooser suggestions, but selecting files programmatically bypasses that filter. The reference accepts 20,000,000-byte and 20MiB+1-byte PDFs and a text file; its 20MB hint is not enforced."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text headings, combined marks, undo and redo preserve the selected text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text lists nest, outdent and change type, while whole-document removal retains the reference limitation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "A sole list selected with Ctrl/Cmd+A does not toggle off in the reference. Changing list type and lifting individual items still work; this is not successful whole-document list removal."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text link prompts preserve accepted schemes and relative paths, reject a bare host path and unsafe schemes, and cancel without changes",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text typing automatically links completed URLs without changing their visible text",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text inserted tables navigate cells in both directions and Tab at the end adds a row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "rich text Clear is undoable and redoable, while the demo Save does not persist on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Save is a demo button without a handler, and the character count is a dash. This verifies in-memory editing and reload reset, not backend persistence."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "rich-text-attachment-boundaries.spec.ts",
+        "mobile dark"
+      ],
+      "title": "attachment chooser exposes image/PDF types but the demo still accepts oversized and alternate-type files",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The accept attribute filters native chooser suggestions, but selecting files programmatically bypasses that filter. The reference accepts 20,000,000-byte and 20MiB+1-byte PDFs and a text file; its 20MB hint is not enforced."
+        }
+      ],
+      "attempts": 1
+    }
+  ],
+  "visualComparisons": [
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "formatted",
+      "referenceSize": [
+        1232,
+        328
+      ],
+      "targetSize": [
+        1232,
+        328
+      ],
+      "differentPixels": 9,
+      "maxChannelDelta": 1,
+      "bounds": [
+        1219,
+        0,
+        1232,
+        11
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "empty-table",
+      "referenceSize": [
+        1232,
+        328
+      ],
+      "targetSize": [
+        1232,
+        328
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "edited-table",
+      "referenceSize": [
+        1232,
+        328
+      ],
+      "targetSize": [
+        1232,
+        328
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "formatted",
+      "referenceSize": [
+        343,
+        358
+      ],
+      "targetSize": [
+        343,
+        358
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "empty-table",
+      "referenceSize": [
+        343,
+        358
+      ],
+      "targetSize": [
+        343,
+        358
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "edited-table",
+      "referenceSize": [
+        343,
+        358
+      ],
+      "targetSize": [
+        343,
+        358
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "formatted",
+      "referenceSize": [
+        1232,
+        328
+      ],
+      "targetSize": [
+        1232,
+        328
+      ],
+      "differentPixels": 9,
+      "maxChannelDelta": 1,
+      "bounds": [
+        1219,
+        0,
+        1232,
+        11
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "empty-table",
+      "referenceSize": [
+        1232,
+        328
+      ],
+      "targetSize": [
+        1232,
+        328
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "edited-table",
+      "referenceSize": [
+        1232,
+        328
+      ],
+      "targetSize": [
+        1232,
+        328
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "formatted",
+      "referenceSize": [
+        343,
+        358
+      ],
+      "targetSize": [
+        343,
+        358
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "empty-table",
+      "referenceSize": [
+        343,
+        358
+      ],
+      "targetSize": [
+        343,
+        358
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "edited-table",
+      "referenceSize": [
+        343,
+        358
+      ],
+      "targetSize": [
+        343,
+        358
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    }
+  ],
+  "ciRun": "https://github.com/Mailboost/erpboost-ui/actions/runs/40645763726",
+  "ci": {
+    "conclusion": "success",
+    "headSha": "697ddd97e5b2fa12e1f841f2cbebe714ff49d5f3",
+    "jobs": [
+      {
+        "completedAt": "2026-10-28T06:54:34Z",
+        "conclusion": "success",
+        "databaseId": 122674083980,
+        "name": "build",
+        "startedAt": "2026-10-28T06:45:11Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-28T06:45:13Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-28T06:45:12Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:45:15Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-28T06:45:13Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:45:18Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 3,
+            "startedAt": "2026-10-28T06:45:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:45:26Z",
+            "conclusion": "success",
+            "name": "Run npm ci --ignore-scripts",
+            "number": 4,
+            "startedAt": "2026-10-28T06:45:18Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:45:42Z",
+            "conclusion": "success",
+            "name": "Run npm run typecheck",
+            "number": 5,
+            "startedAt": "2026-10-28T06:45:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:45:56Z",
+            "conclusion": "success",
+            "name": "Run npm test",
+            "number": 6,
+            "startedAt": "2026-10-28T06:45:42Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:46:18Z",
+            "conclusion": "success",
+            "name": "Run npx playwright install --with-deps chromium",
+            "number": 7,
+            "startedAt": "2026-10-28T06:45:56Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:53:52Z",
+            "conclusion": "success",
+            "name": "Run npm run test:e2e",
+            "number": 8,
+            "startedAt": "2026-10-28T06:46:18Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:53:55Z",
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 9,
+            "startedAt": "2026-10-28T06:53:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:16Z",
+            "conclusion": "success",
+            "name": "Run npm run build",
+            "number": 10,
+            "startedAt": "2026-10-28T06:53:55Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:29Z",
+            "conclusion": "success",
+            "name": "Run npm run check:package",
+            "number": 11,
+            "startedAt": "2026-10-28T06:54:16Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:29Z",
+            "conclusion": "success",
+            "name": "Run node scripts/export-pages.mjs",
+            "number": 12,
+            "startedAt": "2026-10-28T06:54:29Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:31Z",
+            "conclusion": "success",
+            "name": "Run actions/upload-pages-artifact@v3",
+            "number": 13,
+            "startedAt": "2026-10-28T06:54:29Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:31Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 25,
+            "startedAt": "2026-10-28T06:54:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:31Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 26,
+            "startedAt": "2026-10-28T06:54:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:31Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 27,
+            "startedAt": "2026-10-28T06:54:31Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40645763726/job/122674083980"
+      },
+      {
+        "completedAt": "2026-10-28T06:54:47Z",
+        "conclusion": "success",
+        "databaseId": 122677178468,
+        "name": "deploy",
+        "startedAt": "2026-10-28T06:54:37Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-28T06:54:39Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-28T06:54:38Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:45Z",
+            "conclusion": "success",
+            "name": "Deploy catalogue",
+            "number": 2,
+            "startedAt": "2026-10-28T06:54:39Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-28T06:54:45Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 3,
+            "startedAt": "2026-10-28T06:54:45Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40645763726/job/122677178468"
+      }
+    ],
+    "status": "completed"
+  },
+  "limitations": [
+    "A same-type list button cannot remove a sole list selected as the entire document in the reference; this is reproduced as a limitation, not a working removal path",
+    "The 20MB attachment hint is not enforced: the demo accepts generated 20,000,000-byte and 20MiB+1-byte payloads with PDF MIME/extensions, and a text file. PDF syntax validity is not tested",
+    "A native chooser accept attribute is a suggestion filter; Playwright setFiles bypasses that filter and does not prove that an OS dialog visually allowed selecting a text file",
+    "Rich text Save has no persistence handler and its character count remains a dash",
+    "The selected screenshot states contain small nonzero pixel differences; complete parity across all values, sizes and animation frames is not asserted",
+    "No external upload, business API, or server persistence outcome is asserted"
+  ],
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-rich-text-audit"
+}
