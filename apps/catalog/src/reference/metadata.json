@@ -1,4 +1,26 @@
 {
+  "/patterns/database-workspace": {
+    "description": "Browse tables and keep database work in closable tabs.",
+    "do": "Keep table selection, queries, permissions and persistence in the consuming application.",
+    "dont": "Put database access or a generic screen definition engine into the workspace component.",
+    "primitives": [
+      "DatabaseWorkspace",
+      "Button",
+      "Input",
+      "Badge",
+      "Tabs",
+      "Table"
+    ],
+    "ja": {
+      "paragraphs": [
+        "テーブルを検索し、複数のテーブルやER図をタブで確認する作業画面です。",
+        "テーブル選択、クエリ、権限判定、保存処理は利用側のアプリで管理します。",
+        "データベースへのアクセスや汎用的な画面定義エンジンを作業画面コンポーネントへ組み込まないでください。"
+      ],
+      "sections": [],
+      "title": "データベース作業画面"
+    }
+  },
   "/components/overview": {
     "description": "Browse app-shell components individually from the sidebar.",
     "do": "",
