@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button, Input } from "@mailboost/erpboost-ui";
 import {
   Calendar as CalendarIcon,
@@ -7,25 +7,46 @@ import {
 } from "lucide-react";
 import { DayPicker } from "react-day-picker";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
+
+function parseCalendarDate(value: string): Date | undefined {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  if (!match) return undefined;
+  const [year, month, day] = match.slice(1).map(Number);
+  const date = new Date(year, month - 1, day);
+  return date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day
+    ? date
+    : undefined;
+}
+
 export function DatePickerField({
   id,
   label,
-  placeholder,
+  placeholder = "YYYY-MM-DD",
   value,
   onChange,
+  disabled,
 }: {
   id: string;
   label: string;
   placeholder?: string;
   value: string;
   onChange: (value: string) => void;
+  disabled?: boolean;
 }) {
+  const [draft, setDraft] = useState(value);
   const [open, setOpen] = useState(false);
-  const parsed = /^\d{4}-\d{2}-\d{2}$/.test(value)
-    ? new Date(value + "T00:00:00")
-    : undefined;
-  const selected =
-    parsed && !Number.isNaN(parsed.getTime()) ? parsed : undefined;
+  useEffect(() => setDraft(value), [value]);
+  const selected = useMemo(() => parseCalendarDate(draft), [draft]);
+  const commitDraft = useCallback(() => {
+    const trimmed = draft.trim();
+    if (!trimmed || parseCalendarDate(trimmed)) {
+      onChange(trimmed);
+      return;
+    }
+    setDraft(value);
+  }, [draft, value, onChange]);
   return (
     <div className="flex flex-col gap-1">
       <label className="text-xs font-medium text-muted-foreground" htmlFor={id}>
@@ -38,35 +59,54 @@ export function DatePickerField({
           inputMode="numeric"
           autoComplete="off"
           spellCheck={false}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
+          value={draft}
+          disabled={disabled}
+          onChange={(e) => {
+            const next = e.target.value;
+            setDraft(next);
+            const trimmed = next.trim();
+            if (!trimmed || parseCalendarDate(trimmed)) onChange(trimmed);
+          }}
+          onBlur={commitDraft}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              commitDraft();
+              event.currentTarget.blur();
+            }
+          }}
           placeholder={placeholder}
           className="h-9 flex-1 min-w-0 font-mono text-sm tabular-nums placeholder:font-sans"
         />
-        <Popover open={open} onOpenChange={setOpen}>
+        <Popover modal={false} open={!disabled && open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
               variant="outline"
               size="icon"
+              type="button"
+              disabled={disabled}
               className="size-9 shrink-0"
               aria-label={`Open calendar: ${label}`}
             >
-              <CalendarIcon className="size-4" />
+              <CalendarIcon className="size-4" aria-hidden="true" />
             </Button>
           </PopoverTrigger>
           <PopoverContent
             align="end"
+            sideOffset={6}
+            collisionPadding={12}
             className="z-200 w-auto border-border p-0 shadow-lg"
           >
             <DayPicker
               mode="single"
+              showOutsideDays
               selected={selected}
               defaultMonth={selected}
               onSelect={(date) => {
                 if (date) {
-                  onChange(
-                    `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`,
-                  );
+                  const next = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+                  setDraft(next);
+                  onChange(next);
                   setOpen(false);
                 }
               }}
@@ -92,16 +132,23 @@ export function DatePickerField({
                   "inline-flex size-9 items-center justify-center rounded-md p-0 font-normal hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 selected:
                   "rounded-md bg-[var(--rdp-accent-color)] text-primary-foreground hover:bg-[var(--rdp-accent-color)]",
-                outside: "text-muted-foreground opacity-40",
-                disabled: "text-muted-foreground opacity-50",
+                today: "font-semibold text-foreground",
+                outside: "text-muted-foreground opacity-55",
+                disabled: "text-muted-foreground opacity-40",
                 hidden: "invisible",
               }}
               components={{
                 Chevron: ({ orientation, className }) =>
                   orientation === "left" ? (
-                    <ChevronLeft className={`size-4 ${className ?? ""}`} />
+                    <ChevronLeft
+                      aria-hidden="true"
+                      className={`size-4 fill-[blue] ${className ?? ""}`}
+                    />
                   ) : (
-                    <ChevronRight className={`size-4 ${className ?? ""}`} />
+                    <ChevronRight
+                      aria-hidden="true"
+                      className={`size-4 fill-[blue] ${className ?? ""}`}
+                    />
                   ),
               }}
             />
