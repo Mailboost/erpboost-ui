@@ -276,6 +276,11 @@ test("document links persist, renamed references resolve, embeds insert and disc
   });
   const editor = page.locator(".tiptap");
   await page.getByRole("button", { name: "Edit", exact: true }).click();
+  // Edit mode focuses and selects the title on the next animation frame.
+  // Let that finish before selecting body text or its selection is stolen.
+  await expect(
+    page.getByLabel("Document title", { exact: true }),
+  ).toBeFocused();
   await editor.locator("p").first().click();
   await page.keyboard.press("ControlOrMeta+a");
   await page.keyboard.insertText("Link audit");
@@ -296,6 +301,9 @@ test("document links persist, renamed references resolve, embeds insert and disc
     editor.getByRole("link", { name: "Link audit" }),
   ).toHaveAttribute("href", "https://example.com/a?x=1&y=2");
   await page.getByRole("button", { name: "Edit", exact: true }).click();
+  await expect(
+    page.getByLabel("Document title", { exact: true }),
+  ).toBeFocused();
   await editor.locator("p").first().click();
   await page.keyboard.press("Home");
   await page.keyboard.press("Shift+End");
@@ -314,6 +322,9 @@ test("document links persist, renamed references resolve, embeds insert and disc
     "Purchasing Rules",
   );
   await page.getByRole("button", { name: "Edit", exact: true }).click();
+  await expect(
+    page.getByLabel("Document title", { exact: true }),
+  ).toBeFocused();
   await page.getByLabel("Document title").fill("Renamed purchasing rules");
   await page.getByRole("button", { name: "Save", exact: true }).click();
   await origin.click();
@@ -322,6 +333,9 @@ test("document links persist, renamed references resolve, embeds insert and disc
     pageId!,
   );
   await page.getByRole("button", { name: "Edit", exact: true }).click();
+  await expect(
+    page.getByLabel("Document title", { exact: true }),
+  ).toBeFocused();
   await editor.locator("p").first().click();
   await page.keyboard.press("End");
   await page.keyboard.press("Enter");
