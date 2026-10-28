@@ -1,0 +1,1535 @@
+{
+  "date": "2026-10-29",
+  "reference": "https://ui.tailor.tech/",
+  "pullRequest": "https://github.com/Mailboost/erpboost-ui/pull/4",
+  "applicationCommit": "37ff2a22f2ca758025ab32ba74977621abad4c5b",
+  "modes": [
+    "1280x900 light English",
+    "375x812 dark English, mouse and keyboard; not a touch device"
+  ],
+  "changes": [
+    "Remove catalogue-wide button cursor declarations so component styles apply",
+    "Restore alert dismiss opacity transition, retaining 0.7 hover opacity and auto focus outline"
+  ],
+  "componentAffordances": {
+    "routes": 38,
+    "properties": 24,
+    "controlsPerEnvironment": 356,
+    "baselineVisits": 152,
+    "afterLocalVisits": 76,
+    "validPairs": 74,
+    "cursorPropertyDifferencesBefore": 36,
+    "cursorPropertyDifferencesAfter": 0,
+    "transitionPropertyDifferencesBefore": 6,
+    "transitionPropertyDifferencesAfter": 0,
+    "remainingMinSizeDifferences": 8,
+    "comparison": [
+      {
+        "route": "/components/action-panel",
+        "mode": "desktop-light",
+        "controls": 3,
+        "localControls": 3,
+        "diffs": []
+      },
+      {
+        "route": "/components/activity-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/alert",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/app-shell",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/attachment",
+        "mode": "desktop-light",
+        "controls": 3,
+        "localControls": 3,
+        "diffs": []
+      },
+      {
+        "route": "/components/auth-provider",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/autocomplete",
+        "mode": "desktop-light",
+        "controls": 3,
+        "localControls": 3,
+        "diffs": []
+      },
+      {
+        "route": "/components/avatar",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/badge",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/button",
+        "mode": "desktop-light",
+        "controls": 11,
+        "localControls": 11,
+        "diffs": []
+      },
+      {
+        "route": "/components/calendar",
+        "mode": "desktop-light",
+        "controls": 74,
+        "localControls": 74,
+        "diffs": []
+      },
+      {
+        "route": "/components/card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/collection-control-provider",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/combobox",
+        "mode": "desktop-light",
+        "controls": 6,
+        "localControls": 6,
+        "diffs": []
+      },
+      {
+        "route": "/components/command-palette",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/csv-importer",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/data-table",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/date-field",
+        "mode": "desktop-light",
+        "controls": 15,
+        "localControls": 15,
+        "diffs": []
+      },
+      {
+        "route": "/components/date-picker",
+        "mode": "desktop-light",
+        "controls": 19,
+        "localControls": 19,
+        "diffs": []
+      },
+      {
+        "route": "/components/description-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/dialog",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/field",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/fieldset",
+        "mode": "desktop-light",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/components/form",
+        "mode": "desktop-light",
+        "controls": 3,
+        "localControls": 3,
+        "diffs": []
+      },
+      {
+        "route": "/components/foundation",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/input",
+        "mode": "desktop-light",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/components/layout",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/link",
+        "mode": "desktop-light",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/components/menu",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/metric-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/overview",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/select",
+        "mode": "desktop-light",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": [
+          {
+            "index": 0,
+            "prop": "min-width",
+            "reference": "auto",
+            "local": "0px"
+          },
+          {
+            "index": 0,
+            "prop": "min-height",
+            "reference": "auto",
+            "local": "0px"
+          },
+          {
+            "index": 1,
+            "prop": "min-width",
+            "reference": "auto",
+            "local": "0px"
+          },
+          {
+            "index": 1,
+            "prop": "min-height",
+            "reference": "auto",
+            "local": "0px"
+          }
+        ]
+      },
+      {
+        "route": "/components/sheet",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/table",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/tabs",
+        "mode": "desktop-light",
+        "controls": 25,
+        "localControls": 25,
+        "diffs": []
+      },
+      {
+        "route": "/components/tooltip",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/with-guard",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/action-panel",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "localControls": 3,
+        "diffs": []
+      },
+      {
+        "route": "/components/activity-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/alert",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/app-shell",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/attachment",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "localControls": 3,
+        "diffs": []
+      },
+      {
+        "route": "/components/auth-provider",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/autocomplete",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "localControls": 3,
+        "diffs": []
+      },
+      {
+        "route": "/components/avatar",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/badge",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/button",
+        "mode": "mobile-dark",
+        "controls": 11,
+        "localControls": 11,
+        "diffs": []
+      },
+      {
+        "route": "/components/calendar",
+        "mode": "mobile-dark",
+        "controls": 74,
+        "localControls": 74,
+        "diffs": []
+      },
+      {
+        "route": "/components/card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/collection-control-provider",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/combobox",
+        "mode": "mobile-dark",
+        "controls": 6,
+        "localControls": 6,
+        "diffs": []
+      },
+      {
+        "route": "/components/command-palette",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/csv-importer",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/data-table",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/date-field",
+        "mode": "mobile-dark",
+        "controls": 15,
+        "localControls": 15,
+        "diffs": []
+      },
+      {
+        "route": "/components/date-picker",
+        "mode": "mobile-dark",
+        "controls": 19,
+        "localControls": 19,
+        "diffs": []
+      },
+      {
+        "route": "/components/description-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/dialog",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/field",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/fieldset",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/components/form",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "localControls": 3,
+        "diffs": []
+      },
+      {
+        "route": "/components/foundation",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/input",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/components/layout",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/link",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/components/menu",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/metric-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/overview",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/select",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": [
+          {
+            "index": 0,
+            "prop": "min-width",
+            "reference": "auto",
+            "local": "0px"
+          },
+          {
+            "index": 0,
+            "prop": "min-height",
+            "reference": "auto",
+            "local": "0px"
+          },
+          {
+            "index": 1,
+            "prop": "min-width",
+            "reference": "auto",
+            "local": "0px"
+          },
+          {
+            "index": 1,
+            "prop": "min-height",
+            "reference": "auto",
+            "local": "0px"
+          }
+        ]
+      },
+      {
+        "route": "/components/sheet",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/table",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/components/tabs",
+        "mode": "mobile-dark",
+        "controls": 25,
+        "localControls": 25,
+        "diffs": []
+      },
+      {
+        "route": "/components/tooltip",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/components/with-guard",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      }
+    ]
+  },
+  "patternAffordances": {
+    "routes": 29,
+    "visits": 116,
+    "validPairs": 54,
+    "controlsPerEnvironment": 1008,
+    "properties": 24,
+    "remainingMinSizeDifferences": 20,
+    "comparison": [
+      {
+        "route": "/page/assistant-panel",
+        "mode": "desktop-light",
+        "controls": 12,
+        "localControls": 12,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/chat",
+        "mode": "desktop-light",
+        "controls": 22,
+        "localControls": 22,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/collection",
+        "mode": "desktop-light",
+        "controls": 105,
+        "localControls": 105,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/dashboard-with-charts",
+        "mode": "desktop-light",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/detail-2col-action-panel",
+        "mode": "desktop-light",
+        "controls": 16,
+        "localControls": 16,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/document-page",
+        "mode": "desktop-light",
+        "controls": 23,
+        "localControls": 23,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/email",
+        "mode": "desktop-light",
+        "controls": 16,
+        "localControls": 16,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/form-as-page",
+        "mode": "desktop-light",
+        "controls": 37,
+        "localControls": 37,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/pipeline-kanban",
+        "mode": "desktop-light",
+        "controls": 18,
+        "localControls": 18,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/page/simple-master-crud",
+        "mode": "desktop-light",
+        "controls": 11,
+        "localControls": 11,
+        "diffs": [
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-width",
+            "reference": "0px",
+            "local": "auto"
+          },
+          {
+            "index": 0,
+            "identity": [
+              "BUTTON",
+              "",
+              "Collapse preview sidebar"
+            ],
+            "prop": "min-height",
+            "reference": "0px",
+            "local": "auto"
+          }
+        ]
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "mode": "desktop-light",
+        "controls": 34,
+        "localControls": 34,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/approval-flow",
+        "mode": "desktop-light",
+        "controls": 4,
+        "localControls": 4,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/approval-route-builder",
+        "mode": "desktop-light",
+        "controls": 25,
+        "localControls": 25,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/bulk-actions-bar",
+        "mode": "desktop-light",
+        "controls": 6,
+        "localControls": 6,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/conversation-thread",
+        "mode": "desktop-light",
+        "controls": 40,
+        "localControls": 40,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/data-charts",
+        "mode": "desktop-light",
+        "controls": 18,
+        "localControls": 18,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/datatable-inline-edit",
+        "mode": "desktop-light",
+        "controls": 15,
+        "localControls": 15,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/field-diff-table",
+        "mode": "desktop-light",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/form-builder",
+        "mode": "desktop-light",
+        "controls": 28,
+        "localControls": 28,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/grid-view",
+        "mode": "desktop-light",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/multi-step-form",
+        "mode": "desktop-light",
+        "controls": 8,
+        "localControls": 8,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/pipeline-stage-manager",
+        "mode": "desktop-light",
+        "controls": 25,
+        "localControls": 25,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/rich-text-editor",
+        "mode": "desktop-light",
+        "controls": 15,
+        "localControls": 15,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/right-sheet-custom",
+        "mode": "desktop-light",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/supplier-cascader",
+        "mode": "desktop-light",
+        "controls": 11,
+        "localControls": 11,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/thread-composer",
+        "mode": "desktop-light",
+        "controls": 4,
+        "localControls": 4,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/timeline",
+        "mode": "desktop-light",
+        "controls": 6,
+        "localControls": 6,
+        "diffs": []
+      },
+      {
+        "route": "/page/assistant-panel",
+        "mode": "mobile-dark",
+        "controls": 12,
+        "localControls": 12,
+        "diffs": []
+      },
+      {
+        "route": "/page/chat",
+        "mode": "mobile-dark",
+        "controls": 22,
+        "localControls": 22,
+        "diffs": []
+      },
+      {
+        "route": "/page/collection",
+        "mode": "mobile-dark",
+        "controls": 105,
+        "localControls": 105,
+        "diffs": []
+      },
+      {
+        "route": "/page/dashboard-with-charts",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "localControls": 1,
+        "diffs": []
+      },
+      {
+        "route": "/page/detail-2col-action-panel",
+        "mode": "mobile-dark",
+        "controls": 16,
+        "localControls": 16,
+        "diffs": []
+      },
+      {
+        "route": "/page/document-page",
+        "mode": "mobile-dark",
+        "controls": 23,
+        "localControls": 23,
+        "diffs": []
+      },
+      {
+        "route": "/page/email",
+        "mode": "mobile-dark",
+        "controls": 16,
+        "localControls": 16,
+        "diffs": []
+      },
+      {
+        "route": "/page/form-as-page",
+        "mode": "mobile-dark",
+        "controls": 37,
+        "localControls": 37,
+        "diffs": []
+      },
+      {
+        "route": "/page/pipeline-kanban",
+        "mode": "mobile-dark",
+        "controls": 18,
+        "localControls": 18,
+        "diffs": []
+      },
+      {
+        "route": "/page/simple-master-crud",
+        "mode": "mobile-dark",
+        "controls": 11,
+        "localControls": 11,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/ai-chat",
+        "mode": "mobile-dark",
+        "controls": 34,
+        "localControls": 34,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/approval-flow",
+        "mode": "mobile-dark",
+        "controls": 4,
+        "localControls": 4,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/approval-route-builder",
+        "mode": "mobile-dark",
+        "controls": 25,
+        "localControls": 25,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/bulk-actions-bar",
+        "mode": "mobile-dark",
+        "controls": 6,
+        "localControls": 6,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/conversation-thread",
+        "mode": "mobile-dark",
+        "controls": 40,
+        "localControls": 40,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/data-charts",
+        "mode": "mobile-dark",
+        "controls": 18,
+        "localControls": 18,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/datatable-inline-edit",
+        "mode": "mobile-dark",
+        "controls": 15,
+        "localControls": 15,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/field-diff-table",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/form-builder",
+        "mode": "mobile-dark",
+        "controls": 28,
+        "localControls": 28,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/grid-view",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "localControls": 0,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/multi-step-form",
+        "mode": "mobile-dark",
+        "controls": 8,
+        "localControls": 8,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/pipeline-stage-manager",
+        "mode": "mobile-dark",
+        "controls": 25,
+        "localControls": 25,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/rich-text-editor",
+        "mode": "mobile-dark",
+        "controls": 15,
+        "localControls": 15,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/right-sheet-custom",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "localControls": 2,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/supplier-cascader",
+        "mode": "mobile-dark",
+        "controls": 11,
+        "localControls": 11,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/thread-composer",
+        "mode": "mobile-dark",
+        "controls": 4,
+        "localControls": 4,
+        "diffs": []
+      },
+      {
+        "route": "/patterns/timeline",
+        "mode": "mobile-dark",
+        "controls": 6,
+        "localControls": 6,
+        "diffs": []
+      }
+    ]
+  },
+  "patternFocus": {
+    "routes": 29,
+    "visits": 116,
+    "validPairs": 54,
+    "controlsPerEnvironment": 947,
+    "focusedPerEnvironment": 945,
+    "properties": 16,
+    "styleDifferences": 0,
+    "nonFocusablePerEnvironment": 2,
+    "nonFocusableDescription": "links inside the contenteditable rich-text sample; shared reference behavior",
+    "attributeDifferences": [
+      "(none)",
+      "combobox-input",
+      "sidebar-trigger",
+      "textarea"
+    ]
+  },
+  "popups": {
+    "scenarios": 11,
+    "validPairs": 22,
+    "visits": 44,
+    "controlsPerEnvironment": 132,
+    "zeroPixelPairs": 20,
+    "comparison": [
+      {
+        "case": "dialog",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "sheet",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "menu",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "csv",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "select-0",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "select-1",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "combobox-0",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "combobox-1",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 10,
+        "maxDifference": 4,
+        "differentBounds": [
+          2,
+          0,
+          573,
+          0
+        ]
+      },
+      {
+        "case": "autocomplete",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "date",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "tooltip",
+        "mode": "desktop-light",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "dialog",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "sheet",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "menu",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "csv",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "select-0",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "select-1",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "combobox-0",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "combobox-1",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 12,
+        "maxDifference": 2,
+        "differentBounds": [
+          1,
+          0,
+          309,
+          1
+        ]
+      },
+      {
+        "case": "autocomplete",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "date",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      },
+      {
+        "case": "tooltip",
+        "mode": "mobile-dark",
+        "ariaEqual": true,
+        "controlsEqual": true,
+        "boundsEqual": true,
+        "escapeEqual": true,
+        "focusEqual": true,
+        "differentPixels": 0,
+        "maxDifference": 0
+      }
+    ]
+  },
+  "ime": {
+    "protocol": "Chromium CDP Input.imeSetComposition and Input.insertText; trusted keyboard events",
+    "query": "Su -> Suz",
+    "settledNavigationProbeRuns": 16,
+    "repeatCountPerScenarioAndEnvironment": 2,
+    "formalSelectedCases": 12,
+    "formalPerEnvironment": 4,
+    "targets": [
+      "reference",
+      "local",
+      "existing published application"
+    ],
+    "normalArrowDownPresses": {
+      "singleCombobox": 2,
+      "autocomplete": 1
+    },
+    "realOSIMEVerified": false,
+    "events": "Raw composition and key records are preserved outside the repository"
+  },
+  "validation": {
+    "unitCases": 39,
+    "typecheck": "passed",
+    "newCursorCasesReferenceAndLocal": 4,
+    "newIMECompositionCasesAcrossThreeTargets": 12,
+    "newCasesPerEnvironment": 6,
+    "configuredBrowserCasesPerEnvironment": 269,
+    "possibleThreeEnvironmentCases": 807,
+    "fullCI": "See pull request Checks; not included as a local result",
+    "checksURL": "https://github.com/Mailboost/erpboost-ui/pull/4/checks",
+    "publishedNewCSS": false
+  },
+  "limits": [
+    "Shared fullscreen SidebarProvider errors on notification-panel and user-profile-dialog excluded",
+    "Computed min-width/min-height differences retained; not a DOM identity claim",
+    "Popup border differences of 10 and 12 pixels remain",
+    "Previously recorded mobile Code toolbar border difference remains",
+    "OS IME, physical Safari and Android are unverified",
+    "Product names, imports and intentional accessibility improvements retained"
+  ],
+  "evidence": "/tmp/erpboost-ui-popup-audit-20261029/"
+}
