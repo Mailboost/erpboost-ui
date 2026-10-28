@@ -297,14 +297,19 @@ button:disabled {
   padding: 24px;
   transition: max-width 0.15s;
 }
-.preview-surface.card .inline-preview-body {
+.preview-surface.card .inline-preview-body:not(.screen-preview-body) {
   background: var(--card);
 }
-.preview-surface.background .inline-preview-body {
+.preview-surface.background .inline-preview-body:not(.screen-preview-body) {
   background: var(--background);
 }
 .inline-preview-body.screen-preview-body {
   padding: 0;
+}
+/* Screen previews paint their rounded frame, leaving its wrapper transparent. */
+.preview-surface.background .reference-screen,
+.preview-surface.background .reference-screen > main {
+  background-color: var(--background);
 }
 .primitives-used {
   margin-top: 24px;

@@ -270,7 +270,10 @@ function PreviewOptions({
     <div className="preview-options">
       <Tabs.Root
         value={width}
-        onValueChange={(v) => setWidth(String(v))}
+        onValueChange={(v) => {
+          setWidth(String(v));
+          if (v !== "desktop") setBackground("card");
+        }}
         className="w-fit gap-0"
       >
         <Tabs.List aria-label="Preview viewport">

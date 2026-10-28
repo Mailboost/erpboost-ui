@@ -178,7 +178,7 @@ export function RightSheetExample() {
                 meta: { badgeVariantMap: { Pending: "warning" } },
               },
               { key: "requestedAt", label: "Requested at", type: "date" },
-              { key: "website", label: "Website" },
+              { key: "website", label: "Website", type: "link" },
             ]}
           />
         </RightSheet>
