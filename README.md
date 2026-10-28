@@ -117,3 +117,19 @@ import { LocaleProvider } from "@mailboost/erpboost-ui/locale-provider";
 ```
 
 `LocaleProvider` uses the same configuration context as AppShell and does not mount a router or auth provider.
+
+### ER diagram
+
+```tsx
+import { ErdDiagram } from "@mailboost/erpboost-ui/erd-diagram";
+
+<div style={{ height: 600 }}>
+  <ErdDiagram
+    schema={{ models: tables, relations }}
+    initialTable="sale_order"
+    onOpenTable={openTable}
+  />
+</div>
+```
+
+Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `type`, optional `label`/`required`). Relations connect `fromTable`/`fromField` to `toTable`/`toField` with optional `optional` nullability. The component provides search, key filtering, auto layout, pan/zoom and a minimap. The application supplies authorized schema data and owns table navigation. Use `LocaleProvider` for standalone labels and `portalContainer` when popups need an application-owned container. The database workspace catalogue includes a working diagram example.

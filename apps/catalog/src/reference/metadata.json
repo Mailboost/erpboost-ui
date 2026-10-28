@@ -5,6 +5,7 @@
     "dont": "Put database access or a generic screen definition engine into the workspace component.",
     "primitives": [
       "DatabaseWorkspace",
+      "ErdDiagram",
       "Button",
       "Input",
       "Badge",
