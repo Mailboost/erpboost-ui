@@ -1,3 +1,4 @@
+import { createPortal } from "react-dom";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import {
@@ -120,4 +121,29 @@ it("renders logs literally and leaves resize keys controlled by the caller", () 
   );
   fireEvent.keyDown(screen.getByRole("separator"), { key: "ArrowRight" });
   expect(key).toHaveBeenCalledOnce();
+});
+
+it("treats portalled child controls as inside the cell editor", () => {
+  const close = vi.fn();
+  const { unmount } = render(
+    <CellEditor
+      anchor={{ left: 8, top: 8 }}
+      container={document.body}
+      title="active"
+      closeLabel="Close"
+      onClose={close}
+    >
+      <textarea aria-label="Cell value" />
+      {createPortal(<button>Portalled option</button>, document.body)}
+    </CellEditor>,
+  );
+  fireEvent.pointerDown(
+    screen.getByRole("button", { name: "Portalled option" }),
+  );
+  expect(close).not.toHaveBeenCalled();
+  fireEvent.pointerDown(document.body);
+  expect(close).toHaveBeenCalledOnce();
+  unmount();
+  fireEvent.pointerDown(document.body);
+  expect(close).toHaveBeenCalledOnce();
 });

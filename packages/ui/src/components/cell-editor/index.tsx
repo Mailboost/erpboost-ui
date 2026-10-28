@@ -33,10 +33,18 @@ export function CellEditor({
 }) {
   const titleId = useId();
   const ref = useRef<HTMLDivElement>(null);
+  const insidePointer = useRef<Event | null>(null);
   useEffect(() => {
     const document = container.ownerDocument;
     const outside = (event: PointerEvent) => {
-      if (!busy && !ref.current?.contains(event.target as Node)) onClose();
+      const fromChildPortal = insidePointer.current === event;
+      insidePointer.current = null;
+      if (
+        !busy &&
+        !fromChildPortal &&
+        !ref.current?.contains(event.target as Node)
+      )
+        onClose();
     };
     document.addEventListener("pointerdown", outside);
     return () => document.removeEventListener("pointerdown", outside);
@@ -66,6 +74,11 @@ export function CellEditor({
           ),
         ),
         ...props.style,
+      }}
+      onPointerDownCapture={(event) => {
+        // React events retain their ancestry through child portals (e.g. Select).
+        insidePointer.current = event.nativeEvent;
+        props.onPointerDownCapture?.(event);
       }}
       onKeyDown={(event) => {
         if (event.key === "Escape") {
