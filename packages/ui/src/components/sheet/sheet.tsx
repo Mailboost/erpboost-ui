@@ -132,13 +132,13 @@ type SheetContentProps = React.ComponentProps<typeof Drawer.Popup> & {
 };
 
 /** The main sheet panel. The `side` and modal behavior are inherited from `Sheet.Root` via context. */
-function Content({ className, children, size = "sm", ...props }: SheetContentProps) {
+function Content({ className, children, size = "sm", container, ...props }: SheetContentProps & { container?: React.ComponentProps<typeof Drawer.Portal>["container"] }) {
   // `side` is controlled by `Root` via context, not accepted as a prop, to keep swipe direction and CSS position in sync.
   const { side, showBackdrop, allowOutsidePointerEvents } = React.useContext(SheetContext);
   const isHorizontal = side === "right" || side === "left";
 
   return (
-    <Portal>
+    <Portal container={container}>
       {showBackdrop && (
         <Overlay className={allowOutsidePointerEvents ? "astw:pointer-events-none" : undefined} />
       )}

@@ -356,3 +356,5 @@ export {
   type TimelineRowProps,
   type TimelineViewportProps,
 } from "./components/timeline";
+
+export { DatabaseWorkspace, type DatabaseWorkspaceProps } from "./components/database-workspace";

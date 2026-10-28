@@ -108,8 +108,19 @@ try {
     import {Textarea} from "@mailboost/erpboost-ui/textarea";
     import {Table} from "@mailboost/erpboost-ui/table";
     import {Spinner} from "@mailboost/erpboost-ui/spinner";
+    import {Badge} from "@mailboost/erpboost-ui/badge";
+    import {Alert} from "@mailboost/erpboost-ui/alert";
+    import {Checkbox} from "@mailboost/erpboost-ui/checkbox";
+    import {Select} from "@mailboost/erpboost-ui/select";
+    import {Combobox} from "@mailboost/erpboost-ui/combobox";
+    import {Menu} from "@mailboost/erpboost-ui/menu";
+    import {Tabs} from "@mailboost/erpboost-ui/tabs";
+    import {Dialog} from "@mailboost/erpboost-ui/dialog";
+    import {Sheet} from "@mailboost/erpboost-ui/sheet";
+    import {Tooltip} from "@mailboost/erpboost-ui/tooltip";
+    import {DatabaseWorkspace} from "@mailboost/erpboost-ui/database-workspace";
     import "@mailboost/erpboost-ui/styles";
-    createRoot(document.getElementById("root")!).render(<form><Input aria-label="Name"/><Textarea aria-label="Note"/><Button type="button">Save</Button><Spinner/><Table.Root><Table.Body><Table.Row><Table.Cell>Standalone</Table.Cell></Table.Row></Table.Body></Table.Root></form>);
+    createRoot(document.getElementById("root")!).render(<><DatabaseWorkspace tables={[{name:"orders"}]} selectedTable="orders" openedTables={["orders"]} view="records" search="" sidebarOpen canCreate={false} onSearchChange={()=>{}} onSidebarOpenChange={()=>{}} onSelectTable={()=>{}} onCloseTable={()=>{}} onCloseDiagram={()=>{}} onCreateTable={()=>{}}><Badge>Draft</Badge><Alert.Root><Alert.Description>Saved</Alert.Description></Alert.Root></DatabaseWorkspace><Checkbox aria-label="Select"/><Select items={["a"]}/><Combobox items={["a"]}/><Menu.Root><Menu.Trigger>Menu</Menu.Trigger><Menu.Content container={document.body}><Menu.Item>Action</Menu.Item></Menu.Content></Menu.Root><Tabs.Root defaultValue="a"><Tabs.List><Tabs.Tab value="a">Tab</Tabs.Tab></Tabs.List></Tabs.Root><Dialog.Root><Dialog.Content container={document.body} showCloseButton={false}><Dialog.Title>Confirm</Dialog.Title></Dialog.Content></Dialog.Root><Sheet.Root><Sheet.Content container={document.body}><Sheet.Title>Details</Sheet.Title></Sheet.Content></Sheet.Root><Tooltip.Root><Tooltip.Trigger>Help</Tooltip.Trigger><Tooltip.Content container={document.body}>Help text</Tooltip.Content></Tooltip.Root><form><Input aria-label="Name"/><Textarea aria-label="Note"/><Button type="button">Save</Button><Spinner/><Table.Root><Table.Body><Table.Row><Table.Cell>Standalone</Table.Cell></Table.Row></Table.Body></Table.Root></form></>);
   `);
   writeFileSync(join(directory, "vite.config.mjs"), `export default {
     plugins: [{name:"consumer-module-audit", generateBundle(){

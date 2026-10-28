@@ -86,3 +86,22 @@ DataTableは既定でブラウザの右クリック操作を妨げません。�
 ## 公開
 
 `main` への push で GitHub Actions が型チェック・ビルドを行い、成功した成果物を GitHub Pages に公開します。コンポーネント、カタログ、公開履歴を同じリポジトリで管理します。新しいクラウドサーバーや外部APIキーは不要です。
+
+### Existing applications and database workspaces
+
+Existing apps can import controls independently of `AppShell` through `/button`,
+`/input`, `/textarea`, `/table`, `/spinner`, `/badge`, `/alert`, `/checkbox`,
+`/select`, `/combobox`, `/menu`, `/tabs`, `/dialog`, `/sheet`, `/tooltip`, `/field`
+and `/database-workspace`. `Select.Parts` and `Combobox.Parts` expose the compound
+controls. They do not require the library auth provider or router.
+
+`DatabaseWorkspace` provides a table explorer with search, permission-aware create
+buttons, collapsible table navigation and closable table/diagram tabs. It accepts
+ordinary table names and callbacks, and renders an app-owned grid or diagram in
+`children`. SQL types, validation, queries, write authorization and persistence
+stay in the consumer. See the `patterns/database-workspace` catalogue example.
+
+Apps that scope the stylesheet can supply `container` to Menu, Dialog, Sheet and
+Tooltip content, as with Select/Combobox. Dialog content also accepts
+`showCloseButton={false}` when the application owns its close action (for example,
+while saving or checking unsaved changes). Defaults preserve the existing API.

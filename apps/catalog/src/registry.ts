@@ -285,6 +285,7 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["database-workspace", "DatabaseWorkspace", "データベース作業画面", "Browse tables and keep database work in closable tabs."],
     [
       "ai-chat",
       "AI chat",
