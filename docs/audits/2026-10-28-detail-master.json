@@ -1,0 +1,2410 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "testedCommit": "122b5bcbe3f4a6edb376255a1315e1aacd6e158b",
+  "applicationCodeChanged": false,
+  "applicationChanges": [],
+  "newCasesPerEnvironment": 16,
+  "unannotatedCasesPerEnvironment": 4,
+  "referenceLimitationCasesPerEnvironment": 12,
+  "catalogueBrowserCasesPerEnvironment": 194,
+  "unitCases": 23,
+  "executedNewBrowserCases": 48,
+  "categories": {
+    "normal": 12,
+    "reference-limitation": 36
+  },
+  "executions": [
+    {
+      "name": "reference-local",
+      "report": "verified-reference-local.json",
+      "stats": {
+        "startTime": "2026-10-28T09:14:47.002Z",
+        "duration": 83816.436,
+        "expected": 32,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "published",
+      "report": "verified-published.json",
+      "stats": {
+        "startTime": "2026-10-28T09:27:52.389Z",
+        "duration": 40035.811,
+        "expected": 16,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "caseResults": [
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "supplier PO filters combine statuses and trimmed case-insensitive search, including empty and zero results",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "supplier page tabs reset orders on remount and record their missing arrow-key navigation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Custom page tabs do not implement arrow-key navigation; switching away unmounts Orders and resets its search/status."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "embedded conversation handles internal drafts and reply cancellation but Post has no submission handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Post does not append or send; whitespace enables it, switching reply targets carries the same draft, and changing page tabs discards all conversation draft state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "review and edit buttons are inert demo actions, and the supplier website is plain text",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Edit, New and review actions have no handlers; the website is text rather than a navigable link. This is not an approval, comment, ERP sync or edit success."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category dialog cancels unsaved values, closes by Escape and Close, and distinguishes registered Code validation from ignored Name validation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The Name input and description label are not associated with accessible names. Code required validation works, but the raw Name input is not registered: Save ignores its required constraint and edits."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category dialog exposes partial Save and blank-name creation, stays independent and resets on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code is registered in the demo form. Name, description and Active edits revert on Save; a new row saves its code but loses its entered name. State is memory-only."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category sheet discards controlled select changes and reinitializes them for each edited row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category sheet records partial desktop persistence or the unreachable mobile Save button",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code and controlled Parent/Tax values persist. Name, description, sort order, Active and internal notes revert on Save; the raw Sort order minimum constraint is also ignored by Save."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "supplier PO filters combine statuses and trimmed case-insensitive search, including empty and zero results",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "supplier page tabs reset orders on remount and record their missing arrow-key navigation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Custom page tabs do not implement arrow-key navigation; switching away unmounts Orders and resets its search/status."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "embedded conversation handles internal drafts and reply cancellation but Post has no submission handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Post does not append or send; whitespace enables it, switching reply targets carries the same draft, and changing page tabs discards all conversation draft state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "review and edit buttons are inert demo actions, and the supplier website is plain text",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Edit, New and review actions have no handlers; the website is text rather than a navigable link. This is not an approval, comment, ERP sync or edit success."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category dialog cancels unsaved values, closes by Escape and Close, and distinguishes registered Code validation from ignored Name validation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The Name input and description label are not associated with accessible names. Code required validation works, but the raw Name input is not registered: Save ignores its required constraint and edits."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category dialog exposes partial Save and blank-name creation, stays independent and resets on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code is registered in the demo form. Name, description and Active edits revert on Save; a new row saves its code but loses its entered name. State is memory-only."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category sheet discards controlled select changes and reinitializes them for each edited row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category sheet records partial desktop persistence or the unreachable mobile Save button",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code and controlled Parent/Tax values persist. Name, description, sort order, Active and internal notes revert on Save; the raw Sort order minimum constraint is also ignored by Save."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "supplier PO filters combine statuses and trimmed case-insensitive search, including empty and zero results",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "supplier page tabs reset orders on remount and record their missing arrow-key navigation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Custom page tabs do not implement arrow-key navigation; switching away unmounts Orders and resets its search/status."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "embedded conversation handles internal drafts and reply cancellation but Post has no submission handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Post does not append or send; whitespace enables it, switching reply targets carries the same draft, and changing page tabs discards all conversation draft state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "review and edit buttons are inert demo actions, and the supplier website is plain text",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Edit, New and review actions have no handlers; the website is text rather than a navigable link. This is not an approval, comment, ERP sync or edit success."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category dialog cancels unsaved values, closes by Escape and Close, and distinguishes registered Code validation from ignored Name validation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The Name input and description label are not associated with accessible names. Code required validation works, but the raw Name input is not registered: Save ignores its required constraint and edits."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category dialog exposes partial Save and blank-name creation, stays independent and resets on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code is registered in the demo form. Name, description and Active edits revert on Save; a new row saves its code but loses its entered name. State is memory-only."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category sheet discards controlled select changes and reinitializes them for each edited row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category sheet records partial desktop persistence or the unreachable mobile Save button",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The mobile sheet lacks a scroll container: Save is below the viewport. Do not force-click it or count this as successful mobile saving."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "supplier PO filters combine statuses and trimmed case-insensitive search, including empty and zero results",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "supplier page tabs reset orders on remount and record their missing arrow-key navigation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Custom page tabs do not implement arrow-key navigation; switching away unmounts Orders and resets its search/status."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "embedded conversation handles internal drafts and reply cancellation but Post has no submission handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Post does not append or send; whitespace enables it, switching reply targets carries the same draft, and changing page tabs discards all conversation draft state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "review and edit buttons are inert demo actions, and the supplier website is plain text",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Edit, New and review actions have no handlers; the website is text rather than a navigable link. This is not an approval, comment, ERP sync or edit success."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category dialog cancels unsaved values, closes by Escape and Close, and distinguishes registered Code validation from ignored Name validation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The Name input and description label are not associated with accessible names. Code required validation works, but the raw Name input is not registered: Save ignores its required constraint and edits."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category dialog exposes partial Save and blank-name creation, stays independent and resets on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code is registered in the demo form. Name, description and Active edits revert on Save; a new row saves its code but loses its entered name. State is memory-only."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category sheet discards controlled select changes and reinitializes them for each edited row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category sheet records partial desktop persistence or the unreachable mobile Save button",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The mobile sheet lacks a scroll container: Save is below the viewport. Do not force-click it or count this as successful mobile saving."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "supplier PO filters combine statuses and trimmed case-insensitive search, including empty and zero results",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "supplier page tabs reset orders on remount and record their missing arrow-key navigation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Custom page tabs do not implement arrow-key navigation; switching away unmounts Orders and resets its search/status."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "embedded conversation handles internal drafts and reply cancellation but Post has no submission handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Post does not append or send; whitespace enables it, switching reply targets carries the same draft, and changing page tabs discards all conversation draft state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "review and edit buttons are inert demo actions, and the supplier website is plain text",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Edit, New and review actions have no handlers; the website is text rather than a navigable link. This is not an approval, comment, ERP sync or edit success."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category dialog cancels unsaved values, closes by Escape and Close, and distinguishes registered Code validation from ignored Name validation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The Name input and description label are not associated with accessible names. Code required validation works, but the raw Name input is not registered: Save ignores its required constraint and edits."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category dialog exposes partial Save and blank-name creation, stays independent and resets on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code is registered in the demo form. Name, description and Active edits revert on Save; a new row saves its code but loses its entered name. State is memory-only."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category sheet discards controlled select changes and reinitializes them for each edited row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "category sheet records partial desktop persistence or the unreachable mobile Save button",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code and controlled Parent/Tax values persist. Name, description, sort order, Active and internal notes revert on Save; the raw Sort order minimum constraint is also ignored by Save."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "supplier PO filters combine statuses and trimmed case-insensitive search, including empty and zero results",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "supplier page tabs reset orders on remount and record their missing arrow-key navigation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Custom page tabs do not implement arrow-key navigation; switching away unmounts Orders and resets its search/status."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "embedded conversation handles internal drafts and reply cancellation but Post has no submission handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Post does not append or send; whitespace enables it, switching reply targets carries the same draft, and changing page tabs discards all conversation draft state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "review and edit buttons are inert demo actions, and the supplier website is plain text",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Edit, New and review actions have no handlers; the website is text rather than a navigable link. This is not an approval, comment, ERP sync or edit success."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category dialog cancels unsaved values, closes by Escape and Close, and distinguishes registered Code validation from ignored Name validation",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The Name input and description label are not associated with accessible names. Code required validation works, but the raw Name input is not registered: Save ignores its required constraint and edits."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category dialog exposes partial Save and blank-name creation, stays independent and resets on reload",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Only Code is registered in the demo form. Name, description and Active edits revert on Save; a new row saves its code but loses its entered name. State is memory-only."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category sheet discards controlled select changes and reinitializes them for each edited row",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "detail-master-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "category sheet records partial desktop persistence or the unreachable mobile Save button",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The mobile sheet lacks a scroll container: Save is below the viewport. Do not force-click it or count this as successful mobile saving."
+        }
+      ],
+      "attempts": 1
+    }
+  ],
+  "ci": {
+    "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40662984720",
+    "headSha": "122b5bcbe3f4a6edb376255a1315e1aacd6e158b",
+    "conclusion": "success",
+    "browserCases": 194,
+    "unitCases": 23,
+    "browserStats": {
+      "startTime": "2026-10-28T09:17:45.784Z",
+      "duration": 506078.38700000005,
+      "expected": 194,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "checks": [
+      "typecheck",
+      "unit tests",
+      "Chromium browser tests",
+      "production build",
+      "packed package in external React app",
+      "71 exported routes",
+      "GitHub Pages deployment"
+    ]
+  },
+  "visualSummary": {
+    "comparisons": 24,
+    "zeroPixelDifferences": 6,
+    "residuals": [
+      {
+        "target": "local",
+        "mode": "desktop",
+        "state": "detail",
+        "differentPixels": 97,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "desktop",
+        "state": "filtered",
+        "differentPixels": 97,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "desktop",
+        "state": "empty",
+        "differentPixels": 97,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "desktop",
+        "state": "conversation",
+        "differentPixels": 97,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "mobile",
+        "state": "detail",
+        "differentPixels": 86,
+        "maxChannelDelta": 10,
+        "bounds": [
+          1,
+          1,
+          334,
+          721
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "mobile",
+        "state": "filtered",
+        "differentPixels": 86,
+        "maxChannelDelta": 10,
+        "bounds": [
+          1,
+          1,
+          334,
+          721
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "mobile",
+        "state": "empty",
+        "differentPixels": 86,
+        "maxChannelDelta": 10,
+        "bounds": [
+          1,
+          1,
+          334,
+          721
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "mobile",
+        "state": "conversation",
+        "differentPixels": 86,
+        "maxChannelDelta": 10,
+        "bounds": [
+          1,
+          1,
+          334,
+          721
+        ]
+      },
+      {
+        "target": "local",
+        "mode": "mobile",
+        "state": "dialog-edited",
+        "differentPixels": 382,
+        "maxChannelDelta": 12,
+        "bounds": [
+          0,
+          0,
+          335,
+          558
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "detail",
+        "differentPixels": 97,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "filtered",
+        "differentPixels": 97,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "empty",
+        "differentPixels": 97,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "desktop",
+        "state": "conversation",
+        "differentPixels": 97,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "detail",
+        "differentPixels": 86,
+        "maxChannelDelta": 10,
+        "bounds": [
+          1,
+          1,
+          334,
+          721
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "filtered",
+        "differentPixels": 86,
+        "maxChannelDelta": 10,
+        "bounds": [
+          1,
+          1,
+          334,
+          721
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "empty",
+        "differentPixels": 86,
+        "maxChannelDelta": 10,
+        "bounds": [
+          1,
+          1,
+          334,
+          721
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "conversation",
+        "differentPixels": 86,
+        "maxChannelDelta": 10,
+        "bounds": [
+          1,
+          1,
+          334,
+          721
+        ]
+      },
+      {
+        "target": "published",
+        "mode": "mobile",
+        "state": "dialog-edited",
+        "differentPixels": 239,
+        "maxChannelDelta": 12,
+        "bounds": [
+          0,
+          0,
+          335,
+          558
+        ]
+      }
+    ]
+  },
+  "visualComparisons": [
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "detail",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 97,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "filtered",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 97,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "empty",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 97,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "conversation",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 97,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "dialog-edited",
+      "referenceSize": [
+        512,
+        494
+      ],
+      "targetSize": [
+        512,
+        494
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "sheet-edited",
+      "referenceSize": [
+        384,
+        900
+      ],
+      "targetSize": [
+        384,
+        900
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "detail",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 86,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "filtered",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 86,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "empty",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 86,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "conversation",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 86,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "dialog-edited",
+      "referenceSize": [
+        343,
+        558
+      ],
+      "targetSize": [
+        343,
+        558
+      ],
+      "differentPixels": 382,
+      "maxChannelDelta": 12,
+      "bounds": [
+        0,
+        0,
+        335,
+        558
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "sheet-edited",
+      "referenceSize": [
+        282,
+        812
+      ],
+      "targetSize": [
+        282,
+        812
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "detail",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 97,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "filtered",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 97,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "empty",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 97,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "conversation",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 97,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "dialog-edited",
+      "referenceSize": [
+        512,
+        494
+      ],
+      "targetSize": [
+        512,
+        494
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "sheet-edited",
+      "referenceSize": [
+        384,
+        900
+      ],
+      "targetSize": [
+        384,
+        900
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "detail",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 86,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "filtered",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 86,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "empty",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 86,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "conversation",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 86,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "dialog-edited",
+      "referenceSize": [
+        343,
+        558
+      ],
+      "targetSize": [
+        343,
+        558
+      ],
+      "differentPixels": 239,
+      "maxChannelDelta": 12,
+      "bounds": [
+        0,
+        0,
+        335,
+        558
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "sheet-edited",
+      "referenceSize": [
+        282,
+        812
+      ],
+      "targetSize": [
+        282,
+        812
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    }
+  ],
+  "semanticComparisons": [
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "detail",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "filtered",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "empty",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "conversation",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "dialog-edited",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "dialog-saved",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "sheet-edited",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "sheet-saved",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "detail",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "filtered",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "empty",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "conversation",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "dialog-edited",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "dialog-saved",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "sheet-edited",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "detail",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "filtered",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "empty",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "conversation",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "dialog-edited",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "dialog-saved",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "sheet-edited",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "sheet-saved",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "detail",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "filtered",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "empty",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "conversation",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "dialog-edited",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "dialog-saved",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "sheet-edited",
+      "ariaEqual": true,
+      "valuesEqual": true,
+      "combosEqual": true
+    }
+  ],
+  "supplementaryDismissalChecks": [
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "kind": "dialog",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "kind": "dialog",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "nested-select-escape",
+      "parentRemainsOpen": true,
+      "selection": "Standard 10%"
+    },
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "kind": "dialog",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "kind": "dialog",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "nested-select-escape",
+      "parentRemainsOpen": true,
+      "selection": "Standard 10%"
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "kind": "dialog",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "kind": "dialog",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "nested-select-escape",
+      "parentRemainsOpen": true,
+      "selection": "Standard 10%"
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "kind": "dialog",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "kind": "dialog",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "nested-select-escape",
+      "parentRemainsOpen": true,
+      "selection": "Standard 10%"
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "kind": "dialog",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "kind": "dialog",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "nested-select-escape",
+      "parentRemainsOpen": true,
+      "selection": "Standard 10%"
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "kind": "sheet",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "kind": "dialog",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "kind": "dialog",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "backdrop-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "nested-select-escape",
+      "parentRemainsOpen": true,
+      "selection": "Standard 10%"
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "kind": "sheet",
+      "state": "escape-dismiss",
+      "dialogClosed": true,
+      "openerFocused": true
+    }
+  ],
+  "savedValueSamples": [
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "state": "dialog-saved",
+      "aria": "- dialog \"Edit category\":\n  - heading \"Edit category\" [level=2]\n  - paragraph: When there are only a few fields, a modal is enough. Code, name, a short description, and the active flag can be reviewed and saved at a glance.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox \"Shown in pickers and exports.\": Devices and components.\n  - checkbox \"Active\" [checked]\n  - text: Active\n  - button \"Cancel\"\n  - button \"Save\"\n  - button \"Close\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components."
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        }
+      ],
+      "combos": []
+    },
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "state": "sheet-saved",
+      "aria": "- dialog \"Edit category\":\n  - button \"Close\"\n  - heading \"Edit category\" [level=2]\n  - paragraph: Once the form grows, move it into a Sheet. Parent, tax profile, sort order, and internal notes all fit with vertical scrolling.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox: Devices and components for resale.\n  - text: Parent category\n  - combobox \"Parent category\": Raw materials\n  - text: Sort order\n  - spinbutton: \"10\"\n  - text: Tax profile\n  - combobox \"Tax profile\": Exempt\n  - checkbox \"Active\" [checked]\n  - text: Active Internal notes\n  - textbox \"Ops-only context.\": Synced nightly from ERP.\n  - button \"Cancel\"\n  - button \"Save\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components for resale."
+        },
+        {
+          "name": "parent",
+          "value": "Raw materials",
+          "checked": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "10",
+          "checked": false
+        },
+        {
+          "name": "taxProfile",
+          "value": "Exempt",
+          "checked": false
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        },
+        {
+          "name": "notes",
+          "value": "Synced nightly from ERP."
+        }
+      ],
+      "combos": [
+        "Raw materials",
+        "Exempt"
+      ]
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "state": "dialog-saved",
+      "aria": "- dialog \"Edit category\":\n  - heading \"Edit category\" [level=2]\n  - paragraph: When there are only a few fields, a modal is enough. Code, name, a short description, and the active flag can be reviewed and saved at a glance.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox \"Shown in pickers and exports.\": Devices and components.\n  - checkbox \"Active\" [checked]\n  - text: Active\n  - button \"Cancel\"\n  - button \"Save\"\n  - button \"Close\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components."
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        }
+      ],
+      "combos": []
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "dialog-saved",
+      "aria": "- dialog \"Edit category\":\n  - heading \"Edit category\" [level=2]\n  - paragraph: When there are only a few fields, a modal is enough. Code, name, a short description, and the active flag can be reviewed and saved at a glance.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox \"Shown in pickers and exports.\": Devices and components.\n  - checkbox \"Active\" [checked]\n  - text: Active\n  - button \"Cancel\"\n  - button \"Save\"\n  - button \"Close\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components."
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        }
+      ],
+      "combos": []
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "sheet-saved",
+      "aria": "- dialog \"Edit category\":\n  - button \"Close\"\n  - heading \"Edit category\" [level=2]\n  - paragraph: Once the form grows, move it into a Sheet. Parent, tax profile, sort order, and internal notes all fit with vertical scrolling.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox: Devices and components for resale.\n  - text: Parent category\n  - combobox \"Parent category\": Raw materials\n  - text: Sort order\n  - spinbutton: \"10\"\n  - text: Tax profile\n  - combobox \"Tax profile\": Exempt\n  - checkbox \"Active\" [checked]\n  - text: Active Internal notes\n  - textbox \"Ops-only context.\": Synced nightly from ERP.\n  - button \"Cancel\"\n  - button \"Save\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components for resale."
+        },
+        {
+          "name": "parent",
+          "value": "Raw materials",
+          "checked": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "10",
+          "checked": false
+        },
+        {
+          "name": "taxProfile",
+          "value": "Exempt",
+          "checked": false
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        },
+        {
+          "name": "notes",
+          "value": "Synced nightly from ERP."
+        }
+      ],
+      "combos": [
+        "Raw materials",
+        "Exempt"
+      ]
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "dialog-saved",
+      "aria": "- dialog \"Edit category\":\n  - heading \"Edit category\" [level=2]\n  - paragraph: When there are only a few fields, a modal is enough. Code, name, a short description, and the active flag can be reviewed and saved at a glance.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox \"Shown in pickers and exports.\": Devices and components.\n  - checkbox \"Active\" [checked]\n  - text: Active\n  - button \"Cancel\"\n  - button \"Save\"\n  - button \"Close\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components."
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        }
+      ],
+      "combos": []
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "dialog-saved",
+      "aria": "- dialog \"Edit category\":\n  - heading \"Edit category\" [level=2]\n  - paragraph: When there are only a few fields, a modal is enough. Code, name, a short description, and the active flag can be reviewed and saved at a glance.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox \"Shown in pickers and exports.\": Devices and components.\n  - checkbox \"Active\" [checked]\n  - text: Active\n  - button \"Cancel\"\n  - button \"Save\"\n  - button \"Close\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components."
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        }
+      ],
+      "combos": []
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "sheet-saved",
+      "aria": "- dialog \"Edit category\":\n  - button \"Close\"\n  - heading \"Edit category\" [level=2]\n  - paragraph: Once the form grows, move it into a Sheet. Parent, tax profile, sort order, and internal notes all fit with vertical scrolling.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox: Devices and components for resale.\n  - text: Parent category\n  - combobox \"Parent category\": Raw materials\n  - text: Sort order\n  - spinbutton: \"10\"\n  - text: Tax profile\n  - combobox \"Tax profile\": Exempt\n  - checkbox \"Active\" [checked]\n  - text: Active Internal notes\n  - textbox \"Ops-only context.\": Synced nightly from ERP.\n  - button \"Cancel\"\n  - button \"Save\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components for resale."
+        },
+        {
+          "name": "parent",
+          "value": "Raw materials",
+          "checked": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "10",
+          "checked": false
+        },
+        {
+          "name": "taxProfile",
+          "value": "Exempt",
+          "checked": false
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        },
+        {
+          "name": "notes",
+          "value": "Synced nightly from ERP."
+        }
+      ],
+      "combos": [
+        "Raw materials",
+        "Exempt"
+      ]
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "dialog-saved",
+      "aria": "- dialog \"Edit category\":\n  - heading \"Edit category\" [level=2]\n  - paragraph: When there are only a few fields, a modal is enough. Code, name, a short description, and the active flag can be reviewed and saved at a glance.\n  - text: Code\n  - textbox \"Code\": DEV\n  - text: Name\n  - textbox: Electronics\n  - text: Description\n  - textbox \"Shown in pickers and exports.\": Devices and components.\n  - checkbox \"Active\" [checked]\n  - text: Active\n  - button \"Cancel\"\n  - button \"Save\"\n  - button \"Close\"",
+      "values": [
+        {
+          "name": "code",
+          "value": "DEV",
+          "checked": false
+        },
+        {
+          "name": "name",
+          "value": "Electronics",
+          "checked": false
+        },
+        {
+          "name": "description",
+          "value": "Devices and components."
+        },
+        {
+          "name": "active",
+          "value": "on",
+          "checked": true
+        }
+      ],
+      "combos": []
+    }
+  ],
+  "clippedMobileSaveSamples": [
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "state": "sheet-save-clipped",
+      "save": {
+        "x": 134.75,
+        "y": 870,
+        "width": 200.25,
+        "height": 36
+      }
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "sheet-save-clipped",
+      "save": {
+        "x": 134.75,
+        "y": 870,
+        "width": 200.25,
+        "height": 36
+      }
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "sheet-save-clipped",
+      "save": {
+        "x": 134.75,
+        "y": 870,
+        "width": 200.25,
+        "height": 36
+      }
+    }
+  ],
+  "referenceLimitations": [
+    "Supplier Edit/New/Approve/Reject/Leave a comment/Re-sync actions have no handlers; website is plain text",
+    "Custom Supplier sections tabs do not implement arrow-key navigation; leaving Orders resets filters and leaving Conversation discards drafts",
+    "Embedded conversation Post does not append or send, whitespace enables Post, and switching reply targets carries the draft",
+    "Master Name fields have no accessible name; visible labels do not guarantee accessible association",
+    "Master Save persists Code, with controlled Parent and Tax values in Sheet, while raw Name/Description/Active/Sort order/Notes edits revert",
+    "A new Dialog category can save a code but lose the entered name; reload clears memory-only records",
+    "Code required validation blocks Save, while raw Name required and Sort order minimum constraints are ignored",
+    "Mobile Sheet Save starts at y=870 in an 812px viewport and cannot be reached by scrollIntoViewIfNeeded; no forced Save was used"
+  ],
+  "investigationCorrections": [
+    "The exploratory harness initially assumed the wrong empty-state copy and native raw-field validation; it was corrected from observed behavior before the final clean run"
+  ],
+  "scope": {
+    "browser": "Playwright Chromium",
+    "locale": "en-US",
+    "timezone": "Asia/Tokyo",
+    "fixedDate": "2026-10-28T12:00:00Z (Date only; timers run normally)",
+    "conditions": [
+      "1280x900 light",
+      "375x812 dark"
+    ],
+    "routes": [
+      "/page/detail-2col-action-panel",
+      "/page/simple-master-crud"
+    ],
+    "previewVariants": [
+      "2 columns · ActionPanel",
+      "Page tabs",
+      "Dialog (few fields)",
+      "Sheet (many fields)"
+    ],
+    "screenshotStates": [
+      "detail initial",
+      "PO status + trimmed search",
+      "PO zero results",
+      "conversation with internal draft and open reply",
+      "edited Dialog",
+      "edited Sheet"
+    ],
+    "notClaimed": [
+      "all 71 pages revisited in this turn",
+      "all 582 configurable tests across three targets executed in this turn",
+      "all browsers or input combinations",
+      "zero pixel difference where edge residuals remain",
+      "functional server persistence or ERP sync",
+      "real approval or conversation submission",
+      "usable mobile Sheet saving",
+      "complete accessibility"
+    ]
+  },
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-detail-master-audit/",
+  "investigationDirectory": "/tmp/erpboost-ui-detail-master-audit-20261028/"
+}
