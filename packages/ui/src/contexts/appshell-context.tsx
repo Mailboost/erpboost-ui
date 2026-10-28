@@ -1,8 +1,8 @@
 import { ErrorBoundaryComponent, Modules, Resource } from "@/resource";
-import { createContext, useContext, type ReactNode } from "react";
+import { createContext, useContext } from "react";
+import { AppShellConfigContext } from "./appshell-config-context";
 import { DefaultErrorBoundary } from "@/components/internals/default-error-boundary";
 import {
-  DEFAULT_LOCALE,
   detectBrowserLocale,
   detectBrowserFullLocale,
   toLanguageSubtag,
@@ -14,6 +14,8 @@ import {
   type CalendarDate,
   type ZonedDateTime,
 } from "@internationalized/date";
+
+export { AppShellConfigContext, useAppShellConfig } from "./appshell-config-context";
 
 /**
  * Empty interface for module augmentation.
@@ -112,34 +114,6 @@ export const buildConfigurations = (options: ConfigurationOptions): RootConfigur
 });
 
 /**
- * Context for static configuration (title, icon, configurations).
- * Changes to this context will cause RouterContainer to re-render.
- */
-type AppShellConfigContextType = {
-  title?: string;
-  icon?: ReactNode;
-  favicon?: string;
-  appInfo?: AppInfo;
-  configurations: RootConfiguration;
-};
-
-export const AppShellConfigContext = createContext<AppShellConfigContextType>({
-  configurations: {
-    modules: [],
-    settingsResources: [],
-    locale: DEFAULT_LOCALE,
-
-    // Using null! to avoid circular dependency issues.
-    // DefaultErrorBoundary imports useT from i18n-labels, which imports
-    // defineI18nLabels from hooks/i18n, which imports useAppShellConfig
-    // from this file - creating a circular reference.
-    // This default value is never used in practice because AppShell
-    // always provides the context via AppShellConfigContext.Provider.
-    errorBoundary: null!,
-  },
-});
-
-/**
  * Context for dynamic data (contextData).
  * Changes to this context will NOT cause RouterContainer to re-render.
  */
@@ -150,14 +124,6 @@ type AppShellDataContextType = {
 export const AppShellDataContext = createContext<AppShellDataContextType>({
   contextData: {} as ContextData,
 });
-
-/**
- * Hook to access only the static configuration.
- * Use this in components that don't need contextData to avoid unnecessary re-renders.
- */
-export const useAppShellConfig = () => {
-  return useContext(AppShellConfigContext);
-};
 
 /**
  * Hook to access only the dynamic contextData.

@@ -14,6 +14,7 @@ import { Input } from "../input";
 import { Badge } from "../badge";
 import { Tabs } from "../tabs";
 import { cn } from "../../lib/utils";
+import { useDatabaseWorkspaceT } from "./i18n";
 
 export interface DatabaseWorkspaceProps {
   tables: readonly { name: string; label?: string }[];
@@ -47,7 +48,7 @@ export function DatabaseWorkspace({
   sidebarOpen,
   disabled,
   canCreate,
-  title = "データベース",
+  title,
   className,
   sidebarActions,
   renderTableActions,
@@ -59,6 +60,7 @@ export function DatabaseWorkspace({
   onCreateTable,
   children,
 }: DatabaseWorkspaceProps) {
+  const t = useDatabaseWorkspaceT();
   const id = useId();
   const selected = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -82,12 +84,14 @@ export function DatabaseWorkspace({
       {sidebarOpen && (
         <aside
           id={`${id}-tables`}
-          aria-label="テーブル一覧"
+          aria-label={t("tableList")}
           className="astw:flex astw:w-64 astw:max-w-[45vw] astw:shrink-0 astw:flex-col astw:border-r astw:border-border astw:bg-background"
         >
           <header className="astw:flex astw:items-center astw:gap-2 astw:px-4 astw:py-3">
             <Database className="astw:size-4 astw:shrink-0" />
-            <h1 className="astw:text-label-md astw:font-semibold">{title}</h1>
+            <h1 className="astw:text-label-md astw:font-semibold">
+              {title ?? t("title")}
+            </h1>
             <Badge variant="neutral">{tables.length}</Badge>
             <div className="astw:ml-auto astw:flex astw:gap-1">
               {sidebarActions}
@@ -103,13 +107,13 @@ export function DatabaseWorkspace({
               onClick={onCreateTable}
             >
               <Plus />
-              テーブルを追加
+              {t("addTable")}
             </Button>
             <div className="astw:relative">
               <Search className="astw:pointer-events-none astw:absolute astw:left-2.5 astw:top-2.5 astw:size-4 astw:text-muted-foreground" />
               <Input
-                aria-label="テーブルを検索"
-                placeholder="テーブルを検索"
+                aria-label={t("searchTables")}
+                placeholder={t("searchTables")}
                 className="astw:pl-8"
                 value={search}
                 onChange={(event) => onSearchChange(event.target.value)}
@@ -117,7 +121,7 @@ export function DatabaseWorkspace({
             </div>
           </div>
           <nav
-            aria-label="データベースのテーブル"
+            aria-label={t("databaseTables")}
             className="astw:min-h-0 astw:flex-1 astw:overflow-y-auto astw:px-2 astw:pb-3"
           >
             {visible.map((table) => (
@@ -153,14 +157,14 @@ export function DatabaseWorkspace({
                 role="status"
                 className="astw:p-4 astw:text-body-sm astw:text-muted-foreground"
               >
-                該当するテーブルがありません
+                {t("noMatchingTables")}
               </p>
             )}
           </nav>
         </aside>
       )}
       <section
-        aria-label="データベース作業領域"
+        aria-label={t("workspace")}
         className="astw:flex astw:min-w-0 astw:min-h-0 astw:flex-1 astw:flex-col"
       >
         <header className="astw:flex astw:min-h-11 astw:shrink-0 astw:items-center astw:gap-1 astw:border-b astw:border-border astw:px-2">
@@ -168,9 +172,7 @@ export function DatabaseWorkspace({
             type="button"
             variant="ghost"
             size="icon"
-            aria-label={
-              sidebarOpen ? "テーブル一覧を閉じる" : "テーブル一覧を開く"
-            }
+            aria-label={sidebarOpen ? t("closeTableList") : t("openTableList")}
             aria-expanded={sidebarOpen}
             aria-controls={`${id}-tables`}
             onClick={() => onSidebarOpenChange(!sidebarOpen)}
@@ -178,20 +180,26 @@ export function DatabaseWorkspace({
             {sidebarOpen ? <PanelLeftClose /> : <PanelLeftOpen />}
           </Button>
           <Tabs.Root
-            value={view === "erd" ? "erd" : (selectedTable ?? "")}
+            value={
+              view === "erd"
+                ? "diagram:erd"
+                : selectedTable === undefined
+                  ? ""
+                  : `table:${selectedTable}`
+            }
             onValueChange={(name) => {
-              if (typeof name === "string" && name !== "erd")
-                onSelectTable(name);
+              if (typeof name === "string" && name.startsWith("table:"))
+                onSelectTable(name.slice("table:".length));
             }}
             variant="line"
             className="astw:min-w-0 astw:flex-1 astw:overflow-x-auto"
           >
-            <Tabs.List aria-label="開いているテーブル" className="astw:w-max">
+            <Tabs.List aria-label={t("openTables")} className="astw:w-max">
               {openedTables
                 .filter((name) => tables.some((table) => table.name === name))
                 .map((name) => (
                   <div key={name} className="astw:flex astw:items-center">
-                    <Tabs.Tab value={name}>
+                    <Tabs.Tab value={`table:${name}`}>
                       <Table2 className="astw:mr-1 astw:size-3.5" />
                       {name}
                     </Tabs.Tab>
@@ -199,7 +207,7 @@ export function DatabaseWorkspace({
                       type="button"
                       variant="ghost"
                       size="icon"
-                      aria-label={`${name}のタブを閉じる`}
+                      aria-label={t("closeTableTab", { name })}
                       className="astw:size-6"
                       onClick={() => onCloseTable(name)}
                     >
@@ -209,15 +217,15 @@ export function DatabaseWorkspace({
                 ))}
               {view === "erd" && (
                 <div className="astw:flex astw:items-center">
-                  <Tabs.Tab value="erd">
+                  <Tabs.Tab value="diagram:erd">
                     <GitBranch className="astw:mr-1 astw:size-3.5" />
-                    ER図
+                    {t("diagram")}
                   </Tabs.Tab>
                   <Button
                     type="button"
                     variant="ghost"
                     size="icon"
-                    aria-label="ER図を閉じる"
+                    aria-label={t("closeDiagram")}
                     className="astw:size-6"
                     onClick={onCloseDiagram}
                   >
@@ -231,7 +239,7 @@ export function DatabaseWorkspace({
             type="button"
             variant="ghost"
             size="icon"
-            aria-label="新しいテーブルを追加"
+            aria-label={t("addNewTable")}
             disabled={disabled || !canCreate}
             onClick={onCreateTable}
           >
