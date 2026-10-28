@@ -192,7 +192,7 @@ export function ContextDetailsDemo() {
                     aria-pressed={visible}
                     onClick={() => setVisible(!visible)}
                   >
-                    👁
+                    {visible ? <EyeOff size={17}/> : <Eye size={17}/>}
                   </Button>
                 </Field.InputGroup>
                 <Field.Description>
