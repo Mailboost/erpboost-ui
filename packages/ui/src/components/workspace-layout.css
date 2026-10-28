@@ -1,0 +1,292 @@
+/* Code workspace regions follow the existing editor's responsive layout. */
+.erpui-code-workspace {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+.erpui-code-workspace-sidebar {
+  width: 190px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  background: var(--muted);
+  overflow: auto;
+  padding: 13px 8px;
+  font-size: 11px;
+}
+.erpui-code-workspace-main {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+.erpui-code-workspace-editor {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: var(--background);
+}
+.erpui-code-workspace-editor-tabs {
+  height: 36px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  background: var(--muted);
+}
+.erpui-code-workspace-editor-tabs > small {
+  margin-left: auto;
+  margin-right: 15px;
+  font-size: 10px;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+  padding-left: 12px;
+}
+.erpui-code-workspace-results {
+  display: flex;
+  flex-direction: column;
+  min-height: 130px;
+  max-height: 48vh;
+  flex-shrink: 0;
+}
+.erpui-code-workspace-results-header {
+  height: 37px;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+  padding: 0 12px;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.erpui-code-workspace-results-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+.erpui-code-workspace-results-body[data-graph] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.erpui-code-workspace-results-body[data-graph] > :last-child {
+  flex: 1;
+  min-height: 0;
+}
+.erpui-code-workspace-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  position: relative;
+  width: var(--code-workspace-panel-width, 420px);
+  max-width: 55%;
+  flex-shrink: 0;
+  border-left: 1px solid var(--border);
+  background: var(--muted);
+}
+.erpui-code-workspace-panel > [data-slot="resize-handle"] {
+  position: absolute;
+  left: -3px;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+}
+.erpui-code-workspace-panel
+  > :last-child:not([data-slot="code-workspace-header"]) {
+  flex: 1;
+  min-height: 0;
+}
+.erpui-code-workspace-header {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+.erpui-code-workspace-header > span {
+  flex: 1;
+  min-width: 0;
+}
+.erpui-code-workspace-header > [data-slot="code-workspace-header-actions"] {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.erpui-code-workspace-header button {
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+}
+.erpui-code-workspace-sidebar > .erpui-code-workspace-header {
+  height: auto;
+  padding: 0 7px 17px;
+  border: 0;
+  font-size: 11px;
+  font-weight: 600;
+}
+@media (max-width: 1200px) {
+  .erpui-code-workspace-panel {
+    max-width: 50%;
+  }
+  .erpui-code-workspace-results-header {
+    gap: 9px;
+  }
+}
+@media (max-width: 1150px) {
+  .erpui-code-workspace-sidebar {
+    width: 155px;
+  }
+}
+@media (max-width: 1100px) {
+  .erpui-code-workspace-main {
+    flex-direction: column;
+  }
+  .erpui-code-workspace-panel {
+    width: 100%;
+    max-width: none;
+    height: 230px;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .erpui-code-workspace-panel > [data-slot="resize-handle"] {
+    display: none;
+  }
+  .erpui-code-workspace-results-header {
+    overflow-x: auto;
+  }
+}
+.erpui-graph-controls {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  flex-shrink: 0;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--background);
+  box-shadow: 0 1px 4px #1118270a;
+}
+.erpui-graph-controls button {
+  width: 27px;
+  height: 25px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--foreground);
+  display: grid;
+  place-items: center;
+}
+.erpui-graph-controls button:hover {
+  background: var(--accent);
+}
+.erpui-graph-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.erpui-graph-scale {
+  min-width: 35px;
+  text-align: center;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+/* Sectioned layout is opt-in; existing Dialog/Sheet consumers keep their defaults. */
+.erpui-sectioned-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+.erpui-sectioned-dialog > form,
+.erpui-sectioned-dialog > [data-slot="sheet-inner-content"] > form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+.erpui-sectioned-dialog
+  :is([data-slot="dialog-header"], [data-slot="sheet-header"]) {
+  flex-shrink: 0;
+  padding: 19px 22px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.erpui-sectioned-dialog
+  :is([data-slot="dialog-body"], [data-slot="sheet-body"]) {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 24px 22px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.erpui-sectioned-dialog
+  :is([data-slot="dialog-body"], [data-slot="sheet-body"])
+  > p {
+  color: var(--muted-foreground);
+}
+.erpui-sectioned-dialog
+  :is([data-slot="dialog-footer"], [data-slot="sheet-footer"]) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 22px;
+  border-top: 1px solid var(--border);
+  background: var(--muted);
+}
+.erpui-sectioned-dialog [data-align="between"] {
+  justify-content: space-between;
+}
+@media (max-width: 520px) {
+  .erpui-sectioned-dialog
+    :is([data-slot="dialog-header"], [data-slot="sheet-header"]) {
+    padding: 16px;
+  }
+  .erpui-sectioned-dialog
+    :is([data-slot="dialog-body"], [data-slot="sheet-body"]) {
+    padding: 16px;
+  }
+  .erpui-sectioned-dialog
+    :is([data-slot="dialog-footer"], [data-slot="sheet-footer"]) {
+    padding: 12px 16px;
+  }
+}
+
+.erpui-code-workspace-editor-tabs > [data-slot="tabs"] {
+  flex: 1;
+  min-width: 0;
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.erpui-code-workspace-editor-tabs [data-slot="tabs-list"] {
+  height: 100%;
+  width: max-content;
+}
+.erpui-code-workspace-results-header > [data-slot="tabs"] {
+  min-width: 0;
+}
+.erpui-code-workspace-results-header
+  > [data-slot="code-workspace-results-actions"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.erpui-code-workspace-results-header
+  [data-slot="code-workspace-results-actions"]
+  button {
+  padding: 0 4px;
+}

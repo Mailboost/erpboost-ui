@@ -1,3 +1,4 @@
+import { GraphControls } from "../graph-controls";
 import type * as React from "react";
 import { Button } from "../button";
 import { Checkbox } from "../checkbox";
@@ -29,9 +30,6 @@ import {
   KeyRound,
   LayoutGrid,
   Link2,
-  Maximize2,
-  Minus,
-  Plus,
   Search,
   Table2,
   X,
@@ -577,94 +575,44 @@ function Diagram({
             </Button>
           </div>
         )}
-        <div
+        <GraphControls
           className="erpui-erd-controls"
-          role="group"
           aria-label={t("controls")}
-        >
-          <Tooltip.Root>
-            <Tooltip.Trigger
-              render={
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  type="button"
-                  aria-label={t("zoomOutLabel")}
-                  disabled={zoom <= 4}
-                  onClick={() => void flow.zoomOut({ duration: 120 })}
-                >
-                  <Minus size={16} />
-                </Button>
-              }
-            />
-            <Tooltip.Content container={portalContainer}>
-              {t("zoomOut")}
-            </Tooltip.Content>
-          </Tooltip.Root>
-          <Tooltip.Root>
-            <Tooltip.Trigger
-              render={
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  type="button"
-                  className="erpui-erd-scale"
-                  aria-label={t("resetZoomLabel")}
-                  onClick={() => void flow.zoomTo(1, { duration: 120 })}
-                >
-                  {zoom}%
-                </Button>
-              }
-            />
-            <Tooltip.Content container={portalContainer}>
-              {t("resetZoom")}
-            </Tooltip.Content>
-          </Tooltip.Root>
-          <Tooltip.Root>
-            <Tooltip.Trigger
-              render={
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  type="button"
-                  aria-label={t("zoomInLabel")}
-                  disabled={zoom >= 200}
-                  onClick={() => void flow.zoomIn({ duration: 120 })}
-                >
-                  <Plus size={16} />
-                </Button>
-              }
-            />
-            <Tooltip.Content container={portalContainer}>
-              {t("zoomIn")}
-            </Tooltip.Content>
-          </Tooltip.Root>
-          <Tooltip.Root>
-            <Tooltip.Trigger
-              render={
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  type="button"
-                  aria-label={t("fitLabel")}
-                  onClick={() => {
-                    setSelected(null);
-                    void flow.fitView({
-                      padding: 0.1,
-                      maxZoom: 1,
-                      duration: 220,
-                    });
-                  }}
-                >
-                  <Maximize2 size={15} />
-                </Button>
-              }
-            />
-            <Tooltip.Content container={portalContainer}>
-              {t("fit")}
-            </Tooltip.Content>
-          </Tooltip.Root>
-        </div>
+          zoom={zoom}
+          minZoom={4}
+          maxZoom={200}
+          zoomOutLabel={t("zoomOutLabel")}
+          zoomInLabel={t("zoomInLabel")}
+          fitViewLabel={t("fitLabel")}
+          container={portalContainer}
+          onZoomOut={() => void flow.zoomOut({ duration: 120 })}
+          onZoomIn={() => void flow.zoomIn({ duration: 120 })}
+          onFitView={() => {
+            setSelected(null);
+            void flow.fitView({ padding: 0.1, maxZoom: 1, duration: 220 });
+          }}
+          zoomDisplay={
+            <Tooltip.Root>
+              <Tooltip.Trigger
+                render={
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    type="button"
+                    className="erpui-erd-scale"
+                    aria-label={t("resetZoomLabel")}
+                    onClick={() => void flow.zoomTo(1, { duration: 120 })}
+                  >
+                    {zoom}%
+                  </Button>
+                }
+              />
+              <Tooltip.Content container={portalContainer}>
+                {t("resetZoom")}
+              </Tooltip.Content>
+            </Tooltip.Root>
+          }
+        />
       </div>
       <div className="erpui-erd-legend">
         <span>

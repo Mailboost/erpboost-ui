@@ -26,6 +26,8 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "code-workspace": "src/components/code-workspace/index.tsx",
+        "graph-controls": "src/components/graph-controls/index.tsx",
         "status-dot": "src/components/status-dot/index.tsx",
         "resize-handle": "src/components/resize-handle/index.tsx",
         "log-viewer": "src/components/log-viewer/index.tsx",

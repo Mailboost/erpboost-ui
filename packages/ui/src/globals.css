@@ -1,3 +1,4 @@
+@import "./components/workspace-layout.css";
 @import "./components/developer-surfaces.css";
 @import "@xyflow/react/dist/style.css";
 @import "./components/erd-diagram/erd-diagram.css";

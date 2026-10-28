@@ -115,7 +115,7 @@ it.each([
     expect(screen.getByRole("region", { name })).toBeTruthy();
     expect(screen.getByText(empty)).toBeTruthy();
     expect(screen.getByRole("combobox", { name: search })).toBeTruthy();
-    expect(screen.getByRole("group", { name: controls })).toBeTruthy();
+    expect(screen.getByRole("toolbar", { name: controls })).toBeTruthy();
     fireEvent.click(screen.getByRole("checkbox", { name: keys }));
     expect(
       screen.getByRole("checkbox", { name: keys }).getAttribute("aria-checked"),

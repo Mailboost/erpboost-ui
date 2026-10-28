@@ -379,3 +379,6 @@ export { CellEditor } from "./components/cell-editor";
 export { CodeEditor } from "./components/code-editor";
 
 export { DescriptionList } from "./components/description-list";
+
+export {CodeWorkspace} from "./components/code-workspace";
+export {GraphControls, type GraphControlsProps} from "./components/graph-controls";

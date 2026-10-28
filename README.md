@@ -151,3 +151,11 @@ Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `typ
 `/log-viewer` renders plain text and an optional empty slot. `/description-list` uses explicit JSX label/value items, with application-owned formatting. `/resize-handle` is a styled, focusable separator; layouts provide values and pointer/keyboard handlers. `/status-dot` provides neutral/success/error indicators; callers supply accessible labels.
 
 `/cell-editor` provides the existing anchored editing surface, close button, busy dismissal guard, outside-click/Escape handling, and action slots. Supply an application-owned `container` for themed portals. The app owns input controls, value parsing, Enter-to-save and persistence. No API clients, screen-definition schema or business-specific configuration is included. The database-workspace catalogue demonstrates all of these alongside the existing components.
+
+### Workspace layout and graph controls
+
+`CodeWorkspace` from `/code-workspace` provides explicit JSX regions: Root, Sidebar, Main, Editor, EditorTabs, Results, ResultsHeader, ResultsBody, Panel and Header. Supply a Panel width and your existing ResizeHandle callbacks; the package owns the desktop/mobile layout and region scrolling. ResultsHeader and Header accept action slots. No file, API, tab or execution state is stored by the layout.
+
+`GraphControls` from `/graph-controls` is the same toolbar used by ErdDiagram. Callers supply zoom bounds, labels, handlers and an optional overlay container. Extra controls (such as graph direction) and a reset-zoom button fit in JSX slots. Disabled zoom actions are skipped by the existing Toolbar keyboard behavior.
+
+Dialog.Content and Sheet.Content accept `layout="sectioned"` to share Header / Body / Footer spacing and independent body scrolling. Their existing default layouts are unchanged. Dialog.Header accepts an action; Sheet.Header can disable its built-in close button when the application supplies a guarded close action. Footer accepts `align="between"` for status and actions. The catalogue's `/patterns/code-workspace` example demonstrates these parts together.

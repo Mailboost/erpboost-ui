@@ -1,11 +1,19 @@
 import * as React from "react";
 import { Drawer } from "@base-ui/react/drawer";
-import { ChevronsRight, ChevronsLeft, ChevronsUp, ChevronsDown } from "lucide-react";
+import {
+  ChevronsRight,
+  ChevronsLeft,
+  ChevronsUp,
+  ChevronsDown,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Text } from "../text";
 
-const sideToCloseIcon: Record<Side, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+const sideToCloseIcon: Record<
+  Side,
+  React.ComponentType<React.SVGProps<SVGSVGElement>>
+> = {
   right: ChevronsRight,
   left: ChevronsLeft,
   top: ChevronsUp,
@@ -112,7 +120,10 @@ function Portal({ ...props }: React.ComponentProps<typeof Drawer.Portal>) {
 Portal.displayName = "Sheet.Portal";
 
 /** The backdrop overlay that appears behind the sheet. */
-function Overlay({ className, ...props }: React.ComponentProps<typeof Drawer.Backdrop>) {
+function Overlay({
+  className,
+  ...props
+}: React.ComponentProps<typeof Drawer.Backdrop>) {
   return (
     <Drawer.Backdrop
       data-slot="sheet-overlay"
@@ -132,15 +143,30 @@ type SheetContentProps = React.ComponentProps<typeof Drawer.Popup> & {
 };
 
 /** The main sheet panel. The `side` and modal behavior are inherited from `Sheet.Root` via context. */
-function Content({ className, children, size = "sm", container, ...props }: SheetContentProps & { container?: React.ComponentProps<typeof Drawer.Portal>["container"] }) {
+function Content({
+  className,
+  children,
+  size = "sm",
+  container,
+  layout = "default",
+  ...props
+}: SheetContentProps & {
+  container?: React.ComponentProps<typeof Drawer.Portal>["container"];
+  layout?: "default" | "sectioned";
+}) {
   // `side` is controlled by `Root` via context, not accepted as a prop, to keep swipe direction and CSS position in sync.
-  const { side, showBackdrop, allowOutsidePointerEvents } = React.useContext(SheetContext);
+  const { side, showBackdrop, allowOutsidePointerEvents } =
+    React.useContext(SheetContext);
   const isHorizontal = side === "right" || side === "left";
 
   return (
     <Portal container={container}>
       {showBackdrop && (
-        <Overlay className={allowOutsidePointerEvents ? "astw:pointer-events-none" : undefined} />
+        <Overlay
+          className={
+            allowOutsidePointerEvents ? "astw:pointer-events-none" : undefined
+          }
+        />
       )}
       <Drawer.Viewport
         data-slot="sheet-viewport"
@@ -168,11 +194,16 @@ function Content({ className, children, size = "sm", container, ...props }: Shee
             isHorizontal && sizeClasses[size],
             allowOutsidePointerEvents && "astw:pointer-events-auto",
             "astw:data-swiping:select-none",
+            layout === "sectioned" &&
+              "erpui-sectioned-dialog astw:gap-0 astw:overflow-hidden",
             className,
           )}
           {...props}
         >
-          <Drawer.Content data-slot="sheet-inner-content" className="astw:contents">
+          <Drawer.Content
+            data-slot="sheet-inner-content"
+            className="astw:contents"
+          >
             {children}
           </Drawer.Content>
         </Drawer.Popup>
@@ -200,35 +231,55 @@ function CloseButton() {
 type SheetHeaderProps = Omit<React.ComponentProps<"div">, "children"> & {
   /** Action buttons displayed to the right of the title. */
   action?: React.ReactNode;
+  showCloseButton?: boolean;
   children?: React.ReactNode;
 };
 
 /** A layout wrapper for the sheet title, close button, and optional action buttons. */
-function Header({ className, action, children, ...props }: SheetHeaderProps) {
+function Header({
+  className,
+  action,
+  children,
+  showCloseButton = true,
+  ...props
+}: SheetHeaderProps) {
   const childArray = React.Children.toArray(children);
   const titleChild = childArray.find(
-    (child): child is React.ReactElement => React.isValidElement(child) && child.type === Title,
+    (child): child is React.ReactElement =>
+      React.isValidElement(child) && child.type === Title,
   );
   const primaryChildren = titleChild ? [titleChild] : childArray;
-  const secondaryChildren = titleChild ? childArray.filter((child) => child !== titleChild) : [];
+  const secondaryChildren = titleChild
+    ? childArray.filter((child) => child !== titleChild)
+    : [];
 
   return (
     <div
       data-slot="sheet-header"
-      className={cn("astw:border-b astw:border-border astw:px-4 astw:py-3", className)}
+      className={cn(
+        "astw:border-b astw:border-border astw:px-4 astw:py-3",
+        className,
+      )}
       {...props}
     >
       <div className="astw:flex astw:items-center astw:gap-3">
-        <CloseButton />
+        {showCloseButton && <CloseButton />}
         <div className="astw:flex astw:min-w-0 astw:flex-1 astw:items-center astw:gap-2">
           <div className="astw:min-w-0 astw:flex-1">{primaryChildren}</div>
           {action && (
-            <div className="astw:flex astw:shrink-0 astw:items-center astw:gap-2">{action}</div>
+            <div className="astw:flex astw:shrink-0 astw:items-center astw:gap-2">
+              {action}
+            </div>
           )}
         </div>
       </div>
       {secondaryChildren.length > 0 && (
-        <div className="astw:flex astw:min-w-0 astw:flex-col astw:gap-1 astw:pl-11">
+        <div
+          className={cn(
+            "astw:flex astw:min-w-0 astw:flex-col astw:gap-1",
+            showCloseButton && "astw:pl-11",
+          )}
+        >
           {secondaryChildren}
         </div>
       )}
@@ -238,10 +289,15 @@ function Header({ className, action, children, ...props }: SheetHeaderProps) {
 Header.displayName = "Sheet.Header";
 
 /** A layout wrapper for sheet action buttons, typically placed at the bottom. */
-function Footer({ className, ...props }: React.ComponentProps<"div">) {
+function Footer({
+  className,
+  align = "end",
+  ...props
+}: React.ComponentProps<"div"> & { align?: "end" | "between" }) {
   return (
     <div
       data-slot="sheet-footer"
+      data-align={align}
       className={cn(
         "astw:mt-auto astw:flex astw:flex-col astw:gap-2 astw:border-t astw:border-border astw:p-4",
         className,
@@ -252,8 +308,22 @@ function Footer({ className, ...props }: React.ComponentProps<"div">) {
 }
 Footer.displayName = "Sheet.Footer";
 
+/** Scrollable content region for a sectioned sheet. */
+function Body({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      {...props}
+      data-slot="sheet-body"
+      className={cn("astw:min-h-0 astw:flex-1 astw:overflow-auto", className)}
+    />
+  );
+}
+
 /** The title of the sheet, announced by screen readers. */
-function Title({ className, ...props }: React.ComponentProps<typeof Drawer.Title>) {
+function Title({
+  className,
+  ...props
+}: React.ComponentProps<typeof Drawer.Title>) {
   return (
     <Text
       variant="heading-md"
@@ -265,7 +335,10 @@ function Title({ className, ...props }: React.ComponentProps<typeof Drawer.Title
 Title.displayName = "Sheet.Title";
 
 /** A description that provides additional context for the sheet. */
-function Description({ className, ...props }: React.ComponentProps<typeof Drawer.Description>) {
+function Description({
+  className,
+  ...props
+}: React.ComponentProps<typeof Drawer.Description>) {
   return (
     <Text
       variant="body-md"
@@ -278,6 +351,7 @@ Description.displayName = "Sheet.Description";
 
 export const Sheet = {
   Root,
+  Body,
   Trigger,
   Close,
   Content,

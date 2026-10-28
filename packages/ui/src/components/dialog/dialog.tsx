@@ -41,7 +41,9 @@ function Root({ ...props }: DialogRootProps) {
 Root.displayName = "Dialog.Root";
 
 /** The element that opens the dialog when clicked. */
-function Trigger({ ...props }: React.ComponentProps<typeof BaseDialog.Trigger>) {
+function Trigger({
+  ...props
+}: React.ComponentProps<typeof BaseDialog.Trigger>) {
   return <BaseDialog.Trigger data-slot="dialog-trigger" {...props} />;
 }
 Trigger.displayName = "Dialog.Trigger";
@@ -59,7 +61,10 @@ function Close({ ...props }: React.ComponentProps<typeof BaseDialog.Close>) {
 Close.displayName = "Dialog.Close";
 
 /** @internal The backdrop overlay that appears behind the dialog. */
-function Overlay({ className, ...props }: React.ComponentProps<typeof BaseDialog.Backdrop>) {
+function Overlay({
+  className,
+  ...props
+}: React.ComponentProps<typeof BaseDialog.Backdrop>) {
   return (
     <BaseDialog.Backdrop
       data-slot="dialog-overlay"
@@ -74,9 +79,17 @@ function Overlay({ className, ...props }: React.ComponentProps<typeof BaseDialog
 Overlay.displayName = "Dialog.Overlay";
 
 /** The main dialog panel that contains the dialog content. Automatically includes a close button and overlay. */
-function Content({ className, children, container, showCloseButton = true, ...props }: React.ComponentProps<typeof BaseDialog.Popup> & {
+function Content({
+  className,
+  children,
+  container,
+  showCloseButton = true,
+  layout = "default",
+  ...props
+}: React.ComponentProps<typeof BaseDialog.Popup> & {
   container?: React.ComponentProps<typeof BaseDialog.Portal>["container"];
   showCloseButton?: boolean;
+  layout?: "default" | "sectioned";
 }) {
   return (
     <Portal container={container} data-slot="dialog-portal">
@@ -85,15 +98,19 @@ function Content({ className, children, container, showCloseButton = true, ...pr
         data-slot="dialog-content"
         className={cn(
           "astw:bg-card astw:data-open:animate-in astw:data-ending-style:animate-out astw:data-ending-style:fade-out-0 astw:data-open:fade-in-0 astw:data-ending-style:zoom-out-95 astw:data-open:zoom-in-95 astw:fill-mode-forwards astw:fixed astw:top-[50%] astw:left-[50%] astw:z-(--z-overlay) astw:grid astw:w-full astw:max-w-[calc(100%-2rem)] astw:translate-x-[-50%] astw:translate-y-[-50%] astw:gap-4 astw:rounded-lg astw:border astw:border-border astw:p-6 astw:shadow-lg astw:duration-200 astw:sm:max-w-lg",
+          layout === "sectioned" &&
+            "erpui-sectioned-dialog astw:flex astw:flex-col astw:gap-0 astw:overflow-hidden astw:p-0",
           className,
         )}
         {...props}
       >
         {children}
-        {showCloseButton && <BaseDialog.Close className="astw:ring-offset-bg astw:focus:ring-ring astw:data-open:bg-accent astw:data-open:text-muted-foreground astw:absolute astw:top-4 astw:right-4 astw:rounded-xs astw:opacity-70 astw:transition-opacity astw:hover:opacity-100 astw:focus:ring-2 astw:focus:ring-offset-2 astw:focus:outline-hidden astw:disabled:pointer-events-none astw:[&_svg]:pointer-events-none astw:[&_svg]:shrink-0 astw:[&_svg:not([class*='size-'])]:size-4">
-          <XIcon />
-          <span className="astw:sr-only">Close</span>
-        </BaseDialog.Close>}
+        {showCloseButton && (
+          <BaseDialog.Close className="astw:ring-offset-bg astw:focus:ring-ring astw:data-open:bg-accent astw:data-open:text-muted-foreground astw:absolute astw:top-4 astw:right-4 astw:rounded-xs astw:opacity-70 astw:transition-opacity astw:hover:opacity-100 astw:focus:ring-2 astw:focus:ring-offset-2 astw:focus:outline-hidden astw:disabled:pointer-events-none astw:[&_svg]:pointer-events-none astw:[&_svg]:shrink-0 astw:[&_svg:not([class*='size-'])]:size-4">
+            <XIcon />
+            <span className="astw:sr-only">Close</span>
+          </BaseDialog.Close>
+        )}
       </BaseDialog.Popup>
     </Portal>
   );
@@ -101,25 +118,46 @@ function Content({ className, children, container, showCloseButton = true, ...pr
 Content.displayName = "Dialog.Content";
 
 /** A layout wrapper for the dialog title and description. */
-function Header({ className, ...props }: React.ComponentProps<"div">) {
+function Header({
+  className,
+  action,
+  children,
+  ...props
+}: React.ComponentProps<"div"> & { action?: React.ReactNode }) {
   return (
     <div
       data-slot="dialog-header"
       className={cn(
         "astw:flex astw:flex-col astw:gap-2 astw:text-center astw:sm:text-left",
+        action &&
+          "astw:flex-row astw:items-center astw:justify-between astw:text-left",
         className,
       )}
       {...props}
-    />
+    >
+      {action ? (
+        <>
+          <div className="astw:min-w-0 astw:flex-1">{children}</div>
+          {action}
+        </>
+      ) : (
+        children
+      )}
+    </div>
   );
 }
 Header.displayName = "Dialog.Header";
 
 /** A layout wrapper for dialog action buttons, typically placed at the bottom. */
-function Footer({ className, ...props }: React.ComponentProps<"div">) {
+function Footer({
+  className,
+  align = "end",
+  ...props
+}: React.ComponentProps<"div"> & { align?: "end" | "between" }) {
   return (
     <div
       data-slot="dialog-footer"
+      data-align={align}
       className={cn(
         "astw:flex astw:flex-col-reverse astw:gap-2 astw:sm:flex-row astw:sm:justify-end",
         className,
@@ -130,8 +168,22 @@ function Footer({ className, ...props }: React.ComponentProps<"div">) {
 }
 Footer.displayName = "Dialog.Footer";
 
+/** Scrollable content region for a sectioned dialog. */
+function Body({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      {...props}
+      data-slot="dialog-body"
+      className={cn("astw:min-h-0 astw:flex-1 astw:overflow-auto", className)}
+    />
+  );
+}
+
 /** The title of the dialog, announced by screen readers. */
-function Title({ className, ...props }: React.ComponentProps<typeof BaseDialog.Title>) {
+function Title({
+  className,
+  ...props
+}: React.ComponentProps<typeof BaseDialog.Title>) {
   return (
     <Text
       variant="heading-md"
@@ -143,12 +195,17 @@ function Title({ className, ...props }: React.ComponentProps<typeof BaseDialog.T
 Title.displayName = "Dialog.Title";
 
 /** A description that provides additional context for the dialog. */
-function Description({ className, ...props }: React.ComponentProps<typeof BaseDialog.Description>) {
+function Description({
+  className,
+  ...props
+}: React.ComponentProps<typeof BaseDialog.Description>) {
   return (
     <Text
       variant="body-md"
       className={cn("astw:text-muted-foreground", className)}
-      render={<BaseDialog.Description data-slot="dialog-description" {...props} />}
+      render={
+        <BaseDialog.Description data-slot="dialog-description" {...props} />
+      }
     />
   );
 }
@@ -156,6 +213,7 @@ Description.displayName = "Dialog.Description";
 
 export const Dialog = {
   Root,
+  Body,
   Close,
   Content,
   Description,

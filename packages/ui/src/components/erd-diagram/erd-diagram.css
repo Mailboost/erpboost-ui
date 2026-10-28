@@ -308,45 +308,8 @@
   overflow: hidden;
   box-shadow: 0 2px 8px #1118270a;
 }
-.erpui-erd-controls {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  display: flex;
-  align-items: center;
-  height: 31px;
-  padding: 0 2px;
-  border: 1px solid var(--input);
-  border-radius: 5px;
-  background: var(--background);
-  box-shadow: 0 1px 4px #1118270a;
-  z-index: 4;
-}
-.erpui-erd-controls button {
-  display: grid;
-  place-items: center;
-  width: 29px;
-  height: 27px;
-  padding: 0;
-  border: 0;
-  border-radius: 3px;
-  background: transparent;
-  color: var(--foreground);
-  cursor: pointer;
-}
-.erpui-erd-controls button:hover {
-  background: var(--accent);
-}
-.erpui-erd-controls button:disabled {
-  opacity: 0.35;
-  cursor: default;
-}
-.erpui-erd-controls button.erpui-erd-scale {
-  width: 47px;
-  color: var(--muted-foreground);
-  font-size: 11px;
-  font-variant-numeric: tabular-nums;
-}
+.erpui-erd-controls{position:absolute;bottom:12px;left:12px;z-index:4}
+.erpui-erd-controls .erpui-erd-scale{width:47px;font-size:11px;color:var(--muted-foreground)}
 .erpui-erd-selection {
   position: absolute;
   top: 12px;

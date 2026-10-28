@@ -166,6 +166,14 @@
     "./description-list": {
       "types": "./dist/components/description-list/index.d.ts",
       "import": "./dist/description-list.js"
+    },
+    "./code-workspace": {
+      "types": "./dist/components/code-workspace/index.d.ts",
+      "import": "./dist/code-workspace.js"
+    },
+    "./graph-controls": {
+      "types": "./dist/components/graph-controls/index.d.ts",
+      "import": "./dist/graph-controls.js"
     }
   },
   "scripts": {
