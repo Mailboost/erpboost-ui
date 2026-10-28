@@ -1,0 +1,2686 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "testedCommit": "6dc74ad025b188f11dd534acab2d797512f0d04c",
+  "applicationCodeChanged": false,
+  "applicationChanges": [],
+  "deployedAssets": {
+    "scripts": [
+      "https://mailboost.github.io/erpboost-ui/assets/index-KmoW2moG.js"
+    ],
+    "styles": [
+      "https://mailboost.github.io/erpboost-ui/assets/index-CHXQqZIc.css"
+    ],
+    "matchesCapturedPublicAssets": true
+  },
+  "publishedCaseTimeoutMs": 60000,
+  "interactionAssertionTimeoutsUnchanged": true,
+  "newCasesPerEnvironment": 16,
+  "catalogueBrowserCasesPerEnvironment": 210,
+  "unitCases": 23,
+  "executedNewBrowserCases": 48,
+  "categories": {
+    "scripted-demo": 9,
+    "scripted-demo,reference-limitation": 15,
+    "reference-limitation": 18,
+    "normal": 6
+  },
+  "executions": [
+    {
+      "name": "reference-local",
+      "report": "verified-reference-local.json",
+      "stats": {
+        "startTime": "2026-10-28T09:42:02.692Z",
+        "duration": 181930.839,
+        "expected": 32,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "published",
+      "report": "verified-published.json",
+      "stats": {
+        "startTime": "2026-10-28T10:02:52.447Z",
+        "duration": 90365.622,
+        "expected": 16,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "caseResults": [
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assembled assistant completes scripted tools and citations, copies raw markdown, and Retry appends a fresh turn",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The answer, tools and citations are local scripted data; this does not test a model or real backend calls."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assistant Stop and Clear cancel pending work, expose an unfinished tool label, and recover from the scripted error",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "429 and tool timeout are scripted states, not external provider errors."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "Stopping during a tool leaves its Preparing or Running label in the transcript instead of marking it canceled."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assistant history retains draft and cosmetic model but unmounts attachments, and Clear preserves the draft",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The model picker is cosmetic; history is a fixed fixture, opening history discards composer attachments, and Clear does not clear the typed draft."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "prompt keyboard submit supports files and multiline text, while file-only Send and Stop retain reference limitations",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The prompt status cycle and last-submission text are local demo state, not an upload or network request."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "With files only, Send is disabled but Enter submits. Stop clears newly added attachments while retaining newly typed text."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "reasoning replay follows automatic open and close until manually toggled, and chain replay restores its default",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tool lifecycle cards expand independently and citations toggle while source buttons have no document handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Source buttons have no document-opening handler in this demo. Their click is not successful source navigation."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "standalone history deletes records and empty groups, while message feedback, copy and suggestions stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Standalone Retry has no handler; deleted history is in-memory and returns on reload. Feedback is local UI state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "docked assistant closes and remounts independently of the knowledge base, and records narrow-screen clipping",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "Closing the docked panel unmounts and cancels the mock, then reopening creates fresh panel state; no backend conversation is persisted."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assembled assistant completes scripted tools and citations, copies raw markdown, and Retry appends a fresh turn",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The answer, tools and citations are local scripted data; this does not test a model or real backend calls."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assistant Stop and Clear cancel pending work, expose an unfinished tool label, and recover from the scripted error",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "429 and tool timeout are scripted states, not external provider errors."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "Stopping during a tool leaves its Preparing or Running label in the transcript instead of marking it canceled."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assistant history retains draft and cosmetic model but unmounts attachments, and Clear preserves the draft",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The model picker is cosmetic; history is a fixed fixture, opening history discards composer attachments, and Clear does not clear the typed draft."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "prompt keyboard submit supports files and multiline text, while file-only Send and Stop retain reference limitations",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The prompt status cycle and last-submission text are local demo state, not an upload or network request."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "With files only, Send is disabled but Enter submits. Stop clears newly added attachments while retaining newly typed text."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "reasoning replay follows automatic open and close until manually toggled, and chain replay restores its default",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tool lifecycle cards expand independently and citations toggle while source buttons have no document handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Source buttons have no document-opening handler in this demo. Their click is not successful source navigation."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "standalone history deletes records and empty groups, while message feedback, copy and suggestions stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Standalone Retry has no handler; deleted history is in-memory and returns on reload. Feedback is local UI state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "docked assistant closes and remounts independently of the knowledge base, and records narrow-screen clipping",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "Closing the docked panel unmounts and cancels the mock, then reopening creates fresh panel state; no backend conversation is persisted."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assembled assistant completes scripted tools and citations, copies raw markdown, and Retry appends a fresh turn",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The answer, tools and citations are local scripted data; this does not test a model or real backend calls."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assistant Stop and Clear cancel pending work, expose an unfinished tool label, and recover from the scripted error",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "429 and tool timeout are scripted states, not external provider errors."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "Stopping during a tool leaves its Preparing or Running label in the transcript instead of marking it canceled."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assistant history retains draft and cosmetic model but unmounts attachments, and Clear preserves the draft",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The model picker is cosmetic; history is a fixed fixture, opening history discards composer attachments, and Clear does not clear the typed draft."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "prompt keyboard submit supports files and multiline text, while file-only Send and Stop retain reference limitations",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The prompt status cycle and last-submission text are local demo state, not an upload or network request."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "With files only, Send is disabled but Enter submits. Stop clears newly added attachments while retaining newly typed text."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "reasoning replay follows automatic open and close until manually toggled, and chain replay restores its default",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tool lifecycle cards expand independently and citations toggle while source buttons have no document handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Source buttons have no document-opening handler in this demo. Their click is not successful source navigation."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "standalone history deletes records and empty groups, while message feedback, copy and suggestions stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Standalone Retry has no handler; deleted history is in-memory and returns on reload. Feedback is local UI state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "docked assistant closes and remounts independently of the knowledge base, and records narrow-screen clipping",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "Closing the docked panel unmounts and cancels the mock, then reopening creates fresh panel state; no backend conversation is persisted."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "The docked assistant is fixed at 360px inside a 333px work area, clips its right-side controls and compresses the work page to zero width."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assembled assistant completes scripted tools and citations, copies raw markdown, and Retry appends a fresh turn",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The answer, tools and citations are local scripted data; this does not test a model or real backend calls."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assistant Stop and Clear cancel pending work, expose an unfinished tool label, and recover from the scripted error",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "429 and tool timeout are scripted states, not external provider errors."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "Stopping during a tool leaves its Preparing or Running label in the transcript instead of marking it canceled."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assistant history retains draft and cosmetic model but unmounts attachments, and Clear preserves the draft",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The model picker is cosmetic; history is a fixed fixture, opening history discards composer attachments, and Clear does not clear the typed draft."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "prompt keyboard submit supports files and multiline text, while file-only Send and Stop retain reference limitations",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The prompt status cycle and last-submission text are local demo state, not an upload or network request."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "With files only, Send is disabled but Enter submits. Stop clears newly added attachments while retaining newly typed text."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "reasoning replay follows automatic open and close until manually toggled, and chain replay restores its default",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tool lifecycle cards expand independently and citations toggle while source buttons have no document handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Source buttons have no document-opening handler in this demo. Their click is not successful source navigation."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "standalone history deletes records and empty groups, while message feedback, copy and suggestions stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Standalone Retry has no handler; deleted history is in-memory and returns on reload. Feedback is local UI state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "docked assistant closes and remounts independently of the knowledge base, and records narrow-screen clipping",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "Closing the docked panel unmounts and cancels the mock, then reopening creates fresh panel state; no backend conversation is persisted."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "The docked assistant is fixed at 360px inside a 333px work area, clips its right-side controls and compresses the work page to zero width."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assembled assistant completes scripted tools and citations, copies raw markdown, and Retry appends a fresh turn",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The answer, tools and citations are local scripted data; this does not test a model or real backend calls."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assistant Stop and Clear cancel pending work, expose an unfinished tool label, and recover from the scripted error",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "429 and tool timeout are scripted states, not external provider errors."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "Stopping during a tool leaves its Preparing or Running label in the transcript instead of marking it canceled."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "assistant history retains draft and cosmetic model but unmounts attachments, and Clear preserves the draft",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The model picker is cosmetic; history is a fixed fixture, opening history discards composer attachments, and Clear does not clear the typed draft."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "prompt keyboard submit supports files and multiline text, while file-only Send and Stop retain reference limitations",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The prompt status cycle and last-submission text are local demo state, not an upload or network request."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "With files only, Send is disabled but Enter submits. Stop clears newly added attachments while retaining newly typed text."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "reasoning replay follows automatic open and close until manually toggled, and chain replay restores its default",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "tool lifecycle cards expand independently and citations toggle while source buttons have no document handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Source buttons have no document-opening handler in this demo. Their click is not successful source navigation."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "standalone history deletes records and empty groups, while message feedback, copy and suggestions stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Standalone Retry has no handler; deleted history is in-memory and returns on reload. Feedback is local UI state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "docked assistant closes and remounts independently of the knowledge base, and records narrow-screen clipping",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "Closing the docked panel unmounts and cancels the mock, then reopening creates fresh panel state; no backend conversation is persisted."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assembled assistant completes scripted tools and citations, copies raw markdown, and Retry appends a fresh turn",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The answer, tools and citations are local scripted data; this does not test a model or real backend calls."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assistant Stop and Clear cancel pending work, expose an unfinished tool label, and recover from the scripted error",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "429 and tool timeout are scripted states, not external provider errors."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "Stopping during a tool leaves its Preparing or Running label in the transcript instead of marking it canceled."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "assistant history retains draft and cosmetic model but unmounts attachments, and Clear preserves the draft",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The model picker is cosmetic; history is a fixed fixture, opening history discards composer attachments, and Clear does not clear the typed draft."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "prompt keyboard submit supports files and multiline text, while file-only Send and Stop retain reference limitations",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "The prompt status cycle and last-submission text are local demo state, not an upload or network request."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "With files only, Send is disabled but Enter submits. Stop clears newly added attachments while retaining newly typed text."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "reasoning replay follows automatic open and close until manually toggled, and chain replay restores its default",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "tool lifecycle cards expand independently and citations toggle while source buttons have no document handler",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Source buttons have no document-opening handler in this demo. Their click is not successful source navigation."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "standalone history deletes records and empty groups, while message feedback, copy and suggestions stay independent",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "Standalone Retry has no handler; deleted history is in-memory and returns on reload. Feedback is local UI state."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "assistant-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "docked assistant closes and remounts independently of the knowledge base, and records narrow-screen clipping",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "scripted-demo",
+          "description": "Closing the docked panel unmounts and cancels the mock, then reopening creates fresh panel state; no backend conversation is persisted."
+        },
+        {
+          "type": "reference-limitation",
+          "description": "The docked assistant is fixed at 360px inside a 333px work area, clips its right-side controls and compresses the work page to zero width."
+        }
+      ],
+      "attempts": 1
+    }
+  ],
+  "ci": {
+    "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40666813510",
+    "headSha": "6dc74ad025b188f11dd534acab2d797512f0d04c",
+    "conclusion": "success",
+    "browserCases": 210,
+    "unitCases": 23,
+    "browserStats": {
+      "startTime": "2026-10-28T09:47:14.987Z",
+      "duration": 643794.875,
+      "expected": 210,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "checks": [
+      "typecheck",
+      "unit tests",
+      "Chromium browser tests",
+      "production build",
+      "packed package in external React app",
+      "71 exported routes",
+      "GitHub Pages deployment"
+    ]
+  },
+  "visualSummary": {
+    "comparisons": 52,
+    "zeroPixelDifferences": 36,
+    "maxDifferentPixels": 731,
+    "maxChannelDelta": 24,
+    "interiorDifferentPixels": 0,
+    "residuals": [
+      {
+        "target": "local",
+        "state": "desktop-assembled-error",
+        "referenceSize": [
+          952,
+          610
+        ],
+        "targetSize": [
+          952,
+          610
+        ],
+        "differentPixels": 2,
+        "maxChannelDelta": 1,
+        "bounds": [
+          949,
+          8,
+          951,
+          602
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "local",
+        "state": "desktop-assembled-history",
+        "referenceSize": [
+          952,
+          610
+        ],
+        "targetSize": [
+          952,
+          610
+        ],
+        "differentPixels": 1,
+        "maxChannelDelta": 1,
+        "bounds": [
+          950,
+          8,
+          951,
+          9
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "local",
+        "state": "desktop-docked-closed",
+        "referenceSize": [
+          952,
+          722
+        ],
+        "targetSize": [
+          952,
+          722
+        ],
+        "differentPixels": 103,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "local",
+        "state": "desktop-docked-history",
+        "referenceSize": [
+          952,
+          722
+        ],
+        "targetSize": [
+          952,
+          722
+        ],
+        "differentPixels": 102,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "local",
+        "state": "mobile-assembled-history",
+        "referenceSize": [
+          335,
+          594
+        ],
+        "targetSize": [
+          335,
+          594
+        ],
+        "differentPixels": 1,
+        "maxChannelDelta": 1,
+        "bounds": [
+          333,
+          8,
+          334,
+          9
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "local",
+        "state": "mobile-docked-closed",
+        "referenceSize": [
+          335,
+          722
+        ],
+        "targetSize": [
+          335,
+          722
+        ],
+        "differentPixels": 720,
+        "maxChannelDelta": 24,
+        "bounds": [
+          1,
+          0,
+          334,
+          722
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "local",
+        "state": "mobile-docked-history",
+        "referenceSize": [
+          335,
+          722
+        ],
+        "targetSize": [
+          335,
+          722
+        ],
+        "differentPixels": 731,
+        "maxChannelDelta": 24,
+        "bounds": [
+          1,
+          0,
+          334,
+          722
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "local",
+        "state": "mobile-reasoning-open",
+        "referenceSize": [
+          335,
+          243
+        ],
+        "targetSize": [
+          335,
+          243
+        ],
+        "differentPixels": 1,
+        "maxChannelDelta": 1,
+        "bounds": [
+          333,
+          8,
+          334,
+          9
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "published",
+        "state": "desktop-assembled-error",
+        "referenceSize": [
+          952,
+          610
+        ],
+        "targetSize": [
+          952,
+          610
+        ],
+        "differentPixels": 2,
+        "maxChannelDelta": 1,
+        "bounds": [
+          949,
+          8,
+          951,
+          602
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "published",
+        "state": "desktop-assembled-history",
+        "referenceSize": [
+          952,
+          610
+        ],
+        "targetSize": [
+          952,
+          610
+        ],
+        "differentPixels": 1,
+        "maxChannelDelta": 1,
+        "bounds": [
+          950,
+          8,
+          951,
+          9
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "published",
+        "state": "desktop-docked-closed",
+        "referenceSize": [
+          952,
+          722
+        ],
+        "targetSize": [
+          952,
+          722
+        ],
+        "differentPixels": 103,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "published",
+        "state": "desktop-docked-history",
+        "referenceSize": [
+          952,
+          722
+        ],
+        "targetSize": [
+          952,
+          722
+        ],
+        "differentPixels": 102,
+        "maxChannelDelta": 11,
+        "bounds": [
+          1,
+          1,
+          951,
+          721
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "published",
+        "state": "mobile-assembled-history",
+        "referenceSize": [
+          335,
+          594
+        ],
+        "targetSize": [
+          335,
+          594
+        ],
+        "differentPixels": 1,
+        "maxChannelDelta": 1,
+        "bounds": [
+          333,
+          8,
+          334,
+          9
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "published",
+        "state": "mobile-docked-closed",
+        "referenceSize": [
+          335,
+          722
+        ],
+        "targetSize": [
+          335,
+          722
+        ],
+        "differentPixels": 720,
+        "maxChannelDelta": 24,
+        "bounds": [
+          1,
+          0,
+          334,
+          722
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "published",
+        "state": "mobile-docked-history",
+        "referenceSize": [
+          335,
+          722
+        ],
+        "targetSize": [
+          335,
+          722
+        ],
+        "differentPixels": 731,
+        "maxChannelDelta": 24,
+        "bounds": [
+          1,
+          0,
+          334,
+          722
+        ],
+        "interiorDifferentPixels": 0
+      },
+      {
+        "target": "published",
+        "state": "mobile-reasoning-open",
+        "referenceSize": [
+          335,
+          243
+        ],
+        "targetSize": [
+          335,
+          243
+        ],
+        "differentPixels": 1,
+        "maxChannelDelta": 1,
+        "bounds": [
+          333,
+          8,
+          334,
+          9
+        ],
+        "interiorDifferentPixels": 0
+      }
+    ]
+  },
+  "visualComparisons": [
+    {
+      "target": "local",
+      "state": "desktop-assembled-error",
+      "referenceSize": [
+        952,
+        610
+      ],
+      "targetSize": [
+        952,
+        610
+      ],
+      "differentPixels": 2,
+      "maxChannelDelta": 1,
+      "bounds": [
+        949,
+        8,
+        951,
+        602
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-assembled-history",
+      "referenceSize": [
+        952,
+        610
+      ],
+      "targetSize": [
+        952,
+        610
+      ],
+      "differentPixels": 1,
+      "maxChannelDelta": 1,
+      "bounds": [
+        950,
+        8,
+        951,
+        9
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-assembled-success",
+      "referenceSize": [
+        952,
+        610
+      ],
+      "targetSize": [
+        952,
+        610
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-chain-replayed",
+      "referenceSize": [
+        952,
+        257
+      ],
+      "targetSize": [
+        952,
+        257
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-docked-closed",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 103,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-docked-history",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 102,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-feedback",
+      "referenceSize": [
+        952,
+        157
+      ],
+      "targetSize": [
+        952,
+        157
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-history-deleted",
+      "referenceSize": [
+        952,
+        228
+      ],
+      "targetSize": [
+        952,
+        228
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-prompt-files",
+      "referenceSize": [
+        952,
+        213
+      ],
+      "targetSize": [
+        952,
+        213
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-reasoning-open",
+      "referenceSize": [
+        952,
+        219
+      ],
+      "targetSize": [
+        952,
+        219
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-sources-open",
+      "referenceSize": [
+        952,
+        143
+      ],
+      "targetSize": [
+        952,
+        143
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-suggestion-picked",
+      "referenceSize": [
+        952,
+        187
+      ],
+      "targetSize": [
+        952,
+        187
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "desktop-tools-open",
+      "referenceSize": [
+        952,
+        892
+      ],
+      "targetSize": [
+        952,
+        892
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-assembled-error",
+      "referenceSize": [
+        335,
+        594
+      ],
+      "targetSize": [
+        335,
+        594
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-assembled-history",
+      "referenceSize": [
+        335,
+        594
+      ],
+      "targetSize": [
+        335,
+        594
+      ],
+      "differentPixels": 1,
+      "maxChannelDelta": 1,
+      "bounds": [
+        333,
+        8,
+        334,
+        9
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-assembled-success",
+      "referenceSize": [
+        335,
+        594
+      ],
+      "targetSize": [
+        335,
+        594
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-chain-replayed",
+      "referenceSize": [
+        335,
+        287
+      ],
+      "targetSize": [
+        335,
+        287
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-docked-closed",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 720,
+      "maxChannelDelta": 24,
+      "bounds": [
+        1,
+        0,
+        334,
+        722
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-docked-history",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 731,
+      "maxChannelDelta": 24,
+      "bounds": [
+        1,
+        0,
+        334,
+        722
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-feedback",
+      "referenceSize": [
+        335,
+        163
+      ],
+      "targetSize": [
+        335,
+        163
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-history-deleted",
+      "referenceSize": [
+        335,
+        212
+      ],
+      "targetSize": [
+        335,
+        212
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-prompt-files",
+      "referenceSize": [
+        335,
+        197
+      ],
+      "targetSize": [
+        335,
+        197
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-reasoning-open",
+      "referenceSize": [
+        335,
+        243
+      ],
+      "targetSize": [
+        335,
+        243
+      ],
+      "differentPixels": 1,
+      "maxChannelDelta": 1,
+      "bounds": [
+        333,
+        8,
+        334,
+        9
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-sources-open",
+      "referenceSize": [
+        335,
+        127
+      ],
+      "targetSize": [
+        335,
+        127
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-suggestion-picked",
+      "referenceSize": [
+        335,
+        171
+      ],
+      "targetSize": [
+        335,
+        171
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "local",
+      "state": "mobile-tools-open",
+      "referenceSize": [
+        335,
+        912
+      ],
+      "targetSize": [
+        335,
+        912
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-assembled-error",
+      "referenceSize": [
+        952,
+        610
+      ],
+      "targetSize": [
+        952,
+        610
+      ],
+      "differentPixels": 2,
+      "maxChannelDelta": 1,
+      "bounds": [
+        949,
+        8,
+        951,
+        602
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-assembled-history",
+      "referenceSize": [
+        952,
+        610
+      ],
+      "targetSize": [
+        952,
+        610
+      ],
+      "differentPixels": 1,
+      "maxChannelDelta": 1,
+      "bounds": [
+        950,
+        8,
+        951,
+        9
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-assembled-success",
+      "referenceSize": [
+        952,
+        610
+      ],
+      "targetSize": [
+        952,
+        610
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-chain-replayed",
+      "referenceSize": [
+        952,
+        257
+      ],
+      "targetSize": [
+        952,
+        257
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-docked-closed",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 103,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-docked-history",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 102,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-feedback",
+      "referenceSize": [
+        952,
+        157
+      ],
+      "targetSize": [
+        952,
+        157
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-history-deleted",
+      "referenceSize": [
+        952,
+        228
+      ],
+      "targetSize": [
+        952,
+        228
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-prompt-files",
+      "referenceSize": [
+        952,
+        213
+      ],
+      "targetSize": [
+        952,
+        213
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-reasoning-open",
+      "referenceSize": [
+        952,
+        219
+      ],
+      "targetSize": [
+        952,
+        219
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-sources-open",
+      "referenceSize": [
+        952,
+        143
+      ],
+      "targetSize": [
+        952,
+        143
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-suggestion-picked",
+      "referenceSize": [
+        952,
+        187
+      ],
+      "targetSize": [
+        952,
+        187
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "desktop-tools-open",
+      "referenceSize": [
+        952,
+        892
+      ],
+      "targetSize": [
+        952,
+        892
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-assembled-error",
+      "referenceSize": [
+        335,
+        594
+      ],
+      "targetSize": [
+        335,
+        594
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-assembled-history",
+      "referenceSize": [
+        335,
+        594
+      ],
+      "targetSize": [
+        335,
+        594
+      ],
+      "differentPixels": 1,
+      "maxChannelDelta": 1,
+      "bounds": [
+        333,
+        8,
+        334,
+        9
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-assembled-success",
+      "referenceSize": [
+        335,
+        594
+      ],
+      "targetSize": [
+        335,
+        594
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-chain-replayed",
+      "referenceSize": [
+        335,
+        287
+      ],
+      "targetSize": [
+        335,
+        287
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-docked-closed",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 720,
+      "maxChannelDelta": 24,
+      "bounds": [
+        1,
+        0,
+        334,
+        722
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-docked-history",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 731,
+      "maxChannelDelta": 24,
+      "bounds": [
+        1,
+        0,
+        334,
+        722
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-feedback",
+      "referenceSize": [
+        335,
+        163
+      ],
+      "targetSize": [
+        335,
+        163
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-history-deleted",
+      "referenceSize": [
+        335,
+        212
+      ],
+      "targetSize": [
+        335,
+        212
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-prompt-files",
+      "referenceSize": [
+        335,
+        197
+      ],
+      "targetSize": [
+        335,
+        197
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-reasoning-open",
+      "referenceSize": [
+        335,
+        243
+      ],
+      "targetSize": [
+        335,
+        243
+      ],
+      "differentPixels": 1,
+      "maxChannelDelta": 1,
+      "bounds": [
+        333,
+        8,
+        334,
+        9
+      ],
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-sources-open",
+      "referenceSize": [
+        335,
+        127
+      ],
+      "targetSize": [
+        335,
+        127
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-suggestion-picked",
+      "referenceSize": [
+        335,
+        171
+      ],
+      "targetSize": [
+        335,
+        171
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    },
+    {
+      "target": "published",
+      "state": "mobile-tools-open",
+      "referenceSize": [
+        335,
+        912
+      ],
+      "targetSize": [
+        335,
+        912
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null,
+      "interiorDifferentPixels": 0
+    }
+  ],
+  "semanticComparisons": [
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "assembled-success",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "assembled-error",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "assembled-history",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "reasoning-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "chain-replayed",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "tools-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "sources-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "suggestion-picked",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "feedback",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "prompt-files",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "history-deleted",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "docked-closed",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "state": "docked-history",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "assembled-success",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "assembled-error",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "assembled-history",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "reasoning-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "chain-replayed",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "tools-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "sources-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "suggestion-picked",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "feedback",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "prompt-files",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "history-deleted",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "docked-closed",
+      "ariaEqual": true
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "state": "docked-history",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "assembled-success",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "assembled-error",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "assembled-history",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "reasoning-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "chain-replayed",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "tools-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "sources-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "suggestion-picked",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "feedback",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "prompt-files",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "history-deleted",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "docked-closed",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "state": "docked-history",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "assembled-success",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "assembled-error",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "assembled-history",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "reasoning-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "chain-replayed",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "tools-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "sources-open",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "suggestion-picked",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "feedback",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "prompt-files",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "history-deleted",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "docked-closed",
+      "ariaEqual": true
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "state": "docked-history",
+      "ariaEqual": true
+    }
+  ],
+  "supplementaryFileChooserChecks": [
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "preview": "Assistant panel (assembled)",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "false",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "reference",
+      "mode": "desktop",
+      "preview": "Prompt input",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "false",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "preview": "Assistant panel (assembled)",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "false",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "reference",
+      "mode": "mobile",
+      "preview": "Prompt input",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "false",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "preview": "Assistant panel (assembled)",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "true",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "local",
+      "mode": "desktop",
+      "preview": "Prompt input",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "true",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "preview": "Assistant panel (assembled)",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "true",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "local",
+      "mode": "mobile",
+      "preview": "Prompt input",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "true",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "preview": "Assistant panel (assembled)",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "true",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "published",
+      "mode": "desktop",
+      "preview": "Prompt input",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "true",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "preview": "Assistant panel (assembled)",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "true",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    },
+    {
+      "target": "published",
+      "mode": "mobile",
+      "preview": "Prompt input",
+      "menuClosedOnEscape": true,
+      "menuEscapeRestoresFocus": true,
+      "ariaExpandedWhileOpen": "true",
+      "menuVisibleAfterSelection": false,
+      "nativeFileChooserOpened": true,
+      "multiple": true,
+      "sameFileReselected": true,
+      "selectedFilename": "chooser-test.pdf",
+      "nativeInputValue": ""
+    }
+  ],
+  "knownDifference": {
+    "area": "Composer menu aria-expanded while visibly open",
+    "reference": "false",
+    "erpboost": "true",
+    "reason": "Keep the correct expanded state instead of reproducing the reference accessibility defect",
+    "supplementaryChecksPerEnvironment": 4,
+    "includedInBrowserTestCaseCount": false
+  },
+  "referenceLimitations": [
+    "All assembled answers, tools, errors, model choices and history are scripted fixtures; no real model, provider error, backend tool execution or saved server conversation is verified",
+    "Stopping a tool leaves Preparing or Running instead of a canceled state",
+    "Opening history unmounts and discards attachments but preserves the typed draft; Clear also preserves the typed draft; model choice is cosmetic",
+    "With attachments but no text, Send is disabled while Enter still submits through requestSubmit",
+    "Stop clears files added during streaming while preserving the text typed during streaming",
+    "Source buttons and standalone Retry have no document/retry handler; standalone feedback and history deletion are memory-only",
+    "The docked assistant stays 360px wide in the narrow preview, clips right controls and compresses the knowledge-base page; closing unmounts its draft and model state"
+  ],
+  "investigationCorrections": [
+    "A diagnostic mobile bounding-box locator was incorrectly nested and was corrected before the clean final run",
+    "A hover difference after scrolling was removed by moving the pointer to the same neutral position; edge residuals are retained",
+    "Supplementary composer menu checks record false in the reference and true in ERPboost while visibly open; isolated pages avoid cross-preview menu remnants",
+    "Transient GitHub TLS/page-load timeouts interrupted the first public diagnostic run; the final public run allows 60 seconds per case while keeping the 5/15 second interaction expectations unchanged"
+  ],
+  "scope": {
+    "browser": "Playwright Chromium",
+    "conditions": [
+      "1280x900 light",
+      "375x812 dark"
+    ],
+    "locale": "en-US",
+    "routes": [
+      "/patterns/ai-chat",
+      "/page/assistant-panel"
+    ],
+    "patternPreviews": 10,
+    "screenshotStates": [
+      "assembled-success",
+      "assembled-error",
+      "assembled-history",
+      "reasoning-open",
+      "chain-replayed",
+      "tools-open",
+      "sources-open",
+      "suggestion-picked",
+      "feedback",
+      "prompt-files",
+      "history-deleted",
+      "docked-closed",
+      "docked-history"
+    ],
+    "notClaimed": [
+      "all 71 routes revisited in this turn",
+      "all 630 configurable browser cases across three targets executed in this turn",
+      "all browser, touchscreen or operating-system combinations",
+      "real Japanese IME candidate confirmation",
+      "full CommonMark rendering",
+      "real AI model, API error or tool call",
+      "actual upload or server conversation persistence",
+      "zero pixel difference where residuals remain",
+      "complete accessibility or usable narrow docked layout"
+    ]
+  },
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-assistant-audit/",
+  "investigationDirectory": "/tmp/erpboost-ui-assistant-audit-20261028/"
+}
