@@ -173,3 +173,7 @@ Use `Card.Root density="compact"` with `Card.Header actions={...}` for compact d
 `SearchField` composes Input and Button, supports controlled values, an optional labelled clear action and `appearance="plain"` for toolbars. Clearing returns focus to the text input; filtering remains in the consumer.
 
 Use `Card.Root density="compact" variant="plain"` with existing Header/Content/Badge for a table section. CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header `variant="folder"` share the remaining editor chrome. Consumers retain rename/unsaved/IME behavior and action portal content.
+
+`Field.InputGroup` shares the frame around an existing Field.Control and explicit trailing actions; value/reveal state and validation remain controlled by the app. `Fieldset.Root layout="section"` with Legend/Content groups explicit form fields and supports inline constraint badges. No schema-driven form generation is added.
+
+`Table.Root variant="preview"` shares the compact read-only preview appearance without interpreting values. `FileList.Editor` lays out an input/action row while the consumer retains file validation, Enter/Escape/IME handling and creation.

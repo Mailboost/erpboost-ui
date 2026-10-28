@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import { Button } from "../button";
-export function FileList(props: ComponentProps<"div">) {
+function FileListRoot(props: ComponentProps<"div">) {
   return <div {...props} data-slot="file-list" />;
 }
 export function FileListItem({
@@ -43,3 +43,9 @@ export function FileListItem({
     </div>
   );
 }
+
+/** Input/action row for adding a file. Naming, keyboard handlers and validation stay in the app. */
+function Editor({ className, ...props }: ComponentProps<"div">) {
+  return <div {...props} data-slot="file-list-editor" className={className} />;
+}
+export const FileList = Object.assign(FileListRoot, { Editor });

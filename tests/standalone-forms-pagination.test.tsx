@@ -1,3 +1,5 @@
+import {Button} from "@/components/button";
+import {useState} from "react";
 import { useState } from "react";
 import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
@@ -59,4 +61,42 @@ it("shows the current page without a total and does not offer an unknown last pa
   expect(screen.queryByRole("button", { name: "最後のページ" })).toBeNull();
   fireEvent.click(screen.getByRole("button", { name: "次のページ" }));
   expect(next).toHaveBeenCalledOnce();
+});
+
+it("preserves field labels and values inside section content and an input action frame", () => {
+  function Example({ disabled = false }: { disabled?: boolean }) {
+    const [show, setShow] = useState(false);
+    return (
+      <Fieldset.Root layout="section" disabled={disabled}>
+        <Fieldset.Legend>Connection details</Fieldset.Legend>
+        <Fieldset.Content>
+          <Field.Root>
+            <Field.Label>API value</Field.Label>
+            <Field.InputGroup>
+              <Field.Control
+                defaultValue="example-value"
+                type={show ? "text" : "password"}
+              />
+              <Button type="button" onClick={() => setShow(!show)}>
+                Reveal value
+              </Button>
+            </Field.InputGroup>
+            <Field.Description>Only an example</Field.Description>
+          </Field.Root>
+        </Fieldset.Content>
+      </Fieldset.Root>
+    );
+  }
+  const { rerender } = render(<Example />);
+  expect(
+    screen.getByRole("group", { name: "Connection details" }),
+  ).toBeTruthy();
+  const input = screen.getByLabelText("API value") as HTMLInputElement;
+  fireEvent.change(input, { target: { value: "edited-example" } });
+  fireEvent.click(screen.getByRole("button", { name: "Reveal value" }));
+  expect(input.type).toBe("text");
+  expect(input.value).toBe("edited-example");
+  expect(input.getAttribute("aria-describedby")).toBeTruthy();
+  rerender(<Example disabled />);
+  expect(input.disabled).toBe(true);
 });

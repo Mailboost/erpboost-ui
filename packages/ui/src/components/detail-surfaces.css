@@ -600,3 +600,146 @@
     display: none;
   }
 }
+
+/* Field controls keep their label/validation context while sharing a trailing-action frame. */
+.erpui-field-input-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+  padding-right: 6px;
+  border: 1px solid var(--input);
+  border-radius: 5px;
+  background: var(--background);
+}
+.erpui-field-input-group:focus-within {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 1px var(--ring);
+}
+.erpui-field-input-group > input[data-slot="field-control"] {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 8px 9px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: none;
+  outline: none;
+  background: transparent;
+}
+.erpui-field-input-group > input[data-slot="field-control"]:focus {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+.erpui-field-input-group > button {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  color: var(--muted-foreground);
+}
+/* Fieldset.Legend supplies the accessible name; sections contain ordinary JSX fields. */
+[data-slot="fieldset"][data-layout="section"] {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  min-width: 0;
+  margin: 0;
+  padding: 26px 20px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+}
+[data-slot="fieldset"][data-layout="section"] > [data-slot="fieldset-legend"] {
+  padding-top: 2px;
+  min-width: 0;
+  margin: 0;
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 400;
+}
+[data-slot="fieldset-content"] {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+[data-slot="fieldset-content"][data-layout="inline"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+[data-slot="fieldset-content"][data-layout="inline"] code {
+  overflow-wrap: anywhere;
+}
+[data-slot="table-container"][data-variant="preview"] {
+  min-height: 0;
+  overflow: auto;
+}
+[data-slot="table"][data-variant="preview"] {
+  border-collapse: collapse;
+  width: 100%;
+  font:
+    11px ui-monospace,
+    monospace;
+  text-align: left;
+}
+[data-slot="table"][data-variant="preview"] th {
+  position: sticky;
+  top: 0;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+[data-slot="table"][data-variant="preview"] td,
+[data-slot="table"][data-variant="preview"] th {
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 13px;
+  max-width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+[data-slot="table"][data-variant="preview"] td:first-child {
+  color: var(--muted-foreground);
+  width: 30px;
+}
+[data-slot="table"][data-variant="preview"] i {
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+[data-slot="file-list-editor"] {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4px;
+  margin: 0 0 10px;
+}
+[data-slot="file-list-editor"] > input[data-slot="input"] {
+  width: 100%;
+  min-width: 0;
+  height: 28px;
+  min-height: 28px;
+  padding: 4px 6px;
+  font-size: 10px;
+}
+[data-slot="file-list-editor"] > button[data-slot="button"] {
+  height: auto;
+  min-height: 0;
+  padding: 4px;
+  font-size: 10px;
+  border: 0;
+  background: none;
+  color: var(--primary);
+}
+@media (max-width: 650px) {
+  [data-slot="fieldset"][data-layout="section"] {
+    grid-template-columns: minmax(100px, 1fr) 2fr;
+    gap: 14px;
+  }
+}

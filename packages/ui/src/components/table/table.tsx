@@ -9,7 +9,7 @@ type RootProps = React.ComponentProps<"table"> & {
   /** Ref to the outer scrollable `<div>` container (e.g. to attach a scroll listener). */
   containerRef?: React.Ref<HTMLDivElement>;
   /** Spreadsheet presentation only; selection, resizing and persistence remain controlled by the app. */
-  variant?: "default" | "grid";
+  variant?: "default" | "grid" | "preview";
 };
 
 type CellAlign = "left" | "center" | "right";
@@ -62,6 +62,7 @@ function Root({
     <div
       ref={containerRef}
       data-slot="table-container"
+      data-variant={variant}
       className={cn(
         "astw:relative astw:w-full astw:overflow-x-auto",
         containerClassName,

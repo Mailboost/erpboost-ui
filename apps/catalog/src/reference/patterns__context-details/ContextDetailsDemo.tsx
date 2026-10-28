@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Boxes, Box, FileCode2, KeyRound, RefreshCw } from "lucide-react";
+import { Boxes, Box, FileCode2, KeyRound, RefreshCw, Eye, EyeOff } from "lucide-react";
 import {
   HeaderBar,
   Card,
@@ -14,6 +14,9 @@ import {
   Badge,
   CodeWorkspace,
   Toolbar,
+  Fieldset,
+  FileList,
+  Input,
 } from "@mailboost/erpboost-ui";
 
 /** Explicit JSX composition. No auth, APIs, schema forms or business operations. */
@@ -24,6 +27,9 @@ export function ContextDetailsDemo() {
   const [template, setTemplate] = useState("");
   const [search, setSearch] = useState("");
   const [view, setView] = useState("orders");
+  const [visible, setVisible] = useState(false);
+  const [token, setToken] = useState("example-value");
+  const [filename, setFilename] = useState("");
   const [title, setTitle] = useState("APIから受注を取得");
   return (
     <div style={{ height: "100%", minHeight: 520, overflow: "auto" }}>
@@ -167,6 +173,80 @@ export function ContextDetailsDemo() {
               </Field.Root>
             </Card.Content>
           </Card.Root>
+          <Fieldset.Root layout="section">
+            <Fieldset.Legend>接続情報</Fieldset.Legend>
+            <Fieldset.Content>
+              <Field.Root>
+                <Field.Label>サンプルの値</Field.Label>
+                <Field.InputGroup>
+                  <Field.Control
+                    value={token}
+                    onChange={(event) => setToken(event.target.value)}
+                    type={visible ? "text" : "password"}
+                  />
+                  <Button
+                    type="button"
+                    size="icon"
+                    variant="ghost"
+                    aria-label={visible ? "値を隠す" : "値を表示"}
+                    aria-pressed={visible}
+                    onClick={() => setVisible(!visible)}
+                  >
+                    👁
+                  </Button>
+                </Field.InputGroup>
+                <Field.Description>
+                  表示切替はこのサンプルが制御します。
+                </Field.Description>
+              </Field.Root>
+            </Fieldset.Content>
+          </Fieldset.Root>
+          <Fieldset.Root layout="section">
+            <Fieldset.Legend>制約</Fieldset.Legend>
+            <Fieldset.Content layout="inline">
+              <Badge variant="neutral">必須</Badge>
+              <Badge variant="neutral">主キー</Badge>
+            </Fieldset.Content>
+          </Fieldset.Root>
+          <FileList.Editor>
+            <Input
+              aria-label="サンプルのファイル名"
+              placeholder="example.py"
+              value={filename}
+              onChange={(event) => setFilename(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Escape") setFilename("");
+              }}
+            />
+            <Button
+              disabled={!filename}
+              size="sm"
+              variant="ghost"
+              onClick={() => setFilename("")}
+            >
+              クリア
+            </Button>
+          </FileList.Editor>
+          <Table.Root variant="preview" aria-label="プレビューの例">
+            <Table.Header>
+              <Table.Row>
+                <Table.Head>#</Table.Head>
+                <Table.Head>amount_total</Table.Head>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell>1</Table.Cell>
+                <Table.Cell>1234567890.123456789</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>2</Table.Cell>
+                <Table.Cell>
+                  <i>NULL</i>
+                </Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table.Root>
           <OptionCard
             title="APIから取り込む"
             description="APIのレスポンスを取り込み、必要なカラムを選びます。"
