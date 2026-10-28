@@ -49,16 +49,18 @@ Trigger.displayName = "Menu.Trigger";
 function Content({
   className,
   position,
+  container,
   children,
   ...restProps
 }: React.ComponentProps<typeof BaseMenu.Popup> & {
   position?: PositionProps;
+  container?: React.ComponentProps<typeof BaseMenu.Portal>["container"];
 }) {
   const { side = "bottom", align = "start", sideOffset = 4 } = position ?? {};
   return (
     // Establish a stacking context on the portal container so the menu
     // renders above fixed elements like sidebar-container (z-index: 10).
-    <BaseMenu.Portal style={{ position: "relative", zIndex: "var(--z-popup)" }}>
+    <BaseMenu.Portal container={container} style={{ position: "relative", zIndex: "var(--z-popup)" }}>
       <BaseMenu.Positioner sideOffset={sideOffset} side={side} align={align}>
         <BaseMenu.Popup
           data-slot="menu-content"

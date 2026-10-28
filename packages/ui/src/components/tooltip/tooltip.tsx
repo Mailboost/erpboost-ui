@@ -66,6 +66,7 @@ Trigger.displayName = "Tooltip.Trigger";
 function Content({
   className,
   position,
+  container,
   side: _side,
   align: _align,
   sideOffset: _sideOffset,
@@ -74,6 +75,7 @@ function Content({
   ...restProps
 }: React.ComponentProps<typeof BaseTooltip.Popup> & {
   position?: PositionProps;
+  container?: React.ComponentProps<typeof BaseTooltip.Portal>["container"];
   noArrow?: boolean;
   /** @deprecated Use `position={{ side }}` instead. */
   side?: PositionProps["side"];
@@ -91,7 +93,7 @@ function Content({
   };
   const { side = "top", align = "center", sideOffset = 5 } = resolved;
   return (
-    <BaseTooltip.Portal style={{ position: "relative", zIndex: "var(--z-popup)" }}>
+    <BaseTooltip.Portal container={container} style={{ position: "relative", zIndex: "var(--z-popup)" }}>
       <BaseTooltip.Positioner sideOffset={sideOffset} side={side} align={align}>
         <BaseTooltip.Popup
           data-slot="tooltip-content"

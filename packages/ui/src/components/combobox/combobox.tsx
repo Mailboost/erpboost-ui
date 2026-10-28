@@ -22,6 +22,7 @@ type ComboboxRootProps<Value, Multiple extends boolean | undefined = false> = Pi
   | "inputValue"
   | "onInputValueChange"
   | "onOpenChange"
+  | "open"
   | "itemToStringLabel"
   | "itemToStringValue"
   | "disabled"

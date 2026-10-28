@@ -18,7 +18,79 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles": "./dist/erpboost-ui.css"
+    "./styles": "./dist/erpboost-ui.css",
+    "./button": {
+      "types": "./dist/components/button/index.d.ts",
+      "import": "./dist/button.js"
+    },
+    "./input": {
+      "types": "./dist/components/input/index.d.ts",
+      "import": "./dist/input.js"
+    },
+    "./textarea": {
+      "types": "./dist/components/textarea/index.d.ts",
+      "import": "./dist/textarea.js"
+    },
+    "./table": {
+      "types": "./dist/components/table/index.d.ts",
+      "import": "./dist/table.js"
+    },
+    "./spinner": {
+      "types": "./dist/components/spinner/index.d.ts",
+      "import": "./dist/spinner.js"
+    },
+    "./badge": {
+      "types": "./dist/components/badge/index.d.ts",
+      "import": "./dist/badge.js"
+    },
+    "./alert": {
+      "types": "./dist/components/alert/index.d.ts",
+      "import": "./dist/alert.js"
+    },
+    "./checkbox": {
+      "types": "./dist/components/checkbox/index.d.ts",
+      "import": "./dist/checkbox.js"
+    },
+    "./select": {
+      "types": "./dist/components/select/index.d.ts",
+      "import": "./dist/select.js"
+    },
+    "./combobox": {
+      "types": "./dist/components/combobox/index.d.ts",
+      "import": "./dist/combobox.js"
+    },
+    "./menu": {
+      "types": "./dist/components/menu/index.d.ts",
+      "import": "./dist/menu.js"
+    },
+    "./tabs": {
+      "types": "./dist/components/tabs/index.d.ts",
+      "import": "./dist/tabs.js"
+    },
+    "./dialog": {
+      "types": "./dist/components/dialog/index.d.ts",
+      "import": "./dist/dialog.js"
+    },
+    "./sheet": {
+      "types": "./dist/components/sheet/index.d.ts",
+      "import": "./dist/sheet.js"
+    },
+    "./tooltip": {
+      "types": "./dist/components/tooltip/index.d.ts",
+      "import": "./dist/tooltip.js"
+    },
+    "./field": {
+      "types": "./dist/components/field/index.d.ts",
+      "import": "./dist/field.js"
+    },
+    "./locale-provider": {
+      "types": "./dist/components/locale-provider/index.d.ts",
+      "import": "./dist/locale-provider.js"
+    },
+    "./database-workspace": {
+      "types": "./dist/components/database-workspace/index.d.ts",
+      "import": "./dist/database-workspace.js"
+    }
   },
   "scripts": {
     "build": "vite build",

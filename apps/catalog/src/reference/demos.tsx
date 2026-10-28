@@ -13,6 +13,12 @@ const clean = (source: string) =>
     ? source.slice(source.indexOf(String.fromCharCode(10)) + 1)
     : source;
 const resources: Record<string, Demo[]> = {
+  "patterns/database-workspace": [{
+    name: "Database explorer", description: "Controlled table navigation without an AppShell dependency.", heading: "", screen: false,
+    Component: lazy(async () => { const module = await import("./patterns__database-workspace/DatabaseWorkspaceDemo"); return {default: module.DatabaseWorkspaceDemo}; }),
+    source: files["./patterns__database-workspace/DatabaseWorkspaceDemo.tsx"],
+    sources: [{filename:"DatabaseWorkspaceDemo.tsx",markdownFilename:"DatabaseWorkspaceDemo.tsx",source:files["./patterns__database-workspace/DatabaseWorkspaceDemo.tsx"]}],
+  }],
   "page/assistant-panel": [
     {
       name: "Block preview",

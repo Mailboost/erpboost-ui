@@ -1,4 +1,4 @@
-import { useAppShellConfig } from "@/contexts/appshell-context";
+import { useAppShellConfig } from "@/contexts/appshell-config-context";
 import { buildLocaleResolver, LOCALIZED_LABEL, type LocalizedString } from "@/lib/i18n";
 
 export const DEFAULT_LOCALE = "en";
