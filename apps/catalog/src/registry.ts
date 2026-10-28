@@ -13,6 +13,7 @@ export interface Entry {
   tier?: string;
   markdownFiles?: string[];
   markdownNotes?: string;
+  markdownNotesJa?: string;
   guidance?: { do: [string, string]; dont: [string, string] };
   primitives?: string[];
 }
@@ -419,7 +420,11 @@ export const entries: Entry[] = Object.entries(groups).flatMap(
               do: string;
               dont: string;
               primitives: string[];
-              ja?: { title?: string; paragraphs: string[] };
+              ja?: {
+                title?: string;
+                paragraphs: string[];
+                markdownNotes?: string;
+              };
             }
           >
         )[`/${category}/${slug}`];
@@ -428,6 +433,7 @@ export const entries: Entry[] = Object.entries(groups).flatMap(
               ...data,
               ja: data.ja?.title ?? ja,
               descriptionJa: data.ja?.paragraphs[0],
+              markdownNotesJa: data.ja?.markdownNotes,
               description: data.description,
               blockPreview: category !== "components",
               ...(category !== "components"

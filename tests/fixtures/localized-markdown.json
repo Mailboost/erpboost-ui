@@ -1,0 +1,210 @@
+{
+  "/page/form-as-page": {
+    "en": {
+      "header": "# Form-as-page\n\n**Tier:** screen · **Size:** page · **Tags:** form, create, section-cards, wizard, stepper\n\nThe canonical create / edit form that fits a single page. Compare three variants — single column, section navigation, and wizard — depending on field count and how sequential the steps are.\n\n## Do\n\nUse for mid-sized create / edit flows of roughly 5–15 fields. Section cards keep the page legible. Switch to the wizard variant when the steps must be completed in order.\n\n## Don't\n\nOverkill for a few-field form — use a Dialog or inline edit instead. Conversely, when fields depend heavily on each other and the user needs to jump around freely, pick the section-navigation variant rather than the wizard.\n\n## Primitives used\n\n- `Layout`\n- `Card`\n- `Form`\n- `Field`\n- `Fieldset`\n- `Select`\n- `Input`\n- `Button`\n",
+      "files": [
+        {
+          "filename": "CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    "ja": {
+      "header": "# ページ単体フォーム\n\n**Tier:** screen · **Size:** page · **Tags:** form, create, section-cards, wizard, stepper\n\n1 ページで入力を完結させる新規作成・編集フォームの典型。項目数や手順性に応じて、単一カラム・セクションナビ付き・ウィザードの 3 種を比較できます。\n\n## Do\n\n5〜15 項目程度の中規模な新規作成・編集フローで使います。セクションカードによりページが見通しやすくなります。手順を順番にこなしたい場合はウィザード版を選びます。\n\n## Don't\n\n数項目しかないシンプルなフォームには冗長です。Dialog や行内編集で済ませてください。逆に項目同士の依存が強く自由に行き来して埋めたいケースでは、ウィザードではなくセクションナビ付きを使ってください。\n\n## Primitives used\n\n- `Layout`\n- `Card`\n- `Form`\n- `Field`\n- `Fieldset`\n- `Select`\n- `Input`\n- `Button`\n",
+      "files": [
+        {
+          "filename": "CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWithSectionNav.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "App.CreateTaskPageWizard.tsx",
+          "language": "tsx"
+        }
+      ]
+    }
+  },
+  "/page/document-page": {
+    "en": {
+      "header": "# Document page (Preview / Edit)\n\n**Tier:** screen · **Size:** page · **Tags:** editor, tiptap, wysiwyg, document, preview-edit\n\nA Confluence / Notion–style document editing screen. The page owns its own document-tree sidebar (with multi-level folders); the selected article is read and edited in the right column. The article title sits in a heading row below the top bar and is edited together with the body in edit mode. Edit / Save share the same slot at the top bar's right edge. The app-shell sidebar carries the high-level app sections, while the in-page sidebar carries the document tree for that app.\n\n## Do\n\nUse this for screens where one page = one document (wiki, playbook, release notes, meeting notes). Optimised for read-first surfaces where editing happens only when needed.\n\n## Don't\n\nNot for body input as a single field of a form (e.g. an article summary). When the body is part of a form rather than the whole page, use the framed editor in `Patterns / Rich text editor` inside a Field.\n\n## Document URL composition\n\nNotes on how a document URL is put together. URL routing is not wired in this demo.\n\n```\n/docs/<pageId>[/<slug>][#<headingId>]\n```\n\n| Segment | Description |\n| --- | --- |\n| `pageId` | The article's permanent id. Stays the same even when the title or slug changes. |\n| `slug` | Readable label derived from the title. Optional, just for humans. |\n| `#headingId` | Anchor within the same article, generated from the heading text. |\n\n### In this demo\n\n- Hover a heading in preview to copy a link straight to it.\n- Page embed, page mention, and internal links store `data-page-id` only (external links store `data-href`). Title and URL are resolved at render time via `documentPageRegistry.ts`.\n- All internal links (embed, mention, `<a data-page-id>`) point at sidebar wiki articles only. In preview, clicking them switches the sidebar selection — never the UI catalogue routes.\n- Internal pickers list sidebar articles only. Legacy `cat:<slug>` and `/page/<slug>` attrs are migrated to wiki ids on load.\n- Same-article heading links still use `#headingId` fragments only.\n\n### When implementing\n\n- Persist page id in saved HTML — never slug, title, or resolved URL. Those belong in the resolver only.\n- Resolve on every render (editor + preview). Stale titles in attrs become wrong after rename.\n- Keep external links separate (`data-href`). Do not mix page id and full URL on the same node.\n- Parse legacy `data-slug` attrs when loading old content; migrate on next save.\n- Show a broken state when the id no longer exists — do not silently drop the reference.\n\n### In production\n\n- Back page ids with a real page registry (API / DB), not hard-coded demo maps.\n- Redirect old URLs to new ones when a slug changes on rename.\n- Public share URLs can use a different scheme if needed.\n\nResolver: `documentPageRegistry.ts`, `DocumentPageRegistryContext.tsx`. Permalinks: `buildDocumentUrl` in `documentEditorUrl.ts`.\n\n## Embeddable in TipTap\n\nBlocks and marks the body can hold. Each is a TipTap extension and survives in the saved HTML.\n\n### In this demo _(implemented)_\n\n| Extension | Description |\n| --- | --- |\n| Text marks | Bold, italic, strikethrough, inline code. Applied from the selection bubble. |\n| Headings (H2 / H3) | Heading text auto-gets a stable id, used by anchor links and the copy-link control. |\n| Heading link (same article) | `#headingId` link in body — clicking jumps to that heading. Copy from the heading hover control. |\n| Lists, quote, divider | Bulleted / numbered list, blockquote, `<hr>` — inserted from the + menu. |\n| Code block | Fenced block with syntax highlighting via lowlight. |\n| External link | `<a href=\"…\">` for external URLs. Internal picks store `data-page-id` on the mark. |\n| Page embed | Block card — saved as `data-page-id` only; title and summary resolved at render. |\n| Page mention | Inline reference — same `data-page-id` persistence as embed; wiki clicks navigate in-demo. |\n\n### Likely needed, not yet built _(not implemented)_\n\n| Extension | Description |\n| --- | --- |\n| Image / file | Upload or URL, with caption and resize handles. |\n| Table | Editable grid (@tiptap/extension-table). |\n| Callout | Info / tip / warning box — icon plus tinted background. |\n| Task list | Checkbox items, optionally with assignee or due date. |\n| @ mention | Inline chip for a user, date, or business entity. |\n| External embed | iframe card for YouTube, Figma, dashboards, etc. |\n\n## Primitives used\n\n- `Avatar`\n- `Badge`\n- `Button`\n- `Tabs`\n- `Tooltip`\n",
+      "files": [
+        {
+          "filename": "DocumentEditorPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorBubbleToolbar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorInsertMenu.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorLinkPopover.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbed.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbedPicker.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPreviewHeadingAnchors.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPageRegistryContext.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "documentPageRegistry.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorLink.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorHeading.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorUrl.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorBlocks.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorSampleDocs.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorStyles.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    },
+    "ja": {
+      "header": "# ドキュメントページ（プレビュー / 編集）\n\n**Tier:** screen · **Size:** page · **Tags:** editor, tiptap, wysiwyg, document, preview-edit\n\nConfluence / Notion 系のドキュメント編集画面。ページ内に自前のドキュメントツリー sidebar を持ち（複数階層フォルダ対応）、選択した記事を右カラムで読み書きする。記事タイトルはトップバー下の見出し行に表示し、編集モードでは本文と同時に編集できる。「編集」「保存」はトップバー右端の同じ位置に置く。app-shell 側の sidebar はアプリの大分類、ページ内 sidebar は当該アプリ内の記事ツリーという役割分担。\n\n## Do\n\n1 ページ = 1 ドキュメント として読み書きする画面（Wiki / プレイブック / リリースノート / 議事録など）に使います。読むことが主体で、必要なときだけ編集に入りたい場面に最適です。\n\n## Don't\n\nフォームの一フィールドとしての本文入力（記事のサマリ等）には不要です。ページ全体ではなくフォームの一部として扱うなら、`Patterns / Rich text editor` の枠付きエディタを Field 内で使ってください。\n\n## 記事 URL の組み立て\n\n記事の URL をどう組み立てるかのメモ。このデモでは URL とルーティングは繋がっていません。\n\n```\n/docs/<pageId>[/<slug>][#<headingId>]\n```\n\n| セグメント | 説明 |\n| --- | --- |\n| `pageId` | 記事の不変 ID。タイトルや slug を変えてもこの値は変わらない。 |\n| `slug` | タイトルから作る人間用のラベル。省略可。 |\n| `#headingId` | 同じ記事内の見出しへのアンカー。見出し文字から自動生成。 |\n\n### このデモの挙動\n\n- プレビューで見出しに hover すると、その見出しへのリンクをコピーできる。\n- ページ埋め込み・メンション・内部リンクは `data-page-id` のみ保存（外部は `data-href`）。タイトルと URL は `documentPageRegistry.ts` で表示時に解決する。\n- 内部リンク（埋め込み・メンション・`<a data-page-id>`）はすべて sidebar の Wiki 記事のみ。プレビューでクリックすると sidebar の選択が切り替わる（UI カタログの `/page/...` には飛ばない）。\n- 内部ページのピッカーは sidebar の記事だけ。旧 `cat:<slug>` や `/page/<slug>` は読み込み時に wiki の page id へ寄せる。\n- 同記事内の見出しリンクだけは引き続き `#headingId` のみ。\n\n### 実装時の注意\n\n- 保存 HTML には page id だけを残す。slug・タイトル・解決済み URL は resolver 側だけ。\n- 編集・プレビューとも毎回 resolver で解決。attrs にタイトルを焼くとリネーム後に古くなる。\n- 外部リンクは `data-href` で別扱い。page id と URL を同一ノードに混ぜない。\n- 旧 `data-slug` 形式は読み込み時に page id へ変換。次回保存で新形式に寄せる。\n- id が見つからないときはリンク切れ UI を出す。参照を黙って消さない。\n\n### 本番でやること\n\n- page id の正本は API / DB のページ registry に置く（デモの固定 map ではない）。\n- リネームで slug が変わったら、旧 URL から新 URL にリダイレクトする。\n- 外部公開用の URL は必要に応じて別体系にしてよい。\n\n解決: `documentPageRegistry.ts` / `DocumentPageRegistryContext.tsx`。permalink: `documentEditorUrl.ts` の `buildDocumentUrl`。\n\n## TipTap に埋め込めるもの\n\n本文に置けるブロックや装飾。それぞれ TipTap 拡張で実装してあり、保存される HTML に残る。\n\n### このデモに入っている _(実装済み)_\n\n| 拡張 | 説明 |\n| --- | --- |\n| テキスト装飾 | 太字・斜体・取り消し線・インライン code。テキスト選択時のバブルから付ける。 |\n| 見出し（H2 / H3） | 見出し文字から自動で安定 id が付き、アンカーリンクと「リンクコピー」で使われる。 |\n| 見出しリンク（同記事内） | 本文中の `#headingId` リンク。クリックでその見出しに飛ぶ。見出し hover の「コピー」から取得。 |\n| リスト・引用・水平線 | 箇条書き / 番号付き、引用、水平線。+ メニューから挿入。 |\n| コードブロック | fenced なコードブロック。lowlight でシンタックスハイライト。 |\n| 外部リンク | 外部 URL は `<a href=\"…\">`。内部ページ選択時は mark に `data-page-id` を保存。 |\n| ページ埋め込み | ブロックカード。`data-page-id` のみ保存し、タイトルと要約は表示時に解決。 |\n| ページメンション | インライン参照。embed と同じ `data-page-id` 保存。Wiki 参照はデモ内で sidebar 遷移。 |\n\n### 未実装だがニーズはありそう _(未実装・ニーズあり)_\n\n| 拡張 | 説明 |\n| --- | --- |\n| 画像 / ファイル | アップロードまたは URL 指定。キャプション・リサイズ付き。 |\n| 表 | 編集可能な表（@tiptap/extension-table）。 |\n| コールアウト | 情報・ヒント・警告などの枠。アイコンと色付き背景。 |\n| タスクリスト | チェックボックス付きリスト。担当や期日も付けられる。 |\n| @ メンション | ユーザー・日付・業務エンティティを指す chip。 |\n| 外部埋め込み | YouTube / Figma / ダッシュボードなどの iframe カード。 |\n\n## Primitives used\n\n- `Avatar`\n- `Badge`\n- `Button`\n- `Tabs`\n- `Tooltip`\n",
+      "files": [
+        {
+          "filename": "DocumentEditorPage.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorSidebar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorBubbleToolbar.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorInsertMenu.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorLinkPopover.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbed.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentEditorPageEmbedPicker.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPreviewHeadingAnchors.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "DocumentPageRegistryContext.tsx",
+          "language": "tsx"
+        },
+        {
+          "filename": "documentPageRegistry.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorLink.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorHeading.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorUrl.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorBlocks.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorSampleDocs.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "documentEditorStyles.ts",
+          "language": "ts"
+        },
+        {
+          "filename": "App.tsx",
+          "language": "tsx"
+        }
+      ]
+    }
+  }
+}

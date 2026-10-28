@@ -509,8 +509,12 @@ export function EntryPage({ entry }: { entry: Entry }) {
               size="sm"
               onClick={async () => {
                 const unique = getMarkdownSources(entry);
+                const markdownNotes = t(
+                  entry.markdownNotes ?? "",
+                  entry.markdownNotesJa ?? entry.markdownNotes ?? "",
+                );
                 await navigator.clipboard.writeText(
-                  `# ${entry.title}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${entry.description}\n\n## Do\n\n${entry.guidance?.do[0]}\n\n## Don't\n\n${entry.guidance?.dont[0]}${entry.markdownNotes ? "\n\n" + entry.markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${sourceMarkdown(unique)}`,
+                  `# ${t(entry.title, entry.ja)}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${t(entry.description, entry.descriptionJa ?? entry.description)}\n\n## Do\n\n${t(...entry.guidance!.do)}\n\n## Don't\n\n${t(...entry.guidance!.dont)}${markdownNotes ? "\n\n" + markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${sourceMarkdown(unique)}`,
                 );
                 setCopied(true);
                 setTimeout(() => setCopied(false), copyFeedbackMs);
