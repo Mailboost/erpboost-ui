@@ -16,7 +16,10 @@ import {
 import { FileCode2, X } from "lucide-react";
 export function DeveloperSurfacesDemo() {
   const [file, setFile] = useState("pipeline.py");
-  const [source, setSource] = useState("def run():\n    return []\n");
+  const [sources, setSources] = useState<Record<string, string>>({
+    "pipeline.py": "def run():\n    return []\n",
+    "helpers.py": "def normalize(value):\n    return str(value).strip()\n",
+  });
   const [height, setHeight] = useState(200);
   const [cell, setCell] = useState<{ left: number; top: number } | null>(null);
   const [value, setValue] = useState("S00001");
@@ -30,7 +33,7 @@ export function DeveloperSurfacesDemo() {
           className="astw:w-44 astw:shrink-0 astw:border-r astw:border-border astw:p-2"
           aria-label="Example files"
         >
-          {["pipeline.py", "helpers.py"].map((name) => (
+          {Object.keys(sources).map((name) => (
             <FileListItem
               key={name}
               name={name}
@@ -43,7 +46,16 @@ export function DeveloperSurfacesDemo() {
                     variant="ghost"
                     size="sm"
                     aria-label="Remove example file"
-                    onClick={() => setFile("pipeline.py")}
+                    onClick={() => {
+                      setSources((previous) =>
+                        Object.fromEntries(
+                          Object.entries(previous).filter(
+                            ([name]) => name !== "helpers.py",
+                          ),
+                        ),
+                      );
+                      setFile("pipeline.py");
+                    }}
                   >
                     <X size={12} />
                   </Button>
@@ -55,8 +67,11 @@ export function DeveloperSurfacesDemo() {
         <div className="astw:min-w-0 astw:flex-1">
           <div style={{ height, display: "flex" }}>
             <CodeEditor
-              value={source}
-              onChange={setSource}
+              key={file}
+              value={sources[file] ?? ""}
+              onChange={(value) =>
+                setSources((previous) => ({ ...previous, [file]: value }))
+              }
               disabled={false}
               label="Example Python code"
             />

@@ -16,11 +16,24 @@ import {
 } from "@codemirror/commands";
 import { python } from "@codemirror/lang-python";
 import {
+  HighlightStyle,
   syntaxHighlighting,
   defaultHighlightStyle,
   bracketMatching,
   indentOnInput,
 } from "@codemirror/language";
+
+// Preserve CodeMirror's token assignments while adapting their contrast to the CSS color scheme.
+const editorHighlightStyle = HighlightStyle.define(
+  defaultHighlightStyle.specs.map((rule) =>
+    typeof rule.color === "string"
+      ? {
+          ...rule,
+          color: `light-dark(${rule.color}, color-mix(in srgb, ${rule.color}, white 60%))`,
+        }
+      : rule,
+  ),
+);
 
 export function CodeEditor({
   value,
@@ -57,7 +70,7 @@ export function CodeEditor({
           highlightSpecialChars(),
           drawSelection(),
           highlightActiveLine(),
-          syntaxHighlighting(defaultHighlightStyle),
+          syntaxHighlighting(editorHighlightStyle),
           bracketMatching(),
           indentOnInput(),
           keymap.of([indentWithTab, ...defaultKeymap, ...historyKeymap]),
@@ -73,7 +86,12 @@ export function CodeEditor({
               onChangeRef.current(update.state.doc.toString());
           }),
           EditorView.theme({
-            "&": { height: "100%", fontSize: "12px" },
+            "&": {
+              height: "100%",
+              fontSize: "12px",
+              backgroundColor: "var(--background,#fff)",
+              color: "var(--foreground,#1f2937)",
+            },
             ".cm-scroller": {
               fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace",
               lineHeight: "22px",
@@ -82,19 +100,20 @@ export function CodeEditor({
             ".cm-content": { padding: "12px 0 30px" },
             ".cm-line": { padding: "0 18px" },
             ".cm-gutters": {
-              backgroundColor: "#fff",
-              color: "#b0b8c4",
+              backgroundColor: "var(--background,#fff)",
+              color: "var(--muted-foreground,#b0b8c4)",
               border: "none",
               paddingRight: "5px",
             },
             ".cm-activeLine,.cm-activeLineGutter": {
-              backgroundColor: "#f8fafc",
+              backgroundColor: "var(--muted,#f8fafc)",
             },
             "&.cm-focused": { outline: "none" },
             ".cm-selectionBackground, &.cm-focused .cm-selectionBackground": {
-              backgroundColor: "#dbeafe",
+              backgroundColor:
+                "color-mix(in srgb, var(--ring,#3b82f6) 25%, transparent)",
             },
-            ".cm-cursor": { borderLeftColor: "#3b82f6" },
+            ".cm-cursor": { borderLeftColor: "var(--ring,#3b82f6)" },
           }),
         ],
       }),
