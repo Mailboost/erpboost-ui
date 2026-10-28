@@ -139,6 +139,54 @@ for (const mode of [
       await expect(title).toHaveValue("");
     });
 
+    test("Japanese example names follow the heading across Preview, Code, and language changes", async ({
+      page,
+    }) => {
+      await page.goto("page/form-as-page");
+      const sample = content(page).locator("section[aria-label]").first();
+      await language(page, mode.mobile, "JA");
+      await expect(sample.getByRole("heading", { level: 2 })).toHaveText(
+        "単一カラム",
+      );
+      await expect(sample).toHaveAccessibleName("単一カラム");
+      await sample.getByRole("tab", { name: "Preview", exact: true }).click();
+      await expect(
+        sample.getByRole("tablist", { name: "単一カラム view", exact: true }),
+      ).toBeVisible();
+      await expect(
+        sample.getByRole("tabpanel", {
+          name: "単一カラム preview",
+          exact: true,
+        }),
+      ).toBeVisible();
+      await sample.getByRole("tab", { name: "Code", exact: true }).click();
+      await expect(
+        sample.getByRole("tabpanel", { name: "単一カラム code", exact: true }),
+      ).toBeVisible();
+      await language(page, mode.mobile, "EN");
+      await expect(sample).toHaveAccessibleName("Single column");
+      await sample.getByRole("tab", { name: "Code", exact: true }).click();
+      await expect(
+        sample.getByRole("tablist", {
+          name: "Single column view",
+          exact: true,
+        }),
+      ).toBeVisible();
+      await expect(
+        sample.getByRole("tabpanel", {
+          name: "Single column code",
+          exact: true,
+        }),
+      ).toBeVisible();
+      await sample.getByRole("tab", { name: "Preview", exact: true }).click();
+      await expect(
+        sample.getByRole("tabpanel", {
+          name: "Single column preview",
+          exact: true,
+        }),
+      ).toBeVisible();
+    });
+
     test("modifier-click opens an independent page tab without changing the parent category filter", async ({
       page,
       context,

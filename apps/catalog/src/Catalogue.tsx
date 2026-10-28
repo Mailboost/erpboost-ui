@@ -177,7 +177,7 @@ function CodeBlock({ demo }: { demo: Demo }) {
     <div
       className="source-block"
       role="tabpanel"
-      aria-label={demo.heading ? `${demo.name} code` : "Code"}
+      aria-label={demo.heading ? `${demo.heading} code` : "Code"}
     >
       <div className="source-toolbar">
         <div className="source-files">
@@ -359,7 +359,7 @@ function Preview({
     <StateProvider>
       <section
         className="example-section"
-        aria-label={named ? demo.name : "Block preview"}
+        aria-label={named ? demo.heading : "Block preview"}
       >
         {named && (
           <div className="example-heading">
@@ -373,7 +373,7 @@ function Preview({
             onValueChange={(v) => setTab(String(v))}
             className="w-fit gap-0"
           >
-            <Tabs.List aria-label={named ? `${demo.name} view` : "View"}>
+            <Tabs.List aria-label={named ? `${demo.heading} view` : "View"}>
               <Tabs.Tab value="preview">Preview</Tabs.Tab>
               <Tabs.Tab value="code">Code</Tabs.Tab>
             </Tabs.List>
@@ -388,7 +388,7 @@ function Preview({
           <div
             className={`preview-surface ${background} ${width !== "desktop" ? "preview-canvas" : ""}`}
             role="tabpanel"
-            aria-label={named ? `${demo.name} preview` : "Preview"}
+            aria-label={named ? `${demo.heading} preview` : "Preview"}
           >
             <div
               key={revision}
