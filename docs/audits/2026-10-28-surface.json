@@ -1,0 +1,4227 @@
+{
+  "date": "2026-10-28",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "testedCommit": "60322bb19635fb9ee9f8623b5ff80f6206b71d92",
+  "applicationCodeChanged": true,
+  "applicationChanges": [
+    {
+      "area": "Page preview paint layers",
+      "before": "The intermediate wrapper painted Card/Background while the rounded PageFrame and main stayed Card",
+      "after": "Keep the intermediate wrapper transparent and paint the PageFrame and its direct main when Background is selected; padded pattern wrappers still paint their own background"
+    },
+    {
+      "area": "Preview width selection",
+      "before": "Background stayed selected when switching to Tablet or Mobile",
+      "after": "Tablet and Mobile reset Background to Card, Desktop preserves the chosen background, and changing background preserves viewport and typed draft"
+    },
+    {
+      "area": "Wide drilldown Website fixture",
+      "before": "The website defaulted to text, adding a paragraph wrapper and shortening the last row/card by 4px",
+      "after": "Use the link field type, matching the reference inline text and 24px value line; no href is supplied by the reference fixture"
+    }
+  ],
+  "newCasesPerEnvironment": 12,
+  "catalogueBrowserCasesPerEnvironment": 222,
+  "unitCases": 23,
+  "executedNewBrowserCases": 36,
+  "categories": {
+    "normal": 24,
+    "reference-limitation": 12
+  },
+  "executions": [
+    {
+      "name": "reference-local",
+      "report": "verified-reference-local.json",
+      "stats": {
+        "startTime": "2026-10-28T12:25:19.795Z",
+        "duration": 37332.959,
+        "expected": 24,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "published",
+      "report": "verified-published.json",
+      "stats": {
+        "startTime": "2026-10-28T12:38:43.829Z",
+        "duration": 17629.209000000003,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "caseResults": [
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "screen background paints the rounded frame and main, leaves its wrapper transparent and preserves page state",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "pattern background is shared, narrow viewport changes reset it to Card, and the draft is preserved",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "wide drilldown with backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "wide drilldown without backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "all button variants show keyboard focus, preserve their sizes, and expose hover styling",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "field differences filter by keyboard and keep changed, unchanged and empty values distinct",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "screen background paints the rounded frame and main, leaves its wrapper transparent and preserves page state",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "pattern background is shared, narrow viewport changes reset it to Card, and the draft is preserved",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "wide drilldown with backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "wide drilldown without backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "all button variants show keyboard focus, preserve their sizes, and expose hover styling",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "field differences filter by keyboard and keep changed, unchanged and empty values distinct",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "screen background paints the rounded frame and main, leaves its wrapper transparent and preserves page state",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "pattern background is shared, narrow viewport changes reset it to Card, and the draft is preserved",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "wide drilldown with backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "wide drilldown without backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "all button variants show keyboard focus, preserve their sizes, and expose hover styling",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "reference",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "field differences filter by keyboard and keep changed, unchanged and empty values distinct",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "screen background paints the rounded frame and main, leaves its wrapper transparent and preserves page state",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "pattern background is shared, narrow viewport changes reset it to Card, and the draft is preserved",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "wide drilldown with backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "wide drilldown without backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "all button variants show keyboard focus, preserve their sizes, and expose hover styling",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "local",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "field differences filter by keyboard and keep changed, unchanged and empty values distinct",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "screen background paints the rounded frame and main, leaves its wrapper transparent and preserves page state",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "pattern background is shared, narrow viewport changes reset it to Card, and the draft is preserved",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "wide drilldown with backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "wide drilldown without backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "all button variants show keyboard focus, preserve their sizes, and expose hover styling",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "desktop light"
+      ],
+      "title": "field differences filter by keyboard and keep changed, unchanged and empty values distinct",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "screen background paints the rounded frame and main, leaves its wrapper transparent and preserves page state",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "pattern background is shared, narrow viewport changes reset it to Card, and the draft is preserved",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "wide drilldown with backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "wide drilldown without backdrop supports close, Escape, outside click where exposed and records placeholder expansion",
+      "status": "passed",
+      "annotations": [
+        {
+          "type": "reference-limitation",
+          "description": "The custom drilldown uses aside rather than dialog, has no focus trap, and Open full page points only to #. At narrow widths the sheet covers the backdrop and the catalogue header covers its header actions. Mobile close is checked through Escape, without forced clicks."
+        }
+      ],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "all button variants show keyboard focus, preserve their sizes, and expose hover styling",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    },
+    {
+      "target": "published",
+      "conditions": [
+        "surface-state.spec.ts",
+        "mobile dark"
+      ],
+      "title": "field differences filter by keyboard and keep changed, unchanged and empty values distinct",
+      "status": "passed",
+      "annotations": [],
+      "attempts": 1
+    }
+  ],
+  "ci": {
+    "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40687807586",
+    "headSha": "60322bb19635fb9ee9f8623b5ff80f6206b71d92",
+    "conclusion": "success",
+    "browserStats": {
+      "startTime": "2026-10-28T12:27:17.682Z",
+      "duration": 628830.065,
+      "expected": 222,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "checks": [
+      "typecheck",
+      "23 unit cases",
+      "222 Chromium browser cases",
+      "production build",
+      "packed package in external React app",
+      "71 exported routes",
+      "GitHub Pages deployment"
+    ]
+  },
+  "deployedAssets": {
+    "checkedAt": "2026-10-28T12:41:02.062Z",
+    "route": "https://mailboost.github.io/erpboost-ui/patterns/right-sheet-custom/",
+    "assets": [
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/index-CaTVlsXH.js",
+        "publicSha256": "c358cb11ebffafd6f801131d0288a5b949649e9ce2d3e17ae34e436a4c90f43e",
+        "artifactSha256": "c358cb11ebffafd6f801131d0288a5b949649e9ce2d3e17ae34e436a4c90f43e",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/jsx-runtime-C40oxPSl.js",
+        "publicSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+        "artifactSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/react-Cdxb2Qku.js",
+        "publicSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+        "artifactSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/react-dom-Bs_xv98U.js",
+        "publicSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+        "artifactSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/clsx-DB0hHKMi.js",
+        "publicSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+        "artifactSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/createLucideIcon-Dy7UvDMc.js",
+        "publicSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+        "artifactSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/index-fJ-mGRmN.css",
+        "publicSha256": "9d8c599cbfc4e64b10af6208f9e52a32402613d95ed3cdf8e2f58b536bc403fe",
+        "artifactSha256": "9d8c599cbfc4e64b10af6208f9e52a32402613d95ed3cdf8e2f58b536bc403fe",
+        "equal": true
+      }
+    ],
+    "matchesDeployedArtifact": true
+  },
+  "visualSummary": {
+    "comparisons": 120,
+    "zeroPixelDifferences": 80,
+    "maxDifferentPixels": 13,
+    "maxChannelDelta": 1,
+    "stylesMeasured": 112,
+    "stylesEqual": 112,
+    "ariaEqual": 120
+  },
+  "visualComparisons": [
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "assistant-panel",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 13,
+      "maxChannel": 1,
+      "bounds": [
+        288,
+        82,
+        565,
+        375
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "assistant-panel",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "chat",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "chat",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "collection",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "collection",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        938,
+        720,
+        940,
+        720
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "dashboard-with-charts",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "dashboard-with-charts",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "detail-2col-action-panel",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "detail-2col-action-panel",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "document-page",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "document-page",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "email",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "email",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "form-as-page",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "form-as-page",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        938,
+        720,
+        940,
+        720
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "pipeline-kanban",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 11,
+      "maxChannel": 1,
+      "bounds": [
+        296,
+        338,
+        824,
+        339
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "pipeline-kanban",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "simple-master-crud",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "simple-master-crud",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "assistant-panel",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "assistant-panel",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        8,
+        1,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "chat",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "chat",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "collection",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "collection",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "dashboard-with-charts",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "dashboard-with-charts",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "detail-2col-action-panel",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "detail-2col-action-panel",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "document-page",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "document-page",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "email",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "email",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "form-as-page",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "form-as-page",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "pipeline-kanban",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "pipeline-kanban",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "simple-master-crud",
+        "Card"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "simple-master-crud",
+        "Background"
+      ],
+      "target": "local",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "primary-hover"
+      ],
+      "target": "local",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "primary-focus"
+      ],
+      "target": "local",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "outline-hover"
+      ],
+      "target": "local",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "outline-focus"
+      ],
+      "target": "local",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "destructive-hover"
+      ],
+      "target": "local",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "destructive-focus"
+      ],
+      "target": "local",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "sheet"
+      ],
+      "target": "local",
+      "size": [
+        [
+          900,
+          384,
+          3
+        ],
+        [
+          900,
+          384,
+          3
+        ]
+      ],
+      "stylesMeasured": false,
+      "stylesEqual": null,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "wide-dim"
+      ],
+      "target": "local",
+      "size": [
+        [
+          900,
+          1024,
+          3
+        ],
+        [
+          900,
+          1024,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "wide-plain"
+      ],
+      "target": "local",
+      "size": [
+        [
+          900,
+          1024,
+          3
+        ],
+        [
+          900,
+          1024,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "changed-only"
+      ],
+      "target": "local",
+      "size": [
+        [
+          249,
+          952,
+          3
+        ],
+        [
+          249,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": false,
+      "stylesEqual": null,
+      "ariaEqual": true,
+      "pixels": 5,
+      "maxChannel": 1,
+      "bounds": [
+        8,
+        0,
+        951,
+        10
+      ]
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "primary-hover"
+      ],
+      "target": "local",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "primary-focus"
+      ],
+      "target": "local",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "outline-hover"
+      ],
+      "target": "local",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "outline-focus"
+      ],
+      "target": "local",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "destructive-hover"
+      ],
+      "target": "local",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "destructive-focus"
+      ],
+      "target": "local",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "sheet"
+      ],
+      "target": "local",
+      "size": [
+        [
+          812,
+          282,
+          3
+        ],
+        [
+          812,
+          282,
+          3
+        ]
+      ],
+      "stylesMeasured": false,
+      "stylesEqual": null,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "wide-dim"
+      ],
+      "target": "local",
+      "size": [
+        [
+          812,
+          375,
+          3
+        ],
+        [
+          812,
+          375,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "wide-plain"
+      ],
+      "target": "local",
+      "size": [
+        [
+          812,
+          375,
+          3
+        ],
+        [
+          812,
+          375,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "changed-only"
+      ],
+      "target": "local",
+      "size": [
+        [
+          233,
+          335,
+          3
+        ],
+        [
+          233,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": false,
+      "stylesEqual": null,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "assistant-panel",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 13,
+      "maxChannel": 1,
+      "bounds": [
+        288,
+        82,
+        565,
+        375
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "assistant-panel",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "chat",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "chat",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "collection",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "collection",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "dashboard-with-charts",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "dashboard-with-charts",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "detail-2col-action-panel",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "detail-2col-action-panel",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "document-page",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "document-page",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "email",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "email",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "form-as-page",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "form-as-page",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "pipeline-kanban",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 11,
+      "maxChannel": 1,
+      "bounds": [
+        296,
+        338,
+        824,
+        339
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "pipeline-kanban",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "simple-master-crud",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "desktop",
+        "simple-master-crud",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          952,
+          3
+        ],
+        [
+          722,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        950,
+        709,
+        950,
+        710
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "assistant-panel",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "assistant-panel",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 2,
+      "maxChannel": 1,
+      "bounds": [
+        8,
+        1,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "chat",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "chat",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "collection",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "collection",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "dashboard-with-charts",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "dashboard-with-charts",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "detail-2col-action-panel",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "detail-2col-action-panel",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "document-page",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "document-page",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "email",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "email",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "form-as-page",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "form-as-page",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "pipeline-kanban",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "pipeline-kanban",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "simple-master-crud",
+        "Card"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "pages",
+      "key": [
+        "mobile",
+        "simple-master-crud",
+        "Background"
+      ],
+      "target": "published",
+      "size": [
+        [
+          722,
+          335,
+          3
+        ],
+        [
+          722,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 1,
+      "maxChannel": 1,
+      "bounds": [
+        333,
+        8,
+        333,
+        8
+      ]
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "primary-hover"
+      ],
+      "target": "published",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "primary-focus"
+      ],
+      "target": "published",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "outline-hover"
+      ],
+      "target": "published",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "outline-focus"
+      ],
+      "target": "published",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "destructive-hover"
+      ],
+      "target": "published",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "destructive-focus"
+      ],
+      "target": "published",
+      "size": [
+        [
+          48,
+          900,
+          3
+        ],
+        [
+          48,
+          900,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "sheet"
+      ],
+      "target": "published",
+      "size": [
+        [
+          900,
+          384,
+          3
+        ],
+        [
+          900,
+          384,
+          3
+        ]
+      ],
+      "stylesMeasured": false,
+      "stylesEqual": null,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "wide-dim"
+      ],
+      "target": "published",
+      "size": [
+        [
+          900,
+          1024,
+          3
+        ],
+        [
+          900,
+          1024,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "wide-plain"
+      ],
+      "target": "published",
+      "size": [
+        [
+          900,
+          1024,
+          3
+        ],
+        [
+          900,
+          1024,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "desktop",
+        "changed-only"
+      ],
+      "target": "published",
+      "size": [
+        [
+          249,
+          952,
+          3
+        ],
+        [
+          249,
+          952,
+          3
+        ]
+      ],
+      "stylesMeasured": false,
+      "stylesEqual": null,
+      "ariaEqual": true,
+      "pixels": 5,
+      "maxChannel": 1,
+      "bounds": [
+        8,
+        0,
+        951,
+        10
+      ]
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "primary-hover"
+      ],
+      "target": "published",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "primary-focus"
+      ],
+      "target": "published",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "outline-hover"
+      ],
+      "target": "published",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "outline-focus"
+      ],
+      "target": "published",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "destructive-hover"
+      ],
+      "target": "published",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "destructive-focus"
+      ],
+      "target": "published",
+      "size": [
+        [
+          144,
+          283,
+          3
+        ],
+        [
+          144,
+          283,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "sheet"
+      ],
+      "target": "published",
+      "size": [
+        [
+          812,
+          282,
+          3
+        ],
+        [
+          812,
+          282,
+          3
+        ]
+      ],
+      "stylesMeasured": false,
+      "stylesEqual": null,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "wide-dim"
+      ],
+      "target": "published",
+      "size": [
+        [
+          812,
+          375,
+          3
+        ],
+        [
+          812,
+          375,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "wide-plain"
+      ],
+      "target": "published",
+      "size": [
+        [
+          812,
+          375,
+          3
+        ],
+        [
+          812,
+          375,
+          3
+        ]
+      ],
+      "stylesMeasured": true,
+      "stylesEqual": true,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    },
+    {
+      "group": "primitives",
+      "key": [
+        "mobile",
+        "changed-only"
+      ],
+      "target": "published",
+      "size": [
+        [
+          233,
+          335,
+          3
+        ],
+        [
+          233,
+          335,
+          3
+        ]
+      ],
+      "stylesMeasured": false,
+      "stylesEqual": null,
+      "ariaEqual": true,
+      "pixels": 0,
+      "maxChannel": 0,
+      "bounds": null
+    }
+  ],
+  "beforeAfterAssistantClosed": [
+    {
+      "phase": "before",
+      "mode": "desktop",
+      "background": "card",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 103,
+      "maxChannelDelta": 11,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ]
+    },
+    {
+      "phase": "before",
+      "mode": "desktop",
+      "background": "background",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 147,
+      "maxChannelDelta": 7,
+      "bounds": [
+        1,
+        1,
+        951,
+        721
+      ]
+    },
+    {
+      "phase": "before",
+      "mode": "mobile",
+      "background": "card",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 87,
+      "maxChannelDelta": 10,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ]
+    },
+    {
+      "phase": "before",
+      "mode": "mobile",
+      "background": "background",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 20565,
+      "maxChannelDelta": 16,
+      "bounds": [
+        1,
+        1,
+        334,
+        721
+      ]
+    },
+    {
+      "phase": "after",
+      "mode": "desktop",
+      "background": "card",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "phase": "after",
+      "mode": "desktop",
+      "background": "background",
+      "referenceSize": [
+        952,
+        722
+      ],
+      "targetSize": [
+        952,
+        722
+      ],
+      "differentPixels": 2,
+      "maxChannelDelta": 1,
+      "bounds": [
+        950,
+        709,
+        951,
+        711
+      ]
+    },
+    {
+      "phase": "after",
+      "mode": "mobile",
+      "background": "card",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "bounds": null
+    },
+    {
+      "phase": "after",
+      "mode": "mobile",
+      "background": "background",
+      "referenceSize": [
+        335,
+        722
+      ],
+      "targetSize": [
+        335,
+        722
+      ],
+      "differentPixels": 2,
+      "maxChannelDelta": 1,
+      "bounds": [
+        8,
+        1,
+        334,
+        9
+      ]
+    }
+  ],
+  "referenceLimitations": [
+    "Custom drilldown is an aside rather than dialog and does not trap focus",
+    "Open full page points to #, keeps the panel open and does not navigate to a detail page",
+    "At 375px the custom sheet covers its scrim and the catalogue sticky header covers its Close and Open full page controls; Escape is usable; no forced clicks were counted as success"
+  ],
+  "maintainedIntentionalDifferences": [
+    "Calendar 11 PM versus erroneous reference 23 AM",
+    "Appearance Escape restores focus to the trigger instead of losing it",
+    "Composer aria-expanded correctly true while its menu is open instead of reference false",
+    "Invalid kanban drops cancel without losing the card"
+  ],
+  "investigationCorrections": [
+    "An initial hypothesis that every viewport selection resets Card was narrowed after probing the full sequence: Desktop preserves Background",
+    "The first wide-sheet image comparison exposed a fixture field-type mismatch; the final capture uses the corrected link field type",
+    "Diagnostic tests initially tried covered mobile header controls; the final tests check hit testing and use Escape without forced clicks",
+    "The initial primitive JSON was preserved for ARIA diagnosis, but its image paths were overwritten by final captures and are not treated as before-fix image evidence"
+  ],
+  "scope": {
+    "browser": "Playwright Chromium",
+    "conditions": [
+      "1280x900 light",
+      "375x812 dark"
+    ],
+    "locale": "en-US",
+    "interactionRoutes": [
+      "/page/assistant-panel",
+      "/patterns/ai-chat",
+      "/patterns/right-sheet-custom",
+      "/components/button",
+      "/patterns/field-diff-table"
+    ],
+    "visualPageRoutes": [
+      "/page/assistant-panel",
+      "/page/chat",
+      "/page/collection",
+      "/page/dashboard-with-charts",
+      "/page/detail-2col-action-panel",
+      "/page/document-page",
+      "/page/email",
+      "/page/form-as-page",
+      "/page/pipeline-kanban",
+      "/page/simple-master-crud"
+    ],
+    "pagePreviewScope": "First named preview on each of the ten Page routes, Card and Background in both conditions; not every additional page variant",
+    "primitiveStates": [
+      "primary-hover",
+      "primary-focus",
+      "outline-hover",
+      "outline-focus",
+      "destructive-hover",
+      "destructive-focus",
+      "sheet",
+      "wide-dim",
+      "wide-plain",
+      "changed-only"
+    ],
+    "dateFixedForPageCaptures": "2026-10-28T12:00:00Z",
+    "notClaimed": [
+      "all 71 routes revisited in this turn",
+      "all 666 configurable cases across three targets executed in this turn",
+      "all page variants in this round of visual captures",
+      "zero pixel differences where residuals remain",
+      "complete keyboard accessibility of the reference custom sheet",
+      "real touch, operating system or Japanese IME checks",
+      "backend, ERP, upload, AI or server persistence behavior"
+    ]
+  },
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/28/erpboost-ui-surface-audit/",
+  "investigationDirectory": "/tmp/erpboost-ui-surface-audit-20261028/"
+}
