@@ -156,7 +156,7 @@ export function CategoryPage({ category }: { category: Category }) {
           </div>
           {(status === "Draft" ||
             !list.some((e) => tag === "All" || e.tags?.includes(tag))) && (
-            <div className="rounded-xl border border-dashed p-8 text-center text-sm text-muted-foreground">
+            <div className="mt-6 rounded-xl border border-dashed p-8 text-center text-sm text-muted-foreground">
               No entries match the current filters.
             </div>
           )}
