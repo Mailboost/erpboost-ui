@@ -1,6 +1,6 @@
 import { ComponentLanguage, Translated } from "./shared/component-language";
 import { Foundation, SidebarDocs } from "./documentation";
-import { useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import {
   ActionPanel,
   ActivityCard,
@@ -565,20 +565,57 @@ function DialogDemo() {
   );
 }
 function MenuDemo() {
+  const [settings, setSettings] = useState({ notify: true, autoApprove: false });
+  // The reference preview distinguishes pointer-operated items from keyboard
+  // navigation when restoring focus. Keep this policy local to the demo.
+  const restoreKeyboardFocus = useRef(true);
   return (
     <Menu.Root>
-      <Menu.Trigger render={<Button variant="outline" />}>
+      <Menu.Trigger
+        render={<Button variant="outline" />}
+        onPointerDown={() => {
+          restoreKeyboardFocus.current = true;
+        }}
+        onKeyDown={() => {
+          restoreKeyboardFocus.current = true;
+        }}
+      >
         Open menu
       </Menu.Trigger>
-      <Menu.Content>
+      <Menu.Content
+        finalFocus={(interaction) =>
+          interaction === "keyboard" && restoreKeyboardFocus.current
+        }
+        onPointerDownCapture={() => {
+          restoreKeyboardFocus.current = false;
+        }}
+        onKeyDownCapture={(event) => {
+          if (event.key !== "Escape")
+            restoreKeyboardFocus.current = event.key !== "Tab";
+        }}
+      >
         <Menu.Group>
           <Menu.GroupLabel>Actions</Menu.GroupLabel>
           <Menu.Item>Approve</Menu.Item>
           <Menu.Item>Reject</Menu.Item>
         </Menu.Group>
         <Menu.Separator />
-        <Menu.CheckboxItem defaultChecked>Notify requester</Menu.CheckboxItem>
-        <Menu.CheckboxItem>Auto approve next time</Menu.CheckboxItem>
+        <Menu.CheckboxItem
+          checked={settings.notify}
+          onCheckedChange={(checked) =>
+            setSettings((current) => ({ ...current, notify: checked === true }))
+          }
+        >
+          Notify requester
+        </Menu.CheckboxItem>
+        <Menu.CheckboxItem
+          checked={settings.autoApprove}
+          onCheckedChange={(checked) =>
+            setSettings((current) => ({ ...current, autoApprove: checked === true }))
+          }
+        >
+          Auto approve next time
+        </Menu.CheckboxItem>
       </Menu.Content>
     </Menu.Root>
   );

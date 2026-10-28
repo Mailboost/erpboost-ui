@@ -4,7 +4,7 @@ import {
   type ElementRef,
   type ComponentPropsWithoutRef,
 } from "react";
-import { Check, Minus } from "lucide-react";
+import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 export const Checkbox = forwardRef<
   ElementRef<typeof Primitive.Root>,
@@ -20,11 +20,7 @@ export const Checkbox = forwardRef<
     {...props}
   >
     <Primitive.Indicator className="flex items-center justify-center text-current">
-      {props.checked === "indeterminate" ? (
-        <Minus className="size-3.5" />
-      ) : (
-        <Check className="size-3.5" />
-      )}
+      <Check className="size-3.5" />
     </Primitive.Indicator>
   </Primitive.Root>
 ));

@@ -116,7 +116,13 @@ function renderDefaultHeader(
   align: "left" | "right",
   edges?: { bleedLeft?: boolean; bleedRight?: boolean },
 ): ReactNode {
-  if (!ctx.sortable) return content;
+  if (!ctx.sortable) {
+    return (
+      <span className="astw:inline-flex astw:items-center astw:gap-1">
+        {content}
+      </span>
+    );
+  }
 
   return (
     <button
