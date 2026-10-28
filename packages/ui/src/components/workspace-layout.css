@@ -1,5 +1,6 @@
 /* Code workspace regions follow the existing editor's responsive layout. */
 .erpui-code-workspace {
+  container: erpui-code-workspace / inline-size;
   display: flex;
   flex: 1;
   min-width: 0;
@@ -128,7 +129,7 @@
   font-size: 11px;
   font-weight: 600;
 }
-@media (max-width: 1200px) {
+@container erpui-code-workspace (max-width: 1200px) {
   .erpui-code-workspace-panel {
     max-width: 50%;
   }
@@ -136,12 +137,12 @@
     gap: 9px;
   }
 }
-@media (max-width: 1150px) {
+@container erpui-code-workspace (max-width: 1150px) {
   .erpui-code-workspace-sidebar {
     width: 155px;
   }
 }
-@media (max-width: 1100px) {
+@container erpui-code-workspace (max-width: 1100px) {
   .erpui-code-workspace-main {
     flex-direction: column;
   }
