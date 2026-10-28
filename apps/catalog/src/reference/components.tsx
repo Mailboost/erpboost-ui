@@ -350,6 +350,7 @@ function ActionDemo() {
 }
 function AttachmentsDemo() {
   const attachment = useAttachment({
+    accept: "image/*,application/pdf",
     initialItems: [
       {
         id: "tax",

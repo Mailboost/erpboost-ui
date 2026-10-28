@@ -137,6 +137,19 @@ function Toolbar({ editor }: { editor: Editor | null }) {
   const btn = (active: boolean) =>
     (active ? "default" : "ghost") as "default" | "ghost";
 
+  const toggleList = (type: "bulletList" | "orderedList") => {
+    const { doc, selection } = editor.state;
+    // The reference's older Tiptap cannot lift a sole list from AllSelection.
+    // Keep this demo quirk scoped here; caret and list-type changes still work.
+    const selectedWholeList =
+      selection.from === 0 && selection.to === doc.content.size &&
+      doc.childCount === 1 && doc.firstChild?.type.name === type;
+    const chain = editor.chain().focus();
+    if (selectedWholeList) chain.run();
+    else if (type === "bulletList") chain.toggleBulletList().run();
+    else chain.toggleOrderedList().run();
+  };
+
   return (
     <div className="flex flex-wrap items-center gap-0.5 border-b bg-muted p-1">
       <Button type="button" variant={btn(editor.isActive("heading", { level: 1 }))} size="xs"
@@ -174,11 +187,11 @@ function Toolbar({ editor }: { editor: Editor | null }) {
       <div className="mx-1 h-6 w-px bg-border" aria-hidden />
 
       <Button type="button" variant={btn(editor.isActive("bulletList"))} size="xs"
-        onClick={() => editor.chain().focus().toggleBulletList().run()} title="Bullet list">
+        onClick={() => toggleList("bulletList")} title="Bullet list">
         <List className="h-4 w-4" />
       </Button>
       <Button type="button" variant={btn(editor.isActive("orderedList"))} size="xs"
-        onClick={() => editor.chain().focus().toggleOrderedList().run()} title="Numbered list">
+        onClick={() => toggleList("orderedList")} title="Numbered list">
         <ListOrdered className="h-4 w-4" />
       </Button>
 
@@ -335,6 +348,14 @@ export const RichTextEditor = ({
         openOnClick: false,
         autolink: true,
         validate: validateUrl,
+        // The reference uses an older Tiptap URI matcher. Preserve its treatment
+        // of scheme-less paths, while retaining the current protocol checks.
+        isAllowedUri: (url, { defaultValidate }) =>
+          defaultValidate(url) &&
+          (!url ||
+            /^(?:(?:http|https|ftp|ftps|mailto|tel|callto|sms|cid|xmpp):|[^a-z]|[a-z0-9+.-]+(?:[^a-z+.-:]|$))/i.test(
+              url.replace(/[\u0000-\u0020\u00a0\u1680\u180e\u2000-\u2029\u205f\u3000]/g, ""),
+            )),
         HTMLAttributes: { class: "text-primary underline underline-offset-2 hover:cursor-pointer" },
       }),
       Placeholder.configure({ placeholder }),
