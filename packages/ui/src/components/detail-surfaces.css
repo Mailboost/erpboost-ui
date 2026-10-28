@@ -245,7 +245,7 @@
   font-size: 13px;
   cursor: default;
 }
-[data-slot="table"][data-variant="grid"] td > span {
+[data-slot="table"][data-variant="grid"] td > span:not([data-slot]) {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -332,3 +332,6 @@
     padding: 12px 14px;
   }
 }
+
+/* Keep the checkbox and row action on one line; text-cell truncation must not affect controls. */
+[data-slot="table"][data-variant="grid"] [data-row-control] > [data-slot="checkbox"] { display:inline-flex; width:16px; height:16px; vertical-align:middle; margin-right:6px; cursor:pointer; }
