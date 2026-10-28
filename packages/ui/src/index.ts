@@ -369,3 +369,13 @@ export { Skeleton } from "./components/skeleton";
 export { HeaderBar, SidebarPanel } from "./components/shell-parts";
 
 export { EmptyState, type EmptyStateProps } from "./components/empty-state";
+
+export { StatusDot } from "./components/status-dot";
+export { ResizeHandle } from "./components/resize-handle";
+export { LogViewer } from "./components/log-viewer";
+export { FileList, FileListItem } from "./components/file-list";
+export { WorkflowNode } from "./components/workflow-node";
+export { CellEditor } from "./components/cell-editor";
+export { CodeEditor } from "./components/code-editor";
+
+export { DescriptionList } from "./components/description-list";

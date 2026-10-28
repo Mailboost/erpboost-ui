@@ -26,6 +26,14 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "status-dot": "src/components/status-dot/index.tsx",
+        "resize-handle": "src/components/resize-handle/index.tsx",
+        "log-viewer": "src/components/log-viewer/index.tsx",
+        "file-list": "src/components/file-list/index.tsx",
+        "workflow-node": "src/components/workflow-node/index.tsx",
+        "cell-editor": "src/components/cell-editor/index.tsx",
+        "code-editor": "src/components/code-editor/index.tsx",
+        "description-list": "src/components/description-list/index.tsx",
         style: "src/style-entry.ts",
         button: "src/components/button/index.ts",
         input: "src/components/input/index.ts",

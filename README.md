@@ -143,3 +143,11 @@ Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `typ
 `/avatar` and `/card` expose the existing Avatar and Card implementations as standalone imports. `/shell-parts` provides HeaderBar (also used by GlobalHeader) and SidebarPanel using the same base styles as the fixed AppShell sidebar, without routing or collapse state. `/skeleton` provides a decorative shimmer with reduced-motion support; loading-region labels and page-specific shapes remain with the application. The database-workspace catalogue demonstrates these parts together.
 
 `/toolbar` and `/layout` expose the existing Toolbar and Layout implementations without AppShell. Layout.Header accepts className for page-specific outer spacing. `/empty-state` displays an app-supplied title, description, icon and optional actions; headingLevel preserves the surrounding heading hierarchy. It contains no fetching or business behavior.
+
+### Standalone editor and database surfaces
+
+`/code-editor` exposes the existing CodeMirror editor (Python or plain JSON text), with controlled values, read-only state and optional line-focus requests. It never executes code. `/file-list` provides `FileList` and `FileListItem`; selection and add/remove policies belong to the app. `/workflow-node` styles a step card without owning React Flow, graph layout or application data.
+
+`/log-viewer` renders plain text and an optional empty slot. `/description-list` uses explicit JSX label/value items, with application-owned formatting. `/resize-handle` is a styled, focusable separator; layouts provide values and pointer/keyboard handlers. `/status-dot` provides neutral/success/error indicators; callers supply accessible labels.
+
+`/cell-editor` provides the existing anchored editing surface, close button, busy dismissal guard, outside-click/Escape handling, and action slots. Supply an application-owned `container` for themed portals. The app owns input controls, value parsing, Enter-to-save and persistence. No API clients, screen-definition schema or business-specific configuration is included. The database-workspace catalogue demonstrates all of these alongside the existing components.

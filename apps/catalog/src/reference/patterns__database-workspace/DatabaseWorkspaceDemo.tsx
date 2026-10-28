@@ -1,3 +1,4 @@
+import { DeveloperSurfacesDemo } from "./DeveloperSurfacesDemo";
 import { useState } from "react";
 import {
   DatabaseWorkspace,
@@ -202,6 +203,7 @@ export function DatabaseWorkspaceDemo() {
           </div>
         </div>
       </section>
+      <DeveloperSurfacesDemo/>
     </>
   );
 }
