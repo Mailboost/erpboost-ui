@@ -6,6 +6,10 @@ import {
   Avatar,
   Card,
   Skeleton,
+  Toolbar,
+  Input,
+  Layout,
+  EmptyState,
   Table,
   Badge,
   Button,
@@ -181,6 +185,10 @@ export function DatabaseWorkspaceDemo() {
               </nav>
             </SidebarPanel>
             <div className="astw:flex-1 astw:p-4">
+              <Layout.Header title="受注一覧" actions={[<Button key="create">新規追加</Button>]}/>
+              <Toolbar.Row aria-label="Example order actions" className="astw:my-3"><Input aria-label="受注を検索" placeholder="受注を検索"/><Button variant="outline">再読み込み</Button></Toolbar.Row>
+              <EmptyState title="受注がありません" headingLevel={3} description="新規追加から受注を登録できます。"/>
+
               <Card.Root>
                 <Card.Header title="送信履歴" />
                 <Card.Content>

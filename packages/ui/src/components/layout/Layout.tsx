@@ -110,11 +110,11 @@ Column.displayName = "Layout.Column";
  * </Layout>
  * ```
  */
-export function Header({ title, actions, children }: LayoutHeaderProps) {
+export function Header({ title, actions, children, className }: LayoutHeaderProps) {
   const hasTitleRow = title || (actions != null && actions.length > 0);
 
   return (
-    <header data-layout-header="" className="astw:flex astw:w-full astw:flex-col">
+    <header data-layout-header="" className={cn("astw:flex astw:w-full astw:flex-col", className)}>
       {hasTitleRow && (
         <div className="astw:flex astw:w-full astw:flex-1 astw:items-center astw:justify-between astw:pt-4">
           {title && (

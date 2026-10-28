@@ -122,6 +122,18 @@
     "./shell-parts": {
       "types": "./dist/components/shell-parts/index.d.ts",
       "import": "./dist/shell-parts.js"
+    },
+    "./toolbar": {
+      "types": "./dist/components/toolbar/index.d.ts",
+      "import": "./dist/toolbar.js"
+    },
+    "./layout": {
+      "types": "./dist/components/layout/index.d.ts",
+      "import": "./dist/layout.js"
+    },
+    "./empty-state": {
+      "types": "./dist/components/empty-state/index.d.ts",
+      "import": "./dist/empty-state.js"
     }
   },
   "scripts": {
