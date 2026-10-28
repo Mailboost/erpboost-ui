@@ -358,3 +358,5 @@ export {
 } from "./components/timeline";
 
 export { DatabaseWorkspace, type DatabaseWorkspaceProps } from "./components/database-workspace";
+
+export { LocaleProvider } from "./components/locale-provider";

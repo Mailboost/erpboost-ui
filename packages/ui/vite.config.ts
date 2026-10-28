@@ -43,6 +43,7 @@ export default defineConfig({
         "sheet": "src/components/sheet/index.ts",
         "tooltip": "src/components/tooltip/index.ts",
         "field": "src/components/field/index.ts",
+        "locale-provider": "src/components/locale-provider/index.tsx",
         "database-workspace": "src/components/database-workspace/index.ts",
 
       },

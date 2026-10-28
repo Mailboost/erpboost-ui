@@ -1,5 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
+import { LocaleProvider } from "../packages/ui/src/components/locale-provider";
 import { AppShellInternal } from "../packages/ui/src/components/appshell/appshell";
 import { DatabaseWorkspace } from "../packages/ui/src/components/database-workspace";
 
@@ -192,3 +193,19 @@ it("preserves an app-supplied title", () => {
   render(<DatabaseWorkspace {...defaults} title="Inventory" />);
   expect(screen.getByRole("heading", { name: "Inventory" })).toBeTruthy();
 });
+
+it.each([
+  { locale: "en-US", search: "Search tables", heading: "Database" },
+  { locale: "ja-JP", search: "テーブルを検索", heading: "データベース" },
+])(
+  "sets standalone labels through the existing locale context in $locale",
+  ({ locale, search, heading }) => {
+    render(
+      <LocaleProvider locale={locale}>
+        <DatabaseWorkspace {...defaults} />
+      </LocaleProvider>,
+    );
+    expect(screen.getByRole("heading", { name: heading })).toBeTruthy();
+    expect(screen.getByRole("textbox", { name: search })).toBeTruthy();
+  },
+);

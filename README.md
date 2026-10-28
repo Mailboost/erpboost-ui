@@ -105,3 +105,15 @@ Apps that scope the stylesheet can supply `container` to Menu, Dialog, Sheet and
 Tooltip content, as with Select/Combobox. Dialog content also accepts
 `showCloseButton={false}` when the application owns its close action (for example,
 while saving or checking unsaved changes). Defaults preserve the existing API.
+
+Set the language of standalone controls with the existing locale context:
+
+```tsx
+import { LocaleProvider } from "@mailboost/erpboost-ui/locale-provider";
+
+<LocaleProvider locale="ja-JP">
+  <DatabaseWorkspace {...workspaceProps}>{grid}</DatabaseWorkspace>
+</LocaleProvider>
+```
+
+`LocaleProvider` uses the same configuration context as AppShell and does not mount a router or auth provider.

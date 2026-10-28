@@ -83,6 +83,10 @@
       "types": "./dist/components/field/index.d.ts",
       "import": "./dist/field.js"
     },
+    "./locale-provider": {
+      "types": "./dist/components/locale-provider/index.d.ts",
+      "import": "./dist/locale-provider.js"
+    },
     "./database-workspace": {
       "types": "./dist/components/database-workspace/index.d.ts",
       "import": "./dist/database-workspace.js"
