@@ -291,6 +291,16 @@ button:disabled {
   border-radius: 14px;
   overflow: hidden;
 }
+.preview-surface.preview-canvas {
+  background-color: var(--muted);
+  background-color: color-mix(in oklab, var(--muted) 48%, var(--background));
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--border) 88%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
 .inline-preview-body {
   width: 100%;
   margin: auto;

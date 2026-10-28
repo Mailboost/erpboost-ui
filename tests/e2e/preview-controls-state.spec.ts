@@ -101,6 +101,14 @@ for (const mode of [
       await changeView(sample, "Mobile preview width");
       await changeView(sample, "Preview");
       await expect(title(sample)).toBeVisible();
+      await expect(sample.getByRole("tabpanel")).toHaveCSS(
+        "background-size",
+        "20px 20px",
+      );
+      await expect(sample.getByRole("tabpanel")).not.toHaveCSS(
+        "background-image",
+        "none",
+      );
       const available = await sample
         .getByRole("tabpanel")
         .evaluate((element) => element.clientWidth);
@@ -115,6 +123,12 @@ for (const mode of [
       await changeView(sample, "Code");
       await expect(sample.locator("code")).toContainText(
         'import { useState } from "react"',
+      );
+      await changeView(sample, "Desktop preview width");
+      await changeView(sample, "Preview");
+      await expect(sample.getByRole("tabpanel")).toHaveCSS(
+        "background-image",
+        "none",
       );
     });
 

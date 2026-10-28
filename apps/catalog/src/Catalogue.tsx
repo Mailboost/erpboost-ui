@@ -385,7 +385,7 @@ function Preview({
           <CodeBlock key={revision} demo={demo} />
         ) : (
           <div
-            className={`preview-surface ${background}`}
+            className={`preview-surface ${background} ${width !== "desktop" ? "preview-canvas" : ""}`}
             role="tabpanel"
             aria-label={named ? `${demo.name} preview` : "Preview"}
           >
