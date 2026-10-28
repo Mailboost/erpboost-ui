@@ -178,6 +178,10 @@
     "./option-card": {
       "types": "./dist/components/option-card/index.d.ts",
       "import": "./dist/option-card.js"
+    },
+    "./search-field": {
+      "types": "./dist/components/search-field/index.d.ts",
+      "import": "./dist/search-field.js"
     }
   },
   "scripts": {

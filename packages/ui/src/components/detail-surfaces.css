@@ -334,4 +334,269 @@
 }
 
 /* Keep the checkbox and row action on one line; text-cell truncation must not affect controls. */
-[data-slot="table"][data-variant="grid"] [data-row-control] > [data-slot="checkbox"] { display:inline-flex; width:16px; height:16px; vertical-align:middle; margin-right:6px; cursor:pointer; }
+[data-slot="table"][data-variant="grid"]
+  [data-row-control]
+  > [data-slot="checkbox"] {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+  cursor: pointer;
+}
+/* Compact sidebar composes native navigation and account controls without a router/provider. */
+[data-slot="sidebar-panel"][data-layout="compact"] {
+  min-width: 0;
+  min-height: 0;
+  padding: 15px 8px 10px;
+  background: var(--muted);
+  color: var(--foreground);
+  border-right: 1px solid var(--border);
+}
+.erpui-sidebar-nav {
+  min-height: 0;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+.erpui-sidebar-label {
+  padding: 0 10px;
+  min-height: 26px;
+  margin: 24px 0 8px;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+.erpui-sidebar-label:first-child {
+  margin-top: 0;
+}
+[data-slot="sidebar-panel"][data-layout="compact"] .erpui-sidebar-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 36px;
+  border: 0;
+  padding: 9px 10px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  color: var(--foreground);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+}
+[data-slot="sidebar-panel"][data-layout="compact"]
+  .erpui-sidebar-nav-button:disabled {
+  opacity: 1;
+}
+.erpui-sidebar-nav-button > svg {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+}
+[data-slot="sidebar-panel"][data-layout="compact"]
+  .erpui-sidebar-nav-button:hover,
+[data-slot="sidebar-panel"][data-layout="compact"]
+  .erpui-sidebar-nav-button[aria-current="page"] {
+  background: var(--accent);
+  color: var(--foreground);
+}
+.erpui-sidebar-footer {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  z-index: 5;
+}
+.erpui-sidebar-footer .erpui-sidebar-account-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 48px;
+  padding: 7px 4px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  text-align: left;
+  color: var(--foreground);
+}
+.erpui-sidebar-account-trigger:hover,
+.erpui-sidebar-account-trigger[aria-expanded="true"] {
+  background: var(--accent);
+}
+.erpui-sidebar-account-trigger [data-slot="avatar"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-width: 1px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+.erpui-sidebar-account-trigger img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.erpui-sidebar-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 9px 12px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.erpui-sidebar-identity strong {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--foreground);
+}
+.erpui-sidebar-identity > span {
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.erpui-sidebar-identity[data-compact] {
+  flex: 1;
+  gap: 1px;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.erpui-sidebar-identity[data-compact] > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+.erpui-sidebar-identity[data-compact] strong {
+  font-size: 11px;
+}
+.erpui-sidebar-identity[data-compact] > span {
+  font-size: 10px;
+}
+.erpui-sidebar-account-trigger > svg {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+}
+/* SearchField owns the single focus ring. Text editing keeps Input's toolbar semantics. */
+.erpui-search-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  padding: 0 9px;
+  border: 1px solid var(--input);
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  background: var(--background);
+  box-shadow: 0 1px 2px #00000004;
+}
+.erpui-search-field:focus-within {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ring) 20%, transparent);
+}
+.erpui-search-field > svg {
+  flex-shrink: 0;
+}
+.erpui-search-field > input[data-slot="input"] {
+  height: 32px;
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  color: var(--foreground);
+  box-shadow: none;
+}
+.erpui-search-field > input[data-slot="input"]:focus {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+.erpui-search-field > button[data-slot="button"] {
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.erpui-search-field[data-appearance="plain"] {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  padding: 0 6px;
+}
+.erpui-search-field[data-appearance="plain"] > input {
+  font-size: 13px;
+}
+.erpui-search-field[data-appearance="plain"]:focus-within {
+  border-color: var(--ring);
+}
+/* Plain Card reuses its existing heading/content slots for a section above a table. */
+[data-slot="card"][data-variant="plain"] {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+[data-slot="card"][data-density="compact"][data-variant="plain"]
+  > [data-slot="card-header"] {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+[data-slot="card"][data-variant="plain"] [data-slot="card-title"] > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+@media (max-width: 700px) {
+  [data-slot="sidebar-panel"][data-layout="compact"] {
+    padding: 12px 5px 10px;
+  }
+  .erpui-sidebar-label {
+    padding: 0;
+    justify-content: center;
+    font-size: 10px;
+    margin-top: 16px;
+  }
+  [data-slot="sidebar-panel"][data-layout="compact"] .erpui-sidebar-nav-button {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    min-height: 56px;
+    padding: 8px 0;
+    font-size: 10px;
+  }
+  .erpui-sidebar-footer .erpui-sidebar-account-trigger {
+    justify-content: center;
+    padding: 7px 0;
+  }
+  .erpui-sidebar-account-trigger .erpui-sidebar-identity,
+  .erpui-sidebar-account-trigger > svg {
+    display: none;
+  }
+}

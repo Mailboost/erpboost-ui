@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { SearchField } from "@/components/search-field";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import { Toolbar } from "@/components/toolbar";
@@ -65,4 +67,39 @@ it("embeds the existing page header with its title, actions and page class", () 
       ?.classList.contains("orders-heading"),
   ).toBe(true);
   expect(screen.getByRole("button", { name: "Create" })).toBeTruthy();
+});
+
+it("clears a controlled search and returns focus without stealing text cursor keys", () => {
+  const changed = vi.fn();
+  function SearchDemo() {
+    const [value, setValue] = useState("orders");
+    return (
+      <Toolbar.Row aria-label="Search controls">
+        <SearchField
+          aria-label="Find orders"
+          value={value}
+          onChange={(event) => {
+            setValue(event.target.value);
+            changed(event.target.value);
+          }}
+          clearLabel="Clear search"
+          onClear={() => setValue("")}
+        />
+        <Button>Refresh search</Button>
+      </Toolbar.Row>
+    );
+  }
+  render(<SearchDemo />);
+  const input = screen.getByRole("textbox", {
+    name: "Find orders",
+  }) as HTMLInputElement;
+  input.focus();
+  expect(fireEvent.keyDown(input, { key: "ArrowLeft" })).toBe(true);
+  expect(document.activeElement).toBe(input);
+  fireEvent.change(input, { target: { value: "customer" } });
+  expect(changed).toHaveBeenLastCalledWith("customer");
+  fireEvent.click(screen.getByRole("button", { name: "Clear search" }));
+  expect(input.value).toBe("");
+  expect(document.activeElement).toBe(input);
+  expect(screen.queryByRole("button", { name: "Clear search" })).toBeNull();
 });

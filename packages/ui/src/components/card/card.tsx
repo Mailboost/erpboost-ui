@@ -6,12 +6,17 @@ import { Text } from "../text";
 function Root({
   className,
   density = "default",
+  variant = "default",
   ...props
-}: React.ComponentProps<"div"> & { density?: "default" | "compact" }) {
+}: React.ComponentProps<"div"> & {
+  density?: "default" | "compact";
+  variant?: "default" | "plain";
+}) {
   return (
     <div
       data-slot="card"
       data-density={density}
+      data-variant={variant}
       className={cn(
         "astw:bg-card astw:text-card-foreground astw:flex astw:flex-col astw:rounded-xl astw:border astw:border-border astw:shadow-xs",
         className,

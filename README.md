@@ -167,3 +167,9 @@ Dialog.Content and Sheet.Content accept `layout="sectioned"` to share Header / B
 Use `Card.Root density="compact"` with `Card.Header actions={...}` for compact detail sections. `OptionCard` is a native button with a title, description and optional icon.
 
 `Table.Root variant="grid"`, `Table.ColumnHeading`, `Table.ColumnLabel` and `frozenEdge` provide spreadsheet presentation. Row/cell `aria-selected` drives selection decoration. Set frozen offsets and row controls (`data-row-control`) in JSX; keyboard navigation, precision-safe values, schema and mutations remain app code. All variants are opt-in. See `/patterns/context-details`.
+
+`SidebarPanel layout="compact"` adds native `Nav`, `Label`, `Button`, `Footer`, `AccountTrigger` and `Identity` parts. Pass `active` and existing navigation/account handlers explicitly; no router or authentication provider is introduced.
+
+`SearchField` composes Input and Button, supports controlled values, an optional labelled clear action and `appearance="plain"` for toolbars. Clearing returns focus to the text input; filtering remains in the consumer.
+
+Use `Card.Root density="compact" variant="plain"` with existing Header/Content/Badge for a table section. CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header `variant="folder"` share the remaining editor chrome. Consumers retain rename/unsaved/IME behavior and action portal content.

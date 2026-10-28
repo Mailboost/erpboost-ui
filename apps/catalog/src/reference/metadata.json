@@ -1845,13 +1845,18 @@
       "OptionCard",
       "Table",
       "Field",
-      "Combobox"
+      "Combobox",
+      "SidebarPanel",
+      "SearchField",
+      "Badge",
+      "CodeWorkspace"
     ],
     "ja": {
       "title": "コンテキストと詳細表示",
       "paragraphs": [
         "組織・接続のヘッダー、詳細セクション、選択カード、DBの列表示をJSXで組み立てます。",
-        "選択状態・認証・保存処理はアプリ側で制御します。"
+        "選択状態・認証・保存処理はアプリ側で制御します。",
+        "ナビゲーション・アカウント欄・検索欄とクリア操作・編集可能な連携名も共通部品で組み立てます。"
       ],
       "sections": []
     }

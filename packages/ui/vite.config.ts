@@ -26,6 +26,7 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "search-field": "src/components/search-field/index.tsx",
         "option-card": "src/components/option-card/index.tsx",
         "code-workspace": "src/components/code-workspace/index.tsx",
         "graph-controls": "src/components/graph-controls/index.tsx",

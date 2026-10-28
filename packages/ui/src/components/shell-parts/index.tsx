@@ -28,10 +28,15 @@ export const sidebarPanelClasses =
   "astw:bg-sidebar astw:text-sidebar-foreground astw:flex astw:min-h-0 astw:min-w-0 astw:flex-col";
 
 /** A sidebar region without AppShell's router or collapse state. */
-export function SidebarPanel({ className, ...props }: ComponentProps<"aside">) {
+function SidebarRoot({
+  className,
+  layout = "default",
+  ...props
+}: ComponentProps<"aside"> & { layout?: "default" | "compact" }) {
   return (
     <aside
       data-slot="sidebar-panel"
+      data-layout={layout}
       className={cn(sidebarPanelClasses, className)}
       {...props}
     />
@@ -119,4 +124,91 @@ export const HeaderBar = Object.assign(HeaderRoot, {
   ContextItem,
   ContextTrigger,
   ContextLoading,
+});
+
+/** Native navigation controls; routes and permission checks stay in the app. */
+function Nav({ className, ...props }: ComponentProps<"nav">) {
+  return (
+    <nav
+      data-slot="sidebar-panel-nav"
+      className={cn("erpui-sidebar-nav", className)}
+      {...props}
+    />
+  );
+}
+function NavLabel({ className, ...props }: ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="sidebar-panel-label"
+      className={cn("erpui-sidebar-label", className)}
+      {...props}
+    />
+  );
+}
+function NavButton({
+  active,
+  className,
+  ...props
+}: ButtonProps & { active?: boolean }) {
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      size="sm"
+      aria-current={active ? "page" : undefined}
+      {...props}
+      data-slot="sidebar-panel-button"
+      className={cn("erpui-sidebar-nav-button", className)}
+    />
+  );
+}
+function Footer({ className, ...props }: ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="sidebar-panel-footer"
+      className={cn("erpui-sidebar-footer", className)}
+      {...props}
+    />
+  );
+}
+function AccountTrigger({ className, ...props }: ButtonProps) {
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      {...props}
+      className={cn("erpui-sidebar-account-trigger", className)}
+    />
+  );
+}
+function Identity({
+  name,
+  description,
+  compact,
+  className,
+  ...props
+}: Omit<ComponentProps<"span">, "children"> & {
+  name: ReactNode;
+  description: ReactNode;
+  compact?: boolean;
+}) {
+  return (
+    <span
+      data-slot="sidebar-panel-identity"
+      data-compact={compact || undefined}
+      className={cn("erpui-sidebar-identity", className)}
+      {...props}
+    >
+      <strong>{name}</strong>
+      <span>{description}</span>
+    </span>
+  );
+}
+export const SidebarPanel = Object.assign(SidebarRoot, {
+  Nav,
+  Label: NavLabel,
+  Button: NavButton,
+  Footer,
+  AccountTrigger,
+  Identity,
 });

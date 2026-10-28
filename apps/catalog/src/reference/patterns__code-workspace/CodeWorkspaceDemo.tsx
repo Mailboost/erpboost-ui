@@ -30,6 +30,7 @@ export function CodeWorkspaceDemo() {
             <CodeWorkspace.Header icon={<FolderOpen size={13} />}>
               パイプライン
             </CodeWorkspace.Header>
+            <CodeWorkspace.Header variant="folder">transformations</CodeWorkspace.Header>
             <FileList>
               <FileListItem
                 name="pipeline.py"
