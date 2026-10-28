@@ -56,6 +56,10 @@ for (const mode of [
       }
       await button(first, "Copy").click();
       await expect(button(first, "Copied")).toBeVisible();
+      await expect(button(first, "Copied").locator("svg")).toHaveCSS(
+        "color",
+        "rgb(34, 197, 94)",
+      );
       expect(await clipboard(page)).toBe(
         await first.locator("code").textContent(),
       );
@@ -74,6 +78,10 @@ for (const mode of [
       );
       await button(first, "Copy").click();
       await expect(button(first, "Copied")).toBeVisible();
+      await expect(button(first, "Copied").locator("svg")).toHaveCSS(
+        "color",
+        "rgb(34, 197, 94)",
+      );
       expect(await clipboard(page)).toBe(
         await first.locator("code").textContent(),
       );

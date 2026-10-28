@@ -206,7 +206,7 @@ function CodeBlock({ demo }: { demo: Demo }) {
               }}
             >
               {copiedAll ? (
-                <Check className="size-3.5" />
+                <Check className="size-3.5 text-status-completed" />
               ) : (
                 <Files className="size-3.5" />
               )}
@@ -224,7 +224,7 @@ function CodeBlock({ demo }: { demo: Demo }) {
             }}
           >
             {copied ? (
-              <Check className="size-3.5" />
+              <Check className="size-3.5 text-status-completed" />
             ) : (
               <Copy className="size-3.5" />
             )}{" "}
