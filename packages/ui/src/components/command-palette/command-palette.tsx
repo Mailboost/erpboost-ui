@@ -30,7 +30,7 @@ type SelectableItem =
     };
 
 const paletteItemBase =
-  "astw:relative astw:flex astw:w-full astw:cursor-pointer astw:select-none astw:rounded-sm astw:px-2 astw:py-2 astw:text-body-md astw:outline-none astw:text-left";
+  "astw:relative astw:flex astw:w-full astw:cursor-pointer astw:select-none astw:rounded-sm astw:px-2 astw:py-2 astw:text-sm astw:outline-none astw:text-left";
 
 const paletteItemHighlight = (active: boolean) =>
   active
@@ -580,7 +580,7 @@ export function CommandPaletteContent({ navItems, extraRoutes = [], routeOrder }
   return (
     <Dialog.Root open={paletteOpen} onOpenChange={handleOpenChange}>
       <Dialog.Content
-        className="astw:p-0 astw:gap-0 astw:sm:max-w-2xl astw:lg:max-w-4xl astw:overflow-hidden astw:top-[30%] astw:translate-y-[-30%]"
+        className="astw:p-0 astw:gap-0 astw:sm:max-w-2xl astw:overflow-hidden astw:top-[30%] astw:translate-y-[-30%]"
         onKeyDown={handleKeyDown}
         aria-describedby={undefined}
       >
@@ -709,7 +709,7 @@ export function CommandPaletteContent({ navItems, extraRoutes = [], routeOrder }
                         <span className="astw:truncate astw:w-full astw:text-left">
                           {route.breadcrumb.join(" > ")}
                         </span>
-                        <span className="astw:text-body-sm astw:text-muted-foreground astw:truncate astw:w-full astw:text-left">
+                        <span className="astw:text-[11px] astw:text-muted-foreground astw:truncate astw:w-full astw:text-left">
                           {displayPath.startsWith("/") ? displayPath : `/${displayPath}`}
                         </span>
                       </button>
