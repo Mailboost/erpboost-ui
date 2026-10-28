@@ -7,11 +7,12 @@ import {
   type ForwardedRef,
   type ReactElement,
   type Ref,
+  type ComponentProps,
 } from "react";
 import { toCalendarDate, today, type DateValue } from "@internationalized/date";
 import { useFieldRootContext } from "@base-ui/react/internals/field-root-context";
 import { cn } from "@/lib/utils";
-import { useResolvedLocale, useTimeZone } from "@/contexts/appshell-context";
+import { useResolvedLocale, useTimeZone } from "@/contexts/appshell-config-context";
 import {
   useDateFieldState,
   type DateFieldStateChange,
@@ -78,6 +79,8 @@ export type DatePickerProps<T extends DateValue = DateValue> = DateControlProps<
   timeZone?: string;
   /** Keep the last viewed calendar month on reopen instead of following the input value. */
   preserveCalendarView?: boolean;
+  /** Portal destination for an embedded app’s scoped theme. */
+  container?: ComponentProps<typeof DatePopover>["container"];
 };
 
 /**
@@ -221,6 +224,7 @@ const DatePicker = forwardRef(function DatePicker<T extends DateValue = DateValu
     locale: localeProp,
     timeZone: timeZoneProp,
     preserveCalendarView = false,
+    container,
     value,
     defaultValue,
     onChange,
@@ -391,6 +395,7 @@ const DatePicker = forwardRef(function DatePicker<T extends DateValue = DateValu
         className="astw:pointer-events-none astw:absolute astw:size-px astw:overflow-hidden astw:opacity-0"
       />
       <DatePopover
+        container={container}
         open={open}
         onOpenChange={handleOpenChange}
         ariaLabel={popoverAriaLabel}

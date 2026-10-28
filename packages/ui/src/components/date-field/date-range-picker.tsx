@@ -12,7 +12,7 @@ import {
 import { toCalendarDate, today, type DateValue } from "@internationalized/date";
 import { cn } from "@/lib/utils";
 import { useFieldRootContext } from "@base-ui/react/internals/field-root-context";
-import { useResolvedLocale, useTimeZone } from "@/contexts/appshell-context";
+import { useResolvedLocale, useTimeZone } from "@/contexts/appshell-config-context";
 import {
   useDateFieldState,
   type DateFieldInvalidReason,

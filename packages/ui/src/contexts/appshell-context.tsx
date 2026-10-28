@@ -7,15 +7,11 @@ import {
   detectBrowserFullLocale,
   toLanguageSubtag,
 } from "@/lib/i18n";
-import {
-  getLocalTimeZone,
-  today,
-  now,
-  type CalendarDate,
-  type ZonedDateTime,
-} from "@internationalized/date";
 
-export { AppShellConfigContext, useAppShellConfig } from "./appshell-config-context";
+export {
+  AppShellConfigContext,
+  useAppShellConfig,
+} from "./appshell-config-context";
 
 /**
  * Empty interface for module augmentation.
@@ -100,7 +96,9 @@ export type ConfigurationOptions = {
  * Builds a RootConfiguration object from the provided options.
  * Uses browser locale detection when locale is not specified.
  */
-export const buildConfigurations = (options: ConfigurationOptions): RootConfiguration => ({
+export const buildConfigurations = (
+  options: ConfigurationOptions,
+): RootConfiguration => ({
   modules: options.modules,
   settingsResources: options.settingsResources ?? [],
   errorBoundary: options.errorBoundary ?? <DefaultErrorBoundary />,
@@ -108,7 +106,9 @@ export const buildConfigurations = (options: ConfigurationOptions): RootConfigur
   // `locale` is the language subtag used for built-in UI strings (label tables
   // are keyed by language), so normalize a full tag like "ja-JP" → "ja".
   // `resolvedLocale` keeps the full tag for Intl / date formatting.
-  locale: options.locale ? toLanguageSubtag(options.locale) : detectBrowserLocale(),
+  locale: options.locale
+    ? toLanguageSubtag(options.locale)
+    : detectBrowserLocale(),
   resolvedLocale: options.locale ?? detectBrowserFullLocale(),
   timeZone: options.timeZone,
 });
@@ -147,38 +147,8 @@ export const useAppShell = () => {
   };
 };
 
-/**
- * Returns the full BCP-47 locale (e.g. "en-GB") for Intl / date formatting.
- * Also returns the language code (e.g. "en") used for label resolution.
- *
- * Falls back to browser detection when used outside an AppShell.
- */
-export const useResolvedLocale = (): { locale: string; language: string } => {
-  const { configurations } = useContext(AppShellConfigContext);
-  return {
-    locale: configurations.resolvedLocale ?? configurations.locale,
-    language: configurations.locale,
-  };
-};
-
-/**
- * Resolved timezone object with helpers bound to the configured timezone.
- */
-export interface TimeZone {
-  /** Raw IANA timezone string (e.g. "America/Los_Angeles"). */
-  value: string;
-  /** Today's date in this timezone. */
-  today: () => CalendarDate;
-  /** Current instant in this timezone. */
-  now: () => ZonedDateTime;
-}
-
-/**
- * Returns the configured timezone with bound `today()` and `now()` helpers.
- * Falls back to the user's local timezone when not configured.
- */
-export const useTimeZone = (): TimeZone => {
-  const { configurations } = useContext(AppShellConfigContext);
-  const timeZone = configurations.timeZone ?? getLocalTimeZone();
-  return { value: timeZone, today: () => today(timeZone), now: () => now(timeZone) };
-};
+export {
+  useResolvedLocale,
+  useTimeZone,
+  type TimeZone,
+} from "./appshell-config-context";

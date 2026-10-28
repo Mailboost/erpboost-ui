@@ -133,3 +133,9 @@ import { ErdDiagram } from "@mailboost/erpboost-ui/erd-diagram";
 ```
 
 Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `type`, optional `label`/`required`). Relations connect `fromTable`/`fromField` to `toTable`/`toField` with optional `optional` nullability. The component provides search, key filtering, auto layout, pan/zoom and a minimap. The application supplies authorized schema data and owns table navigation. Use `LocaleProvider` for standalone labels and `portalContainer` when popups need an application-owned container. The database workspace catalogue includes a working diagram example.
+
+### Standalone forms and pagination
+
+`Field`, `Fieldset` and `DatePicker` can be used through `/field`, `/fieldset` and `/date-field` without mounting AppShell. Use `Field.Control` for a labelled text input; Select, Combobox, Textarea and DatePicker connect directly to `Field.Root`. DatePicker accepts `container` for an embedded app's overlay theme.
+
+`Pagination` from `/pagination` is the same control used by `DataTable.Pagination`. The consumer supplies page state and navigation callbacks, so it works with existing server or local pagination. `onPageChange` optionally enables direct page entry. Use `container` for the page-size menu in a scoped app.

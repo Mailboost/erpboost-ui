@@ -449,6 +449,7 @@ export function DatePickerPopoverTrigger({
 // (see badge-list.tsx): data-open / data-ending-style animation attributes.
 
 interface DatePopoverProps {
+  container?: ComponentProps<typeof Popover.Portal>["container"];
   open: boolean;
   onOpenChange: (open: boolean) => void;
   /** The field group — must contain a `DatePickerPopoverTrigger`. */
@@ -467,6 +468,7 @@ interface DatePopoverProps {
 }
 
 export function DatePopover({
+  container,
   open,
   onOpenChange,
   field,
@@ -483,7 +485,7 @@ export function DatePopover({
       {field}
       {/* The Positioner's transform makes it a stacking context, so a z-index
           on the Popup alone can't lift it above a Dialog. Same pattern as Select/Menu. */}
-      <Popover.Portal style={{ position: "relative", zIndex: "var(--z-popup)" }}>
+      <Popover.Portal container={container} style={{ position: "relative", zIndex: "var(--z-popup)" }}>
         <Popover.Positioner anchor={anchor} sideOffset={4} side="bottom" align="start">
           {/* APG date-picker dialog pattern — the popup is a labelled dialog. */}
           <Popover.Popup
