@@ -1,4 +1,24 @@
 {
+  "/patterns/code-workspace": {
+    "description": "Compose files, code, results and a graph panel with explicit JSX regions.",
+    "do": "Keep file, execution and resizing state in the consuming application.",
+    "dont": "Put API clients or a screen-definition engine into the layout.",
+    "primitives": [
+      "CodeWorkspace",
+      "CodeEditor",
+      "GraphControls",
+      "Dialog",
+      "Sheet"
+    ],
+    "ja": {
+      "title": "コードと実行結果の作業画面",
+      "paragraphs": [
+        "ファイル・コード・実行結果・グラフをJSXの領域で組み立てます。",
+        "ファイル・実行・リサイズの状態はアプリ側で制御します。",
+        "APIクライアントや画面定義エンジンはレイアウトに持ち込みません。"
+      ]
+    }
+  },
   "/patterns/database-workspace": {
     "description": "Browse tables and keep database work in closable tabs.",
     "do": "Keep table selection, queries, permissions and persistence in the consuming application.",
