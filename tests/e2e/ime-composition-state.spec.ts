@@ -151,6 +151,69 @@ for (const mode of [
       });
     }
 
+    for (const kind of ["combobox", "autocomplete"] as const) {
+      test(`${kind} commits an IME query before keyboard suggestion selection`, async ({
+        page,
+      }) => {
+        test.info().annotations.push({
+          type: "chromium-ime-reference-behavior",
+          description:
+            "Wait for the real popup animation to finish. In this exact composition sequence the reference single Combobox needs two ArrowDown presses; the first does not highlight an option. Autocomplete needs one. This is not an OS IME test.",
+        });
+        await page.goto(`components/${kind}?preview=fullscreen`);
+        await page.waitForLoadState("networkidle");
+        const input = page.locator(`[data-slot="${kind}-input"]`).first();
+        await input.fill("");
+        const settlePopup = async () => {
+          await page.evaluate(async () => {
+            await Promise.all(
+              document
+                .getAnimations()
+                .filter(
+                  (animation) =>
+                    animation.effect?.getTiming().iterations !== Infinity,
+                )
+                .map((animation) => animation.finished.catch(() => {})),
+            );
+          });
+        };
+        const session = await beginComposition(page, input, "Su");
+        await expect(page.getByRole("option")).toHaveText([
+          "Tanaka",
+          "Sato",
+          "Suzuki",
+          "Yamada",
+        ]);
+        await settlePopup();
+        await composingEnter(session);
+        await expect(input).toHaveValue("Su");
+        await expect(input).not.toHaveAttribute("aria-activedescendant");
+        await commit(session, input, "Suz");
+        const suggestion = page.getByRole("option", {
+          name: "Suzuki",
+          exact: true,
+        });
+        await expect(page.getByRole("option")).toHaveCount(1);
+        await expect(suggestion).toBeVisible();
+        await settlePopup();
+        await input.press("ArrowDown");
+        if (kind === "combobox") {
+          await expect(input).not.toHaveAttribute("aria-activedescendant");
+          await expect(suggestion).not.toHaveAttribute("data-highlighted");
+          await input.press("ArrowDown");
+        }
+        await expect(suggestion).toHaveAttribute("data-highlighted", "");
+        await expect(input).toHaveAttribute(
+          "aria-activedescendant",
+          (await suggestion.getAttribute("id"))!,
+        );
+        await input.press("Enter");
+        await expect(input).toHaveValue("Suzuki");
+        await expect(input).toBeFocused();
+        await expect(page.getByRole("listbox")).not.toBeVisible();
+      });
+    }
+
     test("prompt does not submit Japanese text while composing and submits it once after commitment", async ({
       page,
     }) => {

@@ -31,12 +31,6 @@ select,
 textarea {
   -webkit-tap-highlight-color: transparent;
 }
-button {
-  cursor: pointer;
-}
-button:disabled {
-  cursor: default;
-}
 @layer base {
   button,
   select,
