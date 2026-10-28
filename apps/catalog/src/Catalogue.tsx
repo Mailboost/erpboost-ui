@@ -157,7 +157,7 @@ export function CategoryPage({ category }: { category: Category }) {
     </main>
   );
 }
-function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
+function CodeBlock({ demo }: { demo: Demo }) {
   const sources = demo.sources?.length
     ? demo.sources
     : [{ filename: demo.name + ".tsx", source: demo.source }];
@@ -232,7 +232,7 @@ function CodeBlock({ demo, maxWidth }: { demo: Demo; maxWidth?: number }) {
           </Button>
         </div>
       </div>
-      <div style={{ maxWidth, margin: "0 auto", width: "100%" }}>
+      <div style={{ margin: "0 auto", width: "100%" }}>
         <Suspense
           fallback={
             <pre>
@@ -382,7 +382,7 @@ function Preview({
           )}
         </div>
         {tab === "code" ? (
-          <CodeBlock demo={demo} maxWidth={maxWidth} />
+          <CodeBlock key={revision} demo={demo} />
         ) : (
           <div
             className={`preview-surface ${background}`}
