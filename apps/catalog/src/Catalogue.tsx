@@ -26,6 +26,14 @@ import { PageFrame } from "./reference/shared/page-frame";
 const DocumentNotes = lazy(() => import("./reference/DocumentNotes"));
 const HighlightedSource = lazy(() => import("./HighlightedSource"));
 const sourceLanguage = (filename: string) => filename.split(".").pop() ?? "tsx";
+const copyFeedbackMs = 1500;
+const sourceMarkdown = (files: { filename: string; source: string }[]) =>
+  files
+    .map(
+      (file) =>
+        `### ${file.filename}\n\n\`\`\`${sourceLanguage(file.filename)}\n${file.source}\n\`\`\``,
+    )
+    .join("\n\n") + "\n";
 
 const categoryDescriptions = Object.fromEntries(
   ["components", "page", "patterns"].map((category) => [
@@ -193,16 +201,9 @@ function CodeBlock({ demo }: { demo: Demo }) {
               aria-live="polite"
               title="Copy all files as Markdown (good for pasting to an AI agent)"
               onClick={async () => {
-                await navigator.clipboard.writeText(
-                  sources
-                    .map(
-                      (file) =>
-                        `### ${file.filename}\n\n\`\`\`${sourceLanguage(file.filename)}\n${file.source}\n\`\`\``,
-                    )
-                    .join("\n\n"),
-                );
+                await navigator.clipboard.writeText(sourceMarkdown(sources));
                 setCopiedAll(true);
-                setTimeout(() => setCopiedAll(false), 2000);
+                setTimeout(() => setCopiedAll(false), copyFeedbackMs);
               }}
             >
               {copiedAll ? (
@@ -220,7 +221,7 @@ function CodeBlock({ demo }: { demo: Demo }) {
             onClick={async () => {
               await navigator.clipboard.writeText(source.source);
               setCopied(true);
-              setTimeout(() => setCopied(false), 2000);
+              setTimeout(() => setCopied(false), copyFeedbackMs);
             }}
           >
             {copied ? (
@@ -509,10 +510,10 @@ export function EntryPage({ entry }: { entry: Entry }) {
               onClick={async () => {
                 const unique = getMarkdownSources(entry);
                 await navigator.clipboard.writeText(
-                  `# ${entry.title}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${entry.description}\n\n## Do\n\n${entry.guidance?.do[0]}\n\n## Don't\n\n${entry.guidance?.dont[0]}${entry.markdownNotes ? "\n\n" + entry.markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${unique.map((f) => `### ${f.filename}\n\n\`\`\`${sourceLanguage(f.filename)}\n${f.source}\n\`\`\``).join("\n\n")}`,
+                  `# ${entry.title}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${entry.description}\n\n## Do\n\n${entry.guidance?.do[0]}\n\n## Don't\n\n${entry.guidance?.dont[0]}${entry.markdownNotes ? "\n\n" + entry.markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${sourceMarkdown(unique)}`,
                 );
                 setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
+                setTimeout(() => setCopied(false), copyFeedbackMs);
               }}
             >
               {copied ? "Copied" : "Copy as Markdown"}
