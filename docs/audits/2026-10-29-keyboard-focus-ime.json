@@ -1,0 +1,3260 @@
+{
+  "date": "2026-10-29",
+  "checkedAt": "2026-10-28T20:18:57.258815+00:00",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "latestValidatedCommit": "5af263c16103942d1a8df5c66fad411493bc1d0c",
+  "scope": {
+    "sharedReferenceRoutes": 71,
+    "erpboostRoutes": 72,
+    "componentRoutes": 38,
+    "focusAndHoverLanguage": "en",
+    "conditions": [
+      "1280x900 light",
+      "375x812 dark"
+    ],
+    "physicalIMEVerified": false,
+    "completeParity": false
+  },
+  "fix": {
+    "component": "Alert dismiss button",
+    "file": "packages/ui/src/components/alert/alert.tsx",
+    "beforeFocus": "2px shadow ring; outline none",
+    "afterFocus": "1px auto outline; no shadow ring",
+    "beforeHoverOpacity": "1",
+    "afterHoverOpacity": "0.7",
+    "keyboardDismissVerified": true
+  },
+  "focusAudit": {
+    "baselineCommit": "4fe485b621f7ccab4e287930bf01de1e443635fd",
+    "properties": 16,
+    "afterFixRecheck": "Affected alert in two conditions, not another full 152 visits",
+    "visits": 152,
+    "validPairs": 74,
+    "perEnvironment": {
+      "reference": {
+        "visits": 76,
+        "controls": 326,
+        "pointerExcluded": 0
+      },
+      "local": {
+        "visits": 76,
+        "controls": 326,
+        "pointerExcluded": 0
+      }
+    },
+    "pages": [
+      {
+        "route": "/components/action-panel",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/activity-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/alert",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "BUTTON",
+              "slot": "alert-dismiss",
+              "label": "Dismiss",
+              "text": "",
+              "placeholder": null,
+              "type": "button"
+            },
+            "localIdentity": {
+              "tag": "BUTTON",
+              "slot": "alert-dismiss",
+              "label": "Dismiss",
+              "text": "",
+              "placeholder": null,
+              "type": "button"
+            },
+            "styleDifferences": {
+              "outline-style": {
+                "reference": "auto",
+                "local": "none"
+              },
+              "box-shadow": {
+                "reference": "none",
+                "local": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, color(srgb 0.0901961 0.0901961 0.0901961 / 0.45) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "route": "/components/app-shell",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/attachment",
+        "mode": "desktop-light",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/auth-provider",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/autocomplete",
+        "mode": "desktop-light",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "autocomplete-input",
+              "label": null,
+              "text": "",
+              "placeholder": "Type a member name",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "autocomplete-input",
+              "label": "Type a member name",
+              "text": "",
+              "placeholder": "Type a member name",
+              "type": null
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/avatar",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/badge",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/button",
+        "mode": "desktop-light",
+        "controls": 11,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 10,
+            "referenceIdentity": {
+              "tag": "BUTTON",
+              "slot": "button",
+              "label": null,
+              "text": "+",
+              "placeholder": null,
+              "type": "button"
+            },
+            "localIdentity": {
+              "tag": "BUTTON",
+              "slot": "button",
+              "label": "+",
+              "text": "+",
+              "placeholder": null,
+              "type": "button"
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/calendar",
+        "mode": "desktop-light",
+        "controls": 60,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/collection-control-provider",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/combobox",
+        "mode": "desktop-light",
+        "controls": 6,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "Assign owner",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": "Assign owner",
+              "text": "",
+              "placeholder": "Assign owner",
+              "type": null
+            },
+            "styleDifferences": {}
+          },
+          {
+            "index": 5,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "",
+              "type": null
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/command-palette",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/csv-importer",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/data-table",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/date-field",
+        "mode": "desktop-light",
+        "controls": 15,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/date-picker",
+        "mode": "desktop-light",
+        "controls": 19,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/description-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/dialog",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/field",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/fieldset",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/form",
+        "mode": "desktop-light",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/foundation",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/input",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/layout",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/link",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/menu",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/metric-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/overview",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/select",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/sheet",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/sidebar",
+        "mode": "desktop-light",
+        "excluded": "reference SidebarProvider error",
+        "referenceError": null,
+        "localError": null
+      },
+      {
+        "route": "/components/table",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/tabs",
+        "mode": "desktop-light",
+        "controls": 25,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/tooltip",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/with-guard",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/action-panel",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/activity-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/alert",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "BUTTON",
+              "slot": "alert-dismiss",
+              "label": "Dismiss",
+              "text": "",
+              "placeholder": null,
+              "type": "button"
+            },
+            "localIdentity": {
+              "tag": "BUTTON",
+              "slot": "alert-dismiss",
+              "label": "Dismiss",
+              "text": "",
+              "placeholder": null,
+              "type": "button"
+            },
+            "styleDifferences": {
+              "outline-style": {
+                "reference": "auto",
+                "local": "none"
+              },
+              "box-shadow": {
+                "reference": "none",
+                "local": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, color(srgb 0.898039 0.898039 0.898039 / 0.45) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "route": "/components/app-shell",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/attachment",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/auth-provider",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/autocomplete",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "autocomplete-input",
+              "label": null,
+              "text": "",
+              "placeholder": "Type a member name",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "autocomplete-input",
+              "label": "Type a member name",
+              "text": "",
+              "placeholder": "Type a member name",
+              "type": null
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/avatar",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/badge",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/button",
+        "mode": "mobile-dark",
+        "controls": 11,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 10,
+            "referenceIdentity": {
+              "tag": "BUTTON",
+              "slot": "button",
+              "label": null,
+              "text": "+",
+              "placeholder": null,
+              "type": "button"
+            },
+            "localIdentity": {
+              "tag": "BUTTON",
+              "slot": "button",
+              "label": "+",
+              "text": "+",
+              "placeholder": null,
+              "type": "button"
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/calendar",
+        "mode": "mobile-dark",
+        "controls": 60,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/collection-control-provider",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/combobox",
+        "mode": "mobile-dark",
+        "controls": 6,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "Assign owner",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": "Assign owner",
+              "text": "",
+              "placeholder": "Assign owner",
+              "type": null
+            },
+            "styleDifferences": {}
+          },
+          {
+            "index": 5,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "",
+              "type": null
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/command-palette",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/csv-importer",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/data-table",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/date-field",
+        "mode": "mobile-dark",
+        "controls": 15,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/date-picker",
+        "mode": "mobile-dark",
+        "controls": 19,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/description-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/dialog",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/field",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/fieldset",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/form",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/foundation",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/input",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/layout",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/link",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/menu",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/metric-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/overview",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/select",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/sheet",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/sidebar",
+        "mode": "mobile-dark",
+        "excluded": "reference SidebarProvider error",
+        "referenceError": null,
+        "localError": null
+      },
+      {
+        "route": "/components/table",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/tabs",
+        "mode": "mobile-dark",
+        "controls": 25,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/tooltip",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/with-guard",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      }
+    ]
+  },
+  "hoverAudit": {
+    "commit": "5af263c16103942d1a8df5c66fad411493bc1d0c",
+    "properties": 18,
+    "initialCalendarAttemptsFailed": 4,
+    "calendarOnlyRetaken": true,
+    "visits": 152,
+    "validPairs": 74,
+    "perEnvironment": {
+      "reference": {
+        "visits": 76,
+        "controls": 318,
+        "pointerExcluded": 8
+      },
+      "local": {
+        "visits": 76,
+        "controls": 318,
+        "pointerExcluded": 8
+      }
+    },
+    "pages": [
+      {
+        "route": "/components/action-panel",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/activity-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/alert",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/app-shell",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/attachment",
+        "mode": "desktop-light",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/auth-provider",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/autocomplete",
+        "mode": "desktop-light",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "autocomplete-input",
+              "label": null,
+              "text": "",
+              "placeholder": "Type a member name",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "autocomplete-input",
+              "label": "Type a member name",
+              "text": "",
+              "placeholder": "Type a member name",
+              "type": null
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/avatar",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/badge",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/button",
+        "mode": "desktop-light",
+        "controls": 11,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 10,
+            "referenceIdentity": {
+              "tag": "BUTTON",
+              "slot": "button",
+              "label": null,
+              "text": "+",
+              "placeholder": null,
+              "type": "button"
+            },
+            "localIdentity": {
+              "tag": "BUTTON",
+              "slot": "button",
+              "label": "+",
+              "text": "+",
+              "placeholder": null,
+              "type": "button"
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/collection-control-provider",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/combobox",
+        "mode": "desktop-light",
+        "controls": 6,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "Assign owner",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": "Assign owner",
+              "text": "",
+              "placeholder": "Assign owner",
+              "type": null
+            },
+            "styleDifferences": {}
+          },
+          {
+            "index": 5,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "",
+              "type": null
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/command-palette",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/csv-importer",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/data-table",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/date-field",
+        "mode": "desktop-light",
+        "controls": 15,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/date-picker",
+        "mode": "desktop-light",
+        "controls": 19,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/description-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/dialog",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/field",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/fieldset",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/form",
+        "mode": "desktop-light",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/foundation",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/input",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/layout",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/link",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/menu",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/metric-card",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/overview",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/select",
+        "mode": "desktop-light",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/sheet",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/sidebar",
+        "mode": "desktop-light",
+        "excluded": "reference SidebarProvider error",
+        "referenceError": null,
+        "localError": null
+      },
+      {
+        "route": "/components/table",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/tabs",
+        "mode": "desktop-light",
+        "controls": 25,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/tooltip",
+        "mode": "desktop-light",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/with-guard",
+        "mode": "desktop-light",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/action-panel",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/activity-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/alert",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/app-shell",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/attachment",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/auth-provider",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/autocomplete",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "autocomplete-input",
+              "label": null,
+              "text": "",
+              "placeholder": "Type a member name",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "autocomplete-input",
+              "label": "Type a member name",
+              "text": "",
+              "placeholder": "Type a member name",
+              "type": null
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/avatar",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/badge",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/button",
+        "mode": "mobile-dark",
+        "controls": 11,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 10,
+            "referenceIdentity": {
+              "tag": "BUTTON",
+              "slot": "button",
+              "label": null,
+              "text": "+",
+              "placeholder": null,
+              "type": "button"
+            },
+            "localIdentity": {
+              "tag": "BUTTON",
+              "slot": "button",
+              "label": "+",
+              "text": "+",
+              "placeholder": null,
+              "type": "button"
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/collection-control-provider",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/combobox",
+        "mode": "mobile-dark",
+        "controls": 6,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": [
+          {
+            "index": 0,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "Assign owner",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": "Assign owner",
+              "text": "",
+              "placeholder": "Assign owner",
+              "type": null
+            },
+            "styleDifferences": {}
+          },
+          {
+            "index": 5,
+            "referenceIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "",
+              "type": "text"
+            },
+            "localIdentity": {
+              "tag": "INPUT",
+              "slot": "combobox-input",
+              "label": null,
+              "text": "",
+              "placeholder": "",
+              "type": null
+            },
+            "styleDifferences": {}
+          }
+        ]
+      },
+      {
+        "route": "/components/command-palette",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/csv-importer",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/data-table",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/date-field",
+        "mode": "mobile-dark",
+        "controls": 15,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/date-picker",
+        "mode": "mobile-dark",
+        "controls": 19,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/description-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/dialog",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/field",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/fieldset",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/form",
+        "mode": "mobile-dark",
+        "controls": 3,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/foundation",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/input",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/layout",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/link",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/menu",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/metric-card",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/overview",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/select",
+        "mode": "mobile-dark",
+        "controls": 2,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/sheet",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/sidebar",
+        "mode": "mobile-dark",
+        "excluded": "reference SidebarProvider error",
+        "referenceError": null,
+        "localError": null
+      },
+      {
+        "route": "/components/table",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/tabs",
+        "mode": "mobile-dark",
+        "controls": 25,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/tooltip",
+        "mode": "mobile-dark",
+        "controls": 1,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/with-guard",
+        "mode": "mobile-dark",
+        "controls": 0,
+        "referencePointerExcluded": [],
+        "localPointerExcluded": [],
+        "differences": []
+      },
+      {
+        "route": "/components/calendar",
+        "mode": "desktop-light",
+        "controls": 56,
+        "referencePointerExcluded": [
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Sunday, June 28, 2026",
+            "text": "28",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Monday, June 29, 2026",
+            "text": "29",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Tuesday, June 30, 2026",
+            "text": "30",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Saturday, August 1, 2026",
+            "text": "1",
+            "placeholder": null,
+            "type": "button"
+          }
+        ],
+        "localPointerExcluded": [
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Sunday, June 28, 2026",
+            "text": "28",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Monday, June 29, 2026",
+            "text": "29",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Tuesday, June 30, 2026",
+            "text": "30",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Saturday, August 1, 2026",
+            "text": "1",
+            "placeholder": null,
+            "type": "button"
+          }
+        ],
+        "differences": []
+      },
+      {
+        "route": "/components/calendar",
+        "mode": "mobile-dark",
+        "controls": 56,
+        "referencePointerExcluded": [
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Sunday, June 28, 2026",
+            "text": "28",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Monday, June 29, 2026",
+            "text": "29",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Tuesday, June 30, 2026",
+            "text": "30",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Saturday, August 1, 2026",
+            "text": "1",
+            "placeholder": null,
+            "type": "button"
+          }
+        ],
+        "localPointerExcluded": [
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Sunday, June 28, 2026",
+            "text": "28",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Monday, June 29, 2026",
+            "text": "29",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Tuesday, June 30, 2026",
+            "text": "30",
+            "placeholder": null,
+            "type": "button"
+          },
+          {
+            "tag": "BUTTON",
+            "slot": null,
+            "label": "Saturday, August 1, 2026",
+            "text": "1",
+            "placeholder": null,
+            "type": "button"
+          }
+        ],
+        "differences": []
+      }
+    ]
+  },
+  "images": [
+    {
+      "phase": "before2",
+      "target": "local",
+      "mode": "desktop-light",
+      "state": "alert",
+      "pixels": 315,
+      "maximumChannelDifference": 78
+    },
+    {
+      "phase": "before2",
+      "target": "local",
+      "mode": "desktop-light",
+      "state": "hover",
+      "pixels": 52,
+      "maximumChannelDifference": 69
+    },
+    {
+      "phase": "before2",
+      "target": "local",
+      "mode": "mobile-dark",
+      "state": "alert",
+      "pixels": 320,
+      "maximumChannelDifference": 76
+    },
+    {
+      "phase": "before2",
+      "target": "local",
+      "mode": "mobile-dark",
+      "state": "hover",
+      "pixels": 52,
+      "maximumChannelDifference": 63
+    },
+    {
+      "phase": "after",
+      "target": "local",
+      "mode": "desktop-light",
+      "state": "alert",
+      "pixels": 0,
+      "maximumChannelDifference": 0
+    },
+    {
+      "phase": "after",
+      "target": "local",
+      "mode": "desktop-light",
+      "state": "hover",
+      "pixels": 0,
+      "maximumChannelDifference": 0
+    },
+    {
+      "phase": "after",
+      "target": "local",
+      "mode": "mobile-dark",
+      "state": "alert",
+      "pixels": 0,
+      "maximumChannelDifference": 0
+    },
+    {
+      "phase": "after",
+      "target": "local",
+      "mode": "mobile-dark",
+      "state": "hover",
+      "pixels": 0,
+      "maximumChannelDifference": 0
+    },
+    {
+      "phase": "published",
+      "target": "published",
+      "mode": "desktop-light",
+      "state": "alert",
+      "pixels": 0,
+      "maximumChannelDifference": 0
+    },
+    {
+      "phase": "published",
+      "target": "published",
+      "mode": "desktop-light",
+      "state": "hover",
+      "pixels": 0,
+      "maximumChannelDifference": 0
+    },
+    {
+      "phase": "published",
+      "target": "published",
+      "mode": "mobile-dark",
+      "state": "alert",
+      "pixels": 0,
+      "maximumChannelDifference": 0
+    },
+    {
+      "phase": "published",
+      "target": "published",
+      "mode": "mobile-dark",
+      "state": "hover",
+      "pixels": 0,
+      "maximumChannelDifference": 0
+    }
+  ],
+  "ime": {
+    "regressionCasesPerEnvironment": 6,
+    "referenceLocalPublishedStats": {
+      "startTime": "2026-10-28T19:42:43.096Z",
+      "duration": 43003.273,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "publishedAfterDeploymentStats": {
+      "startTime": "2026-10-28T20:18:16.479Z",
+      "duration": 14835.669,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "distinctSelectedCases": 18,
+    "actualFinalExecutions": 24,
+    "mechanism": "Chromium CDP active composition, native key codes 13 and 229, then Input.insertText commitment",
+    "assertedTrustedEvents": [
+      "compositionstart",
+      "composing Enter 13",
+      "composing Enter 229",
+      "committed Enter 13"
+    ],
+    "compositionEndTrust": "Some CDP compositionend events were untrusted; no OS IME claim",
+    "candidateSelection": "Unresolved probe on both sites; excluded from successful verification",
+    "scriptedChatOnly": true
+  },
+  "ci": {
+    "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40758626826",
+    "runId": 40758626826,
+    "headSha": "5af263c16103942d1a8df5c66fad411493bc1d0c",
+    "conclusion": "success",
+    "browserStats": {
+      "startTime": "2026-10-28T19:58:24.884Z",
+      "duration": 993870.83,
+      "expected": 263,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "unitCases": 39
+  },
+  "deployment": {
+    "html": {
+      "checkedAt": "2026-10-28T20:18:41.079Z",
+      "count": 72,
+      "allEqual": true,
+      "records": [
+        {
+          "route": "/",
+          "url": "https://mailboost.github.io/erpboost-ui/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/action-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/action-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/activity-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/activity-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/alert/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/alert/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/app-shell/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/app-shell/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/attachment/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/attachment/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/auth-provider/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/auth-provider/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/autocomplete/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/autocomplete/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/avatar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/avatar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/badge/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/badge/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/button/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/button/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/calendar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/calendar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/collection-control-provider/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/collection-control-provider/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/combobox/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/combobox/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/command-palette/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/command-palette/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/csv-importer/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/csv-importer/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/data-table/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/data-table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/date-field/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/date-field/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/date-picker/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/date-picker/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/description-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/description-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/dialog/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/dialog/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/field/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/field/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/fieldset/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/fieldset/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/form/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/form/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/foundation/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/foundation/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/input/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/input/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/layout/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/layout/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/link/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/link/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/menu/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/menu/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/metric-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/metric-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/overview/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/overview/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/select/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/select/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/sheet/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/sheet/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/sidebar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/sidebar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/table/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/tabs/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/tabs/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/tooltip/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/tooltip/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/components/with-guard/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/with-guard/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/assistant-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/assistant-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/chat/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/chat/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/collection/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/collection/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/dashboard-with-charts/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/dashboard-with-charts/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/detail-2col-action-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/detail-2col-action-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/document-page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/document-page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/email/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/email/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/form-as-page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/form-as-page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/pipeline-kanban/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/pipeline-kanban/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/page/simple-master-crud/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/simple-master-crud/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/ai-chat/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/ai-chat/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/approval-flow/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/approval-flow/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/approval-route-builder/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/approval-route-builder/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/bulk-actions-bar/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/bulk-actions-bar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/conversation-thread/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/conversation-thread/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/data-charts/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/data-charts/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/database-workspace/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/database-workspace/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/datatable-inline-edit/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/datatable-inline-edit/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/field-diff-table/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/field-diff-table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/form-builder/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/form-builder/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/grid-view/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/grid-view/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/multi-step-form/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/multi-step-form/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/notification-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/notification-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/pipeline-stage-manager/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/pipeline-stage-manager/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/rich-text-editor/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/rich-text-editor/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/right-sheet-custom/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/right-sheet-custom/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/supplier-cascader/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/supplier-cascader/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/thread-composer/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/thread-composer/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/timeline/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/timeline/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        },
+        {
+          "route": "/patterns/user-profile-dialog/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/user-profile-dialog/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "artifactSha256": "a98d6f90c85ccaf56456c0c9c9bc6fac9094e9831316aa380abff06cad0bde93",
+          "equal": true
+        }
+      ]
+    },
+    "assets": {
+      "checkedAt": "2026-10-28T20:18:54.839Z",
+      "assets": [
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Actions-BPY3dEJg.js",
+          "publicSha256": "23d3b02df29927b81c0ed566d58dbce2b1bb48974766056138f9dfc4cf505161",
+          "artifactSha256": "23d3b02df29927b81c0ed566d58dbce2b1bb48974766056138f9dfc4cf505161",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ActionsDemo-CJUlDeU0.js",
+          "publicSha256": "4b06d285b8bc116df7dd7eefe020acfafec7ed4e678f368af66bd58dbc6e2d14",
+          "artifactSha256": "4b06d285b8bc116df7dd7eefe020acfafec7ed4e678f368af66bd58dbc6e2d14",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ActionsThread-BhsflIHZ.js",
+          "publicSha256": "4cd1fce35c5fce5cfad2c474f559636b95a7352150f783e6ee0b9c4f63219462",
+          "artifactSha256": "4cd1fce35c5fce5cfad2c474f559636b95a7352150f783e6ee0b9c4f63219462",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ApprovalFlow-CYk40iXG.js",
+          "publicSha256": "588e315cdd76070d91c390a9652a62f9e7d7c1530ca718cc689b877cdfa579d7",
+          "artifactSha256": "588e315cdd76070d91c390a9652a62f9e7d7c1530ca718cc689b877cdfa579d7",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ApprovalRouteBuilder-Bt5I_mow.js",
+          "publicSha256": "ad37f48ec9bbf190d21965619145993cbd0e90be8c187f63c915324789c1a64b",
+          "artifactSha256": "ad37f48ec9bbf190d21965619145993cbd0e90be8c187f63c915324789c1a64b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanel-y2vL-5LE.js",
+          "publicSha256": "93d6fb3043ee05b1a7765560da2b412c5ddb9d4782ad7bf4a617cbb1d78519f4",
+          "artifactSha256": "93d6fb3043ee05b1a7765560da2b412c5ddb9d4782ad7bf4a617cbb1d78519f4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanelDemo-DzPSrSba.js",
+          "publicSha256": "b28ddc23102972ca99ca000dcd0322d1ae6cee9b849ab753a5f15e2899d41f50",
+          "artifactSha256": "b28ddc23102972ca99ca000dcd0322d1ae6cee9b849ab753a5f15e2899d41f50",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanelScreen-_qIvBS1a.js",
+          "publicSha256": "2d943d2c6187f5e094c4ae7fa10a7099945d7766ca27d9bd72373f3f38095524",
+          "artifactSha256": "2d943d2c6187f5e094c4ae7fa10a7099945d7766ca27d9bd72373f3f38095524",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AttachmentsThread-BSBsOpJZ.js",
+          "publicSha256": "9464289c75f6d4335bd02b64bfedf96ecd8d0efb99ddb24cae4d4f9fe137f352",
+          "artifactSha256": "9464289c75f6d4335bd02b64bfedf96ecd8d0efb99ddb24cae4d4f9fe137f352",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/BarChart-BD4FE--8.js",
+          "publicSha256": "2945bba500e4f6e012866e6900810c7254636d6f42acd0381bd8039fcd832421",
+          "artifactSha256": "2945bba500e4f6e012866e6900810c7254636d6f42acd0381bd8039fcd832421",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/BulkActionsBar-CCvsb8fx.js",
+          "publicSha256": "62585013e9a3bd02ea92a19e3dcc8fe192763cdbdbafa918b3fd00ed8d5a3c75",
+          "artifactSha256": "62585013e9a3bd02ea92a19e3dcc8fe192763cdbdbafa918b3fd00ed8d5a3c75",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CategoriesMasterDialogPage-BdB0QDdl.js",
+          "publicSha256": "759a337daaa7191ef1997a7f0d7faacf4392caf52f9d9f70f3dd54a39f9dfead",
+          "artifactSha256": "759a337daaa7191ef1997a7f0d7faacf4392caf52f9d9f70f3dd54a39f9dfead",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CategoriesMasterSheetPage-C_euNLno.js",
+          "publicSha256": "371b9deab1ed8cd1e85e70c55a5de1ff89e8d2f2094532981b3d327273917b5b",
+          "artifactSha256": "371b9deab1ed8cd1e85e70c55a5de1ff89e8d2f2094532981b3d327273917b5b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChainOfThoughtDemo-Ci0DA07R.js",
+          "publicSha256": "5925a4a64495e3f29ed104991e3cfe439f880c12475fcf1a904231e9d120561d",
+          "artifactSha256": "5925a4a64495e3f29ed104991e3cfe439f880c12475fcf1a904231e9d120561d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChatHistoryDemo-CAedXm2l.js",
+          "publicSha256": "5bcb9cdce0ab287130fbb09dc8ea93a289daa87f055691b2fe1a4b9ced9a8dc3",
+          "artifactSha256": "5bcb9cdce0ab287130fbb09dc8ea93a289daa87f055691b2fe1a4b9ced9a8dc3",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChatScreen-Bo9MkwAH.js",
+          "publicSha256": "b4bf9266302e88f5f04a3b5f5e841697659cac12daf78f44971d76c877571e36",
+          "artifactSha256": "b4bf9266302e88f5f04a3b5f5e841697659cac12daf78f44971d76c877571e36",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ConversationThreadPanel-jgrDmHgH.js",
+          "publicSha256": "9d6fd55662172155e4ff485ea914f4da283c1a294e7888595a6873ae9817171d",
+          "artifactSha256": "9d6fd55662172155e4ff485ea914f4da283c1a294e7888595a6873ae9817171d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPage-D8I75GcW.js",
+          "publicSha256": "fe835a65d01dc160e4b52e230ff530b32b0673483c304db843dc290d86337157",
+          "artifactSha256": "fe835a65d01dc160e4b52e230ff530b32b0673483c304db843dc290d86337157",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPageWithSectionNav-mXbrsJ87.js",
+          "publicSha256": "43736cc38b7ba47c8879739f14681119dbc5aa2997afd08e1b646e1249ae09d9",
+          "artifactSha256": "43736cc38b7ba47c8879739f14681119dbc5aa2997afd08e1b646e1249ae09d9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPageWizard-kvDWC3HG.js",
+          "publicSha256": "1fc0fd7651e7ea33daf3cb26d4ab9a265ba9e8ecb63af0f3dce9473cfc824a72",
+          "artifactSha256": "1fc0fd7651e7ea33daf3cb26d4ab9a265ba9e8ecb63af0f3dce9473cfc824a72",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DatabaseWorkspaceDemo-C9LwrSwN.js",
+          "publicSha256": "4c6004daceeb05c1961f9ff0956ccc17019d2169e968a4377dc627b6ecaf2459",
+          "artifactSha256": "4c6004daceeb05c1961f9ff0956ccc17019d2169e968a4377dc627b6ecaf2459",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DependencyTimeline-58yHGh-H.js",
+          "publicSha256": "09e398af787a1e2add2d1e2519f9907b67530e04dbe8cb06ef01e6cd0f910ab1",
+          "artifactSha256": "09e398af787a1e2add2d1e2519f9907b67530e04dbe8cb06ef01e6cd0f910ab1",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DetailPageWithPageTabs-C6DHK2r6.js",
+          "publicSha256": "489e33260dc689dfa49eca99f138f78f5d5e57218dc8356a8106a1d9e8f6efdc",
+          "artifactSha256": "489e33260dc689dfa49eca99f138f78f5d5e57218dc8356a8106a1d9e8f6efdc",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentEditorPage-C8LL_u4z.css",
+          "publicSha256": "cf8f05a4ce22400fc202a56ef4007741bb0422d3b7a62746576cdcef16c64149",
+          "artifactSha256": "cf8f05a4ce22400fc202a56ef4007741bb0422d3b7a62746576cdcef16c64149",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentEditorPage-DCjzayZ0.js",
+          "publicSha256": "9b1453356b75049d03b3446925e580fc83b726f1f11b5b65048889ebef7c3f6e",
+          "artifactSha256": "9b1453356b75049d03b3446925e580fc83b726f1f11b5b65048889ebef7c3f6e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentNotes-ChsjrFTi.js",
+          "publicSha256": "9be9e49b7217a9b8ff13e63872a1b0544bf02666d046f535e09e322b143fbe0c",
+          "artifactSha256": "9be9e49b7217a9b8ff13e63872a1b0544bf02666d046f535e09e322b143fbe0c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DonutChartCard-Dak4K2oY.js",
+          "publicSha256": "2d340c7db552dd34f7f559affb9d4f9748e55afd4d20252f7533bf8287f45467",
+          "artifactSha256": "2d340c7db552dd34f7f559affb9d4f9748e55afd4d20252f7533bf8287f45467",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/EmailLayoutPage-CFbIPQKh.js",
+          "publicSha256": "251b928feaf784b9658e44befa1f24434d2bc34cb201d11aba7223e0898fa6b4",
+          "artifactSha256": "251b928feaf784b9658e44befa1f24434d2bc34cb201d11aba7223e0898fa6b4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/FormBuilder-Ql2l8s_w.js",
+          "publicSha256": "80e43e7cc0e9245689156e85051d934df0cd6774e657ae433a4f4fbf943ed948",
+          "artifactSha256": "80e43e7cc0e9245689156e85051d934df0cd6774e657ae433a4f4fbf943ed948",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttChart-CnyT3z89.css",
+          "publicSha256": "a048a57a71a057264297184af7fc84f01263d12ea8b2cca3f47c3bd158630ef5",
+          "artifactSha256": "a048a57a71a057264297184af7fc84f01263d12ea8b2cca3f47c3bd158630ef5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttChart-mYFLGf5H.js",
+          "publicSha256": "a7ec5e5c690a96dcc6e605b52f65998ba309a8e68e801e2b12f2f1dd676dbe13",
+          "artifactSha256": "a7ec5e5c690a96dcc6e605b52f65998ba309a8e68e801e2b12f2f1dd676dbe13",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttEditor-BqJV0OpR.js",
+          "publicSha256": "6db7653575b881ed4adacc7ff80fb122c22a0a52999c74aebf7bc81811ba7ab9",
+          "artifactSha256": "6db7653575b881ed4adacc7ff80fb122c22a0a52999c74aebf7bc81811ba7ab9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/HighlightedSource-BxxPPZUZ.js",
+          "publicSha256": "f9c56bf4d3b9b3a3404a9d83c21b9d59468af39b27107dd28196aebb109a6adf",
+          "artifactSha256": "f9c56bf4d3b9b3a3404a9d83c21b9d59468af39b27107dd28196aebb109a6adf",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/HorizontalBarChartCard-BM4Rqo6d.js",
+          "publicSha256": "04683d2f673b6081734aac2e7668062694778fbee0ee341d5abb8838dfd64ccb",
+          "artifactSha256": "04683d2f673b6081734aac2e7668062694778fbee0ee341d5abb8838dfd64ccb",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/InquiryThreadPage-Cb0BMZFX.js",
+          "publicSha256": "47c2dc38dfb746a37ef883936eafe85b9dc8b81dfeec7ce395ee84c698085916",
+          "artifactSha256": "47c2dc38dfb746a37ef883936eafe85b9dc8b81dfeec7ce395ee84c698085916",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/LineChartCard-DpG6iy79.js",
+          "publicSha256": "ee0aebeafa5decad267662f40307c06e47279c1dcdfa3ecef8443bd0ee5bd000",
+          "artifactSha256": "ee0aebeafa5decad267662f40307c06e47279c1dcdfa3ecef8443bd0ee5bd000",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MarkdownThread-CvLUY9Oj.js",
+          "publicSha256": "92f4b05b9454e23486b7f8aed220578cdf4e7d19698abbd658de01dbbfd0dd53",
+          "artifactSha256": "92f4b05b9454e23486b7f8aed220578cdf4e7d19698abbd658de01dbbfd0dd53",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Message-MQgM__FN.js",
+          "publicSha256": "db8103344794483b7c2369add1a79d8eceb880dde794085913b328765ce42b6f",
+          "artifactSha256": "db8103344794483b7c2369add1a79d8eceb880dde794085913b328765ce42b6f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MessageDemo-D-Avv-oC.js",
+          "publicSha256": "68b3835bb1de1d5a573ecc6716fcdf87d0a7f19e30c5f01bb8e659ffc45860a9",
+          "artifactSha256": "68b3835bb1de1d5a573ecc6716fcdf87d0a7f19e30c5f01bb8e659ffc45860a9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MultiStepForm-CrXYDl2w.js",
+          "publicSha256": "aaf97737899474346adf9a2a23de345a2211ee8449179e86711a523eec2bd90c",
+          "artifactSha256": "aaf97737899474346adf9a2a23de345a2211ee8449179e86711a523eec2bd90c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/NotificationPanelWithSidebar-CA1qzAoc.js",
+          "publicSha256": "f7949461465172691d84edc0623a13c3bd9e88ba94abb1cb08b3e1fb81f2c5ab",
+          "artifactSha256": "f7949461465172691d84edc0623a13c3bd9e88ba94abb1cb08b3e1fb81f2c5ab",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageCapsuleTabsPage-DP-_VKlg.js",
+          "publicSha256": "cb6043dffd08b303f4eeba0907dbc8b8e7b7e618051991f92c2f2bbf84e92548",
+          "artifactSha256": "cb6043dffd08b303f4eeba0907dbc8b8e7b7e618051991f92c2f2bbf84e92548",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageGridListTabsPage-BrQKvpFx.js",
+          "publicSha256": "4e9ea1b75bbadae5b94a627b765eb4e94c90d7f77135470b0fa5d1c7bd0557c6",
+          "artifactSha256": "4e9ea1b75bbadae5b94a627b765eb4e94c90d7f77135470b0fa5d1c7bd0557c6",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageInlineEditTabsPage-DK66JT5f.js",
+          "publicSha256": "27ea9d0d2a17f31b9ddaf8611d639347f82fa7990788a28eb9380bf273aaa64b",
+          "artifactSha256": "27ea9d0d2a17f31b9ddaf8611d639347f82fa7990788a28eb9380bf273aaa64b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PieChart-DuA9l21I.js",
+          "publicSha256": "20ad2042acaa905cfcb76dadee8dc60449210c5e526b84ba8f75c8453e9179c3",
+          "artifactSha256": "20ad2042acaa905cfcb76dadee8dc60449210c5e526b84ba8f75c8453e9179c3",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PieChartCard-B2Cv6pAq.js",
+          "publicSha256": "cc0c374030f7be9f237f1f4228e2cef29f2280b0a14fa51d833170bfc79896c2",
+          "artifactSha256": "cc0c374030f7be9f237f1f4228e2cef29f2280b0a14fa51d833170bfc79896c2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PipelineKanbanPage-DKf-9HC9.js",
+          "publicSha256": "f5fd0503ba91d32cadada0b999a1e7da0a0d0d6fa9ac8ba0f3a53cbe949a215b",
+          "artifactSha256": "f5fd0503ba91d32cadada0b999a1e7da0a0d0d6fa9ac8ba0f3a53cbe949a215b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PipelineStageManager-CzI6-JKH.js",
+          "publicSha256": "0e6347fc0fda8e749b53bffb466d44e87664f2e3b7248439178508d0d43af95d",
+          "artifactSha256": "0e6347fc0fda8e749b53bffb466d44e87664f2e3b7248439178508d0d43af95d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PromptInput-G_TK3xmx.js",
+          "publicSha256": "674d038df759ebb17f6d58905d95631f361d8d480f004dae0de6731aaa4ad1ac",
+          "artifactSha256": "674d038df759ebb17f6d58905d95631f361d8d480f004dae0de6731aaa4ad1ac",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PromptInputDemo-y_Xo2g7n.js",
+          "publicSha256": "c4e111d06e8ce4b502367d15b434ade08720030452fc7f5ce71a9b720c154600",
+          "artifactSha256": "c4e111d06e8ce4b502367d15b434ade08720030452fc7f5ce71a9b720c154600",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Reasoning-CpoZbhqZ.js",
+          "publicSha256": "f575fede1624c593000db2f50401c5d5d8515730ada18d65b9aad042387b7c4e",
+          "artifactSha256": "f575fede1624c593000db2f50401c5d5d8515730ada18d65b9aad042387b7c4e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ReasoningDemo-B5hDriQv.js",
+          "publicSha256": "a7c60875c12f91d60a4940f276a86a8fa393b5880785eb49e08de2781a086047",
+          "artifactSha256": "a7c60875c12f91d60a4940f276a86a8fa393b5880785eb49e08de2781a086047",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Response-CJlnmTMK.js",
+          "publicSha256": "18e343a9333a05292ebbedc1fbc6f6bee1448f6afea4a95ada8f94ab032e7762",
+          "artifactSha256": "18e343a9333a05292ebbedc1fbc6f6bee1448f6afea4a95ada8f94ab032e7762",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/RichTextEditor-PCl3__6j.js",
+          "publicSha256": "9fcb54e0a910a86c3d10532073aa7c8775e7255b1ade2c74a5aaeba19d28b7f6",
+          "artifactSha256": "9fcb54e0a910a86c3d10532073aa7c8775e7255b1ade2c74a5aaeba19d28b7f6",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/RightSheet-DCFNTVsF.js",
+          "publicSha256": "b87f48724765745aedab0306e10d73f86b5ca38e3a7f92a55250484bb8f637c7",
+          "artifactSha256": "b87f48724765745aedab0306e10d73f86b5ca38e3a7f92a55250484bb8f637c7",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Sources-Djgt-qjW.js",
+          "publicSha256": "1451f8cdfbc9791da0bc86416511d7221e76f7c186b61c4996d34f199b6c5511",
+          "artifactSha256": "1451f8cdfbc9791da0bc86416511d7221e76f7c186b61c4996d34f199b6c5511",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SourcesDemo-C3aMZC9f.js",
+          "publicSha256": "f509a53dd482be3f3085fca9f17bc6645428456b8f2b666bb53c6669b6d482d5",
+          "artifactSha256": "f509a53dd482be3f3085fca9f17bc6645428456b8f2b666bb53c6669b6d482d5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SpendDashboardPage-Bz_v1T7i.js",
+          "publicSha256": "7bdfacd4f6c0c17b70e240b568bc01f33430ef38a5f11c0bad89c94eb564c60f",
+          "artifactSha256": "7bdfacd4f6c0c17b70e240b568bc01f33430ef38a5f11c0bad89c94eb564c60f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/StackedBarChartCard-CLb2ps5V.js",
+          "publicSha256": "4c5cba67569765a8a8685acf338dead7dab1a8363e6255994f5536abea1cebc3",
+          "artifactSha256": "4c5cba67569765a8a8685acf338dead7dab1a8363e6255994f5536abea1cebc3",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Suggestion-BlYEu_bc.js",
+          "publicSha256": "9591fdc67d6de468ed7504af9f75462d4d4107747fe4dec02df895c715af5285",
+          "artifactSha256": "9591fdc67d6de468ed7504af9f75462d4d4107747fe4dec02df895c715af5285",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SuggestionDemo-CcE9RvRy.js",
+          "publicSha256": "f96b9020ad103c71dbe7df4fe415b5c6d9ea1cc59dceb1d0e7c515ccd8113644",
+          "artifactSha256": "f96b9020ad103c71dbe7df4fe415b5c6d9ea1cc59dceb1d0e7c515ccd8113644",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SupplierDetailPage-DrGBjZRr.js",
+          "publicSha256": "6f273bd9258af14c57505a23e02bf4ae90d0db09e30edd7023d5615d22a522e5",
+          "artifactSha256": "6f273bd9258af14c57505a23e02bf4ae90d0db09e30edd7023d5615d22a522e5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ThreadComposer-Dgkec2bl.js",
+          "publicSha256": "476ea0e75185694451519f6befcf3d87ce0fad58c7cfbbe362b4986e51d364c9",
+          "artifactSha256": "476ea0e75185694451519f6befcf3d87ce0fad58c7cfbbe362b4986e51d364c9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Timeline-CmEntDgh.js",
+          "publicSha256": "fae2e073013361facea6de24695f77ca5d17e4ddfc574ba508554259099498c2",
+          "artifactSha256": "fae2e073013361facea6de24695f77ca5d17e4ddfc574ba508554259099498c2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Tool-qQL6kFaF.js",
+          "publicSha256": "bf4f4d13ea489537f939f1a522b65a36409f54dfaaa274ab3939197a5012e5c3",
+          "artifactSha256": "bf4f4d13ea489537f939f1a522b65a36409f54dfaaa274ab3939197a5012e5c3",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ToolDemo-1p5wrer2.js",
+          "publicSha256": "1277471ac10f5e8f3531ada3aeedd3bdebce193e4cdff668fe67ef0b540f2596",
+          "artifactSha256": "1277471ac10f5e8f3531ada3aeedd3bdebce193e4cdff668fe67ef0b540f2596",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/UserMenuSidebarShowcase-DrcCMEZd.js",
+          "publicSha256": "15da9fd5cfcc24f9f374412b33c0b3d4b36f8e4b83f99a8779ac02cedd6e96d4",
+          "artifactSha256": "15da9fd5cfcc24f9f374412b33c0b3d4b36f8e4b83f99a8779ac02cedd6e96d4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/UserProfileDialog-DxoW19mt.js",
+          "publicSha256": "2c674fca1e07fdebdaaba27acfbc1ad39c504995d355a0925b41405b03456043",
+          "artifactSha256": "2c674fca1e07fdebdaaba27acfbc1ad39c504995d355a0925b41405b03456043",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/VerticalBarChartCard-BOtbgDcH.js",
+          "publicSha256": "cbdd5003800219e2af3f161f1ee252f30d278a5d1a85f20d30697e0c89fc7ab8",
+          "artifactSha256": "cbdd5003800219e2af3f161f1ee252f30d278a5d1a85f20d30697e0c89fc7ab8",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/YAxis-TlHv8Eaj.js",
+          "publicSha256": "30a15899848044bb3b91a883e4bc01693ca77b3b5bd8cd0479a483903c1ffb14",
+          "artifactSha256": "30a15899848044bb3b91a883e4bc01693ca77b3b5bd8cd0479a483903c1ffb14",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/bell-CDJWU4Tj.js",
+          "publicSha256": "08627bea96e72da2672917440ff7c5a6f98335293b8fa27d0a8ec8e8349c060b",
+          "artifactSha256": "08627bea96e72da2672917440ff7c5a6f98335293b8fa27d0a8ec8e8349c060b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/braces-2QKtEoU3.js",
+          "publicSha256": "25e31c504327febff453d8162969025f131fa1faeaa05a265b5ec4d3a9d00d49",
+          "artifactSha256": "25e31c504327febff453d8162969025f131fa1faeaa05a265b5ec4d3a9d00d49",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/chartTokens-BXt-yQ5v.js",
+          "publicSha256": "26e90fc015b81ae6b6ee45e547690b66b0a17441d7309628d0ce258b1dbbdb58",
+          "artifactSha256": "26e90fc015b81ae6b6ee45e547690b66b0a17441d7309628d0ce258b1dbbdb58",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/checkbox-CTuLsK-c.js",
+          "publicSha256": "5f1c19a5c739cc90973b8dff014e60cbd9a2afd80299f797592fd7be674ec910",
+          "artifactSha256": "5f1c19a5c739cc90973b8dff014e60cbd9a2afd80299f797592fd7be674ec910",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/clsx-DB0hHKMi.js",
+          "publicSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+          "artifactSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/components-CFMDIf7m.js",
+          "publicSha256": "22aa42ec4526441e44dddf8d33e4cbe1a2e7a0d046c01ef32fff6915a1af932f",
+          "artifactSha256": "22aa42ec4526441e44dddf8d33e4cbe1a2e7a0d046c01ef32fff6915a1af932f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/corner-up-left-CMHrdsMa.js",
+          "publicSha256": "e33ba12c5f1db61520733107c9a9ea50e597a9d2db2f7032eda83206fb28e319",
+          "artifactSha256": "e33ba12c5f1db61520733107c9a9ea50e597a9d2db2f7032eda83206fb28e319",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/createLucideIcon-Dy7UvDMc.js",
+          "publicSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+          "artifactSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/dist-BsbFkpqP.js",
+          "publicSha256": "1195ba7b8df4d3744ac24649f9645d3c115310cf873ccedbca36f191edb10ec5",
+          "artifactSha256": "1195ba7b8df4d3744ac24649f9645d3c115310cf873ccedbca36f191edb10ec5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/dist-CK3U7fz7.js",
+          "publicSha256": "a4ea6119f122036ade2acf89b258f992014d81611b145cc1037a0d169adb3cb8",
+          "artifactSha256": "a4ea6119f122036ade2acf89b258f992014d81611b145cc1037a0d169adb3cb8",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/es-0QgzWRT4.js",
+          "publicSha256": "5dad3dfb628830dda0dc26cbb26ee5fcdd1bb28c2109ad2caa04182ddc21a7e4",
+          "artifactSha256": "5dad3dfb628830dda0dc26cbb26ee5fcdd1bb28c2109ad2caa04182ddc21a7e4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/field-helpers-FLctzaQu.js",
+          "publicSha256": "a574974d7e32a7d7710d223d74b20ebb2ea8a0e351d72ad4f3e7413e45b0dab2",
+          "artifactSha256": "a574974d7e32a7d7710d223d74b20ebb2ea8a0e351d72ad4f3e7413e45b0dab2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/file-text-BO6O5Vlr.js",
+          "publicSha256": "3df9098f2c2008681d3b83e39f8ff19993baff52e550e9bb6f4e815913855135",
+          "artifactSha256": "3df9098f2c2008681d3b83e39f8ff19993baff52e550e9bb6f4e815913855135",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/generateCategoricalChart-BVK_8A2E.js",
+          "publicSha256": "07f9909757342aa146ec3fd8750b7f8ff77f54af3f78dba393052a081065423f",
+          "artifactSha256": "07f9909757342aa146ec3fd8750b7f8ff77f54af3f78dba393052a081065423f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/index-Ddlom_ne.js",
+          "publicSha256": "b2cc7041ec58106c7e886e0a9eb073d12232d23ee7b6854bde3d4fcf2662762f",
+          "artifactSha256": "b2cc7041ec58106c7e886e0a9eb073d12232d23ee7b6854bde3d4fcf2662762f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/index-bfRQTe7X.css",
+          "publicSha256": "75cab4b4d05037b94eaa28bd6af0142f8fb8db43b073b2248557e3b39c4f2240",
+          "artifactSha256": "75cab4b4d05037b94eaa28bd6af0142f8fb8db43b073b2248557e3b39c4f2240",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/jsx-runtime-C40oxPSl.js",
+          "publicSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+          "artifactSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/list-D7WlU-X_.js",
+          "publicSha256": "ee49b372159feabf75c2221cdf62db917233166ffd05f1027ac789a7b2dd207c",
+          "artifactSha256": "ee49b372159feabf75c2221cdf62db917233166ffd05f1027ac789a7b2dd207c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/mail-DnSptTQr.js",
+          "publicSha256": "338f68fcf7e6ec04387cac9b259b2f70cc5663051a39f8056b0553a828c20d7d",
+          "artifactSha256": "338f68fcf7e6ec04387cac9b259b2f70cc5663051a39f8056b0553a828c20d7d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/mockAssistant-qWpduJQT.js",
+          "publicSha256": "de28c37633df92bb861b1390fcd0039fcc6d22a65281547236e5a78df8ba5a9d",
+          "artifactSha256": "de28c37633df92bb861b1390fcd0039fcc6d22a65281547236e5a78df8ba5a9d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/paperclip-D-SKIVEJ.js",
+          "publicSha256": "6aab11f9d454985e56233802fe3e31f80649c2b294303e270d416b34c83fcf9b",
+          "artifactSha256": "6aab11f9d454985e56233802fe3e31f80649c2b294303e270d416b34c83fcf9b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/pencil-C6uR0LLx.js",
+          "publicSha256": "179557724a3bf69798fe9276829d897507ca2417cac0b403cf5708e0439021c5",
+          "artifactSha256": "179557724a3bf69798fe9276829d897507ca2417cac0b403cf5708e0439021c5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/popover-BBmuSTH3.js",
+          "publicSha256": "5060bb6d7d887db6ff601b6450ee3ae8855e595df575f73164fd8afb1254861c",
+          "artifactSha256": "5060bb6d7d887db6ff601b6450ee3ae8855e595df575f73164fd8afb1254861c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/react-Cdxb2Qku.js",
+          "publicSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+          "artifactSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/react-dom-Bs_xv98U.js",
+          "publicSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+          "artifactSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/refresh-cw-DfMDiqzq.js",
+          "publicSha256": "dd08741d867b9d6118b45cb37fb749a7379f96934a6d8dbb594e019169278274",
+          "artifactSha256": "dd08741d867b9d6118b45cb37fb749a7379f96934a6d8dbb594e019169278274",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/save-BHGcgiqm.js",
+          "publicSha256": "457ee93d300c8ad5ab01ff6f113d372ef18f7921c70408b4032a126de2f2de18",
+          "artifactSha256": "457ee93d300c8ad5ab01ff6f113d372ef18f7921c70408b4032a126de2f2de18",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/showcases-B2ccE8iB.js",
+          "publicSha256": "6c8b1ce2fc421429d56bfe70e01347b937b943b6b34fa4f5033362c8e03c4cf4",
+          "artifactSha256": "6c8b1ce2fc421429d56bfe70e01347b937b943b6b34fa4f5033362c8e03c4cf4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/star-DIXlQf7u.js",
+          "publicSha256": "2d66147a66757d17d7c56e356316183069bbfab9055161723a7bbbfca7251bad",
+          "artifactSha256": "2d66147a66757d17d7c56e356316183069bbfab9055161723a7bbbfca7251bad",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/tables-DNj4RvRf.js",
+          "publicSha256": "6335cd518635cec91494cb6238e9c66d4f0d5a756da18b6d9769fe55efbb7c1a",
+          "artifactSha256": "6335cd518635cec91494cb6238e9c66d4f0d5a756da18b6d9769fe55efbb7c1a",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/textarea-9DsRGTUv.js",
+          "publicSha256": "aeff226e6ed7c9a99171001a6c22e259eccae861a5bcae9eaf2814e86e1ed29c",
+          "artifactSha256": "aeff226e6ed7c9a99171001a6c22e259eccae861a5bcae9eaf2814e86e1ed29c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/thumbs-down-CLF9OesG.js",
+          "publicSha256": "682ff4ef598ffc5d5837f635e07532f0179d06c52ad6a3383835d95a8166d227",
+          "artifactSha256": "682ff4ef598ffc5d5837f635e07532f0179d06c52ad6a3383835d95a8166d227",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/thumbs-up-DC3LiMwF.js",
+          "publicSha256": "922c65670791a8374e4f932045ee02f51e8e638792bb96b1743754cb6255ff78",
+          "artifactSha256": "922c65670791a8374e4f932045ee02f51e8e638792bb96b1743754cb6255ff78",
+          "equal": true
+        }
+      ],
+      "matchesDeployedArtifact": true,
+      "includesRequestedLazyAssets": true,
+      "allGeneratedJsCssAssets": 103
+    }
+  },
+  "limitations": [
+    "Source toolbar residual: 80 pixels, maximum RGB channel difference 5/255",
+    "IME candidate keyboard selection after commitment remains undetermined; no implementation difference asserted",
+    "Common fullscreen SidebarProvider error excluded",
+    "Explicit accessible labels and omitted-versus-text input type attributes retained",
+    "Known product, source import, time, focus-restoration and ARIA differences retained",
+    "Initial empty lazy DOM and hierarchy-based readiness attempts discarded"
+  ],
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/29/erpboost-ui-keyboard-focus-ime-audit/",
+  "evidenceHashes": {
+    "focus-settled-states.json": "1ee236924320cf4b8ca021a332b5855eefe94ae8e148fb437fbc775d04237c78",
+    "focus-settled-comparison.json": "69a5a79948f0c86a374517e33e51277aa2ca8b39b9f5162539b358d414a75730",
+    "hover-completed-states.json": "238ec376187bd3b888693adb2b96895d1540e459c1d23dae2fe6256b51ecd18f",
+    "hover-completed-comparison.json": "548aa222be86697e8db39465b704e6ddce6801e8e232fedc0c4cb6751bab79c4",
+    "alert-focus-before2.json": "0581b19e83ff849a65ab5a198bf25a9c12514f1f7640efdb85a4b26438c99f75",
+    "alert-focus-after.json": "b16319aa3cca77a9f5805c087c35545ac63f02a84e5a482c2145b0444311ae44",
+    "alert-focus-published.json": "2b20730b5fc977827fc41b777bd49a87992469ab96c56412cc9e23d439d999b2",
+    "ime-final-18.json": "c3bd678f6a1e889d9939907257e49d35bc22baebec687c3665c2cfc23465dd41",
+    "ime-public-after.json": "a92b48f0a23af31704bc711bb3f3248ad9d748c3c76da6ebbb4647542bb32ec7",
+    "native-ime.json": "b8adfc96e66032c8c73663d8c9083e76f7c267a0992c9306736789d4641c6582",
+    "probe.mjs": "7a18e188fb9d08fa7bd4b95a894be9eb25759060ea9ba47df20ef3f457c141f1",
+    "ime-tests-initial.json": "7edd1ef8ec0181b3059a6b3b6e3df451496e3c6d5c1a3071bff8046e81db2fad",
+    "ime-tests-clear-input.json": "9b994add306b9bc258ecedf6e6ddaa0c53bc7bd4fbdd62c031115c12c7695d2b",
+    "ime-options-timeouts.json": "b17db16e75eea20eb4bb76745b2c53b5c9bf54b6cf1ca6993d9fc6cb74cb2fec",
+    "combo-settled.json": "669128419dc1f21acc38f658556f1159f3dbd731b805205ab2b77cb87581eda3"
+  }
+}
