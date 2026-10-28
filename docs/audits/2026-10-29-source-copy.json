@@ -1,0 +1,594 @@
+{
+  "date": "2026-10-29",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "implementationCommits": [
+    "87b69b6cd9dbc1c90b87f35164c6f0de69c2f410",
+    "5de1065c34480c6022ecbb1525c531356b6e73b5"
+  ],
+  "latestValidatedCommit": "5de1065c34480c6022ecbb1525c531356b6e73b5",
+  "fixes": [
+    {
+      "area": "copy feedback",
+      "beforeMs": 2000,
+      "afterMs": 1500,
+      "controls": [
+        "single source",
+        "all sources",
+        "page Markdown"
+      ]
+    },
+    {
+      "area": "Markdown boundaries",
+      "controls": [
+        "all sources",
+        "page Markdown"
+      ],
+      "finalNewlines": 1
+    },
+    {
+      "area": "CSS syntax colors",
+      "before": "root highlighter entry loads additional grammar extensions",
+      "after": "direct PrismLight entry with explicit grammars and type declarations"
+    }
+  ],
+  "scope": {
+    "commonRoutes": 29,
+    "examples": 57,
+    "displayedSourceItems": 128,
+    "multiFileExamples": 43,
+    "erpboostOnlyRoutesExcluded": [
+      "/patterns/database-workspace"
+    ],
+    "referenceTotalRoutes": 71,
+    "erpboostTotalRoutes": 72
+  },
+  "sourceValidation": {
+    "reference": {
+      "routes": 29,
+      "examples": 57,
+      "displayedFiles": 128,
+      "individualClipboardCopies": 128,
+      "copyAll": 43,
+      "pageMarkdownCopies": 29,
+      "identicalSourceBodiesToReference": 128,
+      "fontStylePairs": 128,
+      "pageErrors": 0
+    },
+    "local": {
+      "routes": 29,
+      "examples": 57,
+      "displayedFiles": 128,
+      "individualClipboardCopies": 128,
+      "copyAll": 43,
+      "pageMarkdownCopies": 29,
+      "identicalSourceBodiesToReference": 47,
+      "fontStylePairs": 128,
+      "pageErrors": 0
+    },
+    "published": {
+      "routes": 29,
+      "examples": 57,
+      "displayedFiles": 128,
+      "individualClipboardCopies": 128,
+      "copyAll": 43,
+      "pageMarkdownCopies": 29,
+      "identicalSourceBodiesToReference": 47,
+      "fontStylePairs": 128,
+      "pageErrors": 0
+    }
+  },
+  "fullTokenColorValidation": {
+    "mode": "desktop light",
+    "identicalBodyItems": 47,
+    "localMatched": 47,
+    "publishedMatched": 47,
+    "normalization": "Adjacent text nodes with the same computed color are merged into offset ranges; source text is unchanged."
+  },
+  "browserTests": {
+    "before": {
+      "referencePassed": 6,
+      "localFailed": 6
+    },
+    "cssBefore": {
+      "referencePassed": 2,
+      "localFailed": 2
+    },
+    "finalSelected": {
+      "startTime": "2026-10-28T16:30:48.513Z",
+      "duration": 63346.008,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "publishedSelected": {
+      "startTime": "2026-10-28T16:48:25.333Z",
+      "duration": 28132.463,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "CI": {
+      "startTime": "2026-10-28T16:34:18.868Z",
+      "duration": 687403.917,
+      "expected": 240,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "ciUrl": "https://github.com/Mailboost/erpboost-ui/actions/runs/40726931389",
+    "uniqueSelectedAcrossThreeTargets": 54,
+    "newCasesPerTarget": 8,
+    "totalConfiguredCasesPerTarget": 240,
+    "allThreeTargetsFullSuiteExecuted": false
+  },
+  "unitTests": 39,
+  "images": {
+    "copy": {
+      "local": [
+        {
+          "mode": "desktop",
+          "state": "single-copied",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "single-reset",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "all-copied",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "all-reset",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "markdown-copied",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "markdown-reset",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "single-copied",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "single-reset",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "all-copied",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "all-reset",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "markdown-copied",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "markdown-reset",
+          "sameSize": true,
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        }
+      ],
+      "published": [
+        {
+          "mode": "desktop",
+          "state": "single-copied",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "single-reset",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "all-copied",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "all-reset",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "markdown-copied",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "desktop",
+          "state": "markdown-reset",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "single-copied",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "single-reset",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "all-copied",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "all-reset",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "markdown-copied",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        },
+        {
+          "mode": "mobile",
+          "state": "markdown-reset",
+          "pixels": 0,
+          "maxChannel": 0,
+          "ariaEqual": true
+        }
+      ]
+    },
+    "css": {
+      "local": [
+        {
+          "mode": "light",
+          "state": "top",
+          "pixels": 0,
+          "maxChannel": 0,
+          "tokensEqual": true
+        },
+        {
+          "mode": "light",
+          "state": "bottom",
+          "pixels": 0,
+          "maxChannel": 0,
+          "tokensEqual": true
+        },
+        {
+          "mode": "dark",
+          "state": "top",
+          "pixels": 0,
+          "maxChannel": 0,
+          "tokensEqual": true
+        },
+        {
+          "mode": "dark",
+          "state": "bottom",
+          "pixels": 0,
+          "maxChannel": 0,
+          "tokensEqual": true
+        }
+      ],
+      "published": [
+        {
+          "mode": "light",
+          "state": "top",
+          "pixels": 0,
+          "maxChannel": 0,
+          "tokensEqual": true
+        },
+        {
+          "mode": "light",
+          "state": "bottom",
+          "pixels": 0,
+          "maxChannel": 0,
+          "tokensEqual": true
+        },
+        {
+          "mode": "dark",
+          "state": "top",
+          "pixels": 0,
+          "maxChannel": 0,
+          "tokensEqual": true
+        },
+        {
+          "mode": "dark",
+          "state": "bottom",
+          "pixels": 0,
+          "maxChannel": 0,
+          "tokensEqual": true
+        }
+      ]
+    },
+    "totalComparisons": 32,
+    "exactComparisons": 32,
+    "scope": "Six copy-button states in two viewports, plus CSS source scroll top/bottom in two color schemes, compared separately to local and published."
+  },
+  "knownDifferences": [
+    {
+      "area": "mobile code toolbar edge",
+      "comparedPixels": 80,
+      "maxRGBChannelDifference": 5,
+      "repeatComparisons": 5,
+      "withinSiteRepeatDifferences": 0,
+      "resolved": false
+    },
+    {
+      "area": "source file button aria-pressed",
+      "reference": "absent",
+      "erpboost": "true/false selected state",
+      "preserved": true
+    }
+  ],
+  "referenceLimitation": {
+    "area": "overlapping copy timers",
+    "observedIn": [
+      "reference",
+      "local before duration correction"
+    ],
+    "description": "A previous copy timer can clear the feedback of a later copy. This is not a successful restarted confirmation timer."
+  },
+  "publicAssets": {
+    "checkedAt": "2026-10-28T16:47:53.239Z",
+    "assets": [
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/BarChart-CJ6yLKud.js",
+        "publicSha256": "b84c6de2641c64d9b5d781454eacdc5353dd34e72dd68a0faf353a7596b1e83f",
+        "artifactSha256": "b84c6de2641c64d9b5d781454eacdc5353dd34e72dd68a0faf353a7596b1e83f",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPage-q-to8BN0.js",
+        "publicSha256": "cb0cfad4b26e264e6dd5df5a095c52b74d4251d5902dfb1be714e2566f8bc0e9",
+        "artifactSha256": "cb0cfad4b26e264e6dd5df5a095c52b74d4251d5902dfb1be714e2566f8bc0e9",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPageWithSectionNav-BrrIpKRF.js",
+        "publicSha256": "e18627604dee9613fe0dfd851e0269d874c5d463a6247a86ed49b95b7a5004b6",
+        "artifactSha256": "e18627604dee9613fe0dfd851e0269d874c5d463a6247a86ed49b95b7a5004b6",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPageWizard-nb6aVAr0.js",
+        "publicSha256": "f16aaaa89b6ea82ddfa7ca5f24386e4df4a5c5d2826d746d3e4da33137c92936",
+        "artifactSha256": "f16aaaa89b6ea82ddfa7ca5f24386e4df4a5c5d2826d746d3e4da33137c92936",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/DonutChartCard-BWItOHjQ.js",
+        "publicSha256": "3e9d14509c1b6e98fa351ab08a3a046fc47cdbcd72cd8722914977a088ef7de9",
+        "artifactSha256": "3e9d14509c1b6e98fa351ab08a3a046fc47cdbcd72cd8722914977a088ef7de9",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/GanttChart-BkqMNYOm.js",
+        "publicSha256": "567b64a243d001578fdc09a7789a6fb5265cf381f6fd2898d073d96c9562d339",
+        "artifactSha256": "567b64a243d001578fdc09a7789a6fb5265cf381f6fd2898d073d96c9562d339",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/GanttChart-CnyT3z89.css",
+        "publicSha256": "a048a57a71a057264297184af7fc84f01263d12ea8b2cca3f47c3bd158630ef5",
+        "artifactSha256": "a048a57a71a057264297184af7fc84f01263d12ea8b2cca3f47c3bd158630ef5",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/HighlightedSource-Dgzo8T9Q.js",
+        "publicSha256": "82399b27c655809630aa113e8af29db4779d4e4f3d3c5718dd05cf18dce10dfb",
+        "artifactSha256": "82399b27c655809630aa113e8af29db4779d4e4f3d3c5718dd05cf18dce10dfb",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/HorizontalBarChartCard-DnUdb5Fk.js",
+        "publicSha256": "9478b43df435df4b13c976e0ea1080f91fedc415b1bacbd208a32fbc5c3ff348",
+        "artifactSha256": "9478b43df435df4b13c976e0ea1080f91fedc415b1bacbd208a32fbc5c3ff348",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/LineChartCard-C8mD1GsS.js",
+        "publicSha256": "2ce9c40e368cc562af3ccf750a013f01ef1e57ca88d9ef1532c867bb076b777c",
+        "artifactSha256": "2ce9c40e368cc562af3ccf750a013f01ef1e57ca88d9ef1532c867bb076b777c",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/PieChart-DOY8c9ps.js",
+        "publicSha256": "57cad64637dcd821a4dcd6e12ac7c9cc89b8d28cb5e18fbf8e0a45db4497b458",
+        "artifactSha256": "57cad64637dcd821a4dcd6e12ac7c9cc89b8d28cb5e18fbf8e0a45db4497b458",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/PieChartCard-o27JiawV.js",
+        "publicSha256": "a7fd82008a17faff3096ec91a3c68ca6a052ce387d7bcdcc4b20154476bbe316",
+        "artifactSha256": "a7fd82008a17faff3096ec91a3c68ca6a052ce387d7bcdcc4b20154476bbe316",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/StackedBarChartCard-_cE5HCGB.js",
+        "publicSha256": "885a11be1cac4106ffce0ac128587313ddbf1f3018890fb93ecf6465c0a9542f",
+        "artifactSha256": "885a11be1cac4106ffce0ac128587313ddbf1f3018890fb93ecf6465c0a9542f",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/VerticalBarChartCard-QhLI8eUD.js",
+        "publicSha256": "d29f32925854d809618788f308e6f9ad1490f45ee96281e431eec8f62ec0534a",
+        "artifactSha256": "d29f32925854d809618788f308e6f9ad1490f45ee96281e431eec8f62ec0534a",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/YAxis-CtoOfnhe.js",
+        "publicSha256": "800af1e7d7a59f2254b27f8cf2acd10d8147bdb76a3d2cba544e3393125f1e50",
+        "artifactSha256": "800af1e7d7a59f2254b27f8cf2acd10d8147bdb76a3d2cba544e3393125f1e50",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/chartTokens-BXt-yQ5v.js",
+        "publicSha256": "26e90fc015b81ae6b6ee45e547690b66b0a17441d7309628d0ce258b1dbbdb58",
+        "artifactSha256": "26e90fc015b81ae6b6ee45e547690b66b0a17441d7309628d0ce258b1dbbdb58",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/clsx-DB0hHKMi.js",
+        "publicSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+        "artifactSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/createLucideIcon-Dy7UvDMc.js",
+        "publicSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+        "artifactSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/dist-BsbFkpqP.js",
+        "publicSha256": "1195ba7b8df4d3744ac24649f9645d3c115310cf873ccedbca36f191edb10ec5",
+        "artifactSha256": "1195ba7b8df4d3744ac24649f9645d3c115310cf873ccedbca36f191edb10ec5",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/dist-CK3U7fz7.js",
+        "publicSha256": "a4ea6119f122036ade2acf89b258f992014d81611b145cc1037a0d169adb3cb8",
+        "artifactSha256": "a4ea6119f122036ade2acf89b258f992014d81611b145cc1037a0d169adb3cb8",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/es-0QgzWRT4.js",
+        "publicSha256": "5dad3dfb628830dda0dc26cbb26ee5fcdd1bb28c2109ad2caa04182ddc21a7e4",
+        "artifactSha256": "5dad3dfb628830dda0dc26cbb26ee5fcdd1bb28c2109ad2caa04182ddc21a7e4",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/generateCategoricalChart-n5yrzRFN.js",
+        "publicSha256": "705fac4f127876357c7eb39e428f0ab3122baa2db6c5bd9f74e88490a4d2b8b8",
+        "artifactSha256": "705fac4f127876357c7eb39e428f0ab3122baa2db6c5bd9f74e88490a4d2b8b8",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/index-B3GMpK8k.css",
+        "publicSha256": "c9c7acdf711e73efafcb4cd65d3c441dfc07615f64ca6481c42f18d7bc3f11b9",
+        "artifactSha256": "c9c7acdf711e73efafcb4cd65d3c441dfc07615f64ca6481c42f18d7bc3f11b9",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/index-CUiCbbNf.js",
+        "publicSha256": "78d65801c88707613f41bcdefc25c97d2318fe4e09ddb08a10a2728e31799f1d",
+        "artifactSha256": "78d65801c88707613f41bcdefc25c97d2318fe4e09ddb08a10a2728e31799f1d",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/jsx-runtime-C40oxPSl.js",
+        "publicSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+        "artifactSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/popover-BUzSa4z2.js",
+        "publicSha256": "7c395cf17ae630fb9bf1f96dce1f83313e4e10f133dcd9f919211f4d12369a28",
+        "artifactSha256": "7c395cf17ae630fb9bf1f96dce1f83313e4e10f133dcd9f919211f4d12369a28",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/react-Cdxb2Qku.js",
+        "publicSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+        "artifactSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/react-dom-Bs_xv98U.js",
+        "publicSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+        "artifactSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+        "equal": true
+      },
+      {
+        "url": "https://mailboost.github.io/erpboost-ui/assets/textarea-CXHe6SQp.js",
+        "publicSha256": "e04d850cf15bb493a7f433fa68c9e14e333c54f10cafa532f1401477b9a79f63",
+        "artifactSha256": "e04d850cf15bb493a7f433fa68c9e14e333c54f10cafa532f1401477b9a79f63",
+        "equal": true
+      }
+    ],
+    "matchesDeployedArtifact": true,
+    "includesRequestedLazyAssets": true
+  },
+  "evidencePath": "/Users/ymktmk/.codex/visualizations/2026/10/29/erpboost-ui-source-copy-audit/",
+  "exclusions": [
+    "all 71 shared routes revisited this turn",
+    "all source bodies byte-identical between products",
+    "all interactions or all pixels identical",
+    "touch devices, other browser engines, IME",
+    "ERP or AI requests and persisted business saves"
+  ]
+}
