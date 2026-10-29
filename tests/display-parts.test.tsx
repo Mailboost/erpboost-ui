@@ -5,30 +5,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import { Toolbar } from "@/components/toolbar";
 import { Button } from "@/components/button";
-import { Input } from "@/components/input";
-import { Layout } from "@/components/layout";
 import { EmptyState } from "@/components/empty-state";
-
-it("moves between toolbar actions without stealing text-input navigation", () => {
-  render(
-    <Toolbar.Row aria-label="Order actions">
-      <Button>Refresh</Button>
-      <Button disabled>Delete</Button>
-      <Input aria-label="Search" />
-      <Button>Add</Button>
-    </Toolbar.Row>,
-  );
-  const refresh = screen.getByRole("button", { name: "Refresh" });
-  const search = screen.getByRole("textbox", { name: "Search" });
-  refresh.focus();
-  fireEvent.keyDown(refresh, { key: "ArrowRight" });
-  expect(document.activeElement).toBe(search);
-  expect(fireEvent.keyDown(search, { key: "ArrowLeft" })).toBe(true);
-  expect(document.activeElement).toBe(search);
-  screen.getByRole("button", { name: "Add" }).focus();
-  fireEvent.keyDown(document.activeElement!, { key: "ArrowRight" });
-  expect(document.activeElement).toBe(refresh);
-});
 
 it("preserves heading levels and working actions in an empty state", () => {
   const reset = vi.fn();
@@ -51,24 +28,6 @@ it("preserves heading levels and working actions in an empty state", () => {
   expect(
     screen.getByText("search").closest('[aria-hidden="true"]'),
   ).toBeTruthy();
-});
-
-it("embeds the unchanged page header inside a page wrapper", () => {
-  render(
-    <div className="orders-heading">
-      <Layout.Header
-        title="Orders"
-        actions={[<Button key="create">Create</Button>]}
-      />
-    </div>,
-  );
-  expect(
-    screen
-      .getByRole("heading", { name: "Orders", level: 1 })
-      .closest(".orders-heading")
-      ?.classList.contains("orders-heading"),
-  ).toBe(true);
-  expect(screen.getByRole("button", { name: "Create" })).toBeTruthy();
 });
 
 it("clears a controlled search and returns focus without stealing text cursor keys", () => {

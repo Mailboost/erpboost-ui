@@ -134,51 +134,15 @@ import { ErdDiagram } from "@mailboost/erpboost-ui/erd-diagram";
 
 Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `type`, optional `label`/`required`). Relations connect `fromTable`/`fromField` to `toTable`/`toField` with optional `optional` nullability. The component provides search, key filtering, auto layout, pan/zoom and a minimap. The application supplies authorized schema data and owns table navigation. Use `LocaleProvider` for standalone labels and `portalContainer` when popups need an application-owned container. The database workspace catalogue includes a working diagram example.
 
-### Standalone forms and pagination
+### Additional ERPboost components
 
-Existing component implementations, styles and contexts remain identical to main. Only new exports/build entry points, additional components and their scoped styles are introduced.
+This change adds components and their package entry points. Existing components, contexts, public entry points and catalogue examples stay unchanged. New examples are available at `/patterns/context-details` and `/patterns/code-workspace`.
 
-`Field`, `Fieldset` and `DatePicker` are exposed through `/field`, `/fieldset` and `/date-field` without changing their source or APIs. Use `Field.Control` for a labelled text input; Select, Combobox, Textarea and DatePicker connect directly to `Field.Root`. Field and DatePicker retain their original AppShell-related module dependencies and are checked separately from integration-free controls. DatePicker also retains its original portal behavior.
+`HeaderBar` and `SidebarPanel` from `/shell-parts` compose existing controls for an application-owned shell. `/search-field`, `/option-card`, `/empty-state` and `/skeleton` provide search, template choices, empty states and decorative loading placeholders. `/pagination` adds controlled pagination without modifying DataTable.
 
-`Pagination` from `/pagination` is an additional controlled component. The existing `DataTable.Pagination` implementation is unchanged. The consumer supplies page state and navigation callbacks, so it works with existing server or local pagination. `onPageChange` optionally enables direct page entry. Use `container` for the page-size menu in a scoped app.
+`CodeWorkspace` from `/code-workspace` provides JSX regions for files, code, results and a graph panel. `/code-editor`, `/file-list`, `/log-viewer`, `/resize-handle` and `/graph-controls` add controlled editor and graph surfaces. `/cell-editor`, `/description-list`, `/status-dot` and `/workflow-node` provide editing overlays, label/value groups and status displays.
 
-`/avatar` and `/card` expose the existing Avatar and Card implementations as standalone imports. `/shell-parts` provides HeaderBar and SidebarPanel that compose existing controls for an application-owned shell, without routing or collapse state. `/skeleton` provides a decorative shimmer with reduced-motion support; loading-region labels and page-specific shapes remain with the application. The database-workspace catalogue demonstrates these parts together.
-
-`/toolbar` and `/layout` expose the existing Toolbar and Layout implementations without AppShell. Place Layout.Header in an ordinary JSX wrapper for page-specific outer spacing; its existing props are unchanged. `/empty-state` displays an app-supplied title, description, icon and optional actions; headingLevel preserves the surrounding heading hierarchy. It contains no fetching or business behavior.
-
-### Standalone editor and database surfaces
-
-`/code-editor` exposes the existing CodeMirror editor (Python or plain JSON text), with controlled values, read-only state and optional line-focus requests. It never executes code. `/file-list` provides `FileList` and `FileListItem`; selection and add/remove policies belong to the app. `/workflow-node` styles a step card without owning React Flow, graph layout or application data.
-
-`/log-viewer` renders plain text and an optional empty slot. `/description-list` uses explicit JSX label/value items, with application-owned formatting. `/resize-handle` is a styled, focusable separator; layouts provide values and pointer/keyboard handlers. `/status-dot` provides neutral/success/error indicators; callers supply accessible labels.
-
-`/cell-editor` provides the existing anchored editing surface, close button, busy dismissal guard, outside-click/Escape handling, and action slots. Supply an application-owned `container` for themed portals. The app owns input controls, value parsing, Enter-to-save and persistence. No API clients, screen-definition schema or business-specific configuration is included. The database-workspace catalogue demonstrates all of these alongside the existing components.
-
-### Workspace layout and graph controls
-
-`CodeWorkspace` from `/code-workspace` provides explicit JSX regions: Root, Sidebar, Main, Editor, EditorTabs, Results, ResultsHeader, ResultsBody, Panel and Header. Supply a Panel width and your existing ResizeHandle callbacks; the package owns the desktop/mobile layout and region scrolling. ResultsHeader and Header accept action slots. No file, API, tab or execution state is stored by the layout.
-
-`GraphControls` from `/graph-controls` is an additional toolbar for application-owned graphs. The existing ErdDiagram and its controls are unchanged. Callers supply zoom bounds, labels, handlers and an optional overlay container. Extra controls (such as graph direction) and a reset-zoom button fit in JSX slots. Disabled zoom actions are skipped by the existing Toolbar keyboard behavior.
-
-Dialog, Sheet, Card, Table and Fieldset retain their existing implementation and default appearance. Compose the existing Header / Content / Footer and ordinary JSX for application layout; no compact, grid, preview or sectioned variants are added.
-
-### Context and detail surfaces
-
-`HeaderBar layout="context"` provides `Brand`, `Separator`, `ContextItem`, `ContextTrigger` and `ContextLoading`. Wrap an existing controlled Combobox trigger with `ContextTrigger`; auth, filtering and selection remain in the consumer.
-
-Use the existing Card.Header / Card.Content parts for detail sections. `OptionCard` is a native button with a title, description and optional icon.
-
-Use the existing Table parts for database rows and previews. Frozen offsets, row/cell selection semantics, keyboard navigation, precision-safe values, schema and mutations remain app code.
-
-`SidebarPanel` composes existing Button / Text / Avatar styling through native `Nav`, `Label`, `Button`, `Footer`, `AccountTrigger` and `Identity` parts. Pass `active` and existing navigation/account handlers explicitly; no router or authentication provider is introduced.
-
-`SearchField` composes Input and Button, supports controlled values, an optional labelled clear action. Clearing returns focus to the text input; filtering remains in the consumer.
-
-CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header share editor chrome. Consumers retain rename/unsaved/IME behavior and action portal content.
-
-Use an ordinary JSX wrapper to lay out Field.Control and explicit trailing actions; Field has no additional API. Value/reveal state and validation remain controlled by the app. Use the existing Fieldset.Root / Legend with explicit JSX fields. No schema-driven form generation is added.
-
-`FileList.Editor` lays out an input/action row while the consumer retains file validation, Enter/Escape/IME handling and creation.
+Consumers own authentication, queries, selection, validation, saving and code execution. Existing components are used through their existing public API; no new Field, DatePicker, Layout or AppShell API is introduced.
 
 ### ERPboost header
 
