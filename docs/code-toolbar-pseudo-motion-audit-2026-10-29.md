@@ -39,3 +39,13 @@ PCの参照Sheetでは開く移動をこの取得では捕捉できなかった�
 - 公開版は未反映。製品名・import、維持しているアクセシビリティ改善、OSの日本語IME／Safari／Androidの未検証も残る。
 
 [結果JSON](audits/2026-10-29-code-toolbar-pseudo-motion.json)。生の画像・疑似要素・開閉キーフレーム・初回失敗・最終成功は/tmp/erpboost-ui-code-surface-audit-20261029/へ保存する。
+
+## 同じ版で完了した追検証の補足
+
+上の初回採取後、afa9c07の公開用ローカルビルドで共通29ルートの全57コード例を3条件で再測定した。参照171例＋修正版171例のうち、対応する171比較でツールバーの位置・寸法・対象スタイル・生のボタン文字列が一致した。全ソースを各条件で再コピーしたという意味ではない。
+
+PC Sheetもネイティブのtransitionrunから開閉両方のeffectを取得し、450ms、cubic-bezier(0.32, 0.72, 0, 1)、変換の端点が一致した。各環境3回のイベント観測では開くtransformの終了0.45秒と背景の開閉0.15秒を確認したが、閉じるtransformの終了イベントは両環境ともアンマウント前に取得できていない。閉じ終わりまで全フレーム一致したとは数えない。初回の捕捉漏れを成功として上書きせず、後続結果として区別する。
+
+疑似要素の1,212対応ノードにはSidebar全画面のエラー画面にあるボタン2件を含む。正常な37ルート×2条件の74組では1,210ノードである。共有のProviderエラーは正常なSidebar操作の成功ではない。
+
+同じafa9c07の[CI 40826534842](https://github.com/Mailboost/erpboost-ui/actions/runs/40826534842)はブラウザ276ケース・部品39ケースが成功し、リトライ・スキップ0。ローカルの公開用ビルドとCIの187ファイルはパス・バイト数・SHA-256が一致した。これも本日の次のPR更新や公開版の検証とは分ける。生の補足結果は同じ証跡フォルダのall-code-layouts-comparison.json、sheet-native-motion-summary.json、sheet-native-effects-comparison.json、ci-proof.json、artifact-match.jsonに保存している。
