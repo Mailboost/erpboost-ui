@@ -154,7 +154,7 @@
 .erpui-sidebar-label:first-child {
   margin-top: 0;
 }
-.erpui-sidebar-nav-button {
+[data-slot="sidebar-panel"] .erpui-sidebar-nav-button {
   width: 100%;
   min-width: 0;
   justify-content: flex-start;
@@ -199,7 +199,7 @@
     padding: 8px 0;
     justify-content: center;
   }
-  .erpui-sidebar-nav-button {
+  [data-slot="sidebar-panel"] .erpui-sidebar-nav-button {
     flex-direction: column;
     height: auto;
     justify-content: center;
