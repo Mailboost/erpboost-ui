@@ -391,3 +391,12 @@ export * from "./components/loading-layouts";
 export { EditableGrid, type EditableGridState } from "./components/editable-grid";
 export type { EditableGridProps, GridColumn, GridModel, GridRow, GridValue } from "./components/editable-grid/types";
 export { WorkflowGraph, type WorkflowGraphProps, type WorkflowGraphStep } from "./components/workflow-graph";
+
+export * from "./components/resource-picker";
+export * from "./components/action-menu";
+export * from "./components/sensitive-input";
+export * from "./components/action-confirmation";
+export * from "./components/collection-layout";
+export * from "./components/record-layouts";
+export * from "./components/record-history";
+export * from "./components/value-editor";

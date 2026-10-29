@@ -26,6 +26,15 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "resource-picker": "src/components/resource-picker/index.tsx",
+        "action-menu": "src/components/action-menu/index.tsx",
+        "sensitive-input": "src/components/sensitive-input/index.tsx",
+        "action-confirmation": "src/components/action-confirmation/index.tsx",
+        "collection-layout": "src/components/collection-layout/index.tsx",
+        "record-layouts": "src/components/record-layouts/index.tsx",
+        "record-history": "src/components/record-history/index.tsx",
+        "value-editor": "src/components/value-editor/index.tsx",
+
         "record-panel": "src/components/record-panel/index.tsx",
         "loading-layouts": "src/components/loading-layouts/index.tsx",
         "editable-grid": "src/components/editable-grid/index.tsx",

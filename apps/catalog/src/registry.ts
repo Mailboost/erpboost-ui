@@ -286,6 +286,15 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["resource-picker", "ResourcePicker", "ResourcePicker", "Additional ERPBoost presentation composition."],
+    ["action-menu", "ActionMenu", "ActionMenu", "Additional ERPBoost presentation composition."],
+    ["sensitive-input", "SensitiveInput", "SensitiveInput", "Additional ERPBoost presentation composition."],
+    ["action-confirmation", "ActionConfirmation", "ActionConfirmation", "Additional ERPBoost presentation composition."],
+    ["collection-layout", "CollectionLayout", "CollectionLayout", "Additional ERPBoost presentation composition."],
+    ["record-layouts", "RecordLayouts", "RecordLayouts", "Additional ERPBoost presentation composition."],
+    ["record-history", "RecordHistory", "RecordHistory", "Additional ERPBoost presentation composition."],
+    ["value-editor", "ValueEditor", "ValueEditor", "Additional ERPBoost presentation composition."],
+
     ["editable-grid", "EditableGrid", "編集可能グリッド", "Editable rows with application-owned persistence."],
     ["record-panel", "RecordPanel", "レコードパネル", "Compose record editing from existing dialogs and sheets."],
     ["loading-layouts", "LoadingLayouts", "読み込みレイアウト", "Visible loading placeholders and workspace layouts."],

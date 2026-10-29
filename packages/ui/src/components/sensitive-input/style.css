@@ -1,0 +1,13 @@
+.erpui-sensitive-input {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+}
+.erpui-sensitive-input > input {
+  min-width: 0;
+  flex: 1;
+}
+.erpui-sensitive-input > button {
+  flex-shrink: 0;
+}

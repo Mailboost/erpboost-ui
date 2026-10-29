@@ -1,0 +1,8 @@
+.erpui-action-menu-trigger {
+  opacity: 1;
+  flex-shrink: 0;
+}
+.erpui-action-menu small {
+  margin-left: auto;
+  color: var(--muted-foreground);
+}

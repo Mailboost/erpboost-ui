@@ -126,9 +126,27 @@ try {
     import {RecordPanel,RecordPanelBody,RecordPanelFooter,RecordEditor} from "@mailboost/erpboost-ui/record-panel";
     import {LoadingPlaceholder,ConnectionsRowsSkeleton,ContextLoading} from "@mailboost/erpboost-ui/loading-layouts";
     import {WorkflowGraph} from "@mailboost/erpboost-ui/workflow-graph";
+    import {ResourcePicker,LookupInput} from "@mailboost/erpboost-ui/resource-picker";
+    import {ActionMenu,AccountMenu} from "@mailboost/erpboost-ui/action-menu";
+    import {SensitiveInput} from "@mailboost/erpboost-ui/sensitive-input";
+    import {ActionConfirmation} from "@mailboost/erpboost-ui/action-confirmation";
+    import {CollectionLayout} from "@mailboost/erpboost-ui/collection-layout";
+    import {FormGrid,DetailTable,RecordActions} from "@mailboost/erpboost-ui/record-layouts";
+    import {HistoryList,HistoryEntry} from "@mailboost/erpboost-ui/record-history";
+    import {ValueEditor} from "@mailboost/erpboost-ui/value-editor";
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
 
+
+      <ResourcePicker options={[]} value={null} selectedLabel="Choose" onSelect={()=>{}} trigger={<Button/>} triggerLabel="Choose resource" searchLabel="Search">Choose</ResourcePicker>
+      <LookupInput value={null} label="Lookup" items={[]} search="" onSearchChange={()=>{}} onValueChange={()=>{}} triggerLabel="Show" clearLabel="Clear"/>
+      <ActionMenu triggerLabel="Actions" menuLabel="Actions" items={[]}/><AccountMenu email="demo@example.invalid" triggerLabel={name=>name} menuLabel="Profile" items={[]}/>
+      <SensitiveInput revealLabel="Show" concealLabel="Hide">{({type})=><Input type={type}/>}</SensitiveInput>
+      <ActionConfirmation title="Confirm" cancelLabel="Cancel" confirmLabel="Continue" onCancel={()=>{}} onConfirm={()=>{}}>Confirm action</ActionConfirmation>
+      <CollectionLayout.Root><CollectionLayout.Collection><CollectionLayout.Results>Rows</CollectionLayout.Results><CollectionLayout.Footer>Footer</CollectionLayout.Footer></CollectionLayout.Collection></CollectionLayout.Root>
+      <FormGrid.Root><Input/><FormGrid.Full><Input/></FormGrid.Full></FormGrid.Root><DetailTable minWidth={600} columns={[]}>Rows</DetailTable><RecordActions status="Draft"><Button>Save</Button></RecordActions>
+      <HistoryList><HistoryEntry status="Complete" dateTime="2026-10-29" timeLabel="Today">Result</HistoryEntry></HistoryList>
+      <ValueEditor name="amount" description="Text" initialValue="0001" anchor={new DOMRect(0,0)} container={document.body} onSave={async()=>{}} onClose={()=>{}}/>
       <LoadingPlaceholder/><ConnectionsRowsSkeleton/><ContextLoading label="Loading"/>
       <RecordPanel title="Info" onClose={()=>{}}><RecordPanelBody>Body</RecordPanelBody><RecordPanelFooter>Footer</RecordPanelFooter></RecordPanel>
       <RecordEditor title="Edit" isNew={false} busy={false} dirty={false} onClose={()=>{}}>Fields</RecordEditor>

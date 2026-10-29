@@ -178,6 +178,38 @@
     "./workflow-graph": {
       "types": "./dist/components/workflow-graph/index.d.ts",
       "import": "./dist/workflow-graph.js"
+    },
+    "./resource-picker": {
+      "types": "./dist/components/resource-picker/index.d.ts",
+      "import": "./dist/resource-picker.js"
+    },
+    "./action-menu": {
+      "types": "./dist/components/action-menu/index.d.ts",
+      "import": "./dist/action-menu.js"
+    },
+    "./sensitive-input": {
+      "types": "./dist/components/sensitive-input/index.d.ts",
+      "import": "./dist/sensitive-input.js"
+    },
+    "./action-confirmation": {
+      "types": "./dist/components/action-confirmation/index.d.ts",
+      "import": "./dist/action-confirmation.js"
+    },
+    "./collection-layout": {
+      "types": "./dist/components/collection-layout/index.d.ts",
+      "import": "./dist/collection-layout.js"
+    },
+    "./record-layouts": {
+      "types": "./dist/components/record-layouts/index.d.ts",
+      "import": "./dist/record-layouts.js"
+    },
+    "./record-history": {
+      "types": "./dist/components/record-history/index.d.ts",
+      "import": "./dist/record-history.js"
+    },
+    "./value-editor": {
+      "types": "./dist/components/value-editor/index.d.ts",
+      "import": "./dist/value-editor.js"
     }
   },
   "scripts": {
