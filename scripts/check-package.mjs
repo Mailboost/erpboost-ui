@@ -76,9 +76,9 @@ try {
     join(directory, "src.tsx"),
     `
     import {createRoot} from "react-dom/client";
-    import {AppShell,SidebarLayout,Button,Input,Sheet} from "@mailboost/erpboost-ui";
+    import {AppShell,SidebarLayout,Button,Input,Sheet,ErpHeader} from "@mailboost/erpboost-ui";
     import "@mailboost/erpboost-ui/styles";
-    function Sample(){return <><h1>External package</h1><Button>Package button</Button><Input aria-label="Name"/><Sheet.Root><Sheet.Trigger>Open details</Sheet.Trigger><Sheet.Content><Sheet.Header><Sheet.Title>Package sheet</Sheet.Title></Sheet.Header><p>External consumer works.</p></Sheet.Content></Sheet.Root></>}
+    function Sample(){return <><h1>External package</h1><ErpHeader brand="ERP" organization={<ErpHeader.Trigger>Org</ErpHeader.Trigger>} connection={<ErpHeader.Loading label="Loading connection"/>}/><Button>Package button</Button><Input aria-label="Name"/><Sheet.Root><Sheet.Trigger>Open details</Sheet.Trigger><Sheet.Content><Sheet.Header><Sheet.Title>Package sheet</Sheet.Title></Sheet.Header><p>External consumer works.</p></Sheet.Content></Sheet.Root></>}
     createRoot(document.getElementById("root")!).render(<AppShell title="Package check" modules={[]} rootComponent={Sample} commandPalette={{routeOrder:"definition",showAppInfo:false}}><SidebarLayout/></AppShell>);
   `,
   );
@@ -104,6 +104,7 @@ try {
   writeFileSync(join(directory, "src.tsx"), `
     import {createRoot} from "react-dom/client";
     import {Button} from "@mailboost/erpboost-ui/button";
+    import {ErpHeader} from "@mailboost/erpboost-ui/erp-header";
     import {Input} from "@mailboost/erpboost-ui/input";
     import {Textarea} from "@mailboost/erpboost-ui/textarea";
     import {Table} from "@mailboost/erpboost-ui/table";
@@ -122,7 +123,7 @@ try {
     import {ErdDiagram} from "@mailboost/erpboost-ui/erd-diagram";
     import {DatabaseWorkspace} from "@mailboost/erpboost-ui/database-workspace";
     import "@mailboost/erpboost-ui/styles";
-    createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP"><ErdDiagram schema={{models:[],relations:[]}}/><DatabaseWorkspace tables={[{name:"orders"}]} selectedTable="orders" openedTables={["orders"]} view="records" search="" sidebarOpen canCreate={false} onSearchChange={()=>{}} onSidebarOpenChange={()=>{}} onSelectTable={()=>{}} onCloseTable={()=>{}} onCloseDiagram={()=>{}} onCreateTable={()=>{}}><Badge>Draft</Badge><Alert.Root><Alert.Description>Saved</Alert.Description></Alert.Root></DatabaseWorkspace><Checkbox aria-label="Select"/><Select items={["a"]}/><Combobox items={["a"]}/><Menu.Root><Menu.Trigger>Menu</Menu.Trigger><Menu.Content container={document.body}><Menu.Item>Action</Menu.Item></Menu.Content></Menu.Root><Tabs.Root defaultValue="a"><Tabs.List><Tabs.Tab value="a">Tab</Tabs.Tab></Tabs.List></Tabs.Root><Dialog.Root><Dialog.Content container={document.body} showCloseButton={false}><Dialog.Title>Confirm</Dialog.Title></Dialog.Content></Dialog.Root><Sheet.Root><Sheet.Content container={document.body}><Sheet.Title>Details</Sheet.Title></Sheet.Content></Sheet.Root><Tooltip.Root><Tooltip.Trigger>Help</Tooltip.Trigger><Tooltip.Content container={document.body}>Help text</Tooltip.Content></Tooltip.Root><form><Input aria-label="Name"/><Textarea aria-label="Note"/><Button type="button">Save</Button><Spinner/><Table.Root><Table.Body><Table.Row><Table.Cell>Standalone</Table.Cell></Table.Row></Table.Body></Table.Root></form></LocaleProvider>);
+    createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP"><ErpHeader brand="ERP" organization={<ErpHeader.Trigger>Org</ErpHeader.Trigger>} connection={<ErpHeader.Loading label="Loading connection"/>}/><ErdDiagram schema={{models:[],relations:[]}}/><DatabaseWorkspace tables={[{name:"orders"}]} selectedTable="orders" openedTables={["orders"]} view="records" search="" sidebarOpen canCreate={false} onSearchChange={()=>{}} onSidebarOpenChange={()=>{}} onSelectTable={()=>{}} onCloseTable={()=>{}} onCloseDiagram={()=>{}} onCreateTable={()=>{}}><Badge>Draft</Badge><Alert.Root><Alert.Description>Saved</Alert.Description></Alert.Root></DatabaseWorkspace><Checkbox aria-label="Select"/><Select items={["a"]}/><Combobox items={["a"]}/><Menu.Root><Menu.Trigger>Menu</Menu.Trigger><Menu.Content container={document.body}><Menu.Item>Action</Menu.Item></Menu.Content></Menu.Root><Tabs.Root defaultValue="a"><Tabs.List><Tabs.Tab value="a">Tab</Tabs.Tab></Tabs.List></Tabs.Root><Dialog.Root><Dialog.Content container={document.body} showCloseButton={false}><Dialog.Title>Confirm</Dialog.Title></Dialog.Content></Dialog.Root><Sheet.Root><Sheet.Content container={document.body}><Sheet.Title>Details</Sheet.Title></Sheet.Content></Sheet.Root><Tooltip.Root><Tooltip.Trigger>Help</Tooltip.Trigger><Tooltip.Content container={document.body}>Help text</Tooltip.Content></Tooltip.Root><form><Input aria-label="Name"/><Textarea aria-label="Note"/><Button type="button">Save</Button><Spinner/><Table.Root><Table.Body><Table.Row><Table.Cell>Standalone</Table.Cell></Table.Row></Table.Body></Table.Root></form></LocaleProvider>);
   `);
   writeFileSync(join(directory, "vite.config.mjs"), `export default {
     plugins: [{name:"consumer-module-audit", generateBundle(){
