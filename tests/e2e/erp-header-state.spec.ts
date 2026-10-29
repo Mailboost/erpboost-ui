@@ -24,6 +24,8 @@ for (const viewport of [
       });
       await expect(organization).toBeVisible();
       await expect(connection).toBeVisible();
+      await expect(organization).toHaveCSS("position", "static");
+      await expect(connection).toHaveCSS("position", "static");
       const orgBox = await organization.boundingBox(),
         connectionBox = await connection.boundingBox();
       expect(
