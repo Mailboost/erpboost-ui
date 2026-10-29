@@ -26,6 +26,8 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "form-dialog": "src/components/form-dialog/index.tsx",
+        "inline-rename": "src/components/inline-rename/index.tsx",
         "result-panel": "src/components/result-panel/index.tsx",
         "settings-panel": "src/components/settings-panel/index.tsx",
         "property-layout": "src/components/property-layout/index.tsx",

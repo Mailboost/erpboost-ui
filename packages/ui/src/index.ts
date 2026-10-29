@@ -415,3 +415,6 @@ export * from "./components/detail-panel";
 
 export * from "./components/result-panel";
 export * from "./components/settings-panel";
+
+export * from "./components/form-dialog";
+export * from "./components/inline-rename";

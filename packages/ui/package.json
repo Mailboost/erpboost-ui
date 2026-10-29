@@ -254,6 +254,14 @@
     "./settings-panel": {
       "types": "./dist/components/settings-panel/index.d.ts",
       "import": "./dist/settings-panel.js"
+    },
+    "./form-dialog": {
+      "types": "./dist/components/form-dialog/index.d.ts",
+      "import": "./dist/form-dialog.js"
+    },
+    "./inline-rename": {
+      "types": "./dist/components/inline-rename/index.d.ts",
+      "import": "./dist/inline-rename.js"
     }
   },
   "scripts": {
