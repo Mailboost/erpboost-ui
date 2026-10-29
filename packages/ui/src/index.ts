@@ -384,3 +384,4 @@ export {SearchField} from "./components/search-field";
 export {OptionCard} from "./components/option-card";
 export {CodeWorkspace} from "./components/code-workspace";
 export {GraphControls, type GraphControlsProps} from "./components/graph-controls";
+export { ErpHeader, type ErpHeaderProps } from "./components/erp-header";

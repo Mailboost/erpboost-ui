@@ -95,7 +95,7 @@ function Root({
           data-slot="alert-dismiss"
           type="button"
           onClick={handleDismiss}
-          className="astw:col-start-3 astw:row-span-full astw:self-center astw:inline-flex astw:items-center astw:justify-center astw:rounded-md astw:p-1 astw:opacity-70 astw:transition-opacity astw:hover:opacity-100 astw:focus-visible:outline-none astw:focus-visible:ring-2 astw:focus-visible:ring-ring"
+          className="astw:col-start-3 astw:row-span-full astw:self-center astw:inline-flex astw:items-center astw:justify-center astw:rounded-md astw:p-1 astw:opacity-70 astw:focus-visible:outline-auto"
           aria-label="Dismiss"
         >
           <XIcon className="astw:size-4" />

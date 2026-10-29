@@ -38,6 +38,7 @@ export default defineConfig({
         "cell-editor": "src/components/cell-editor/index.tsx",
         "code-editor": "src/components/code-editor/index.tsx",
         "description-list": "src/components/description-list/index.tsx",
+        "erp-header": "src/components/erp-header/index.tsx",
         style: "src/style-entry.ts",
         button: "src/components/button/index.ts",
         input: "src/components/input/index.ts",

@@ -182,6 +182,10 @@
     "./search-field": {
       "types": "./dist/components/search-field/index.d.ts",
       "import": "./dist/search-field.js"
+    },
+    "./erp-header": {
+      "types": "./dist/components/erp-header/index.d.ts",
+      "import": "./dist/erp-header.js"
     }
   },
   "scripts": {

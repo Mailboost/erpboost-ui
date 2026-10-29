@@ -26,6 +26,14 @@ import { PageFrame } from "./reference/shared/page-frame";
 const DocumentNotes = lazy(() => import("./reference/DocumentNotes"));
 const HighlightedSource = lazy(() => import("./HighlightedSource"));
 const sourceLanguage = (filename: string) => filename.split(".").pop() ?? "tsx";
+const copyFeedbackMs = 1500;
+const sourceMarkdown = (files: { filename: string; source: string }[]) =>
+  files
+    .map(
+      (file) =>
+        `### ${file.filename}\n\n\`\`\`${sourceLanguage(file.filename)}\n${file.source}\n\`\`\``,
+    )
+    .join("\n\n") + "\n";
 
 const categoryDescriptions = Object.fromEntries(
   ["components", "page", "patterns"].map((category) => [
@@ -148,7 +156,7 @@ export function CategoryPage({ category }: { category: Category }) {
           </div>
           {(status === "Draft" ||
             !list.some((e) => tag === "All" || e.tags?.includes(tag))) && (
-            <div className="rounded-xl border border-dashed p-8 text-center text-sm text-muted-foreground">
+            <div className="mt-6 rounded-xl border border-dashed p-8 text-center text-sm text-muted-foreground">
               No entries match the current filters.
             </div>
           )}
@@ -169,7 +177,7 @@ function CodeBlock({ demo }: { demo: Demo }) {
     <div
       className="source-block"
       role="tabpanel"
-      aria-label={demo.heading ? `${demo.name} code` : "Code"}
+      aria-label={demo.heading ? `${demo.heading} code` : "Code"}
     >
       <div className="source-toolbar">
         <div className="source-files">
@@ -193,16 +201,9 @@ function CodeBlock({ demo }: { demo: Demo }) {
               aria-live="polite"
               title="Copy all files as Markdown (good for pasting to an AI agent)"
               onClick={async () => {
-                await navigator.clipboard.writeText(
-                  sources
-                    .map(
-                      (file) =>
-                        `### ${file.filename}\n\n\`\`\`${sourceLanguage(file.filename)}\n${file.source}\n\`\`\``,
-                    )
-                    .join("\n\n"),
-                );
+                await navigator.clipboard.writeText(sourceMarkdown(sources));
                 setCopiedAll(true);
-                setTimeout(() => setCopiedAll(false), 2000);
+                setTimeout(() => setCopiedAll(false), copyFeedbackMs);
               }}
             >
               {copiedAll ? (
@@ -220,7 +221,7 @@ function CodeBlock({ demo }: { demo: Demo }) {
             onClick={async () => {
               await navigator.clipboard.writeText(source.source);
               setCopied(true);
-              setTimeout(() => setCopied(false), 2000);
+              setTimeout(() => setCopied(false), copyFeedbackMs);
             }}
           >
             {copied ? (
@@ -358,7 +359,7 @@ function Preview({
     <StateProvider>
       <section
         className="example-section"
-        aria-label={named ? demo.name : "Block preview"}
+        aria-label={named ? demo.heading : "Block preview"}
       >
         {named && (
           <div className="example-heading">
@@ -372,7 +373,7 @@ function Preview({
             onValueChange={(v) => setTab(String(v))}
             className="w-fit gap-0"
           >
-            <Tabs.List aria-label={named ? `${demo.name} view` : "View"}>
+            <Tabs.List aria-label={named ? `${demo.heading} view` : "View"}>
               <Tabs.Tab value="preview">Preview</Tabs.Tab>
               <Tabs.Tab value="code">Code</Tabs.Tab>
             </Tabs.List>
@@ -387,7 +388,7 @@ function Preview({
           <div
             className={`preview-surface ${background} ${width !== "desktop" ? "preview-canvas" : ""}`}
             role="tabpanel"
-            aria-label={named ? `${demo.name} preview` : "Preview"}
+            aria-label={named ? `${demo.heading} preview` : "Preview"}
           >
             <div
               key={revision}
@@ -508,11 +509,15 @@ export function EntryPage({ entry }: { entry: Entry }) {
               size="sm"
               onClick={async () => {
                 const unique = getMarkdownSources(entry);
+                const markdownNotes = t(
+                  entry.markdownNotes ?? "",
+                  entry.markdownNotesJa ?? entry.markdownNotes ?? "",
+                );
                 await navigator.clipboard.writeText(
-                  `# ${entry.title}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${entry.description}\n\n## Do\n\n${entry.guidance?.do[0]}\n\n## Don't\n\n${entry.guidance?.dont[0]}${entry.markdownNotes ? "\n\n" + entry.markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${unique.map((f) => `### ${f.filename}\n\n\`\`\`${sourceLanguage(f.filename)}\n${f.source}\n\`\`\``).join("\n\n")}`,
+                  `# ${t(entry.title, entry.ja)}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${t(entry.description, entry.descriptionJa ?? entry.description)}\n\n## Do\n\n${t(...entry.guidance!.do)}\n\n## Don't\n\n${t(...entry.guidance!.dont)}${markdownNotes ? "\n\n" + markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${sourceMarkdown(unique)}`,
                 );
                 setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
+                setTimeout(() => setCopied(false), copyFeedbackMs);
               }}
             >
               {copied ? "Copied" : "Copy as Markdown"}

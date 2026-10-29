@@ -19,6 +19,9 @@ const resources: Record<string, Demo[]> = {
   "patterns/code-workspace": [{name:"Code workspace",description:"Controlled code/results layout, graph controls and sectioned dialogs.",heading:"",screen:false,
     Component:lazy(async()=>{const module=await import("./patterns__code-workspace/CodeWorkspaceDemo");return {default:module.CodeWorkspaceDemo};}),
     source:files["./patterns__code-workspace/CodeWorkspaceDemo.tsx"],sources:[{filename:"CodeWorkspaceDemo.tsx",markdownFilename:"CodeWorkspaceDemo.tsx",source:files["./patterns__code-workspace/CodeWorkspaceDemo.tsx"]}]}],
+  "patterns/erp-header": [{name:"ERPboost header",description:"Brand, organization, ERP connection and loading states.",heading:"",screen:false,
+    Component:lazy(async()=>{const module=await import("./patterns__erp-header/ErpHeaderDemo");return {default:module.ErpHeaderDemo};}),
+    source:files["./patterns__erp-header/ErpHeaderDemo.tsx"],sources:[{filename:"ErpHeaderDemo.tsx",markdownFilename:"ErpHeaderDemo.tsx",source:files["./patterns__erp-header/ErpHeaderDemo.tsx"]}]}],
   "patterns/database-workspace": [{
     name: "Database explorer", description: "Controlled table navigation without an AppShell dependency.", heading: "", screen: false,
     Component: lazy(async () => { const module = await import("./patterns__database-workspace/DatabaseWorkspaceDemo"); return {default: module.DatabaseWorkspaceDemo}; }),

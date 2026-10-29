@@ -1,0 +1,1803 @@
+{
+  "date": "2026-10-29",
+  "reference": "https://ui.tailor.tech/",
+  "published": "https://mailboost.github.io/erpboost-ui/",
+  "implementationCommits": [
+    "c57f5d4f00e6393837eeca91ea37a6b0ab895ec6",
+    "da042231721a7bda5696374a8e9a7a2144cb41b7"
+  ],
+  "latestValidatedCommit": "da042231721a7bda5696374a8e9a7a2144cb41b7",
+  "fixes": [
+    {
+      "area": "category empty state spacing",
+      "beforePx": 24,
+      "afterPx": 48,
+      "extraTopMarginPx": 24
+    },
+    {
+      "area": "localized example accessible names",
+      "fields": ["region", "tablist", "preview tabpanel", "code tabpanel"],
+      "before": "stable English demo identifier",
+      "after": "displayed localized heading",
+      "sourceIdentifiersChanged": false
+    }
+  ],
+  "browserTests": {
+    "spacingBefore": {
+      "startTime": "2026-10-28T17:05:56.994Z",
+      "duration": 41468.256,
+      "expected": 16,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "accessibilityBefore": {
+      "startTime": "2026-10-28T17:21:57.209Z",
+      "duration": 20985.203999999998,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "finalReferenceAndLocal": {
+      "startTime": "2026-10-28T17:22:26.691Z",
+      "duration": 41848.115000000005,
+      "expected": 22,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "finalPublished": {
+      "startTime": "2026-10-28T17:44:05.388Z",
+      "duration": 20250.359,
+      "expected": 11,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "fullCI": {
+      "startTime": "2026-10-28T17:26:07.591Z",
+      "duration": 931474.986,
+      "expected": 251,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "newCasesPerTarget": 11,
+    "uniqueSelectedAcrossThreeTargets": 33,
+    "totalConfiguredCasesPerTarget": 251,
+    "allThreeTargetsFullSuiteExecuted": false
+  },
+  "filterMatrix": {
+    "tagCountsIncludingAll": {
+      "page": 52,
+      "patterns": 76
+    },
+    "statuses": ["All", "Public", "Draft"],
+    "perTargetCombinations": 384,
+    "results": {
+      "local": {
+        "combinations": 384,
+        "matchedCommonRouteOrders": 384,
+        "mismatches": []
+      },
+      "published": {
+        "combinations": 384,
+        "matchedCommonRouteOrders": 384,
+        "mismatches": []
+      }
+    },
+    "onlyCommonRouteOrdersCompared": true,
+    "independentRouteRetained": "/patterns/database-workspace"
+  },
+  "exampleAccessibleNames": {
+    "local": {
+      "routes": 29,
+      "examplesPerLanguage": 57,
+      "languages": ["en", "ja"],
+      "matchedSets": 114,
+      "mismatches": []
+    },
+    "published": {
+      "routes": 29,
+      "examplesPerLanguage": 57,
+      "languages": ["en", "ja"],
+      "matchedSets": 114,
+      "mismatches": []
+    }
+  },
+  "supplementalTouchScenarios": [
+    {
+      "target": "reference",
+      "width": 375,
+      "lang": "en",
+      "colorScheme": "light",
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 2,
+      "emptyGap": 48,
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "restoredCardCount": 10,
+      "errors": []
+    },
+    {
+      "target": "reference",
+      "width": 390,
+      "lang": "ja",
+      "colorScheme": "dark",
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 2,
+      "emptyGap": 48,
+      "pointerTypes": [
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch"
+      ],
+      "restoredCardCount": 10,
+      "errors": []
+    },
+    {
+      "target": "local",
+      "width": 375,
+      "lang": "en",
+      "colorScheme": "light",
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 2,
+      "emptyGap": 48,
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "restoredCardCount": 10,
+      "errors": []
+    },
+    {
+      "target": "local",
+      "width": 390,
+      "lang": "ja",
+      "colorScheme": "dark",
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 2,
+      "emptyGap": 48,
+      "pointerTypes": [
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch"
+      ],
+      "restoredCardCount": 10,
+      "errors": []
+    },
+    {
+      "target": "published",
+      "width": 375,
+      "lang": "en",
+      "colorScheme": "light",
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 2,
+      "emptyGap": 48,
+      "pointerTypes": ["touch", "touch", "touch", "touch"],
+      "restoredCardCount": 10,
+      "errors": []
+    },
+    {
+      "target": "published",
+      "width": 390,
+      "lang": "ja",
+      "colorScheme": "dark",
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 2,
+      "emptyGap": 48,
+      "pointerTypes": [
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch",
+        "touch"
+      ],
+      "restoredCardCount": 10,
+      "errors": []
+    }
+  ],
+  "visualComparisons": [
+    {
+      "target": "local",
+      "state": "en-initial",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "en-form",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "en-draft",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "en-all-status",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "en-returned",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "en-mobile",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "ja-initial",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "ja-form",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "ja-draft",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "ja-all-status",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "ja-returned",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "ja-mobile",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "pages-mobile-dark-en-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "pages-mobile-dark-ja-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "patterns-mobile-dark-en-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "patterns-mobile-dark-ja-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "pages-desktop-dark-en-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "patterns-desktop-light-ja-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "pages-767-light-en-focus",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "local",
+      "state": "pages-768-dark-ja-focus",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "en-initial",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "en-form",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "en-draft",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "en-all-status",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "en-returned",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "en-mobile",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "ja-initial",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "ja-form",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "ja-draft",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "ja-all-status",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "ja-returned",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "ja-mobile",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "pages-mobile-dark-en-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "pages-mobile-dark-ja-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "patterns-mobile-dark-en-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "patterns-mobile-dark-ja-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "pages-desktop-dark-en-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "patterns-desktop-light-ja-empty",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "pages-767-light-en-focus",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    },
+    {
+      "target": "published",
+      "state": "pages-768-dark-ja-focus",
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "bounds": null
+    }
+  ],
+  "ci": {
+    "runId": 40735285003,
+    "url": "https://github.com/Mailboost/erpboost-ui/actions/runs/40735285003",
+    "headSha": "da042231721a7bda5696374a8e9a7a2144cb41b7",
+    "conclusion": "success",
+    "browserCases": 251,
+    "componentCases": 39,
+    "exportedRoutes": 72
+  },
+  "deploymentVerification": {
+    "htmlRoutes": 72,
+    "allHtmlResponsesMatchArtifact": true,
+    "jsCssAssets": 103,
+    "allAssetsMatchArtifact": true,
+    "tlsCertificateVerification": true,
+    "html": {
+      "checkedAt": "2026-10-28T17:45:46.026Z",
+      "count": 72,
+      "allEqual": true,
+      "records": [
+        {
+          "route": "/",
+          "url": "https://mailboost.github.io/erpboost-ui/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/action-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/action-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/activity-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/activity-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/alert/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/alert/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/app-shell/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/app-shell/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/attachment/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/attachment/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/auth-provider/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/auth-provider/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/autocomplete/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/autocomplete/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/avatar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/avatar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/badge/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/badge/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/button/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/button/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/calendar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/calendar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/collection-control-provider/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/collection-control-provider/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/combobox/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/combobox/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/command-palette/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/command-palette/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/csv-importer/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/csv-importer/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/data-table/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/data-table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/date-field/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/date-field/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/date-picker/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/date-picker/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/description-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/description-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/dialog/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/dialog/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/field/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/field/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/fieldset/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/fieldset/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/form/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/form/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/foundation/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/foundation/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/input/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/input/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/layout/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/layout/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/link/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/link/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/menu/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/menu/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/metric-card/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/metric-card/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/overview/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/overview/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/select/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/select/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/sheet/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/sheet/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/sidebar/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/sidebar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/table/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/tabs/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/tabs/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/tooltip/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/tooltip/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/components/with-guard/",
+          "url": "https://mailboost.github.io/erpboost-ui/components/with-guard/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/assistant-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/assistant-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/chat/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/chat/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/collection/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/collection/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/dashboard-with-charts/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/dashboard-with-charts/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/detail-2col-action-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/detail-2col-action-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/document-page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/document-page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/email/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/email/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/form-as-page/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/form-as-page/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/pipeline-kanban/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/pipeline-kanban/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/page/simple-master-crud/",
+          "url": "https://mailboost.github.io/erpboost-ui/page/simple-master-crud/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/ai-chat/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/ai-chat/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/approval-flow/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/approval-flow/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/approval-route-builder/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/approval-route-builder/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/bulk-actions-bar/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/bulk-actions-bar/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/conversation-thread/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/conversation-thread/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/data-charts/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/data-charts/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/database-workspace/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/database-workspace/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/datatable-inline-edit/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/datatable-inline-edit/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/field-diff-table/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/field-diff-table/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/form-builder/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/form-builder/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/grid-view/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/grid-view/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/multi-step-form/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/multi-step-form/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/notification-panel/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/notification-panel/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/pipeline-stage-manager/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/pipeline-stage-manager/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/rich-text-editor/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/rich-text-editor/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/right-sheet-custom/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/right-sheet-custom/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/supplier-cascader/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/supplier-cascader/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/thread-composer/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/thread-composer/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/timeline/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/timeline/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        },
+        {
+          "route": "/patterns/user-profile-dialog/",
+          "url": "https://mailboost.github.io/erpboost-ui/patterns/user-profile-dialog/",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "publicSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "artifactSha256": "2685fbb6ab9f730dd4bb4b04719e6b0d45b5457fe81c1e1b28575c2cfec239d1",
+          "equal": true
+        }
+      ]
+    },
+    "assets": {
+      "checkedAt": "2026-10-28T17:45:41.970Z",
+      "assets": [
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Actions-BwVRXWJ8.js",
+          "publicSha256": "38336df6e9aa7294ed7a99aef2e15c5b653c9529ca93a75e1675f57e114cdba3",
+          "artifactSha256": "38336df6e9aa7294ed7a99aef2e15c5b653c9529ca93a75e1675f57e114cdba3",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ActionsDemo-CN9-GjoR.js",
+          "publicSha256": "ce76146db188ad433d6e8381fc0e46ea7b032dec99e60260409e51be2c606d07",
+          "artifactSha256": "ce76146db188ad433d6e8381fc0e46ea7b032dec99e60260409e51be2c606d07",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ActionsThread-Bao4FP1H.js",
+          "publicSha256": "66774253886853120acd5a3b6ade26b0e45b546c3b239fabe168c0a6222738b9",
+          "artifactSha256": "66774253886853120acd5a3b6ade26b0e45b546c3b239fabe168c0a6222738b9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ApprovalFlow-B4ScP2We.js",
+          "publicSha256": "52cfc0348c5a9ad83ebf3d7ea0f2897a6ea5a432e0a3d5ad53bcf71f7b6c297d",
+          "artifactSha256": "52cfc0348c5a9ad83ebf3d7ea0f2897a6ea5a432e0a3d5ad53bcf71f7b6c297d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ApprovalRouteBuilder-BTXRn49d.js",
+          "publicSha256": "bb3c412e1208f6358f68631e1ebe48ceb304f8e98f45b8de6e12316137d02f59",
+          "artifactSha256": "bb3c412e1208f6358f68631e1ebe48ceb304f8e98f45b8de6e12316137d02f59",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanel-B9qHxSj3.js",
+          "publicSha256": "9898e3092aa7845ec8e822a8b7039b244f0e4c4084e5d07fabbdc7e22a420b25",
+          "artifactSha256": "9898e3092aa7845ec8e822a8b7039b244f0e4c4084e5d07fabbdc7e22a420b25",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanelDemo-B0jnKdhl.js",
+          "publicSha256": "d50c49da243050906a5ac12637affea555339851ee56be5d7fc510969cfcaf3e",
+          "artifactSha256": "d50c49da243050906a5ac12637affea555339851ee56be5d7fc510969cfcaf3e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AssistantPanelScreen-1eMLxLOo.js",
+          "publicSha256": "32e6a0a7d0f7e1946471dec8fd83ceea15af8b01cd9214817927ed0d2caab7cc",
+          "artifactSha256": "32e6a0a7d0f7e1946471dec8fd83ceea15af8b01cd9214817927ed0d2caab7cc",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/AttachmentsThread-DGfzAM3-.js",
+          "publicSha256": "ed992a48c6e00bce47a819235431c97fa8cc5ad60a24620722a87abf983a3ac4",
+          "artifactSha256": "ed992a48c6e00bce47a819235431c97fa8cc5ad60a24620722a87abf983a3ac4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/BarChart-DS8IhRsP.js",
+          "publicSha256": "f80ee52629304aac1156638e76c4d422e6c8ec8604924413e91395e24c37a50d",
+          "artifactSha256": "f80ee52629304aac1156638e76c4d422e6c8ec8604924413e91395e24c37a50d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/BulkActionsBar-K7Pwb_S4.js",
+          "publicSha256": "919734656dc9e745aa3611fe8118997dc0513824a5f4bc9688c62b5d809960ec",
+          "artifactSha256": "919734656dc9e745aa3611fe8118997dc0513824a5f4bc9688c62b5d809960ec",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CategoriesMasterDialogPage-Bbw-3Uk1.js",
+          "publicSha256": "8e78e78145e6ce6598f14cc0117856fe40bf3da20f35c9e130840d9f7f65e202",
+          "artifactSha256": "8e78e78145e6ce6598f14cc0117856fe40bf3da20f35c9e130840d9f7f65e202",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CategoriesMasterSheetPage-BEMTPX2M.js",
+          "publicSha256": "391bffce5ed2630b5a21b2d935fba2f8ee581a3ad5f5a09f8700f1af2db9010e",
+          "artifactSha256": "391bffce5ed2630b5a21b2d935fba2f8ee581a3ad5f5a09f8700f1af2db9010e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChainOfThoughtDemo-Bo-GF8ck.js",
+          "publicSha256": "cd320e7a799f19654c41313498ee991672cae6f47d02c70960045063c8ee53ca",
+          "artifactSha256": "cd320e7a799f19654c41313498ee991672cae6f47d02c70960045063c8ee53ca",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChatHistoryDemo-BbxyJ7I0.js",
+          "publicSha256": "538792cd8f3c8681bcdad1e424a09d3bc0b3ffdb8cd4297b413372d9b5e1531b",
+          "artifactSha256": "538792cd8f3c8681bcdad1e424a09d3bc0b3ffdb8cd4297b413372d9b5e1531b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ChatScreen-CfCwHo1U.js",
+          "publicSha256": "20cdee9933b79ec189a09516e90438b60a7c1500355a2a1fd9181fcad7a431bf",
+          "artifactSha256": "20cdee9933b79ec189a09516e90438b60a7c1500355a2a1fd9181fcad7a431bf",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ConversationThreadPanel-DolXOkAD.js",
+          "publicSha256": "3020ae1fea0590856217e4c11b13857a75d7dd0c3ee93bd357eed57e6a5e3d0e",
+          "artifactSha256": "3020ae1fea0590856217e4c11b13857a75d7dd0c3ee93bd357eed57e6a5e3d0e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPage-Dhy79vkP.js",
+          "publicSha256": "bd9702ced35eebd25c5fd142357257b5b43bf887fa644347d4e6b39aa52559b2",
+          "artifactSha256": "bd9702ced35eebd25c5fd142357257b5b43bf887fa644347d4e6b39aa52559b2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPageWithSectionNav-CIr6ZkE2.js",
+          "publicSha256": "48466ac50c9dd1f68b46d5393ef097b51fa0ce9528f7635f517f8d9ed9558cbd",
+          "artifactSha256": "48466ac50c9dd1f68b46d5393ef097b51fa0ce9528f7635f517f8d9ed9558cbd",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/CreateTaskPageWizard-bRDyz-R4.js",
+          "publicSha256": "f531c218487f78ee8053683b9f4219e7398b8d1e4f7f030ec8a2f10c57d4c52b",
+          "artifactSha256": "f531c218487f78ee8053683b9f4219e7398b8d1e4f7f030ec8a2f10c57d4c52b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DatabaseWorkspaceDemo-BUyKh5X2.js",
+          "publicSha256": "c0add19bce5711090d0c125d36c31774d7dbb79f79b8505db21a37e6c529c69f",
+          "artifactSha256": "c0add19bce5711090d0c125d36c31774d7dbb79f79b8505db21a37e6c529c69f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DependencyTimeline-p2qw1tFy.js",
+          "publicSha256": "d2a5759adcb839d9c19a94f70aae06622c11af57407c376bb09a9e45dd54d052",
+          "artifactSha256": "d2a5759adcb839d9c19a94f70aae06622c11af57407c376bb09a9e45dd54d052",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DetailPageWithPageTabs-CjvZ6Zac.js",
+          "publicSha256": "e153a41af0296d9fee1037bcaa947233e61bff3c7684e8978766435ae0391d37",
+          "artifactSha256": "e153a41af0296d9fee1037bcaa947233e61bff3c7684e8978766435ae0391d37",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentEditorPage-BCtRCFeq.js",
+          "publicSha256": "f721c6942bfdc758772794dc5d7a8c2cec2a52e0fa0bee919b3cd60f5cb69ce2",
+          "artifactSha256": "f721c6942bfdc758772794dc5d7a8c2cec2a52e0fa0bee919b3cd60f5cb69ce2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentEditorPage-C8LL_u4z.css",
+          "publicSha256": "cf8f05a4ce22400fc202a56ef4007741bb0422d3b7a62746576cdcef16c64149",
+          "artifactSha256": "cf8f05a4ce22400fc202a56ef4007741bb0422d3b7a62746576cdcef16c64149",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DocumentNotes-GXH-MNBU.js",
+          "publicSha256": "04b144f60eb8cfd9dc82be7ba4b38af3bdba5ea0e0421757603105d8b442795c",
+          "artifactSha256": "04b144f60eb8cfd9dc82be7ba4b38af3bdba5ea0e0421757603105d8b442795c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/DonutChartCard-ZOmm42UV.js",
+          "publicSha256": "a85440d7da0b0ce0684d1de79e6dcac5ed2f3b95bdd7416ba967c2bdf333a265",
+          "artifactSha256": "a85440d7da0b0ce0684d1de79e6dcac5ed2f3b95bdd7416ba967c2bdf333a265",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/EmailLayoutPage-aLDka3QZ.js",
+          "publicSha256": "0877694b6a70ddae87c91a373dcdfc57be641b6ccc071f37e738e4e607ad6892",
+          "artifactSha256": "0877694b6a70ddae87c91a373dcdfc57be641b6ccc071f37e738e4e607ad6892",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/FormBuilder-CkVJmrEI.js",
+          "publicSha256": "95a25254d1877b0ea9bc2d7c577ee5bb59eb322ce80ff5cd1ffcda6de4df31ad",
+          "artifactSha256": "95a25254d1877b0ea9bc2d7c577ee5bb59eb322ce80ff5cd1ffcda6de4df31ad",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttChart-CnyT3z89.css",
+          "publicSha256": "a048a57a71a057264297184af7fc84f01263d12ea8b2cca3f47c3bd158630ef5",
+          "artifactSha256": "a048a57a71a057264297184af7fc84f01263d12ea8b2cca3f47c3bd158630ef5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttChart-dDDAqsXH.js",
+          "publicSha256": "672b6db809e6f327fce07fc4610f3244d604542407152e17a8951077fb8292cb",
+          "artifactSha256": "672b6db809e6f327fce07fc4610f3244d604542407152e17a8951077fb8292cb",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/GanttEditor-CwWznGWI.js",
+          "publicSha256": "12ca8adb0fb16ba234f844c8a5e1c38134ce325e076714a098b43579e622bd33",
+          "artifactSha256": "12ca8adb0fb16ba234f844c8a5e1c38134ce325e076714a098b43579e622bd33",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/HighlightedSource-QmT9m_Vu.js",
+          "publicSha256": "55bda9bbc343ddb39d1051255cd5e8422234b281cd2e096fe43f81660773ba2b",
+          "artifactSha256": "55bda9bbc343ddb39d1051255cd5e8422234b281cd2e096fe43f81660773ba2b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/HorizontalBarChartCard-CAy0Rapu.js",
+          "publicSha256": "d2826e8961b8f49669972e22d41d48d00287738b648f7e86c04196b4b305e794",
+          "artifactSha256": "d2826e8961b8f49669972e22d41d48d00287738b648f7e86c04196b4b305e794",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/InquiryThreadPage-P_MJBTmU.js",
+          "publicSha256": "94fd2f93058f8c8a79b390bff57763d00f7ccc56719bb734195a0a08c8f65dad",
+          "artifactSha256": "94fd2f93058f8c8a79b390bff57763d00f7ccc56719bb734195a0a08c8f65dad",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/LineChartCard-B3y1BMpJ.js",
+          "publicSha256": "83d4b6be6836d890234e100e51a20cc90aca58d87826f9effd8b1591bb046559",
+          "artifactSha256": "83d4b6be6836d890234e100e51a20cc90aca58d87826f9effd8b1591bb046559",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MarkdownThread-CYoBnNIy.js",
+          "publicSha256": "4299409830cf440147dded7345736893ce66bbf6ae16453eb73d525bd11d810e",
+          "artifactSha256": "4299409830cf440147dded7345736893ce66bbf6ae16453eb73d525bd11d810e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Message-DCA4ShIl.js",
+          "publicSha256": "2dd839e985cfe10050a80e60bcfccac59a4c667a8f9961d1475d4adf80826270",
+          "artifactSha256": "2dd839e985cfe10050a80e60bcfccac59a4c667a8f9961d1475d4adf80826270",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MessageDemo-CIqit2eC.js",
+          "publicSha256": "4dc273bfeeb1f6f13cdd9ecc20fa88a2410aaa040d47ba3cf188f6d3c4463197",
+          "artifactSha256": "4dc273bfeeb1f6f13cdd9ecc20fa88a2410aaa040d47ba3cf188f6d3c4463197",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/MultiStepForm-9t1dYu0T.js",
+          "publicSha256": "9f09d6372e691e10c92fefba1fcdf761a0345be3ce9a056eea199054113f8cc6",
+          "artifactSha256": "9f09d6372e691e10c92fefba1fcdf761a0345be3ce9a056eea199054113f8cc6",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/NotificationPanelWithSidebar-DHzAKCLP.js",
+          "publicSha256": "54cfc139b84142b4a9a7ac43a550193dafd3b60b3e06387eebc6a37aba3ce8b6",
+          "artifactSha256": "54cfc139b84142b4a9a7ac43a550193dafd3b60b3e06387eebc6a37aba3ce8b6",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageCapsuleTabsPage-CTTSsvkX.js",
+          "publicSha256": "c9cc75d2c8bc517f2805153176b6c93fc2720dfaad773156167a0fe56dd7f8f6",
+          "artifactSha256": "c9cc75d2c8bc517f2805153176b6c93fc2720dfaad773156167a0fe56dd7f8f6",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageGridListTabsPage-C79dJhj9.js",
+          "publicSha256": "867a96d18190968ccdd18d69a9c182b415e5485a7a8e3820467595c82bac4078",
+          "artifactSha256": "867a96d18190968ccdd18d69a9c182b415e5485a7a8e3820467595c82bac4078",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PageInlineEditTabsPage-DGadVyZ5.js",
+          "publicSha256": "e4a4baefe921acc1b1d0be5b1ed2b220c278891c211f3a82cbda2a4673f32c34",
+          "artifactSha256": "e4a4baefe921acc1b1d0be5b1ed2b220c278891c211f3a82cbda2a4673f32c34",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PieChart-BOu6azDd.js",
+          "publicSha256": "534f54b788c2dc489de12e35bba7d557ab6ed039b04c26b3a9307cebce8bdfc5",
+          "artifactSha256": "534f54b788c2dc489de12e35bba7d557ab6ed039b04c26b3a9307cebce8bdfc5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PieChartCard-D1a-uXwP.js",
+          "publicSha256": "8bb99589872c5963ae0ba67b8d67095c4977f92ad696d929e4f51421fd897c94",
+          "artifactSha256": "8bb99589872c5963ae0ba67b8d67095c4977f92ad696d929e4f51421fd897c94",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PipelineKanbanPage-BWNZjKjl.js",
+          "publicSha256": "6a9295856b0aefbdca8c0fd4bc408d18253f25a0abfbc3d921fd8693ffc13fdc",
+          "artifactSha256": "6a9295856b0aefbdca8c0fd4bc408d18253f25a0abfbc3d921fd8693ffc13fdc",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PipelineStageManager-B-iTTdFs.js",
+          "publicSha256": "a396197271980e8b31caa586ed52a0adfcd6f51eae6844f2ee8d32200e36b302",
+          "artifactSha256": "a396197271980e8b31caa586ed52a0adfcd6f51eae6844f2ee8d32200e36b302",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PromptInput-ONgBHzNK.js",
+          "publicSha256": "275fdc79893c9cbd3e73ac02e4409a46384853ee82d24bc0d43ae0c578432533",
+          "artifactSha256": "275fdc79893c9cbd3e73ac02e4409a46384853ee82d24bc0d43ae0c578432533",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/PromptInputDemo-CWFM9vDa.js",
+          "publicSha256": "16697aa8c4c03be6421b073b854288d4dfc6aab770526927f10b1c331cbd5166",
+          "artifactSha256": "16697aa8c4c03be6421b073b854288d4dfc6aab770526927f10b1c331cbd5166",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Reasoning-RWMxL0cd.js",
+          "publicSha256": "e4ebf737888136d411d1d974ba70245b4b933722346e2bdff59da1975b09a09d",
+          "artifactSha256": "e4ebf737888136d411d1d974ba70245b4b933722346e2bdff59da1975b09a09d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ReasoningDemo-Bf_MNAKy.js",
+          "publicSha256": "7e431b7071f6a6c5135208014b7324493f1835fb0500b887ea8c8bf48f6450f2",
+          "artifactSha256": "7e431b7071f6a6c5135208014b7324493f1835fb0500b887ea8c8bf48f6450f2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Response-Dp8i5zLG.js",
+          "publicSha256": "a22b6f7238289a747e323ebdd4fe75f2887e561d7bf16bfa3ff9ddaba6d1ae33",
+          "artifactSha256": "a22b6f7238289a747e323ebdd4fe75f2887e561d7bf16bfa3ff9ddaba6d1ae33",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/RichTextEditor-1rf3ByEK.js",
+          "publicSha256": "3899999776772758574dddd57dbc62abbc954113ff377748823b18fbd052c1a1",
+          "artifactSha256": "3899999776772758574dddd57dbc62abbc954113ff377748823b18fbd052c1a1",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/RightSheet-jgCfDROv.js",
+          "publicSha256": "76ffb22f232d8cb6703fcbb1c4f644f4275f65708d4d750e77547536c57ea35f",
+          "artifactSha256": "76ffb22f232d8cb6703fcbb1c4f644f4275f65708d4d750e77547536c57ea35f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Sources-BStoz8Pp.js",
+          "publicSha256": "2fb8fdbeddaae238c2b5ef1a4991fe0a2b53515cbba43c4afd903fac0bc34d32",
+          "artifactSha256": "2fb8fdbeddaae238c2b5ef1a4991fe0a2b53515cbba43c4afd903fac0bc34d32",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SourcesDemo-Dpk_EdBJ.js",
+          "publicSha256": "d592de54ccb8a05e55748608657b1fd321968b64198868ed7980712a755aac3f",
+          "artifactSha256": "d592de54ccb8a05e55748608657b1fd321968b64198868ed7980712a755aac3f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SpendDashboardPage-zluEXV2k.js",
+          "publicSha256": "90f0be6d0cc5b7e2bfea164ae928cd411d1a764261f7fe6a968444977d589849",
+          "artifactSha256": "90f0be6d0cc5b7e2bfea164ae928cd411d1a764261f7fe6a968444977d589849",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/StackedBarChartCard-BYVEXSEy.js",
+          "publicSha256": "98f70c32e31b68913456b7470da4a680d11428d42c11403ea1c3b21139225481",
+          "artifactSha256": "98f70c32e31b68913456b7470da4a680d11428d42c11403ea1c3b21139225481",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Suggestion-BBnEEX0o.js",
+          "publicSha256": "c96c051542d1b701ef3ae3c7623d61e89cd8445b1fbb031c2ac9256ca71a6c4e",
+          "artifactSha256": "c96c051542d1b701ef3ae3c7623d61e89cd8445b1fbb031c2ac9256ca71a6c4e",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SuggestionDemo-DI1-DdAy.js",
+          "publicSha256": "6924d1ccaade44a1e6bbd67d8c54fe334b865572a32a448d2cf63bd4a049023b",
+          "artifactSha256": "6924d1ccaade44a1e6bbd67d8c54fe334b865572a32a448d2cf63bd4a049023b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/SupplierDetailPage-VozGaLtK.js",
+          "publicSha256": "9ca4bcc22caa792588e9af0592d6a944f65c6aaa8c035604e13f41f2a4c0ab0d",
+          "artifactSha256": "9ca4bcc22caa792588e9af0592d6a944f65c6aaa8c035604e13f41f2a4c0ab0d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ThreadComposer-BMF8o1gx.js",
+          "publicSha256": "2de234a14695dc4136bb8e7febb11cd31a83c88c0875b06e303a45e7060193a9",
+          "artifactSha256": "2de234a14695dc4136bb8e7febb11cd31a83c88c0875b06e303a45e7060193a9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Timeline-Oa350XBA.js",
+          "publicSha256": "26aae484b9b454eddd183c801d537effc5abe5d7991e58b3e74d3ff0c9a8aa3b",
+          "artifactSha256": "26aae484b9b454eddd183c801d537effc5abe5d7991e58b3e74d3ff0c9a8aa3b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/Tool-DnnIFuhL.js",
+          "publicSha256": "d326fca00710044556dbdd7dfb7519f3c81157558984f562d6b568723e44787d",
+          "artifactSha256": "d326fca00710044556dbdd7dfb7519f3c81157558984f562d6b568723e44787d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/ToolDemo-C2XInogD.js",
+          "publicSha256": "d6fd20290e7fbd45bf5df321dadd060bc09967dd26e7b3bb3bdefa641d52b1c4",
+          "artifactSha256": "d6fd20290e7fbd45bf5df321dadd060bc09967dd26e7b3bb3bdefa641d52b1c4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/UserMenuSidebarShowcase-CaeVL9-U.js",
+          "publicSha256": "f6eda53d703777aeefe0a65044cc4e9a70ece53fc8134a8697c696286f841b48",
+          "artifactSha256": "f6eda53d703777aeefe0a65044cc4e9a70ece53fc8134a8697c696286f841b48",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/UserProfileDialog-C_r50dxg.js",
+          "publicSha256": "1fb751ce5e866b504a2b6fea1392bfa7317d01287c7a42b14aaac929f2723775",
+          "artifactSha256": "1fb751ce5e866b504a2b6fea1392bfa7317d01287c7a42b14aaac929f2723775",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/VerticalBarChartCard-jpREhCbn.js",
+          "publicSha256": "66edad4c7b0085ecf2ed6e88d4b6b57f76bdb4543414abac84d7d22e6820d96f",
+          "artifactSha256": "66edad4c7b0085ecf2ed6e88d4b6b57f76bdb4543414abac84d7d22e6820d96f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/YAxis-CaEChstc.js",
+          "publicSha256": "e74c856df1b9d604601d1c4352cb3bbf114b5960268ffdcf6876fcd4d93486a9",
+          "artifactSha256": "e74c856df1b9d604601d1c4352cb3bbf114b5960268ffdcf6876fcd4d93486a9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/bell-CDJWU4Tj.js",
+          "publicSha256": "08627bea96e72da2672917440ff7c5a6f98335293b8fa27d0a8ec8e8349c060b",
+          "artifactSha256": "08627bea96e72da2672917440ff7c5a6f98335293b8fa27d0a8ec8e8349c060b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/braces-2QKtEoU3.js",
+          "publicSha256": "25e31c504327febff453d8162969025f131fa1faeaa05a265b5ec4d3a9d00d49",
+          "artifactSha256": "25e31c504327febff453d8162969025f131fa1faeaa05a265b5ec4d3a9d00d49",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/chartTokens-BXt-yQ5v.js",
+          "publicSha256": "26e90fc015b81ae6b6ee45e547690b66b0a17441d7309628d0ce258b1dbbdb58",
+          "artifactSha256": "26e90fc015b81ae6b6ee45e547690b66b0a17441d7309628d0ce258b1dbbdb58",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/checkbox-CLp0CYFT.js",
+          "publicSha256": "db415f805f3190c91d50b7f9fb30bc29716e5c77ed8df2ecdd56d50c16619f90",
+          "artifactSha256": "db415f805f3190c91d50b7f9fb30bc29716e5c77ed8df2ecdd56d50c16619f90",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/clsx-DB0hHKMi.js",
+          "publicSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+          "artifactSha256": "c02db88e233e8727170f389eded16d86931efa576b4c1b0591df806eb7f24789",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/components-rs9I2f5U.js",
+          "publicSha256": "a891e34e429bddcd747f1039e233e6eca77c03bf9621085a0cf6f308faac0ed9",
+          "artifactSha256": "a891e34e429bddcd747f1039e233e6eca77c03bf9621085a0cf6f308faac0ed9",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/corner-up-left-CMHrdsMa.js",
+          "publicSha256": "e33ba12c5f1db61520733107c9a9ea50e597a9d2db2f7032eda83206fb28e319",
+          "artifactSha256": "e33ba12c5f1db61520733107c9a9ea50e597a9d2db2f7032eda83206fb28e319",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/createLucideIcon-Dy7UvDMc.js",
+          "publicSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+          "artifactSha256": "44cd3e1df748130cc45ce717e680619de7374de66cb56321b0d761b2810ee9ed",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/dist-BsbFkpqP.js",
+          "publicSha256": "1195ba7b8df4d3744ac24649f9645d3c115310cf873ccedbca36f191edb10ec5",
+          "artifactSha256": "1195ba7b8df4d3744ac24649f9645d3c115310cf873ccedbca36f191edb10ec5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/dist-CK3U7fz7.js",
+          "publicSha256": "a4ea6119f122036ade2acf89b258f992014d81611b145cc1037a0d169adb3cb8",
+          "artifactSha256": "a4ea6119f122036ade2acf89b258f992014d81611b145cc1037a0d169adb3cb8",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/es-0QgzWRT4.js",
+          "publicSha256": "5dad3dfb628830dda0dc26cbb26ee5fcdd1bb28c2109ad2caa04182ddc21a7e4",
+          "artifactSha256": "5dad3dfb628830dda0dc26cbb26ee5fcdd1bb28c2109ad2caa04182ddc21a7e4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/field-helpers-FLctzaQu.js",
+          "publicSha256": "a574974d7e32a7d7710d223d74b20ebb2ea8a0e351d72ad4f3e7413e45b0dab2",
+          "artifactSha256": "a574974d7e32a7d7710d223d74b20ebb2ea8a0e351d72ad4f3e7413e45b0dab2",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/file-text-BO6O5Vlr.js",
+          "publicSha256": "3df9098f2c2008681d3b83e39f8ff19993baff52e550e9bb6f4e815913855135",
+          "artifactSha256": "3df9098f2c2008681d3b83e39f8ff19993baff52e550e9bb6f4e815913855135",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/generateCategoricalChart-BkXsFEW4.js",
+          "publicSha256": "cdf359c55790cd84c14947f293276dfc4997e53f4ca0f8178d80f482b8c7a536",
+          "artifactSha256": "cdf359c55790cd84c14947f293276dfc4997e53f4ca0f8178d80f482b8c7a536",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/index-B3eqiRrQ.css",
+          "publicSha256": "1ad8943952b54c5746ef58cf8bcf9b513223faf889c78e7b270bc003ba2eae50",
+          "artifactSha256": "1ad8943952b54c5746ef58cf8bcf9b513223faf889c78e7b270bc003ba2eae50",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/index-CGf8ioBO.js",
+          "publicSha256": "b2cd71834e35c3521d537c556541b540deb898ddbfd7bfee3b85caaa629b8485",
+          "artifactSha256": "b2cd71834e35c3521d537c556541b540deb898ddbfd7bfee3b85caaa629b8485",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/jsx-runtime-C40oxPSl.js",
+          "publicSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+          "artifactSha256": "d02cdf4891e1a12318677ddcf0a94e1a553c1e8f2806ff3603699eccb9c70e4c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/list-D7WlU-X_.js",
+          "publicSha256": "ee49b372159feabf75c2221cdf62db917233166ffd05f1027ac789a7b2dd207c",
+          "artifactSha256": "ee49b372159feabf75c2221cdf62db917233166ffd05f1027ac789a7b2dd207c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/mail-DnSptTQr.js",
+          "publicSha256": "338f68fcf7e6ec04387cac9b259b2f70cc5663051a39f8056b0553a828c20d7d",
+          "artifactSha256": "338f68fcf7e6ec04387cac9b259b2f70cc5663051a39f8056b0553a828c20d7d",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/mockAssistant-Dqgv7lcf.js",
+          "publicSha256": "893170b9ec326b72636845b4f1bc3ee29539eb80d2b139c1d117cbdf12dc5155",
+          "artifactSha256": "893170b9ec326b72636845b4f1bc3ee29539eb80d2b139c1d117cbdf12dc5155",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/paperclip-D-SKIVEJ.js",
+          "publicSha256": "6aab11f9d454985e56233802fe3e31f80649c2b294303e270d416b34c83fcf9b",
+          "artifactSha256": "6aab11f9d454985e56233802fe3e31f80649c2b294303e270d416b34c83fcf9b",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/pencil-C6uR0LLx.js",
+          "publicSha256": "179557724a3bf69798fe9276829d897507ca2417cac0b403cf5708e0439021c5",
+          "artifactSha256": "179557724a3bf69798fe9276829d897507ca2417cac0b403cf5708e0439021c5",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/popover-DPwZuhxY.js",
+          "publicSha256": "2bd21e4de2338114ce8e9019d3bf102e7a20b71289234b1ea34d0a03a936ea96",
+          "artifactSha256": "2bd21e4de2338114ce8e9019d3bf102e7a20b71289234b1ea34d0a03a936ea96",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/react-Cdxb2Qku.js",
+          "publicSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+          "artifactSha256": "289bc3f42010c281d2607d37b754ff44107518985bac46c8c4fea8e40dd43a2c",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/react-dom-Bs_xv98U.js",
+          "publicSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+          "artifactSha256": "4e12489f65e2b74d0a87b0b37e97e2db17032f4dad9938402e9f4144664472e1",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/refresh-cw-DfMDiqzq.js",
+          "publicSha256": "dd08741d867b9d6118b45cb37fb749a7379f96934a6d8dbb594e019169278274",
+          "artifactSha256": "dd08741d867b9d6118b45cb37fb749a7379f96934a6d8dbb594e019169278274",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/save-BHGcgiqm.js",
+          "publicSha256": "457ee93d300c8ad5ab01ff6f113d372ef18f7921c70408b4032a126de2f2de18",
+          "artifactSha256": "457ee93d300c8ad5ab01ff6f113d372ef18f7921c70408b4032a126de2f2de18",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/showcases-DUAP5zNw.js",
+          "publicSha256": "eef5a5d35314db5321a5e9900e4ac65540ae21fb1ddd492187001004e8b26a3a",
+          "artifactSha256": "eef5a5d35314db5321a5e9900e4ac65540ae21fb1ddd492187001004e8b26a3a",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/star-DIXlQf7u.js",
+          "publicSha256": "2d66147a66757d17d7c56e356316183069bbfab9055161723a7bbbfca7251bad",
+          "artifactSha256": "2d66147a66757d17d7c56e356316183069bbfab9055161723a7bbbfca7251bad",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/tables-BdDeKswc.js",
+          "publicSha256": "4538d6d55a94b8cc270d97fbdadf9244eacaa6fbcd06bb5d5ac66ce9ce8e5cf4",
+          "artifactSha256": "4538d6d55a94b8cc270d97fbdadf9244eacaa6fbcd06bb5d5ac66ce9ce8e5cf4",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/textarea-C_twdHIs.js",
+          "publicSha256": "d4d1006d15ec136e0c6abeaca48223c21fb8597ea4d593836b9b8c614ff65f4f",
+          "artifactSha256": "d4d1006d15ec136e0c6abeaca48223c21fb8597ea4d593836b9b8c614ff65f4f",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/thumbs-down-CLF9OesG.js",
+          "publicSha256": "682ff4ef598ffc5d5837f635e07532f0179d06c52ad6a3383835d95a8166d227",
+          "artifactSha256": "682ff4ef598ffc5d5837f635e07532f0179d06c52ad6a3383835d95a8166d227",
+          "equal": true
+        },
+        {
+          "url": "https://mailboost.github.io/erpboost-ui/assets/thumbs-up-DC3LiMwF.js",
+          "publicSha256": "922c65670791a8374e4f932045ee02f51e8e638792bb96b1743754cb6255ff78",
+          "artifactSha256": "922c65670791a8374e4f932045ee02f51e8e638792bb96b1743754cb6255ff78",
+          "equal": true
+        }
+      ],
+      "matchesDeployedArtifact": true,
+      "includesRequestedLazyAssets": true,
+      "allGeneratedJsCssAssets": 103
+    }
+  },
+  "limitations": [
+    "Not every interaction on all 71 shared routes was re-executed in this audit.",
+    "Draft has no entries in the reference catalogue; populated draft data was not tested.",
+    "Browser Back/Forward discards the in-memory draft in the reference; persistence is not claimed.",
+    "ERPboost-only DatabaseWorkspace is retained and excluded only from shared-route comparisons.",
+    "Useful main/strong category semantics remain different from the reference raw ARIA snapshot.",
+    "Previously documented source toolbar border, time, focus, attachment, and cancellation differences remain.",
+    "Touch scenarios ran in Chromium mobile emulation, not physical Safari devices.",
+    "Pass counts include explicitly documented reference limitations; they are not complete-parity counts."
+  ],
+  "evidenceDirectory": "/Users/ymktmk/.codex/visualizations/2026/10/29/erpboost-ui-category-audit/"
+}

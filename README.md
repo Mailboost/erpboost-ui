@@ -177,3 +177,7 @@ CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header share 
 `Field.InputGroup` lays out an existing Field.Control and explicit trailing actions without changing their standard frames; value/reveal state and validation remain controlled by the app. Use the existing Fieldset.Root / Legend with explicit JSX fields. No schema-driven form generation is added.
 
 `FileList.Editor` lays out an input/action row while the consumer retains file validation, Enter/Escape/IME handling and creation.
+
+### ERPboost header
+
+`ErpHeader` from `@mailboost/erpboost-ui/erp-header` displays fixed `brand`, `organization` and `connection` JSX slots. Pass `ErpHeader.Trigger` to the existing `Combobox.Parts.Trigger` render prop; `ErpHeader.Loading` supplies an accessible loading placeholder with reduced-motion support. Layout and loading placeholders use the existing `astw:` Tailwind utilities, including `animate-pulse` and `motion-reduce:animate-none`; no dedicated CSS is required. Selection, permissions, loading and API requests remain in the app. Existing GlobalHeader, Button and Combobox implementations are unchanged. See `/patterns/erp-header` for a controlled example.

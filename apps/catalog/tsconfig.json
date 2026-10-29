@@ -10,7 +10,7 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "types": ["vite/client"],
+    "types": ["vite/client", "react-syntax-highlighter"],
     "paths": {
       "@mailboost/erpboost-ui": ["../../packages/ui/src/index.ts"],
       "@/*": ["../../packages/ui/src/*"]

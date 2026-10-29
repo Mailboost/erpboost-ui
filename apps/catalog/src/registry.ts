@@ -13,6 +13,7 @@ export interface Entry {
   tier?: string;
   markdownFiles?: string[];
   markdownNotes?: string;
+  markdownNotesJa?: string;
   guidance?: { do: [string, string]; dont: [string, string] };
   primitives?: string[];
 }
@@ -287,6 +288,7 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
   patterns: [
     ["context-details", "Context and details", "コンテキストと詳細表示", "Compose a context header, compact sections, template options and a database grid."],
     ["code-workspace", "CodeWorkspace", "コードと実行結果の作業画面", "Compose files, code, results and a graph panel in JSX."],
+    ["erp-header", "ERPboost header", "ERPboostヘッダー", "Switch organization and ERP connection in a fixed application header."],
     ["database-workspace", "DatabaseWorkspace", "データベース作業画面", "Browse tables and keep database work in closable tabs."],
     [
       "ai-chat",
@@ -421,7 +423,11 @@ export const entries: Entry[] = Object.entries(groups).flatMap(
               do: string;
               dont: string;
               primitives: string[];
-              ja?: { title?: string; paragraphs: string[] };
+              ja?: {
+                title?: string;
+                paragraphs: string[];
+                markdownNotes?: string;
+              };
             }
           >
         )[`/${category}/${slug}`];
@@ -430,6 +436,7 @@ export const entries: Entry[] = Object.entries(groups).flatMap(
               ...data,
               ja: data.ja?.title ?? ja,
               descriptionJa: data.ja?.paragraphs[0],
+              markdownNotesJa: data.ja?.markdownNotes,
               description: data.description,
               blockPreview: category !== "components",
               ...(category !== "components"
