@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Boxes, Box, FileCode2, KeyRound, RefreshCw, Eye, EyeOff } from "lucide-react";
+import { Boxes, Box, FileCode2, RefreshCw, Eye, EyeOff } from "lucide-react";
 import {
   HeaderBar,
   Card,
@@ -149,10 +149,10 @@ export function ContextDetailsDemo() {
             onCheckedChange={setLoading}
             aria-label="読み込み表示を確認"
           />
-          <Card.Root density="compact">
+          <Card.Root>
             <Card.Header
               title="基本情報"
-              actions={
+              children={
                 <Button size="sm" variant="ghost" aria-label="表示を更新">
                   <RefreshCw size={14} />
                 </Button>
@@ -161,21 +161,17 @@ export function ContextDetailsDemo() {
             <Card.Content>
               <Field.Root>
                 <Field.Label>
-                  <Table.ColumnLabel
-                    stacked
-                    name="name"
-                    type="text"
-                    icon={<KeyRound size={12} />}
-                    description="受注番号"
-                  />
+                  <span>
+                    name <Badge variant="neutral">text</Badge>
+                  </span>
                 </Field.Label>
                 <Field.Control defaultValue="S00001" />
               </Field.Root>
             </Card.Content>
           </Card.Root>
-          <Fieldset.Root layout="section">
+          <Fieldset.Root style={{ display: "grid", gap: 16 }}>
             <Fieldset.Legend>接続情報</Fieldset.Legend>
-            <Fieldset.Content>
+            <div style={{ display: "grid", gap: 16 }}>
               <Field.Root>
                 <Field.Label>サンプルの値</Field.Label>
                 <Field.InputGroup>
@@ -192,21 +188,21 @@ export function ContextDetailsDemo() {
                     aria-pressed={visible}
                     onClick={() => setVisible(!visible)}
                   >
-                    {visible ? <EyeOff size={17}/> : <Eye size={17}/>}
+                    {visible ? <EyeOff size={17} /> : <Eye size={17} />}
                   </Button>
                 </Field.InputGroup>
                 <Field.Description>
                   表示切替はこのサンプルが制御します。
                 </Field.Description>
               </Field.Root>
-            </Fieldset.Content>
+            </div>
           </Fieldset.Root>
-          <Fieldset.Root layout="section">
+          <Fieldset.Root style={{ display: "grid", gap: 16 }}>
             <Fieldset.Legend>制約</Fieldset.Legend>
-            <Fieldset.Content layout="inline">
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
               <Badge variant="neutral">必須</Badge>
               <Badge variant="neutral">主キー</Badge>
-            </Fieldset.Content>
+            </div>
           </Fieldset.Root>
           <FileList.Editor>
             <Input
@@ -227,7 +223,7 @@ export function ContextDetailsDemo() {
               クリア
             </Button>
           </FileList.Editor>
-          <Table.Root variant="preview" aria-label="プレビューの例">
+          <Table.Root aria-label="プレビューの例">
             <Table.Header>
               <Table.Row>
                 <Table.Head>#</Table.Head>
@@ -254,7 +250,7 @@ export function ContextDetailsDemo() {
             onClick={() => setTemplate("APIから取り込む")}
           />
           {template && <p role="status">選択中：{template}</p>}
-          <Card.Root density="compact" variant="plain">
+          <Card.Root>
             <Card.Header
               title={
                 <span>
@@ -267,26 +263,37 @@ export function ContextDetailsDemo() {
             />
             <Card.Content padding="none" style={{ overflow: "auto" }}>
               <Table.Root
-                variant="grid"
                 role="grid"
                 aria-label="データの表示例"
                 style={{ minWidth: 460 }}
               >
                 <Table.Header>
                   <Table.Row>
-                    <Table.Head frozenEdge>
-                      <Table.ColumnHeading>
-                        <Table.ColumnLabel
-                          name="name"
-                          type="text"
-                          icon={<KeyRound size={14} />}
-                        />
-                      </Table.ColumnHeading>
+                    <Table.Head>
+                      <span
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 8,
+                        }}
+                      >
+                        <span>
+                          name <Badge variant="neutral">text</Badge>
+                        </span>
+                      </span>
                     </Table.Head>
                     <Table.Head>
-                      <Table.ColumnHeading>
-                        <Table.ColumnLabel name="amount_total" type="numeric" />
-                      </Table.ColumnHeading>
+                      <span
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 8,
+                        }}
+                      >
+                        <span>
+                          amount_total <Badge variant="neutral">numeric</Badge>
+                        </span>
+                      </span>
                     </Table.Head>
                   </Table.Row>
                 </Table.Header>
@@ -295,7 +302,7 @@ export function ContextDetailsDemo() {
                     <Table.Cell
                       role="gridcell"
                       tabIndex={0}
-                      frozenEdge
+
                       aria-selected={selected}
                       onFocus={() => setSelected(true)}
                       onClick={() => setSelected(true)}

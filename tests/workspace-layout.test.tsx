@@ -92,7 +92,7 @@ it("keeps editor and results mounted while the controlled graph panel closes", (
   expect(screen.getByText("Result")).toBeTruthy();
   expect(screen.queryByRole("complementary", { name: "Graph" })).toBeNull();
 });
-it("preserves form submission and the application's close cancellation in a sectioned dialog", () => {
+it("preserves form submission and the application's close cancellation in the default dialog", () => {
   const save = vi.fn(),
     close = vi.fn();
   render(
@@ -103,8 +103,8 @@ it("preserves form submission and the application's close cancellation in a sect
         details.cancel();
       }}
     >
-      <Dialog.Content layout="sectioned" showCloseButton={false}>
-        <Dialog.Header action={<Button disabled>Close</Button>}>
+      <Dialog.Content showCloseButton={false}>
+        <Dialog.Header>
           <Dialog.Title>Edit</Dialog.Title>
         </Dialog.Header>
         <form
@@ -113,9 +113,9 @@ it("preserves form submission and the application's close cancellation in a sect
             save();
           }}
         >
-          <Dialog.Body>
+          <div>
             <input aria-label="Name" />
-          </Dialog.Body>
+          </div>
           <Dialog.Footer>
             <button type="submit">Save</button>
           </Dialog.Footer>
@@ -132,22 +132,19 @@ it("preserves form submission and the application's close cancellation in a sect
   expect(close).toHaveBeenCalledOnce();
   expect(screen.getByRole("dialog", { name: "Edit" })).toBeTruthy();
 });
-it("can replace the sheet header close action without rendering a second close button", () => {
+it("keeps the existing sheet close button alongside a disabled application action", () => {
   render(
     <Sheet.Root open>
-      <Sheet.Content layout="sectioned">
-        <Sheet.Header
-          showCloseButton={false}
-          action={<Button disabled>Custom close</Button>}
-        >
+      <Sheet.Content>
+        <Sheet.Header action={<Button disabled>Custom close</Button>}>
           <Sheet.Title>Settings</Sheet.Title>
         </Sheet.Header>
-        <Sheet.Body>Fields</Sheet.Body>
-        <Sheet.Footer align="between">Actions</Sheet.Footer>
+        <div>Fields</div>
+        <Sheet.Footer>Actions</Sheet.Footer>
       </Sheet.Content>
     </Sheet.Root>,
   );
-  expect(screen.getAllByRole("button")).toHaveLength(1);
+  expect(screen.getAllByRole("button")).toHaveLength(2);
   expect(
     (screen.getByRole("button", { name: "Custom close" }) as HTMLButtonElement)
       .disabled,

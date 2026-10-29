@@ -30,7 +30,9 @@ export function CodeWorkspaceDemo() {
             <CodeWorkspace.Header icon={<FolderOpen size={13} />}>
               パイプライン
             </CodeWorkspace.Header>
-            <CodeWorkspace.Header variant="folder">transformations</CodeWorkspace.Header>
+            <CodeWorkspace.Header variant="folder">
+              transformations
+            </CodeWorkspace.Header>
             <FileList>
               <FileListItem
                 name="pipeline.py"
@@ -171,30 +173,20 @@ export function CodeWorkspaceDemo() {
       </div>
       <div className="astw:mt-4 astw:flex astw:gap-2">
         <Button variant="outline" onClick={() => setModal(true)}>
-          区切り付きダイアログ
+          ダイアログ
         </Button>
         <Button variant="outline" onClick={() => setSheet(true)}>
-          区切り付き右パネル
+          右パネル
         </Button>
       </div>
       <Dialog.Root open={modal} onOpenChange={setModal}>
-        <Dialog.Content layout="sectioned" showCloseButton={false}>
-          <Dialog.Header
-            action={
-              <Button
-                variant="ghost"
-                aria-label="サンプルダイアログを閉じる"
-                onClick={() => setModal(false)}
-              >
-                <X />
-              </Button>
-            }
-          >
+        <Dialog.Content showCloseButton={false}>
+          <Dialog.Header>
             <Dialog.Title>操作の確認</Dialog.Title>
           </Dialog.Header>
-          <Dialog.Body>
+          <div style={{ minHeight: 0, overflow: "auto" }}>
             <p>表示部品は共通化し、操作はアプリが制御します。</p>
-          </Dialog.Body>
+          </div>
           <Dialog.Footer>
             <Button variant="outline" onClick={() => setModal(false)}>
               閉じる
@@ -203,13 +195,13 @@ export function CodeWorkspaceDemo() {
         </Dialog.Content>
       </Dialog.Root>
       <Sheet.Root open={sheet} onOpenChange={setSheet}>
-        <Sheet.Content layout="sectioned">
+        <Sheet.Content>
           <Sheet.Header>
             <Sheet.Title>設定</Sheet.Title>
           </Sheet.Header>
-          <Sheet.Body>
-            <p>右パネルの本文は独立してスクロールします。</p>
-          </Sheet.Body>
+          <div style={{ minHeight: 0, overflow: "auto", padding: 16 }}>
+            <p>既存のSheetコンポーネントを使用します。</p>
+          </div>
           <Sheet.Footer>
             <Button onClick={() => setSheet(false)}>閉じる</Button>
           </Sheet.Footer>

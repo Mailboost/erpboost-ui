@@ -158,22 +158,22 @@ Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `typ
 
 `GraphControls` from `/graph-controls` is the same toolbar used by ErdDiagram. Callers supply zoom bounds, labels, handlers and an optional overlay container. Extra controls (such as graph direction) and a reset-zoom button fit in JSX slots. Disabled zoom actions are skipped by the existing Toolbar keyboard behavior.
 
-Dialog.Content and Sheet.Content accept `layout="sectioned"` to share Header / Body / Footer spacing and independent body scrolling. Their existing default layouts are unchanged. Dialog.Header accepts an action; Sheet.Header can disable its built-in close button when the application supplies a guarded close action. Footer accepts `align="between"` for status and actions. The catalogue's `/patterns/code-workspace` example demonstrates these parts together.
+Dialog, Sheet, Card, Table and Fieldset retain their existing implementation and default appearance. Compose the existing Header / Content / Footer and ordinary JSX for application layout; no compact, grid, preview or sectioned variants are added.
 
 ### Context and detail surfaces
 
 `HeaderBar layout="context"` provides `Brand`, `Separator`, `ContextItem`, `ContextTrigger` and `ContextLoading`. Wrap an existing controlled Combobox trigger with `ContextTrigger`; auth, filtering and selection remain in the consumer.
 
-Use `Card.Root density="compact"` with `Card.Header actions={...}` for compact detail sections. `OptionCard` is a native button with a title, description and optional icon.
+Use the existing Card.Header / Card.Content parts for detail sections. `OptionCard` is a native button with a title, description and optional icon.
 
-`Table.Root variant="grid"`, `Table.ColumnHeading`, `Table.ColumnLabel` and `frozenEdge` provide spreadsheet presentation. Row/cell `aria-selected` drives selection decoration. Set frozen offsets and row controls (`data-row-control`) in JSX; keyboard navigation, precision-safe values, schema and mutations remain app code. All variants are opt-in. See `/patterns/context-details`.
+Use the existing Table parts for database rows and previews. Frozen offsets, row/cell selection semantics, keyboard navigation, precision-safe values, schema and mutations remain app code.
 
 `SidebarPanel layout="compact"` adds native `Nav`, `Label`, `Button`, `Footer`, `AccountTrigger` and `Identity` parts. Pass `active` and existing navigation/account handlers explicitly; no router or authentication provider is introduced.
 
 `SearchField` composes Input and Button, supports controlled values, an optional labelled clear action and `appearance="plain"` for toolbars. Clearing returns focus to the text input; filtering remains in the consumer.
 
-Use `Card.Root density="compact" variant="plain"` with existing Header/Content/Badge for a table section. CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header `variant="folder"` share the remaining editor chrome. Consumers retain rename/unsaved/IME behavior and action portal content.
+CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header `variant="folder"` share editor chrome. Consumers retain rename/unsaved/IME behavior and action portal content.
 
-`Field.InputGroup` shares the frame around an existing Field.Control and explicit trailing actions; value/reveal state and validation remain controlled by the app. `Fieldset.Root layout="section"` with Legend/Content groups explicit form fields and supports inline constraint badges. No schema-driven form generation is added.
+`Field.InputGroup` shares the frame around an existing Field.Control and explicit trailing actions; value/reveal state and validation remain controlled by the app. Use the existing Fieldset.Root / Legend with explicit JSX fields. No schema-driven form generation is added.
 
-`Table.Root variant="preview"` shares the compact read-only preview appearance without interpreting values. `FileList.Editor` lays out an input/action row while the consumer retains file validation, Enter/Escape/IME handling and creation.
+`FileList.Editor` lays out an input/action row while the consumer retains file validation, Enter/Escape/IME handling and creation.

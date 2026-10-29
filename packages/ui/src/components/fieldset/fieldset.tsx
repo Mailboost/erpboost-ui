@@ -25,25 +25,15 @@ import { Text } from "../text";
 type FieldsetRootProps = Pick<
   React.ComponentProps<typeof BaseFieldset.Root>,
   "disabled" | "className" | "style"
-> & { children: React.ReactNode; layout?: "default" | "section" };
+> & { children: React.ReactNode };
 
-function Root({ className, layout = "default", ...props }: FieldsetRootProps) {
-  return (
-    <BaseFieldset.Root
-      data-slot="fieldset"
-      data-layout={layout}
-      className={className}
-      {...props}
-    />
-  );
+function Root({ className, ...props }: FieldsetRootProps) {
+  return <BaseFieldset.Root data-slot="fieldset" className={className} {...props} />;
 }
 Root.displayName = "Fieldset.Root";
 
 /** An accessible legend that is automatically associated with the fieldset. */
-function Legend({
-  className,
-  ...props
-}: React.ComponentProps<typeof BaseFieldset.Legend>) {
+function Legend({ className, ...props }: React.ComponentProps<typeof BaseFieldset.Legend>) {
   return (
     <Text
       variant="label-md"
@@ -54,23 +44,7 @@ function Legend({
 }
 Legend.displayName = "Fieldset.Legend";
 
-/** Explicit section content; fields and constraints are authored as JSX. */
-function Content({
-  layout = "stack",
-  className,
-  ...props
-}: React.ComponentProps<"div"> & { layout?: "stack" | "inline" }) {
-  return (
-    <div
-      data-slot="fieldset-content"
-      data-layout={layout}
-      className={className}
-      {...props}
-    />
-  );
-}
 export const Fieldset = {
-  Content,
   Root,
   Legend,
 };

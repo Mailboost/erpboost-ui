@@ -8,19 +8,11 @@ type RootProps = React.ComponentProps<"table"> & {
   containerClassName?: string;
   /** Ref to the outer scrollable `<div>` container (e.g. to attach a scroll listener). */
   containerRef?: React.Ref<HTMLDivElement>;
-  /** Spreadsheet presentation only; selection, resizing and persistence remain controlled by the app. */
-  variant?: "default" | "grid" | "preview";
 };
 
 type CellAlign = "left" | "center" | "right";
-type HeadProps = React.ComponentProps<"th"> & {
-  align?: CellAlign;
-  frozenEdge?: boolean;
-};
-type CellProps = React.ComponentProps<"td"> & {
-  align?: CellAlign;
-  frozenEdge?: boolean;
-};
+type HeadProps = React.ComponentProps<"th"> & { align?: CellAlign };
+type CellProps = React.ComponentProps<"td"> & { align?: CellAlign };
 
 const cellAlignClassName = {
   left: "astw:text-left",
@@ -51,30 +43,16 @@ const cellAlignClassName = {
  * </Table.Root>
  * ```
  */
-function Root({
-  className,
-  containerClassName,
-  containerRef,
-  variant = "default",
-  ...props
-}: RootProps) {
+function Root({ className, containerClassName, containerRef, ...props }: RootProps) {
   return (
     <div
       ref={containerRef}
       data-slot="table-container"
-      data-variant={variant}
-      className={cn(
-        "astw:relative astw:w-full astw:overflow-x-auto",
-        containerClassName,
-      )}
+      className={cn("astw:relative astw:w-full astw:overflow-x-auto", containerClassName)}
     >
       <table
         data-slot="table"
-        data-variant={variant}
-        className={cn(
-          "astw:w-full astw:caption-bottom astw:text-body-md",
-          className,
-        )}
+        className={cn("astw:w-full astw:caption-bottom astw:text-body-md", className)}
         {...props}
       />
     </div>
@@ -87,10 +65,7 @@ function Header({ className, ...props }: React.ComponentProps<"thead">) {
   return (
     <thead
       data-slot="table-header"
-      className={cn(
-        "astw:[&_tr]:border-b astw:[&_tr]:border-border",
-        className,
-      )}
+      className={cn("astw:[&_tr]:border-b astw:[&_tr]:border-border", className)}
       {...props}
     />
   );
@@ -140,11 +115,10 @@ function Row({ className, ...props }: React.ComponentProps<"tr">) {
 Row.displayName = "Table.Row";
 
 /** A table header cell (`<th>`). */
-function Head({ className, align = "left", frozenEdge, ...props }: HeadProps) {
+function Head({ className, align = "left", ...props }: HeadProps) {
   return (
     <th
       data-slot="table-head"
-      data-frozen-edge={frozenEdge || undefined}
       className={cn(
         "astw:text-foreground astw:h-10 astw:px-2 astw:first:pl-6 astw:last:pr-6 astw:align-middle astw:text-label-md astw:whitespace-nowrap astw:[&:has([role=checkbox])]:pr-0",
         cellAlignClassName[align],
@@ -157,11 +131,10 @@ function Head({ className, align = "left", frozenEdge, ...props }: HeadProps) {
 Head.displayName = "Table.Head";
 
 /** A table data cell (`<td>`). */
-function Cell({ className, align = "left", frozenEdge, ...props }: CellProps) {
+function Cell({ className, align = "left", ...props }: CellProps) {
   return (
     <td
       data-slot="table-cell"
-      data-frozen-edge={frozenEdge || undefined}
       className={cn(
         "astw:px-2 astw:py-2 astw:first:pl-6 astw:last:pr-6 astw:align-middle astw:whitespace-nowrap astw:[&:has([role=checkbox])]:pr-0",
         cellAlignClassName[align],
@@ -185,61 +158,4 @@ function Caption({ className, ...props }: React.ComponentProps<"caption">) {
 }
 Caption.displayName = "Table.Caption";
 
-/** Compact name/type/relationship label, also usable inside a Field.Label. */
-function ColumnLabel({
-  name,
-  type,
-  icon,
-  description,
-  stacked,
-  children,
-  className,
-  ...props
-}: Omit<React.ComponentProps<"span">, "children"> & {
-  name: React.ReactNode;
-  type?: React.ReactNode;
-  icon?: React.ReactNode;
-  description?: React.ReactNode;
-  stacked?: boolean;
-  children?: React.ReactNode;
-}) {
-  return (
-    <span
-      data-slot="table-column-label"
-      data-stacked={stacked || undefined}
-      className={cn("erpui-column-label", className)}
-      {...props}
-    >
-      <span data-slot="table-column-name">
-        {icon}
-        <strong>{name}</strong>
-      </span>
-      {type && <small>{type}</small>}
-      {description && (
-        <span data-slot="table-column-description">{description}</span>
-      )}
-      {children}
-    </span>
-  );
-}
-function ColumnHeading({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="table-column-heading"
-      className={cn("erpui-column-heading", className)}
-      {...props}
-    />
-  );
-}
-export const Table = {
-  Root,
-  Header,
-  Body,
-  Footer,
-  Row,
-  Head,
-  Cell,
-  Caption,
-  ColumnLabel,
-  ColumnHeading,
-};
+export const Table = { Root, Header, Body, Footer, Row, Head, Cell, Caption };

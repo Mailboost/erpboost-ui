@@ -1,39 +1,3 @@
-/* Compact cards reuse Card's existing parts; default cards keep their spacing. */
-[data-slot="card"][data-density="compact"] {
-  min-width: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: none;
-}
-[data-slot="card"][data-density="compact"] > [data-slot="card-header"] {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 48px;
-  padding: 12px 18px;
-  border-bottom: 1px solid var(--border);
-}
-[data-slot="card"][data-density="compact"] [data-slot="card-title"] {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.5;
-}
-[data-slot="card-actions"] {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  align-self: center;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  color: var(--muted-foreground);
-}
-[data-slot="card"][data-density="compact"]
-  > [data-slot="card-content"][data-padding="default"] {
-  padding: 18px;
-}
 /* Context header is opt-in, and can wrap any controlled combobox. */
 [data-slot="header-bar"][data-layout="context"] {
   height: auto;
@@ -153,159 +117,6 @@
   line-height: 1.7;
   color: var(--muted-foreground);
 }
-.erpui-column-label {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  min-width: 0;
-  gap: 7px;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 12px;
-}
-[data-slot="table-column-name"] {
-  display: inline-flex;
-  align-items: center;
-  min-width: 0;
-  gap: 7px;
-}
-[data-slot="table-column-name"] > strong {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 600;
-}
-[data-slot="table-column-name"] > svg {
-  flex-shrink: 0;
-  color: var(--primary);
-}
-.erpui-column-label > svg {
-  flex-shrink: 0;
-  color: var(--primary);
-}
-.erpui-column-label > small {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--muted-foreground);
-}
-.erpui-column-label[data-stacked] {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  padding-top: 5px;
-  white-space: normal;
-  overflow: visible;
-}
-.erpui-column-label[data-stacked] strong {
-  color: var(--foreground);
-  font-size: 13px;
-  font-weight: 400;
-  overflow-wrap: anywhere;
-}
-[data-slot="table-column-description"] {
-  font-size: 12px;
-  color: var(--muted-foreground);
-}
-.erpui-column-heading {
-  display: flex;
-  align-items: center;
-  height: 35px;
-  padding-left: 8px;
-}
-[data-slot="table"][data-variant="grid"] {
-  min-width: 0;
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: 14px;
-}
-[data-slot="table"][data-variant="grid"] th {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  height: 36px;
-  padding: 0;
-  border-bottom: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-  background: var(--background);
-  color: var(--foreground);
-  text-align: left;
-  font-weight: 500;
-}
-[data-slot="table"][data-variant="grid"] td {
-  height: 35px;
-  max-width: none;
-  min-width: 0;
-  padding: 0 8px;
-  border-bottom: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-  background: var(--background);
-  color: var(--foreground);
-  font-size: 13px;
-  cursor: default;
-}
-[data-slot="table"][data-variant="grid"] td > span:not([data-slot]) {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  cursor: text;
-}
-[data-slot="table"][data-variant="grid"] tr:hover td {
-  background: var(--muted);
-}
-[data-slot="table"][data-variant="grid"] tr[aria-selected="true"] td {
-  background: var(--accent);
-}
-[data-slot="table"][data-variant="grid"] [data-frozen-edge] {
-  box-shadow: 2px 0 4px #0000000d;
-}
-[data-slot="table"][data-variant="grid"] td[aria-selected="true"] {
-  outline: none;
-  box-shadow: inset 0 0 0 1px var(--primary);
-}
-[data-slot="table"][data-variant="grid"]
-  td[data-frozen-edge][aria-selected="true"] {
-  box-shadow:
-    inset 0 0 0 1px var(--primary),
-    2px 0 4px #0000000d;
-}
-[data-slot="table"][data-variant="grid"] [data-row-control] {
-  position: sticky;
-  left: 0;
-  z-index: 4;
-  width: 65px;
-  padding: 0 7px;
-}
-[data-slot="table"][data-variant="grid"] th[data-row-control] {
-  z-index: 6;
-}
-[data-slot="table"][data-variant="grid"] [data-row-control] button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  padding: 0;
-  border: 0;
-  border-radius: 4px;
-  background: transparent;
-  color: var(--muted-foreground);
-  cursor: pointer;
-  opacity: 0;
-}
-[data-slot="table"][data-variant="grid"] tr:hover [data-row-control] button,
-[data-slot="table"][data-variant="grid"]
-  tr:focus-within
-  [data-row-control]
-  button {
-  opacity: 1;
-}
-[data-slot="table"][data-variant="grid"] [data-row-control] button:hover {
-  color: var(--foreground);
-  background: var(--accent);
-}
 @media (max-width: 700px) {
   [data-slot="header-bar"][data-layout="context"] {
     padding: 8px;
@@ -324,25 +135,6 @@
     width: 14px;
     height: 14px;
   }
-}
-@media (max-width: 520px) {
-  [data-slot="card"][data-density="compact"] > [data-slot="card-header"],
-  [data-slot="card"][data-density="compact"]
-    > [data-slot="card-content"][data-padding="default"] {
-    padding: 12px 14px;
-  }
-}
-
-/* Keep the checkbox and row action on one line; text-cell truncation must not affect controls. */
-[data-slot="table"][data-variant="grid"]
-  [data-row-control]
-  > [data-slot="checkbox"] {
-  display: inline-flex;
-  width: 16px;
-  height: 16px;
-  vertical-align: middle;
-  margin-right: 6px;
-  cursor: pointer;
 }
 /* Compact sidebar composes native navigation and account controls without a router/provider. */
 [data-slot="sidebar-panel"][data-layout="compact"] {
@@ -552,27 +344,6 @@
 .erpui-search-field[data-appearance="plain"]:focus-within {
   border-color: var(--ring);
 }
-/* Plain Card reuses its existing heading/content slots for a section above a table. */
-[data-slot="card"][data-variant="plain"] {
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  overflow: visible;
-}
-[data-slot="card"][data-density="compact"][data-variant="plain"]
-  > [data-slot="card-header"] {
-  min-height: 0;
-  padding: 0;
-  border: 0;
-  margin-bottom: 8px;
-  gap: 10px;
-}
-[data-slot="card"][data-variant="plain"] [data-slot="card-title"] > span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
 @media (max-width: 700px) {
   [data-slot="sidebar-panel"][data-layout="compact"] {
     padding: 12px 5px 10px;
@@ -641,77 +412,6 @@
   padding: 4px;
   color: var(--muted-foreground);
 }
-/* Fieldset.Legend supplies the accessible name; sections contain ordinary JSX fields. */
-[data-slot="fieldset"][data-layout="section"] {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 24px;
-  min-width: 0;
-  margin: 0;
-  padding: 26px 20px;
-  border: 0;
-  border-bottom: 1px solid var(--border);
-}
-[data-slot="fieldset"][data-layout="section"] > [data-slot="fieldset-legend"] {
-  padding-top: 2px;
-  min-width: 0;
-  margin: 0;
-  color: var(--foreground);
-  font-size: 13px;
-  font-weight: 400;
-}
-[data-slot="fieldset-content"] {
-  display: grid;
-  gap: 24px;
-  min-width: 0;
-}
-[data-slot="fieldset-content"][data-layout="inline"] {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-}
-[data-slot="fieldset-content"][data-layout="inline"] code {
-  overflow-wrap: anywhere;
-}
-[data-slot="table-container"][data-variant="preview"] {
-  min-height: 0;
-  overflow: auto;
-}
-[data-slot="table"][data-variant="preview"] {
-  border-collapse: collapse;
-  width: 100%;
-  font:
-    11px ui-monospace,
-    monospace;
-  text-align: left;
-}
-[data-slot="table"][data-variant="preview"] th {
-  position: sticky;
-  top: 0;
-  background: var(--muted);
-  color: var(--muted-foreground);
-  font-weight: 500;
-}
-[data-slot="table"][data-variant="preview"] td,
-[data-slot="table"][data-variant="preview"] th {
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 8px 13px;
-  max-width: 300px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-[data-slot="table"][data-variant="preview"] td:first-child {
-  color: var(--muted-foreground);
-  width: 30px;
-}
-[data-slot="table"][data-variant="preview"] i {
-  font-size: 10px;
-  color: var(--muted-foreground);
-}
 [data-slot="file-list-editor"] {
   display: flex;
   gap: 3px;
@@ -736,10 +436,4 @@
   border: 0;
   background: none;
   color: var(--primary);
-}
-@media (max-width: 650px) {
-  [data-slot="fieldset"][data-layout="section"] {
-    grid-template-columns: minmax(100px, 1fr) 2fr;
-    gap: 14px;
-  }
 }

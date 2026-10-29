@@ -66,9 +66,9 @@ it("preserves field labels and values inside section content and an input action
   function Example({ disabled = false }: { disabled?: boolean }) {
     const [show, setShow] = useState(false);
     return (
-      <Fieldset.Root layout="section" disabled={disabled}>
+      <Fieldset.Root disabled={disabled}>
         <Fieldset.Legend>Connection details</Fieldset.Legend>
-        <Fieldset.Content>
+        <div>
           <Field.Root>
             <Field.Label>API value</Field.Label>
             <Field.InputGroup>
@@ -82,7 +82,7 @@ it("preserves field labels and values inside section content and an input action
             </Field.InputGroup>
             <Field.Description>Only an example</Field.Description>
           </Field.Root>
-        </Fieldset.Content>
+        </div>
       </Fieldset.Root>
     );
   }
