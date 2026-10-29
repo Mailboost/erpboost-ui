@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-29",
+  "reference": "https://ui.tailor.tech/",
+  "pullRequest": "https://github.com/Mailboost/erpboost-ui/pull/4",
+  "mainIntegrated": "8eab43df0f2040e514a33432162c89c82278fa97",
+  "newlyReproducedProductDifferences": 0,
+  "changes": [
+    "Integrate the merged ERP header into the active parity branch",
+    "Add four native-input regression cases",
+    "Correct the current test/route totals to include the ERP-only header"
+  ],
+  "touch": {
+    "modes": [
+      "375x812 dark",
+      "768x1024 light"
+    ],
+    "scenarios": [
+      "short drag",
+      "reverse drag",
+      "vertical drag",
+      "touch cancel",
+      "dismissal"
+    ],
+    "capturedStates": 20,
+    "pairs": 10,
+    "matchingFinalStates": 10,
+    "matchingSampledMovement": 10,
+    "matchingImages": 10,
+    "trustedEvents": true,
+    "allAnimationFramesVerified": false
+  },
+  "fileDrag": {
+    "modes": [
+      "1280x900 light",
+      "375x812 dark desktop browser"
+    ],
+    "phases": [
+      "idle",
+      "enter",
+      "icon child",
+      "text child",
+      "outside cancel",
+      "drop"
+    ],
+    "capturedVisualStates": 24,
+    "resultRows": 4,
+    "matchingStyleStatePairs": 12,
+    "matchingResultPairs": 2,
+    "matchingImages": 12,
+    "trustedEvents": true,
+    "files": [
+      "5x5 PNG",
+      "UTF-8 text"
+    ],
+    "externalUploadPerformed": false
+  },
+  "tests": {
+    "addedPerTarget": 4,
+    "referencePassed": 4,
+    "localPassed": 4,
+    "integrationPassed": 29,
+    "unitPassed": 42,
+    "configuredCasesPerTarget": 286,
+    "exportedRoutes": 73,
+    "typecheck": "passed",
+    "build": "passed"
+  },
+  "images": {
+    "sheet": [
+      {
+        "mode": "mobile-dark",
+        "scenario": "short",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "mobile-dark",
+        "scenario": "reverse",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "mobile-dark",
+        "scenario": "vertical",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "mobile-dark",
+        "scenario": "cancel",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "mobile-dark",
+        "scenario": "dismiss",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "tablet-light",
+        "scenario": "short",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "tablet-light",
+        "scenario": "reverse",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "tablet-light",
+        "scenario": "vertical",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "tablet-light",
+        "scenario": "cancel",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      },
+      {
+        "mode": "tablet-light",
+        "scenario": "dismiss",
+        "differingPixels": 0,
+        "maxChannelDelta": 0
+      }
+    ],
+    "fileDrag": [
+      {
+        "mode": "desktop-light",
+        "phase": "idle",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "desktop-light",
+        "phase": "enter",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "desktop-light",
+        "phase": "icon",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "desktop-light",
+        "phase": "text",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "desktop-light",
+        "phase": "cancel",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "desktop-light",
+        "phase": "dropped",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "narrow-dark",
+        "phase": "idle",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "narrow-dark",
+        "phase": "enter",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "narrow-dark",
+        "phase": "icon",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "narrow-dark",
+        "phase": "text",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "narrow-dark",
+        "phase": "cancel",
+        "pixels": 0,
+        "maxChannel": 0
+      },
+      {
+        "mode": "narrow-dark",
+        "phase": "dropped",
+        "pixels": 0,
+        "maxChannel": 0
+      }
+    ]
+  },
+  "limits": [
+    "No additional product mismatch was reproduced in these paths; no speculative rendering patch applied",
+    "Physical iOS/Android, Safari and OS file-manager drag not verified",
+    "Sampled during-motion transforms and final images do not prove every animation frame",
+    "Known Code toolbar and other tiny pixel residuals are not resolved by this change",
+    "ERP header and database workspace are ERP-only additions, not Tailor parity targets",
+    "No publication or main merge performed by this task"
+  ],
+  "rawEvidenceDirectory": "/tmp/erpboost-ui-touch-boundary-audit-20261029"
+}
