@@ -262,6 +262,10 @@
     "./inline-rename": {
       "types": "./dist/components/inline-rename/index.d.ts",
       "import": "./dist/inline-rename.js"
+    },
+    "./retry-notice": {
+      "types": "./dist/components/retry-notice/index.d.ts",
+      "import": "./dist/retry-notice.js"
     }
   },
   "scripts": {

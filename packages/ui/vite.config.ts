@@ -26,6 +26,7 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "retry-notice": "src/components/retry-notice/index.tsx",
         "form-dialog": "src/components/form-dialog/index.tsx",
         "inline-rename": "src/components/inline-rename/index.tsx",
         "result-panel": "src/components/result-panel/index.tsx",

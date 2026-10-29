@@ -1,0 +1,29 @@
+.erpui-retry-notice.erpui-retry-notice {
+  min-width: 0;
+  max-width: 100%;
+}
+.erpui-retry-notice [data-slot="alert-description"] {
+  display: block;
+  min-width: 0;
+  max-height: min(40dvh, 320px);
+  overflow: auto;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.erpui-retry-notice [data-slot="alert-action"] {
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.erpui-retry-notice-spin {
+  animation: erpui-retry-notice-spin 1s linear infinite;
+}
+@keyframes erpui-retry-notice-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .erpui-retry-notice-spin {
+    animation: none;
+  }
+}
