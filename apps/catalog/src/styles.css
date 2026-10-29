@@ -363,11 +363,9 @@ textarea {
   gap: 8px;
   padding: 8px 12px;
   border-bottom: 1px solid var(--border);
-  color: var(--muted-foreground);
 }
 .source-files {
   display: flex;
-  flex: 1 1 auto;
   gap: 4px;
   flex-wrap: wrap;
 }
@@ -378,7 +376,6 @@ textarea {
   color: var(--secondary-foreground);
 }
 .source-actions {
-  margin-left: auto;
   color: var(--foreground);
 }
 .source-block pre {
