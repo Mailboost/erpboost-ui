@@ -1,0 +1,87 @@
+/* ERPboost-specific composition; the existing header and controls are unchanged. */
+.erpui-erp-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 48px;
+  min-width: 0;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+  color: var(--foreground);
+}
+[data-slot="erp-header-brand"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 28px;
+}
+[data-slot="erp-header-brand"] img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+[data-slot="erp-header-separator"] {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+}
+[data-slot="erp-header-organization"],
+[data-slot="erp-header-connection"] {
+  min-width: 0;
+  max-width: 280px;
+}
+/* Combobox's normal trigger is an input suffix; this is a complete header button. */
+.erpui-erp-header-trigger {
+  position: static;
+  inset: auto;
+  min-width: 0;
+  max-width: 100%;
+}
+[data-slot="erp-header-value"] {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+[data-slot="erp-header-loading"] {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+}
+[data-slot="erp-header-skeleton"] {
+  width: 96px;
+  height: 12px;
+  flex-shrink: 1;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    100deg,
+    var(--muted) 20%,
+    var(--accent) 45%,
+    var(--muted) 70%
+  );
+  background-size: 200% 100%;
+  animation: erpui-header-shimmer 1.6s linear infinite;
+}
+@keyframes erpui-header-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="erp-header-skeleton"] {
+    animation: none;
+  }
+}
+@media (max-width: 700px) {
+  .erpui-erp-header {
+    padding: 8px;
+    gap: 4px;
+  }
+  [data-slot="erp-header-organization"],
+  [data-slot="erp-header-connection"] {
+    flex: 1 1 0;
+  }
+}

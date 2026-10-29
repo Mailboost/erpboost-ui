@@ -286,6 +286,7 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["erp-header", "ERPboost header", "ERPboostヘッダー", "Switch organization and ERP connection in a fixed application header."],
     ["database-workspace", "DatabaseWorkspace", "データベース作業画面", "Browse tables and keep database work in closable tabs."],
     [
       "ai-chat",

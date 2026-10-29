@@ -13,6 +13,9 @@ const clean = (source: string) =>
     ? source.slice(source.indexOf(String.fromCharCode(10)) + 1)
     : source;
 const resources: Record<string, Demo[]> = {
+  "patterns/erp-header": [{name:"ERPboost header",description:"Brand, organization, ERP connection and loading states.",heading:"",screen:false,
+    Component:lazy(async()=>{const module=await import("./patterns__erp-header/ErpHeaderDemo");return {default:module.ErpHeaderDemo};}),
+    source:files["./patterns__erp-header/ErpHeaderDemo.tsx"],sources:[{filename:"ErpHeaderDemo.tsx",markdownFilename:"ErpHeaderDemo.tsx",source:files["./patterns__erp-header/ErpHeaderDemo.tsx"]}]}],
   "patterns/database-workspace": [{
     name: "Database explorer", description: "Controlled table navigation without an AppShell dependency.", heading: "", screen: false,
     Component: lazy(async () => { const module = await import("./patterns__database-workspace/DatabaseWorkspaceDemo"); return {default: module.DatabaseWorkspaceDemo}; }),

@@ -26,6 +26,7 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "erp-header": "src/components/erp-header/index.tsx",
         style: "src/style-entry.ts",
         button: "src/components/button/index.ts",
         input: "src/components/input/index.ts",

@@ -1,4 +1,23 @@
 {
+  "/patterns/erp-header": {
+    "description": "Switch organization and ERP connection without an AppShell dependency.",
+    "do": "Keep authorization, data loading and selection state in the consuming application.",
+    "dont": "Change the existing GlobalHeader or put authentication and API clients into this header.",
+    "primitives": [
+      "ErpHeader",
+      "Combobox",
+      "Button"
+    ],
+    "ja": {
+      "title": "ERPboostヘッダー",
+      "paragraphs": [
+        "ロゴ・組織・ERP接続を固定構成で表示します。",
+        "権限・データ取得・選択状態はアプリ側で管理します。",
+        "既存GlobalHeaderを変更したり、認証・APIをヘッダーへ持ち込んだりしません。"
+      ],
+      "sections": []
+    }
+  },
   "/patterns/database-workspace": {
     "description": "Browse tables and keep database work in closable tabs.",
     "do": "Keep table selection, queries, permissions and persistence in the consuming application.",

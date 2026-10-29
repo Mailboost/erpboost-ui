@@ -133,3 +133,7 @@ import { ErdDiagram } from "@mailboost/erpboost-ui/erd-diagram";
 ```
 
 Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `type`, optional `label`/`required`). Relations connect `fromTable`/`fromField` to `toTable`/`toField` with optional `optional` nullability. The component provides search, key filtering, auto layout, pan/zoom and a minimap. The application supplies authorized schema data and owns table navigation. Use `LocaleProvider` for standalone labels and `portalContainer` when popups need an application-owned container. The database workspace catalogue includes a working diagram example.
+
+### ERPboost header
+
+`ErpHeader` from `@mailboost/erpboost-ui/erp-header` displays fixed `brand`, `organization` and `connection` JSX slots. Pass `ErpHeader.Trigger` to the existing `Combobox.Parts.Trigger` render prop; `ErpHeader.Loading` supplies an accessible loading placeholder with reduced-motion support. Selection, permissions, loading and API requests remain in the app. Existing GlobalHeader, Button and Combobox implementations are unchanged. See `/patterns/erp-header` for a controlled example.

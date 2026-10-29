@@ -94,6 +94,10 @@
     "./database-workspace": {
       "types": "./dist/components/database-workspace/index.d.ts",
       "import": "./dist/database-workspace.js"
+    },
+    "./erp-header": {
+      "types": "./dist/components/erp-header/index.d.ts",
+      "import": "./dist/erp-header.js"
     }
   },
   "scripts": {
