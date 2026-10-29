@@ -141,6 +141,7 @@ try {
     import {ManagementLayout,ManagementTable,FormStack,SettingsList,SettingsRow,IdentityCell,ResponsiveLabel,SetupPanel} from "@mailboost/erpboost-ui/management-layout";
     import {StatusNotice} from "@mailboost/erpboost-ui/status-notice";
     import {PropertyRow,PropertySection,FormSection} from "@mailboost/erpboost-ui/property-layout";
+    import {ResourceActionPicker} from "@mailboost/erpboost-ui/resource-action-picker";
     import {SourceNavigation} from "@mailboost/erpboost-ui/source-navigation";
     import {RecordPlaceholder,TableLoadingRows,FormLoadingFields} from "@mailboost/erpboost-ui/record-loading";
     import {RetryNotice} from "@mailboost/erpboost-ui/retry-notice";
@@ -169,6 +170,7 @@ try {
       <StatusNotice variant="success" dismiss={{label:"Dismiss",onDismiss:()=>{}}}>Done</StatusNotice>
       <FormSection legend="Properties"><PropertySection title="Optional"/><PropertyRow label="ID" description="Exact text"><Input value="0001" readOnly/></PropertyRow></FormSection>
       <RecordPlaceholder shape="title"/><FormLoadingFields fields={[{key:"name",label:"Name"}]}/><table><tbody><TableLoadingRows columns={[{key:"name"}]}/></tbody></table>
+      <ResourceActionPicker options={[]} value={null} selectedLabel="Resources" trigger={<Button/>} triggerLabel="Resources" searchLabel="Find" onSelect={()=>{}}>Resources</ResourceActionPicker>
       <SourceNavigation.Files files={[]} value="" onValueChange={()=>{}} title="Files"/><SourceNavigation.Tabs files={[]} value="" onValueChange={()=>{}} label="Files"/>
       <RetryNotice retryLabel="Retry" onRetry={()=>{}}>Synthetic failure</RetryNotice>
       <FormDialog title="Create" cancelLabel="Cancel" submitLabel="Save" onClose={()=>{}} onSubmit={()=>{}}><Input/></FormDialog>

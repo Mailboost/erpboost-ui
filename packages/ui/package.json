@@ -274,6 +274,10 @@
     "./record-loading": {
       "types": "./dist/components/record-loading/index.d.ts",
       "import": "./dist/record-loading.js"
+    },
+    "./resource-action-picker": {
+      "types": "./dist/components/resource-action-picker/index.d.ts",
+      "import": "./dist/resource-action-picker.js"
     }
   },
   "scripts": {

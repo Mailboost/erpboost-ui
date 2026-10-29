@@ -424,3 +424,5 @@ export * from "./components/retry-notice";
 export * from "./components/source-navigation";
 
 export * from "./components/record-loading";
+
+export * from "./components/resource-action-picker";

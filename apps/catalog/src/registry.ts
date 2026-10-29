@@ -286,6 +286,7 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["resource-action-picker", "ResourceActionPicker", "ResourceActionPicker", "Resource actions after popup closing and focus restoration."],
     ["record-loading", "RecordLoading", "RecordLoading", "Decorative form fields and table rows for pending records."],
     ["source-navigation", "SourceNavigation", "SourceNavigation", "Controlled file list, actions and editor tabs."],
     ["retry-notice", "RetryNotice", "RetryNotice", "Controlled retrieval-failure display with retry action."],

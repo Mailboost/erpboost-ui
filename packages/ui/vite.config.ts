@@ -26,6 +26,7 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "resource-action-picker": "src/components/resource-action-picker/index.tsx",
         "record-loading": "src/components/record-loading/index.tsx",
         "source-navigation": "src/components/source-navigation/index.tsx",
         "retry-notice": "src/components/retry-notice/index.tsx",
