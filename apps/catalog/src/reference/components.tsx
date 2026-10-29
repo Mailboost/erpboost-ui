@@ -504,6 +504,7 @@ function SelectDemo({ combo = false }: { combo?: boolean }) {
           />
           <Select
             multiple
+            placeholder="Choose statuses"
             items={["Draft", "In Review", "Approved"]}
             defaultValue={["Draft", "Approved"]}
           />

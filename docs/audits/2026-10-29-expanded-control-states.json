@@ -1,0 +1,1252 @@
+{
+  "date": "2026-10-29",
+  "reference": "https://ui.tailor.tech/",
+  "pullRequest": "https://github.com/Mailboost/erpboost-ui/pull/4",
+  "baseCommit": "c5cac3f975facb2ef1070cfe8f67d401b4b57f83",
+  "changes": [
+    "Add the missing surface shadow to Combobox.Chips",
+    "Add the reference Choose statuses placeholder to the multiple Select catalogue example"
+  ],
+  "modes": [
+    "English 1280x900 light",
+    "English 375x812 dark, keyboard and mouse"
+  ],
+  "expandedStates": {
+    "statesPerEnvironment": 60,
+    "imagePartsPerEnvironment": 86,
+    "propertiesPerNode": 21,
+    "semanticNodesPerEnvironment": 284,
+    "semanticDifferences": [],
+    "stylesDifferent": 0,
+    "boundsMatching": 86,
+    "ariaMatching": 86,
+    "zeroPixelParts": 81,
+    "comparison": [
+      {
+        "name": "menu-first",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-end",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-checked",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-unchecked",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-hover",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-single-open",
+        "mode": "desktop-light",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-single-end",
+        "mode": "desktop-light",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-single-selected",
+        "mode": "desktop-light",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-single-hover",
+        "mode": "desktop-light",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-open",
+        "mode": "desktop-light",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-all",
+        "mode": "desktop-light",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-deselected",
+        "mode": "desktop-light",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-one",
+        "mode": "desktop-light",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-empty",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-no-results",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-filtered-hover",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 2,
+            "max": 1
+          }
+        ]
+      },
+      {
+        "name": "combobox-selected",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-clear-hover",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-cleared",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-highlight",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 5,
+            "max": 1
+          }
+        ]
+      },
+      {
+        "name": "chips-removed",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-filtered-hover",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 2,
+            "max": 1
+          }
+        ]
+      },
+      {
+        "name": "chips-added",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-remove-hover",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-pointer-remove",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-no-results",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-filtered-hover",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-selected",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-clear-hover",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-cleared",
+        "mode": "desktop-light",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-first",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-end",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-checked",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-unchecked",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "menu-hover",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-single-open",
+        "mode": "mobile-dark",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-single-end",
+        "mode": "mobile-dark",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-single-selected",
+        "mode": "mobile-dark",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-single-hover",
+        "mode": "mobile-dark",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-open",
+        "mode": "mobile-dark",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-all",
+        "mode": "mobile-dark",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-deselected",
+        "mode": "mobile-dark",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-one",
+        "mode": "mobile-dark",
+        "valuesEqual": false,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "select-multi-empty",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-no-results",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-filtered-hover",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-selected",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-clear-hover",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "combobox-cleared",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-highlight",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-removed",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-filtered-hover",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 1,
+            "max": 2
+          }
+        ]
+      },
+      {
+        "name": "chips-added",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-remove-hover",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "chips-pointer-remove",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-no-results",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-filtered-hover",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          },
+          {
+            "label": "popup",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 1,
+            "max": 2
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-selected",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-clear-hover",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "name": "autocomplete-cleared",
+        "mode": "mobile-dark",
+        "valuesEqual": true,
+        "parts": [
+          {
+            "label": "control",
+            "boundsEqual": true,
+            "ariaEqual": true,
+            "styleDiffs": [],
+            "pixels": 0,
+            "max": 0
+          }
+        ]
+      }
+    ]
+  },
+  "formerPopupBorderDifference": {
+    "beforePixels": {
+      "desktopLight": 10,
+      "mobileDark": 12
+    },
+    "afterRepeatedImages": 6,
+    "allAfterZero": true,
+    "cause": "The shadow of the chips input behind the popup was missing. Hiding only that underlying input during diagnosis made the popup pixels match; the application fix restores shadow-xs."
+  },
+  "emptySelection": {
+    "before": [
+      {
+        "mode": "desktop-light",
+        "lang": "en",
+        "pixels": 620,
+        "max": 245
+      },
+      {
+        "mode": "desktop-light",
+        "lang": "ja",
+        "pixels": 620,
+        "max": 245
+      },
+      {
+        "mode": "mobile-dark",
+        "lang": "en",
+        "pixels": 614,
+        "max": 217
+      },
+      {
+        "mode": "mobile-dark",
+        "lang": "ja",
+        "pixels": 614,
+        "max": 217
+      }
+    ],
+    "after": [
+      {
+        "mode": "desktop-light",
+        "lang": "en",
+        "referenceText": "Choose statuses",
+        "localText": "Choose statuses",
+        "ariaEqual": true,
+        "focusEqual": true,
+        "pixels": 0,
+        "max": 0
+      },
+      {
+        "mode": "desktop-light",
+        "lang": "ja",
+        "referenceText": "Choose statuses",
+        "localText": "Choose statuses",
+        "ariaEqual": true,
+        "focusEqual": true,
+        "pixels": 0,
+        "max": 0
+      },
+      {
+        "mode": "mobile-dark",
+        "lang": "en",
+        "referenceText": "Choose statuses",
+        "localText": "Choose statuses",
+        "ariaEqual": true,
+        "focusEqual": true,
+        "pixels": 0,
+        "max": 0
+      },
+      {
+        "mode": "mobile-dark",
+        "lang": "ja",
+        "referenceText": "Choose statuses",
+        "localText": "Choose statuses",
+        "ariaEqual": true,
+        "focusEqual": true,
+        "pixels": 0,
+        "max": 0
+      }
+    ],
+    "languages": [
+      "en",
+      "ja"
+    ],
+    "referencePromptInBothLanguages": "Choose statuses",
+    "closedControlVerified": true
+  },
+  "newBrowserTests": {
+    "perEnvironment": 4,
+    "finalReferenceAndLocalStats": {
+      "startTime": "2026-10-29T03:35:29.386Z",
+      "duration": 23389.336,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": "Chip keyboard focus/removal/search/pointer selection preserves shadow; empty multiple Select closes with a prompt, refocuses and can be selected again in both UI languages"
+  },
+  "initialTestFailure": {
+    "passed": 7,
+    "failed": 1,
+    "cause": "Reference JavaScript asset index-C7T4sIGG.js failed with net::ERR_QUIC_PROTOCOL_ERROR during a navigation. Expectations and transport flags were unchanged for the separate final run.",
+    "automaticRetries": 0
+  },
+  "configuredBrowserTestsPerEnvironment": 273,
+  "possibleThreeTargetCases": 819,
+  "fullCI": "See PR checks; not counted as a completed local run in this snapshot",
+  "checksURL": "https://github.com/Mailboost/erpboost-ui/pull/4/checks",
+  "unitCases": 39,
+  "typecheck": "passed",
+  "published": false,
+  "limits": [
+    "Five of the 86 expanded image parts retain 1-5 pixel differences, maximum channel difference 2",
+    "The previous mobile Code toolbar difference remains 80 pixels, maximum channel difference 5",
+    "Diagnostic raw input arrays include hidden carrier formatting differences and are not counted as visible UI equivalence",
+    "Product names, imports, retained accessibility improvements and OS IME limits from earlier records remain"
+  ],
+  "evidence": "/tmp/erpboost-ui-expanded-states-20261029/"
+}
