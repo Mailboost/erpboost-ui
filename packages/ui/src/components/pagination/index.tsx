@@ -11,7 +11,7 @@ import { Select } from "../select";
 import { useDataTableT } from "../data-table/i18n";
 import { cn } from "@/lib/utils";
 
-/** Pagination controls shared with DataTable; the consumer owns fetching. */
+/** Additional controlled pagination; the existing DataTable implementation is unchanged. */
 export interface PaginationProps {
   currentPage: number;
   totalPages: number | null;

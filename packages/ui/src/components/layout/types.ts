@@ -87,8 +87,6 @@ export interface ColumnProps {
  * Props for Layout.Header component
  */
 export interface LayoutHeaderProps {
-  /** Additional classes for embedding the page header in an existing layout. */
-  className?: string;
   /** Page title (left side) */
   title?: string;
   /** Action buttons or nodes (right side) */

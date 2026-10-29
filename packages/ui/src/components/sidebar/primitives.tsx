@@ -1,4 +1,3 @@
-import { sidebarPanelClasses } from "../shell-parts";
 import * as React from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react";
@@ -206,8 +205,7 @@ function Sidebar({
       <div
         data-slot="sidebar"
         className={cn(
-          sidebarPanelClasses,
-          "astw:w-(--sidebar-width)",
+          "astw:bg-sidebar astw:text-sidebar-foreground astw:flex astw:w-(--sidebar-width) astw:flex-col",
           variant === "inset" && "astw:border-x astw:border-x-border",
           className,
         )}

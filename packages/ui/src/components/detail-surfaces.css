@@ -114,14 +114,6 @@
 }
 
 /* Place existing controls side by side without replacing their frames. */
-.erpui-field-input-group {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 8px;
-  align-items: center;
-  width: 100%;
-  min-width: 0;
-}
 [data-slot="file-list-editor"] {
   display: flex;
   gap: 8px;

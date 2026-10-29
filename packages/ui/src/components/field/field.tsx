@@ -316,13 +316,7 @@ function Validity({ ...props }: React.ComponentProps<typeof BaseField.Validity>)
 }
 Validity.displayName = "Field.Validity";
 
-/** A single frame for an existing control and explicit trailing actions. */
-function InputGroup({className, ...props}: React.ComponentProps<"div">) {
-  return <div data-slot="field-input-group" className={cn("erpui-field-input-group", className)} {...props}/>;
-}
-
 export const Field = {
-  InputGroup,
   Root,
   Label,
   Control,

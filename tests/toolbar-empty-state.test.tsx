@@ -53,18 +53,19 @@ it("preserves heading levels and working actions in an empty state", () => {
   ).toBeTruthy();
 });
 
-it("embeds the existing page header with its title, actions and page class", () => {
+it("embeds the unchanged page header inside a page wrapper", () => {
   render(
-    <Layout.Header
-      className="orders-heading"
-      title="Orders"
-      actions={[<Button key="create">Create</Button>]}
-    />,
+    <div className="orders-heading">
+      <Layout.Header
+        title="Orders"
+        actions={[<Button key="create">Create</Button>]}
+      />
+    </div>,
   );
   expect(
     screen
       .getByRole("heading", { name: "Orders", level: 1 })
-      .closest("header")
+      .closest(".orders-heading")
       ?.classList.contains("orders-heading"),
   ).toBe(true);
   expect(screen.getByRole("button", { name: "Create" })).toBeTruthy();
@@ -106,14 +107,21 @@ it("clears a controlled search and returns focus without stealing text cursor ke
 });
 
 it("keeps navigation readable while refusing pointer and keyboard activation until enabled", () => {
-  const navigate=vi.fn();
-  const {rerender}=render(<SidebarPanel.Button disabled onClick={navigate}>Orders</SidebarPanel.Button>);
-  const button=screen.getByRole("button",{name:"Orders"});
+  const navigate = vi.fn();
+  const { rerender } = render(
+    <SidebarPanel.Button disabled onClick={navigate}>
+      Orders
+    </SidebarPanel.Button>,
+  );
+  const button = screen.getByRole("button", { name: "Orders" });
   expect(button.getAttribute("aria-disabled")).toBe("true");
   expect(button.tabIndex).toBe(-1);
-  fireEvent.click(button);fireEvent.keyDown(button,{key:"Enter"});
+  fireEvent.click(button);
+  fireEvent.keyDown(button, { key: "Enter" });
   expect(navigate).not.toHaveBeenCalled();
-  rerender(<SidebarPanel.Button onClick={navigate}>Orders</SidebarPanel.Button>);
-  fireEvent.click(screen.getByRole("button",{name:"Orders"}));
+  rerender(
+    <SidebarPanel.Button onClick={navigate}>Orders</SidebarPanel.Button>,
+  );
+  fireEvent.click(screen.getByRole("button", { name: "Orders" }));
   expect(navigate).toHaveBeenCalledOnce();
 });

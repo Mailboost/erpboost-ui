@@ -136,13 +136,15 @@ Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `typ
 
 ### Standalone forms and pagination
 
-`Field`, `Fieldset` and `DatePicker` can be used through `/field`, `/fieldset` and `/date-field` without mounting AppShell. Use `Field.Control` for a labelled text input; Select, Combobox, Textarea and DatePicker connect directly to `Field.Root`. DatePicker accepts `container` for an embedded app's overlay theme.
+Existing component implementations, styles and contexts remain identical to main. Only new exports/build entry points, additional components and their scoped styles are introduced.
 
-`Pagination` from `/pagination` is the same control used by `DataTable.Pagination`. The consumer supplies page state and navigation callbacks, so it works with existing server or local pagination. `onPageChange` optionally enables direct page entry. Use `container` for the page-size menu in a scoped app.
+`Field`, `Fieldset` and `DatePicker` are exposed through `/field`, `/fieldset` and `/date-field` without changing their source or APIs. Use `Field.Control` for a labelled text input; Select, Combobox, Textarea and DatePicker connect directly to `Field.Root`. Field and DatePicker retain their original AppShell-related module dependencies and are checked separately from integration-free controls. DatePicker also retains its original portal behavior.
 
-`/avatar` and `/card` expose the existing Avatar and Card implementations as standalone imports. `/shell-parts` provides HeaderBar (also used by GlobalHeader) and SidebarPanel using the same base styles as the fixed AppShell sidebar, without routing or collapse state. `/skeleton` provides a decorative shimmer with reduced-motion support; loading-region labels and page-specific shapes remain with the application. The database-workspace catalogue demonstrates these parts together.
+`Pagination` from `/pagination` is an additional controlled component. The existing `DataTable.Pagination` implementation is unchanged. The consumer supplies page state and navigation callbacks, so it works with existing server or local pagination. `onPageChange` optionally enables direct page entry. Use `container` for the page-size menu in a scoped app.
 
-`/toolbar` and `/layout` expose the existing Toolbar and Layout implementations without AppShell. Layout.Header accepts className for page-specific outer spacing. `/empty-state` displays an app-supplied title, description, icon and optional actions; headingLevel preserves the surrounding heading hierarchy. It contains no fetching or business behavior.
+`/avatar` and `/card` expose the existing Avatar and Card implementations as standalone imports. `/shell-parts` provides HeaderBar and SidebarPanel that compose existing controls for an application-owned shell, without routing or collapse state. `/skeleton` provides a decorative shimmer with reduced-motion support; loading-region labels and page-specific shapes remain with the application. The database-workspace catalogue demonstrates these parts together.
+
+`/toolbar` and `/layout` expose the existing Toolbar and Layout implementations without AppShell. Place Layout.Header in an ordinary JSX wrapper for page-specific outer spacing; its existing props are unchanged. `/empty-state` displays an app-supplied title, description, icon and optional actions; headingLevel preserves the surrounding heading hierarchy. It contains no fetching or business behavior.
 
 ### Standalone editor and database surfaces
 
@@ -156,7 +158,7 @@ Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `typ
 
 `CodeWorkspace` from `/code-workspace` provides explicit JSX regions: Root, Sidebar, Main, Editor, EditorTabs, Results, ResultsHeader, ResultsBody, Panel and Header. Supply a Panel width and your existing ResizeHandle callbacks; the package owns the desktop/mobile layout and region scrolling. ResultsHeader and Header accept action slots. No file, API, tab or execution state is stored by the layout.
 
-`GraphControls` from `/graph-controls` is the same toolbar used by ErdDiagram. Callers supply zoom bounds, labels, handlers and an optional overlay container. Extra controls (such as graph direction) and a reset-zoom button fit in JSX slots. Disabled zoom actions are skipped by the existing Toolbar keyboard behavior.
+`GraphControls` from `/graph-controls` is an additional toolbar for application-owned graphs. The existing ErdDiagram and its controls are unchanged. Callers supply zoom bounds, labels, handlers and an optional overlay container. Extra controls (such as graph direction) and a reset-zoom button fit in JSX slots. Disabled zoom actions are skipped by the existing Toolbar keyboard behavior.
 
 Dialog, Sheet, Card, Table and Fieldset retain their existing implementation and default appearance. Compose the existing Header / Content / Footer and ordinary JSX for application layout; no compact, grid, preview or sectioned variants are added.
 
@@ -174,7 +176,7 @@ Use the existing Table parts for database rows and previews. Frozen offsets, row
 
 CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header share editor chrome. Consumers retain rename/unsaved/IME behavior and action portal content.
 
-`Field.InputGroup` lays out an existing Field.Control and explicit trailing actions without changing their standard frames; value/reveal state and validation remain controlled by the app. Use the existing Fieldset.Root / Legend with explicit JSX fields. No schema-driven form generation is added.
+Use an ordinary JSX wrapper to lay out Field.Control and explicit trailing actions; Field has no additional API. Value/reveal state and validation remain controlled by the app. Use the existing Fieldset.Root / Legend with explicit JSX fields. No schema-driven form generation is added.
 
 `FileList.Editor` lays out an input/action row while the consumer retains file validation, Enter/Escape/IME handling and creation.
 

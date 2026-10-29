@@ -1,4 +1,3 @@
-import { HeaderBar } from "../shell-parts";
 import { AppearanceSwitcher } from "@/components/appearance-switcher";
 import { DynamicBreadcrumb } from "@/components/sidebar/dynamic-breadcrumb";
 import { useAppShellConfig } from "@/contexts/appshell-context";
@@ -47,7 +46,7 @@ export const GlobalHeader = ({ actions }: GlobalHeaderProps) => {
   const resolvedActions = actions === undefined ? <AppearanceSwitcher /> : actions;
 
   return (
-    <HeaderBar>
+    <header className="astw:flex astw:h-14 astw:shrink-0 astw:items-center astw:justify-between astw:gap-2 astw:border-b astw:border-border astw:px-4">
       <div className="astw:flex astw:min-w-0 astw:flex-1 astw:items-center astw:gap-2">
         {icon}
         <Text variant="heading-sm" className="astw:shrink-0 astw:truncate" render={<span />}>
@@ -61,7 +60,7 @@ export const GlobalHeader = ({ actions }: GlobalHeaderProps) => {
       <div className="astw:flex astw:shrink-0 astw:flex-row astw:items-center astw:gap-2">
         {resolvedActions}
       </div>
-    </HeaderBar>
+    </header>
   );
 };
 GlobalHeader.displayName = "GlobalHeaderLayout.DefaultHeader";

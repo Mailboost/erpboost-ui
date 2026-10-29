@@ -173,7 +173,7 @@ export function ContextDetailsDemo() {
             <div style={{ display: "grid", gap: 16 }}>
               <Field.Root>
                 <Field.Label>サンプルの値</Field.Label>
-                <Field.InputGroup>
+                <div className="astw:grid astw:grid-cols-[minmax(0,1fr)_auto] astw:items-start astw:gap-1.5">
                   <Field.Control
                     value={token}
                     onChange={(event) => setToken(event.target.value)}
@@ -189,7 +189,7 @@ export function ContextDetailsDemo() {
                   >
                     {visible ? <EyeOff size={17} /> : <Eye size={17} />}
                   </Button>
-                </Field.InputGroup>
+                </div>
                 <Field.Description>
                   表示切替はこのサンプルが制御します。
                 </Field.Description>

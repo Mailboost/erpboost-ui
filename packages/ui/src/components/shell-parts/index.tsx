@@ -24,7 +24,7 @@ function HeaderRoot({
   );
 }
 
-// Shared with the existing non-collapsible AppShell sidebar.
+// Presentation styles for the additional standalone sidebar.
 export const sidebarPanelClasses =
   "astw:bg-sidebar astw:text-sidebar-foreground astw:flex astw:min-h-0 astw:min-w-0 astw:flex-col";
 
