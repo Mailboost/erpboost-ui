@@ -422,3 +422,5 @@ export * from "./components/inline-rename";
 export * from "./components/retry-notice";
 
 export * from "./components/source-navigation";
+
+export * from "./components/record-loading";

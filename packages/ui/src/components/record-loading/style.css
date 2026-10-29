@@ -1,0 +1,49 @@
+/* New compositions only; existing Skeleton, Table and FormGrid are unchanged. */
+[data-slot="skeleton"].erpui-record-placeholder {
+  max-width: 100%;
+}
+.erpui-record-placeholder[data-shape="text"] {
+  height: 12px;
+}
+.erpui-record-placeholder[data-shape="title"] {
+  width: 120px;
+  height: 22px;
+}
+.erpui-record-placeholder[data-shape="badge"] {
+  width: 56px;
+  height: 22px;
+  border-radius: 5px;
+}
+.erpui-record-placeholder:is(
+  [data-shape="input"],
+  [data-shape="lookup"],
+  [data-shape="textarea"],
+  [data-shape="action"]
+) {
+  height: 36px;
+  border-radius: 6px;
+}
+.erpui-record-placeholder[data-shape="lookup"] {
+  height: 66px;
+}
+.erpui-record-placeholder[data-shape="textarea"] {
+  height: 88px;
+}
+.erpui-record-placeholder[data-shape="action"] {
+  width: 112px;
+}
+.erpui-form-loading-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.erpui-form-loading-field > span:first-child {
+  overflow-wrap: anywhere;
+}
+.erpui-table-loading-row.erpui-table-loading-row {
+  cursor: default;
+}
+.erpui-table-loading-row.erpui-table-loading-row:hover {
+  background: transparent;
+}

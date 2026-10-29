@@ -270,6 +270,10 @@
     "./source-navigation": {
       "types": "./dist/components/source-navigation/index.d.ts",
       "import": "./dist/source-navigation.js"
+    },
+    "./record-loading": {
+      "types": "./dist/components/record-loading/index.d.ts",
+      "import": "./dist/record-loading.js"
     }
   },
   "scripts": {
