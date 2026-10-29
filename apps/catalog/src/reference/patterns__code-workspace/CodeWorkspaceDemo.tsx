@@ -30,9 +30,7 @@ export function CodeWorkspaceDemo() {
             <CodeWorkspace.Header icon={<FolderOpen size={13} />}>
               パイプライン
             </CodeWorkspace.Header>
-            <CodeWorkspace.Header>
-              transformations
-            </CodeWorkspace.Header>
+            <CodeWorkspace.Header>transformations</CodeWorkspace.Header>
             <FileList>
               <FileListItem
                 name="pipeline.py"
@@ -108,6 +106,7 @@ export function CodeWorkspaceDemo() {
             {docked && (
               <CodeWorkspace.Panel width={width} aria-label="サンプルグラフ">
                 <ResizeHandle
+                  className="astw:absolute astw:-left-0.5 astw:inset-y-0 astw:z-10 astw:@max-[1100px]/workspace:hidden"
                   orientation="vertical"
                   aria-label="サンプルグラフの幅"
                   aria-valuemin={260}
@@ -143,7 +142,7 @@ export function CodeWorkspaceDemo() {
                 >
                   パイプライングラフ
                 </CodeWorkspace.Header>
-                <div className="astw:relative astw:flex astw:items-center astw:justify-center astw:overflow-hidden">
+                <div className="astw:relative astw:flex astw:min-h-64 astw:flex-1 astw:items-center astw:justify-center astw:overflow-hidden">
                   <div style={{ transform: `scale(${zoom / 100})` }}>
                     <WorkflowNode
                       title="sale_order"

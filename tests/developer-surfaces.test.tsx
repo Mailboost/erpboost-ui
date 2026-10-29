@@ -81,16 +81,18 @@ it("keeps the cell surface open while saving, and handles Escape and outside cli
     onClose: close,
     onKeyDown: key,
   };
-  const { rerender } = render(
+  const { rerender, unmount } = render(
     <CellEditor {...props} busy>
       <textarea aria-label="Value" />
     </CellEditor>,
   );
   const dialog = screen.getByRole("dialog");
-  expect(dialog.style.left).toBe(`${innerWidth - 304}px`);
   fireEvent.keyDown(dialog, { key: "Escape" });
-  fireEvent.pointerDown(document.body);
+  fireEvent.mouseDown(document.body);
+  fireEvent.mouseUp(document.body);
+  fireEvent.click(document.body);
   expect(close).not.toHaveBeenCalled();
+  key.mockClear();
   rerender(
     <CellEditor {...props}>
       <textarea aria-label="Value" />
@@ -102,7 +104,15 @@ it("keeps the cell surface open while saving, and handles Escape and outside cli
   expect(key).toHaveBeenCalledOnce();
   fireEvent.keyDown(dialog, { key: "Escape" });
   expect(close).toHaveBeenCalledOnce();
-  fireEvent.pointerDown(document.body);
+  unmount();
+  render(
+    <CellEditor {...props}>
+      <textarea aria-label="Reopened value" />
+    </CellEditor>,
+  );
+  fireEvent.mouseDown(document.body);
+  fireEvent.mouseUp(document.body);
+  fireEvent.click(document.body);
   expect(close).toHaveBeenCalledTimes(2);
 });
 it("renders logs literally and leaves resize keys controlled by the caller", () => {
@@ -141,9 +151,13 @@ it("treats portalled child controls as inside the cell editor", () => {
     screen.getByRole("button", { name: "Portalled option" }),
   );
   expect(close).not.toHaveBeenCalled();
-  fireEvent.pointerDown(document.body);
+  fireEvent.mouseDown(document.body);
+  fireEvent.mouseUp(document.body);
+  fireEvent.click(document.body);
   expect(close).toHaveBeenCalledOnce();
   unmount();
-  fireEvent.pointerDown(document.body);
+  fireEvent.mouseDown(document.body);
+  fireEvent.mouseUp(document.body);
+  fireEvent.click(document.body);
   expect(close).toHaveBeenCalledOnce();
 });

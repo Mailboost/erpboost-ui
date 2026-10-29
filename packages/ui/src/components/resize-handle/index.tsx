@@ -1,8 +1,9 @@
 import type { ComponentProps } from "react";
-/** Pointer and keyboard resizing remain controlled by the containing layout. */
+import { cn } from "@/lib/utils";
+/** The containing layout supplies values and pointer/keyboard handlers. */
 export function ResizeHandle({
   orientation,
-  className = "",
+  className,
   ...props
 }: Omit<ComponentProps<"div">, "role"> & {
   orientation: "horizontal" | "vertical";
@@ -14,7 +15,13 @@ export function ResizeHandle({
       role="separator"
       aria-orientation={orientation}
       data-slot="resize-handle"
-      className={`erpui-resize-handle ${className}`}
+      className={cn(
+        "astw:touch-none astw:shrink-0 astw:hover:bg-accent astw:focus-visible:bg-accent",
+        orientation === "horizontal"
+          ? "astw:h-1 astw:cursor-row-resize astw:border-y astw:border-border astw:bg-muted"
+          : "astw:w-1 astw:cursor-col-resize",
+        className,
+      )}
     />
   );
 }

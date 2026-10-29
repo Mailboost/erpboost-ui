@@ -106,7 +106,7 @@ try {
     import {Button} from "@mailboost/erpboost-ui/button";
     import {Input} from "@mailboost/erpboost-ui/input";
     import {LocaleProvider} from "@mailboost/erpboost-ui/locale-provider";
-    import {HeaderBar,SidebarPanel} from "@mailboost/erpboost-ui/shell-parts";
+    import {SidebarPanel} from "@mailboost/erpboost-ui/shell-parts";
     import {Skeleton} from "@mailboost/erpboost-ui/skeleton";
     import {EmptyState} from "@mailboost/erpboost-ui/empty-state";
     import {Pagination} from "@mailboost/erpboost-ui/pagination";
@@ -124,12 +124,12 @@ try {
     import {OptionCard} from "@mailboost/erpboost-ui/option-card";
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
-      <HeaderBar layout="context"><HeaderBar.Brand>ERP</HeaderBar.Brand><HeaderBar.Separator/><HeaderBar.ContextItem><HeaderBar.ContextTrigger>Org</HeaderBar.ContextTrigger></HeaderBar.ContextItem></HeaderBar>
+
       <SidebarPanel><SidebarPanel.Nav aria-label="Menu"><SidebarPanel.Label>Work</SidebarPanel.Label><SidebarPanel.Button active>Orders</SidebarPanel.Button></SidebarPanel.Nav><SidebarPanel.Footer><SidebarPanel.AccountTrigger><SidebarPanel.Identity name="Demo" description="Example"/></SidebarPanel.AccountTrigger></SidebarPanel.Footer></SidebarPanel>
       <Skeleton/><EmptyState title="No orders"><Button>Add</Button></EmptyState>
       <SearchField aria-label="Search" value="orders" onChange={()=>{}} clearLabel="Clear" onClear={()=>{}}/>
       <OptionCard title="Template" description="Use a template"/>
-      <CodeWorkspace.PageHeader title={<CodeWorkspace.TitleInput value="Sync" onChange={()=>{}}/>}><Button>Save</Button></CodeWorkspace.PageHeader><CodeWorkspace.CodeToolbar caption="Python"/>
+      <CodeWorkspace.PageHeader title={<Input value="Sync" onChange={()=>{}}/>}><Button>Save</Button></CodeWorkspace.PageHeader><CodeWorkspace.CodeToolbar caption="Python"/>
       <CodeWorkspace.Root><CodeWorkspace.Sidebar>Files</CodeWorkspace.Sidebar><CodeWorkspace.Main><CodeWorkspace.Editor><CodeEditor value="print(1)" disabled={false} onChange={()=>{}}/><CodeWorkspace.Results><CodeWorkspace.ResultsHeader>Logs</CodeWorkspace.ResultsHeader><CodeWorkspace.ResultsBody><LogViewer text="Loaded"/></CodeWorkspace.ResultsBody></CodeWorkspace.Results></CodeWorkspace.Editor><CodeWorkspace.Panel width={320}><CodeWorkspace.Header>Graph</CodeWorkspace.Header><GraphControls zoom={100} zoomOutLabel="Out" zoomInLabel="In" fitViewLabel="Fit" onZoomOut={()=>{}} onZoomIn={()=>{}} onFitView={()=>{}}/></CodeWorkspace.Panel></CodeWorkspace.Main></CodeWorkspace.Root>
       <FileList.Editor><Input aria-label="Filename"/><Button>Add file</Button></FileList.Editor><FileList><FileListItem name="pipeline.py" selected onSelect={()=>{}}/></FileList>
       <ResizeHandle orientation="horizontal" aria-label="Size"/><WorkflowNode title="orders" status={<StatusDot tone="success"/>}/>

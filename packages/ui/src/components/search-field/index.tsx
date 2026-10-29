@@ -20,7 +20,10 @@ export function SearchField({
   return (
     <div
       data-slot="search-field"
-      className={cn("erpui-search-field", className)}
+      className={cn(
+        "astw:flex astw:min-w-0 astw:flex-1 astw:items-center astw:gap-2",
+        className,
+      )}
     >
       <Search size={15} aria-hidden="true" />
       <Input {...props} ref={mergeRefs(input, ref)} />

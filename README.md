@@ -138,11 +138,11 @@ Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `typ
 
 This change adds components and their package entry points. Existing components, contexts, public entry points and catalogue examples stay unchanged. New examples are available at `/patterns/context-details` and `/patterns/code-workspace`.
 
-`HeaderBar` and `SidebarPanel` from `/shell-parts` compose existing controls for an application-owned shell. `/search-field`, `/option-card`, `/empty-state` and `/skeleton` provide search, template choices, empty states and decorative loading placeholders. `/pagination` adds controlled pagination without modifying DataTable.
+`SidebarPanel` from `/shell-parts` composes existing controls for application-owned navigation. Headers use the existing `ErpHeader` directly. `/search-field`, `/option-card`, `/empty-state` and `/skeleton` provide search, template choices, empty states and Tailwind animate-pulse placeholders. `/pagination` adds controlled pagination without modifying DataTable.
 
 `CodeWorkspace` from `/code-workspace` provides JSX regions for files, code, results and a graph panel. `/code-editor`, `/file-list`, `/log-viewer`, `/resize-handle` and `/graph-controls` add controlled editor and graph surfaces. `/cell-editor`, `/description-list`, `/status-dot` and `/workflow-node` provide editing overlays, label/value groups and status displays.
 
-Consumers own authentication, queries, selection, validation, saving and code execution. Existing components are used through their existing public API; no new Field, DatePicker, Layout or AppShell API is introduced.
+New components use the existing Card, Text, Button and Toolbar appearance. CellEditor uses Base UI Popover for positioning, focus and dismissal. Layout uses Tailwind utilities; no dedicated CSS or descendant decoration overrides are added. Consumers own authentication, queries, selection, validation, saving and code execution. Existing components are used through their existing public API; no new Field, DatePicker, Layout or AppShell API is introduced.
 
 ### ERPboost header
 

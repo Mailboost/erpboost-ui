@@ -1,5 +1,7 @@
 import type { ComponentProps, ReactNode } from "react";
-/** A step's card; the graph owns handles, layout and selection. */
+import { Card } from "../card";
+import { cn } from "@/lib/utils";
+/** Card appearance comes from the existing Card; the application owns the graph. */
 export function WorkflowNode({
   title,
   subtitle,
@@ -7,9 +9,9 @@ export function WorkflowNode({
   status,
   metric,
   children,
-  className = "",
+  className,
   ...props
-}: Omit<ComponentProps<"article">, "title"> & {
+}: Omit<ComponentProps<"div">, "title"> & {
   title: string;
   subtitle?: string;
   icon?: ReactNode;
@@ -17,21 +19,29 @@ export function WorkflowNode({
   metric?: ReactNode;
 }) {
   return (
-    <article
+    <Card.Root
       {...props}
       data-slot="workflow-node"
-      className={`erpui-workflow-node ${className}`}
+      className={cn("astw:w-64", className)}
     >
       {children}
-      <div className="erpui-workflow-node-title">
-        {icon}
-        <strong title={title}>{title}</strong>
-      </div>
-      <div className="erpui-workflow-node-subtitle">{subtitle}</div>
-      <div className="erpui-workflow-node-status">
-        {status}
-        {metric && <span>{metric}</span>}
-      </div>
-    </article>
+      <Card.Header
+        title={
+          <span className="astw:flex astw:min-w-0 astw:items-center astw:gap-2">
+            {icon}
+            <span className="astw:truncate" title={title}>
+              {title}
+            </span>
+          </span>
+        }
+        description={subtitle}
+      />
+      <Card.Content>
+        <div className="astw:flex astw:items-center astw:gap-2">
+          {status}
+          {metric && <span className="astw:ml-auto">{metric}</span>}
+        </div>
+      </Card.Content>
+    </Card.Root>
   );
 }

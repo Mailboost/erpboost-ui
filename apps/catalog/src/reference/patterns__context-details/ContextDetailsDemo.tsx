@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Boxes, Box, FileCode2, RefreshCw, Eye, EyeOff } from "lucide-react";
 import {
-  HeaderBar,
+  ErpHeader,
+  Skeleton,
   Card,
   OptionCard,
   Table,
@@ -33,15 +34,13 @@ export function ContextDetailsDemo() {
   const [title, setTitle] = useState("APIから受注を取得");
   return (
     <div style={{ height: "100%", minHeight: 520, overflow: "auto" }}>
-      <HeaderBar layout="context">
-        <HeaderBar.Brand>
-          <Box size={24} aria-label="ERPboost" />
-        </HeaderBar.Brand>
-        <HeaderBar.Separator />
-        <HeaderBar.ContextItem>
-          {loading ? (
-            <HeaderBar.ContextLoading
-              aria-label="組織を読み込んでいます"
+      <ErpHeader
+        aria-label="ERPboost"
+        brand={<Box size={24} aria-label="ERPboost" />}
+        organization={
+          loading ? (
+            <ErpHeader.Loading
+              label="組織を読み込んでいます"
               icon={<Boxes size={17} />}
             />
           ) : (
@@ -52,7 +51,7 @@ export function ContextDetailsDemo() {
             >
               <Combobox.Parts.Trigger
                 aria-label="組織を切り替え"
-                render={<HeaderBar.ContextTrigger icon={<Boxes size={17} />} />}
+                render={<ErpHeader.Trigger icon={<Boxes size={17} />} />}
               >
                 {organization}
               </Combobox.Parts.Trigger>
@@ -67,15 +66,21 @@ export function ContextDetailsDemo() {
                 </Combobox.Parts.List>
               </Combobox.Parts.Content>
             </Combobox.Parts.Root>
-          )}
-        </HeaderBar.ContextItem>
-        <HeaderBar.Separator />
-        <HeaderBar.ContextItem>
-          <HeaderBar.ContextTrigger icon={<Box size={17} />} disabled>
-            検証用ERP接続
-          </HeaderBar.ContextTrigger>
-        </HeaderBar.ContextItem>
-      </HeaderBar>
+          )
+        }
+        connection={
+          loading ? (
+            <ErpHeader.Loading
+              label="ERP接続を読み込んでいます"
+              icon={<Box size={17} />}
+            />
+          ) : (
+            <ErpHeader.Trigger icon={<Box size={17} />} disabled>
+              検証用ERP接続
+            </ErpHeader.Trigger>
+          )
+        }
+      />
       <div style={{ display: "flex", minHeight: 520 }}>
         <SidebarPanel style={{ width: 176, flexShrink: 0 }}>
           <SidebarPanel.Nav aria-label="サンプルのメニュー">
@@ -126,7 +131,7 @@ export function ContextDetailsDemo() {
           </Toolbar.Row>
           <CodeWorkspace.PageHeader
             title={
-              <CodeWorkspace.TitleInput
+              <Input
                 aria-label="サンプルの連携名"
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
@@ -148,6 +153,11 @@ export function ContextDetailsDemo() {
             onCheckedChange={setLoading}
             aria-label="読み込み表示を確認"
           />
+          {loading && (
+            <div role="status" aria-label="スケルトンの表示例">
+              <Skeleton />
+            </div>
+          )}
           <Card.Root>
             <Card.Header
               title="基本情報"

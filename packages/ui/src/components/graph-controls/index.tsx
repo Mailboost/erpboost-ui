@@ -4,6 +4,7 @@ import { Button } from "../button";
 import { Toolbar } from "../toolbar";
 import { Tooltip } from "../tooltip";
 import { cn } from "../../lib/utils";
+import { Text } from "../text";
 
 export type GraphControlsProps = Omit<
   ComponentProps<typeof Toolbar.Row>,
@@ -41,63 +42,69 @@ export function GraphControls({
   ...props
 }: GraphControlsProps) {
   return (
-    <Toolbar.Row
-      {...props}
-      data-slot="graph-controls"
-      className={cn("erpui-graph-controls", className)}
-    >
-      {children}
-      <Tooltip.Root>
-        <Tooltip.Trigger
-          render={
-            <Button
-              variant="ghost"
-              size="sm"
-              type="button"
-              aria-label={zoomOutLabel}
-              disabled={zoom <= minZoom}
-              onClick={onZoomOut}
-            >
-              <Minus size={14} />
-            </Button>
-          }
-        />
-        <Tooltip.Content container={container}>{zoomOutLabel}</Tooltip.Content>
-      </Tooltip.Root>
-      {zoomDisplay ?? <span className="erpui-graph-scale">{zoom}%</span>}
-      <Tooltip.Root>
-        <Tooltip.Trigger
-          render={
-            <Button
-              variant="ghost"
-              size="sm"
-              type="button"
-              aria-label={zoomInLabel}
-              disabled={zoom >= maxZoom}
-              onClick={onZoomIn}
-            >
-              <Plus size={14} />
-            </Button>
-          }
-        />
-        <Tooltip.Content container={container}>{zoomInLabel}</Tooltip.Content>
-      </Tooltip.Root>
-      <Tooltip.Root>
-        <Tooltip.Trigger
-          render={
-            <Button
-              variant="ghost"
-              size="sm"
-              type="button"
-              aria-label={fitViewLabel}
-              onClick={onFitView}
-            >
-              <Maximize2 size={14} />
-            </Button>
-          }
-        />
-        <Tooltip.Content container={container}>{fitViewLabel}</Tooltip.Content>
-      </Tooltip.Root>
-    </Toolbar.Row>
+    <Toolbar.Root className={className} data-slot="graph-controls">
+      <Toolbar.Row {...props} className={cn("astw:shrink-0")}>
+        {children}
+        <Tooltip.Root>
+          <Tooltip.Trigger
+            render={
+              <Button
+                variant="ghost"
+                size="sm"
+                type="button"
+                aria-label={zoomOutLabel}
+                disabled={zoom <= minZoom}
+                onClick={onZoomOut}
+              >
+                <Minus size={14} />
+              </Button>
+            }
+          />
+          <Tooltip.Content container={container}>
+            {zoomOutLabel}
+          </Tooltip.Content>
+        </Tooltip.Root>
+        {zoomDisplay ?? (
+          <Text variant="label-sm" className="astw:tabular-nums">
+            {zoom}%
+          </Text>
+        )}
+        <Tooltip.Root>
+          <Tooltip.Trigger
+            render={
+              <Button
+                variant="ghost"
+                size="sm"
+                type="button"
+                aria-label={zoomInLabel}
+                disabled={zoom >= maxZoom}
+                onClick={onZoomIn}
+              >
+                <Plus size={14} />
+              </Button>
+            }
+          />
+          <Tooltip.Content container={container}>{zoomInLabel}</Tooltip.Content>
+        </Tooltip.Root>
+        <Tooltip.Root>
+          <Tooltip.Trigger
+            render={
+              <Button
+                variant="ghost"
+                size="sm"
+                type="button"
+                aria-label={fitViewLabel}
+                onClick={onFitView}
+              >
+                <Maximize2 size={14} />
+              </Button>
+            }
+          />
+          <Tooltip.Content container={container}>
+            {fitViewLabel}
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Toolbar.Row>
+    </Toolbar.Root>
   );
 }

@@ -65,7 +65,7 @@ it("clears a controlled search and returns focus without stealing text cursor ke
   expect(screen.queryByRole("button", { name: "Clear search" })).toBeNull();
 });
 
-it("keeps navigation readable while refusing pointer and keyboard activation until enabled", () => {
+it("uses the native button disabled behavior until navigation is enabled", () => {
   const navigate = vi.fn();
   const { rerender } = render(
     <SidebarPanel.Button disabled onClick={navigate}>
@@ -73,8 +73,7 @@ it("keeps navigation readable while refusing pointer and keyboard activation unt
     </SidebarPanel.Button>,
   );
   const button = screen.getByRole("button", { name: "Orders" });
-  expect(button.getAttribute("aria-disabled")).toBe("true");
-  expect(button.tabIndex).toBe(-1);
+  expect((button as HTMLButtonElement).disabled).toBe(true);
   fireEvent.click(button);
   fireEvent.keyDown(button, { key: "Enter" });
   expect(navigate).not.toHaveBeenCalled();

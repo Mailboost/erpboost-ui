@@ -366,7 +366,7 @@ export { ErdDiagram, type ErdDiagramProps, buildErdGraph, type ErdSchema, type E
 export { Pagination, type PaginationProps } from "./components/pagination";
 
 export { Skeleton } from "./components/skeleton";
-export { HeaderBar, SidebarPanel } from "./components/shell-parts";
+export { SidebarPanel } from "./components/shell-parts";
 
 export { EmptyState, type EmptyStateProps } from "./components/empty-state";
 

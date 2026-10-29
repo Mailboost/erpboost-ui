@@ -1,14 +1,11 @@
-import {
-  useEffect,
-  useId,
-  useRef,
-  type ComponentProps,
-  type ReactNode,
-} from "react";
-import { createPortal } from "react-dom";
+import { useMemo, useRef, type ComponentProps, type ReactNode } from "react";
+import { Popover } from "@base-ui/react/popover";
 import { X } from "lucide-react";
 import { Button } from "../button";
-/** Anchored editing surface. Parsing, validation and persistence belong to the caller. */
+import { Card } from "../card";
+import { cn } from "@/lib/utils";
+
+/** Standard Popover behavior and Card appearance; saving belongs to the caller. */
 export function CellEditor({
   anchor,
   container,
@@ -19,7 +16,7 @@ export function CellEditor({
   onClose,
   actions,
   children,
-  className = "",
+  className,
   ...props
 }: Omit<ComponentProps<"div">, "title"> & {
   anchor: { left: number; top: number };
@@ -31,84 +28,82 @@ export function CellEditor({
   onClose: () => void;
   actions?: ReactNode;
 }) {
-  const titleId = useId();
-  const ref = useRef<HTMLDivElement>(null);
-  const insidePointer = useRef<Event | null>(null);
-  useEffect(() => {
-    const document = container.ownerDocument;
-    const outside = (event: PointerEvent) => {
-      const fromChildPortal = insidePointer.current === event;
-      insidePointer.current = null;
-      if (
-        !busy &&
-        !fromChildPortal &&
-        !ref.current?.contains(event.target as Node)
-      )
-        onClose();
-    };
-    document.addEventListener("pointerdown", outside);
-    return () => document.removeEventListener("pointerdown", outside);
-  }, [container, busy, onClose]);
-  return createPortal(
-    <div
-      {...props}
-      ref={ref}
-      role="dialog"
-      aria-labelledby={titleId}
-      aria-busy={busy}
-      data-slot="cell-editor"
-      className={`erpui-cell-editor ${className}`}
-      style={{
-        left: Math.max(
-          8,
-          Math.min(
-            anchor.left,
-            (container.ownerDocument.defaultView?.innerWidth ?? 1024) - 304,
-          ),
-        ),
-        top: Math.max(
-          8,
-          Math.min(
-            anchor.top,
-            (container.ownerDocument.defaultView?.innerHeight ?? 768) - 326,
-          ),
-        ),
-        ...props.style,
-      }}
-      onPointerDownCapture={(event) => {
-        // React events retain their ancestry through child portals (e.g. Select).
-        insidePointer.current = event.nativeEvent;
-        props.onPointerDownCapture?.(event);
-      }}
-      onKeyDown={(event) => {
-        if (event.key === "Escape") {
-          event.preventDefault();
-          event.stopPropagation();
-          if (!busy) onClose();
-        } else props.onKeyDown?.(event);
+  const returnFocus = useRef(
+    container.ownerDocument.activeElement as HTMLElement | null,
+  );
+  const position = useMemo(
+    () => ({
+      getBoundingClientRect: () => new DOMRect(anchor.left, anchor.top, 0, 0),
+    }),
+    [anchor.left, anchor.top],
+  );
+  return (
+    <Popover.Root
+      open
+      onOpenChange={(open, details) => {
+        if (!open) {
+          if (busy) details.cancel();
+          else onClose();
+        }
       }}
     >
-      <header className="erpui-cell-editor-title">
-        <span id={titleId}>
-          {title}
-          <small>{description}</small>
-        </span>
-        <Button
-          variant="ghost"
-          size="sm"
-          type="button"
-          aria-label={closeLabel}
-          disabled={busy}
-          onClick={onClose}
+      <Popover.Portal
+        container={container}
+        style={{ position: "relative", zIndex: "var(--z-popup)" }}
+      >
+        <Popover.Positioner
+          anchor={position}
+          side="bottom"
+          align="start"
+          collisionPadding={8}
+          positionMethod="fixed"
         >
-          <X size={13} />
-        </Button>
-      </header>
-      {children}
-      {actions && (
-        <footer className="erpui-cell-editor-actions">{actions}</footer>
-      )}
-    </div>,
-    container,
+          <Popover.Popup
+            {...props}
+            data-slot="cell-editor"
+            aria-busy={busy}
+            finalFocus={returnFocus}
+            render={<Card.Root />}
+            className={cn("astw:w-72 astw:max-w-[calc(100vw-1rem)]", className)}
+          >
+            <Card.Header
+              title={
+                <span className="astw:flex astw:items-center astw:justify-between astw:gap-2">
+                  <Popover.Title render={<span />}>{title}</Popover.Title>
+                  <Popover.Close
+                    render={
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        disabled={busy}
+                        aria-label={closeLabel}
+                      >
+                        <X />
+                      </Button>
+                    }
+                  />
+                </span>
+              }
+              description={
+                description ? (
+                  <Popover.Description render={<span />}>
+                    {description}
+                  </Popover.Description>
+                ) : undefined
+              }
+            />
+            <Card.Content>{children}</Card.Content>
+            {actions && (
+              <Card.Content>
+                <div className="astw:flex astw:items-center astw:justify-between astw:gap-2">
+                  {actions}
+                </div>
+              </Card.Content>
+            )}
+          </Popover.Popup>
+        </Popover.Positioner>
+      </Popover.Portal>
+    </Popover.Root>
   );
 }

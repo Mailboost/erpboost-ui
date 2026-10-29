@@ -1,21 +1,26 @@
 import type { ComponentProps, ReactNode } from "react";
+import { Text } from "../text";
+import { cn } from "@/lib/utils";
 export function LogViewer({
   text,
   empty,
-  className = "",
+  className,
   ...props
 }: Omit<ComponentProps<"pre">, "children"> & {
   text?: string | null;
   empty?: ReactNode;
 }) {
   return text ? (
-    <pre
-      {...props}
-      data-slot="log-viewer"
-      className={`erpui-log-viewer ${className}`}
+    <Text
+      variant="code-sm"
+      className={cn(
+        "astw:m-0 astw:whitespace-pre-wrap astw:wrap-anywhere astw:p-4",
+        className,
+      )}
+      render={<pre {...props} data-slot="log-viewer" />}
     >
       {text}
-    </pre>
+    </Text>
   ) : (
     <>{empty}</>
   );

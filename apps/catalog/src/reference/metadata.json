@@ -1841,7 +1841,7 @@
     "do": "Compose explicit JSX and keep selection, authentication and persistence in the consuming app.",
     "dont": "Generate forms from schema or move business operations into presentation components.",
     "primitives": [
-      "HeaderBar",
+      "ErpHeader",
       "Card",
       "OptionCard",
       "Table",

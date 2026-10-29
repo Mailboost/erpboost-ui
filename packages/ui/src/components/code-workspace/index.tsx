@@ -1,6 +1,4 @@
 import type { ComponentProps, CSSProperties, ReactNode } from "react";
-import { Button, type ButtonProps } from "../button";
-import { Input, type InputProps } from "../input";
 import { Text } from "../text";
 import { Toolbar } from "../toolbar";
 import { cn } from "../../lib/utils";
@@ -11,7 +9,10 @@ function Root({ className, ...props }: ComponentProps<"div">) {
     <div
       {...props}
       data-slot="code-workspace"
-      className={cn("erpui-code-workspace", className)}
+      className={cn(
+        "astw:@container/workspace astw:flex astw:min-h-0 astw:min-w-0 astw:flex-1",
+        className,
+      )}
     />
   );
 }
@@ -20,7 +21,10 @@ function Sidebar({ className, ...props }: ComponentProps<"aside">) {
     <aside
       {...props}
       data-slot="code-workspace-sidebar"
-      className={cn("erpui-code-workspace-sidebar", className)}
+      className={cn(
+        "astw:w-48 astw:shrink-0 astw:overflow-auto astw:border-r astw:border-border astw:bg-muted astw:p-4 astw:@max-[1150px]/workspace:w-40",
+        className,
+      )}
     />
   );
 }
@@ -29,7 +33,10 @@ function Main({ className, ...props }: ComponentProps<"div">) {
     <div
       {...props}
       data-slot="code-workspace-main"
-      className={cn("erpui-code-workspace-main", className)}
+      className={cn(
+        "astw:flex astw:min-h-0 astw:min-w-0 astw:flex-1 astw:@max-[1100px]/workspace:flex-col",
+        className,
+      )}
     />
   );
 }
@@ -38,7 +45,10 @@ function Editor({ className, ...props }: ComponentProps<"div">) {
     <div
       {...props}
       data-slot="code-workspace-editor"
-      className={cn("erpui-code-workspace-editor", className)}
+      className={cn(
+        "astw:flex astw:min-h-0 astw:min-w-0 astw:flex-1 astw:flex-col astw:bg-background",
+        className,
+      )}
     />
   );
 }
@@ -47,7 +57,10 @@ function EditorTabs({ className, ...props }: ComponentProps<"div">) {
     <div
       {...props}
       data-slot="code-workspace-editor-tabs"
-      className={cn("erpui-code-workspace-editor-tabs", className)}
+      className={cn(
+        "astw:flex astw:shrink-0 astw:items-center astw:overflow-x-auto astw:border-b astw:border-border astw:bg-muted",
+        className,
+      )}
     />
   );
 }
@@ -56,7 +69,10 @@ function Results({ className, ...props }: ComponentProps<"section">) {
     <section
       {...props}
       data-slot="code-workspace-results"
-      className={cn("erpui-code-workspace-results", className)}
+      className={cn(
+        "astw:flex astw:min-h-32 astw:max-h-[48vh] astw:shrink-0 astw:flex-col",
+        className,
+      )}
     />
   );
 }
@@ -70,11 +86,19 @@ function ResultsHeader({
     <div
       {...props}
       data-slot="code-workspace-results-header"
-      className={cn("erpui-code-workspace-results-header", className)}
+      className={cn(
+        "astw:flex astw:shrink-0 astw:items-center astw:gap-2 astw:overflow-x-auto astw:border-b astw:border-border astw:px-4 astw:py-2",
+        className,
+      )}
     >
       {children}
       {actions && (
-        <div data-slot="code-workspace-results-actions">{actions}</div>
+        <div
+          data-slot="code-workspace-results-actions"
+          className="astw:ml-auto astw:flex astw:shrink-0 astw:items-center astw:gap-2"
+        >
+          {actions}
+        </div>
       )}
     </div>
   );
@@ -90,7 +114,13 @@ function ResultsBody({
       {...props}
       data-slot="code-workspace-results-body"
       data-graph={graph || undefined}
-      className={cn("erpui-code-workspace-results-body", className)}
+      className={cn(
+        "astw:min-h-0 astw:flex-1",
+        graph
+          ? "astw:flex astw:flex-col astw:overflow-hidden"
+          : "astw:overflow-auto",
+        className,
+      )}
     />
   );
 }
@@ -104,7 +134,10 @@ function Panel({
     <aside
       {...props}
       data-slot="code-workspace-panel"
-      className={cn("erpui-code-workspace-panel", className)}
+      className={cn(
+        "astw:relative astw:flex astw:min-h-0 astw:w-(--code-workspace-panel-width) astw:max-w-[55%] astw:shrink-0 astw:flex-col astw:border-l astw:border-border astw:bg-muted astw:@max-[1100px]/workspace:h-64 astw:@max-[1100px]/workspace:w-full astw:@max-[1100px]/workspace:max-w-none astw:@max-[1100px]/workspace:border-t astw:@max-[1100px]/workspace:border-l-0",
+        className,
+      )}
       style={
         {
           "--code-workspace-panel-width": `${width}px`,
@@ -128,14 +161,26 @@ function Header({
     <div
       {...props}
       data-slot="code-workspace-header"
-      className={cn("erpui-code-workspace-header", className)}
+      className={cn(
+        "astw:flex astw:shrink-0 astw:items-center astw:gap-2 astw:border-b astw:border-border astw:p-4",
+        className,
+      )}
     >
       {icon}
-      <Text variant="label-sm" render={<span />}>
+      <Text
+        variant="label-sm"
+        className="astw:min-w-0 astw:flex-1"
+        render={<span />}
+      >
         {children}
       </Text>
       {actions && (
-        <div data-slot="code-workspace-header-actions">{actions}</div>
+        <div
+          data-slot="code-workspace-header-actions"
+          className="astw:flex astw:items-center astw:gap-2"
+        >
+          {actions}
+        </div>
       )}
     </div>
   );
@@ -154,30 +199,27 @@ function PageHeader({
   return (
     <div
       data-slot="code-workspace-page-header"
-      className={cn("erpui-code-page-header", className)}
+      className={cn(
+        "astw:flex astw:shrink-0 astw:flex-wrap astw:items-center astw:gap-3 astw:border-b astw:border-border astw:px-4 astw:py-2",
+        className,
+      )}
       {...props}
     >
-      <div data-slot="code-workspace-title-group">{title}</div>
-      <div data-slot="code-workspace-page-actions" ref={actionsRef}>
+      <div
+        data-slot="code-workspace-title-group"
+        className="astw:flex astw:min-w-0 astw:items-center astw:gap-2"
+      >
+        {title}
+      </div>
+      <div
+        data-slot="code-workspace-page-actions"
+        className="astw:flex astw:min-w-0 astw:flex-1 astw:flex-wrap astw:items-center astw:gap-3"
+        ref={actionsRef}
+      >
         {children}
       </div>
     </div>
   );
-}
-function TitleTrigger({ className, ...props }: ButtonProps) {
-  return (
-    <Button
-      type="button"
-      variant="ghost"
-      {...props}
-      className={cn("erpui-code-title-trigger", className)}
-    />
-  );
-}
-function TitleInput(
-  props: Omit<InputProps, "value" | "type"> & { value: string },
-) {
-  return <Input {...props} />;
 }
 function CodeToolbar({
   caption,
@@ -188,18 +230,26 @@ function CodeToolbar({
   actions?: ReactNode;
 }) {
   return (
-    <Toolbar.Row {...props} data-slot="code-workspace-code-toolbar">
-      <Text variant="label-sm" render={<span />}>
-        {caption}
-      </Text>
-      {actions}
-    </Toolbar.Row>
+    <div className="astw:shrink-0 astw:px-4 astw:py-2">
+      <Toolbar.Row
+        justify="between"
+        {...props}
+        data-slot="code-workspace-code-toolbar"
+      >
+        <Text
+          variant="label-sm"
+          className="astw:min-w-0 astw:flex-1"
+          render={<span />}
+        >
+          {caption}
+        </Text>
+        {actions}
+      </Toolbar.Row>
+    </div>
   );
 }
 export const CodeWorkspace = {
   PageHeader,
-  TitleTrigger,
-  TitleInput,
   CodeToolbar,
   Root,
   Sidebar,
