@@ -26,6 +26,10 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "management-layout": "src/components/management-layout/index.tsx",
+        "status-notice": "src/components/status-notice/index.tsx",
+        "template-picker": "src/components/template-picker/index.tsx",
+
         "workspace-frame": "src/components/workspace-frame/index.tsx",
         "resize-control": "src/components/resize-control/index.tsx",
         "inline-create": "src/components/inline-create/index.tsx",

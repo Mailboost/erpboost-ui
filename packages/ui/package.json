@@ -226,6 +226,18 @@
     "./data-preview": {
       "types": "./dist/components/data-preview/index.d.ts",
       "import": "./dist/data-preview.js"
+    },
+    "./management-layout": {
+      "types": "./dist/components/management-layout/index.d.ts",
+      "import": "./dist/management-layout.js"
+    },
+    "./status-notice": {
+      "types": "./dist/components/status-notice/index.d.ts",
+      "import": "./dist/status-notice.js"
+    },
+    "./template-picker": {
+      "types": "./dist/components/template-picker/index.d.ts",
+      "import": "./dist/template-picker.js"
     }
   },
   "scripts": {

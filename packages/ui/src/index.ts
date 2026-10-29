@@ -405,3 +405,7 @@ export * from "./components/workspace-frame";
 export * from "./components/resize-control";
 export * from "./components/inline-create";
 export * from "./components/data-preview";
+
+export * from "./components/management-layout";
+export * from "./components/status-notice";
+export * from "./components/template-picker";
