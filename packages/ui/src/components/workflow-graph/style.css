@@ -31,7 +31,7 @@
   background: white;
   border: 1px solid #9cabbf;
 }
-.erpui-workflow-graph-controls {
+.erpui-workflow-graph .erpui-workflow-graph-controls {
   position: absolute;
   width: max-content;
   max-width: calc(100% - 24px);

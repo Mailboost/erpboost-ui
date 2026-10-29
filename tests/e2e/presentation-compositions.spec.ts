@@ -104,8 +104,9 @@ for (const viewport of [
         .poll(() =>
           controls.evaluate(
             (el) =>
+              el.getBoundingClientRect().width <= 360 &&
               el.getBoundingClientRect().width <
-              el.parentElement!.getBoundingClientRect().width,
+                el.parentElement!.getBoundingClientRect().width,
           ),
         )
         .toBe(true);
