@@ -95,6 +95,70 @@
       "types": "./dist/components/database-workspace/index.d.ts",
       "import": "./dist/database-workspace.js"
     },
+    "./pagination": {
+      "types": "./dist/components/pagination/index.d.ts",
+      "import": "./dist/pagination.js"
+    },
+    "./skeleton": {
+      "types": "./dist/components/skeleton/index.d.ts",
+      "import": "./dist/skeleton.js"
+    },
+    "./shell-parts": {
+      "types": "./dist/components/shell-parts/index.d.ts",
+      "import": "./dist/shell-parts.js"
+    },
+    "./empty-state": {
+      "types": "./dist/components/empty-state/index.d.ts",
+      "import": "./dist/empty-state.js"
+    },
+    "./status-dot": {
+      "types": "./dist/components/status-dot/index.d.ts",
+      "import": "./dist/status-dot.js"
+    },
+    "./resize-handle": {
+      "types": "./dist/components/resize-handle/index.d.ts",
+      "import": "./dist/resize-handle.js"
+    },
+    "./log-viewer": {
+      "types": "./dist/components/log-viewer/index.d.ts",
+      "import": "./dist/log-viewer.js"
+    },
+    "./file-list": {
+      "types": "./dist/components/file-list/index.d.ts",
+      "import": "./dist/file-list.js"
+    },
+    "./workflow-node": {
+      "types": "./dist/components/workflow-node/index.d.ts",
+      "import": "./dist/workflow-node.js"
+    },
+    "./cell-editor": {
+      "types": "./dist/components/cell-editor/index.d.ts",
+      "import": "./dist/cell-editor.js"
+    },
+    "./code-editor": {
+      "types": "./dist/components/code-editor/index.d.ts",
+      "import": "./dist/code-editor.js"
+    },
+    "./description-list": {
+      "types": "./dist/components/description-list/index.d.ts",
+      "import": "./dist/description-list.js"
+    },
+    "./code-workspace": {
+      "types": "./dist/components/code-workspace/index.d.ts",
+      "import": "./dist/code-workspace.js"
+    },
+    "./graph-controls": {
+      "types": "./dist/components/graph-controls/index.d.ts",
+      "import": "./dist/graph-controls.js"
+    },
+    "./option-card": {
+      "types": "./dist/components/option-card/index.d.ts",
+      "import": "./dist/option-card.js"
+    },
+    "./search-field": {
+      "types": "./dist/components/search-field/index.d.ts",
+      "import": "./dist/search-field.js"
+    },
     "./erp-header": {
       "types": "./dist/components/erp-header/index.d.ts",
       "import": "./dist/erp-header.js"
@@ -123,7 +187,12 @@
     "react-router": "^8.3.0",
     "sonner": "^2.0.8",
     "tailwind-merge": "^3.6.0",
-    "tw-animate-css": "1.4.0"
+    "tw-animate-css": "1.4.0",
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-python": "^6.2.1",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.14"
   },
   "peerDependencies": {
     "react": ">=19.2.7",

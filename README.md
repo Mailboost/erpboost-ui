@@ -134,6 +134,16 @@ import { ErdDiagram } from "@mailboost/erpboost-ui/erd-diagram";
 
 Tables have `name`, optional `label`, `primaryKeys`, and `columns` (`name`, `type`, optional `label`/`required`). Relations connect `fromTable`/`fromField` to `toTable`/`toField` with optional `optional` nullability. The component provides search, key filtering, auto layout, pan/zoom and a minimap. The application supplies authorized schema data and owns table navigation. Use `LocaleProvider` for standalone labels and `portalContainer` when popups need an application-owned container. The database workspace catalogue includes a working diagram example.
 
+### Additional ERPboost components
+
+This change adds components and their package entry points. Existing components, contexts, public entry points and catalogue examples stay unchanged. New examples are available at `/patterns/context-details` and `/patterns/code-workspace`.
+
+`SidebarPanel` from `/shell-parts` composes existing controls for application-owned navigation. Headers use the existing `ErpHeader` directly. `/search-field`, `/option-card`, `/empty-state` and `/skeleton` provide search, template choices, empty states and Tailwind animate-pulse placeholders. `/pagination` adds controlled pagination without modifying DataTable.
+
+`CodeWorkspace` from `/code-workspace` provides JSX regions for files, code, results and a graph panel. `/code-editor`, `/file-list`, `/log-viewer`, `/resize-handle` and `/graph-controls` add controlled editor and graph surfaces. `/cell-editor`, `/description-list`, `/status-dot` and `/workflow-node` provide editing overlays, label/value groups and status displays.
+
+New components use the existing Card, Text, Button and Toolbar appearance. CellEditor uses Base UI Popover for positioning, focus and dismissal. Layout uses Tailwind utilities; no dedicated CSS or descendant decoration overrides are added. Consumers own authentication, queries, selection, validation, saving and code execution. Existing components are used through their existing public API; no new Field, DatePicker, Layout or AppShell API is introduced.
+
 ### ERPboost header
 
 `ErpHeader` from `@mailboost/erpboost-ui/erp-header` displays fixed `brand`, `organization` and `connection` JSX slots. Pass `ErpHeader.Trigger` to the existing `Combobox.Parts.Trigger` render prop; `ErpHeader.Loading` supplies an accessible loading placeholder with reduced-motion support. Layout and loading placeholders use the existing `astw:` Tailwind utilities, including `animate-pulse` and `motion-reduce:animate-none`; no dedicated CSS is required. Selection, permissions, loading and API requests remain in the app. Existing GlobalHeader, Button and Combobox implementations are unchanged. See `/patterns/erp-header` for a controlled example.

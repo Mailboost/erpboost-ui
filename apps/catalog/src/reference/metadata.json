@@ -1,19 +1,21 @@
 {
-  "/patterns/erp-header": {
-    "description": "Switch organization and ERP connection without an AppShell dependency.",
-    "do": "Keep authorization, data loading and selection state in the consuming application.",
-    "dont": "Change the existing GlobalHeader or put authentication and API clients into this header.",
+  "/patterns/code-workspace": {
+    "description": "Compose files, code, results and a graph panel with explicit JSX regions.",
+    "do": "Keep file, execution and resizing state in the consuming application.",
+    "dont": "Put API clients or a screen-definition engine into the layout.",
     "primitives": [
-      "ErpHeader",
-      "Combobox",
-      "Button"
+      "CodeWorkspace",
+      "CodeEditor",
+      "GraphControls",
+      "Dialog",
+      "Sheet"
     ],
     "ja": {
-      "title": "ERPboostヘッダー",
+      "title": "コードと実行結果の作業画面",
       "paragraphs": [
-        "ロゴ・組織・ERP接続を固定構成で表示します。",
-        "権限・データ取得・選択状態はアプリ側で管理します。",
-        "既存GlobalHeaderを変更したり、認証・APIをヘッダーへ持ち込んだりしません。"
+        "ファイル・コード・実行結果・グラフをJSXの領域で組み立てます。",
+        "ファイル・実行・リサイズの状態はアプリ側で制御します。",
+        "APIクライアントや画面定義エンジンはレイアウトに持ち込みません。"
       ],
       "sections": []
     }
@@ -1832,6 +1834,54 @@
       ],
       "sections": [],
       "title": "パターン"
+    }
+  },
+  "/patterns/context-details": {
+    "description": "Controlled context header, compact cards, option buttons and database grid decoration.",
+    "do": "Compose explicit JSX and keep selection, authentication and persistence in the consuming app.",
+    "dont": "Generate forms from schema or move business operations into presentation components.",
+    "primitives": [
+      "ErpHeader",
+      "Card",
+      "OptionCard",
+      "Table",
+      "Field",
+      "Combobox",
+      "SidebarPanel",
+      "SearchField",
+      "Badge",
+      "CodeWorkspace",
+      "Fieldset",
+      "FileList"
+    ],
+    "ja": {
+      "title": "コンテキストと詳細表示",
+      "paragraphs": [
+        "組織・接続のヘッダー、詳細セクション、選択カード、DBの列表示をJSXで組み立てます。",
+        "選択状態・認証・保存処理はアプリ側で制御します。",
+        "ナビゲーション・アカウント欄・検索欄とクリア操作・編集可能な連携名も共通部品で組み立てます。",
+        "Fieldの入力枠、Fieldsetのセクション、制約バッジ、ファイル名入力、読み取り専用のプレビュー表も既存部品で組み立てます。"
+      ],
+      "sections": []
+    }
+  },
+  "/patterns/erp-header": {
+    "description": "Switch organization and ERP connection without an AppShell dependency.",
+    "do": "Keep authorization, data loading and selection state in the consuming application.",
+    "dont": "Change the existing GlobalHeader or put authentication and API clients into this header.",
+    "primitives": [
+      "ErpHeader",
+      "Combobox",
+      "Button"
+    ],
+    "ja": {
+      "title": "ERPboostヘッダー",
+      "paragraphs": [
+        "ロゴ・組織・ERP接続を固定構成で表示します。",
+        "権限・データ取得・選択状態はアプリ側で管理します。",
+        "既存GlobalHeaderを変更したり、認証・APIをヘッダーへ持ち込んだりしません。"
+      ],
+      "sections": []
     }
   }
 }

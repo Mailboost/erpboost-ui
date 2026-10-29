@@ -13,6 +13,15 @@ const clean = (source: string) =>
     ? source.slice(source.indexOf(String.fromCharCode(10)) + 1)
     : source;
 const resources: Record<string, Demo[]> = {
+  "patterns/context-details": [{name:"Context and details",description:"Additional context header, navigation, search and template choices.",heading:"",screen:false,
+    Component:lazy(async()=>{const module=await import("./patterns__context-details/ContextDetailsDemo");return {default:module.ContextDetailsDemo};}),
+    source:files["./patterns__context-details/ContextDetailsDemo.tsx"],sources:[{filename:"ContextDetailsDemo.tsx",markdownFilename:"ContextDetailsDemo.tsx",source:files["./patterns__context-details/ContextDetailsDemo.tsx"]}]}],
+  "patterns/code-workspace": [{name:"Code workspace",description:"Controlled code/results layout and graph controls.",heading:"",screen:false,
+    Component:lazy(async()=>{const module=await import("./patterns__code-workspace/CodeWorkspaceDemo");return {default:module.CodeWorkspaceDemo};}),
+    source:files["./patterns__code-workspace/CodeWorkspaceDemo.tsx"],sources:[{filename:"CodeWorkspaceDemo.tsx",markdownFilename:"CodeWorkspaceDemo.tsx",source:files["./patterns__code-workspace/CodeWorkspaceDemo.tsx"]}]},
+    {name:"Editor and data surfaces",description:"Files, code, logs and cell editing with controlled state.",heading:"",screen:false,
+    Component:lazy(async()=>{const module=await import("./patterns__code-workspace/DeveloperSurfacesDemo");return {default:module.DeveloperSurfacesDemo};}),
+    source:files["./patterns__code-workspace/DeveloperSurfacesDemo.tsx"],sources:[{filename:"DeveloperSurfacesDemo.tsx",markdownFilename:"DeveloperSurfacesDemo.tsx",source:files["./patterns__code-workspace/DeveloperSurfacesDemo.tsx"]}]}],
   "patterns/erp-header": [{name:"ERPboost header",description:"Brand, organization, ERP connection and loading states.",heading:"",screen:false,
     Component:lazy(async()=>{const module=await import("./patterns__erp-header/ErpHeaderDemo");return {default:module.ErpHeaderDemo};}),
     source:files["./patterns__erp-header/ErpHeaderDemo.tsx"],sources:[{filename:"ErpHeaderDemo.tsx",markdownFilename:"ErpHeaderDemo.tsx",source:files["./patterns__erp-header/ErpHeaderDemo.tsx"]}]}],

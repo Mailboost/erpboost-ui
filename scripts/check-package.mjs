@@ -76,9 +76,9 @@ try {
     join(directory, "src.tsx"),
     `
     import {createRoot} from "react-dom/client";
-    import {AppShell,SidebarLayout,Button,Input,Sheet,ErpHeader} from "@mailboost/erpboost-ui";
+    import {AppShell,SidebarLayout,Button,Input,Sheet,ErpHeader,Skeleton,EmptyState} from "@mailboost/erpboost-ui";
     import "@mailboost/erpboost-ui/styles";
-    function Sample(){return <><h1>External package</h1><ErpHeader brand="ERP" organization={<ErpHeader.Trigger>Org</ErpHeader.Trigger>} connection={<ErpHeader.Loading label="Loading connection"/>}/><Button>Package button</Button><Input aria-label="Name"/><Sheet.Root><Sheet.Trigger>Open details</Sheet.Trigger><Sheet.Content><Sheet.Header><Sheet.Title>Package sheet</Sheet.Title></Sheet.Header><p>External consumer works.</p></Sheet.Content></Sheet.Root></>}
+    function Sample(){return <><h1>External package</h1><Skeleton/><EmptyState title="No results"/><ErpHeader brand="ERP" organization={<ErpHeader.Trigger>Org</ErpHeader.Trigger>} connection={<ErpHeader.Loading label="Loading connection"/>}/><Button>Package button</Button><Input aria-label="Name"/><Sheet.Root><Sheet.Trigger>Open details</Sheet.Trigger><Sheet.Content><Sheet.Header><Sheet.Title>Package sheet</Sheet.Title></Sheet.Header><p>External consumer works.</p></Sheet.Content></Sheet.Root></>}
     createRoot(document.getElementById("root")!).render(<AppShell title="Package check" modules={[]} rootComponent={Sample} commandPalette={{routeOrder:"definition",showAppInfo:false}}><SidebarLayout/></AppShell>);
   `,
   );
@@ -100,30 +100,43 @@ try {
       stdio: "inherit",
     });
   }
-  // An existing app can use controls without pulling in AppShell integrations.
+  // New components can be consumed individually without AppShell integrations.
   writeFileSync(join(directory, "src.tsx"), `
     import {createRoot} from "react-dom/client";
     import {Button} from "@mailboost/erpboost-ui/button";
-    import {ErpHeader} from "@mailboost/erpboost-ui/erp-header";
     import {Input} from "@mailboost/erpboost-ui/input";
-    import {Textarea} from "@mailboost/erpboost-ui/textarea";
-    import {Table} from "@mailboost/erpboost-ui/table";
-    import {Spinner} from "@mailboost/erpboost-ui/spinner";
-    import {Badge} from "@mailboost/erpboost-ui/badge";
-    import {Alert} from "@mailboost/erpboost-ui/alert";
-    import {Checkbox} from "@mailboost/erpboost-ui/checkbox";
-    import {Select} from "@mailboost/erpboost-ui/select";
-    import {Combobox} from "@mailboost/erpboost-ui/combobox";
-    import {Menu} from "@mailboost/erpboost-ui/menu";
-    import {Tabs} from "@mailboost/erpboost-ui/tabs";
-    import {Dialog} from "@mailboost/erpboost-ui/dialog";
-    import {Sheet} from "@mailboost/erpboost-ui/sheet";
-    import {Tooltip} from "@mailboost/erpboost-ui/tooltip";
     import {LocaleProvider} from "@mailboost/erpboost-ui/locale-provider";
-    import {ErdDiagram} from "@mailboost/erpboost-ui/erd-diagram";
-    import {DatabaseWorkspace} from "@mailboost/erpboost-ui/database-workspace";
+    import {SidebarPanel} from "@mailboost/erpboost-ui/shell-parts";
+    import {Skeleton} from "@mailboost/erpboost-ui/skeleton";
+    import {EmptyState} from "@mailboost/erpboost-ui/empty-state";
+    import {Pagination} from "@mailboost/erpboost-ui/pagination";
+    import {CodeWorkspace} from "@mailboost/erpboost-ui/code-workspace";
+    import {CodeEditor} from "@mailboost/erpboost-ui/code-editor";
+    import {FileList,FileListItem} from "@mailboost/erpboost-ui/file-list";
+    import {LogViewer} from "@mailboost/erpboost-ui/log-viewer";
+    import {ResizeHandle} from "@mailboost/erpboost-ui/resize-handle";
+    import {GraphControls} from "@mailboost/erpboost-ui/graph-controls";
+    import {CellEditor} from "@mailboost/erpboost-ui/cell-editor";
+    import {DescriptionList} from "@mailboost/erpboost-ui/description-list";
+    import {StatusDot} from "@mailboost/erpboost-ui/status-dot";
+    import {WorkflowNode} from "@mailboost/erpboost-ui/workflow-node";
+    import {SearchField} from "@mailboost/erpboost-ui/search-field";
+    import {OptionCard} from "@mailboost/erpboost-ui/option-card";
     import "@mailboost/erpboost-ui/styles";
-    createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP"><ErpHeader brand="ERP" organization={<ErpHeader.Trigger>Org</ErpHeader.Trigger>} connection={<ErpHeader.Loading label="Loading connection"/>}/><ErdDiagram schema={{models:[],relations:[]}}/><DatabaseWorkspace tables={[{name:"orders"}]} selectedTable="orders" openedTables={["orders"]} view="records" search="" sidebarOpen canCreate={false} onSearchChange={()=>{}} onSidebarOpenChange={()=>{}} onSelectTable={()=>{}} onCloseTable={()=>{}} onCloseDiagram={()=>{}} onCreateTable={()=>{}}><Badge>Draft</Badge><Alert.Root><Alert.Description>Saved</Alert.Description></Alert.Root></DatabaseWorkspace><Checkbox aria-label="Select"/><Select items={["a"]}/><Combobox items={["a"]}/><Menu.Root><Menu.Trigger>Menu</Menu.Trigger><Menu.Content container={document.body}><Menu.Item>Action</Menu.Item></Menu.Content></Menu.Root><Tabs.Root defaultValue="a"><Tabs.List><Tabs.Tab value="a">Tab</Tabs.Tab></Tabs.List></Tabs.Root><Dialog.Root><Dialog.Content container={document.body} showCloseButton={false}><Dialog.Title>Confirm</Dialog.Title></Dialog.Content></Dialog.Root><Sheet.Root><Sheet.Content container={document.body}><Sheet.Title>Details</Sheet.Title></Sheet.Content></Sheet.Root><Tooltip.Root><Tooltip.Trigger>Help</Tooltip.Trigger><Tooltip.Content container={document.body}>Help text</Tooltip.Content></Tooltip.Root><form><Input aria-label="Name"/><Textarea aria-label="Note"/><Button type="button">Save</Button><Spinner/><Table.Root><Table.Body><Table.Row><Table.Cell>Standalone</Table.Cell></Table.Row></Table.Body></Table.Root></form></LocaleProvider>);
+    createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
+
+      <SidebarPanel><SidebarPanel.Nav aria-label="Menu"><SidebarPanel.Label>Work</SidebarPanel.Label><SidebarPanel.Button active>Orders</SidebarPanel.Button></SidebarPanel.Nav><SidebarPanel.Footer><SidebarPanel.AccountTrigger><SidebarPanel.Identity name="Demo" description="Example"/></SidebarPanel.AccountTrigger></SidebarPanel.Footer></SidebarPanel>
+      <Skeleton/><EmptyState title="No orders"><Button>Add</Button></EmptyState>
+      <SearchField aria-label="Search" value="orders" onChange={()=>{}} clearLabel="Clear" onClear={()=>{}}/>
+      <OptionCard title="Template" description="Use a template"/>
+      <CodeWorkspace.PageHeader title={<Input value="Sync" onChange={()=>{}}/>}><Button>Save</Button></CodeWorkspace.PageHeader><CodeWorkspace.CodeToolbar caption="Python"/>
+      <CodeWorkspace.Root><CodeWorkspace.Sidebar>Files</CodeWorkspace.Sidebar><CodeWorkspace.Main><CodeWorkspace.Editor><CodeEditor value="print(1)" disabled={false} onChange={()=>{}}/><CodeWorkspace.Results><CodeWorkspace.ResultsHeader>Logs</CodeWorkspace.ResultsHeader><CodeWorkspace.ResultsBody><LogViewer text="Loaded"/></CodeWorkspace.ResultsBody></CodeWorkspace.Results></CodeWorkspace.Editor><CodeWorkspace.Panel width={320}><CodeWorkspace.Header>Graph</CodeWorkspace.Header><GraphControls zoom={100} zoomOutLabel="Out" zoomInLabel="In" fitViewLabel="Fit" onZoomOut={()=>{}} onZoomIn={()=>{}} onFitView={()=>{}}/></CodeWorkspace.Panel></CodeWorkspace.Main></CodeWorkspace.Root>
+      <FileList.Editor><Input aria-label="Filename"/><Button>Add file</Button></FileList.Editor><FileList><FileListItem name="pipeline.py" selected onSelect={()=>{}}/></FileList>
+      <ResizeHandle orientation="horizontal" aria-label="Size"/><WorkflowNode title="orders" status={<StatusDot tone="success"/>}/>
+      <DescriptionList.Root><DescriptionList.Item label="ID">1</DescriptionList.Item></DescriptionList.Root>
+      <CellEditor anchor={{left:8,top:8}} container={document.body} title="name" closeLabel="Close" onClose={()=>{}}>Value</CellEditor>
+      <Pagination currentPage={1} totalPages={1} hasPrevPage={false} hasNextPage={false} onFirstPage={()=>{}} onPreviousPage={()=>{}} onNextPage={()=>{}} onLastPage={()=>{}} pageSize={25} pageSizeOptions={[25,50]} onPageSizeChange={()=>{}} container={document.body}/>
+    </LocaleProvider>);
   `);
   writeFileSync(join(directory, "vite.config.mjs"), `export default {
     plugins: [{name:"consumer-module-audit", generateBundle(){
@@ -136,9 +149,9 @@ try {
   }
   const moduleIds = JSON.parse(readFileSync(join(directory, "dist/consumer-modules.json"), "utf8"));
   for (const dependency of ["openai", "@tailor-platform/auth-public-client", "react-router"]) {
-    assert(!moduleIds.some((id) => id.replaceAll("\\", "/").includes(`/node_modules/${dependency}/`)), `Standalone controls imported ${dependency}`);
+    assert(!moduleIds.some((id) => id.replaceAll("\\", "/").includes(`/node_modules/${dependency}/`)), `New components imported ${dependency}`);
   }
-  console.log("Packed library: root API and standalone consumers passed; controls exclude auth, AI and router modules.");
+  console.log("Packed library: root API and standalone consumers passed; new components exclude auth, AI and router modules.");
 } finally {
   if (process.env.KEEP_PACKAGE_CHECK === "1")
     console.log(`Consumer fixture retained: ${directory}`);
