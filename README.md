@@ -147,3 +147,5 @@ New components use the existing Card, Text, Button and Toolbar appearance. CellE
 ### ERPboost header
 
 `ErpHeader` from `@mailboost/erpboost-ui/erp-header` displays fixed `brand`, `organization` and `connection` JSX slots. Pass `ErpHeader.Trigger` to the existing `Combobox.Parts.Trigger` render prop; `ErpHeader.Loading` supplies an accessible loading placeholder with reduced-motion support. Layout and loading placeholders use the existing `astw:` Tailwind utilities, including `animate-pulse` and `motion-reduce:animate-none`; no dedicated CSS is required. Selection, permissions, loading and API requests remain in the app. Existing GlobalHeader, Button and Combobox implementations are unchanged. See `/patterns/erp-header` for a controlled example.
+
+ERPBoost向けに追加した編集グリッド・レコードパネル・読み込みレイアウト・ワークフローグラフは [ERP presentation compositions](docs/erp-presentation-compositions.md) を参照してください。

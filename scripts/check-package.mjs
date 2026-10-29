@@ -122,9 +122,18 @@ try {
     import {WorkflowNode} from "@mailboost/erpboost-ui/workflow-node";
     import {SearchField} from "@mailboost/erpboost-ui/search-field";
     import {OptionCard} from "@mailboost/erpboost-ui/option-card";
+    import {EditableGrid} from "@mailboost/erpboost-ui/editable-grid";
+    import {RecordPanel,RecordPanelBody,RecordPanelFooter,RecordEditor} from "@mailboost/erpboost-ui/record-panel";
+    import {LoadingPlaceholder,ConnectionsRowsSkeleton,ContextLoading} from "@mailboost/erpboost-ui/loading-layouts";
+    import {WorkflowGraph} from "@mailboost/erpboost-ui/workflow-graph";
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
 
+      <LoadingPlaceholder/><ConnectionsRowsSkeleton/><ContextLoading label="Loading"/>
+      <RecordPanel title="Info" onClose={()=>{}}><RecordPanelBody>Body</RecordPanelBody><RecordPanelFooter>Footer</RecordPanelFooter></RecordPanel>
+      <RecordEditor title="Edit" isNew={false} busy={false} dirty={false} onClose={()=>{}}>Fields</RecordEditor>
+      <EditableGrid model={{name:"items",primaryKeys:["id"],columns:[{name:"id",label:"ID",type:"text",editable:false}]}} data={[{id:"0001"}]} relations={[]} pending={false} fetching={false} onStateChange={()=>{}} onRefresh={()=>{}} onOpen={()=>{}} onSaveCell={async()=>{}} renderEditor={()=>null}/>
+      <WorkflowGraph docked={false} steps={[{id:"items",title:"Items",subtitle:"Source",state:"idle",statusLabel:"Ready"}]} links={[]} onSelect={()=>{}}/>
       <SidebarPanel><SidebarPanel.Nav aria-label="Menu"><SidebarPanel.Label>Work</SidebarPanel.Label><SidebarPanel.Button active>Orders</SidebarPanel.Button></SidebarPanel.Nav><SidebarPanel.Footer><SidebarPanel.AccountTrigger><SidebarPanel.Identity name="Demo" description="Example"/></SidebarPanel.AccountTrigger></SidebarPanel.Footer></SidebarPanel>
       <Skeleton/><EmptyState title="No orders"><Button>Add</Button></EmptyState>
       <SearchField aria-label="Search" value="orders" onChange={()=>{}} clearLabel="Clear" onClear={()=>{}}/>

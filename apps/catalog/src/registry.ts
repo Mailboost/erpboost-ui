@@ -286,6 +286,11 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["editable-grid", "EditableGrid", "編集可能グリッド", "Editable rows with application-owned persistence."],
+    ["record-panel", "RecordPanel", "レコードパネル", "Compose record editing from existing dialogs and sheets."],
+    ["loading-layouts", "LoadingLayouts", "読み込みレイアウト", "Visible loading placeholders and workspace layouts."],
+    ["workflow-graph", "WorkflowGraph", "ワークフローグラフ", "Render dependency graphs from display-only steps."],
+
     ["context-details", "Context and details", "コンテキストと詳細表示", "Compose a context header, compact sections, template options and a database grid."],
     ["code-workspace", "CodeWorkspace", "コードと実行結果の作業画面", "Compose files, code, results and a graph panel in JSX."],
     ["erp-header", "ERPboost header", "ERPboostヘッダー", "Switch organization and ERP connection in a fixed application header."],

@@ -26,6 +26,11 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "record-panel": "src/components/record-panel/index.tsx",
+        "loading-layouts": "src/components/loading-layouts/index.tsx",
+        "editable-grid": "src/components/editable-grid/index.tsx",
+        "workflow-graph": "src/components/workflow-graph/index.tsx",
+
         "search-field": "src/components/search-field/index.tsx",
         "option-card": "src/components/option-card/index.tsx",
         "code-workspace": "src/components/code-workspace/index.tsx",

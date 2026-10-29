@@ -162,6 +162,22 @@
     "./erp-header": {
       "types": "./dist/components/erp-header/index.d.ts",
       "import": "./dist/erp-header.js"
+    },
+    "./record-panel": {
+      "types": "./dist/components/record-panel/index.d.ts",
+      "import": "./dist/record-panel.js"
+    },
+    "./loading-layouts": {
+      "types": "./dist/components/loading-layouts/index.d.ts",
+      "import": "./dist/loading-layouts.js"
+    },
+    "./editable-grid": {
+      "types": "./dist/components/editable-grid/index.d.ts",
+      "import": "./dist/editable-grid.js"
+    },
+    "./workflow-graph": {
+      "types": "./dist/components/workflow-graph/index.d.ts",
+      "import": "./dist/workflow-graph.js"
     }
   },
   "scripts": {
