@@ -99,7 +99,7 @@ for (const mode of [
       const routes = dialog.locator("button[data-index]");
       const includesDatabaseWorkspace =
         test.info().project.name !== "reference";
-      const routeCount = includesDatabaseWorkspace ? 75 : 71;
+      const routeCount = includesDatabaseWorkspace ? 79 : 71;
       await expect(routes).toHaveCount(routeCount);
       await expect(
         routes.filter({ hasText: "/patterns/database-workspace" }),
