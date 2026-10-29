@@ -1,0 +1,16 @@
+# Result and settings presentation compositions
+
+Two additive subpaths compose unchanged CodeWorkspace, Tabs, Alert, DescriptionList, RecordPanel and Button. Existing components/styles, including previous extraction rounds, are preserved. Import either subpath or the root API with `@mailboost/erpboost-ui/styles`.
+
+| Module | Shared presentation | Caller responsibilities |
+| --- | --- | --- |
+| result-panel | ResultPanel.Root/Body: controlled tabs, stable IDs and focusable labelled content, graph/scroll layout; Selection slots, Details/Item, Message/ErrorText | Tab state, graph docking/resizing, data/output selection, result status meanings, error messages, formatting/serialization and rendering each view |
+| settings-panel | SettingsPanel: narrow right panel, scrolling body, fixed action area, bounded error message and busy close protection | Form fields, options, values, validation, disabled/read-only decisions, save callback and pending/error state |
+
+ResultPanel emits only an enabled, registered tab value. It preserves the existing manual Tabs interaction: arrows move focus and Enter activates. Body retains its ID while its label tracks the selected tab; loading/error content can remain in that region. Selection accepts the caller's Field.Root/Label/control and keeps their accessibility context. No identifiers, numeric strings, NULL values or log text are converted. ErrorText renders text verbatim as React text, never HTML. Narrow result regions wrap the header controls, scroll the tabs, and stack description rows; very narrow output selectors stack their label/control. Graph errors have a bounded scrolling area. Description layouts use composition-scoped specificity so their responsive rules also survive hosts that flatten Tailwind layers.
+
+SettingsPanel accepts an explicit close label and action slot. The consumer passes `closeDisabled` only for a pending action: read-only fields do not prevent closing. Closing and focus handling delegate to unchanged RecordPanel. The caller handles save results, closes after success and retains values after failure. Long errors scroll above the body/actions instead of pushing them outside the viewport. No schedule intervals, API clients, authentication, persistence or async save implementation live in either module.
+
+ERPBoost adopts these modules in PythonPipelineEditor. Python parsing, project fingerprints, file management, selected datasets, preview conversion, interval choices, permission checks and save/run handlers remain in the app. The app supplies its pending-save state separately from the broader edit-disabled state. This prevents closing the schedule panel during a save without locking a viewer into it.
+
+Validation includes controlled tab associations, disabled tabs, graph semantics, exact values, inert error/log text, Field label/description links, native focus return, nested selector Escape, busy close protection, failed-save retry, read-only close, fixed actions, long errors and desktop/390px behavior. Independent packed-consumer checks cover both subpaths without importing auth/AI/router integrations. Application browser verification uses synthetic API replies; save requests are fulfilled locally and never reach an ERP or database.

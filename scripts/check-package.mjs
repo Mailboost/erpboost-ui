@@ -141,6 +141,8 @@ try {
     import {ManagementLayout,ManagementTable,FormStack,SettingsList,SettingsRow,IdentityCell,ResponsiveLabel,SetupPanel} from "@mailboost/erpboost-ui/management-layout";
     import {StatusNotice} from "@mailboost/erpboost-ui/status-notice";
     import {PropertyRow,PropertySection,FormSection} from "@mailboost/erpboost-ui/property-layout";
+    import {ResultPanel} from "@mailboost/erpboost-ui/result-panel";
+    import {SettingsPanel} from "@mailboost/erpboost-ui/settings-panel";
     import {DetailPanel} from "@mailboost/erpboost-ui/detail-panel";
     import {TemplatePicker} from "@mailboost/erpboost-ui/template-picker";
 
@@ -161,6 +163,8 @@ try {
       <FormStack><SettingsList><SettingsRow label={<IdentityCell title="Member" description="Email"/>} control={<Input/>}/></SettingsList><ResponsiveLabel full="Add resource" compact="Add"/><SetupPanel title="Prepare"/></FormStack>
       <StatusNotice variant="success" dismiss={{label:"Dismiss",onDismiss:()=>{}}}>Done</StatusNotice>
       <FormSection legend="Properties"><PropertySection title="Optional"/><PropertyRow label="ID" description="Exact text"><Input value="0001" readOnly/></PropertyRow></FormSection>
+      <ResultPanel.Root tabs={[{value:"data",label:"Data"}]} value="data" onValueChange={()=>{}} tabListLabel="Result views"><ResultPanel.Body><ResultPanel.Selection>Output</ResultPanel.Selection><ResultPanel.Details><ResultPanel.Item label="Run ID">0001</ResultPanel.Item></ResultPanel.Details><ResultPanel.Message><ResultPanel.ErrorText>Exact error</ResultPanel.ErrorText></ResultPanel.Message></ResultPanel.Body></ResultPanel.Root>
+      <SettingsPanel title="Settings" closeLabel="Close" onClose={()=>{}} actions={<Button>Save</Button>}><Input/></SettingsPanel>
       <DetailPanel.Root title="Record" tabs={[{value:"details",label:"Details"}]} value="details" onValueChange={()=>{}} tabListLabel="Sections" onClose={()=>{}}><DetailPanel.Body>Record content</DetailPanel.Body></DetailPanel.Root>
       <TemplatePicker title="Templates" closeLabel="Close" options={[]} onChoose={()=>{}} onClose={()=>{}}/>
       <WorkspaceFrame.Root><WorkspaceFrame.Header>Header</WorkspaceFrame.Header><WorkspaceFrame.Sidebar>Sidebar</WorkspaceFrame.Sidebar><WorkspaceFrame.Workspace><WorkspaceFrame.ScrollArea><WorkspaceFrame.Content>Content</WorkspaceFrame.Content></WorkspaceFrame.ScrollArea></WorkspaceFrame.Workspace></WorkspaceFrame.Root>

@@ -412,3 +412,6 @@ export * from "./components/template-picker";
 
 export * from "./components/property-layout";
 export * from "./components/detail-panel";
+
+export * from "./components/result-panel";
+export * from "./components/settings-panel";

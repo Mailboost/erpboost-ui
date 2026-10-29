@@ -1,0 +1,14 @@
+.erpui-settings-panel .erpui-settings-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.erpui-settings-panel-actions {
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.erpui-settings-panel .erpui-record-panel-error {
+  max-height: 25dvh;
+  overflow: auto;
+}

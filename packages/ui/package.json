@@ -246,6 +246,14 @@
     "./detail-panel": {
       "types": "./dist/components/detail-panel/index.d.ts",
       "import": "./dist/detail-panel.js"
+    },
+    "./result-panel": {
+      "types": "./dist/components/result-panel/index.d.ts",
+      "import": "./dist/result-panel.js"
+    },
+    "./settings-panel": {
+      "types": "./dist/components/settings-panel/index.d.ts",
+      "import": "./dist/settings-panel.js"
     }
   },
   "scripts": {
