@@ -266,6 +266,10 @@
     "./retry-notice": {
       "types": "./dist/components/retry-notice/index.d.ts",
       "import": "./dist/retry-notice.js"
+    },
+    "./source-navigation": {
+      "types": "./dist/components/source-navigation/index.d.ts",
+      "import": "./dist/source-navigation.js"
     }
   },
   "scripts": {

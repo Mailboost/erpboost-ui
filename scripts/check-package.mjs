@@ -141,6 +141,7 @@ try {
     import {ManagementLayout,ManagementTable,FormStack,SettingsList,SettingsRow,IdentityCell,ResponsiveLabel,SetupPanel} from "@mailboost/erpboost-ui/management-layout";
     import {StatusNotice} from "@mailboost/erpboost-ui/status-notice";
     import {PropertyRow,PropertySection,FormSection} from "@mailboost/erpboost-ui/property-layout";
+    import {SourceNavigation} from "@mailboost/erpboost-ui/source-navigation";
     import {RetryNotice} from "@mailboost/erpboost-ui/retry-notice";
     import {FormDialog} from "@mailboost/erpboost-ui/form-dialog";
     import {InlineRename} from "@mailboost/erpboost-ui/inline-rename";
@@ -166,6 +167,7 @@ try {
       <FormStack><SettingsList><SettingsRow label={<IdentityCell title="Member" description="Email"/>} control={<Input/>}/></SettingsList><ResponsiveLabel full="Add resource" compact="Add"/><SetupPanel title="Prepare"/></FormStack>
       <StatusNotice variant="success" dismiss={{label:"Dismiss",onDismiss:()=>{}}}>Done</StatusNotice>
       <FormSection legend="Properties"><PropertySection title="Optional"/><PropertyRow label="ID" description="Exact text"><Input value="0001" readOnly/></PropertyRow></FormSection>
+      <SourceNavigation.Files files={[]} value="" onValueChange={()=>{}} title="Files"/><SourceNavigation.Tabs files={[]} value="" onValueChange={()=>{}} label="Files"/>
       <RetryNotice retryLabel="Retry" onRetry={()=>{}}>Synthetic failure</RetryNotice>
       <FormDialog title="Create" cancelLabel="Cancel" submitLabel="Save" onClose={()=>{}} onSubmit={()=>{}}><Input/></FormDialog>
       <InlineRename aria-label="Name" value="Exact" onValueChange={()=>{}} onCommit={()=>{}} onCancel={()=>{}}/>

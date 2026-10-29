@@ -286,6 +286,7 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["source-navigation", "SourceNavigation", "SourceNavigation", "Controlled file list, actions and editor tabs."],
     ["retry-notice", "RetryNotice", "RetryNotice", "Controlled retrieval-failure display with retry action."],
     ["inline-rename", "InlineRename", "InlineRename", "Additional ERPBoost presentation composition."],
     ["form-dialog", "FormDialog", "FormDialog", "Additional ERPBoost presentation composition."],

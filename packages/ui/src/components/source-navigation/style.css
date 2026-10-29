@@ -1,0 +1,14 @@
+.erpui-source-navigation-files {
+  margin-bottom: 16px;
+}
+.erpui-source-navigation-extra {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.erpui-source-navigation-tabs.erpui-source-navigation-tabs {
+  min-width: 0;
+}
+.erpui-source-navigation-meta {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
