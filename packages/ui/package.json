@@ -210,6 +210,22 @@
     "./value-editor": {
       "types": "./dist/components/value-editor/index.d.ts",
       "import": "./dist/value-editor.js"
+    },
+    "./workspace-frame": {
+      "types": "./dist/components/workspace-frame/index.d.ts",
+      "import": "./dist/workspace-frame.js"
+    },
+    "./resize-control": {
+      "types": "./dist/components/resize-control/index.d.ts",
+      "import": "./dist/resize-control.js"
+    },
+    "./inline-create": {
+      "types": "./dist/components/inline-create/index.d.ts",
+      "import": "./dist/inline-create.js"
+    },
+    "./data-preview": {
+      "types": "./dist/components/data-preview/index.d.ts",
+      "import": "./dist/data-preview.js"
     }
   },
   "scripts": {

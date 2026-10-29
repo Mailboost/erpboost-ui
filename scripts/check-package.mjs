@@ -134,6 +134,11 @@ try {
     import {FormGrid,DetailTable,RecordActions} from "@mailboost/erpboost-ui/record-layouts";
     import {HistoryList,HistoryEntry} from "@mailboost/erpboost-ui/record-history";
     import {ValueEditor} from "@mailboost/erpboost-ui/value-editor";
+    import {WorkspaceFrame} from "@mailboost/erpboost-ui/workspace-frame";
+    import {ResizeControl} from "@mailboost/erpboost-ui/resize-control";
+    import {InlineCreate} from "@mailboost/erpboost-ui/inline-create";
+    import {DataPreview} from "@mailboost/erpboost-ui/data-preview";
+
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
 
@@ -147,6 +152,10 @@ try {
       <FormGrid.Root><Input/><FormGrid.Full><Input/></FormGrid.Full></FormGrid.Root><DetailTable minWidth={600} columns={[]}>Rows</DetailTable><RecordActions status="Draft"><Button>Save</Button></RecordActions>
       <HistoryList><HistoryEntry status="Complete" dateTime="2026-10-29" timeLabel="Today">Result</HistoryEntry></HistoryList>
       <ValueEditor name="amount" description="Text" initialValue="0001" anchor={new DOMRect(0,0)} container={document.body} onSave={async()=>{}} onClose={()=>{}}/>
+      <WorkspaceFrame.Root><WorkspaceFrame.Header>Header</WorkspaceFrame.Header><WorkspaceFrame.Sidebar>Sidebar</WorkspaceFrame.Sidebar><WorkspaceFrame.Workspace><WorkspaceFrame.ScrollArea><WorkspaceFrame.Content>Content</WorkspaceFrame.Content></WorkspaceFrame.ScrollArea></WorkspaceFrame.Workspace></WorkspaceFrame.Root>
+      <ResizeControl orientation="horizontal" value={160} min={100} max={300} onValueChange={()=>{}} aria-label="Height"/>
+      <InlineCreate label="Name" value="" onValueChange={()=>{}} onSubmit={()=>{}} onCancel={()=>{}} submitLabel="Create" cancelLabel="Cancel"/>
+      <DataPreview label="Preview" rows={["0001"]} columns={[{id:"id",header:"ID",cell:row=>row}]}/>
       <LoadingPlaceholder/><ConnectionsRowsSkeleton/><ContextLoading label="Loading"/>
       <RecordPanel title="Info" onClose={()=>{}}><RecordPanelBody>Body</RecordPanelBody><RecordPanelFooter>Footer</RecordPanelFooter></RecordPanel>
       <RecordEditor title="Edit" isNew={false} busy={false} dirty={false} onClose={()=>{}}>Fields</RecordEditor>

@@ -26,6 +26,11 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "workspace-frame": "src/components/workspace-frame/index.tsx",
+        "resize-control": "src/components/resize-control/index.tsx",
+        "inline-create": "src/components/inline-create/index.tsx",
+        "data-preview": "src/components/data-preview/index.tsx",
+
         "resource-picker": "src/components/resource-picker/index.tsx",
         "action-menu": "src/components/action-menu/index.tsx",
         "sensitive-input": "src/components/sensitive-input/index.tsx",

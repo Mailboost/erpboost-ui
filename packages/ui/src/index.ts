@@ -400,3 +400,8 @@ export * from "./components/collection-layout";
 export * from "./components/record-layouts";
 export * from "./components/record-history";
 export * from "./components/value-editor";
+
+export * from "./components/workspace-frame";
+export * from "./components/resize-control";
+export * from "./components/inline-create";
+export * from "./components/data-preview";

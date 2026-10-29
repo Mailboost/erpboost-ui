@@ -286,6 +286,11 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["workspace-frame", "WorkspaceFrame", "WorkspaceFrame", "Additional ERPBoost presentation composition."],
+    ["resize-control", "ResizeControl", "ResizeControl", "Additional ERPBoost presentation composition."],
+    ["inline-create", "InlineCreate", "InlineCreate", "Additional ERPBoost presentation composition."],
+    ["data-preview", "DataPreview", "DataPreview", "Additional ERPBoost presentation composition."],
+
     ["resource-picker", "ResourcePicker", "ResourcePicker", "Additional ERPBoost presentation composition."],
     ["action-menu", "ActionMenu", "ActionMenu", "Additional ERPBoost presentation composition."],
     ["sensitive-input", "SensitiveInput", "SensitiveInput", "Additional ERPBoost presentation composition."],

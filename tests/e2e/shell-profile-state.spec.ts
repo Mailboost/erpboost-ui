@@ -99,7 +99,7 @@ for (const mode of [
       const routes = dialog.locator("button[data-index]");
       const includesDatabaseWorkspace =
         test.info().project.name !== "reference";
-      const routeCount = includesDatabaseWorkspace ? 87 : 71;
+      const routeCount = includesDatabaseWorkspace ? 91 : 71;
       await expect(routes).toHaveCount(routeCount);
       await expect(
         routes.filter({ hasText: "/patterns/database-workspace" }),
@@ -155,9 +155,17 @@ for (const mode of [
       );
       await page.keyboard.press("Escape");
       await expect(dialog).not.toBeVisible();
-      await expect(
-        page.getByRole("button", { name: "Search", exact: true }),
-      ).not.toBeFocused();
+      // On compact layouts Escape can also dismiss the navigation sheet.
+      // A removed search trigger must not be required to exist to verify lack of focus.
+      await expect
+        .poll(() =>
+          page
+            .getByRole("button", { name: "Search", exact: true })
+            .evaluateAll((elements) =>
+              elements.every((element) => element !== document.activeElement),
+            ),
+        )
+        .toBe(true);
       await closeNavigation(page);
       const primary = page.getByRole("button", {
         name: "Primary",
