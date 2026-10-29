@@ -20,6 +20,14 @@ for (const viewport of [
       await expect(
         sidebar.getByRole("button", { name: "Remove main.py", exact: true }),
       ).toHaveCount(0);
+      await expect(
+        sidebar.locator('[data-slot="code-workspace-header"] > span').first(),
+      ).toHaveCSS("white-space", "nowrap");
+      expect(
+        (await sidebar
+          .getByRole("button", { name: "Add source", exact: true })
+          .boundingBox())!.width,
+      ).toBe(28);
       await sidebar
         .getByRole("button", { name: "Add source", exact: true })
         .click();

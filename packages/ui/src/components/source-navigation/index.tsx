@@ -50,10 +50,14 @@ function Files({
   removeAction,
   container,
   children,
+  className = "",
   ...props
 }: SourceFilesProps) {
   return (
-    <CodeWorkspace.Sidebar {...props}>
+    <CodeWorkspace.Sidebar
+      {...props}
+      className={`erpui-source-navigation-sidebar ${className}`}
+    >
       <CodeWorkspace.Header
         icon={<FolderOpen size={13} />}
         actions={
