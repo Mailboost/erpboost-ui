@@ -7,14 +7,12 @@ import { cn } from "../../lib/utils";
 
 /** Controlled text input and optional clear action. Filtering remains in the consumer. */
 export function SearchField({
-  appearance = "outline",
   className,
   clearLabel,
   onClear,
   ref,
   ...props
 }: InputProps & {
-  appearance?: "outline" | "plain";
   clearLabel?: string;
   onClear?: () => void;
 }) {
@@ -22,7 +20,6 @@ export function SearchField({
   return (
     <div
       data-slot="search-field"
-      data-appearance={appearance}
       className={cn("erpui-search-field", className)}
     >
       <Search size={15} aria-hidden="true" />

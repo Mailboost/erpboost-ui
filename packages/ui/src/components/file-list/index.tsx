@@ -24,7 +24,7 @@ export function FileListItem({
     >
       <Button
         type="button"
-        variant="ghost"
+        variant={selected ? "secondary" : "ghost"}
         size="sm"
         data-slot="file-list-select"
         className="erpui-file-list-select"

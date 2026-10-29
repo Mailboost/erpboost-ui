@@ -168,12 +168,12 @@ Use the existing Card.Header / Card.Content parts for detail sections. `OptionCa
 
 Use the existing Table parts for database rows and previews. Frozen offsets, row/cell selection semantics, keyboard navigation, precision-safe values, schema and mutations remain app code.
 
-`SidebarPanel layout="compact"` adds native `Nav`, `Label`, `Button`, `Footer`, `AccountTrigger` and `Identity` parts. Pass `active` and existing navigation/account handlers explicitly; no router or authentication provider is introduced.
+`SidebarPanel` composes existing Button / Text / Avatar styling through native `Nav`, `Label`, `Button`, `Footer`, `AccountTrigger` and `Identity` parts. Pass `active` and existing navigation/account handlers explicitly; no router or authentication provider is introduced.
 
-`SearchField` composes Input and Button, supports controlled values, an optional labelled clear action and `appearance="plain"` for toolbars. Clearing returns focus to the text input; filtering remains in the consumer.
+`SearchField` composes Input and Button, supports controlled values, an optional labelled clear action. Clearing returns focus to the text input; filtering remains in the consumer.
 
-CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header `variant="folder"` share editor chrome. Consumers retain rename/unsaved/IME behavior and action portal content.
+CodeWorkspace's PageHeader/TitleTrigger/TitleInput/CodeToolbar and Header share editor chrome. Consumers retain rename/unsaved/IME behavior and action portal content.
 
-`Field.InputGroup` shares the frame around an existing Field.Control and explicit trailing actions; value/reveal state and validation remain controlled by the app. Use the existing Fieldset.Root / Legend with explicit JSX fields. No schema-driven form generation is added.
+`Field.InputGroup` lays out an existing Field.Control and explicit trailing actions without changing their standard frames; value/reveal state and validation remain controlled by the app. Use the existing Fieldset.Root / Legend with explicit JSX fields. No schema-driven form generation is added.
 
 `FileList.Editor` lays out an input/action row while the consumer retains file validation, Enter/Escape/IME handling and creation.

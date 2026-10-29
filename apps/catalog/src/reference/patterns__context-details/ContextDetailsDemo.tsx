@@ -77,7 +77,7 @@ export function ContextDetailsDemo() {
         </HeaderBar.ContextItem>
       </HeaderBar>
       <div style={{ display: "flex", minHeight: 520 }}>
-        <SidebarPanel layout="compact" style={{ width: 176, flexShrink: 0 }}>
+        <SidebarPanel style={{ width: 176, flexShrink: 0 }}>
           <SidebarPanel.Nav aria-label="サンプルのメニュー">
             <SidebarPanel.Label>業務</SidebarPanel.Label>
             <SidebarPanel.Button
@@ -99,7 +99,6 @@ export function ContextDetailsDemo() {
           <SidebarPanel.Footer>
             <SidebarPanel.AccountTrigger aria-label="サンプルアカウント">
               <SidebarPanel.Identity
-                compact
                 name="Demo user"
                 description="demo@example.com"
               />

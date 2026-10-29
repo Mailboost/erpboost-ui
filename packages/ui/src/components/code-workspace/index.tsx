@@ -1,6 +1,7 @@
 import type { ComponentProps, CSSProperties, ReactNode } from "react";
 import { Button, type ButtonProps } from "../button";
 import { Input, type InputProps } from "../input";
+import { Text } from "../text";
 import { Toolbar } from "../toolbar";
 import { cn } from "../../lib/utils";
 
@@ -118,22 +119,21 @@ function Header({
   icon,
   actions,
   children,
-  variant = "default",
   ...props
 }: ComponentProps<"div"> & {
   icon?: ReactNode;
   actions?: ReactNode;
-  variant?: "default" | "folder";
 }) {
   return (
     <div
       {...props}
       data-slot="code-workspace-header"
-      data-variant={variant}
       className={cn("erpui-code-workspace-header", className)}
     >
       {icon}
-      <span>{children}</span>
+      <Text variant="label-sm" render={<span />}>
+        {children}
+      </Text>
       {actions && (
         <div data-slot="code-workspace-header-actions">{actions}</div>
       )}
@@ -174,16 +174,10 @@ function TitleTrigger({ className, ...props }: ButtonProps) {
     />
   );
 }
-function TitleInput({
-  value,
-  placeholder,
-  ...props
-}: Omit<InputProps, "value" | "type"> & { value: string }) {
-  return (
-    <h2 data-slot="code-workspace-title-input" data-name={value || placeholder}>
-      <Input {...props} value={value} placeholder={placeholder} />
-    </h2>
-  );
+function TitleInput(
+  props: Omit<InputProps, "value" | "type"> & { value: string },
+) {
+  return <Input {...props} />;
 }
 function CodeToolbar({
   caption,
@@ -195,7 +189,9 @@ function CodeToolbar({
 }) {
   return (
     <Toolbar.Row {...props} data-slot="code-workspace-code-toolbar">
-      <span>{caption}</span>
+      <Text variant="label-sm" render={<span />}>
+        {caption}
+      </Text>
       {actions}
     </Toolbar.Row>
   );

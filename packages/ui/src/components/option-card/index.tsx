@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 import { Button, type ButtonProps } from "../button";
-import { cn } from "../../lib/utils";
+import { Card } from "../card";
 
-/** A native button with a title and description. Selection/application stays in the consumer. */
+/** Existing Card and Button parts; application owns the selection handler. */
 export function OptionCard({
   title,
   description,
@@ -16,21 +16,17 @@ export function OptionCard({
   icon?: ReactNode;
 }) {
   return (
-    <Button
-      type="button"
-      variant="outline"
-      {...props}
-      data-slot="option-card"
-      className={cn("erpui-option-card", className)}
-    >
-      {icon}
-      <span data-slot="option-card-content">
-        <strong>{title}</strong>
-        {description && (
-          <span data-slot="option-card-description">{description}</span>
-        )}
-      </span>
-      <ChevronRight size={15} aria-hidden="true" />
-    </Button>
+    <Card.Root data-slot="option-card" className={className}>
+      <Card.Header
+        title={
+          <Button type="button" variant="outline" {...props}>
+            {icon}
+            {title}
+            <ChevronRight size={15} aria-hidden="true" />
+          </Button>
+        }
+        description={description}
+      />
+    </Card.Root>
   );
 }

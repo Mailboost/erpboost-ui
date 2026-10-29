@@ -3,6 +3,7 @@ import { ChevronsUpDown } from "lucide-react";
 import { Button, type ButtonProps } from "../button";
 import { Skeleton } from "../skeleton";
 import { cn } from "@/lib/utils";
+import { Text } from "../text";
 
 /** Presentation only: routing, authentication and selectors belong to the app. */
 function HeaderRoot({
@@ -28,16 +29,11 @@ export const sidebarPanelClasses =
   "astw:bg-sidebar astw:text-sidebar-foreground astw:flex astw:min-h-0 astw:min-w-0 astw:flex-col";
 
 /** A sidebar region without AppShell's router or collapse state. */
-function SidebarRoot({
-  className,
-  layout = "default",
-  ...props
-}: ComponentProps<"aside"> & { layout?: "default" | "compact" }) {
+function SidebarRoot({ className, ...props }: ComponentProps<"aside">) {
   return (
     <aside
       data-slot="sidebar-panel"
-      data-layout={layout}
-      className={cn(sidebarPanelClasses, className)}
+      className={cn(sidebarPanelClasses, "erpui-sidebar-panel", className)}
       {...props}
     />
   );
@@ -138,24 +134,34 @@ function Nav({ className, ...props }: ComponentProps<"nav">) {
 }
 function NavLabel({ className, ...props }: ComponentProps<"div">) {
   return (
-    <div
-      data-slot="sidebar-panel-label"
+    <Text
+      variant="label-sm"
       className={cn("erpui-sidebar-label", className)}
-      {...props}
+      render={<div data-slot="sidebar-panel-label" {...props} />}
     />
   );
 }
 function NavButton({
   active,
+  disabled,
+  onClick,
   className,
   ...props
 }: ButtonProps & { active?: boolean }) {
   return (
     <Button
       type="button"
-      variant="ghost"
+      variant={active ? "secondary" : "ghost"}
       size="sm"
       aria-current={active ? "page" : undefined}
+      aria-disabled={disabled || undefined}
+      tabIndex={disabled ? -1 : undefined}
+      onClick={(event) => {
+        if (disabled) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else onClick?.(event);
+      }}
       {...props}
       data-slot="sidebar-panel-button"
       className={cn("erpui-sidebar-nav-button", className)}
@@ -184,23 +190,24 @@ function AccountTrigger({ className, ...props }: ButtonProps) {
 function Identity({
   name,
   description,
-  compact,
   className,
   ...props
 }: Omit<ComponentProps<"span">, "children"> & {
   name: ReactNode;
   description: ReactNode;
-  compact?: boolean;
 }) {
   return (
     <span
       data-slot="sidebar-panel-identity"
-      data-compact={compact || undefined}
       className={cn("erpui-sidebar-identity", className)}
       {...props}
     >
-      <strong>{name}</strong>
-      <span>{description}</span>
+      <Text variant="label-sm" render={<strong />}>
+        {name}
+      </Text>
+      <Text variant="body-sm" render={<span />}>
+        {description}
+      </Text>
     </span>
   );
 }

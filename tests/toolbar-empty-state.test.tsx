@@ -1,3 +1,4 @@
+import { SidebarPanel } from "@/components/shell-parts";
 import { useState } from "react";
 import { SearchField } from "@/components/search-field";
 import { fireEvent, render, screen } from "@testing-library/react";
@@ -102,4 +103,17 @@ it("clears a controlled search and returns focus without stealing text cursor ke
   expect(input.value).toBe("");
   expect(document.activeElement).toBe(input);
   expect(screen.queryByRole("button", { name: "Clear search" })).toBeNull();
+});
+
+it("keeps navigation readable while refusing pointer and keyboard activation until enabled", () => {
+  const navigate=vi.fn();
+  const {rerender}=render(<SidebarPanel.Button disabled onClick={navigate}>Orders</SidebarPanel.Button>);
+  const button=screen.getByRole("button",{name:"Orders"});
+  expect(button.getAttribute("aria-disabled")).toBe("true");
+  expect(button.tabIndex).toBe(-1);
+  fireEvent.click(button);fireEvent.keyDown(button,{key:"Enter"});
+  expect(navigate).not.toHaveBeenCalled();
+  rerender(<SidebarPanel.Button onClick={navigate}>Orders</SidebarPanel.Button>);
+  fireEvent.click(screen.getByRole("button",{name:"Orders"}));
+  expect(navigate).toHaveBeenCalledOnce();
 });

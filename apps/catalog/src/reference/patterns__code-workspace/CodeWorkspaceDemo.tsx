@@ -30,7 +30,7 @@ export function CodeWorkspaceDemo() {
             <CodeWorkspace.Header icon={<FolderOpen size={13} />}>
               パイプライン
             </CodeWorkspace.Header>
-            <CodeWorkspace.Header variant="folder">
+            <CodeWorkspace.Header>
               transformations
             </CodeWorkspace.Header>
             <FileList>
