@@ -286,6 +286,8 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
+    ["detail-panel", "DetailPanel", "DetailPanel", "Additional ERPBoost presentation composition."],
+    ["property-layout", "PropertyLayout", "PropertyLayout", "Additional ERPBoost presentation composition."],
     ["management-layout", "ManagementLayout", "ManagementLayout", "Additional ERPBoost presentation composition."],
     ["status-notice", "StatusNotice", "StatusNotice", "Additional ERPBoost presentation composition."],
     ["template-picker", "TemplatePicker", "TemplatePicker", "Additional ERPBoost presentation composition."],

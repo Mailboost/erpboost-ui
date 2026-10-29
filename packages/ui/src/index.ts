@@ -409,3 +409,6 @@ export * from "./components/data-preview";
 export * from "./components/management-layout";
 export * from "./components/status-notice";
 export * from "./components/template-picker";
+
+export * from "./components/property-layout";
+export * from "./components/detail-panel";

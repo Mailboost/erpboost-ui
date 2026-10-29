@@ -26,6 +26,8 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "property-layout": "src/components/property-layout/index.tsx",
+        "detail-panel": "src/components/detail-panel/index.tsx",
         "management-layout": "src/components/management-layout/index.tsx",
         "status-notice": "src/components/status-notice/index.tsx",
         "template-picker": "src/components/template-picker/index.tsx",

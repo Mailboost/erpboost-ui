@@ -238,6 +238,14 @@
     "./template-picker": {
       "types": "./dist/components/template-picker/index.d.ts",
       "import": "./dist/template-picker.js"
+    },
+    "./property-layout": {
+      "types": "./dist/components/property-layout/index.d.ts",
+      "import": "./dist/property-layout.js"
+    },
+    "./detail-panel": {
+      "types": "./dist/components/detail-panel/index.d.ts",
+      "import": "./dist/detail-panel.js"
     }
   },
   "scripts": {

@@ -140,6 +140,8 @@ try {
     import {DataPreview} from "@mailboost/erpboost-ui/data-preview";
     import {ManagementLayout,ManagementTable,FormStack,SettingsList,SettingsRow,IdentityCell,ResponsiveLabel,SetupPanel} from "@mailboost/erpboost-ui/management-layout";
     import {StatusNotice} from "@mailboost/erpboost-ui/status-notice";
+    import {PropertyRow,PropertySection,FormSection} from "@mailboost/erpboost-ui/property-layout";
+    import {DetailPanel} from "@mailboost/erpboost-ui/detail-panel";
     import {TemplatePicker} from "@mailboost/erpboost-ui/template-picker";
 
     import "@mailboost/erpboost-ui/styles";
@@ -158,6 +160,8 @@ try {
       <ManagementLayout.Root><ManagementLayout.Heading>Heading</ManagementLayout.Heading><ManagementLayout.Surface><ManagementLayout.Toolbar><ManagementLayout.Search><Input/></ManagementLayout.Search></ManagementLayout.Toolbar><ManagementTable.Root><ManagementTable.Head hideOnCompact>Column</ManagementTable.Head><ManagementTable.Cell muted>Value</ManagementTable.Cell></ManagementTable.Root></ManagementLayout.Surface></ManagementLayout.Root>
       <FormStack><SettingsList><SettingsRow label={<IdentityCell title="Member" description="Email"/>} control={<Input/>}/></SettingsList><ResponsiveLabel full="Add resource" compact="Add"/><SetupPanel title="Prepare"/></FormStack>
       <StatusNotice variant="success" dismiss={{label:"Dismiss",onDismiss:()=>{}}}>Done</StatusNotice>
+      <FormSection legend="Properties"><PropertySection title="Optional"/><PropertyRow label="ID" description="Exact text"><Input value="0001" readOnly/></PropertyRow></FormSection>
+      <DetailPanel.Root title="Record" tabs={[{value:"details",label:"Details"}]} value="details" onValueChange={()=>{}} tabListLabel="Sections" onClose={()=>{}}><DetailPanel.Body>Record content</DetailPanel.Body></DetailPanel.Root>
       <TemplatePicker title="Templates" closeLabel="Close" options={[]} onChoose={()=>{}} onClose={()=>{}}/>
       <WorkspaceFrame.Root><WorkspaceFrame.Header>Header</WorkspaceFrame.Header><WorkspaceFrame.Sidebar>Sidebar</WorkspaceFrame.Sidebar><WorkspaceFrame.Workspace><WorkspaceFrame.ScrollArea><WorkspaceFrame.Content>Content</WorkspaceFrame.Content></WorkspaceFrame.ScrollArea></WorkspaceFrame.Workspace></WorkspaceFrame.Root>
       <ResizeControl orientation="horizontal" value={160} min={100} max={300} onValueChange={()=>{}} aria-label="Height"/>
