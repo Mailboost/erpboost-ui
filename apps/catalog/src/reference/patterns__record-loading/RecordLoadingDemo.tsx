@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   Button,
   Card,
+  CollectionLayout,
   DetailTable,
   FormGrid,
   FormLoadingFields,
@@ -63,7 +64,11 @@ export function RecordLoadingDemo() {
             )}
           </Card.Content>
         </Card.Root>
-        <div style={{ marginTop: 20 }}>
+        <CollectionLayout.TableArea
+          interactive
+          minWidth={700}
+          style={{ marginTop: 20 }}
+        >
           <DetailTable
             columns={columns}
             minWidth={700}
@@ -93,7 +98,7 @@ export function RecordLoadingDemo() {
               </Table.Row>
             )}
           </DetailTable>
-        </div>
+        </CollectionLayout.TableArea>
       </section>
     </div>
   );

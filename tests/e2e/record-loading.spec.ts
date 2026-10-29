@@ -24,6 +24,8 @@ for (const viewport of [
       await expect(region.getByRole("textbox")).toHaveCount(0);
       await expect(region.getByRole("button")).toHaveCount(0);
       await expect(region.getByRole("columnheader")).toHaveCount(4);
+      for (const row of await region.locator(".erpui-table-loading-row").all())
+        await expect(row).toHaveCSS("cursor", "default");
       const fields = region.locator(".erpui-form-loading-field");
       await expect(fields).toHaveCount(3);
       const first = (await fields.nth(0).boundingBox())!,

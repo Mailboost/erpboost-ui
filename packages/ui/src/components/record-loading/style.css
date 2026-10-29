@@ -41,9 +41,9 @@
 .erpui-form-loading-field > span:first-child {
   overflow-wrap: anywhere;
 }
-.erpui-table-loading-row.erpui-table-loading-row {
+[data-slot="table-row"].erpui-table-loading-row[aria-hidden="true"] {
   cursor: default;
 }
-.erpui-table-loading-row.erpui-table-loading-row:hover {
+[data-slot="table-row"].erpui-table-loading-row[aria-hidden="true"]:hover {
   background: transparent;
 }
