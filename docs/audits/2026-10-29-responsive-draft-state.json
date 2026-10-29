@@ -1,0 +1,222 @@
+{
+  "date": "2026-10-29",
+  "reference": "https://ui.tailor.tech/",
+  "pullRequest": "https://github.com/Mailboost/erpboost-ui/pull/4",
+  "scope": {
+    "routes": 29,
+    "widthSequence": [
+      1280,
+      1024,
+      1023,
+      768,
+      767,
+      640,
+      639,
+      375,
+      1280
+    ],
+    "colorScheme": "light",
+    "pairs": 261,
+    "normalPairs": 243,
+    "knownErrorPairs": 18,
+    "matchedNormalNodes": 11784,
+    "unmatchedNormalNodes": {
+      "reference": 300,
+      "local": 670
+    }
+  },
+  "before": {
+    "geometryDifferences": 1529,
+    "affectedRoutes": [
+      "/page/assistant-panel",
+      "/page/chat",
+      "/page/collection",
+      "/page/dashboard-with-charts",
+      "/page/detail-2col-action-panel",
+      "/page/document-page",
+      "/page/email",
+      "/page/form-as-page",
+      "/page/pipeline-kanban",
+      "/page/simple-master-crud"
+    ]
+  },
+  "after": {
+    "geometryDifferences": 0,
+    "bodyWidthDifferences": 0,
+    "structuralStyleDifferences": 45,
+    "structuralStyleExplanation": "DataTable toolbar is row with an additional vertical wrapper locally; reference toolbar is column. Corresponding painted node bounds match. No generic column-settings API removed to alter an unpainted wrapper."
+  },
+  "fixes": [
+    "PageFrame auto-collapse content-width threshold 640 to 480",
+    "Hide collapse button below md, preserve desktop position with the matching wrapper and margin"
+  ],
+  "boundary": {
+    "referenceOpen": {
+      "frameOuterWidth": 482,
+      "contentWidth": 480,
+      "sidebarWidth": 256
+    },
+    "referenceCollapsed": {
+      "frameOuterWidth": 481,
+      "contentWidth": 479,
+      "sidebarWidth": 0
+    }
+  },
+  "regression": {
+    "newCasesPerTarget": 4,
+    "beforeSidebarOnly": {
+      "referencePassed": 2,
+      "localFailed": 2
+    },
+    "after": {
+      "referencePassed": 4,
+      "localPassed": 4,
+      "retries": 0,
+      "skipped": 0
+    },
+    "configuredTotalPerTarget": 280,
+    "unitPassed": 39,
+    "typecheck": "passed",
+    "build": "passed",
+    "exportedRoutes": 72
+  },
+  "images": [
+    {
+      "phase": "before",
+      "route": "form-as-page",
+      "colorScheme": "light",
+      "width": 640,
+      "differingPixels": 194393,
+      "maxChannelDelta": 255
+    },
+    {
+      "phase": "after",
+      "route": "form-as-page",
+      "colorScheme": "light",
+      "width": 640,
+      "differingPixels": 6,
+      "maxChannelDelta": 1
+    },
+    {
+      "phase": "before",
+      "route": "collection",
+      "colorScheme": "light",
+      "width": 640,
+      "differingPixels": 227076,
+      "maxChannelDelta": 245
+    },
+    {
+      "phase": "after",
+      "route": "collection",
+      "colorScheme": "light",
+      "width": 640,
+      "differingPixels": 2,
+      "maxChannelDelta": 1
+    },
+    {
+      "phase": "before",
+      "route": "form-as-page",
+      "colorScheme": "light",
+      "width": 639,
+      "differingPixels": 194368,
+      "maxChannelDelta": 255
+    },
+    {
+      "phase": "after",
+      "route": "form-as-page",
+      "colorScheme": "light",
+      "width": 639,
+      "differingPixels": 6,
+      "maxChannelDelta": 1
+    },
+    {
+      "phase": "before",
+      "route": "collection",
+      "colorScheme": "light",
+      "width": 639,
+      "differingPixels": 228278,
+      "maxChannelDelta": 245
+    },
+    {
+      "phase": "after",
+      "route": "collection",
+      "colorScheme": "light",
+      "width": 639,
+      "differingPixels": 2,
+      "maxChannelDelta": 1
+    },
+    {
+      "phase": "before",
+      "route": "form-as-page",
+      "colorScheme": "dark",
+      "width": 640,
+      "differingPixels": 200617,
+      "maxChannelDelta": 245
+    },
+    {
+      "phase": "after",
+      "route": "form-as-page",
+      "colorScheme": "dark",
+      "width": 640,
+      "differingPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "phase": "before",
+      "route": "collection",
+      "colorScheme": "dark",
+      "width": 640,
+      "differingPixels": 236482,
+      "maxChannelDelta": 240
+    },
+    {
+      "phase": "after",
+      "route": "collection",
+      "colorScheme": "dark",
+      "width": 640,
+      "differingPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "phase": "before",
+      "route": "form-as-page",
+      "colorScheme": "dark",
+      "width": 639,
+      "differingPixels": 200617,
+      "maxChannelDelta": 245
+    },
+    {
+      "phase": "after",
+      "route": "form-as-page",
+      "colorScheme": "dark",
+      "width": 639,
+      "differingPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "phase": "before",
+      "route": "collection",
+      "colorScheme": "dark",
+      "width": 639,
+      "differingPixels": 239130,
+      "maxChannelDelta": 240
+    },
+    {
+      "phase": "after",
+      "route": "collection",
+      "colorScheme": "dark",
+      "width": 639,
+      "differingPixels": 0,
+      "maxChannelDelta": 0
+    }
+  ],
+  "limits": [
+    "18 error pairs are notification-panel and user-profile-dialog fullscreen shared Provider errors, not successful demos",
+    "Unmatched DOM signatures are not claimed equivalent",
+    "In-memory draft retention and cancellation do not prove backend persistence",
+    "Four light image pairs retain 2 or 6 pixels at max channel delta 1; four dark pairs are pixel identical",
+    "Prior Code 80-pixel residual and documented accessibility and other differences remain",
+    "No publication or main merge performed"
+  ],
+  "rawEvidenceDirectory": "/tmp/erpboost-ui-responsive-audit-20261029"
+}

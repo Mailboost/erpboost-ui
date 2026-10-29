@@ -492,6 +492,7 @@ function SelectDemo({ combo = false }: { combo?: boolean }) {
           />
           <Combobox
             multiple
+            placeholder="Assign reviewers"
             items={members}
             defaultValue={["Tanaka", "Sato"]}
           />
@@ -504,6 +505,7 @@ function SelectDemo({ combo = false }: { combo?: boolean }) {
           />
           <Select
             multiple
+            placeholder="Choose statuses"
             items={["Draft", "In Review", "Approved"]}
             defaultValue={["Draft", "Approved"]}
           />
