@@ -228,7 +228,7 @@ function CodeBlock({ demo }: { demo: Demo }) {
               <Check className="size-3.5 text-status-completed" />
             ) : (
               <Copy className="size-3.5" />
-            )}{" "}
+            )}
             {copied ? "Copied" : "Copy"}
           </Button>
         </div>

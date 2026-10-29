@@ -21,7 +21,7 @@ export function PageFrame({
   const frame = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const observer = new ResizeObserver(([entry]) => {
-      if (entry.contentRect.width < 640) setOpen(false);
+      if (entry.contentRect.width < 480) setOpen(false);
     });
     if (frame.current) observer.observe(frame.current);
     return () => observer.disconnect();
@@ -54,15 +54,17 @@ export function PageFrame({
         className={`flex shrink-0 flex-col overflow-hidden bg-sidebar transition-[width] duration-200 ease-linear ${open ? "w-64 border-r border-sidebar-border" : "w-0"}`}
       >
         <div className="flex shrink-0 items-center justify-end p-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-muted-foreground"
-            aria-label="Collapse preview sidebar"
-            onClick={() => setOpen(false)}
-          >
-            <PanelLeft className="size-4.5" />
-          </Button>
+          <div className="hidden md:block">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="-ml-1 text-muted-foreground"
+              aria-label="Collapse preview sidebar"
+              onClick={() => setOpen(false)}
+            >
+              <PanelLeft className="size-4.5" />
+            </Button>
+          </div>
         </div>
       </aside>
       <main

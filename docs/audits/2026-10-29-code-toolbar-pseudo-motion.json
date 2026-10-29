@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-29",
+  "baseCommit": "76e5504aa8670984f640786e9e51c9bb2dafacf7",
+  "pullRequest": "https://github.com/Mailboost/erpboost-ui/pull/4",
+  "changes": [
+    "Remove the source toolbar muted-foreground override",
+    "Remove source file group flex growth and actions auto margin",
+    "Remove the Copy label leading whitespace"
+  ],
+  "beforeGroupWidth": {
+    "desktopLight": 718.421875,
+    "tabletDark": 398.421875,
+    "referenceDesktopAndTablet": 236.90625,
+    "mobileBoth": 157.5625
+  },
+  "afterGroupWidth": {
+    "desktopLight": 236.90625,
+    "tabletDark": 236.90625,
+    "mobileDark": 157.5625
+  },
+  "newTests": {
+    "startTime": "2026-10-29T05:53:33.496Z",
+    "duration": 8402.063,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "newCasesPerEnvironment": 3,
+  "configuredCasesPerEnvironment": 276,
+  "possibleThreeTargetCases": 828,
+  "pseudoAudit": {
+    "routes": 38,
+    "modes": 2,
+    "visits": 152,
+    "pairs": 76,
+    "referenceNodes": 1272,
+    "localNodes": 1354,
+    "matchedSignatures": 1212,
+    "rawSelectionStyleDifferences": 8,
+    "limitations": "Unmatched nodes include explicit/implicit input types, date-field structure, data-slot differences and clock-dependent activity text; they are not counted as matching."
+  },
+  "realSelectedTextImages": [
+    {
+      "subject": "selected-input",
+      "mode": "desktop-light",
+      "pixels": 0,
+      "max": 0
+    },
+    {
+      "subject": "selected-input",
+      "mode": "mobile-dark",
+      "pixels": 0,
+      "max": 0
+    },
+    {
+      "subject": "selected-description",
+      "mode": "desktop-light",
+      "pixels": 0,
+      "max": 0
+    },
+    {
+      "subject": "selected-description",
+      "mode": "mobile-dark",
+      "pixels": 0,
+      "max": 0
+    }
+  ],
+  "motion": {
+    "groups": 14,
+    "canonicalMatching": 13,
+    "qualification": "One desktop reference sheet transition was not captured in this run. Mobile translate and translateX serialize differently but are mathematically equivalent; raw capture is retained."
+  },
+  "residualCodeImages": [
+    {
+      "frame": 0,
+      "pixels": 80,
+      "max": 5
+    },
+    {
+      "frame": 1,
+      "pixels": 80,
+      "max": 5
+    },
+    {
+      "frame": 2,
+      "pixels": 80,
+      "max": 5
+    }
+  ],
+  "initialChecks": {
+    "referenceMobileTestFailure": "Absolute page coordinates changed when keyboard focus scrolled the toolbar into view; the test now compares positions within the file group.",
+    "beforeLocalFailures": 3,
+    "beforeReferencePasses": 2,
+    "beforeReferenceFailures": 1,
+    "firstPseudoCapture": "Local controls were still lazy-loading. Empty local captures were not counted and both environments were recaptured after network idle.",
+    "approvalReview": "The first test-file update was not executed because approval review timed out; a single shorter retry succeeded."
+  },
+  "checks": {
+    "unitCases": 39,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "routesExported": 72,
+    "fullCI": "See PR checks; not counted as completed in this snapshot"
+  },
+  "published": false,
+  "evidence": "/tmp/erpboost-ui-code-surface-audit-20261029"
+}
