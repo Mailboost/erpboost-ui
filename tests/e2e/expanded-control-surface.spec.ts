@@ -50,10 +50,26 @@ for (const mode of [
       await option.click();
       await expect(chips).toHaveText(["Tanaka", "Suzuki"]);
       await expect(input).toHaveValue("");
+      await expect(page.locator('[data-slot="combobox-content"]')).toHaveCount(
+        0,
+      );
       await hasSurfaceShadow();
       await page.locator('[data-slot="combobox-chip-remove"]').first().click();
       await expect(chips).toHaveText(["Suzuki"]);
       await expect(input).toBeFocused();
+      await hasSurfaceShadow();
+      await input.press("ArrowLeft");
+      await expect(chips.first()).toBeFocused();
+      await page.keyboard.press("Backspace");
+      await expect(chips).toHaveCount(0);
+      await expect(input).toHaveAttribute("placeholder", "Assign reviewers");
+      await expect(input).toHaveAccessibleName("Assign reviewers");
+      await expect(input).toBeFocused();
+      await hasSurfaceShadow();
+      await input.fill("Yam");
+      await page.getByRole("option", { name: "Yamada", exact: true }).click();
+      await expect(chips).toHaveText(["Yamada"]);
+      await expect(input).toHaveValue("");
       await hasSurfaceShadow();
     });
 

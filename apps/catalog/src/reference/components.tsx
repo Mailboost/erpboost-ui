@@ -492,6 +492,7 @@ function SelectDemo({ combo = false }: { combo?: boolean }) {
           />
           <Combobox
             multiple
+            placeholder="Assign reviewers"
             items={members}
             defaultValue={["Tanaka", "Sato"]}
           />
