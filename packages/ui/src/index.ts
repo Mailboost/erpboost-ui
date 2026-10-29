@@ -426,3 +426,5 @@ export * from "./components/source-navigation";
 export * from "./components/record-loading";
 
 export * from "./components/resource-action-picker";
+
+export * from "./components/adaptive-workspace";

@@ -278,6 +278,10 @@
     "./resource-action-picker": {
       "types": "./dist/components/resource-action-picker/index.d.ts",
       "import": "./dist/resource-action-picker.js"
+    },
+    "./adaptive-workspace": {
+      "types": "./dist/components/adaptive-workspace/index.d.ts",
+      "import": "./dist/adaptive-workspace.js"
     }
   },
   "scripts": {

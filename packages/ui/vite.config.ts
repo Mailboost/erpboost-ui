@@ -26,6 +26,7 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+        "adaptive-workspace": "src/components/adaptive-workspace/index.tsx",
         "resource-action-picker": "src/components/resource-action-picker/index.tsx",
         "record-loading": "src/components/record-loading/index.tsx",
         "source-navigation": "src/components/source-navigation/index.tsx",

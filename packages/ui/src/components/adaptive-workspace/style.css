@@ -1,0 +1,65 @@
+/* Only the new layout owns these rules; CodeWorkspace and SourceNavigation are unchanged. */
+.erpui-adaptive-workspace {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+}
+.erpui-adaptive-workspace-body {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+.erpui-adaptive-workspace-navigation {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 0;
+  min-height: 0;
+}
+.erpui-adaptive-workspace[hidden],
+.erpui-adaptive-workspace-navigation[hidden] {
+  display: none;
+}
+.erpui-adaptive-workspace-main {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+.erpui-adaptive-workspace-bar {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 0;
+  padding: 4px 8px;
+  background: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+.erpui-adaptive-workspace-bar button {
+  max-width: 100%;
+}
+.erpui-adaptive-workspace-bar button > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.erpui-adaptive-workspace[data-compact] > .erpui-adaptive-workspace-body {
+  flex-direction: column;
+}
+.erpui-adaptive-workspace[data-compact]
+  > .erpui-adaptive-workspace-body
+  > .erpui-adaptive-workspace-navigation {
+  flex-shrink: 1;
+  max-height: min(280px, 40vh);
+  overflow: auto;
+  border-bottom: 1px solid var(--border);
+}
+.erpui-adaptive-workspace[data-compact]
+  > .erpui-adaptive-workspace-body
+  > .erpui-adaptive-workspace-navigation
+  > * {
+  width: 100%;
+  min-width: 100%;
+  border-right: 0;
+}
