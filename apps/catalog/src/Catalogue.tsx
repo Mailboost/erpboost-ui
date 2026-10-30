@@ -261,8 +261,15 @@ function CodeBlock({ demo }: { demo: Demo }) {
 }
 function usePreviewSettings() {
   const [width, setWidth] = useState("desktop"),
-    [background, setBackground] = useState("card"),
+    [backgrounds, setBackgrounds] = useState<Record<string, string>>({
+      desktop: "card",
+      tablet: "card",
+      mobile: "card",
+    }),
     [revision, setRevision] = useState(0);
+  const background = backgrounds[width] ?? "card";
+  const setBackground = (value: string) =>
+    setBackgrounds((current) => ({ ...current, [width]: value }));
   return { width, setWidth, background, setBackground, revision, setRevision };
 }
 type PreviewSettings = ReturnType<typeof usePreviewSettings>;
@@ -280,10 +287,7 @@ function PreviewOptions({
     <div className="preview-options">
       <Tabs.Root
         value={width}
-        onValueChange={(v) => {
-          setWidth(String(v));
-          if (v !== "desktop") setBackground("card");
-        }}
+        onValueChange={(v) => setWidth(String(v))}
         className="w-fit gap-0"
       >
         <Tabs.List aria-label="Preview viewport">
@@ -345,17 +349,18 @@ function PreviewOptions({
 function Preview({
   entry,
   demo,
-  settings: shared,
+  settings,
+  tab,
+  onTabChange,
   hideOptions = false,
 }: {
   entry: Entry;
   demo: Demo;
-  settings?: PreviewSettings;
+  settings: PreviewSettings;
+  tab: string;
+  onTabChange: (value: string) => void;
   hideOptions?: boolean;
 }) {
-  const [tab, setTab] = useState("preview");
-  const ownSettings = usePreviewSettings();
-  const settings = shared ?? ownSettings;
   const { width, background, revision } = settings;
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   const url = `${base}${routeOf(entry)}?preview=fullscreen`;
@@ -379,7 +384,7 @@ function Preview({
         <div className="preview-toolbar">
           <Tabs.Root
             value={tab}
-            onValueChange={(v) => setTab(String(v))}
+            onValueChange={(v) => onTabChange(String(v))}
             className="w-fit gap-0"
           >
             <Tabs.List aria-label={named ? `${demo.heading} view` : "View"}>
@@ -429,6 +434,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
     Math.max(0, Number(query.get("variant")) || 0),
   );
   const [copied, setCopied] = useState(false);
+  const [views, setViews] = useState<Record<string, string>>({});
   const settings = usePreviewSettings();
   const shared = entry.slug === "data-charts" || entry.slug === "timeline";
   if (query.get("preview") === "fullscreen") {
@@ -582,9 +588,16 @@ export function EntryPage({ entry }: { entry: Entry }) {
         >
           {demos.map((demo, i) => (
             <Preview
-              key={`${entry.slug}-${i}`}
+              key={`${entry.slug}-${demo.heading || i}`}
               entry={entry}
               settings={settings}
+              tab={views[demo.heading ?? ""] ?? "preview"}
+              onTabChange={(value) =>
+                setViews((current) => ({
+                  ...current,
+                  [demo.heading ?? ""]: value,
+                }))
+              }
               hideOptions={shared}
               demo={demo}
             />
