@@ -15,6 +15,7 @@ export interface LookupInputProps {
   onSearchChange: (value: string) => void;
   onValueChange: (value: string | null) => void;
   disabled?: boolean;
+  required?: boolean;
   loading?: boolean;
   loadingContent?: ReactNode;
   error?: string;
@@ -34,6 +35,7 @@ export function LookupInput({
   onSearchChange,
   onValueChange,
   disabled,
+  required,
   loading,
   loadingContent,
   error,
@@ -57,15 +59,18 @@ export function LookupInput({
     (lastSelection?.value === value ? lastSelection.label : (value ?? ""));
   if (loading && value !== null && !lastSelection) return <>{loadingContent}</>;
   const labelFor = (key: string) =>
-    items.find((option) => option.value === key)?.label ??
-    (key === value ? selectedLabel : key);
+    key === ""
+      ? clearLabel
+      : (items.find((option) => option.value === key)?.label ??
+        (key === value ? selectedLabel : key));
   return (
     <Combobox.Parts.Root
-      items={items.map((item) => item.value)}
+      items={["", ...items.map((item) => item.value)]}
       filter={null}
       value={value}
       open={open}
       disabled={disabled}
+      required={required}
       itemToStringLabel={labelFor}
       inputValue={open ? search : value === null ? "" : selectedLabel}
       onInputValueChange={(next, details) => {
@@ -81,11 +86,18 @@ export function LookupInput({
       onValueChange={(next, details) => {
         if (details.reason !== "input-change") {
           onValueChange(next === null || next === "" ? null : next);
+          onSearchChange("");
           setOpen(false);
         }
       }}
     >
-      <Combobox.Parts.InputGroup>
+      <Combobox.Parts.InputGroup
+        onKeyDown={(event) => {
+          if (open && event.key === "Enter" && !event.nativeEvent.isComposing) {
+            event.preventDefault();
+          }
+        }}
+      >
         <Combobox.Parts.Input
           id={id}
           aria-label={label}
@@ -101,7 +113,10 @@ export function LookupInput({
         />
         <Combobox.Parts.Trigger aria-label={triggerLabel} />
       </Combobox.Parts.InputGroup>
-      <Combobox.Parts.Content container={container}>
+      <Combobox.Parts.Content
+        container={container}
+        className="astw:max-w-[calc(100vw-24px)]"
+      >
         {loading ? (
           loadingContent
         ) : (
@@ -109,7 +124,9 @@ export function LookupInput({
             <Combobox.Parts.Item value="">{clearLabel}</Combobox.Parts.Item>
             {items.map((item) => (
               <Combobox.Parts.Item key={item.value} value={item.value}>
-                {item.label}
+                <span className="astw:min-w-0 astw:break-all">
+                  {item.label}
+                </span>
               </Combobox.Parts.Item>
             ))}
           </Combobox.Parts.List>

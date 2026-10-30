@@ -23,13 +23,50 @@ for (const viewport of [
       await expect(
         page.getByRole("combobox", { name: "Choose office" }),
       ).toContainText("Osaka");
-      await page
-        .getByRole("combobox", { name: "Customer", exact: true })
-        .fill("Beta");
-      await page.getByRole("option", { name: "Beta", exact: true }).click();
+      const customer = page.getByRole("combobox", {
+        name: "Customer",
+        exact: true,
+      });
+      await customer.click();
+      await customer.press("ArrowDown");
+      await expect(
+        page.getByRole("option", { name: "Beta", exact: true }),
+      ).toHaveAttribute("data-highlighted", "");
+      await customer.press("Enter");
       await expect(
         page.getByRole("combobox", { name: "Customer", exact: true }),
       ).toHaveValue("Beta");
+      await expect(page.getByRole("listbox")).toHaveCount(0);
+      await customer.click();
+      await expect(
+        page.getByRole("option", { name: "Beta", exact: true }),
+      ).toHaveAttribute("data-highlighted", "");
+      await customer.press("ArrowUp");
+      await expect(
+        page.getByRole("option", { name: "Acme", exact: true }),
+      ).toHaveAttribute("data-highlighted", "");
+      await customer.press("ArrowUp");
+      await expect(
+        page.getByRole("option", { name: "Clear selection", exact: true }),
+      ).toHaveAttribute("data-highlighted", "");
+      await customer.press("Enter");
+      await expect(customer).toHaveValue("");
+      await expect(page.getByRole("listbox")).toHaveCount(0);
+      await expect(page.getByRole("status")).toContainText("customer: none");
+      await customer.fill("Acme");
+      await page.getByRole("option", { name: "Acme", exact: true }).click();
+      await expect(page.getByRole("listbox")).toHaveCount(0);
+      await customer.fill("Beta");
+      await customer.press("Escape");
+      await expect(page.getByRole("listbox")).toHaveCount(0);
+      await expect(customer).toHaveValue("Acme");
+      await customer.click();
+      await expect(
+        page.getByRole("option", { name: "Acme", exact: true }),
+      ).toBeVisible();
+      await expect(
+        page.getByRole("option", { name: "Beta", exact: true }),
+      ).toBeVisible();
     });
     test("action and account menus delegate actions", async ({ page }) => {
       await page.goto("patterns/action-menu?preview=fullscreen");

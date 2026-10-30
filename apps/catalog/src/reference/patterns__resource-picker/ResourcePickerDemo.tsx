@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { ResourcePicker, LookupInput, Button } from "@mailboost/erpboost-ui";
+import {
+  ResourcePicker,
+  LookupInput,
+  Button,
+  Field,
+} from "@mailboost/erpboost-ui";
 export function ResourcePickerDemo() {
   const [value, setValue] = useState("tokyo"),
     [search, setSearch] = useState(""),
@@ -24,22 +29,26 @@ export function ResourcePickerDemo() {
       >
         {items.find((item) => item.id === value)!.name}
       </ResourcePicker>
-      <LookupInput
-        label="Customer"
-        value={lookup}
-        items={[
-          { value: "a", label: "Acme" },
-          { value: "b", label: "Beta" },
-        ].filter((item) =>
-          item.label.toLowerCase().includes(search.toLowerCase()),
-        )}
-        search={search}
-        onSearchChange={setSearch}
-        onValueChange={setLookup}
-        triggerLabel="Show customers"
-        clearLabel="Clear selection"
-        emptyContent={<p>No matches</p>}
-      />
+      <Field.Root>
+        <Field.Label htmlFor="customer-lookup">Customer</Field.Label>
+        <LookupInput
+          id="customer-lookup"
+          label="Customer"
+          value={lookup}
+          items={[
+            { value: "a", label: "Acme" },
+            { value: "b", label: "Beta" },
+          ].filter((item) =>
+            item.label.toLowerCase().includes(search.toLowerCase()),
+          )}
+          search={search}
+          onSearchChange={setSearch}
+          onValueChange={setLookup}
+          triggerLabel="Show customers"
+          clearLabel="Clear selection"
+          emptyContent={<p>No matches</p>}
+        />
+      </Field.Root>
       <p role="status">
         Office: {value}; customer: {lookup ?? "none"}
       </p>
