@@ -104,6 +104,10 @@ try {
   writeFileSync(join(directory, "src.tsx"), `
     import {createRoot} from "react-dom/client";
     import {Button} from "@mailboost/erpboost-ui/button";
+    import {Menu} from "@mailboost/erpboost-ui/menu";
+    import {Alert} from "@mailboost/erpboost-ui/alert";
+    import {Dialog} from "@mailboost/erpboost-ui/dialog";
+    import {Combobox} from "@mailboost/erpboost-ui/combobox";
     import {Input} from "@mailboost/erpboost-ui/input";
     import {LocaleProvider} from "@mailboost/erpboost-ui/locale-provider";
     import {SidebarPanel} from "@mailboost/erpboost-ui/shell-parts";
@@ -126,10 +130,8 @@ try {
     import {RecordPanel,RecordPanelBody,RecordPanelFooter,RecordEditor} from "@mailboost/erpboost-ui/record-panel";
     import {LoadingPlaceholder,ConnectionsRowsSkeleton,ContextLoading} from "@mailboost/erpboost-ui/loading-layouts";
     import {WorkflowGraph} from "@mailboost/erpboost-ui/workflow-graph";
-    import {ResourcePicker,LookupInput} from "@mailboost/erpboost-ui/resource-picker";
-    import {ActionMenu,AccountMenu} from "@mailboost/erpboost-ui/action-menu";
+    import {ResourcePicker} from "@mailboost/erpboost-ui/resource-picker";
     import {SensitiveInput} from "@mailboost/erpboost-ui/sensitive-input";
-    import {ActionConfirmation} from "@mailboost/erpboost-ui/action-confirmation";
     import {CollectionLayout} from "@mailboost/erpboost-ui/collection-layout";
     import {FormGrid,DetailTable,RecordActions} from "@mailboost/erpboost-ui/record-layouts";
     import {HistoryList,HistoryEntry} from "@mailboost/erpboost-ui/record-history";
@@ -139,14 +141,11 @@ try {
     import {InlineCreate} from "@mailboost/erpboost-ui/inline-create";
     import {DataPreview} from "@mailboost/erpboost-ui/data-preview";
     import {ManagementLayout,ManagementTable,FormStack,SettingsList,SettingsRow,IdentityCell,ResponsiveLabel,SetupPanel} from "@mailboost/erpboost-ui/management-layout";
-    import {StatusNotice} from "@mailboost/erpboost-ui/status-notice";
     import {PropertyRow,PropertySection,FormSection} from "@mailboost/erpboost-ui/property-layout";
     import {ResourceActionPicker} from "@mailboost/erpboost-ui/resource-action-picker";
     import {AdaptiveWorkspace} from "@mailboost/erpboost-ui/adaptive-workspace";
     import {SourceNavigation} from "@mailboost/erpboost-ui/source-navigation";
     import {RecordPlaceholder,TableLoadingRows,FormLoadingFields} from "@mailboost/erpboost-ui/record-loading";
-    import {RetryNotice} from "@mailboost/erpboost-ui/retry-notice";
-    import {FormDialog} from "@mailboost/erpboost-ui/form-dialog";
     import {InlineRename} from "@mailboost/erpboost-ui/inline-rename";
     import {ResultPanel} from "@mailboost/erpboost-ui/result-panel";
     import {SettingsPanel} from "@mailboost/erpboost-ui/settings-panel";
@@ -155,27 +154,25 @@ try {
 
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
+      <Menu.Root><Menu.Trigger render={<Button/>}>Actions</Menu.Trigger><Menu.Content><Menu.Item>Rename</Menu.Item></Menu.Content></Menu.Root>
+      <Alert.Root variant="error" action={<Button>Retry</Button>}><Alert.Description>Error</Alert.Description></Alert.Root>
+      <Dialog.Root><Dialog.Content><Dialog.Header><Dialog.Title>Form</Dialog.Title></Dialog.Header><form><Input required/><Dialog.Footer><Button type="submit">Save</Button></Dialog.Footer></form></Dialog.Content></Dialog.Root>
+      <Combobox items={[{value:"1",label:"Example"}]} aria-label="Lookup"/>
 
 
       <ResourcePicker options={[]} value={null} selectedLabel="Choose" onSelect={()=>{}} trigger={<Button/>} triggerLabel="Choose resource" searchLabel="Search">Choose</ResourcePicker>
-      <LookupInput value={null} label="Lookup" items={[]} search="" onSearchChange={()=>{}} onValueChange={()=>{}} triggerLabel="Show" clearLabel="Clear"/>
-      <ActionMenu triggerLabel="Actions" menuLabel="Actions" items={[]}/><AccountMenu email="demo@example.invalid" triggerLabel={name=>name} menuLabel="Profile" items={[]}/>
       <SensitiveInput revealLabel="Show" concealLabel="Hide">{({type})=><Input type={type}/>}</SensitiveInput>
-      <ActionConfirmation title="Confirm" cancelLabel="Cancel" confirmLabel="Continue" onCancel={()=>{}} onConfirm={()=>{}}>Confirm action</ActionConfirmation>
       <CollectionLayout.Root><CollectionLayout.Collection><CollectionLayout.Results>Rows</CollectionLayout.Results><CollectionLayout.Footer>Footer</CollectionLayout.Footer></CollectionLayout.Collection></CollectionLayout.Root>
       <FormGrid.Root><Input/><FormGrid.Full><Input/></FormGrid.Full></FormGrid.Root><DetailTable minWidth={600} columns={[]}>Rows</DetailTable><RecordActions status="Draft"><Button>Save</Button></RecordActions>
       <HistoryList><HistoryEntry status="Complete" dateTime="2026-10-29" timeLabel="Today">Result</HistoryEntry></HistoryList>
       <ValueEditor name="amount" description="Text" initialValue="0001" anchor={new DOMRect(0,0)} container={document.body} onSave={async()=>{}} onClose={()=>{}}/>
       <ManagementLayout.Root><ManagementLayout.Heading>Heading</ManagementLayout.Heading><ManagementLayout.Surface><ManagementLayout.Toolbar><ManagementLayout.Search><Input/></ManagementLayout.Search></ManagementLayout.Toolbar><ManagementTable.Root><ManagementTable.Head hideOnCompact>Column</ManagementTable.Head><ManagementTable.Cell muted>Value</ManagementTable.Cell></ManagementTable.Root></ManagementLayout.Surface></ManagementLayout.Root>
       <FormStack><SettingsList><SettingsRow label={<IdentityCell title="Member" description="Email"/>} control={<Input/>}/></SettingsList><ResponsiveLabel full="Add resource" compact="Add"/><SetupPanel title="Prepare"/></FormStack>
-      <StatusNotice variant="success" dismiss={{label:"Dismiss",onDismiss:()=>{}}}>Done</StatusNotice>
       <FormSection legend="Properties"><PropertySection title="Optional"/><PropertyRow label="ID" description="Exact text"><Input value="0001" readOnly/></PropertyRow></FormSection>
       <RecordPlaceholder shape="title"/><FormLoadingFields fields={[{key:"name",label:"Name"}]}/><table><tbody><TableLoadingRows columns={[{key:"name"}]}/></tbody></table>
       <ResourceActionPicker options={[]} value={null} selectedLabel="Resources" trigger={<Button/>} triggerLabel="Resources" searchLabel="Find" onSelect={()=>{}}>Resources</ResourceActionPicker>
       <AdaptiveWorkspace navigationLabel="Files" sidebar={<aside>Navigation</aside>}><div>Editor</div></AdaptiveWorkspace>
       <SourceNavigation.Files files={[]} value="" onValueChange={()=>{}} title="Files"/><SourceNavigation.Tabs files={[]} value="" onValueChange={()=>{}} label="Files"/>
-      <RetryNotice retryLabel="Retry" onRetry={()=>{}}>Synthetic failure</RetryNotice>
-      <FormDialog title="Create" cancelLabel="Cancel" submitLabel="Save" onClose={()=>{}} onSubmit={()=>{}}><Input/></FormDialog>
       <InlineRename aria-label="Name" value="Exact" onValueChange={()=>{}} onCommit={()=>{}} onCancel={()=>{}}/>
       <ResultPanel.Root tabs={[{value:"data",label:"Data"}]} value="data" onValueChange={()=>{}} tabListLabel="Result views"><ResultPanel.Body><ResultPanel.Selection>Output</ResultPanel.Selection><ResultPanel.Details><ResultPanel.Item label="Run ID">0001</ResultPanel.Item></ResultPanel.Details><ResultPanel.Message><ResultPanel.ErrorText>Exact error</ResultPanel.ErrorText></ResultPanel.Message></ResultPanel.Body></ResultPanel.Root>
       <SettingsPanel title="Settings" closeLabel="Close" onClose={()=>{}} actions={<Button>Save</Button>}><Input/></SettingsPanel>

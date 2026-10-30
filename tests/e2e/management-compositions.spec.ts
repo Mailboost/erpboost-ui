@@ -55,23 +55,6 @@ for (const viewport of [
       await page.getByRole("button", { name: "Prepare", exact: true }).click();
       await expect(page.getByLabel("Preparation result")).toHaveText("Ready");
     });
-    test("controlled notice can reopen and long messages keep dismissal visible", async ({
-      page,
-    }) => {
-      await page.goto("patterns/status-notice?preview=fullscreen");
-      await page
-        .getByRole("button", { name: "Dismiss notice", exact: true })
-        .click();
-      await expect(page.getByRole("status")).toHaveCount(0);
-      await page.getByRole("button", { name: "Show next notice" }).click();
-      await expect(page.getByRole("status")).toContainText("Updated message");
-      const box = await page
-        .getByRole("button", { name: "Dismiss notice", exact: true })
-        .boundingBox();
-      expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width);
-      await page.getByRole("button", { name: "Undo", exact: true }).click();
-      await expect(page.getByRole("status")).toContainText("Undo requested");
-    });
     test("template review does not apply until confirmation and restores Back focus", async ({
       page,
     }) => {

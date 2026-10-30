@@ -183,17 +183,9 @@
       "types": "./dist/components/resource-picker/index.d.ts",
       "import": "./dist/resource-picker.js"
     },
-    "./action-menu": {
-      "types": "./dist/components/action-menu/index.d.ts",
-      "import": "./dist/action-menu.js"
-    },
     "./sensitive-input": {
       "types": "./dist/components/sensitive-input/index.d.ts",
       "import": "./dist/sensitive-input.js"
-    },
-    "./action-confirmation": {
-      "types": "./dist/components/action-confirmation/index.d.ts",
-      "import": "./dist/action-confirmation.js"
     },
     "./collection-layout": {
       "types": "./dist/components/collection-layout/index.d.ts",
@@ -231,10 +223,6 @@
       "types": "./dist/components/management-layout/index.d.ts",
       "import": "./dist/management-layout.js"
     },
-    "./status-notice": {
-      "types": "./dist/components/status-notice/index.d.ts",
-      "import": "./dist/status-notice.js"
-    },
     "./template-picker": {
       "types": "./dist/components/template-picker/index.d.ts",
       "import": "./dist/template-picker.js"
@@ -255,17 +243,9 @@
       "types": "./dist/components/settings-panel/index.d.ts",
       "import": "./dist/settings-panel.js"
     },
-    "./form-dialog": {
-      "types": "./dist/components/form-dialog/index.d.ts",
-      "import": "./dist/form-dialog.js"
-    },
     "./inline-rename": {
       "types": "./dist/components/inline-rename/index.d.ts",
       "import": "./dist/inline-rename.js"
-    },
-    "./retry-notice": {
-      "types": "./dist/components/retry-notice/index.d.ts",
-      "import": "./dist/retry-notice.js"
     },
     "./source-navigation": {
       "types": "./dist/components/source-navigation/index.d.ts",

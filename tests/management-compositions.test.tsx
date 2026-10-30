@@ -1,7 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import { TemplatePicker } from "../packages/ui/src/components/template-picker";
-import { StatusNotice } from "../packages/ui/src/components/status-notice";
 import {
   SettingsRow,
   SettingsList,
@@ -109,35 +108,6 @@ it("keeps confirmation and closing disabled while consumer work is pending", () 
   fireEvent.click(screen.getByRole("button", { name: "Back" }));
   expect(choose).not.toHaveBeenCalled();
   expect(close).not.toHaveBeenCalled();
-});
-it("leaves notification visibility to consumer state and can display the next message", () => {
-  const dismiss = vi.fn();
-  const props = { dismiss: { label: "Dismiss message", onDismiss: dismiss } };
-  const view = render(<StatusNotice {...props}>First message</StatusNotice>);
-  fireEvent.click(screen.getByRole("button", { name: "Dismiss message" }));
-  expect(dismiss).toHaveBeenCalledOnce();
-  expect(screen.getByRole("status").textContent).toContain("First message");
-  view.rerender(<StatusNotice {...props}>Next message</StatusNotice>);
-  expect(screen.getByRole("status").textContent).toContain("Next message");
-});
-it("blocks notice dismissal while disabled and preserves action callbacks", () => {
-  const dismiss = vi.fn(),
-    retry = vi.fn();
-  render(
-    <StatusNotice
-      variant="error"
-      title="Failed"
-      dismiss={{ label: "Dismiss message", onDismiss: dismiss, disabled: true }}
-      actions={<button onClick={retry}>Retry</button>}
-    >
-      Error detail
-    </StatusNotice>,
-  );
-  expect(screen.getByRole("alert").textContent).toContain("Error detail");
-  fireEvent.click(screen.getByRole("button", { name: "Dismiss message" }));
-  expect(dismiss).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole("button", { name: "Retry" }));
-  expect(retry).toHaveBeenCalledOnce();
 });
 it("retains Field label associations and the full accessible action name", () => {
   render(

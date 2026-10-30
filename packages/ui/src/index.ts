@@ -393,9 +393,7 @@ export type { EditableGridProps, GridColumn, GridModel, GridRow, GridValue } fro
 export { WorkflowGraph, type WorkflowGraphProps, type WorkflowGraphStep } from "./components/workflow-graph";
 
 export * from "./components/resource-picker";
-export * from "./components/action-menu";
 export * from "./components/sensitive-input";
-export * from "./components/action-confirmation";
 export * from "./components/collection-layout";
 export * from "./components/record-layouts";
 export * from "./components/record-history";
@@ -407,7 +405,6 @@ export * from "./components/inline-create";
 export * from "./components/data-preview";
 
 export * from "./components/management-layout";
-export * from "./components/status-notice";
 export * from "./components/template-picker";
 
 export * from "./components/property-layout";
@@ -416,10 +413,8 @@ export * from "./components/detail-panel";
 export * from "./components/result-panel";
 export * from "./components/settings-panel";
 
-export * from "./components/form-dialog";
 export * from "./components/inline-rename";
 
-export * from "./components/retry-notice";
 
 export * from "./components/source-navigation";
 

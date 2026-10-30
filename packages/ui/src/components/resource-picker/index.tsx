@@ -169,4 +169,3 @@ export function ResourcePicker({
     </Combobox.Parts.Root>
   );
 }
-export { LookupInput, type LookupInputProps } from "./lookup-input";
