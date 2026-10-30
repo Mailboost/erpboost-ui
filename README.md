@@ -20,7 +20,6 @@ http://127.0.0.1:5178/ を開いてください。
 ```sh
 npm run typecheck
 npm run build
-npm run check:package
 ```
 
 ## 構成
@@ -62,7 +61,7 @@ import { Spinner } from "@mailboost/erpboost-ui/spinner";
 import "@mailboost/erpboost-ui/styles";
 ```
 
-これらはルートの公開APIと同じ実装です。React 19の要件は変わりません。`check:package` は個別入口の外部アプリもビルドし、AI・認証SDK・React Routerが含まれないことを確認します。
+これらはルートの公開APIと同じ実装です。React 19の要件は変わりません。
 
 DataTableは既定でブラウザの右クリック操作を妨げません。組み込みのコピー・列固定メニューを使う場合は、`<DataTable.Root value={table} contextMenu>`で明示的に有効にします。列のsort / filter設定がある場合は、そのメニューも利用できます。
 
@@ -74,8 +73,6 @@ DataTableは既定でブラウザの右クリック操作を妨げません。�
 4. `npm run typecheck` と `npm run build`、ブラウザでの操作確認を行います。
 
 コード表示は実際のサンプルソースから生成します。プレビューは同じサンプルをカタログ内で実行し、Desktop / Tablet / Mobile の幅で確認できます。言語・ライト／ダークテーマの切替、検索、プレビューの単独表示にも対応します。
-
-`check:package` は `npm pack` の成果物を別ディレクトリのReactアプリにインストールし、公開ファイルの存在・型定義・本番ビルドを検証します。カタログ内のソース参照で配布パッケージの不備が隠れないよう、CIでも実行します。
 
 全データはサンプルです。登録・編集・承認・送信の操作はプレビュー内の状態だけを変更し、実ERPやメールサービスへ接続しません。AIチャットはローカルの会話UIサンプルです。認証プロバイダーの画面は表示状態のサンプルで、認証サービスの設定は利用するアプリケーション側で行います。
 
