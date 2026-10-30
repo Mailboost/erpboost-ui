@@ -355,7 +355,7 @@ export function GraphSkeleton() {
       />
       <div
         className={cn(
-          "erp-skeleton-graph-node astw:relative astw:z-1 astw:grid astw:gap-3.5 astw:border",
+          "erp-skeleton-graph-node astw:relative astw:z-1 astw:grid astw:grid-cols-1 astw:min-w-0 astw:gap-3.5 astw:border",
           "astw:border-[var(--border,#e5e5e5)] astw:rounded-[8px] astw:p-4.5 astw:bg-[var(--card,#fff)]",
           "astw:[&:nth-last-child(1)]:col-span-full astw:[&:nth-last-child(1)]:w-55",
           "astw:[&:nth-last-child(1)]:max-w-full astw:[&:nth-last-child(1)]:justify-self-center",
@@ -367,7 +367,7 @@ export function GraphSkeleton() {
       </div>
       <div
         className={cn(
-          "erp-skeleton-graph-node astw:relative astw:z-1 astw:grid astw:gap-3.5 astw:border",
+          "erp-skeleton-graph-node astw:relative astw:z-1 astw:grid astw:grid-cols-1 astw:min-w-0 astw:gap-3.5 astw:border",
           "astw:border-[var(--border,#e5e5e5)] astw:rounded-[8px] astw:p-4.5 astw:bg-[var(--card,#fff)]",
           "astw:[&:nth-last-child(1)]:col-span-full astw:[&:nth-last-child(1)]:w-55",
           "astw:[&:nth-last-child(1)]:max-w-full astw:[&:nth-last-child(1)]:justify-self-center",
@@ -379,7 +379,7 @@ export function GraphSkeleton() {
       </div>
       <div
         className={cn(
-          "erp-skeleton-graph-node astw:relative astw:z-1 astw:grid astw:gap-3.5 astw:border",
+          "erp-skeleton-graph-node astw:relative astw:z-1 astw:grid astw:grid-cols-1 astw:min-w-0 astw:gap-3.5 astw:border",
           "astw:border-[var(--border,#e5e5e5)] astw:rounded-[8px] astw:p-4.5 astw:bg-[var(--card,#fff)]",
           "astw:[&:nth-last-child(1)]:col-span-full astw:[&:nth-last-child(1)]:w-55",
           "astw:[&:nth-last-child(1)]:max-w-full astw:[&:nth-last-child(1)]:justify-self-center",
