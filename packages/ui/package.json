@@ -171,10 +171,6 @@
       "types": "./dist/components/workflow-graph/index.d.ts",
       "import": "./dist/workflow-graph.js"
     },
-    "./adaptive-workspace": {
-      "types": "./dist/components/adaptive-workspace/index.d.ts",
-      "import": "./dist/adaptive-workspace.js"
-    },
     "./card": {
       "types": "./dist/components/card/index.d.ts",
       "import": "./dist/card.js"

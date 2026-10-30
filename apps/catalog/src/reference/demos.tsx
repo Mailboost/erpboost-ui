@@ -13,7 +13,6 @@ const clean = (source: string) =>
     ? source.slice(source.indexOf(String.fromCharCode(10)) + 1)
     : source;
 const resources: Record<string, Demo[]> = {
-  "patterns/adaptive-workspace": [{name:"AdaptiveWorkspace",description:"Collapses navigation in narrow containers without unmounting the editor or sidebar drafts.",heading:"",screen:false,Component:lazy(async()=>{const m=await import("./patterns__adaptive-workspace/AdaptiveWorkspaceDemo");return {default:m.AdaptiveWorkspaceDemo};}),source:files["./patterns__adaptive-workspace/AdaptiveWorkspaceDemo.tsx"],sources:[{filename:"AdaptiveWorkspaceDemo.tsx",markdownFilename:"AdaptiveWorkspaceDemo.tsx",source:files["./patterns__adaptive-workspace/AdaptiveWorkspaceDemo.tsx"]}]}],
 
 
 

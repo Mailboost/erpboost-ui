@@ -26,7 +26,6 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
-        "adaptive-workspace": "src/components/adaptive-workspace/index.tsx",
 
 
 

@@ -290,7 +290,6 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ],
   ],
   patterns: [
-    ["adaptive-workspace", "AdaptiveWorkspace", "AdaptiveWorkspace", "Container-aware navigation that keeps editor and drafts mounted."],
 
 
 

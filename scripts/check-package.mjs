@@ -134,7 +134,6 @@ try {
     import {OptionCard} from "@mailboost/erpboost-ui/option-card";
     import {EditableGrid} from "@mailboost/erpboost-ui/editable-grid";
     import {WorkflowGraph} from "@mailboost/erpboost-ui/workflow-graph";
-    import {AdaptiveWorkspace} from "@mailboost/erpboost-ui/adaptive-workspace";
 
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
@@ -148,7 +147,6 @@ try {
       <Combobox items={[{value:"1",label:"Example"}]} aria-label="Lookup"/>
 
 
-      <AdaptiveWorkspace navigationLabel="Files" sidebar={<aside>Navigation</aside>}><div>Editor</div></AdaptiveWorkspace>
       <EditableGrid model={{name:"items",primaryKeys:["id"],columns:[{name:"id",label:"ID",type:"text",editable:false}]}} data={[{id:"0001"}]} relations={[]} pending={false} fetching={false} onStateChange={()=>{}} onRefresh={()=>{}} onOpen={()=>{}} onSaveCell={async()=>{}} renderEditor={()=>null}/>
       <WorkflowGraph docked={false} steps={[{id:"items",title:"Items",subtitle:"Source",state:"idle",statusLabel:"Ready"}]} links={[]} onSelect={()=>{}}/>
       <SidebarPanel><SidebarPanel.Nav aria-label="Menu"><SidebarPanel.Label>Work</SidebarPanel.Label><SidebarPanel.Button active>Orders</SidebarPanel.Button></SidebarPanel.Nav><SidebarPanel.Footer><SidebarPanel.AccountTrigger><SidebarPanel.Identity name="Demo" description="Example"/></SidebarPanel.AccountTrigger></SidebarPanel.Footer></SidebarPanel>
