@@ -1,6 +1,6 @@
 import primitiveLinks from "./reference/primitive-links.json";
 import referenceContent from "./reference/metadata.json";
-import { Fragment, lazy, Suspense, useState } from "react";
+import { Fragment, lazy, Suspense, useEffect, useState } from "react";
 import { Badge, Button, Link, Tabs } from "@mailboost/erpboost-ui";
 import {
   Check,
@@ -27,6 +27,14 @@ const DocumentNotes = lazy(() => import("./reference/DocumentNotes"));
 const HighlightedSource = lazy(() => import("./HighlightedSource"));
 const sourceLanguage = (filename: string) => filename.split(".").pop() ?? "tsx";
 const copyFeedbackMs = 1500;
+async function copyToClipboard(text: string) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    return false;
+  }
+}
 const sourceMarkdown = (files: { filename: string; source: string }[]) =>
   files
     .map(
@@ -170,8 +178,12 @@ function CodeBlock({ demo }: { demo: Demo }) {
     ? demo.sources
     : [{ filename: demo.name + ".tsx", source: demo.source }];
   const [index, setIndex] = useState(0),
-    [copied, setCopied] = useState(false),
-    [copiedAll, setCopiedAll] = useState(false);
+    [copied, setCopied] = useState<"single" | "all" | null>(null);
+  useEffect(() => {
+    if (!copied) return;
+    const timer = setTimeout(() => setCopied(null), copyFeedbackMs);
+    return () => clearTimeout(timer);
+  }, [copied]);
   const source = sources[index] ?? sources[0];
   return (
     <div
@@ -201,17 +213,16 @@ function CodeBlock({ demo }: { demo: Demo }) {
               aria-live="polite"
               title="Copy all files as Markdown (good for pasting to an AI agent)"
               onClick={async () => {
-                await navigator.clipboard.writeText(sourceMarkdown(sources));
-                setCopiedAll(true);
-                setTimeout(() => setCopiedAll(false), copyFeedbackMs);
+                if (await copyToClipboard(sourceMarkdown(sources)))
+                  setCopied("all");
               }}
             >
-              {copiedAll ? (
+              {copied === "all" ? (
                 <Check className="size-3.5 text-status-completed" />
               ) : (
                 <Files className="size-3.5" />
               )}
-              {copiedAll ? "Copied all" : `Copy all (${sources.length})`}
+              {copied === "all" ? "Copied all" : `Copy all (${sources.length})`}
             </Button>
           )}
           <Button
@@ -219,17 +230,15 @@ function CodeBlock({ demo }: { demo: Demo }) {
             size="sm"
             aria-live="polite"
             onClick={async () => {
-              await navigator.clipboard.writeText(source.source);
-              setCopied(true);
-              setTimeout(() => setCopied(false), copyFeedbackMs);
+              if (await copyToClipboard(source.source)) setCopied("single");
             }}
           >
-            {copied ? (
+            {copied === "single" ? (
               <Check className="size-3.5 text-status-completed" />
             ) : (
               <Copy className="size-3.5" />
             )}
-            {copied ? "Copied" : "Copy"}
+            {copied === "single" ? "Copied" : "Copy"}
           </Button>
         </div>
       </div>
@@ -513,9 +522,10 @@ export function EntryPage({ entry }: { entry: Entry }) {
                   entry.markdownNotes ?? "",
                   entry.markdownNotesJa ?? entry.markdownNotes ?? "",
                 );
-                await navigator.clipboard.writeText(
+                const didCopy = await copyToClipboard(
                   `# ${t(entry.title, entry.ja)}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${t(entry.description, entry.descriptionJa ?? entry.description)}\n\n## Do\n\n${t(...entry.guidance!.do)}\n\n## Don't\n\n${t(...entry.guidance!.dont)}${markdownNotes ? "\n\n" + markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${sourceMarkdown(unique)}`,
                 );
+                if (!didCopy) return;
                 setCopied(true);
                 setTimeout(() => setCopied(false), copyFeedbackMs);
               }}
