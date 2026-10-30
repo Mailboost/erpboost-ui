@@ -1,6 +1,10 @@
 import referenceMetadata from "./reference/metadata.json" with { type: "json" };
+import tailorRoutes from "./reference/tailor-routes.json" with { type: "json" };
+// The reference snapshot keeps newly registered ERPBoost entries marked by default.
+const tailorPaths = new Set(tailorRoutes);
 export type Category = "components" | "page" | "patterns";
 export interface Entry {
+  origin: "tailor" | "erpboost";
   slug: string;
   title: string;
   ja: string;
@@ -444,6 +448,7 @@ export const entries: Entry[] = Object.entries(groups).flatMap(
   ([category, rows]) =>
     rows.map(([slug, title, ja, description]) => ({
       category: category as Category,
+      origin: tailorPaths.has(`/${category}/${slug}`) ? "tailor" : "erpboost",
       slug,
       title,
       ja,
