@@ -77,13 +77,6 @@ for (const viewport of [
         page.getByRole("button", { name: "Submit", exact: true }),
       ).toBeVisible();
     });
-    test("history reveals a result without interpreting it", async ({
-      page,
-    }) => {
-      await page.goto("patterns/record-history?preview=fullscreen");
-      await page.getByText("Result", { exact: true }).click();
-      await expect(page.getByLabel("Result JSON")).toContainText('"0001"');
-    });
     test("value editor preserves exact strings and displays consumer validation", async ({
       page,
     }) => {

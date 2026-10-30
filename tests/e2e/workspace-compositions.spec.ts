@@ -85,27 +85,4 @@ for (const viewport of [
       await input.press("Escape");
       await expect(page.getByRole("status")).toHaveText("Cancelled");
     });
-    test("preview keeps data exact and scrolls horizontally within the screen", async ({
-      page,
-    }) => {
-      await page.goto("patterns/data-preview?preview=fullscreen");
-      await expect(
-        page.getByRole("cell", { name: "9007199254740993" }),
-      ).toBeVisible();
-      await expect(page.getByRole("cell", { name: "0001" })).toBeVisible();
-      await expect(
-        page.getByRole("cell", { name: "NULL", exact: true }),
-      ).toBeVisible();
-      const scroll = page.locator(".erpui-data-preview-scroll");
-      expect((await scroll.boundingBox())!.width).toBeLessThanOrEqual(
-        viewport.width,
-      );
-      if (viewport.width < 700)
-        expect(
-          await scroll.evaluate((el) => el.scrollWidth > el.clientWidth),
-        ).toBe(true);
-      await page.getByRole("button", { name: "Empty data" }).click();
-      await expect(page.getByText("No rows", { exact: true })).toBeVisible();
-      await expect(page.getByRole("note")).toBeVisible();
-    });
   });

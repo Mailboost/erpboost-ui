@@ -2,7 +2,6 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { useState } from "react";
 import { it, expect, vi } from "vitest";
 import { ResultPanel } from "../packages/ui/src/components/result-panel";
-import { SettingsPanel } from "../packages/ui/src/components/settings-panel";
 import { Field } from "../packages/ui/src/components/field";
 function Results() {
   const [value, setValue] = useState("data");
@@ -84,56 +83,4 @@ it("renders caller error text as inert text and retains notice roles", () => {
   expect(container.querySelector("img")).toBeNull();
   expect(screen.getByRole("note").textContent).toContain("Preview");
   expect(container.querySelector("dd")?.textContent).toBe("9007199254740993");
-});
-it("keeps settings closing blocked for buttons and Escape until caller releases it", async () => {
-  const close = vi.fn();
-  const view = render(
-    <SettingsPanel
-      title="Settings"
-      closeLabel="Close settings"
-      closeDisabled
-      onClose={close}
-    >
-      <input aria-label="Value" />
-    </SettingsPanel>,
-  );
-  await waitFor(() =>
-    expect(document.activeElement).toBe(
-      screen.getByRole("textbox", { name: "Value" }),
-    ),
-  );
-  fireEvent.click(screen.getByRole("button", { name: "Close settings" }));
-  fireEvent.keyDown(document.activeElement!, { key: "Escape", code: "Escape" });
-  expect(close).not.toHaveBeenCalled();
-  view.rerender(
-    <SettingsPanel title="Settings" closeLabel="Close settings" onClose={close}>
-      <input aria-label="Value" />
-    </SettingsPanel>,
-  );
-  fireEvent.keyDown(document.activeElement!, { key: "Escape", code: "Escape" });
-  await waitFor(() => expect(close).toHaveBeenCalledOnce());
-});
-it("preserves caller errors and footer actions without performing submission", () => {
-  const action = vi.fn();
-  render(
-    <SettingsPanel
-      title="Settings"
-      closeLabel="Close settings"
-      error="Save failed"
-      onClose={() => {}}
-      actions={
-        <button type="button" onClick={action}>
-          Retry
-        </button>
-      }
-    >
-      <input aria-label="Value" defaultValue="15" />
-    </SettingsPanel>,
-  );
-  expect(screen.getByRole("alert").textContent).toContain("Save failed");
-  fireEvent.click(screen.getByRole("button", { name: "Retry" }));
-  expect(action).toHaveBeenCalledOnce();
-  expect(
-    (screen.getByRole("textbox", { name: "Value" }) as HTMLInputElement).value,
-  ).toBe("15");
 });

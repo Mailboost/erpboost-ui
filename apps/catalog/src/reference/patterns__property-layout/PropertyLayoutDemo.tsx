@@ -1,9 +1,7 @@
 import { useState } from "react";
 import {
   PropertyRow,
-  PropertySection,
-  FormSection,
-} from "@mailboost/erpboost-ui";
+  PropertySection,  Fieldset } from "@mailboost/erpboost-ui";
 import { FormStack } from "@mailboost/erpboost-ui";
 import { Field } from "@mailboost/erpboost-ui";
 import { Button } from "@mailboost/erpboost-ui";
@@ -19,7 +17,7 @@ export function PropertyLayoutDemo() {
           setResult(`Submitted: ${name}`);
         }}
       >
-        <FormSection legend="Schema settings">
+        <Fieldset.Root disabled={false} className="astw:grid astw:min-w-0 astw:gap-4 astw:[&+fieldset]:mt-6"><Fieldset.Legend>{"Schema settings"}</Fieldset.Legend><div className="astw:grid astw:min-w-0 astw:gap-4">
           <Field.Root>
             <Field.Label>Property name</Field.Label>
             <Field.Control
@@ -32,8 +30,8 @@ export function PropertyLayoutDemo() {
               Use lowercase letters, digits and underscores.
             </Field.Description>
           </Field.Root>
-        </FormSection>
-        <FormSection legend="Record values">
+        </div></Fieldset.Root>
+        <Fieldset.Root disabled={false} className="astw:grid astw:min-w-0 astw:gap-4 astw:[&+fieldset]:mt-6"><Fieldset.Legend>{"Record values"}</Fieldset.Legend><div className="astw:grid astw:min-w-0 astw:gap-4">
           <FormStack gap={24}>
             <Field.Root>
               <PropertyRow
@@ -68,7 +66,7 @@ export function PropertyLayoutDemo() {
               </PropertyRow>
             </Field.Root>
           </FormStack>
-        </FormSection>
+        </div></Fieldset.Root>
         <Button type="submit">Add property</Button>
       </form>
       <output aria-label="Submission result">{result}</output>

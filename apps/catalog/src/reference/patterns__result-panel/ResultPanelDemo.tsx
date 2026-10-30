@@ -1,13 +1,11 @@
 import { useState } from "react";
 import {
   ResultPanel,
-  DataPreview,
   LogViewer,
   Field,
   Select,
   Badge,
-  Button,
-} from "@mailboost/erpboost-ui";
+  Button,  Table } from "@mailboost/erpboost-ui";
 export function ResultPanelDemo() {
   const [tab, setTab] = useState("data"),
     [output, setOutput] = useState("customers"),
@@ -77,14 +75,7 @@ export function ResultPanelDemo() {
                 </Field.Root>
                 <Badge>Saved</Badge>
               </ResultPanel.Selection>
-              <DataPreview
-                label="Preview rows"
-                rows={rows}
-                columns={[
-                  { id: "id", header: "ID", cell: (row) => row.id },
-                  { id: "amount", header: "Amount", cell: (row) => row.amount },
-                ]}
-              />
+              <Table.Root aria-label="Preview rows" containerClassName="astw:max-w-full astw:overscroll-x-contain" className="astw:[&_td]:tabular-nums"><Table.Header><Table.Row><Table.Head scope="col">#</Table.Head><Table.Head scope="col">ID</Table.Head><Table.Head scope="col">Amount</Table.Head></Table.Row></Table.Header><Table.Body>{rows.map((row,index)=><Table.Row key={index}><Table.Cell>{index+1}</Table.Cell><Table.Cell>{row.id}</Table.Cell><Table.Cell>{row.amount}</Table.Cell></Table.Row>)}</Table.Body></Table.Root>
               <ResultPanel.Message variant="warning" role="note">
                 Only a preview is shown.
               </ResultPanel.Message>

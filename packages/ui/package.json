@@ -195,10 +195,6 @@
       "types": "./dist/components/record-layouts/index.d.ts",
       "import": "./dist/record-layouts.js"
     },
-    "./record-history": {
-      "types": "./dist/components/record-history/index.d.ts",
-      "import": "./dist/record-history.js"
-    },
     "./value-editor": {
       "types": "./dist/components/value-editor/index.d.ts",
       "import": "./dist/value-editor.js"
@@ -214,10 +210,6 @@
     "./inline-create": {
       "types": "./dist/components/inline-create/index.d.ts",
       "import": "./dist/inline-create.js"
-    },
-    "./data-preview": {
-      "types": "./dist/components/data-preview/index.d.ts",
-      "import": "./dist/data-preview.js"
     },
     "./management-layout": {
       "types": "./dist/components/management-layout/index.d.ts",
@@ -239,10 +231,6 @@
       "types": "./dist/components/result-panel/index.d.ts",
       "import": "./dist/result-panel.js"
     },
-    "./settings-panel": {
-      "types": "./dist/components/settings-panel/index.d.ts",
-      "import": "./dist/settings-panel.js"
-    },
     "./inline-rename": {
       "types": "./dist/components/inline-rename/index.d.ts",
       "import": "./dist/inline-rename.js"
@@ -262,6 +250,14 @@
     "./adaptive-workspace": {
       "types": "./dist/components/adaptive-workspace/index.d.ts",
       "import": "./dist/adaptive-workspace.js"
+    },
+    "./card": {
+      "types": "./dist/components/card/index.d.ts",
+      "import": "./dist/card.js"
+    },
+    "./fieldset": {
+      "types": "./dist/components/fieldset/index.d.ts",
+      "import": "./dist/fieldset.js"
     }
   },
   "scripts": {

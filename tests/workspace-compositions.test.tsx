@@ -3,7 +3,6 @@ import { it, expect, vi } from "vitest";
 import { useState } from "react";
 import { ResizeControl } from "../packages/ui/src/components/resize-control";
 import { InlineCreate } from "../packages/ui/src/components/inline-create";
-import { DataPreview } from "../packages/ui/src/components/data-preview";
 it("resizes the end panel using its axis and clamps keyboard boundaries", () => {
   function Demo() {
     const [v, set] = useState(150);
@@ -115,32 +114,4 @@ it("associates consumer errors with the input and blocks unavailable submits", (
   fireEvent.keyDown(input, { key: "Enter" });
   fireEvent.click(screen.getByRole("button", { name: "Create" }));
   expect(submit).not.toHaveBeenCalled();
-});
-it("leaves exact data formatting and truncation notices to consumer renderers", () => {
-  const view = render(
-    <DataPreview
-      label="Rows"
-      rows={["9007199254740993"]}
-      columns={[
-        { id: "id", header: "ID", cell: (value) => <code>{value}</code> },
-      ]}
-      rowNumberOffset={100}
-      notice={<p role="note">First of 500</p>}
-      empty={<p>Empty</p>}
-    />,
-  );
-  expect(screen.getByRole("cell", { name: "9007199254740993" })).toBeTruthy();
-  expect(screen.getByRole("cell", { name: "101" })).toBeTruthy();
-  expect(screen.queryByText("Empty")).toBeNull();
-  view.rerender(
-    <DataPreview
-      label="Rows"
-      rows={[]}
-      columns={[]}
-      rowNumbers={false}
-      empty={<p>Empty</p>}
-    />,
-  );
-  expect(screen.getByText("Empty")).toBeTruthy();
-  expect(screen.queryByRole("columnheader")).toBeNull();
 });

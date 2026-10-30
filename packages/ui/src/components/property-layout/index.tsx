@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Children, type ComponentProps, type ReactNode } from "react";
-import { Fieldset } from "../fieldset";
+import { Children, type ReactNode } from "react";
 
 /** Place inside Field.Root. Labels, validation and typed controls stay with the caller. */
 export function PropertyRow({
@@ -72,27 +71,5 @@ export function PropertySection({
       <h3>{title}</h3>
       {description && <p>{description}</p>}
     </div>
-  );
-}
-/** Semantic fieldset for schema/metadata forms; submission and values are application-owned. */
-export function FormSection({
-  legend,
-  children,
-  className = "",
-  ...props
-}: Omit<ComponentProps<typeof Fieldset.Root>, "children"> & {
-  legend: ReactNode;
-  children: ReactNode;
-}) {
-  return (
-    <Fieldset.Root
-      {...props}
-      className={`erpui-form-section astw:grid astw:gap-4 astw:min-w-0 astw:[.erpui-form-section+&]:mt-6 ${className}`}
-    >
-      <Fieldset.Legend>{legend}</Fieldset.Legend>
-      <div className="erpui-form-section-fields astw:grid astw:gap-4 astw:min-w-0">
-        {children}
-      </div>
-    </Fieldset.Root>
   );
 }

@@ -104,6 +104,10 @@ try {
   writeFileSync(join(directory, "src.tsx"), `
     import {createRoot} from "react-dom/client";
     import {Button} from "@mailboost/erpboost-ui/button";
+    import {Fieldset} from "@mailboost/erpboost-ui/fieldset";
+    import {Card} from "@mailboost/erpboost-ui/card";
+    import {Sheet} from "@mailboost/erpboost-ui/sheet";
+    import {Table} from "@mailboost/erpboost-ui/table";
     import {Menu} from "@mailboost/erpboost-ui/menu";
     import {Alert} from "@mailboost/erpboost-ui/alert";
     import {Dialog} from "@mailboost/erpboost-ui/dialog";
@@ -134,26 +138,26 @@ try {
     import {SensitiveInput} from "@mailboost/erpboost-ui/sensitive-input";
     import {CollectionLayout} from "@mailboost/erpboost-ui/collection-layout";
     import {FormGrid,DetailTable,RecordActions} from "@mailboost/erpboost-ui/record-layouts";
-    import {HistoryList,HistoryEntry} from "@mailboost/erpboost-ui/record-history";
     import {ValueEditor} from "@mailboost/erpboost-ui/value-editor";
     import {WorkspaceFrame} from "@mailboost/erpboost-ui/workspace-frame";
     import {ResizeControl} from "@mailboost/erpboost-ui/resize-control";
     import {InlineCreate} from "@mailboost/erpboost-ui/inline-create";
-    import {DataPreview} from "@mailboost/erpboost-ui/data-preview";
     import {ManagementLayout,ManagementTable,FormStack,SettingsList,SettingsRow,IdentityCell,ResponsiveLabel,SetupPanel} from "@mailboost/erpboost-ui/management-layout";
-    import {PropertyRow,PropertySection,FormSection} from "@mailboost/erpboost-ui/property-layout";
+    import {PropertyRow,PropertySection} from "@mailboost/erpboost-ui/property-layout";
     import {ResourceActionPicker} from "@mailboost/erpboost-ui/resource-action-picker";
     import {AdaptiveWorkspace} from "@mailboost/erpboost-ui/adaptive-workspace";
     import {SourceNavigation} from "@mailboost/erpboost-ui/source-navigation";
     import {RecordPlaceholder,TableLoadingRows,FormLoadingFields} from "@mailboost/erpboost-ui/record-loading";
     import {InlineRename} from "@mailboost/erpboost-ui/inline-rename";
     import {ResultPanel} from "@mailboost/erpboost-ui/result-panel";
-    import {SettingsPanel} from "@mailboost/erpboost-ui/settings-panel";
     import {DetailPanel} from "@mailboost/erpboost-ui/detail-panel";
     import {TemplatePicker} from "@mailboost/erpboost-ui/template-picker";
 
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
+      <Sheet.Root><Sheet.Content><Sheet.Header><Sheet.Title>Settings</Sheet.Title></Sheet.Header><Input/><Sheet.Footer><Button>Close</Button></Sheet.Footer></Sheet.Content></Sheet.Root>
+      <Card.Root><Card.Header>History</Card.Header><Card.Content>Result</Card.Content></Card.Root>
+      <Table.Root aria-label="Preview"><Table.Body><Table.Row><Table.Cell>9007199254740993</Table.Cell></Table.Row></Table.Body></Table.Root>
       <Menu.Root><Menu.Trigger render={<Button/>}>Actions</Menu.Trigger><Menu.Content><Menu.Item>Rename</Menu.Item></Menu.Content></Menu.Root>
       <Alert.Root variant="error" action={<Button>Retry</Button>}><Alert.Description>Error</Alert.Description></Alert.Root>
       <Dialog.Root><Dialog.Content><Dialog.Header><Dialog.Title>Form</Dialog.Title></Dialog.Header><form><Input required/><Dialog.Footer><Button type="submit">Save</Button></Dialog.Footer></form></Dialog.Content></Dialog.Root>
@@ -164,24 +168,21 @@ try {
       <SensitiveInput revealLabel="Show" concealLabel="Hide">{({type})=><Input type={type}/>}</SensitiveInput>
       <CollectionLayout.Root><CollectionLayout.Collection><CollectionLayout.Results>Rows</CollectionLayout.Results><CollectionLayout.Footer>Footer</CollectionLayout.Footer></CollectionLayout.Collection></CollectionLayout.Root>
       <FormGrid.Root><Input/><FormGrid.Full><Input/></FormGrid.Full></FormGrid.Root><DetailTable minWidth={600} columns={[]}>Rows</DetailTable><RecordActions status="Draft"><Button>Save</Button></RecordActions>
-      <HistoryList><HistoryEntry status="Complete" dateTime="2026-10-29" timeLabel="Today">Result</HistoryEntry></HistoryList>
       <ValueEditor name="amount" description="Text" initialValue="0001" anchor={new DOMRect(0,0)} container={document.body} onSave={async()=>{}} onClose={()=>{}}/>
       <ManagementLayout.Root><ManagementLayout.Heading>Heading</ManagementLayout.Heading><ManagementLayout.Surface><ManagementLayout.Toolbar><ManagementLayout.Search><Input/></ManagementLayout.Search></ManagementLayout.Toolbar><ManagementTable.Root><ManagementTable.Head hideOnCompact>Column</ManagementTable.Head><ManagementTable.Cell muted>Value</ManagementTable.Cell></ManagementTable.Root></ManagementLayout.Surface></ManagementLayout.Root>
       <FormStack><SettingsList><SettingsRow label={<IdentityCell title="Member" description="Email"/>} control={<Input/>}/></SettingsList><ResponsiveLabel full="Add resource" compact="Add"/><SetupPanel title="Prepare"/></FormStack>
-      <FormSection legend="Properties"><PropertySection title="Optional"/><PropertyRow label="ID" description="Exact text"><Input value="0001" readOnly/></PropertyRow></FormSection>
+      <Fieldset.Root><Fieldset.Legend>Properties</Fieldset.Legend><PropertySection title="Optional"/><PropertyRow label="ID" description="Exact text"><Input value="0001" readOnly/></PropertyRow></Fieldset.Root>
       <RecordPlaceholder shape="title"/><FormLoadingFields fields={[{key:"name",label:"Name"}]}/><table><tbody><TableLoadingRows columns={[{key:"name"}]}/></tbody></table>
       <ResourceActionPicker options={[]} value={null} selectedLabel="Resources" trigger={<Button/>} triggerLabel="Resources" searchLabel="Find" onSelect={()=>{}}>Resources</ResourceActionPicker>
       <AdaptiveWorkspace navigationLabel="Files" sidebar={<aside>Navigation</aside>}><div>Editor</div></AdaptiveWorkspace>
       <SourceNavigation.Files files={[]} value="" onValueChange={()=>{}} title="Files"/><SourceNavigation.Tabs files={[]} value="" onValueChange={()=>{}} label="Files"/>
       <InlineRename aria-label="Name" value="Exact" onValueChange={()=>{}} onCommit={()=>{}} onCancel={()=>{}}/>
       <ResultPanel.Root tabs={[{value:"data",label:"Data"}]} value="data" onValueChange={()=>{}} tabListLabel="Result views"><ResultPanel.Body><ResultPanel.Selection>Output</ResultPanel.Selection><ResultPanel.Details><ResultPanel.Item label="Run ID">0001</ResultPanel.Item></ResultPanel.Details><ResultPanel.Message><ResultPanel.ErrorText>Exact error</ResultPanel.ErrorText></ResultPanel.Message></ResultPanel.Body></ResultPanel.Root>
-      <SettingsPanel title="Settings" closeLabel="Close" onClose={()=>{}} actions={<Button>Save</Button>}><Input/></SettingsPanel>
       <DetailPanel.Root title="Record" tabs={[{value:"details",label:"Details"}]} value="details" onValueChange={()=>{}} tabListLabel="Sections" onClose={()=>{}}><DetailPanel.Body>Record content</DetailPanel.Body></DetailPanel.Root>
       <TemplatePicker title="Templates" closeLabel="Close" options={[]} onChoose={()=>{}} onClose={()=>{}}/>
       <WorkspaceFrame.Root><WorkspaceFrame.Header>Header</WorkspaceFrame.Header><WorkspaceFrame.Sidebar>Sidebar</WorkspaceFrame.Sidebar><WorkspaceFrame.Workspace><WorkspaceFrame.ScrollArea><WorkspaceFrame.Content>Content</WorkspaceFrame.Content></WorkspaceFrame.ScrollArea></WorkspaceFrame.Workspace></WorkspaceFrame.Root>
       <ResizeControl orientation="horizontal" value={160} min={100} max={300} onValueChange={()=>{}} aria-label="Height"/>
       <InlineCreate label="Name" value="" onValueChange={()=>{}} onSubmit={()=>{}} onCancel={()=>{}} submitLabel="Create" cancelLabel="Cancel"/>
-      <DataPreview label="Preview" rows={["0001"]} columns={[{id:"id",header:"ID",cell:row=>row}]}/>
       <LoadingPlaceholder/><ConnectionsRowsSkeleton/><ContextLoading label="Loading"/>
       <RecordPanel title="Info" onClose={()=>{}}><RecordPanelBody>Body</RecordPanelBody><RecordPanelFooter>Footer</RecordPanelFooter></RecordPanel>
       <RecordEditor title="Edit" isNew={false} busy={false} dirty={false} onClose={()=>{}}>Fields</RecordEditor>

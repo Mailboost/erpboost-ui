@@ -2,11 +2,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { useState } from "react";
 import { expect, it, vi } from "vitest";
 import { DetailPanel } from "../packages/ui/src/components/detail-panel";
-import {
-  PropertyRow,
-  PropertySection,
-  FormSection,
-} from "../packages/ui/src/components/property-layout";
+import {PropertyRow, PropertySection} from "../packages/ui/src/components/property-layout";
 import { Field } from "../packages/ui/src/components/field";
 const tabs = [
   { value: "details", label: "Details" },
@@ -122,34 +118,4 @@ it("omits spacing for empty description arrays and keeps optional section semant
     screen.getByRole("heading", { name: "Optional", level: 3 }),
   ).toBeTruthy();
   expect(screen.getByText("0001")).toBeTruthy();
-});
-it("keeps fieldset disabled/required semantics under caller-owned submit handling", () => {
-  const submit = vi.fn();
-  const view = render(
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        submit();
-      }}
-    >
-      <FormSection legend="Schema" disabled>
-        <Field.Root>
-          <Field.Label>Name</Field.Label>
-          <Field.Control required />
-        </Field.Root>
-        <button type="submit">Create</button>
-      </FormSection>
-    </form>,
-  );
-  const group = screen.getByRole("group", {
-    name: "Schema",
-  }) as HTMLFieldSetElement;
-  expect(group.disabled).toBe(true);
-  expect(
-    (screen.getByRole("textbox", { name: "Name" }) as HTMLInputElement)
-      .required,
-  ).toBe(true);
-  fireEvent.click(screen.getByRole("button", { name: "Create" }));
-  expect(submit).not.toHaveBeenCalled();
-  view.unmount();
 });
