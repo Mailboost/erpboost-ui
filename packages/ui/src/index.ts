@@ -390,10 +390,6 @@ export { EditableGrid, type EditableGridState } from "./components/editable-grid
 export type { EditableGridProps, GridColumn, GridModel, GridRow, GridValue } from "./components/editable-grid/types";
 export { WorkflowGraph, type WorkflowGraphProps, type WorkflowGraphStep } from "./components/workflow-graph";
 
-export * from "./components/resource-picker";
-export * from "./components/value-editor";
-
-export * from "./components/resize-control";
 
 
 
@@ -402,6 +398,6 @@ export * from "./components/resize-control";
 
 
 
-export * from "./components/resource-action-picker";
+
 
 export * from "./components/adaptive-workspace";

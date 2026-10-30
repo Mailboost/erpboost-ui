@@ -134,10 +134,6 @@ try {
     import {OptionCard} from "@mailboost/erpboost-ui/option-card";
     import {EditableGrid} from "@mailboost/erpboost-ui/editable-grid";
     import {WorkflowGraph} from "@mailboost/erpboost-ui/workflow-graph";
-    import {ResourcePicker} from "@mailboost/erpboost-ui/resource-picker";
-    import {ValueEditor} from "@mailboost/erpboost-ui/value-editor";
-    import {ResizeControl} from "@mailboost/erpboost-ui/resize-control";
-    import {ResourceActionPicker} from "@mailboost/erpboost-ui/resource-action-picker";
     import {AdaptiveWorkspace} from "@mailboost/erpboost-ui/adaptive-workspace";
 
     import "@mailboost/erpboost-ui/styles";
@@ -152,11 +148,7 @@ try {
       <Combobox items={[{value:"1",label:"Example"}]} aria-label="Lookup"/>
 
 
-      <ResourcePicker options={[]} value={null} selectedLabel="Choose" onSelect={()=>{}} trigger={<Button/>} triggerLabel="Choose resource" searchLabel="Search">Choose</ResourcePicker>
-      <ValueEditor name="amount" description="Text" initialValue="0001" anchor={new DOMRect(0,0)} container={document.body} onSave={async()=>{}} onClose={()=>{}}/>
-      <ResourceActionPicker options={[]} value={null} selectedLabel="Resources" trigger={<Button/>} triggerLabel="Resources" searchLabel="Find" onSelect={()=>{}}>Resources</ResourceActionPicker>
       <AdaptiveWorkspace navigationLabel="Files" sidebar={<aside>Navigation</aside>}><div>Editor</div></AdaptiveWorkspace>
-      <ResizeControl orientation="horizontal" value={160} min={100} max={300} onValueChange={()=>{}} aria-label="Height"/>
       <EditableGrid model={{name:"items",primaryKeys:["id"],columns:[{name:"id",label:"ID",type:"text",editable:false}]}} data={[{id:"0001"}]} relations={[]} pending={false} fetching={false} onStateChange={()=>{}} onRefresh={()=>{}} onOpen={()=>{}} onSaveCell={async()=>{}} renderEditor={()=>null}/>
       <WorkflowGraph docked={false} steps={[{id:"items",title:"Items",subtitle:"Source",state:"idle",statusLabel:"Ready"}]} links={[]} onSelect={()=>{}}/>
       <SidebarPanel><SidebarPanel.Nav aria-label="Menu"><SidebarPanel.Label>Work</SidebarPanel.Label><SidebarPanel.Button active>Orders</SidebarPanel.Button></SidebarPanel.Nav><SidebarPanel.Footer><SidebarPanel.AccountTrigger><SidebarPanel.Identity name="Demo" description="Example"/></SidebarPanel.AccountTrigger></SidebarPanel.Footer></SidebarPanel>

@@ -291,12 +291,8 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
   ],
   patterns: [
     ["adaptive-workspace", "AdaptiveWorkspace", "AdaptiveWorkspace", "Container-aware navigation that keeps editor and drafts mounted."],
-    ["resource-action-picker", "ResourceActionPicker", "ResourceActionPicker", "Resource actions after popup closing and focus restoration."],
 
-    ["resize-control", "ResizeControl", "ResizeControl", "Additional ERPBoost presentation composition."],
 
-    ["resource-picker", "ResourcePicker", "ResourcePicker", "Additional ERPBoost presentation composition."],
-    ["value-editor", "ValueEditor", "ValueEditor", "Additional ERPBoost presentation composition."],
 
     ["editable-grid", "EditableGrid", "編集可能グリッド", "Editable rows with application-owned persistence."],
     ["workflow-graph", "WorkflowGraph", "ワークフローグラフ", "Render dependency graphs from display-only steps."],

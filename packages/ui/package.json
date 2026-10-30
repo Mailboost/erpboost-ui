@@ -171,22 +171,6 @@
       "types": "./dist/components/workflow-graph/index.d.ts",
       "import": "./dist/workflow-graph.js"
     },
-    "./resource-picker": {
-      "types": "./dist/components/resource-picker/index.d.ts",
-      "import": "./dist/resource-picker.js"
-    },
-    "./value-editor": {
-      "types": "./dist/components/value-editor/index.d.ts",
-      "import": "./dist/value-editor.js"
-    },
-    "./resize-control": {
-      "types": "./dist/components/resize-control/index.d.ts",
-      "import": "./dist/resize-control.js"
-    },
-    "./resource-action-picker": {
-      "types": "./dist/components/resource-action-picker/index.d.ts",
-      "import": "./dist/resource-action-picker.js"
-    },
     "./adaptive-workspace": {
       "types": "./dist/components/adaptive-workspace/index.d.ts",
       "import": "./dist/adaptive-workspace.js"

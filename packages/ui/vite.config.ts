@@ -27,12 +27,8 @@ export default defineConfig({
       entry: {
         index: "src/index.ts",
         "adaptive-workspace": "src/components/adaptive-workspace/index.tsx",
-        "resource-action-picker": "src/components/resource-action-picker/index.tsx",
 
-        "resize-control": "src/components/resize-control/index.tsx",
 
-        "resource-picker": "src/components/resource-picker/index.tsx",
-        "value-editor": "src/components/value-editor/index.tsx",
 
         "editable-grid": "src/components/editable-grid/index.tsx",
         "workflow-graph": "src/components/workflow-graph/index.tsx",
