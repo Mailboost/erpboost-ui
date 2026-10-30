@@ -26,6 +26,12 @@ export default defineConfig({
     lib: {
       entry: {
         index: "src/index.ts",
+
+
+
+        "editable-grid": "src/components/editable-grid/index.tsx",
+        "workflow-graph": "src/components/workflow-graph/index.tsx",
+
         "search-field": "src/components/search-field/index.tsx",
         "option-card": "src/components/option-card/index.tsx",
         "code-workspace": "src/components/code-workspace/index.tsx",
@@ -41,6 +47,10 @@ export default defineConfig({
         "erp-header": "src/components/erp-header/index.tsx",
         style: "src/style-entry.ts",
         button: "src/components/button/index.ts",
+        toolbar: "src/components/toolbar/index.ts",
+        layout: "src/components/layout/index.ts",
+        card: "src/components/card/index.ts",
+        fieldset: "src/components/fieldset/index.ts",
         input: "src/components/input/index.ts",
         textarea: "src/components/textarea/index.ts",
         table: "src/components/table/index.ts",

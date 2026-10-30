@@ -385,3 +385,7 @@ export {OptionCard} from "./components/option-card";
 export {CodeWorkspace} from "./components/code-workspace";
 export {GraphControls, type GraphControlsProps} from "./components/graph-controls";
 export { ErpHeader, type ErpHeaderProps } from "./components/erp-header";
+
+export { EditableGrid, type EditableGridState } from "./components/editable-grid";
+export type { EditableGridProps, GridColumn, GridModel, GridRow, GridValue } from "./components/editable-grid/types";
+export { WorkflowGraph, type WorkflowGraphProps, type WorkflowGraphStep } from "./components/workflow-graph";

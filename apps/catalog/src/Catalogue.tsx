@@ -514,7 +514,7 @@ export function EntryPage({ entry }: { entry: Entry }) {
                   entry.markdownNotesJa ?? entry.markdownNotes ?? "",
                 );
                 await navigator.clipboard.writeText(
-                  `# ${t(entry.title, entry.ja)}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${t(entry.description, entry.descriptionJa ?? entry.description)}\n\n## Do\n\n${t(...entry.guidance!.do)}\n\n## Don't\n\n${t(...entry.guidance!.dont)}${markdownNotes ? "\n\n" + markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${sourceMarkdown(unique)}`,
+                  `# ${t(entry.title, entry.ja)}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${t(entry.description, entry.descriptionJa ?? entry.description)}${entry.guidance ? `\n\n## Do\n\n${t(...entry.guidance.do)}\n\n## Don't\n\n${t(...entry.guidance.dont)}` : ""}${markdownNotes ? "\n\n" + markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${sourceMarkdown(unique)}`,
                 );
                 setCopied(true);
                 setTimeout(() => setCopied(false), copyFeedbackMs);
@@ -528,21 +528,21 @@ export function EntryPage({ entry }: { entry: Entry }) {
           {t(entry.description, entry.descriptionJa ?? entry.description)}
         </p>
       </div>
-      {!component && (
+      {!component && entry.guidance && (
         <div className="guidance-grid">
           <div className="guidance">
             <span className="guidance-label do">
               <Check className="size-3.5" />
               Do
             </span>
-            <p>{t(...entry.guidance!.do)}</p>
+            <p>{t(...entry.guidance.do)}</p>
           </div>
           <div className="guidance">
             <span className="guidance-label dont">
               <X className="size-3.5" />
               Don't
             </span>
-            <p>{t(...entry.guidance!.dont)}</p>
+            <p>{t(...entry.guidance.dont)}</p>
           </div>
         </div>
       )}

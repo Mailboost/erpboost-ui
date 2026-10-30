@@ -104,6 +104,16 @@ try {
   writeFileSync(join(directory, "src.tsx"), `
     import {createRoot} from "react-dom/client";
     import {Button} from "@mailboost/erpboost-ui/button";
+    import {Fieldset} from "@mailboost/erpboost-ui/fieldset";
+    import {Card} from "@mailboost/erpboost-ui/card";
+    import {Toolbar} from "@mailboost/erpboost-ui/toolbar";
+    import {Layout} from "@mailboost/erpboost-ui/layout";
+    import {Sheet} from "@mailboost/erpboost-ui/sheet";
+    import {Table} from "@mailboost/erpboost-ui/table";
+    import {Menu} from "@mailboost/erpboost-ui/menu";
+    import {Alert} from "@mailboost/erpboost-ui/alert";
+    import {Dialog} from "@mailboost/erpboost-ui/dialog";
+    import {Combobox} from "@mailboost/erpboost-ui/combobox";
     import {Input} from "@mailboost/erpboost-ui/input";
     import {LocaleProvider} from "@mailboost/erpboost-ui/locale-provider";
     import {SidebarPanel} from "@mailboost/erpboost-ui/shell-parts";
@@ -122,9 +132,23 @@ try {
     import {WorkflowNode} from "@mailboost/erpboost-ui/workflow-node";
     import {SearchField} from "@mailboost/erpboost-ui/search-field";
     import {OptionCard} from "@mailboost/erpboost-ui/option-card";
+    import {EditableGrid} from "@mailboost/erpboost-ui/editable-grid";
+    import {WorkflowGraph} from "@mailboost/erpboost-ui/workflow-graph";
+
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
+      <Layout><Layout.Header title="Connections"/><Layout.Column><Toolbar.Row><Button>Action</Button></Toolbar.Row><Fieldset.Root><Fieldset.Legend>Settings</Fieldset.Legend><Input/></Fieldset.Root></Layout.Column></Layout>
+      <Sheet.Root><Sheet.Content><Sheet.Header><Sheet.Title>Settings</Sheet.Title></Sheet.Header><Input/><Sheet.Footer><Button>Close</Button></Sheet.Footer></Sheet.Content></Sheet.Root>
+      <Card.Root><Card.Header>History</Card.Header><Card.Content>Result</Card.Content></Card.Root>
+      <Table.Root aria-label="Preview"><Table.Body><Table.Row><Table.Cell>9007199254740993</Table.Cell></Table.Row></Table.Body></Table.Root>
+      <Menu.Root><Menu.Trigger render={<Button/>}>Actions</Menu.Trigger><Menu.Content><Menu.Item>Rename</Menu.Item></Menu.Content></Menu.Root>
+      <Alert.Root variant="error" action={<Button>Retry</Button>}><Alert.Description>Error</Alert.Description></Alert.Root>
+      <Dialog.Root><Dialog.Content><Dialog.Header><Dialog.Title>Form</Dialog.Title></Dialog.Header><form><Input required/><Dialog.Footer><Button type="submit">Save</Button></Dialog.Footer></form></Dialog.Content></Dialog.Root>
+      <Combobox items={[{value:"1",label:"Example"}]} aria-label="Lookup"/>
 
+
+      <EditableGrid model={{name:"items",primaryKeys:["id"],columns:[{name:"id",label:"ID",type:"text",editable:false}]}} data={[{id:"0001"}]} relations={[]} pending={false} fetching={false} onStateChange={()=>{}} onRefresh={()=>{}} onOpen={()=>{}} onSaveCell={async()=>{}} renderEditor={()=>null}/>
+      <WorkflowGraph docked={false} steps={[{id:"items",title:"Items",subtitle:"Source",state:"idle",statusLabel:"Ready"}]} links={[]} onSelect={()=>{}}/>
       <SidebarPanel><SidebarPanel.Nav aria-label="Menu"><SidebarPanel.Label>Work</SidebarPanel.Label><SidebarPanel.Button active>Orders</SidebarPanel.Button></SidebarPanel.Nav><SidebarPanel.Footer><SidebarPanel.AccountTrigger><SidebarPanel.Identity name="Demo" description="Example"/></SidebarPanel.AccountTrigger></SidebarPanel.Footer></SidebarPanel>
       <Skeleton/><EmptyState title="No orders"><Button>Add</Button></EmptyState>
       <SearchField aria-label="Search" value="orders" onChange={()=>{}} clearLabel="Clear" onClear={()=>{}}/>

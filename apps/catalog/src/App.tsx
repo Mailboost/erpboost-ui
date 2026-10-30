@@ -141,7 +141,23 @@ function CatalogueApp() {
                   {entries
                     .filter((entry) => entry.category === section.category)
                     .map((entry) => (
-                      <SidebarItem key={entry.slug} to={routeOf(entry)} />
+                      <SidebarItem
+                        key={entry.slug}
+                        to={routeOf(entry)}
+                        icon={
+                          entry.origin === "erpboost" ? (
+                            <span
+                              role="img"
+                              aria-label={t(
+                                "ERPBoost original",
+                                "ERPBoost独自",
+                              )}
+                              title={t("ERPBoost original", "ERPBoost独自")}
+                              className="size-1.5 shrink-0 rounded-full bg-blue-500 dark:bg-blue-400 group-data-[collapsible=icon]:mx-auto"
+                            />
+                          ) : undefined
+                        }
+                      />
                     ))}
                 </SidebarGroup>
               ))}

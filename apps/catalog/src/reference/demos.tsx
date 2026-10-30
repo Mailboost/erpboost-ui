@@ -13,6 +13,12 @@ const clean = (source: string) =>
     ? source.slice(source.indexOf(String.fromCharCode(10)) + 1)
     : source;
 const resources: Record<string, Demo[]> = {
+
+
+
+  "patterns/editable-grid": [{name:"EditableGrid",description:"Additional presentation composition; existing components are unchanged.",heading:"",screen:false,Component:lazy(async()=>{const m=await import("./patterns__editable-grid/EditableGridDemo");return {default:m.EditableGridDemo};}),source:files["./patterns__editable-grid/EditableGridDemo.tsx"],sources:[{filename:"EditableGridDemo.tsx",markdownFilename:"EditableGridDemo.tsx",source:files["./patterns__editable-grid/EditableGridDemo.tsx"]}]}],
+  "patterns/workflow-graph": [{name:"WorkflowGraph",description:"Additional presentation composition; existing components are unchanged.",heading:"",screen:false,Component:lazy(async()=>{const m=await import("./patterns__workflow-graph/WorkflowGraphDemo");return {default:m.WorkflowGraphDemo};}),source:files["./patterns__workflow-graph/WorkflowGraphDemo.tsx"],sources:[{filename:"WorkflowGraphDemo.tsx",markdownFilename:"WorkflowGraphDemo.tsx",source:files["./patterns__workflow-graph/WorkflowGraphDemo.tsx"]}]}],
+
   "patterns/context-details": [{name:"Context and details",description:"Additional context header, navigation, search and template choices.",heading:"",screen:false,
     Component:lazy(async()=>{const module=await import("./patterns__context-details/ContextDetailsDemo");return {default:module.ContextDetailsDemo};}),
     source:files["./patterns__context-details/ContextDetailsDemo.tsx"],sources:[{filename:"ContextDetailsDemo.tsx",markdownFilename:"ContextDetailsDemo.tsx",source:files["./patterns__context-details/ContextDetailsDemo.tsx"]}]}],
