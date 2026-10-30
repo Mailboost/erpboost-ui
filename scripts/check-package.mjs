@@ -133,20 +133,12 @@ try {
     import {SearchField} from "@mailboost/erpboost-ui/search-field";
     import {OptionCard} from "@mailboost/erpboost-ui/option-card";
     import {EditableGrid} from "@mailboost/erpboost-ui/editable-grid";
-    import {RecordPanel,RecordPanelBody,RecordPanelFooter,RecordEditor} from "@mailboost/erpboost-ui/record-panel";
-    import {LoadingPlaceholder,ConnectionsRowsSkeleton,ContextLoading} from "@mailboost/erpboost-ui/loading-layouts";
     import {WorkflowGraph} from "@mailboost/erpboost-ui/workflow-graph";
     import {ResourcePicker} from "@mailboost/erpboost-ui/resource-picker";
     import {ValueEditor} from "@mailboost/erpboost-ui/value-editor";
-    import {WorkspaceFrame} from "@mailboost/erpboost-ui/workspace-frame";
     import {ResizeControl} from "@mailboost/erpboost-ui/resize-control";
-    import {InlineCreate} from "@mailboost/erpboost-ui/inline-create";
     import {ResourceActionPicker} from "@mailboost/erpboost-ui/resource-action-picker";
     import {AdaptiveWorkspace} from "@mailboost/erpboost-ui/adaptive-workspace";
-    import {SourceNavigation} from "@mailboost/erpboost-ui/source-navigation";
-    import {RecordPlaceholder,TableLoadingRows,FormLoadingFields} from "@mailboost/erpboost-ui/record-loading";
-    import {InlineRename} from "@mailboost/erpboost-ui/inline-rename";
-    import {ResultPanel} from "@mailboost/erpboost-ui/result-panel";
 
     import "@mailboost/erpboost-ui/styles";
     createRoot(document.getElementById("root")!).render(<LocaleProvider locale="ja-JP">
@@ -162,18 +154,9 @@ try {
 
       <ResourcePicker options={[]} value={null} selectedLabel="Choose" onSelect={()=>{}} trigger={<Button/>} triggerLabel="Choose resource" searchLabel="Search">Choose</ResourcePicker>
       <ValueEditor name="amount" description="Text" initialValue="0001" anchor={new DOMRect(0,0)} container={document.body} onSave={async()=>{}} onClose={()=>{}}/>
-      <RecordPlaceholder shape="title"/><FormLoadingFields fields={[{key:"name",label:"Name"}]}/><table><tbody><TableLoadingRows columns={[{key:"name"}]}/></tbody></table>
       <ResourceActionPicker options={[]} value={null} selectedLabel="Resources" trigger={<Button/>} triggerLabel="Resources" searchLabel="Find" onSelect={()=>{}}>Resources</ResourceActionPicker>
       <AdaptiveWorkspace navigationLabel="Files" sidebar={<aside>Navigation</aside>}><div>Editor</div></AdaptiveWorkspace>
-      <SourceNavigation.Files files={[]} value="" onValueChange={()=>{}} title="Files"/><SourceNavigation.Tabs files={[]} value="" onValueChange={()=>{}} label="Files"/>
-      <InlineRename aria-label="Name" value="Exact" onValueChange={()=>{}} onCommit={()=>{}} onCancel={()=>{}}/>
-      <ResultPanel.Root tabs={[{value:"data",label:"Data"}]} value="data" onValueChange={()=>{}} tabListLabel="Result views"><ResultPanel.Body><ResultPanel.Selection>Output</ResultPanel.Selection><ResultPanel.Details><ResultPanel.Item label="Run ID">0001</ResultPanel.Item></ResultPanel.Details><ResultPanel.Message><ResultPanel.ErrorText>Exact error</ResultPanel.ErrorText></ResultPanel.Message></ResultPanel.Body></ResultPanel.Root>
-      <WorkspaceFrame.Root><WorkspaceFrame.Header>Header</WorkspaceFrame.Header><WorkspaceFrame.Sidebar>Sidebar</WorkspaceFrame.Sidebar><WorkspaceFrame.Workspace><WorkspaceFrame.ScrollArea><WorkspaceFrame.Content>Content</WorkspaceFrame.Content></WorkspaceFrame.ScrollArea></WorkspaceFrame.Workspace></WorkspaceFrame.Root>
       <ResizeControl orientation="horizontal" value={160} min={100} max={300} onValueChange={()=>{}} aria-label="Height"/>
-      <InlineCreate label="Name" value="" onValueChange={()=>{}} onSubmit={()=>{}} onCancel={()=>{}} submitLabel="Create" cancelLabel="Cancel"/>
-      <LoadingPlaceholder/><ConnectionsRowsSkeleton/><ContextLoading label="Loading"/>
-      <RecordPanel title="Info" onClose={()=>{}}><RecordPanelBody>Body</RecordPanelBody><RecordPanelFooter>Footer</RecordPanelFooter></RecordPanel>
-      <RecordEditor title="Edit" isNew={false} busy={false} dirty={false} onClose={()=>{}}>Fields</RecordEditor>
       <EditableGrid model={{name:"items",primaryKeys:["id"],columns:[{name:"id",label:"ID",type:"text",editable:false}]}} data={[{id:"0001"}]} relations={[]} pending={false} fetching={false} onStateChange={()=>{}} onRefresh={()=>{}} onOpen={()=>{}} onSaveCell={async()=>{}} renderEditor={()=>null}/>
       <WorkflowGraph docked={false} steps={[{id:"items",title:"Items",subtitle:"Source",state:"idle",statusLabel:"Ready"}]} links={[]} onSelect={()=>{}}/>
       <SidebarPanel><SidebarPanel.Nav aria-label="Menu"><SidebarPanel.Label>Work</SidebarPanel.Label><SidebarPanel.Button active>Orders</SidebarPanel.Button></SidebarPanel.Nav><SidebarPanel.Footer><SidebarPanel.AccountTrigger><SidebarPanel.Identity name="Demo" description="Example"/></SidebarPanel.AccountTrigger></SidebarPanel.Footer></SidebarPanel>

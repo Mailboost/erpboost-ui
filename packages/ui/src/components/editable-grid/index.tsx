@@ -12,18 +12,7 @@ import { SearchField } from "../search-field";
 import { Select } from "../select";
 import { Table } from "../table";
 import { Tooltip } from "../tooltip";
-import {
-  ArrowDown,
-  ArrowDownWideNarrow,
-  ArrowUp,
-  Copy,
-  KeyRound,
-  Link2,
-  Maximize2,
-  Plus,
-  RefreshCw,
-  Trash2,
-} from "lucide-react";
+import { ArrowDown, ArrowDownWideNarrow, ArrowUp, Copy, KeyRound, Link2, Maximize2, Plus, RefreshCw, Trash2, X } from "lucide-react";
 import {
   useCallback,
   useEffect,
@@ -46,12 +35,8 @@ type DataModel = GridModel<GridColumn>;
 type DataValue = GridValue;
 
 import { GridColumnMenu as DataColumnMenu } from "./column-menu";
-import {
-  RecordPanel as Dialog,
-  RecordPanelBody as DialogBody,
-  RecordPanelFooter as DialogFooter,
-} from "../record-panel";
-import { LoadingPlaceholder as Skeleton } from "../loading-layouts";
+import { Dialog } from "../dialog";
+import { Skeleton } from "../skeleton";
 
 type Row = Record<string, DataValue>;
 type Sort = { column: string; direction: "asc" | "desc" };
@@ -110,6 +95,8 @@ export function EditableGrid<C extends GridColumn>({
   rowKey,
   rowLimit,
 }: EditableGridProps<C>) {
+  const sortDialogRef=useRef<HTMLDivElement>(null), deleteDialogRef=useRef<HTMLDivElement>(null);
+
   const identity = (_model: GridModel<C>, row: Row) =>
     rowKey ? rowKey(row) : defaultIdentity(model, row);
   const grid = useRef<HTMLDivElement>(null);
@@ -369,90 +356,124 @@ export function EditableGrid<C extends GridColumn>({
             並び替え{sort && <span>1</span>}
           </Button>
           {sortOpen && (
-            <Dialog
-              container={container}
-              title="並び替え"
-              onClose={() => setSortOpen(false)}
+            <Dialog.Root
+              open
+              onOpenChange={(open, details) => {
+                if (!open) {
+                  details.cancel();
+                  if (
+                    details.reason !== "outside-press" &&
+                    !(
+                      details.reason === "escape-key" &&
+                      sortDialogRef.current?.querySelector('[aria-expanded="true"]')
+                    )
+                  )
+                    setSortOpen(false);
+                }
+              }}
             >
-              <DialogBody className="erpui-dialog-body">
-                <div className="erpui-grid-sort-field astw:grid astw:gap-2">
-                  <Text
-                    variant="label-sm"
-                    render={<label htmlFor={columnSelectId} />}
-                  >
-                    カラム
-                  </Text>
-                  <Select.Parts.Root
-                    itemToStringLabel={(value) => value || "指定なし"}
-                    value={String(sort?.column ?? "")}
-                    onValueChange={(value) =>
-                      setSort(
-                        (value ?? "")
-                          ? {
-                              column: value ?? "",
-                              direction: sort?.direction ?? "asc",
-                            }
-                          : null,
-                      )
-                    }
-                  >
-                    <Select.Parts.Trigger id={columnSelectId}>
-                      <Select.Parts.Value />
-                    </Select.Parts.Trigger>
-                    <Select.Parts.Content container={container}>
-                      <Select.Parts.Item value="">指定なし</Select.Parts.Item>
-                      {columns.map((column) => (
-                        <Select.Parts.Item
-                          key={column.name}
-                          value={String(column.name)}
-                        >
-                          {column.name}
-                        </Select.Parts.Item>
-                      ))}
-                    </Select.Parts.Content>
-                  </Select.Parts.Root>
-                </div>
-                {sort && (
+              <Dialog.Content
+                ref={sortDialogRef}
+                container={container}
+                showCloseButton={false}
+                initialFocus={() =>
+                  sortDialogRef.current?.querySelector<HTMLElement>(
+                    'input:not([type="hidden"]):not(:disabled), [role="combobox"]:not(:disabled), textarea:not(:disabled)',
+                  ) ?? sortDialogRef.current
+                }
+                style={{ width: "min(520px, calc(100vw - 32px))" }}
+                className="astw:[&&]:z-[calc(var(--z-overlay,1000)_+_1)] astw:[&&]:max-h-[calc(100dvh_-_32px)] astw:[&&]:overflow-auto"
+              >
+                <Dialog.Header>
+                  <Dialog.Title>{"並び替え"}</Dialog.Title>
+                </Dialog.Header>
+
+                <div className="erpui-dialog-body">
                   <div className="erpui-grid-sort-field astw:grid astw:gap-2">
-                    <Text
-                      variant="label-sm"
-                      render={<label htmlFor={directionSelectId} />}
-                    >
-                      順序
+                    <Text variant="label-sm" render={<label htmlFor={columnSelectId} />}>
+                      カラム
                     </Text>
                     <Select.Parts.Root
-                      itemToStringLabel={(value) =>
-                        value === "asc" ? "昇順" : "降順"
-                      }
-                      value={String(sort.direction)}
+                      itemToStringLabel={(value) => value || "指定なし"}
+                      value={String(sort?.column ?? "")}
                       onValueChange={(value) =>
-                        setSort({
-                          ...sort,
-                          direction: (value ?? "") as Sort["direction"],
-                        })
+                        setSort(
+                          (value ?? "")
+                            ? {
+                                column: value ?? "",
+                                direction: sort?.direction ?? "asc",
+                              }
+                            : null,
+                        )
                       }
                     >
-                      <Select.Parts.Trigger id={directionSelectId}>
+                      <Select.Parts.Trigger id={columnSelectId}>
                         <Select.Parts.Value />
                       </Select.Parts.Trigger>
                       <Select.Parts.Content container={container}>
-                        <Select.Parts.Item value="asc">昇順</Select.Parts.Item>
-                        <Select.Parts.Item value="desc">降順</Select.Parts.Item>
+                        <Select.Parts.Item value="">指定なし</Select.Parts.Item>
+                        {columns.map((column) => (
+                          <Select.Parts.Item key={column.name} value={String(column.name)}>
+                            {column.name}
+                          </Select.Parts.Item>
+                        ))}
                       </Select.Parts.Content>
                     </Select.Parts.Root>
                   </div>
-                )}
-              </DialogBody>
-              <DialogFooter className="erpui-dialog-actions">
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => setSortOpen(false)}
+                  {sort && (
+                    <div className="erpui-grid-sort-field astw:grid astw:gap-2">
+                      <Text
+                        variant="label-sm"
+                        render={<label htmlFor={directionSelectId} />}
+                      >
+                        順序
+                      </Text>
+                      <Select.Parts.Root
+                        itemToStringLabel={(value) => (value === "asc" ? "昇順" : "降順")}
+                        value={String(sort.direction)}
+                        onValueChange={(value) =>
+                          setSort({
+                            ...sort,
+                            direction: (value ?? "") as Sort["direction"],
+                          })
+                        }
+                      >
+                        <Select.Parts.Trigger id={directionSelectId}>
+                          <Select.Parts.Value />
+                        </Select.Parts.Trigger>
+                        <Select.Parts.Content container={container}>
+                          <Select.Parts.Item value="asc">昇順</Select.Parts.Item>
+                          <Select.Parts.Item value="desc">降順</Select.Parts.Item>
+                        </Select.Parts.Content>
+                      </Select.Parts.Root>
+                    </div>
+                  )}
+                </div>
+                <Dialog.Footer className="erpui-dialog-actions">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setSortOpen(false)}
+                  >
+                    閉じる
+                  </Button>
+                </Dialog.Footer>
+                <Dialog.Close
+                  render={
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      disabled={false}
+                      aria-label="閉じる"
+                      className="astw:absolute astw:right-3 astw:top-3"
+                    />
+                  }
                 >
-                  閉じる
-                </Button>
-              </DialogFooter>
-            </Dialog>
+                  <X size={16} />
+                </Dialog.Close>
+              </Dialog.Content>
+            </Dialog.Root>
           )}
           <Tooltip.Root>
             <Tooltip.Trigger
@@ -499,7 +520,7 @@ export function EditableGrid<C extends GridColumn>({
         </div>
       </Toolbar.Row>
       {(error || copyError) && (
-        <Alert.Root variant={"error"} className="erpui-ui-alert" role="alert">
+        <Alert.Root variant="error" className="erpui-ui-alert" role="alert">
           <Alert.Description>{error || copyError}</Alert.Description>
         </Alert.Root>
       )}
@@ -713,7 +734,7 @@ export function EditableGrid<C extends GridColumn>({
                   aria-hidden="true"
                 >
                   <Table.Cell data-row-control="">
-                    <Skeleton className="erpui-skeleton-icon astw:[.erpui-editable-grid_&]:w-4 astw:[.erpui-editable-grid_&]:h-4" />
+                    <Skeleton  className={cn("astw:[[data-slot=skeleton]&]:bg-[color-mix(in_srgb,var(--muted-foreground,#737373)_28%,var(--card,#fff))]","erpui-skeleton-icon astw:[.erpui-editable-grid_&]:w-4 astw:[.erpui-editable-grid_&]:h-4")}/>
                   </Table.Cell>
                   {columns.map((column, index) => (
                     <Table.Cell
@@ -721,7 +742,7 @@ export function EditableGrid<C extends GridColumn>({
                       className={frozenCellClassName(index)}
                       style={styleFor(index)}
                     >
-                      <Skeleton />
+                      <Skeleton  className={cn("astw:[[data-slot=skeleton]&]:bg-[color-mix(in_srgb,var(--muted-foreground,#737373)_28%,var(--card,#fff))]",undefined)}/>
                     </Table.Cell>
                   ))}
                   <Table.Cell />
@@ -909,7 +930,7 @@ export function EditableGrid<C extends GridColumn>({
             container={container}
           />
           {pending ? (
-            <Skeleton className="erpui-skeleton-count astw:[.erpui-editable-grid_&]:w-6 astw:[.erpui-editable-grid_&]:h-2.5" />
+            <Skeleton  className={cn("astw:[[data-slot=skeleton]&]:bg-[color-mix(in_srgb,var(--muted-foreground,#737373)_28%,var(--card,#fff))]","erpui-skeleton-count astw:[.erpui-editable-grid_&]:w-6 astw:[.erpui-editable-grid_&]:h-2.5")}/>
           ) : (
             <span>{visible.length} 件</span>
           )}
@@ -930,58 +951,104 @@ export function EditableGrid<C extends GridColumn>({
           onSave: (value) => onSaveCell(editor.row, editor.column, value),
         })}
       {deletingRows && (
-        <Dialog
-          container={container}
-          title="選択した行を削除"
-          error={deleteError || undefined}
-          closeDisabled={deleteBusy}
-          onClose={() => setDeletingRows(null)}
+        <Dialog.Root
+          open
+          onOpenChange={(open, details) => {
+            if (!open) {
+              details.cancel();
+              if (
+                !deleteBusy &&
+                details.reason !== "outside-press" &&
+                !(
+                  details.reason === "escape-key" &&
+                  deleteDialogRef.current?.querySelector('[aria-expanded="true"]')
+                )
+              )
+                setDeletingRows(null);
+            }
+          }}
         >
-          <DialogBody className="erpui-dialog-body">
-            <p>
-              「{model.name}」の選択した{deletingRows.length}行を削除します。
-            </p>
-          </DialogBody>
-          <DialogFooter className="erpui-dialog-actions">
-            <Button
-              variant="outline"
-              size="sm"
-              type="button"
-              className="erpui-button erpui-button-secondary"
-              disabled={deleteBusy}
-              onClick={() => setDeletingRows(null)}
+          <Dialog.Content
+            ref={deleteDialogRef}
+            container={container}
+            showCloseButton={false}
+            initialFocus={() =>
+              deleteDialogRef.current?.querySelector<HTMLElement>(
+                'input:not([type="hidden"]):not(:disabled), [role="combobox"]:not(:disabled), textarea:not(:disabled)',
+              ) ?? deleteDialogRef.current
+            }
+            style={{ width: "min(520px, calc(100vw - 32px))" }}
+            className="astw:[&&]:z-[calc(var(--z-overlay,1000)_+_1)] astw:[&&]:max-h-[calc(100dvh_-_32px)] astw:[&&]:overflow-auto"
+          >
+            <Dialog.Header>
+              <Dialog.Title>{"選択した行を削除"}</Dialog.Title>
+            </Dialog.Header>
+            {(deleteError || undefined) && (
+              <Alert.Root variant="error" role="alert">
+                <Alert.Description>{deleteError || undefined}</Alert.Description>
+              </Alert.Root>
+            )}
+
+            <div className="erpui-dialog-body">
+              <p>
+                「{model.name}」の選択した{deletingRows.length}行を削除します。
+              </p>
+            </div>
+            <Dialog.Footer className="erpui-dialog-actions">
+              <Button
+                variant="outline"
+                size="sm"
+                type="button"
+                className="erpui-button erpui-button-secondary"
+                disabled={deleteBusy}
+                onClick={() => setDeletingRows(null)}
+              >
+                キャンセル
+              </Button>
+              <Button
+                variant="destructive"
+                size="sm"
+                type="button"
+                className="erpui-button erpui-button-danger"
+                disabled={deleteBusy}
+                onClick={() => {
+                  if (!onDelete || deleteBusy) return;
+                  setDeleteBusy(true);
+                  setDeleteError("");
+                  void onDelete(deletingRows)
+                    .then(() => {
+                      setChecked(new Set());
+                      setDeletingRows(null);
+                    })
+                    .catch((error: unknown) =>
+                      setDeleteError(
+                        error instanceof Error
+                          ? error.message
+                          : "行を削除できませんでした。",
+                      ),
+                    )
+                    .finally(() => setDeleteBusy(false));
+                }}
+              >
+                {deleteBusy ? "削除中…" : "削除"}
+              </Button>
+            </Dialog.Footer>
+            <Dialog.Close
+              render={
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  disabled={deleteBusy}
+                  aria-label="閉じる"
+                  className="astw:absolute astw:right-3 astw:top-3"
+                />
+              }
             >
-              キャンセル
-            </Button>
-            <Button
-              variant="destructive"
-              size="sm"
-              type="button"
-              className="erpui-button erpui-button-danger"
-              disabled={deleteBusy}
-              onClick={() => {
-                if (!onDelete || deleteBusy) return;
-                setDeleteBusy(true);
-                setDeleteError("");
-                void onDelete(deletingRows)
-                  .then(() => {
-                    setChecked(new Set());
-                    setDeletingRows(null);
-                  })
-                  .catch((error: unknown) =>
-                    setDeleteError(
-                      error instanceof Error
-                        ? error.message
-                        : "行を削除できませんでした。",
-                    ),
-                  )
-                  .finally(() => setDeleteBusy(false));
-              }}
-            >
-              {deleteBusy ? "削除中…" : "削除"}
-            </Button>
-          </DialogFooter>
-        </Dialog>
+              <X size={16} />
+            </Dialog.Close>
+          </Dialog.Content>
+        </Dialog.Root>
       )}
     </div>
   );

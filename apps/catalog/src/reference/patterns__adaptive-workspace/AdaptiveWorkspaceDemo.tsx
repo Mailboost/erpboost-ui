@@ -1,12 +1,5 @@
 import { useRef, useState } from "react";
-import {
-  AdaptiveWorkspace,
-  Button,
-  CodeWorkspace,
-  InlineCreate,
-  SourceNavigation,
-  Textarea,
-} from "@mailboost/erpboost-ui";
+import { AdaptiveWorkspace, Button, CodeWorkspace, Textarea, Input, FileList, FileListItem, Tabs } from "@mailboost/erpboost-ui";
 const files = [
   { name: "main.py" },
   { name: "helpers.py" },
@@ -41,44 +34,89 @@ export function AdaptiveWorkspaceDemo() {
             navigationLabel="Files"
             collapseKey={navigation}
             sidebar={
-              <SourceNavigation.Files
-                aria-label="Source files"
-                files={files}
-                value={value}
-                title="Sources"
-                onValueChange={(name) => {
-                  setValue(name);
-                  setNavigation((count) => count + 1);
-                  editor.current?.focus();
-                }}
-                addAction={{
-                  label: "Add source",
-                  onSelect: () => setAdding(true),
-                }}
-              >
+              <CodeWorkspace.Sidebar aria-label="Source files">
+                <CodeWorkspace.Header
+                  actions={
+                    <Button
+                      type="button"
+                      aria-label="Add source"
+                      onClick={() => setAdding(true)}
+                    >
+                      +
+                    </Button>
+                  }
+                >
+                  Sources
+                </CodeWorkspace.Header>
+                <FileList>
+                  {files.map((file) => (
+                    <FileListItem
+                      key={file.name}
+                      name={file.name}
+                      selected={value === file.name}
+                      onSelect={() => {
+                        setValue(file.name);
+                        setNavigation((count) => count + 1);
+                        editor.current?.focus();
+                      }}
+                    />
+                  ))}
+                </FileList>
                 {adding && (
-                  <InlineCreate
-                    label="Source name"
-                    value={name}
-                    onValueChange={setName}
-                    submitLabel="Create"
-                    cancelLabel="Cancel source"
-                    onSubmit={() => setAdding(false)}
-                    onCancel={() => setAdding(false)}
-                  />
+                  <FileList.Editor>
+                    <Input
+                      aria-label="Source name"
+                      autoFocus
+                      value={name}
+                      onChange={(event) => setName(event.target.value)}
+                      onKeyDown={(event) => {
+                        if (event.nativeEvent.isComposing || event.keyCode === 229) return;
+                        if (event.key === "Enter") {
+                          event.preventDefault();
+                          setAdding(false);
+                        }
+                        if (event.key === "Escape") {
+                          event.preventDefault();
+                          event.stopPropagation();
+                          setAdding(false);
+                        }
+                      }}
+                    />
+                    <Button type="button" onClick={() => setAdding(false)}>
+                      Create
+                    </Button>
+                    <Button
+                      type="button"
+                      aria-label="Cancel source"
+                      onClick={() => setAdding(false)}
+                    >
+                      Cancel
+                    </Button>
+                  </FileList.Editor>
                 )}
-              </SourceNavigation.Files>
+              </CodeWorkspace.Sidebar>
             }
           >
             <CodeWorkspace.Main>
               <CodeWorkspace.Editor>
-                <SourceNavigation.Tabs
-                  files={files.slice(0, 2)}
-                  value={value}
-                  label="Open source files"
-                  meta="Runtime"
-                  onValueChange={setValue}
-                />
+                <CodeWorkspace.EditorTabs>
+                  <Tabs.Root
+                    value={value}
+                    onValueChange={(next) => {
+                      if (typeof next === "string") setValue(next);
+                    }}
+                    variant="line"
+                  >
+                    <Tabs.List aria-label="Open source files">
+                      {files.slice(0, 2).map((file) => (
+                        <Tabs.Tab key={file.name} value={file.name}>
+                          {file.name}
+                        </Tabs.Tab>
+                      ))}
+                    </Tabs.List>
+                  </Tabs.Root>
+                  <small>Runtime</small>
+                </CodeWorkspace.EditorTabs>
                 <Textarea
                   ref={editor}
                   aria-label="Editor draft"

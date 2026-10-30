@@ -8,29 +8,6 @@ for (const viewport of [
     test.beforeEach(({}, info) =>
       test.skip(info.project.name === "reference", "Additive ERPBoost routes"),
     );
-    test("workspace contains scrolling without displacing header or sidebar", async ({
-      page,
-    }) => {
-      await page.goto("patterns/workspace-frame?preview=fullscreen");
-      await page.getByRole("button", { name: "Products", exact: true }).click();
-      await expect(
-        page.getByRole("heading", { name: "Products", exact: true }),
-      ).toBeVisible();
-      const frame = page.locator('[data-slot="workspace-frame"]'),
-        header = page.locator('[data-slot="workspace-frame-header"]'),
-        sidebar = page.locator('[data-slot="workspace-frame-sidebar"]'),
-        scroll = page.locator('[data-slot="workspace-frame-scroll"]');
-      const before = await header.boundingBox();
-      await scroll.evaluate((el) => (el.scrollTop = el.scrollHeight));
-      expect(await header.boundingBox()).toEqual(before);
-      expect(Math.round((await sidebar.boundingBox())!.width)).toBe(
-        viewport.width < 700 ? 72 : 176,
-      );
-      expect((await frame.boundingBox())!.width).toBeLessThanOrEqual(
-        viewport.width,
-      );
-      expect(await scroll.evaluate((el) => el.scrollTop)).toBeGreaterThan(0);
-    });
     test("resize keyboard endpoints and pointer capture stay within bounds", async ({
       page,
     }) => {
@@ -63,26 +40,5 @@ for (const viewport of [
       await expect(width).toHaveAttribute("aria-valuenow", "120");
       await page.keyboard.press("End");
       await expect(width).toHaveAttribute("aria-valuenow", "300");
-    });
-    test("inline creation keeps consumer validation, exact names and IME handling", async ({
-      page,
-    }) => {
-      await page.goto("patterns/inline-create?preview=fullscreen");
-      const input = page.getByRole("textbox", { name: "New resource name" });
-      await expect(
-        page.getByRole("button", { name: "Create", exact: true }),
-      ).toBeDisabled();
-      await input.fill("duplicate");
-      await input.press("Enter");
-      await expect(page.getByRole("alert")).toContainText("already exists");
-      await input.fill("  exact.py  ");
-      await input.dispatchEvent("keydown", { key: "Enter", isComposing: true });
-      await expect(page.getByRole("status")).toHaveText("No resource created");
-      await input.press("Enter");
-      await expect(page.getByRole("status")).toHaveText(
-        "Created:   exact.py  ",
-      );
-      await input.press("Escape");
-      await expect(page.getByRole("status")).toHaveText("Cancelled");
     });
   });

@@ -292,21 +292,13 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
   patterns: [
     ["adaptive-workspace", "AdaptiveWorkspace", "AdaptiveWorkspace", "Container-aware navigation that keeps editor and drafts mounted."],
     ["resource-action-picker", "ResourceActionPicker", "ResourceActionPicker", "Resource actions after popup closing and focus restoration."],
-    ["record-loading", "RecordLoading", "RecordLoading", "Decorative form fields and table rows for pending records."],
-    ["source-navigation", "SourceNavigation", "SourceNavigation", "Controlled file list, actions and editor tabs."],
-    ["inline-rename", "InlineRename", "InlineRename", "Additional ERPBoost presentation composition."],
-    ["result-panel", "ResultPanel", "ResultPanel", "Additional ERPBoost presentation composition."],
 
-    ["workspace-frame", "WorkspaceFrame", "WorkspaceFrame", "Additional ERPBoost presentation composition."],
     ["resize-control", "ResizeControl", "ResizeControl", "Additional ERPBoost presentation composition."],
-    ["inline-create", "InlineCreate", "InlineCreate", "Additional ERPBoost presentation composition."],
 
     ["resource-picker", "ResourcePicker", "ResourcePicker", "Additional ERPBoost presentation composition."],
     ["value-editor", "ValueEditor", "ValueEditor", "Additional ERPBoost presentation composition."],
 
     ["editable-grid", "EditableGrid", "編集可能グリッド", "Editable rows with application-owned persistence."],
-    ["record-panel", "RecordPanel", "レコードパネル", "Compose record editing from existing dialogs and sheets."],
-    ["loading-layouts", "LoadingLayouts", "読み込みレイアウト", "Visible loading placeholders and workspace layouts."],
     ["workflow-graph", "WorkflowGraph", "ワークフローグラフ", "Render dependency graphs from display-only steps."],
 
     ["context-details", "Context and details", "コンテキストと詳細表示", "Compose a context header, compact sections, template options and a database grid."],

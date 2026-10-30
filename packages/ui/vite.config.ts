@@ -28,20 +28,12 @@ export default defineConfig({
         index: "src/index.ts",
         "adaptive-workspace": "src/components/adaptive-workspace/index.tsx",
         "resource-action-picker": "src/components/resource-action-picker/index.tsx",
-        "record-loading": "src/components/record-loading/index.tsx",
-        "source-navigation": "src/components/source-navigation/index.tsx",
-        "inline-rename": "src/components/inline-rename/index.tsx",
-        "result-panel": "src/components/result-panel/index.tsx",
 
-        "workspace-frame": "src/components/workspace-frame/index.tsx",
         "resize-control": "src/components/resize-control/index.tsx",
-        "inline-create": "src/components/inline-create/index.tsx",
 
         "resource-picker": "src/components/resource-picker/index.tsx",
         "value-editor": "src/components/value-editor/index.tsx",
 
-        "record-panel": "src/components/record-panel/index.tsx",
-        "loading-layouts": "src/components/loading-layouts/index.tsx",
         "editable-grid": "src/components/editable-grid/index.tsx",
         "workflow-graph": "src/components/workflow-graph/index.tsx",
 

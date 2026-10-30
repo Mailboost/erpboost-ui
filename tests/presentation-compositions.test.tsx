@@ -1,16 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import { EditableGrid } from "../packages/ui/src/components/editable-grid";
-import {
-  RecordEditor,
-  RecordPanel,
-  RecordPanelBody,
-} from "../packages/ui/src/components/record-panel";
-import {
-  LoadingPlaceholder,
-  ConnectionsRowsSkeleton,
-  ContextLoading,
-} from "../packages/ui/src/components/loading-layouts";
 import { Button } from "../packages/ui/src/components/button";
 const columns = [
   { name: "tenant", label: "Tenant", type: "text", editable: false },
@@ -79,63 +69,4 @@ it("delegates column changes and keeps unavailable schema actions disabled", () 
   const resize = screen.getByRole("separator", { name: "codeのカラム幅" });
   fireEvent.keyDown(resize, { key: "ArrowRight" });
   expect(resize.getAttribute("aria-valuenow")).toBe("266");
-});
-it("keeps loading shapes decorative and labels their surrounding pending regions", () => {
-  const { container } = render(
-    <>
-      <ConnectionsRowsSkeleton />
-      <LoadingPlaceholder />
-      <ContextLoading label="Loading organization" />
-    </>,
-  );
-  expect(
-    screen.getByRole("status", { name: "ERP接続を読み込んでいます" }),
-  ).toBeTruthy();
-  expect(
-    screen.getByRole("status", { name: "Loading organization" }),
-  ).toBeTruthy();
-  for (const el of container.querySelectorAll('[data-slot="skeleton"]'))
-    expect(el.getAttribute("aria-hidden")).toBe("true");
-});
-it("refuses to close a busy record panel", async () => {
-  const close = vi.fn();
-  render(
-    <RecordPanel
-      title="Busy panel"
-      placement="right"
-      closeDisabled
-      onClose={close}
-    >
-      <RecordPanelBody>
-        <Button>Action</Button>
-      </RecordPanelBody>
-    </RecordPanel>,
-  );
-  const panel = await screen.findByRole("dialog");
-  fireEvent.keyDown(panel, { key: "Escape" });
-  expect(close).not.toHaveBeenCalled();
-});
-it("confirms dirty record edits and delegates discard without saving", async () => {
-  const close = vi.fn(),
-    save = vi.fn();
-  render(
-    <RecordEditor
-      title="Edit inventory"
-      isNew={false}
-      busy={false}
-      dirty
-      onClose={close}
-      onSave={save}
-    >
-      <input aria-label="Code" defaultValue="0002" />
-    </RecordEditor>,
-  );
-  fireEvent.click(await screen.findByRole("button", { name: "閉じる" }));
-  expect(
-    await screen.findByText("保存していない変更があります。"),
-  ).toBeTruthy();
-  expect(close).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole("button", { name: "変更を破棄" }));
-  expect(close).toHaveBeenCalledOnce();
-  expect(save).not.toHaveBeenCalled();
 });

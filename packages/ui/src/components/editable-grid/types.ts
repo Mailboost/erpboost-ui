@@ -1,5 +1,5 @@
 import type { ReactNode, ComponentProps } from "react";
-import type { RecordPanel } from "../record-panel";
+import type { Dialog } from "../dialog";
 import type { EditableGridState } from "./index";
 export type GridValue = string | number | boolean | null;
 export type GridRow = Record<string, GridValue>;
@@ -45,5 +45,5 @@ export interface EditableGridProps<C extends GridColumn> {
   onSaveCell: (row: GridRow, column: C, value: GridValue) => Promise<void>;
   onDelete?: (rows: GridRow[]) => Promise<void>;
   renderEditor: (props: GridEditorProps<C>) => ReactNode;
-  container?: ComponentProps<typeof RecordPanel>["container"];
+  container?: ComponentProps<typeof Dialog.Content>["container"];
 }

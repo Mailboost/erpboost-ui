@@ -386,8 +386,6 @@ export {CodeWorkspace} from "./components/code-workspace";
 export {GraphControls, type GraphControlsProps} from "./components/graph-controls";
 export { ErpHeader, type ErpHeaderProps } from "./components/erp-header";
 
-export { RecordPanel, RecordPanelBody, RecordPanelFooter, RecordEditor } from "./components/record-panel";
-export * from "./components/loading-layouts";
 export { EditableGrid, type EditableGridState } from "./components/editable-grid";
 export type { EditableGridProps, GridColumn, GridModel, GridRow, GridValue } from "./components/editable-grid/types";
 export { WorkflowGraph, type WorkflowGraphProps, type WorkflowGraphStep } from "./components/workflow-graph";
@@ -395,20 +393,14 @@ export { WorkflowGraph, type WorkflowGraphProps, type WorkflowGraphStep } from "
 export * from "./components/resource-picker";
 export * from "./components/value-editor";
 
-export * from "./components/workspace-frame";
 export * from "./components/resize-control";
-export * from "./components/inline-create";
 
 
 
-export * from "./components/result-panel";
-
-export * from "./components/inline-rename";
 
 
-export * from "./components/source-navigation";
 
-export * from "./components/record-loading";
+
 
 export * from "./components/resource-action-picker";
 
