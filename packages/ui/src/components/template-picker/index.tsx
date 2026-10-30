@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import {
   useEffect,
   useRef,
@@ -12,7 +13,6 @@ import {
 } from "../record-panel";
 import { OptionCard } from "../option-card";
 import { Button } from "../button";
-import "./style.css";
 export type TemplateChoice = {
   id: string;
   title: ReactNode;
@@ -76,7 +76,12 @@ export function TemplatePicker({
       closeDisabled={busy}
       onClose={onClose}
     >
-      <RecordPanelBody className="erpui-template-picker-body">
+      <RecordPanelBody
+        className={cn(
+          "erpui-template-picker-body astw:[.erpui-template-picker_&]:flex",
+          "astw:[.erpui-template-picker_&]:flex-col astw:[.erpui-template-picker_&]:gap-4.5",
+        )}
+      >
         {pending
           ? confirmation.message(choice)
           : options.length

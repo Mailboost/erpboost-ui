@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Badge } from "../badge";
 import { ResizeHandle } from "../resize-handle";
 import { Toolbar } from "../toolbar";
@@ -40,7 +41,6 @@ import type {
   GridValue,
   EditableGridProps,
 } from "./types";
-import "./style.css";
 type DataColumn = GridColumn;
 type DataModel = GridModel<GridColumn>;
 type DataValue = GridValue;
@@ -218,13 +218,12 @@ export function EditableGrid<C extends GridColumn>({
   const styleFor = (index: number): CSSProperties | undefined =>
     index <= freezeIndex
       ? {
-          position: "sticky",
           left:
             112 + sizes.slice(0, index).reduce((sum, size) => sum + size, 0),
-          zIndex: 3,
-          background: "var(--card)",
         }
       : undefined;
+  const frozenCellClassName = (index: number) =>
+    index <= freezeIndex ? "astw:sticky astw:z-3 astw:bg-card" : undefined;
   const closeEditor = useCallback(() => {
     setEditor(null);
     requestAnimationFrame(
@@ -291,13 +290,17 @@ export function EditableGrid<C extends GridColumn>({
     }
   }
   return (
-    <div className="erpui-editable-grid">
+    <div className="erpui-editable-grid astw:flex astw:flex-1 astw:flex-col astw:min-h-0 astw:min-w-0 astw:text-foreground astw:bg-card">
       <Toolbar.Row
-        className="erpui-model-toolbar erpui-grid-toolbar"
+        className={cn(
+          "erpui-model-toolbar astw:flex astw:items-center astw:justify-between astw:shrink-0 astw:gap-3",
+          "astw:min-h-10.5 astw:py-1.5 astw:px-[9px] astw:border-b astw:border-b-border astw:bg-card",
+          "astw:[@media(max-width:650px)]:flex-wrap astw:[@media(max-width:650px)]:gap-[7px] erpui-grid-toolbar",
+        )}
         aria-label="データの検索と操作"
       >
         {checkedCount ? (
-          <div className="erpui-grid-selected-count">
+          <div className="erpui-grid-selected-count astw:flex astw:items-center astw:gap-2.5 astw:text-[12px]">
             <span>{checkedCount} 件選択中</span>
             {onDelete && (
               <Button
@@ -355,7 +358,7 @@ export function EditableGrid<C extends GridColumn>({
             }}
           />
         )}
-        <div className="erpui-model-actions">
+        <div className="erpui-model-actions astw:flex astw:items-center astw:gap-[7px] astw:shrink-0 astw:[@media(max-width:650px)]:ml-auto">
           <Button
             type="button"
             variant="outline"
@@ -372,7 +375,7 @@ export function EditableGrid<C extends GridColumn>({
               onClose={() => setSortOpen(false)}
             >
               <DialogBody className="erpui-dialog-body">
-                <div className="erpui-grid-sort-field">
+                <div className="erpui-grid-sort-field astw:grid astw:gap-2">
                   <Text
                     variant="label-sm"
                     render={<label htmlFor={columnSelectId} />}
@@ -410,7 +413,7 @@ export function EditableGrid<C extends GridColumn>({
                   </Select.Parts.Root>
                 </div>
                 {sort && (
-                  <div className="erpui-grid-sort-field">
+                  <div className="erpui-grid-sort-field astw:grid astw:gap-2">
                     <Text
                       variant="label-sm"
                       render={<label htmlFor={directionSelectId} />}
@@ -466,7 +469,11 @@ export function EditableGrid<C extends GridColumn>({
                 >
                   <RefreshCw
                     size={14}
-                    className={fetching ? "erpui-spin" : ""}
+                    className={
+                      fetching
+                        ? "erpui-spin astw:[.erpui-editable-grid_&]:animate-spin astw:motion-reduce:[.erpui-editable-grid_&]:animate-none"
+                        : ""
+                    }
                   />
                 </Button>
               }
@@ -496,10 +503,22 @@ export function EditableGrid<C extends GridColumn>({
           <Alert.Description>{error || copyError}</Alert.Description>
         </Alert.Root>
       )}
-      <div ref={grid} className="erpui-model-columns erpui-record-grid">
+      <div
+        ref={grid}
+        className={cn(
+          "erpui-model-columns astw:min-h-0 astw:overflow-auto astw:flex-1 astw:[scrollbar-width:thin]",
+          "astw:[scrollbar-color:var(--input)_var(--card)] erpui-record-grid",
+        )}
+      >
         <Table.Root
-          containerClassName="erpui-ui-table-container"
-          className="erpui-record-table"
+          containerClassName="erpui-ui-table-container astw:[.erpui-editable-grid_&]:overflow-visible astw:[.erpui-editable-grid_&]:static"
+          className={cn(
+            "erpui-record-table astw:[.erpui-editable-grid_&]:table-fixed",
+            "astw:[.erpui-editable-grid_&_thead]:sticky astw:[.erpui-editable-grid_&_thead]:top-0",
+            "astw:[.erpui-editable-grid_&_thead]:z-4 astw:[.erpui-editable-grid_&_thead]:bg-card",
+            "astw:[&_th]:relative astw:[&_td>span:not([data-slot])]:block",
+            "astw:[&_td>span:not([data-slot])]:overflow-hidden astw:[&_td>span:not([data-slot])]:text-ellipsis",
+          )}
           role="grid"
           aria-label={`${model.name}のデータ`}
           aria-busy={pending}
@@ -510,11 +529,11 @@ export function EditableGrid<C extends GridColumn>({
           }}
         >
           <colgroup>
-            <col style={{ width: 112 }} />
+            <col className="astw:w-28" />
             {columns.map((column, index) => (
               <col key={column.name} style={{ width: sizes[index] }} />
             ))}
-            <col style={{ width: 56 }} />
+            <col className="astw:w-14" />
           </colgroup>
           <Table.Header>
             <Table.Row>
@@ -539,10 +558,11 @@ export function EditableGrid<C extends GridColumn>({
               {columns.map((column, index) => (
                 <Table.Head
                   key={column.name}
-                  style={{
-                    ...styleFor(index),
-                    ...(index <= freezeIndex ? { zIndex: 5 } : {}),
-                  }}
+                  className={cn(
+                    frozenCellClassName(index),
+                    index <= freezeIndex && "astw:z-5",
+                  )}
+                  style={styleFor(index)}
                   aria-sort={
                     sort?.column === column.name
                       ? sort.direction === "asc"
@@ -551,9 +571,9 @@ export function EditableGrid<C extends GridColumn>({
                       : "none"
                   }
                 >
-                  <div className="erpui-column-heading">
+                  <div className="erpui-column-heading astw:flex astw:items-center astw:gap-2 astw:min-w-0">
                     <span
-                      className="erpui-column-label"
+                      className="erpui-column-label astw:flex astw:items-center astw:gap-2 astw:min-w-0 astw:flex-1 astw:flex-wrap"
                       title={`${column.name} · ${column.label}`}
                     >
                       {model.primaryKeys.includes(column.name) ? (
@@ -596,7 +616,11 @@ export function EditableGrid<C extends GridColumn>({
                     aria-valuenow={sizes[index]}
                     aria-label={`${column.name}のカラム幅`}
                     tabIndex={0}
-                    className="erpui-grid-resize"
+                    className={cn(
+                      "erpui-grid-resize astw:absolute astw:top-0 astw:right-[-3px] astw:z-7 astw:w-1.5 astw:h-full",
+                      "astw:cursor-col-resize astw:touch-none astw:[&:hover]:bg-ring astw:[&:hover]:outline-none",
+                      "astw:[&:focus-visible]:bg-ring astw:[&:focus-visible]:outline-none",
+                    )}
                     onDoubleClick={() =>
                       setWidths((previous) => ({
                         ...previous,
@@ -651,7 +675,12 @@ export function EditableGrid<C extends GridColumn>({
                   />
                 </Table.Head>
               ))}
-              <Table.Head className="erpui-record-add-column">
+              <Table.Head
+                className={cn(
+                  "erpui-record-add-column astw:[.erpui-record-table_&]:w-14 astw:[.erpui-record-table_&]:min-w-14",
+                  "astw:[.erpui-record-table_&]:p-0 astw:[&>button]:my-0 astw:[&>button]:mx-auto",
+                )}
+              >
                 <Tooltip.Root>
                   <Tooltip.Trigger
                     render={
@@ -680,14 +709,18 @@ export function EditableGrid<C extends GridColumn>({
               Array.from({ length: 8 }, (_, row) => (
                 <Table.Row
                   key={`pending-${row}`}
-                  className="erpui-grid-skeleton-row"
+                  className="erpui-grid-skeleton-row astw:[&_td]:h-11 astw:[&_td]:py-3 astw:[&_td]:px-4"
                   aria-hidden="true"
                 >
                   <Table.Cell data-row-control="">
-                    <Skeleton className="erpui-skeleton-icon" />
+                    <Skeleton className="erpui-skeleton-icon astw:[.erpui-editable-grid_&]:w-4 astw:[.erpui-editable-grid_&]:h-4" />
                   </Table.Cell>
                   {columns.map((column, index) => (
-                    <Table.Cell key={column.name} style={styleFor(index)}>
+                    <Table.Cell
+                      key={column.name}
+                      className={frozenCellClassName(index)}
+                      style={styleFor(index)}
+                    >
                       <Skeleton />
                     </Table.Cell>
                   ))}
@@ -704,7 +737,7 @@ export function EditableGrid<C extends GridColumn>({
                     data-state={checked.has(key) ? "selected" : undefined}
                   >
                     <Table.Cell data-row-control="">
-                      <div className="erpui-grid-row-controls">
+                      <div className="erpui-grid-row-controls astw:flex astw:items-center astw:gap-2 astw:min-w-0 astw:flex-nowrap">
                         <Checkbox
                           aria-label={`レコード ${rowIndex + 1}を選択`}
                           checked={checked.has(key)}
@@ -760,6 +793,7 @@ export function EditableGrid<C extends GridColumn>({
                           }
                           data-grid-row={rowIndex}
                           data-grid-column={columnIndex}
+                          className={frozenCellClassName(columnIndex)}
                           style={styleFor(columnIndex)}
                           onFocus={() =>
                             setSelected({ row: key, column: column.name })
@@ -802,9 +836,9 @@ export function EditableGrid<C extends GridColumn>({
                             title={value == null ? undefined : display(value)}
                             className={
                               value == null
-                                ? "erpui-record-null"
+                                ? "erpui-record-null astw:text-muted-foreground! astw:italic"
                                 : model.primaryKeys.includes(column.name)
-                                  ? "erpui-record-id"
+                                  ? "erpui-record-id astw:tabular-nums"
                                   : ""
                             }
                           >
@@ -814,7 +848,10 @@ export function EditableGrid<C extends GridColumn>({
                       );
                     })}
                     <Table.Cell
-                      className="erpui-record-add-column"
+                      className={cn(
+                        "erpui-record-add-column astw:[.erpui-record-table_&]:w-14 astw:[.erpui-record-table_&]:min-w-14",
+                        "astw:[.erpui-record-table_&]:p-0 astw:[&>button]:my-0 astw:[&>button]:mx-auto",
+                      )}
                       aria-hidden="true"
                     />
                   </Table.Row>
@@ -823,13 +860,16 @@ export function EditableGrid<C extends GridColumn>({
           </Table.Body>
         </Table.Root>
         {pending && (
-          <span className="erpui-sr-only" role="status">
+          <span
+            className="erpui-sr-only astw:absolute astw:w-px astw:h-px astw:overflow-hidden astw:[clip:rect(0,0,0,0)] astw:whitespace-nowrap"
+            role="status"
+          >
             行データを読み込んでいます
           </span>
         )}
         {!pending && !rows.length && !error && (
           <EmptyState
-            className="erpui-data-empty"
+            className="erpui-data-empty astw:min-h-50 astw:h-[calc(100%_-_36px)]"
             title={
               search
                 ? "該当するデータがありません"
@@ -838,8 +878,20 @@ export function EditableGrid<C extends GridColumn>({
           />
         )}
       </div>
-      <div className="erpui-model-table-footer">
-        <div className="erpui-grid-pagination">
+      <div
+        className={cn(
+          "erpui-model-table-footer astw:flex astw:items-center astw:justify-between astw:shrink-0 astw:gap-3",
+          "astw:min-h-10 astw:py-[5px] astw:px-[9px] astw:border-t astw:border-t-border astw:bg-card",
+          "astw:text-foreground astw:text-[12px] astw:[@media(max-width:650px)]:flex-wrap",
+        )}
+      >
+        <div
+          className={cn(
+            "erpui-grid-pagination astw:flex astw:items-center astw:gap-2 astw:tabular-nums astw:flex-wrap",
+            "astw:[@media(max-width:650px)]:gap-[5px] astw:[@media(max-width:650px)]:flex-wrap",
+            "astw:[@media(max-width:650px)]:[&>span:last-child]:hidden",
+          )}
+        >
           <Pagination
             currentPage={currentPage}
             totalPages={pages}
@@ -860,12 +912,14 @@ export function EditableGrid<C extends GridColumn>({
             container={container}
           />
           {pending ? (
-            <Skeleton className="erpui-skeleton-count" />
+            <Skeleton className="erpui-skeleton-count astw:[.erpui-editable-grid_&]:w-6 astw:[.erpui-editable-grid_&]:h-2.5" />
           ) : (
             <span>{visible.length} 件</span>
           )}
           {rowLimit !== undefined && data.length === rowLimit && (
-            <span className="erpui-grid-limit">取得済み{rowLimit}件</span>
+            <span className="erpui-grid-limit astw:text-muted-foreground astw:text-[11px] astw:[@media(max-width:900px)]:hidden">
+              取得済み{rowLimit}件
+            </span>
           )}
         </div>
         {viewSwitch}

@@ -115,7 +115,9 @@ export function LookupInput({
           </Combobox.Parts.List>
         )}
         {!loading && !items.length && (
-          <div className="erpui-lookup-empty">{emptyContent}</div>
+          <div className="erpui-lookup-empty astw:p-2.5 astw:text-[12px] astw:text-muted-foreground">
+            {emptyContent}
+          </div>
         )}
         {error && (
           <Alert.Root variant="error" role="alert">

@@ -12,7 +12,7 @@ export function PropertyLayoutDemo() {
   const [name, setName] = useState(""),
     [result, setResult] = useState("No submission");
   return (
-    <div style={{ maxWidth: 640, padding: 20 }}>
+    <div className="astw:max-w-160 astw:p-5">
       <form
         onSubmit={(event) => {
           event.preventDefault();

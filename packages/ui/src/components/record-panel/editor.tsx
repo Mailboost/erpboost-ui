@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Alert } from "../alert";
 import { Fieldset } from "../fieldset";
 import { Button } from "../button";
@@ -57,7 +58,7 @@ export function RecordEditor({
         onClose={close}
       >
         <form
-          className="erpui-record-editor-form"
+          className="erpui-record-editor-form astw:flex astw:flex-1 astw:flex-col astw:min-h-0"
           onKeyDown={(event) => {
             if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
               event.preventDefault();
@@ -71,17 +72,22 @@ export function RecordEditor({
         >
           {error && (
             <Alert.Root
-              className="erpui-record-editor-error"
+              className="erpui-record-editor-error astw:shrink-0 astw:mt-3.5 astw:mx-5 astw:mb-0"
               variant="error"
               role="alert"
             >
               <Alert.Description>{error}</Alert.Description>
             </Alert.Root>
           )}
-          <DialogBody className="erpui-record-editor-body">
+          <DialogBody
+            className={cn(
+              "erpui-record-editor-body astw:[&>fieldset]:grid astw:[&>fieldset]:gap-6 astw:[&>fieldset]:min-w-0",
+              "astw:[&>fieldset]:m-0 astw:[&>fieldset]:p-0 astw:[&>fieldset]:border-0",
+            )}
+          >
             <Fieldset.Root disabled={busy}>{children}</Fieldset.Root>
           </DialogBody>
-          <DialogFooter className="erpui-record-editor-footer">
+          <DialogFooter className="erpui-record-editor-footer astw:[&_kbd]:ml-[3px] astw:[&_kbd]:[font-family:inherit] astw:[&_kbd]:text-[11px]">
             <Button
               variant="outline"
               size="sm"
@@ -100,7 +106,10 @@ export function RecordEditor({
               disabled={busy || !onSave || (!isNew && !dirty)}
             >
               {busy && (
-                <RefreshCw size={14} className="erpui-record-editor-spin" />
+                <RefreshCw
+                  size={14}
+                  className="erpui-record-editor-spin astw:animate-spin astw:motion-reduce:animate-none"
+                />
               )}
               {busy ? "保存中…" : "保存"}
               <kbd aria-hidden="true">⌘↵</kbd>
@@ -115,7 +124,12 @@ export function RecordEditor({
           className="erpui-record-confirm"
           onClose={() => setDiscard(false)}
         >
-          <DialogBody className="erpui-record-panel-body">
+          <DialogBody
+            className={cn(
+              "erpui-record-panel-body astw:min-w-0 astw:min-h-0 astw:overflow-auto",
+              "astw:[.erpui-record-panel-side_&]:flex-1 astw:[.erpui-record-panel-side_&]:p-4",
+            )}
+          >
             <p>保存していない変更があります。</p>
           </DialogBody>
           <DialogFooter className="erpui-record-panel-actions">

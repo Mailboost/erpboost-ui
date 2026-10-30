@@ -41,7 +41,7 @@ export function SourceNavigationDemo() {
   }
   return (
     <form
-      style={{ display: "grid", gap: 16, minWidth: 0 }}
+      className="astw:grid astw:gap-4 astw:min-w-0"
       onSubmit={(event) => {
         event.preventDefault();
         setSubmissions((count) => count + 1);
@@ -50,7 +50,7 @@ export function SourceNavigationDemo() {
       <Button type="button" onClick={() => setLocked((value) => !value)}>
         {locked ? "Enable actions" : "Disable actions"}
       </Button>
-      <CodeWorkspace.Root style={{ height: 360 }}>
+      <CodeWorkspace.Root className="astw:h-90">
         <SourceNavigation.Files
           aria-label="Source files"
           title="Sources"
@@ -101,7 +101,7 @@ export function SourceNavigationDemo() {
               onValueChange={setValue}
               meta="Runtime"
             />
-            <div style={{ padding: 16, minWidth: 0 }}>
+            <div className="astw:p-4 astw:min-w-0">
               <Textarea
                 aria-label="Editor draft"
                 value={contents[value] ?? ""}

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { ComponentProps, ReactNode } from "react";
 import {
   RecordPanel,
@@ -5,7 +6,6 @@ import {
   RecordPanelFooter,
 } from "../record-panel";
 import { Button } from "../button";
-import "./style.css";
 export function SettingsPanel({
   children,
   actions,
@@ -29,10 +29,15 @@ export function SettingsPanel({
       onClose={onClose}
       closeDisabled={closeDisabled}
     >
-      <RecordPanelBody className="erpui-settings-panel-body">
+      <RecordPanelBody
+        className={cn(
+          "erpui-settings-panel-body astw:[.erpui-settings-panel_&]:flex",
+          "astw:[.erpui-settings-panel_&]:flex-col astw:[.erpui-settings-panel_&]:gap-4.5",
+        )}
+      >
         {children}
       </RecordPanelBody>
-      <RecordPanelFooter className="erpui-settings-panel-actions">
+      <RecordPanelFooter className="erpui-settings-panel-actions astw:shrink-0 astw:flex-wrap">
         <Button
           type="button"
           variant="outline"

@@ -11,7 +11,7 @@ const sample = [
 export function DataPreviewDemo() {
   const [rows, setRows] = useState(sample);
   return (
-    <div style={{ width: "100%", minWidth: 0 }}>
+    <div className="astw:w-full astw:min-w-0">
       <Button
         variant="outline"
         onClick={() => setRows(rows.length ? [] : sample)}

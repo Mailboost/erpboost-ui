@@ -29,7 +29,7 @@ export function WorkflowGraphDemo() {
   return (
     <>
       <p role="status">Selected: {selected || "none"}</p>
-      <div style={{ height: 420 }}>
+      <div className="astw:h-105">
         <WorkflowGraph
           docked={false}
           steps={steps}

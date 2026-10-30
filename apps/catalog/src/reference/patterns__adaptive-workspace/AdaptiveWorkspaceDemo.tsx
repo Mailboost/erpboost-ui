@@ -27,16 +27,16 @@ export function AdaptiveWorkspaceDemo() {
         event.preventDefault();
         setSubmissions((count) => count + 1);
       }}
-      style={{ display: "grid", gap: 12, minWidth: 0 }}
+      className="astw:grid astw:gap-3 astw:min-w-0"
     >
       <Button type="button" onClick={() => setNarrow((current) => !current)}>
         {narrow ? "Use full container" : "Use narrow container"}
       </Button>
       <div
         data-demo-container="adaptive"
-        style={{ width: narrow ? 360 : "100%", maxWidth: "100%" }}
+        className={`astw:max-w-full ${narrow ? "astw:w-90" : "astw:w-full"}`}
       >
-        <CodeWorkspace.Root style={{ height: 600 }}>
+        <CodeWorkspace.Root className="astw:h-150">
           <AdaptiveWorkspace
             navigationLabel="Files"
             collapseKey={navigation}
@@ -84,7 +84,7 @@ export function AdaptiveWorkspaceDemo() {
                   aria-label="Editor draft"
                   value={draft}
                   onChange={(event) => setDraft(event.target.value)}
-                  style={{ flex: 1, minHeight: 0, resize: "none" }}
+                  className="astw:flex-1 astw:min-h-0 astw:resize-none"
                 />
               </CodeWorkspace.Editor>
             </CodeWorkspace.Main>

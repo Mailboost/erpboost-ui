@@ -25,14 +25,14 @@ const columns = [
 export function RecordLoadingDemo() {
   const [loading, setLoading] = useState(true);
   return (
-    <div style={{ display: "grid", gap: 20, minWidth: 0 }}>
+    <div className="astw:grid astw:gap-5 astw:min-w-0">
       <Button type="button" onClick={() => setLoading((value) => !value)}>
         {loading ? "Show loaded" : "Show loading"}
       </Button>
       <section
         aria-label="Record preview"
         aria-busy={loading}
-        style={{ minWidth: 0 }}
+        className="astw:min-w-0"
       >
         <span role="status">
           {loading ? "Loading record…" : "Record ready"}
@@ -67,7 +67,7 @@ export function RecordLoadingDemo() {
         <CollectionLayout.TableArea
           interactive
           minWidth={700}
-          style={{ marginTop: 20 }}
+          className="astw:mt-5"
         >
           <DetailTable
             columns={columns}

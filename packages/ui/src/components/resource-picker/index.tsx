@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import {
   useMemo,
   useState,
@@ -7,7 +8,6 @@ import {
 } from "react";
 import { Combobox } from "../combobox";
 import { Button } from "../button";
-import "./style.css";
 export interface ResourceOption {
   id: string;
   name: string;
@@ -125,7 +125,10 @@ export function ResourcePicker({
       </Combobox.Parts.Trigger>
       <Combobox.Parts.Content
         container={container}
-        className="erpui-resource-picker"
+        className={cn(
+          "erpui-resource-picker astw:[&_[data-slot=combobox-item]_small]:block astw:[&_[role=status]]:p-2.5",
+          "astw:[&_[role=status]]:text-[12px] astw:[&_[role=status]]:text-muted-foreground",
+        )}
         style={{ width: `min(${popupWidth}px, calc(100vw - 24px))` }}
       >
         <Combobox.Parts.Input

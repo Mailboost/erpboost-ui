@@ -5,9 +5,9 @@ import {
 } from "@mailboost/erpboost-ui";
 export function LoadingLayoutsDemo() {
   return (
-    <div style={{ display: "grid", gap: 24 }}>
+    <div className="astw:grid astw:gap-6">
       <ContextLoading label="Loading organization" />
-      <LoadingPlaceholder style={{ width: 180, height: 20 }} />
+      <LoadingPlaceholder className="astw:w-45 astw:h-5" />
       <ConnectionsRowsSkeleton />
     </div>
   );

@@ -5,7 +5,6 @@ import { Alert } from "../alert";
 import { Button } from "../button";
 import { Select } from "../select";
 import { Textarea } from "../textarea";
-import "./style.css";
 export type EditorValue = string | number | boolean | null;
 export interface ValueEditorProps {
   name: string;
@@ -75,7 +74,10 @@ export function ValueEditor({
               onClick={() => void save()}
             >
               {busy ? (
-                <Loader2 size={13} className="erpui-value-editor-spin" />
+                <Loader2
+                  size={13}
+                  className="erpui-value-editor-spin astw:animate-spin astw:motion-reduce:animate-none"
+                />
               ) : (
                 <CornerDownLeft size={13} />
               )}
@@ -151,7 +153,7 @@ export function ValueEditor({
       )}
       {error && (
         <Alert.Root
-          className="erpui-value-editor-error"
+          className="erpui-value-editor-error astw:mt-2"
           variant="error"
           role="alert"
         >

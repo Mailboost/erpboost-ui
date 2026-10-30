@@ -1,7 +1,7 @@
+import { cn } from "@/lib/utils";
 import { useState, type ReactNode } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { Button } from "../button";
-import "./style.css";
 /** Only reveal state is owned here; the consumer supplies the input and value lifecycle. */
 export function SensitiveInput({
   children,
@@ -16,7 +16,12 @@ export function SensitiveInput({
 }) {
   const [revealed, setRevealed] = useState(false);
   return (
-    <div className="erpui-sensitive-input">
+    <div
+      className={cn(
+        "erpui-sensitive-input astw:flex astw:w-full astw:items-center astw:gap-2 astw:[&>input]:min-w-0",
+        "astw:[&>input]:flex-1 astw:[&>button]:shrink-0",
+      )}
+    >
       {children({ type: revealed ? "text" : "password" })}
       <Button
         variant="ghost"

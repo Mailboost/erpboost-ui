@@ -1,6 +1,6 @@
+import { cn } from "@/lib/utils";
 import { useRef, type ComponentProps, type PointerEvent } from "react";
 import { ResizeHandle } from "../resize-handle";
-import "./style.css";
 export type ResizeControlProps = Omit<
   ComponentProps<typeof ResizeHandle>,
   | "onKeyDown"
@@ -52,7 +52,20 @@ export function ResizeControl({
     <ResizeHandle
       {...props}
       orientation={orientation}
-      className={`erpui-resize-control ${className}`}
+      className={cn(
+        "erpui-resize-control astw:[&[data-placement=overlay]]:absolute astw:[&[data-placement=overlay]]:z-1",
+        "astw:[&[data-placement=overlay][aria-orientation=vertical]]:top-0",
+        "astw:[&[data-placement=overlay][aria-orientation=vertical]]:bottom-0",
+        "astw:[&[data-placement=overlay][aria-orientation=vertical]]:left-0",
+        "astw:[&[data-placement=overlay][aria-orientation=vertical]]:h-full",
+        "astw:[&[data-placement=overlay][aria-orientation=vertical]]:w-1",
+        "astw:[&[data-placement=overlay][aria-orientation=horizontal]]:top-0",
+        "astw:[&[data-placement=overlay][aria-orientation=horizontal]]:left-0",
+        "astw:[&[data-placement=overlay][aria-orientation=horizontal]]:right-0",
+        "astw:[&[data-placement=overlay][aria-orientation=horizontal]]:w-full",
+        "astw:[&[data-placement=overlay][aria-orientation=horizontal]]:h-1",
+        className,
+      )}
       data-placement={placement}
       aria-valuemin={min}
       aria-valuemax={max}

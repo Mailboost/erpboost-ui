@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { ComponentProps, ReactNode } from "react";
 import { ChevronDown, FileCode2, FolderOpen, Plus, X } from "lucide-react";
 import { CodeWorkspace } from "../code-workspace";
@@ -5,7 +6,6 @@ import { FileList, FileListItem } from "../file-list";
 import { Button } from "../button";
 import { Tabs } from "../tabs";
 import { Tooltip } from "../tooltip";
-import "./style.css";
 export interface SourceFile {
   name: string;
   icon?: ReactNode;
@@ -56,7 +56,18 @@ function Files({
   return (
     <CodeWorkspace.Sidebar
       {...props}
-      className={`erpui-source-navigation-sidebar ${className}`}
+      className={cn(
+        "erpui-source-navigation-sidebar astw:[&_[data-slot=code-workspace-header]]:py-2",
+        "astw:[&_[data-slot=code-workspace-header]]:px-0 astw:[&_[data-slot=code-workspace-header]]:gap-1.5",
+        "astw:[&_[data-slot=code-workspace-header]>span]:overflow-hidden",
+        "astw:[&_[data-slot=code-workspace-header]>span]:whitespace-nowrap",
+        "astw:[&_[data-slot=code-workspace-header]>span]:text-ellipsis",
+        "astw:[&_[data-slot=code-workspace-header-actions]_button]:w-7",
+        "astw:[&_[data-slot=code-workspace-header-actions]_button]:min-w-7",
+        "astw:[&_[data-slot=code-workspace-header-actions]_button]:h-7",
+        "astw:[&_[data-slot=code-workspace-header-actions]_button]:p-0",
+        className,
+      )}
     >
       <CodeWorkspace.Header
         icon={<FolderOpen size={13} />}
@@ -93,7 +104,7 @@ function Files({
           {group}
         </CodeWorkspace.Header>
       )}
-      <FileList className="erpui-source-navigation-files">
+      <FileList className="erpui-source-navigation-files astw:mb-4">
         {files.map((file) => (
           <FileListItem
             key={file.name}
@@ -131,7 +142,9 @@ function Files({
         ))}
       </FileList>
       {children && (
-        <div className="erpui-source-navigation-extra">{children}</div>
+        <div className="erpui-source-navigation-extra astw:min-w-0 astw:wrap-anywhere">
+          {children}
+        </div>
       )}
     </CodeWorkspace.Sidebar>
   );
@@ -153,7 +166,7 @@ function FileTabs({
   return (
     <CodeWorkspace.EditorTabs
       {...props}
-      className={`erpui-source-navigation-tabs ${className}`}
+      className={`erpui-source-navigation-tabs astw:[.erpui-source-navigation-tabs&]:min-w-0 ${className}`}
     >
       <Tabs.Root
         value={value}
@@ -169,7 +182,9 @@ function FileTabs({
         </Tabs.List>
       </Tabs.Root>
       {meta != null && (
-        <small className="erpui-source-navigation-meta">{meta}</small>
+        <small className="erpui-source-navigation-meta astw:shrink-0 astw:whitespace-nowrap">
+          {meta}
+        </small>
       )}
     </CodeWorkspace.EditorTabs>
   );

@@ -44,7 +44,7 @@ export function EditableGridDemo() {
   ]);
   const state = useCallback(() => {}, []);
   return (
-    <div style={{ height: 420, display: "flex" }}>
+    <div className="astw:h-105 astw:flex">
       <EditableGrid
         model={{ name: "inventory", primaryKeys: ["id"], columns }}
         data={rows}

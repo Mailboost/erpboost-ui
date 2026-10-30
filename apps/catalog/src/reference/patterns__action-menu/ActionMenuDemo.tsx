@@ -3,7 +3,7 @@ import { ActionMenu, AccountMenu } from "@mailboost/erpboost-ui";
 export function ActionMenuDemo() {
   const [status, setStatus] = useState("Ready");
   return (
-    <div style={{ maxWidth: 300 }}>
+    <div className="astw:max-w-75">
       <ActionMenu
         triggerLabel="Row actions"
         menuLabel="Actions"

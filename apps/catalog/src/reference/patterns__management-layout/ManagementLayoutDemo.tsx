@@ -103,7 +103,7 @@ export function ManagementLayoutDemo() {
       <p role="status" aria-label="Selection result">
         {selected || `${rows.length} resources`}
       </p>
-      <FormStack style={{ marginTop: 24 }}>
+      <FormStack className="astw:mt-6">
         <SettingsList>
           <SettingsRow
             label={

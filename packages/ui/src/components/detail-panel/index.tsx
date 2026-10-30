@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import {
   createContext,
   useContext,
@@ -7,7 +8,6 @@ import {
 } from "react";
 import { RecordPanel, RecordPanelBody } from "../record-panel";
 import { Tabs } from "../tabs";
-import "./style.css";
 
 export type DetailPanelTab = {
   value: string;
@@ -50,9 +50,21 @@ function Root({
       title={
         <>
           {context && (
-            <span className="erpui-detail-panel-context">{context}</span>
+            <span
+              className={cn(
+                "erpui-detail-panel-context astw:block astw:mb-1.5 astw:text-[11px] astw:leading-[1.5]",
+                "astw:font-normal astw:tracking-[0] astw:text-muted-foreground",
+              )}
+            >
+              {context}
+            </span>
           )}
-          <span className="erpui-detail-panel-title">
+          <span
+            className={cn(
+              "erpui-detail-panel-title astw:flex astw:items-center astw:flex-wrap astw:gap-y-2 astw:gap-x-2.5",
+              "astw:[&>span:first-child]:min-w-0 astw:[&>span:first-child]:wrap-anywhere",
+            )}
+          >
             <span>{title}</span>
             {badge}
           </span>
@@ -70,10 +82,20 @@ function Root({
               onValueChange(next);
           }}
           variant="line"
-          className="erpui-detail-panel-tabs-root"
+          className="erpui-detail-panel-tabs-root astw:shrink-0 astw:min-w-0"
         >
           <Tabs.List
-            className="erpui-detail-panel-tabs"
+            className={cn(
+              "erpui-detail-panel-tabs astw:[&[data-slot=tabs-list]]:justify-start",
+              "astw:[&[data-slot=tabs-list]]:shrink-0 astw:[&[data-slot=tabs-list]]:w-full",
+              "astw:[&[data-slot=tabs-list]]:max-w-full astw:[&[data-slot=tabs-list]]:overflow-x-auto",
+              "astw:[&[data-slot=tabs-list]]:pt-0 astw:[&[data-slot=tabs-list]]:px-6",
+              "astw:[&[data-slot=tabs-list]]:pb-3 astw:[&[data-slot=tabs-list]]:border-b",
+              "astw:[&[data-slot=tabs-list]]:border-b-border astw:[&_[data-slot=tabs-tab]]:gap-1.5",
+              "astw:[&_[data-slot=tabs-tab]]:shrink-0 astw:[@media(max-width:520px)]:[&[data-slot=tabs-list]]:pt-0",
+              "astw:[@media(max-width:520px)]:[&[data-slot=tabs-list]]:px-4",
+              "astw:[@media(max-width:520px)]:[&[data-slot=tabs-list]]:pb-2.5",
+            )}
             aria-label={tabListLabel}
           >
             {tabs.map((tab) => (
@@ -113,7 +135,16 @@ function Body({
       role="tabpanel"
       aria-labelledby={context.tabId}
       tabIndex={props.tabIndex ?? 0}
-      className={`erpui-detail-panel-body ${className}`}
+      className={cn(
+        "erpui-detail-panel-body astw:[.erpui-detail-panel_&]:flex-1 astw:[.erpui-detail-panel_&]:min-h-0",
+        "astw:[.erpui-detail-panel_&]:min-w-0 astw:[.erpui-detail-panel_&]:overflow-auto",
+        "astw:[.erpui-detail-panel_&]:overscroll-contain",
+        "astw:[.erpui-detail-panel_&]:[scrollbar-gutter:stable] astw:[&:focus-visible]:outline-2",
+        "astw:[&:focus-visible]:outline-solid astw:[&:focus-visible]:outline-ring",
+        "astw:[&:focus-visible]:-outline-offset-2",
+        "astw:[@media(max-width:520px)]:[.erpui-detail-panel_&]:p-3.5",
+        className,
+      )}
     />
   );
 }

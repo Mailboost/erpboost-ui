@@ -3,10 +3,10 @@ import { WorkspaceFrame, SidebarPanel, Button } from "@mailboost/erpboost-ui";
 export function WorkspaceFrameDemo() {
   const [section, setSection] = useState("Orders");
   return (
-    <div style={{ height: 560, width: "100%" }}>
-      <WorkspaceFrame.Root style={{ height: "100%" }}>
+    <div className="astw:h-140 astw:w-full">
+      <WorkspaceFrame.Root className="astw:h-full">
         <WorkspaceFrame.Header>
-          <div style={{ padding: 16, borderBottom: "1px solid var(--border)" }}>
+          <div className="astw:p-4 astw:border-b astw:border-b-border">
             ERP workspace
           </div>
         </WorkspaceFrame.Header>

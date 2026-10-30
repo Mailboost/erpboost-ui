@@ -16,11 +16,11 @@ export function ResultPanelDemo() {
   const outputs = ["customers", "a_very_long_output_table_identifier"],
     rows = [{ id: "0001", amount: "9007199254740993" }];
   return (
-    <div style={{ padding: 16, maxWidth: 960 }}>
+    <div className="astw:p-4 astw:max-w-240">
       <Button onClick={() => setError(!error)}>Toggle result error</Button>
       <output aria-label="Dock state">{docked ? "Docked" : "Below"}</output>
       <ResultPanel.Root
-        style={{ height: 320 }}
+        className="astw:h-80"
         aria-label="Execution results"
         tabs={[
           { value: "graph", label: "Graph", graph: true },
@@ -107,7 +107,7 @@ export function ResultPanelDemo() {
           {tab === "graph" && (
             <div
               aria-label="Graph placeholder"
-              style={{ flex: 1, minHeight: 60 }}
+              className="astw:flex-1 astw:min-h-15"
             >
               Application-owned graph
             </div>

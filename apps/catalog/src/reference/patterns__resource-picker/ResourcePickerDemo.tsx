@@ -9,7 +9,7 @@ export function ResourcePickerDemo() {
     { id: "osaka", name: "Osaka", description: "West office" },
   ];
   return (
-    <div style={{ display: "grid", gap: 24 }}>
+    <div className="astw:grid astw:gap-6">
       <ResourcePicker
         options={items}
         value={value}

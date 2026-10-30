@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import {
   useEffect,
   useId,
@@ -9,7 +10,6 @@ import {
 } from "react";
 import { PanelLeft } from "lucide-react";
 import { Button } from "../button";
-import "./style.css";
 const useLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
 export interface AdaptiveWorkspaceProps extends Omit<
   ComponentProps<"div">,
@@ -94,11 +94,21 @@ export function AdaptiveWorkspace({
     <div
       {...props}
       ref={root}
-      className={`erpui-adaptive-workspace ${className}`}
+      className={cn(
+        "erpui-adaptive-workspace astw:flex astw:flex-col astw:flex-1 astw:min-w-0 astw:min-h-0 astw:w-full",
+        "astw:[&[hidden]]:hidden",
+        className,
+      )}
       data-compact={compact || undefined}
     >
       {compact && (
-        <div className="erpui-adaptive-workspace-bar">
+        <div
+          className={cn(
+            "erpui-adaptive-workspace-bar astw:flex astw:shrink-0 astw:min-w-0 astw:py-1 astw:px-2 astw:bg-muted",
+            "astw:border-b astw:border-b-border astw:[&_button]:max-w-full astw:[&_button>span]:overflow-hidden",
+            "astw:[&_button>span]:text-ellipsis",
+          )}
+        >
           <Button
             ref={toggle}
             type="button"
@@ -113,16 +123,34 @@ export function AdaptiveWorkspace({
           </Button>
         </div>
       )}
-      <div className="erpui-adaptive-workspace-body">
+      <div
+        className={cn(
+          "erpui-adaptive-workspace-body astw:flex astw:flex-1 astw:min-w-0 astw:min-h-0",
+          "astw:[.erpui-adaptive-workspace[data-compact]>&]:flex-col",
+        )}
+      >
         <div
           id={navigationId}
           ref={navigation}
-          className="erpui-adaptive-workspace-navigation"
+          className={cn(
+            "erpui-adaptive-workspace-navigation astw:flex astw:shrink-0 astw:min-w-0 astw:min-h-0",
+            "astw:[&[hidden]]:hidden",
+            "astw:[.erpui-adaptive-workspace[data-compact]>.erpui-adaptive-workspace-body>&]:shrink",
+            "astw:[.erpui-adaptive-workspace[data-compact]>.erpui-adaptive-workspace-body>&]:max-h-[min(280px,40vh)]",
+            "astw:[.erpui-adaptive-workspace[data-compact]>.erpui-adaptive-workspace-body>&]:overflow-auto",
+            "astw:[.erpui-adaptive-workspace[data-compact]>.erpui-adaptive-workspace-body>&]:border-b",
+            "astw:[.erpui-adaptive-workspace[data-compact]>.erpui-adaptive-workspace-body>&]:border-b-border",
+            "astw:[.erpui-adaptive-workspace[data-compact]>.erpui-adaptive-workspace-body>&>*]:w-full",
+            "astw:[.erpui-adaptive-workspace[data-compact]>.erpui-adaptive-workspace-body>&>*]:min-w-full",
+            "astw:[.erpui-adaptive-workspace[data-compact]>.erpui-adaptive-workspace-body>&>*]:border-r-0",
+          )}
           hidden={compact && !open}
         >
           {sidebar}
         </div>
-        <div className="erpui-adaptive-workspace-main">{children}</div>
+        <div className="erpui-adaptive-workspace-main astw:flex astw:flex-1 astw:min-w-0 astw:min-h-0">
+          {children}
+        </div>
       </div>
     </div>
   );

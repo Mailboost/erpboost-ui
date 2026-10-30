@@ -14,7 +14,7 @@ export function RetryNoticeDemo() {
     [draft, setDraft] = useState("0001");
   return (
     <form
-      style={{ maxWidth: 520, minWidth: 0, display: "grid", gap: 16 }}
+      className="astw:max-w-130 astw:min-w-0 astw:grid astw:gap-4"
       onSubmit={(event) => {
         event.preventDefault();
         setSubmissions((value) => value + 1);

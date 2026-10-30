@@ -1,6 +1,6 @@
+import { cn } from "@/lib/utils";
 import { useEffect, useRef, type ComponentProps } from "react";
 import { Input } from "../input";
-import "./style.css";
 export type InlineRenameProps = Omit<
   ComponentProps<typeof Input>,
   | "value"
@@ -49,7 +49,11 @@ export function InlineRename({
       ref={ref}
       value={value}
       disabled={disabled}
-      className={`erpui-inline-rename ${className}`}
+      className={cn(
+        "erpui-inline-rename astw:[.erpui-inline-rename&]:w-[min(340px,40vw)]",
+        "astw:[.erpui-inline-rename&]:min-w-30",
+        className,
+      )}
       onChange={(event) => onValueChange(event.target.value)}
       onBlur={commit}
       onKeyDown={(event) => {

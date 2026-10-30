@@ -1,8 +1,8 @@
+import { cn } from "@/lib/utils";
 import type { CSSProperties } from "react";
 import { LoadingPlaceholder } from "../loading-layouts";
 import { FormGrid } from "../record-layouts";
 import { Table } from "../table";
-import "./style.css";
 
 export type RecordPlaceholderShape =
   "text" | "title" | "badge" | "input" | "lookup" | "textarea" | "action";
@@ -19,7 +19,16 @@ export function RecordPlaceholder({
   return (
     <LoadingPlaceholder
       style={style}
-      className={`erpui-record-placeholder ${className}`}
+      className={cn(
+        "erpui-record-placeholder astw:[[data-slot=skeleton]&]:max-w-full astw:[&[data-shape=text]]:h-3",
+        "astw:[&[data-shape=title]]:w-30 astw:[&[data-shape=title]]:h-5.5 astw:[&[data-shape=badge]]:w-14",
+        "astw:[&[data-shape=badge]]:h-5.5 astw:[&[data-shape=badge]]:rounded-[5px]",
+        "astw:[&:is(_[data-shape=input],[data-shape=lookup],[data-shape=textarea],[data-shape=action]_)]:h-9",
+        "astw:[&:is(_[data-shape=input],[data-shape=lookup],[data-shape=textarea],[data-shape=action]_)]:rounded-[6px]",
+        "astw:[&[data-shape=lookup]]:h-16.5 astw:[&[data-shape=textarea]]:h-22",
+        "astw:[&[data-shape=action]]:w-28",
+        className,
+      )}
       data-shape={shape}
       aria-hidden="true"
     />
@@ -45,7 +54,10 @@ export function TableLoadingRows({
       {Array.from({ length: rows }, (_, row) => (
         <Table.Row
           key={row}
-          className="erpui-table-loading-row"
+          className={cn(
+            "erpui-table-loading-row astw:[[data-slot=table-row]&[aria-hidden=true]]:cursor-default",
+            "astw:[[data-slot=table-row]&[aria-hidden=true]:hover]:bg-transparent",
+          )}
           aria-hidden="true"
         >
           {columns.map((column) => (
@@ -84,7 +96,13 @@ export function FormLoadingFields({
       {fields.map((field) => (
         <div
           key={field.key}
-          className={`erpui-form-loading-field${field.fullWidth ? " erpui-form-grid-full" : ""}`}
+          className={cn(
+            "erpui-form-loading-field astw:flex astw:flex-col astw:gap-1.5 astw:min-w-0",
+            "astw:[&>span:first-child]:wrap-anywhere",
+            field.fullWidth
+              ? " erpui-form-grid-full astw:col-span-full astw:[@container_erpui-form-grid_(max-width:580px)]:col-auto"
+              : "",
+          )}
         >
           <span>{field.label}</span>
           <RecordPlaceholder shape={field.shape ?? "input"} />

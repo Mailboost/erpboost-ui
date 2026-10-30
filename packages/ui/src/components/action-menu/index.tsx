@@ -2,7 +2,6 @@ import type { ComponentProps, ReactNode } from "react";
 import { MoreVertical } from "lucide-react";
 import { Menu } from "../menu";
 import { Button } from "../button";
-import "./style.css";
 export type ActionMenuItem =
   | { separator: true }
   | {
@@ -38,7 +37,7 @@ export function ActionMenu({
             type="button"
             variant="ghost"
             size="icon"
-            className="erpui-action-menu-trigger"
+            className="erpui-action-menu-trigger astw:opacity-100 astw:shrink-0"
           />
         }
         aria-label={triggerLabel}
@@ -50,7 +49,7 @@ export function ActionMenu({
       <Menu.Content
         container={container}
         position={{ align: "end" }}
-        className="erpui-action-menu"
+        className="erpui-action-menu astw:[&_small]:ml-auto astw:[&_small]:text-muted-foreground"
         aria-label={menuLabel}
       >
         {items.map((item, index) =>

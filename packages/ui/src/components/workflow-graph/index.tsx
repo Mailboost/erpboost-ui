@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { GraphControls } from "../graph-controls";
 import { WorkflowNode } from "../workflow-node";
 import { Alert } from "../alert";
@@ -28,7 +29,6 @@ import {
   XCircle,
 } from "lucide-react";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import "./style.css";
 import type { ComponentProps, ReactNode } from "react";
 
 export type WorkflowGraphState =
@@ -110,7 +110,9 @@ const StepCard = memo(function StepCard({ id, data }: NodeProps<StepNode>) {
             <StatusIcon
               size={11}
               className={
-                data.state === "running" ? "erpui-workflow-graph-spin" : ""
+                data.state === "running"
+                  ? "erpui-workflow-graph-spin astw:animate-spin astw:motion-reduce:animate-none"
+                  : ""
               }
             />
             {data.statusLabel}
@@ -118,11 +120,13 @@ const StepCard = memo(function StepCard({ id, data }: NodeProps<StepNode>) {
         }
       >
         <Handle
+          className="astw:size-[5px]! astw:min-w-[5px] astw:min-h-[5px] astw:bg-white! astw:border! astw:border-[#9cabbf]!"
           type="target"
           position={data.vertical ? Position.Top : Position.Left}
           isConnectable={false}
         />
         <Handle
+          className="astw:size-[5px]! astw:min-w-[5px] astw:min-h-[5px] astw:bg-white! astw:border! astw:border-[#9cabbf]!"
           type="source"
           position={data.vertical ? Position.Bottom : Position.Right}
           isConnectable={false}
@@ -182,6 +186,8 @@ function Graph(props: WorkflowGraphProps) {
     const nodes: StepNode[] = steps.map((step, index) => ({
       id: ids[index],
       type: "step",
+      className:
+        "astw:border-0 astw:p-0 astw:bg-transparent astw:rounded-[6px] astw:cursor-pointer astw:outline-none",
       width: sizes[ids[index]]?.width ?? 256,
       height: sizes[ids[index]]?.height ?? 148,
       position: {
@@ -203,7 +209,8 @@ function Graph(props: WorkflowGraphProps) {
         height: 13,
         color: "#9aa9bb",
       },
-      style: { stroke: "#9aa9bb", strokeWidth: 1.3 },
+      className:
+        "astw:[&>path]:stroke-[#9aa9bb]! astw:[&>path]:[stroke-width:1.3]!",
     }));
     return { nodes, edges };
   }, [props.steps, props.links, vertical, selected, sizes, onMeasure]);
@@ -242,7 +249,9 @@ function Graph(props: WorkflowGraphProps) {
     onSelect(id);
   }
   return (
-    <div className={`erpui-workflow-graph ${docked ? "is-docked" : ""}`}>
+    <div
+      className={`erpui-workflow-graph astw:h-full astw:min-h-0 astw:flex astw:flex-col astw:bg-[#fbfcfe] ${docked ? "is-docked" : ""}`}
+    >
       {props.error && (
         <Alert.Root
           variant="error"
@@ -254,7 +263,7 @@ function Graph(props: WorkflowGraphProps) {
       )}
       <div
         ref={canvas}
-        className="erpui-workflow-graph-canvas"
+        className="erpui-workflow-graph-canvas astw:relative astw:flex-1 astw:min-h-35"
         onKeyDownCapture={(event) => {
           if (
             (event.key === "Enter" || event.key === " ") &&
@@ -300,7 +309,11 @@ function Graph(props: WorkflowGraphProps) {
           />
         </ReactFlow>
         <GraphControls
-          className="erpui-workflow-graph-controls"
+          className={cn(
+            "erpui-workflow-graph-controls astw:[.erpui-workflow-graph_&]:absolute",
+            "astw:[.erpui-workflow-graph_&]:w-max astw:[.erpui-workflow-graph_&]:max-w-[calc(100%_-_24px)]",
+            "astw:[.erpui-workflow-graph_&]:bottom-2.5 astw:[.erpui-workflow-graph_&]:right-3",
+          )}
           aria-label="パイプライングラフの表示操作"
           zoom={zoom}
           zoomOutLabel="パイプライングラフを縮小"
@@ -336,7 +349,15 @@ function Graph(props: WorkflowGraphProps) {
         </GraphControls>
       </div>
       {docked && props.hint && (
-        <div className="erpui-workflow-graph-hint">{props.hint}</div>
+        <div
+          className={cn(
+            "erpui-workflow-graph-hint astw:text-[9px] astw:text-[#9aa5b4] astw:py-[9px] astw:px-3 astw:flex",
+            "astw:items-center astw:gap-1.5 astw:border-t astw:border-t-border",
+            "astw:[@container_erpui-code-workspace_(max-width:1100px)]:hidden",
+          )}
+        >
+          {props.hint}
+        </div>
       )}
     </div>
   );

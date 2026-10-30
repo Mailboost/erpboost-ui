@@ -1,6 +1,5 @@
 import type { Key, ReactNode } from "react";
 import { Table } from "../table";
-import "./style.css";
 export type DataPreviewColumn<Row> = {
   id: string;
   header: ReactNode;
@@ -32,10 +31,13 @@ export function DataPreview<Row>({
   className = "",
 }: DataPreviewProps<Row>) {
   return (
-    <div data-slot="data-preview" className={`erpui-data-preview ${className}`}>
+    <div
+      data-slot="data-preview"
+      className={`erpui-data-preview astw:min-w-0 astw:[&_[data-slot=table-cell]]:tabular-nums ${className}`}
+    >
       <Table.Root
         aria-label={label}
-        containerClassName="erpui-data-preview-scroll"
+        containerClassName="erpui-data-preview-scroll astw:[.erpui-data-preview_&]:max-w-full astw:[.erpui-data-preview_&]:overscroll-x-contain"
       >
         <Table.Header>
           <Table.Row>

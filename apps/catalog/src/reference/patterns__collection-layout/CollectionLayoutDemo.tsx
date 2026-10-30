@@ -11,7 +11,7 @@ export function CollectionLayoutDemo() {
     name.toLowerCase().includes(search.toLowerCase()),
   );
   return (
-    <div style={{ height: 450 }}>
+    <div className="astw:h-112.5">
       <CollectionLayout.Root aria-label="Products">
         <CollectionLayout.Heading>
           <Layout.Header title="Products" />

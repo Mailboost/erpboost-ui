@@ -31,10 +31,7 @@ function Example({
     setEditing(mode);
   }
   return (
-    <section
-      aria-label={name}
-      style={{ display: "grid", gap: 12, minWidth: 0 }}
-    >
+    <section aria-label={name} className="astw:grid astw:gap-3 astw:min-w-0">
       <Button type="button" onClick={() => setDisabled((current) => !current)}>
         {disabled ? `Enable ${name}` : `Disable ${name}`}
       </Button>
@@ -84,7 +81,7 @@ export function ResourceActionPickerDemo() {
   const [portal, setPortal] = useState<HTMLDivElement | null>(null),
     [visible, setVisible] = useState(true);
   return (
-    <div style={{ display: "grid", gap: 24, minWidth: 0 }}>
+    <div className="astw:grid astw:gap-6 astw:min-w-0">
       <Button type="button" onClick={() => setVisible((current) => !current)}>
         {visible ? "Unmount pickers" : "Mount pickers"}
       </Button>

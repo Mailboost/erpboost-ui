@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import {
   createContext,
   useContext,
@@ -9,7 +10,6 @@ import { CodeWorkspace } from "../code-workspace";
 import { Tabs } from "../tabs";
 import { Alert } from "../alert";
 import { DescriptionList } from "../description-list";
-import "./style.css";
 export type ResultPanelTab<Value extends string = string> = {
   value: Value;
   label: ReactNode;
@@ -46,7 +46,7 @@ function Root<Value extends string>({
   return (
     <CodeWorkspace.Results
       {...props}
-      className={`erpui-result-panel ${className}`}
+      className={`erpui-result-panel astw:[container:erpui-result-panel_/_inline-size] ${className}`}
     >
       <ResultContext.Provider
         value={{
@@ -56,11 +56,19 @@ function Root<Value extends string>({
         }}
       >
         <CodeWorkspace.ResultsHeader
-          className="erpui-result-panel-header"
+          className={cn(
+            "erpui-result-panel-header astw:[&_[data-slot=code-workspace-results-actions]]:max-w-full",
+            "astw:[&_[data-slot=code-workspace-results-actions]]:overflow-x-auto",
+            "astw:[@container_erpui-result-panel_(max-width:520px)]:flex-wrap",
+            "astw:[@container_erpui-result-panel_(max-width:520px)]:[&_[data-slot=code-workspace-results-actions]]:ml-0",
+          )}
           actions={actions}
         >
           <Tabs.Root
-            className="erpui-result-panel-tabs-root"
+            className={cn(
+              "erpui-result-panel-tabs-root astw:flex-1 astw:min-w-0 astw:overflow-x-auto",
+              "astw:[@container_erpui-result-panel_(max-width:520px)]:basis-full",
+            )}
             value={value}
             variant="line"
             onValueChange={(next) => {
@@ -72,7 +80,7 @@ function Root<Value extends string>({
           >
             <Tabs.List
               aria-label={tabListLabel}
-              className="erpui-result-panel-tabs"
+              className="erpui-result-panel-tabs astw:[&[data-slot=tabs-list]]:justify-start astw:[&_[data-slot=tabs-tab]]:shrink-0"
             >
               {tabs.map((tab) => (
                 <Tabs.Tab
@@ -107,7 +115,11 @@ function Body({
   return (
     <CodeWorkspace.ResultsBody
       {...props}
-      className={`erpui-result-panel-body ${className}`}
+      className={cn(
+        "erpui-result-panel-body astw:[&:focus-visible]:outline-2 astw:[&:focus-visible]:outline-solid",
+        "astw:[&:focus-visible]:outline-ring astw:[&:focus-visible]:-outline-offset-2",
+        className,
+      )}
       graph={context.graph}
       id={context.id}
       role="tabpanel"
@@ -122,7 +134,21 @@ function Selection({ className = "", ...props }: ComponentProps<"div">) {
     <div
       {...props}
       data-slot="result-selection"
-      className={`erpui-result-selection ${className}`}
+      className={cn(
+        "erpui-result-selection astw:flex astw:flex-wrap astw:items-center astw:gap-2 astw:text-[10px]",
+        "astw:py-2 astw:px-[13px] astw:border-b astw:border-b-border astw:min-w-0",
+        "astw:[&>[data-slot=field]]:[flex:0_1_340px] astw:[&>[data-slot=field]]:min-w-0",
+        "astw:[&>[data-slot=field]]:flex-row astw:[&>[data-slot=field]]:items-center",
+        "astw:[&>[data-slot=field]]:gap-2 astw:[&_[data-slot=field-label]]:shrink-0",
+        "astw:[&_[data-slot=field-label]]:whitespace-nowrap astw:[&_[data-slot=select-trigger]]:flex-1",
+        "astw:[&_[data-slot=select-trigger]]:w-auto astw:[&_[data-slot=select-trigger]]:min-w-0",
+        "astw:[&>code]:min-w-0 astw:[&>code]:wrap-anywhere",
+        "astw:[@container_erpui-result-panel_(max-width:300px)]:[&>[data-slot=field]]:flex-col",
+        "astw:[@container_erpui-result-panel_(max-width:300px)]:[&>[data-slot=field]]:items-stretch",
+        "astw:[@container_erpui-result-panel_(max-width:300px)]:[&_[data-slot=select-trigger]]:flex-auto",
+        "astw:[@container_erpui-result-panel_(max-width:300px)]:[&_[data-slot=select-trigger]]:w-full",
+        className,
+      )}
     />
   );
 }
@@ -133,7 +159,12 @@ function Details({
   return (
     <DescriptionList.Root
       {...props}
-      className={`erpui-result-details ${className}`}
+      className={cn(
+        "erpui-result-details astw:[.erpui-result-panel_&]:m-[15px]",
+        "astw:[@container_erpui-result-panel_(max-width:520px)]:[.erpui-result-panel_&]:grid-cols-1",
+        "astw:[@container_erpui-result-panel_(max-width:520px)]:[.erpui-result-panel_&_dt:not(:first-child)]:mt-2",
+        className,
+      )}
     />
   );
 }
@@ -151,7 +182,12 @@ function Message({
       {...props}
       variant={variant}
       role={role}
-      className={`erpui-result-message ${className}`}
+      className={cn(
+        "erpui-result-message astw:my-2 astw:mx-3 astw:shrink-0 astw:min-w-0 astw:wrap-anywhere",
+        "astw:[.erpui-result-panel-body[data-graph]>&]:max-h-20",
+        "astw:[.erpui-result-panel-body[data-graph]>&]:overflow-auto",
+        className,
+      )}
     >
       <Alert.Description>{children}</Alert.Description>
     </Alert.Root>
@@ -162,7 +198,10 @@ function ErrorText(props: ComponentProps<"pre">) {
   return (
     <pre
       {...props}
-      className={`erpui-result-error-text ${props.className ?? ""}`}
+      className={cn(
+        "erpui-result-error-text astw:m-0 astw:whitespace-pre-wrap astw:wrap-anywhere astw:[font:inherit]",
+        props.className ?? "",
+      )}
     />
   );
 }
