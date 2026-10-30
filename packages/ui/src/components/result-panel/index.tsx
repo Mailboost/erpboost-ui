@@ -46,7 +46,7 @@ function Root<Value extends string>({
   return (
     <CodeWorkspace.Results
       {...props}
-      className={`erpui-result-panel astw:[container:erpui-result-panel_/_inline-size] ${className}`}
+      className={`erpui-result-panel astw:@container/erpui-result-panel ${className}`}
     >
       <ResultContext.Provider
         value={{

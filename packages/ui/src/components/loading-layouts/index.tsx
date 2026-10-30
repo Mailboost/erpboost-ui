@@ -42,14 +42,7 @@ function Pending({
       aria-label={label}
       aria-busy="true"
     >
-      <span
-        className={cn(
-          "erpui-loading-sr-only astw:absolute astw:w-px astw:h-px astw:p-0 astw:overflow-hidden",
-          "astw:[clip:rect(0,0,0,0)] astw:whitespace-nowrap",
-        )}
-      >
-        {label}
-      </span>
+      <span className={cn("erpui-loading-sr-only astw:sr-only")}>{label}</span>
       <div
         className={cn(
           "erp-pending-shapes astw:contents astw:[.erp-form-skeleton_&>div]:grid",
@@ -415,14 +408,7 @@ export function InputSkeleton({ label }: { label: string }) {
       aria-label={label}
       aria-busy="true"
     >
-      <span
-        className={cn(
-          "erpui-loading-sr-only astw:absolute astw:w-px astw:h-px astw:p-0 astw:overflow-hidden",
-          "astw:[clip:rect(0,0,0,0)] astw:whitespace-nowrap",
-        )}
-      >
-        {label}
-      </span>
+      <span className={cn("erpui-loading-sr-only astw:sr-only")}>{label}</span>
       <LoadingPlaceholder className="erp-skeleton-input astw:w-full astw:h-8.5 astw:rounded-[5px]" />
     </span>
   );

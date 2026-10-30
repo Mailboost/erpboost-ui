@@ -17,19 +17,19 @@ export function PropertyRow({
   return (
     <div
       data-slot="property-row"
-      className={`erpui-property-row astw:min-w-0 astw:w-full astw:[container:erpui-property-row_/_inline-size] ${className}`}
+      className={`erpui-property-row astw:min-w-0 astw:w-full astw:@container/erpui-property-row ${className}`}
     >
       <div
         className={cn(
           "erpui-property-row-grid astw:grid astw:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]",
-          "astw:[align-items:start] astw:gap-6 astw:min-w-0",
+          "astw:items-start astw:gap-6 astw:min-w-0",
           "astw:[@container_erpui-property-row_(max-width:430px)]:grid-cols-1",
           "astw:[@container_erpui-property-row_(max-width:430px)]:gap-2",
         )}
       >
         <div
           className={cn(
-            "erpui-property-row-label astw:flex astw:[align-items:start] astw:flex-wrap astw:gap-2 astw:min-w-0",
+            "erpui-property-row-label astw:flex astw:items-start astw:flex-wrap astw:gap-2 astw:min-w-0",
             "astw:wrap-anywhere astw:[&_label]:flex astw:[&_label]:flex-wrap astw:[&_label]:items-center",
             "astw:[&_label]:gap-2 astw:[&_label]:min-w-0",
           )}

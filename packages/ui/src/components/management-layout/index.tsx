@@ -61,7 +61,7 @@ function Search({ className = "", ...props }: ComponentProps<"div">) {
     <div
       {...props}
       className={cn(
-        "erpui-management-search astw:[flex:1_1_180px] astw:max-w-80 astw:min-w-0",
+        "erpui-management-search astw:flex-[1_1_180px] astw:max-w-80 astw:min-w-0",
         "astw:[@media(max-width:650px)]:max-w-none",
         className,
       )}
@@ -155,7 +155,7 @@ export function SettingsList({
   return (
     <div
       {...props}
-      className={`erpui-settings-list astw:[container:erpui-settings_/_inline-size] astw:grid astw:gap-0 astw:min-w-0 ${className}`}
+      className={`erpui-settings-list astw:@container/erpui-settings astw:grid astw:gap-0 astw:min-w-0 ${className}`}
     />
   );
 }

@@ -860,10 +860,7 @@ export function EditableGrid<C extends GridColumn>({
           </Table.Body>
         </Table.Root>
         {pending && (
-          <span
-            className="erpui-sr-only astw:absolute astw:w-px astw:h-px astw:overflow-hidden astw:[clip:rect(0,0,0,0)] astw:whitespace-nowrap"
-            role="status"
-          >
+          <span className="erpui-sr-only astw:sr-only" role="status">
             行データを読み込んでいます
           </span>
         )}

@@ -4,10 +4,10 @@ import { Table } from "../table";
 import { RecordPanelFooter } from "../record-panel";
 function Grid({ className = "", ...props }: ComponentProps<"div">) {
   return (
-    <div className="erpui-form-grid-container astw:min-w-0 astw:[container:erpui-form-grid_/_inline-size]">
+    <div className="erpui-form-grid-container astw:min-w-0 astw:@container/erpui-form-grid">
       <div
         className={cn(
-          "erpui-form-grid astw:grid astw:grid-cols-2 astw:[align-items:start] astw:gap-5 astw:[&>*]:min-w-0",
+          "erpui-form-grid astw:grid astw:grid-cols-2 astw:items-start astw:gap-5 astw:[&>*]:min-w-0",
           "astw:[&_input[type=number]]:text-right astw:[&_input[type=number]]:tabular-nums",
           "astw:[@container_erpui-form-grid_(max-width:580px)]:grid-cols-1 astw:[@media(max-width:520px)]:gap-4",
           className,
