@@ -55,6 +55,8 @@ for (const colorScheme of ["light", "dark"] as const) {
       page,
     }) => {
       await page.goto("page/form-as-page?preview=fullscreen");
+      // Lazy previews may finish out of order; wait for the first form to be final.
+      await expect(page.locator("form")).toHaveCount(3);
       const form = page.locator("form").first();
       const title = form.getByPlaceholder("Review supplier docs", {
         exact: true,
