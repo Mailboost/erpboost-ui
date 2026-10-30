@@ -183,18 +183,6 @@
       "types": "./dist/components/resource-picker/index.d.ts",
       "import": "./dist/resource-picker.js"
     },
-    "./sensitive-input": {
-      "types": "./dist/components/sensitive-input/index.d.ts",
-      "import": "./dist/sensitive-input.js"
-    },
-    "./collection-layout": {
-      "types": "./dist/components/collection-layout/index.d.ts",
-      "import": "./dist/collection-layout.js"
-    },
-    "./record-layouts": {
-      "types": "./dist/components/record-layouts/index.d.ts",
-      "import": "./dist/record-layouts.js"
-    },
     "./value-editor": {
       "types": "./dist/components/value-editor/index.d.ts",
       "import": "./dist/value-editor.js"
@@ -210,22 +198,6 @@
     "./inline-create": {
       "types": "./dist/components/inline-create/index.d.ts",
       "import": "./dist/inline-create.js"
-    },
-    "./management-layout": {
-      "types": "./dist/components/management-layout/index.d.ts",
-      "import": "./dist/management-layout.js"
-    },
-    "./template-picker": {
-      "types": "./dist/components/template-picker/index.d.ts",
-      "import": "./dist/template-picker.js"
-    },
-    "./property-layout": {
-      "types": "./dist/components/property-layout/index.d.ts",
-      "import": "./dist/property-layout.js"
-    },
-    "./detail-panel": {
-      "types": "./dist/components/detail-panel/index.d.ts",
-      "import": "./dist/detail-panel.js"
     },
     "./result-panel": {
       "types": "./dist/components/result-panel/index.d.ts",
@@ -258,6 +230,14 @@
     "./fieldset": {
       "types": "./dist/components/fieldset/index.d.ts",
       "import": "./dist/fieldset.js"
+    },
+    "./toolbar": {
+      "types": "./dist/components/toolbar/index.d.ts",
+      "import": "./dist/toolbar.js"
+    },
+    "./layout": {
+      "types": "./dist/components/layout/index.d.ts",
+      "import": "./dist/layout.js"
     }
   },
   "scripts": {

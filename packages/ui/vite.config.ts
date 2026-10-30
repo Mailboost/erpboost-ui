@@ -32,19 +32,12 @@ export default defineConfig({
         "source-navigation": "src/components/source-navigation/index.tsx",
         "inline-rename": "src/components/inline-rename/index.tsx",
         "result-panel": "src/components/result-panel/index.tsx",
-        "property-layout": "src/components/property-layout/index.tsx",
-        "detail-panel": "src/components/detail-panel/index.tsx",
-        "management-layout": "src/components/management-layout/index.tsx",
-        "template-picker": "src/components/template-picker/index.tsx",
 
         "workspace-frame": "src/components/workspace-frame/index.tsx",
         "resize-control": "src/components/resize-control/index.tsx",
         "inline-create": "src/components/inline-create/index.tsx",
 
         "resource-picker": "src/components/resource-picker/index.tsx",
-        "sensitive-input": "src/components/sensitive-input/index.tsx",
-        "collection-layout": "src/components/collection-layout/index.tsx",
-        "record-layouts": "src/components/record-layouts/index.tsx",
         "value-editor": "src/components/value-editor/index.tsx",
 
         "record-panel": "src/components/record-panel/index.tsx",
@@ -67,6 +60,8 @@ export default defineConfig({
         "erp-header": "src/components/erp-header/index.tsx",
         style: "src/style-entry.ts",
         button: "src/components/button/index.ts",
+        toolbar: "src/components/toolbar/index.ts",
+        layout: "src/components/layout/index.ts",
         card: "src/components/card/index.ts",
         fieldset: "src/components/fieldset/index.ts",
         input: "src/components/input/index.ts",

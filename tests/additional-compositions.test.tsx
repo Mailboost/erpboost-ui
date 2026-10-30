@@ -1,27 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
-import { SensitiveInput } from "../packages/ui/src/components/sensitive-input";
 import { ValueEditor } from "../packages/ui/src/components/value-editor";
-it("reveals the consumer input without changing its value and remounts concealed", () => {
-  const make = () => (
-    <SensitiveInput revealLabel="Show" concealLabel="Hide">
-      {({ type }) => (
-        <input aria-label="Key" type={type} defaultValue="exact-value" />
-      )}
-    </SensitiveInput>
-  );
-  const view = render(make());
-  fireEvent.click(screen.getByRole("button", { name: "Show" }));
-  expect((screen.getByLabelText("Key") as HTMLInputElement).type).toBe("text");
-  expect((screen.getByLabelText("Key") as HTMLInputElement).value).toBe(
-    "exact-value",
-  );
-  view.unmount();
-  render(make());
-  expect((screen.getByLabelText("Key") as HTMLInputElement).type).toBe(
-    "password",
-  );
-});
 it("preserves exact value strings and refuses duplicate saves while pending", async () => {
   let done!: () => void;
   const close = vi.fn(),

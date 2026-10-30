@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { CSSProperties } from "react";
 import { LoadingPlaceholder } from "../loading-layouts";
-import { FormGrid } from "../record-layouts";
 import { Table } from "../table";
 
 export type RecordPlaceholderShape =
@@ -92,7 +91,7 @@ export function FormLoadingFields({
   fields: readonly FormLoadingField[];
 }) {
   return (
-    <FormGrid.Root aria-hidden="true">
+    <div className="astw:min-w-0 astw:@container/erpui-form-grid" aria-hidden="true"><div className="astw:grid astw:grid-cols-2 astw:items-start astw:gap-5 astw:[&>*]:min-w-0 astw:[@container_erpui-form-grid_(max-width:580px)]:grid-cols-1 astw:[@media(max-width:520px)]:gap-4">
       {fields.map((field) => (
         <div
           key={field.key}
@@ -108,6 +107,6 @@ export function FormLoadingFields({
           <RecordPlaceholder shape={field.shape ?? "input"} />
         </div>
       ))}
-    </FormGrid.Root>
+    </div></div>
   );
 }

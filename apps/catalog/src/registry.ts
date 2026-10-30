@@ -296,19 +296,12 @@ const groups: Record<Category, Array<[string, string, string, string]>> = {
     ["source-navigation", "SourceNavigation", "SourceNavigation", "Controlled file list, actions and editor tabs."],
     ["inline-rename", "InlineRename", "InlineRename", "Additional ERPBoost presentation composition."],
     ["result-panel", "ResultPanel", "ResultPanel", "Additional ERPBoost presentation composition."],
-    ["detail-panel", "DetailPanel", "DetailPanel", "Additional ERPBoost presentation composition."],
-    ["property-layout", "PropertyLayout", "PropertyLayout", "Additional ERPBoost presentation composition."],
-    ["management-layout", "ManagementLayout", "ManagementLayout", "Additional ERPBoost presentation composition."],
-    ["template-picker", "TemplatePicker", "TemplatePicker", "Additional ERPBoost presentation composition."],
 
     ["workspace-frame", "WorkspaceFrame", "WorkspaceFrame", "Additional ERPBoost presentation composition."],
     ["resize-control", "ResizeControl", "ResizeControl", "Additional ERPBoost presentation composition."],
     ["inline-create", "InlineCreate", "InlineCreate", "Additional ERPBoost presentation composition."],
 
     ["resource-picker", "ResourcePicker", "ResourcePicker", "Additional ERPBoost presentation composition."],
-    ["sensitive-input", "SensitiveInput", "SensitiveInput", "Additional ERPBoost presentation composition."],
-    ["collection-layout", "CollectionLayout", "CollectionLayout", "Additional ERPBoost presentation composition."],
-    ["record-layouts", "RecordLayouts", "RecordLayouts", "Additional ERPBoost presentation composition."],
     ["value-editor", "ValueEditor", "ValueEditor", "Additional ERPBoost presentation composition."],
 
     ["editable-grid", "EditableGrid", "編集可能グリッド", "Editable rows with application-owned persistence."],

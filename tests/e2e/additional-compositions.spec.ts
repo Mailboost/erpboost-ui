@@ -25,58 +25,6 @@ for (const viewport of [
       ).toContainText("Osaka");
 
     });
-    test("sensitive input reveals and conceals without changing input", async ({
-      page,
-    }) => {
-      await page.goto("patterns/sensitive-input?preview=fullscreen");
-      await page.getByLabel("API key", { exact: true }).fill("synthetic-value");
-      await page.getByRole("button", { name: "Show value" }).click();
-      await expect(page.getByLabel("API key", { exact: true })).toHaveAttribute(
-        "type",
-        "text",
-      );
-      await page.getByRole("button", { name: "Hide value" }).click();
-      await expect(page.getByLabel("API key", { exact: true })).toHaveValue(
-        "synthetic-value",
-      );
-      await expect(page.getByLabel("API key", { exact: true })).toHaveAttribute(
-        "type",
-        "password",
-      );
-    });
-    test("collection layout filters with horizontal table scrolling", async ({
-      page,
-    }) => {
-      await page.goto("patterns/collection-layout?preview=fullscreen");
-      await page.getByRole("textbox", { name: "Search products" }).fill("bolt");
-      await expect(page.getByRole("cell", { name: "Hex bolt" })).toBeVisible();
-      await expect(page.getByRole("status")).toHaveText("1 products");
-      const results = page.locator(".erpui-collection-results");
-      await expect(results).toHaveCSS("overflow", "auto");
-    });
-    test("record layouts preserve exact values and keep actions fixed while scrolling", async ({
-      page,
-    }) => {
-      await page.goto("patterns/record-layouts?preview=fullscreen");
-      await expect(
-        page.getByRole("textbox", { name: "Price", exact: true }),
-      ).toHaveValue("123456789012345678.90");
-      const region = page.getByRole("region", { name: "Line items" });
-      const box = await region.boundingBox();
-      expect(box!.width).toBeLessThanOrEqual(viewport.width);
-      if (viewport.width < 768) {
-        expect(
-          await region.evaluate((el) => el.scrollWidth > el.clientWidth),
-        ).toBe(true);
-        await region.evaluate((el) => (el.scrollLeft = el.scrollWidth));
-        await expect(
-          page.getByRole("button", { name: "Remove line" }),
-        ).toBeVisible();
-      }
-      await expect(
-        page.getByRole("button", { name: "Submit", exact: true }),
-      ).toBeVisible();
-    });
     test("value editor preserves exact strings and displays consumer validation", async ({
       page,
     }) => {

@@ -2,9 +2,6 @@ import { useState } from "react";
 import {
   Button,
   Card,
-  CollectionLayout,
-  DetailTable,
-  FormGrid,
   FormLoadingFields,
   Input,
   RecordPlaceholder,
@@ -45,60 +42,75 @@ export function RecordLoadingDemo() {
             {loading ? (
               <FormLoadingFields fields={fields} />
             ) : (
-              <FormGrid.Root>
-                <label>
-                  Reference
-                  <Input defaultValue="0001" />
-                </label>
-                <label>
-                  Account
-                  <Input defaultValue="Sample account" />
-                </label>
-                <FormGrid.Full>
+              <div className="astw:min-w-0 astw:[container-type:inline-size]">
+                <div className="astw:grid astw:grid-cols-2 astw:items-start astw:gap-5 astw:[&>*]:min-w-0 astw:[&_input[type=number]]:text-right astw:[&_input[type=number]]:tabular-nums astw:[@container_(max-width:580px)]:grid-cols-1 astw:max-[520px]:gap-4">
                   <label>
-                    Notes
-                    <Input defaultValue="Saved content" />
+                    Reference
+                    <Input defaultValue="0001" />
                   </label>
-                </FormGrid.Full>
-              </FormGrid.Root>
+                  <label>
+                    Account
+                    <Input defaultValue="Sample account" />
+                  </label>
+                  <div className="astw:col-span-full">
+                    <label>
+                      Notes
+                      <Input defaultValue="Saved content" />
+                    </label>
+                  </div>
+                </div>
+              </div>
             )}
           </Card.Content>
         </Card.Root>
-        <CollectionLayout.TableArea
-          interactive
-          minWidth={700}
-          className="astw:mt-5"
-        >
-          <DetailTable
-            columns={columns}
-            minWidth={700}
-            scrollLabel="Record items"
-            stickyActions
-          >
-            {loading ? (
-              <TableLoadingRows
-                columns={[
-                  { key: "code", shape: "lookup" },
-                  { key: "description", shape: "input" },
-                  { key: "quantity", shape: "input" },
-                  { key: "action", shape: "empty" },
-                ]}
-                rows={3}
-              />
-            ) : (
-              <Table.Row>
-                <Table.Cell>0001</Table.Cell>
-                <Table.Cell>Sample item</Table.Cell>
-                <Table.Cell>3</Table.Cell>
-                <Table.Cell>
-                  <Button type="button" size="sm">
-                    Edit
-                  </Button>
-                </Table.Cell>
-              </Table.Row>
-            )}
-          </DetailTable>
-        </CollectionLayout.TableArea>
+        <div className="astw:mt-5">
+          <div className="astw:overflow-auto astw:max-w-full astw:border astw:border-border astw:rounded-[8px] astw:bg-card astw:overscroll-x-contain astw:focus-visible:outline-2 astw:focus-visible:outline astw:focus-visible:outline-offset-2" role="region" aria-label="Record items" tabIndex={0}>
+   <Table.Root
+     containerClassName="astw:[&&]:overflow-visible astw:[&&]:static"
+     style={{ minWidth: 700 }}
+     className="astw:table-fixed astw:[&_th]:whitespace-nowrap astw:[&_td]:align-top astw:[&_input[type=number]]:text-right astw:[&_input[type=number]]:tabular-nums astw:[&_:is(input,select,textarea)]:tabular-nums astw:[&_td:last-child]:sticky astw:[&_td:last-child]:right-0 astw:[&_td:last-child]:w-12 astw:[&_td:last-child]:min-w-0 astw:[&_td:last-child]:bg-card astw:[&_td:last-child]:border-l astw:[&_td:last-child]:border-border astw:[&_td:last-child]:text-center astw:[&_td:last-child]:align-middle"
+   >
+     <colgroup>
+       {columns.map((column) => (
+         <col key={column.key} style={{ width: column.width }} />
+       ))}
+     </colgroup>
+     <Table.Header>
+       <Table.Row>
+         {columns.map((column) => (
+           <Table.Head key={column.key} scope="col">
+             {column.header}
+           </Table.Head>
+         ))}
+       </Table.Row>
+     </Table.Header>
+     <Table.Body>
+       {loading ? (
+         <TableLoadingRows
+           columns={[
+             { key: "code", shape: "lookup" },
+             { key: "description", shape: "input" },
+             { key: "quantity", shape: "input" },
+             { key: "action", shape: "empty" },
+           ]}
+           rows={3}
+         />
+       ) : (
+         <Table.Row>
+           <Table.Cell>0001</Table.Cell>
+           <Table.Cell>Sample item</Table.Cell>
+           <Table.Cell>3</Table.Cell>
+           <Table.Cell>
+             <Button type="button" size="sm">
+               Edit
+             </Button>
+           </Table.Cell>
+         </Table.Row>
+       )}
+     </Table.Body>
+   </Table.Root>
+   </div>
+        </div>
       </section>
     </div>
   );
