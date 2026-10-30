@@ -1,6 +1,6 @@
 import primitiveLinks from "./reference/primitive-links.json";
 import referenceContent from "./reference/metadata.json";
-import { Fragment, lazy, Suspense, useEffect, useState } from "react";
+import { Fragment, lazy, Suspense, useState } from "react";
 import { Badge, Button, Link, Tabs } from "@mailboost/erpboost-ui";
 import {
   Check,
@@ -27,14 +27,6 @@ const DocumentNotes = lazy(() => import("./reference/DocumentNotes"));
 const HighlightedSource = lazy(() => import("./HighlightedSource"));
 const sourceLanguage = (filename: string) => filename.split(".").pop() ?? "tsx";
 const copyFeedbackMs = 1500;
-async function copyToClipboard(text: string) {
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
-    return false;
-  }
-}
 const sourceMarkdown = (files: { filename: string; source: string }[]) =>
   files
     .map(
@@ -178,12 +170,8 @@ function CodeBlock({ demo }: { demo: Demo }) {
     ? demo.sources
     : [{ filename: demo.name + ".tsx", source: demo.source }];
   const [index, setIndex] = useState(0),
-    [copied, setCopied] = useState<"single" | "all" | null>(null);
-  useEffect(() => {
-    if (!copied) return;
-    const timer = setTimeout(() => setCopied(null), copyFeedbackMs);
-    return () => clearTimeout(timer);
-  }, [copied]);
+    [copied, setCopied] = useState(false),
+    [copiedAll, setCopiedAll] = useState(false);
   const source = sources[index] ?? sources[0];
   return (
     <div
@@ -213,16 +201,17 @@ function CodeBlock({ demo }: { demo: Demo }) {
               aria-live="polite"
               title="Copy all files as Markdown (good for pasting to an AI agent)"
               onClick={async () => {
-                if (await copyToClipboard(sourceMarkdown(sources)))
-                  setCopied("all");
+                await navigator.clipboard.writeText(sourceMarkdown(sources));
+                setCopiedAll(true);
+                setTimeout(() => setCopiedAll(false), copyFeedbackMs);
               }}
             >
-              {copied === "all" ? (
+              {copiedAll ? (
                 <Check className="size-3.5 text-status-completed" />
               ) : (
                 <Files className="size-3.5" />
               )}
-              {copied === "all" ? "Copied all" : `Copy all (${sources.length})`}
+              {copiedAll ? "Copied all" : `Copy all (${sources.length})`}
             </Button>
           )}
           <Button
@@ -230,15 +219,17 @@ function CodeBlock({ demo }: { demo: Demo }) {
             size="sm"
             aria-live="polite"
             onClick={async () => {
-              if (await copyToClipboard(source.source)) setCopied("single");
+              await navigator.clipboard.writeText(source.source);
+              setCopied(true);
+              setTimeout(() => setCopied(false), copyFeedbackMs);
             }}
           >
-            {copied === "single" ? (
+            {copied ? (
               <Check className="size-3.5 text-status-completed" />
             ) : (
               <Copy className="size-3.5" />
             )}
-            {copied === "single" ? "Copied" : "Copy"}
+            {copied ? "Copied" : "Copy"}
           </Button>
         </div>
       </div>
@@ -261,15 +252,8 @@ function CodeBlock({ demo }: { demo: Demo }) {
 }
 function usePreviewSettings() {
   const [width, setWidth] = useState("desktop"),
-    [backgrounds, setBackgrounds] = useState<Record<string, string>>({
-      desktop: "card",
-      tablet: "card",
-      mobile: "card",
-    }),
+    [background, setBackground] = useState("card"),
     [revision, setRevision] = useState(0);
-  const background = backgrounds[width] ?? "card";
-  const setBackground = (value: string) =>
-    setBackgrounds((current) => ({ ...current, [width]: value }));
   return { width, setWidth, background, setBackground, revision, setRevision };
 }
 type PreviewSettings = ReturnType<typeof usePreviewSettings>;
@@ -287,7 +271,10 @@ function PreviewOptions({
     <div className="preview-options">
       <Tabs.Root
         value={width}
-        onValueChange={(v) => setWidth(String(v))}
+        onValueChange={(v) => {
+          setWidth(String(v));
+          if (v !== "desktop") setBackground("card");
+        }}
         className="w-fit gap-0"
       >
         <Tabs.List aria-label="Preview viewport">
@@ -349,18 +336,17 @@ function PreviewOptions({
 function Preview({
   entry,
   demo,
-  settings,
-  tab,
-  onTabChange,
+  settings: shared,
   hideOptions = false,
 }: {
   entry: Entry;
   demo: Demo;
-  settings: PreviewSettings;
-  tab: string;
-  onTabChange: (value: string) => void;
+  settings?: PreviewSettings;
   hideOptions?: boolean;
 }) {
+  const [tab, setTab] = useState("preview");
+  const ownSettings = usePreviewSettings();
+  const settings = shared ?? ownSettings;
   const { width, background, revision } = settings;
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   const url = `${base}${routeOf(entry)}?preview=fullscreen`;
@@ -384,7 +370,7 @@ function Preview({
         <div className="preview-toolbar">
           <Tabs.Root
             value={tab}
-            onValueChange={(v) => onTabChange(String(v))}
+            onValueChange={(v) => setTab(String(v))}
             className="w-fit gap-0"
           >
             <Tabs.List aria-label={named ? `${demo.heading} view` : "View"}>
@@ -434,7 +420,6 @@ export function EntryPage({ entry }: { entry: Entry }) {
     Math.max(0, Number(query.get("variant")) || 0),
   );
   const [copied, setCopied] = useState(false);
-  const [views, setViews] = useState<Record<string, string>>({});
   const settings = usePreviewSettings();
   const shared = entry.slug === "data-charts" || entry.slug === "timeline";
   if (query.get("preview") === "fullscreen") {
@@ -528,10 +513,9 @@ export function EntryPage({ entry }: { entry: Entry }) {
                   entry.markdownNotes ?? "",
                   entry.markdownNotesJa ?? entry.markdownNotes ?? "",
                 );
-                const didCopy = await copyToClipboard(
+                await navigator.clipboard.writeText(
                   `# ${t(entry.title, entry.ja)}\n\n**Tier:** ${entry.tier} · **Size:** ${entry.size} · **Tags:** ${entry.tags?.join(", ")}\n\n${t(entry.description, entry.descriptionJa ?? entry.description)}\n\n## Do\n\n${t(...entry.guidance!.do)}\n\n## Don't\n\n${t(...entry.guidance!.dont)}${markdownNotes ? "\n\n" + markdownNotes : ""}\n\n## Primitives used\n\n${entry.primitives?.map((n) => "- `" + n + "`").join("\n")}\n\n## Source\n\n${sourceMarkdown(unique)}`,
                 );
-                if (!didCopy) return;
                 setCopied(true);
                 setTimeout(() => setCopied(false), copyFeedbackMs);
               }}
@@ -588,16 +572,9 @@ export function EntryPage({ entry }: { entry: Entry }) {
         >
           {demos.map((demo, i) => (
             <Preview
-              key={`${entry.slug}-${demo.heading || i}`}
+              key={`${entry.slug}-${i}`}
               entry={entry}
               settings={settings}
-              tab={views[demo.heading ?? ""] ?? "preview"}
-              onTabChange={(value) =>
-                setViews((current) => ({
-                  ...current,
-                  [demo.heading ?? ""]: value,
-                }))
-              }
               hideOptions={shared}
               demo={demo}
             />
